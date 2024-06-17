@@ -1,0 +1,41 @@
+/* Tags ------------------------------------------------------------------------- */
+body{
+    box-sizing: border-box;
+}
+
+body, a, ul, li, p {
+    padding : 0;
+    margin: 0;
+}
+
+/* Util ------------------------------------------------------------------------- */
+
+/* Header ------------------------------------------------------------------------- */
+header {
+    height: 140px;
+    background-color: aliceblue;
+}
+
+header .header-top{
+    height: 80px;
+    background-color: rgb(180, 89, 89);
+}
+
+header .header-nav{
+    height: 60px;
+    background-color: antiquewhite;
+}
+
+/* Footer ------------------------------------------------------------------------- */
+footer {
+    height: 120px;
+}
+
+footer .footer-top{
+    height: 40px;
+    background-color: rgb(180, 89, 89);
+}
+footer .footer-bot{
+    height: 80px;
+    background-color: rgb(223, 181, 126);
+}
