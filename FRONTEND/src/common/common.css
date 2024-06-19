@@ -1,8 +1,5 @@
 /* Fonts ------------------------------------------------------------------------ */
-/* Rubik */
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap');
 
 /* Tags ------------------------------------------------------------------------- */
 html{
@@ -15,6 +12,7 @@ body *{
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+
 }
 
 body, a, ul, li, p {
@@ -126,14 +124,38 @@ ul{
 .m-4{
     margin: 4px;
 }
+.ml-4{
+    margin-left: 4px;
+}
+.mr-4{
+    margin-right: 4px;
+}
 .m-6{
     margin: 6px;
+}
+.ml-6{
+    margin-left: 6px;
+}
+.mr-6{
+    margin-right: 6px;
 }
 .m-8{
     margin: 8px;
 }
+.ml-8{
+    margin-left: 8px;
+}
+.mr-8{
+    margin-right: 8px;
+}
 .m-10{
     margin: 10px;
+}
+.ml-10{
+    margin-left: 10px;
+}
+.mr-10{
+    margin-right: 10px;
 }
 .m-12{
     margin: 12px;
@@ -232,6 +254,14 @@ ul{
     transition: all ease-in-out 0.1s;
 }
 
+.text-hover__gray:hover{
+    cursor: pointer;
+    color: #727272;
+    font-weight: 600;
+    text-decoration: underline;
+    transition: all ease-in-out 0.1s;
+}
+
 .text-hover__white:hover{
     cursor: pointer;
     color: #ffffff;
@@ -317,6 +347,8 @@ header .header-bot .header-nav{
 /* Main --------------------------------------------------------------------------- */
 main{
     position: relative;
+    width: 1024px;
+    margin: 0 auto;
 }
 
 /* Footer ------------------------------------------------------------------------- */
@@ -326,13 +358,14 @@ footer {
 }
 
 footer .footer-top{
+    max-width: 1024px;
+    margin: 0 auto;
     height: 80px;
     border-bottom: 1px solid rgba(55, 55, 55, 0.3);
     align-items: center;
 }
 
 footer .footer-top .footer-top-left{
-    margin-left: 100px;
     width: 800px;
     gap: 30px;
     align-items: center;
@@ -350,5 +383,20 @@ footer .footer-top .footer-top-right{
 }
 
 footer .footer-bot{
-    height: 80px;
+    height: 120px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer .footer-bot .footer-bot-nav{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-bot .footer-bot-nav li{
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
 }
