@@ -1,45 +1,354 @@
+/* Fonts ------------------------------------------------------------------------ */
+/* Rubik */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+
 /* Tags ------------------------------------------------------------------------- */
-body{
+html{
+    text-align: center;
+}
+
+body *{
     box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
 body, a, ul, li, p {
     padding : 0;
     margin: 0;
 }
-
-/* Util ------------------------------------------------------------------------- */
-.m-5{
-    margin: 5px;
+ul{
+    list-style-type: none;
 }
 
+/* Util ------------------------------------------------------------------------- */
+.fs-10{
+    font-size: 10px;
+}
+.fs-10__b{
+    font-size: 10px;
+    font-weight: 500;
+}
+.fs-12{
+    font-size: 12px;
+}
+.fs-12__b{
+    font-size: 12px;
+    font-weight: 700;
+}
+.fs-14{
+    font-size: 14px;
+}
+.fs-14__b{
+    font-size: 14px;
+    font-weight: 500;
+}
+.fs-14__ex{
+    font-size: 14px;
+    font-weight: 700;
+}
+.fs-20{
+    font-size: 20px;
+}
+.fs-20__b{
+    font-size: 20px;
+    font-weight: 500;
+}
+.fs-28__b{
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.d-flex{
+    display: flex;
+}
+
+.base__blue{
+   background-color: #458BE2; 
+}
+.base__mblue{
+    background-color: #71A1DD;
+}
+.base__lblue{
+    background-color: #F4F6FD;
+}
+.base__white{
+    background-color: #ffffff;
+}
+.base-shadow__gray{
+    background-color: rgba(69, 69, 69, 0.3);
+}
+.base-curtain__dgray{
+    background-color: rgba(55, 55, 55, 0.6);
+}
+.base-warn__red{
+    background-color: #EF4E4E;
+}
+.nav__white{
+    background-color: #EFEFEF;
+}
+.score__red{
+    background-color: #F37676;
+}
+.score__green{
+    background-color: #9FEE98;
+}
+.footer__lgray{
+    background-color: #EEEEEE;
+}
+.footer_gray{
+    background-color: #D2D2D2;
+}
+.footer__dgray{
+    background-color: #727272;
+}
+.base__black{
+    background-color: #000000;
+}
+.fc__blue{
+    color: #4468E9;
+}
+.fc__lblue{
+    color: #6280E9;
+}
+.fc__white{
+    color: #ffffff;
+}
+.fc__gray{
+    color: #727272;
+}
+
+
+.m-4{
+    margin: 4px;
+}
+.m-6{
+    margin: 6px;
+}
+.m-8{
+    margin: 8px;
+}
+.m-10{
+    margin: 10px;
+}
+.m-12{
+    margin: 12px;
+}
+.m-14{
+    margin: 14px;
+}
+.m-16{
+    margin: 16px;
+}
+.m-20{
+    margin: 20px;
+}
+
+.br-5{
+    border-radius: 5px;
+}
+.br-t-5{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.br-lt-5{
+    border-top-left-radius: 5px;
+}
+.br-rt-5{
+    border-top-right-radius: 5px;
+}
+.br-b-5{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.br-lb-5{
+    border-bottom-left-radius: 5px;
+}
+.br-rb-5{
+    border-bottom-right-radius: 5px;
+}
+.br-10{
+    border-radius: 10px;
+}
+.br-t-10{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.br-lt-10{
+    border-top-left-radius: 10px;
+}
+.br-rt-10{
+    border-top-right-radius: 10px;
+}
+.br-b-10{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.br-lb-10{
+    border-bottom-left-radius: 10px;
+}
+.br-rb-10{
+    border-bottom-right-radius: 10px;
+}
+
+.br-15{
+    border-radius: 15px;
+}
+.br-t-15{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.br-lt-15{
+    border-top-left-radius: 15px;
+}
+.br-rt-15{
+    border-top-right-radius: 15px;
+}
+.br-b-15{
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.br-lb-15{
+    border-bottom-left-radius: 15px;
+}
+.br-rb-15{
+    border-bottom-right-radius: 15px;
+}
+
+.box-shadow{
+    box-shadow: 2px 2px 5px rgba(69, 69, 69, 0.3);
+}
+
+/* Hover */
+.text-hover__blue:hover{
+    cursor: pointer;
+    color: #4468E9;
+    font-weight: 700;
+    text-decoration: underline;
+    transition: all ease-in-out 0.1s;
+}
+
+.text-hover__white:hover{
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: underline;
+    transition: all ease-in-out 0.1s;
+}
+
+.box-hover:hover{
+    cursor: pointer;
+    color: #4468E9;
+    text-decoration: underline;
+    transition: all ease-in-out 0.1s;
+}
 
 /* Header ------------------------------------------------------------------------- */
 header {
     height: 140px;
-    background-color: aliceblue;
+    position: relative;
 }
 
 header .header-top{
     height: 80px;
-    background-color: rgb(180, 89, 89);
+    width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-header .header-nav{
+header .header-top .header-top-logo{
+    height: 100%;
+}
+
+header .header-top .logo{
+    width: 100px;
+    height: 80px;
+}
+
+header .header-top .header-top-user{
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+header .header-top-user .user-image{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+header .header-top-user .user-name{
+    width: 200px;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.header-top-user .user-name p{
+    padding: 5px;
+}
+
+header .header-bot{
     height: 60px;
-    background-color: antiquewhite;
+    background-color: #458BE2;
+}
+
+header .header-bot .header-nav{
+    height: 60px;
+    width: 1024px;
+    margin: 0 auto;
+}
+
+.header-bot .header-nav .d-flex{
+    margin-left: 100px;
+}
+
+.header-bot .header-nav .d-flex li{
+    margin: 20px;
+}
+
+/* Main --------------------------------------------------------------------------- */
+main{
+    position: relative;
 }
 
 /* Footer ------------------------------------------------------------------------- */
 footer {
-    height: 120px;
+    height: 200px;
+    background-color: #D2D2D2;
 }
 
 footer .footer-top{
-    height: 40px;
-    background-color: rgb(180, 89, 89);
+    height: 80px;
+    border-bottom: 1px solid rgba(55, 55, 55, 0.3);
+    align-items: center;
 }
+
+footer .footer-top .footer-top-left{
+    margin-left: 100px;
+    width: 800px;
+    gap: 30px;
+    align-items: center;
+}
+
+footer .footer-top .logo{
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+footer .footer-top .footer-top-right{
+    gap: 10px;
+    align-items: center;
+}
+
 footer .footer-bot{
     height: 80px;
-    background-color: rgb(223, 181, 126);
 }
