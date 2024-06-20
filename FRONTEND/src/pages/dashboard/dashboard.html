@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./dashboard.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="../../common/common.js" defer></script>
+    <script src="./dashboard.js"></script>
     <title>MLB - Dashboard</title>
 </head>
 <body>
@@ -18,27 +19,32 @@
             <div class="container-top">
                 <div class="container-left">
                     <div class="current-events card__lblue">
-                        <div> CURRENT MAIN EVENT</div>
-                        <div> 24.06.11 (화)</div>
+                        <p class="content-header fs-14__b fc__blue"> CURRENT MAIN EVENT</p>
+                        <div class="events-date-div d-flex">
+                            <img src="/FRONTEND/public/icons/left-arrow.png" class="w-15 h-15" onclick="beforeDay()">
+                            <div id="dateDisplay"></div>
+                            <img src="/FRONTEND/public/icons/right-arrow.png" class="w-15 h-15" onclick="nextDay()">
+                        </div>
                         <div class="current-events-score"></div>
-    
                     </div>
                     <div class="main-news card__blue">
-    
+                        <p class="content-header fs-14__b fc__blue"> MAIN NEWS</p>
                     </div>
                 </div>
                 <div class="container-right card__lblue">
                     <div class="score-board">
+                        <p class="content-header fs-14__b fc__blue"> SCORE BOARD</p>
     
                     </div>
                 </div>
             </div>
             <div class="container-bot">
                 <div class="hightlight-clip card__lblue">
+                    <p class="content-header fs-14__b fc__blue"> HIGHTLIGHT CLIP</p>
 
                 </div>
                 <div class="community card__lblue">
-
+                    <p class="content-header fs-14__b fc__blue"> COMMUNITY </p>
                 </div>
             </div>
 
