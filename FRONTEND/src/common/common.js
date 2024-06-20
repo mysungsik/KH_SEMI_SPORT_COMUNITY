@@ -20,11 +20,11 @@ $(document).ready(function () {
         <div class="header-bot">
             <div class="header-nav">
                 <ul class="d-flex">
-                    <li class="fc__white text-hover__white">HOME</li>
-                    <li class="fc__white text-hover__white">TODAY</li>
-                    <li class="fc__white text-hover__white">NEWS</li>
-                    <li class="fc__white text-hover__white">COMMUNITY</li>
-                    <li class="fc__white text-hover__white">TEAMS</li>
+                    <li class="fs-14__b fc__white text-hover__white">HOME</li>
+                    <li class="fs-14__b fc__white text-hover__white">TODAY</li>
+                    <li class="fs-14__b fc__white text-hover__white">NEWS</li>
+                    <li class="fs-14__b fc__white text-hover__white">COMMUNITY</li>
+                    <li class="fs-14__b fc__white text-hover__white">TEAMS</li>
                 </ul>
             </div>
         </div>
@@ -36,7 +36,7 @@ $(document).ready(function () {
                 <img class="logo" src='/FRONTEND/public/images/mlb_logo2.jpg'>
                 <div class="footer-top-anno d-flex">
                     <p class="fs-14__ex fc__dgray mr-10"> 공지사항 </p>
-                    <p class="fs-14 fc__gray"> KH 커뮤니티 페이지가 오픈했습니다! </p>
+                    <p class="fs-14 fc__gray text-hover__gray"> KH 커뮤니티 페이지가 오픈했습니다! </p>
                 </div>
             </div>
             <div class="footer-top-right d-flex">
