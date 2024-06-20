@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../common/common.css">
+        <link rel="stylesheet" href="./signup.css">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="../../common/common.js" defer></script>
+        <title>MLB Dashboard</title>
+    </head>
+<body>
+    <!-- Be sure to include this TAG -->
+    <header></header>
+    <!-- Write Main Content -->
+    <main>
+        <section class="container">
+            <p class="header-text"> 회원가입 </p>
+            <hr class="hr__gray">
+            <form name="signup-form" class="signup-form base__lblue br-15" action="post">
+                <p class="fs-20__b"> 필수 정보</p>
+                <div class="signup-essential mt-10">
+                    <input class="box-shadow" type="text" name="signup_id" placeholder="ID">
+                    <div>
+                        <input class="box-shadow"  type="text" name="signup-password" placeholder="PASSWORD">
+                        <img class="password-eye" src="/FRONTEND/public/icons/eye.png">
+                    </div>
+                    <input class="box-shadow" type="text" name="signup-email" placeholder="EMAIL">
+                    <input class="box-shadow" type="text" name="signup-name" placeholder="NAME">
+                </div>
+                <p class="fs-20__b"> 추가 정보</p>
+                <div class="signup-unnecessary mt-10">
+                    <input class="box-shadow" type="text" name="signup-ssn" placeholder="생년월일(YYYYMMDD)">
+                    <input class="box-shadow" type="text" name="signup-number" placeholder="PHONE NUMBER">
+                    <input class="box-shadow" type="text" name="signup-address" placeholder="ADDRESS">
+                    <div class="radio-box-container">
+                        <div class="radio-box">
+                            <input type="radio" name="signup-gender" id="gender-m" value="m"><label for="gender-m">남자</label>
+                            <input type="radio" name="signup-gender" id="gender-f" value="f"><label for="gender-f">여자</label>
+                        </div>
+                        <div class="radio-box">
+                            <input type="radio" name="signup-region" id="region-ko" value="ko"><label for="region-ko">내국인</label>
+                            <input type="radio" name="signup-region" id="region-fo" value="fo"><label for="region-fo">외국인</label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <button class="btn-big__blue">
+                회원가입
+            </button>
+        </section>
+    </main>
+    <!-- Be sure to include this TAG -->
+    <footer></footer>
+</body>
+</html>
