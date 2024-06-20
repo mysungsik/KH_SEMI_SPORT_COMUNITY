@@ -7,14 +7,45 @@
     <link rel="stylesheet" href="./login.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="../../common/common.js" defer></script>
-    <title>Login</title>
+    <title>MLB - Login</title>
 </head>
 <body>
     <!-- Be sure to include this TAG -->
     <header></header>
     <!-- Write Main Content -->
     <main>
+        <section class="container">
+            <p class="header-text"> 로그인 </p>
+            <hr class="hr__gray">
+            <form name="login-form" class="login-form base__lblue br-15 box-shadow" action="../dashboard/dashboard.html">
+                <div class="login-essential mt-20">
+                    <div>
+                        <input class="box-shadow" type="text" name="login_id" placeholder="ID">
+                    </div>
+                    <div>
+                        <input class="box-shadow"  type="text" name="login-password" placeholder="PASSWORD">
+                        <img class="password-eye" src="/FRONTEND/public/icons/eye.png">
+                    </div>
+                </div>
+                <button class="btn-big__blue">
+                    로그인
+                </button>
+                <div class="term-check-div checkbox__blue">
+                    <input type="checkbox" id="term-all" name="term-all">
+                    <label for="term-all" class="fs-14">로그인 상태유지</label>
+                </div>
+                <div class="login-sub">
+                    <div>
+                        <span class="fc__gray">아이디 찾기</span>
+                        |<span class="fc__gray">비밀번호 찾기</span>
+                        |<span class="fc__gray">회원가입</span>
+                    </div>
+                    <img src="/FRONTEND/public/images/mlb_logo2.jpg">
+                    
+                </div>
 
+            </form>
+        </section>
     </main>
     <!-- Be sure to include this TAG -->
     <footer></footer>

@@ -172,14 +172,26 @@ ul{
 .m-12{
     margin: 12px;
 }
+.mt-12{
+    margin-top: 12px;
+}
 .m-14{
     margin: 14px;
+}
+.mt-14{
+    margin-top: 14px;
 }
 .m-16{
     margin: 16px;
 }
+.mt-16{
+    margin-top: 16px;
+}
 .m-20{
     margin: 20px;
+}
+.mt-20{
+    margin-top: 20px;
 }
 
 .br-5{
@@ -294,11 +306,13 @@ ul{
     font-size: 14px;
     font-weight: 500;
     border: none;
+    box-shadow: 2px 2px 5px rgba(69, 69, 69, 0.3);
 }
 .btn-big__blue:hover{
     background-color: #2a7ce0;
     font-weight: 700;
     transition: all ease-in-out 0.1s;
+    box-shadow: 2px 2px 5px rgba(69, 69, 69, 0.486);
     cursor: pointer;
 }
 
@@ -307,7 +321,7 @@ ul{
 .checkbox__blue input[type=checkbox] {
     --active: #4468E9;
     --active-inner: #fff;
-    --focus: 2px #4468E9;
+    --focus: 1px #4468E9;
     --border: #BBC1E1;
     --border-hover: #4674ff;
     --background: #fff;
@@ -381,7 +395,7 @@ ul{
 .checkbox__blue input[type=checkbox]:not(.switch):after {
     width: 6px;
     height: 9px;
-    border: 2px solid var(--active-inner);
+    border: 1px solid var(--active-inner);
     border-top: 0;
     border-left: 0;
     left: 5px;
@@ -401,7 +415,51 @@ box-sizing: inherit;
 box-sizing: inherit;
 }
 
-/* Hover */
+/* ELEMENTS - radio Button */
+.radio-box input{
+    display: none;
+  }
+  
+.radio-box{
+    display: flex;
+}
+.radio-box label{
+    padding-left: 20px;
+    position: relative;
+    color: #727272;
+    background-color: #ffffff;
+    font-size: 10px;
+    text-align: left;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    display: block;
+    cursor: pointer;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(69, 69, 69, 0.3);
+    margin-left: 1px;
+}
+
+.radio-box input:hover + label{
+    color: #3158e6;
+    font-weight: 600;
+    text-shadow: 1px 1px 1px #97a8e7;
+    box-shadow: 1px 1px 3px #8198ecd0;
+    z-index: 1;
+}
+
+.radio-box input:checked + label{
+    color: #3158e6;
+    font-weight: 600;
+    text-shadow: 1px 1px 1px #97a8e7;
+    box-shadow: 1px 1px 3px #8198ecd0;
+    z-index: 1;
+}
+
+/* Hover - text */
 .text-hover__blue:hover{
     cursor: pointer;
     color: #4468E9;
@@ -475,6 +533,7 @@ header .header-top-user .user-name{
     padding: 10px;
     display: flex;
     align-items: center;
+    margin-right: 10px;
 }
 
 .header-top-user .user-name p{
