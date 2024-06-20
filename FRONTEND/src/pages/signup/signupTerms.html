@@ -17,7 +17,7 @@
         <section class="container">
             <p class="header-text"> 회원가입 정보에 관한 동의 </p>
             <hr class="hr__gray">
-            <form name="term-form" class="term-form" action="post">
+            <form name="term-form" class="term-form" action="#">
                 <div class="term-div term-all-div">
                     <div class="term-check-div checkbox__blue">
                         <input type="checkbox" id="term-all" name="term-all">
@@ -88,7 +88,8 @@
                         </p>
                     </div>
                 </div>
-                <button class="btn-big__blue">
+                <!-- 임시 페이지이동 -->
+                <button class="btn-big__blue" type="button" onclick="location.href = '/FRONTEND/src/pages/signup/signup.html';">
                     다음
                 </button>
             </form>

@@ -20,11 +20,11 @@ $(document).ready(function () {
         <div class="header-bot">
             <div class="header-nav">
                 <ul class="d-flex">
-                    <li class="fs-14__b fc__white text-hover__white">HOME</li>
-                    <li class="fs-14__b fc__white text-hover__white">TODAY</li>
-                    <li class="fs-14__b fc__white text-hover__white">NEWS</li>
-                    <li class="fs-14__b fc__white text-hover__white">COMMUNITY</li>
-                    <li class="fs-14__b fc__white text-hover__white">TEAMS</li>
+                    <a class="fs-14 fc__white text-hover__white" href="../dashboard/dashboard.html">HOME</a>
+                    <a class="fs-14 fc__white text-hover__white" href="../news/news.html">TODAY</a>
+                    <a class="fs-14 fc__white text-hover__white" href="../news/news.html">NEWS</a>
+                    <a class="fs-14 fc__white text-hover__white" href="../community/community.html">COMMUNITY</a>
+                    <a class="fs-14 fc__white text-hover__white" href="../teams/teams.html">TEAMS</a>
                 </ul>
             </div>
         </div>
