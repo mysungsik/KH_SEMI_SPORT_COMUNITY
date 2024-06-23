@@ -3,7 +3,45 @@ let year;
 let date;
 let day;
 
+var swiper = new Swiper(".mySwiper", {
+    spaceBetween: 24,
+    centeredSlides: true,
+    autoplay: {
+    delay: 500000,
+    disableOnInteraction: false
+    },
+    pagination: {
+    el: ".swiper-pagination",
+    clickable: true
+    },
+    navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+    }
+});
+
+var swiper2 = new Swiper(".mySwiper2", {
+    spaceBetween: 24,
+    slidesPerView: 3, // 슬라이드 2개씩 보이도록 설정
+    initialSlide: 1,
+    centeredSlides: true,
+    autoplay: {
+    delay: 500000,
+    disableOnInteraction: false
+    },
+    pagination: {
+    el: ".swiper-pagination",
+    clickable: true
+    },
+    navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+    }
+});
+
+
 $(document).ready(function () {
+    // 날짜함수 실행
     now = new Date()
     getFormattedDate();
     updateDate();

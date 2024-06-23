@@ -43,22 +43,3 @@
     padding-left: 20px;
 }
 
-/* 아티클 */
-.article-box{
-    width: 600px;
-    height: 170px;
-    overflow-y: scroll;
-}
-
-.article-title{
-    font-size: 14px;
-    font-weight: 700;
-    text-align: left;
-    margin-bottom: 10px;
-}
-.article-text{
-    font-size: 12px;
-    text-align: left;
-    color: #727272;
-    white-space: inherit;
-}

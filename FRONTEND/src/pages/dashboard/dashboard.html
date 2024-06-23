@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="../../common/common.css">
     <link rel="stylesheet" href="./dashboard.css">
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="../../common/common.js" defer></script>
-    <script src="./dashboard.js"></script>
+    <script src="./dashboard.js" defer></script>
     <title>MLB - Dashboard</title>
 </head>
 <body>
@@ -18,104 +22,243 @@
         <section class="container">
             <div class="container-top">
                 <div class="container-left">
-                    <div class="current-events card__lblue">
+                    <div class="current-events card__lblue ">
                         <p class="content-header fs-14__b fc__blue"> CURRENT MAIN EVENT</p>
                         <div class="events-date-div d-flex">
                             <img src="/FRONTEND/public/icons/left-arrow.png" class="w-15 h-15" onclick="beforeDay()">
                             <div id="dateDisplay"></div>
                             <img src="/FRONTEND/public/icons/right-arrow.png" class="w-15 h-15" onclick="nextDay()">
                         </div>
-                        <div class="current-events-score card__white mt-20">
-                            <!-- 좌상단 현재 이벤트 내용 작성 -->
-                            <ul>
-                                <li class="d-flex">
-                                    <div class="score-left-symbol score__red"></div>
-                                    <span class="score-left-team fs-14"> 한화 </span>
-                                    <span class="score-left-score fs-14__b"> 6 </span>
-                                    <div class="score-inning fs-20">
-                                        9회 
-                                        <div class="score-inning-down"></div>
-                                    </div>
-                                    <span class="score-right-score fs-14__b"> 7 </span>
-                                    <span class="score-right-team fs-14"> 기아 </span>
-                                    <div class="score-right-symbol score__green"></div>
-                                </li>
-                                <li class="d-flex">
-                                    <div class="score-left-symbol score__green"></div>
-                                    <span class="score-left-team fs-14"> 한화 </span>
-                                    <span class="score-left-score fs-14__b"> 6 </span>
-                                    <div class="score-inning fs-20">
-                                        7회<div class="score-inning-up"></div>
-                                    </div>
-                                    <span class="score-right-score fs-14__b"> 7 </span>
-                                    <span class="score-right-team fs-14"> 기아 타이거 </span>
-                                    <div class="score-right-symbol score__red"></div>
-                                </li>
-                                <li class="d-flex">
-                                    <div class="score-left-symbol score__red"></div>
-                                    <span class="score-left-team fs-14"> 한화 </span>
-                                    <span class="score-left-score fs-14__b"> 6 </span>
-                                    <div class="score-inning fs-20">
-                                        9회 
-                                        <div class="score-inning-down"></div>
-                                    </div>
-                                    <span class="score-right-score fs-14__b"> 7 </span>
-                                    <span class="score-right-team fs-14"> 기아 </span>
-                                    <div class="score-right-symbol score__green"></div>
-                                </li>
-                                <li class="d-flex">
-                                    <div class="score-left-symbol score__green"></div>
-                                    <span class="score-left-team fs-14"> 한화 </span>
-                                    <span class="score-left-score fs-14__b"> 6 </span>
-                                    <div class="score-inning fs-20">
-                                        7회<div class="score-inning-up"></div>
-                                    </div>
-                                    <span class="score-right-score fs-14__b"> 7 </span>
-                                    <span class="score-right-team fs-14"> 기아 타이거 </span>
-                                    <div class="score-right-symbol score__red"></div>
-                                </li>
-                                <li class="d-flex">
-                                    <div class="score-left-symbol score__red"></div>
-                                    <span class="score-left-team fs-14"> 한화 </span>
-                                    <span class="score-left-score fs-14__b"> 6 </span>
-                                    <div class="score-inning fs-20">
-                                        9회 
-                                        <div class="score-inning-down"></div>
-                                    </div>
-                                    <span class="score-right-score fs-14__b"> 7 </span>
-                                    <span class="score-right-team fs-14"> 기아 </span>
-                                    <div class="score-right-symbol score__green"></div>
-                                </li>
-                                <li class="d-flex">
-                                    <div class="score-left-symbol score__green"></div>
-                                    <span class="score-left-team fs-14"> 한화 </span>
-                                    <span class="score-left-score fs-14__b"> 6 </span>
-                                    <div class="score-inning fs-20">
-                                        7회<div class="score-inning-up"></div>
-                                    </div>
-                                    <span class="score-right-score fs-14__b"> 7 </span>
-                                    <span class="score-right-team fs-14"> 기아 타이거 </span>
-                                    <div class="score-right-symbol score__red"></div>
-                                </li>
-                                <li class="d-flex">
-                                    <div class="score-left-symbol score__red"></div>
-                                    <span class="score-left-team fs-14"> 한화 </span>
-                                    <span class="score-left-score fs-14__b"> 6 </span>
-                                    <div class="score-inning fs-20">
-                                        9회 
-                                        <div class="score-inning-down"></div>
-                                    </div>
-                                    <span class="score-right-score fs-14__b"> 7 </span>
-                                    <span class="score-right-team fs-14"> 기아 </span>
-                                    <div class="score-right-symbol score__green"></div>
-                                </li>
-                            </ul>
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper current-events-score">
+                                <!-- ul 내부 list 최대 7개 -->
+                                <ul class="swiper-slide card__white">
+                                    <li class="d-flex right-win">
+                                        <div class="score-left-symbol score__red"></div>
+                                        <span class="score-left-team fs-14"> 한화 </span>
+                                        <span class="score-left-score fs-14__b"> 6 </span>
+                                        <div class="score-inning fs-20">
+                                            종료
+                                            <!-- <div class="score-inning-down"></div> -->
+                                        </div>
+                                        <span class="score-right-score fs-14__b"> 7 </span>
+                                        <span class="score-right-team fs-14"> 기아 </span>
+                                        <div class="score-right-symbol score__green"></div>
+                                    </li>
+                                    <li class="d-flex">
+                                        <div class="score-left-symbol score__gray"></div>
+                                        <span class="score-left-team fs-14"> 한화 </span>
+                                        <span class="score-left-score fs-14__b"> 6 </span>
+                                        <div class="score-inning fs-20">
+                                            7회<div class="score-inning-up"></div>
+                                        </div>
+                                        <span class="score-right-score fs-14__b"> 7 </span>
+                                        <span class="score-right-team fs-14"> 기아 타이거 </span>
+                                        <div class="score-right-symbol score__gray"></div>
+                                    </li>
+                                    <li class="d-flex left-win">
+                                        <div class="score-left-symbol score__green"></div>
+                                        <span class="score-left-team fs-14"> 한화 </span>
+                                        <span class="score-left-score fs-14__b"> 3 </span>
+                                        <div class="score-inning fs-20">
+                                            종료
+                                            <!-- <div class="score-inning-down"></div> -->
+                                        </div>
+                                        <span class="score-right-score fs-14__b"> 13 </span>
+                                        <span class="score-right-team fs-14"> 기아 </span>
+                                        <div class="score-right-symbol score__red"></div>
+                                    </li>
+                                    <li class="d-flex">
+                                        <div class="score-left-symbol score__green"></div>
+                                        <span class="score-left-team fs-14"> 한화 </span>
+                                        <span class="score-left-score fs-14__b"> 6 </span>
+                                        <div class="score-inning fs-20">
+                                            종료
+                                            <!-- <div class="score-inning-up"></div> -->
+                                        </div>
+                                        <span class="score-right-score fs-14__b"> 7 </span>
+                                        <span class="score-right-team fs-14"> 기아 타이거 </span>
+                                        <div class="score-right-symbol score__red"></div>
+                                    </li>
+                                    <li class="d-flex">
+                                        <div class="score-left-symbol score__gray"></div>
+                                        <span class="score-left-team fs-14"> 한화 </span>
+                                        <span class="score-left-score fs-14__b"> 6 </span>
+                                        <div class="score-inning fs-20">
+                                            9회 
+                                            <div class="score-inning-down"></div>
+                                        </div>
+                                        <span class="score-right-score fs-14__b"> 7 </span>
+                                        <span class="score-right-team fs-14"> 기아 </span>
+                                        <div class="score-right-symbol score__gray"></div>
+                                    </li>
+                                    <li class="d-flex left-win">
+                                        <div class="score-left-symbol score__green"></div>
+                                        <span class="score-left-team fs-14"> 삼성 </span>
+                                        <span class="score-left-score fs-14__b"> 13 </span>
+                                        <div class="score-inning fs-20">
+                                            종료
+                                            <!-- <div class="score-inning-up"></div> -->
+                                        </div>
+                                        <span class="score-right-score fs-14__b"> 7 </span>
+                                        <span class="score-right-team fs-14"> 기아 타이거 </span>
+                                        <div class="score-right-symbol score__red"></div>
+                                    </li>
+                                    <li class="d-flex left-win">
+                                        <div class="score-left-symbol score__green"></div>
+                                        <span class="score-left-team fs-14"> 두산 </span>
+                                        <span class="score-left-score fs-14__b"> 11 </span>
+                                        <div class="score-inning fs-20">
+                                            종료
+                                            <!-- <div class="score-inning-up"></div> -->
+                                        </div>
+                                        <span class="score-right-score fs-14__b"> 7 </span>
+                                        <span class="score-right-team fs-14"> 기아 타이거 </span>
+                                        <div class="score-right-symbol score__red"></div>
+                                    </li>
+                                </ul>
+                                <!-- ul 내부 list 최대 7개 -->
+                                <ul class="swiper-slide card__white">
+                                    <li class="d-flex right-win">
+                                        <div class="score-left-symbol score__red"></div>
+                                        <span class="score-left-team fs-14"> 한화 </span>
+                                        <span class="score-left-score fs-14__b"> 6 </span>
+                                        <div class="score-inning fs-20">
+                                            종료
+                                            <!-- <div class="score-inning-down"></div> -->
+                                        </div>
+                                        <span class="score-right-score fs-14__b"> 7 </span>
+                                        <span class="score-right-team fs-14"> 기아 </span>
+                                        <div class="score-right-symbol score__green"></div>
+                                    </li>
+                                    <li class="d-flex">
+                                        <div class="score-left-symbol score__gray"></div>
+                                        <span class="score-left-team fs-14"> 한화 </span>
+                                        <span class="score-left-score fs-14__b"> 6 </span>
+                                        <div class="score-inning fs-20">
+                                            7회<div class="score-inning-up"></div>
+                                        </div>
+                                        <span class="score-right-score fs-14__b"> 7 </span>
+                                        <span class="score-right-team fs-14"> 기아 타이거 </span>
+                                        <div class="score-right-symbol score__gray"></div>
+                                    </li>
+                                </ul>
+                                <!-- ul 내부 list 최대 7개 -->
+                                <ul class="swiper-slide card__white">
+                                    <li class="d-flex right-win">
+                                        <div class="score-left-symbol score__red"></div>
+                                        <span class="score-left-team fs-14"> 한화 </span>
+                                        <span class="score-left-score fs-14__b"> 6 </span>
+                                        <div class="score-inning fs-20">
+                                            종료
+                                            <!-- <div class="score-inning-down"></div> -->
+                                        </div>
+                                        <span class="score-right-score fs-14__b"> 7 </span>
+                                        <span class="score-right-team fs-14"> 기아 </span>
+                                        <div class="score-right-symbol score__green"></div>
+                                    </li>
+                                    <li class="d-flex">
+                                        <div class="score-left-symbol score__gray"></div>
+                                        <span class="score-left-team fs-14"> 한화 </span>
+                                        <span class="score-left-score fs-14__b"> 6 </span>
+                                        <div class="score-inning fs-20">
+                                            7회<div class="score-inning-up"></div>
+                                        </div>
+                                        <span class="score-right-score fs-14__b"> 7 </span>
+                                        <span class="score-right-team fs-14"> 기아 타이거 </span>
+                                        <div class="score-right-symbol score__gray"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="d-flex arrows">
+                            <img src="/FRONTEND/public/icons/left-arrow.png" style="width: 13px; height: 13px;">
+                            <img src="/FRONTEND/public/icons/right-arrow.png" style="width: 13px; height: 13px;">
                         </div>
                     </div>
                     <div class="main-news card__blue">
                         <p class="content-header fs-14__b fc__white"> MAIN NEWS</p>
-                        <div class="main-news-content card__lblue mt-20">
+                        <div class="main-news-content card__lblue mt-10 swiper mySwiper2">
                             <!-- 좌중단 메인 뉴스 작성 -->
+                            <div class="news-content-top d-flex swiper-wrapper">
+                                <div class="card-thumbnail swiper-slide">
+                                    <img class="card-thumbnail-img" src="/FRONTEND/public/images/news_example.jpg">
+                                    <div class="card-thumbnail-infos">
+                                        <div class="card-thumbnail-title">
+                                            '9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
+                                        </div>
+                                        <div class="card-thumbnail-content">
+                                            <p> ♡ <span>9999</span></p>
+                                            <p> KBO 리그</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-thumbnail swiper-slide">
+                                    <img class="card-thumbnail-img" src="/FRONTEND/public/images/news_example.jpg">
+                                    <div class="card-thumbnail-infos">
+                                        <div class="card-thumbnail-title">
+                                            '9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
+                                        </div>
+                                        <div class="card-thumbnail-content">
+                                            <p> ♡ <span>9999</span></p>
+                                            <p> KBO 리그</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-thumbnail swiper-slide">
+                                    <img class="card-thumbnail-img" src="/FRONTEND/public/images/news_example.jpg">
+                                    <div class="card-thumbnail-infos">
+                                        <div class="card-thumbnail-title">
+                                            '9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
+                                        </div>
+                                        <div class="card-thumbnail-content">
+                                            <p> ♡ <span>9999</span></p>
+                                            <p> KBO 리그</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-thumbnail swiper-slide">
+                                    <img class="card-thumbnail-img" src="/FRONTEND/public/images/news_example.jpg">
+                                    <div class="card-thumbnail-infos">
+                                        <div class="card-thumbnail-title">
+                                            '9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
+                                        </div>
+                                        <div class="card-thumbnail-content">
+                                            <p> ♡ <span>9999</span></p>
+                                            <p> KBO 리그</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-thumbnail swiper-slide">
+                                    <img class="card-thumbnail-img" src="/FRONTEND/public/images/news_example.jpg">
+                                    <div class="card-thumbnail-infos">
+                                        <div class="card-thumbnail-title">
+                                            '9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
+                                        </div>
+                                        <div class="card-thumbnail-content">
+                                            <p> ♡ <span>9999</span></p>
+                                            <p> KBO 리그</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-content-bottom">
+                                <div class="new-headline d-flex">
+                                    <p>‘주간 ERA 11.57’ 5월 MVP 곽빈 1군 말소당해버렸다 이승엽 감독 ”에이스니까, 더 해야지 안그러냐 </p><span>[IS 잠실]</span>
+                                </div>
+                                <div class="new-headline d-flex">
+                                    <p>‘주간 ERA 11.57’ 5월 MVP 곽빈 1군 말소당해버렸다 이승엽 감독 ”에이스니까, 더 해야지 안그러냐 </p><span>[IS 잠실]</span>
+                                </div>
+                                <div class="new-headline d-flex">
+                                    <p>‘주간 ERA 11.57’ 5월 MVP 곽빈 1군 말소당해버렸다 이승엽 감독 ”에이스니까, 더 해야지 안그러냐 </p><span>[IS 잠실]</span>
+                                </div>
+                                <div class="new-headline d-flex">
+                                    <p>‘주간 ERA 11.57’ 5월 MVP 곽빈 1군 말소당해버렸다 이승엽 감독 ”에이스니까, 더 해야지 안그러냐 </p><span>[IS 잠실]</span>
+                                </div>
+                                <div class="new-headline d-flex">
+                                    <p>‘주간 ERA 11.57’ 5월 MVP 곽빈 1군 말소당해버렸다 이승엽 감독 ”에이스니까, 더 해야지 안그러냐 </p><span>[IS 잠실]</span>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
@@ -123,21 +266,52 @@
                 <div class="container-right card__lblue">
                     <div class="score-board">
                         <p class="content-header fs-14__b fc__blue"> SCORE BOARD</p>
-                        <div class="score-board-score card__white mt-20">
+                        <div class="score-board-score card__white mt-10">
                             <!-- 우측 스코어 보드 작성 -->
                             <ul>
                                 <li class="d-flex">
-                                    <img class="score-board-symbol" src="/FRONTEND/public/images/teams/FL.png">
-                                    <span class="score-board-team fs-14"> 한화 </span>
-                                    <div class="score-board-symbol score__green"></div>
-                                    <div class="score-board-symbol score__green"></div>
-                                    <div class="score-board-symbol score__red"></div>
-                                    <div class="score-board-symbol score__green"></div>
-                                    <div class="score-board-symbol score__gray"></div>
-                                    <div class="score-board-symbol score__gray"></div>
+                                    <div class="score-board-infos">
+                                        <img class="score-board-logo" src="/FRONTEND/public/images/teams/FL.png">
+                                        <span class="score-board-team fs-14"> 한화 </span>
+                                    </div>
+                                    <div class="score-board-symbols d-flex">
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__red"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                    </div>
+                                </li>
+                                <li class="d-flex">
+                                    <div class="score-board-infos">
+                                        <img class="score-board-logo" src="/FRONTEND/public/images/teams/FL.png">
+                                        <span class="score-board-team fs-14"> 기아 타이거즈 </span>
+                                    </div>
+                                    <div class="score-board-symbols d-flex">
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__red"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                    </div>
+                                </li>
+                                <li class="d-flex">
+                                    <div class="score-board-infos">
+                                        <img class="score-board-logo" src="/FRONTEND/public/images/teams/FL.png">
+                                        <span class="score-board-team fs-14"> 제이 블루즌 </span>
+                                    </div>
+                                    <div class="score-board-symbols d-flex">
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__red"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                    </div>
                                 </li>
                             </ul>
-
                         </div>
                     </div>
                 </div>
