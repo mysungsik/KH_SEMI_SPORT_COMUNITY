@@ -1,0 +1,178 @@
+*{box-sizing: border-box;}
+
+/* *{border: 1px solid black;}    */
+
+
+.container{
+    width: 1024px;
+    height: 1000px;
+}
+
+section{
+    margin-top: 30px;
+}
+
+/* main-top(인기 게시글) */
+.main-top{
+    height: 200px;
+}
+
+.title{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.main-top .title span{
+    margin-left: 70px;
+}
+
+
+.popular{
+    height: 150px;
+    display: flex;
+}
+
+.popular-area{
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.popular-post{
+    width: 380px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.post-title{
+    height: 30px;
+    align-content: center;
+}
+
+.post-title span{
+    margin-right: 5px;
+}
+
+.post-content{
+    height: 50px;
+    align-content: center;
+}
+
+.post-info{
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+main hr{
+    width: 400px;
+}
+
+/* 메인 미드 (전체, 베스트 댓글) */
+.main-mid{
+    height: 300px;
+    display: flex;
+    gap : 80px;
+}
+
+.main-mid article{
+    flex-basis: 50%;
+}
+
+
+
+/* 전체 */
+.mg-left{
+    margin-left: 70px;
+}
+
+.board{
+    height: 300px;
+    cursor: pointer;
+}
+
+.post{
+    height: 50px;
+}
+
+
+/* 베스트 댓글 */
+.right-title{
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.best-title{
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.best{
+    height: 300px;
+    margin-right: 70px;
+}
+
+.best .post{
+    display: flex;
+}
+
+.rank{
+    flex-basis: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.best-content-area{
+    flex-basis: 55%;
+}
+
+.best-content{
+    height: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.best-like{
+    flex-basis: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* 공지사항 */
+.info{
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.info-title{
+    margin-left: 250px;
+    margin-right: 10px;
+}
+
+/* 메인 바텀 ( */
+.main-bot{
+    height: 300px;
+    display: flex;
+    gap: 80px;
+}
+
+.main-bot article{
+    flex-basis: 50%;
+}
+
+.mg-right{
+    margin-right: 70px;
+}
+
