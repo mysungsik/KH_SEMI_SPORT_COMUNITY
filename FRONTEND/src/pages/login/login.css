@@ -82,12 +82,12 @@
     align-items: center;
 }
 
-.login-sub span{
+.login-sub a{
     display: inline-block;
     padding: 0 10px;
 }
 
-.login-sub span:hover{
+.login-sub a:hover{
     cursor: pointer;
 }
 

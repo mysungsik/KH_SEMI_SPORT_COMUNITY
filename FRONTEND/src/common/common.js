@@ -5,30 +5,62 @@
  */
 
 $(document).ready(function () {
-    $("header").append(`
-        <div class="header-top">
-            <div class="header-top-logo">
-                <img class="logo" src='/FRONTEND/public/images/mlb_logo.png'>
-            </div>
-            <div class="header-top-user box-hover">
-                <img class="user-image" src='/FRONTEND/public/images/user_img1.jpg'>
-                <div class="user-name">
-                    <p class="text-hover__blue fs-14__b">test_user1</p>
+    let login = true;
+
+    // 로그인 했을 경우
+    if (login){
+        $("header").append(`
+            <div class="header-top">
+                <div class="header-top-logo">
+                    <img class="logo" src='/FRONTEND/public/images/mlb_logo.png'>
+                </div>
+                <div class="header-top-user box-hover">
+                    <img class="user-image" src='/FRONTEND/public/images/user_img1.jpg'>
+                    <div class="user-name">
+                        <a class="text-hover__blue fs-14__b">test_user1</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="header-bot">
-            <div class="header-nav">
-                <ul class="d-flex">
-                    <a class="fs-14 fc__white text-hover__white" href="../dashboard/dashboard.html">HOME</a>
-                    <a class="fs-14 fc__white text-hover__white" href="../news/news.html">TODAY</a>
-                    <a class="fs-14 fc__white text-hover__white" href="../news/news.html">NEWS</a>
-                    <a class="fs-14 fc__white text-hover__white" href="../community/community.html">COMMUNITY</a>
-                    <a class="fs-14 fc__white text-hover__white" href="../teams/teams.html">TEAMS</a>
-                </ul>
+            <div class="header-bot">
+                <div class="header-nav">
+                    <ul class="d-flex">
+                        <a class="fs-14 fc__white text-hover__white" href="/FRONTEND/src/pages/dashboard/dashboard.html">HOME</a>
+                        <a class="fs-14 fc__white text-hover__white" href="/FRONTEND/src/pages/news/news.html">TODAY</a>
+                        <a class="fs-14 fc__white text-hover__white" href="/FRONTEND/src/pages/news/news.html">NEWS</a>
+                        <a class="fs-14 fc__white text-hover__white" href="/FRONTEND/src/pages/community/community.html">COMMUNITY</a>
+                        <a class="fs-14 fc__white text-hover__white" href="/FRONTEND/src/pages/teams/teams.html">TEAMS</a>
+                    </ul>
+                </div>
             </div>
-        </div>
-    `);
+        `);
+    // 로그인 안했을 경우
+    } else{
+        $("header").append(`
+            <div class="header-top">
+                <div class="header-top-logo">
+                    <img class="logo" src='/FRONTEND/public/images/mlb_logo.png'>
+                </div>
+                <div class="header-top-user box-hover">
+                    <img class="user-image" src='/FRONTEND/public/icons/plus.png'>
+                    <div class="user-name">
+                        <a href="/FRONTEND/src/pages/login/login.html" class="text-hover__gray fc__gray fs-14__b">로그인후 이용해주세요</a>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bot">
+                <div class="header-nav">
+                    <ul class="d-flex">
+                        <a class="fs-14 fc__white text-hover__white" href="/FRONTEND/src/pages/dashboard/dashboard.html">HOME</a>
+                        <a class="fs-14 fc__white text-hover__white" href="/FRONTEND/src/pages/news/news.html">TODAY</a>
+                        <a class="fs-14 fc__white text-hover__white" href="/FRONTEND/src/pages/news/news.html">NEWS</a>
+                        <a class="fs-14 fc__white text-hover__white" href="/FRONTEND/src/pages/community/community.html">COMMUNITY</a>
+                        <a class="fs-14 fc__white text-hover__white" href="/FRONTEND/src/pages/teams/teams.html">TEAMS</a>
+                    </ul>
+                </div>
+            </div>
+        `);
+    }
+    
 
     $("footer").append(`
         <div class="footer-top d-flex">
