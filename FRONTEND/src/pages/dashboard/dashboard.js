@@ -3,9 +3,9 @@ let year;
 let date;
 let day;
 
-var swiper = new Swiper(".mySwiper", {
-    spaceBetween: 24,
-    centeredSlides: true,
+var swiper = new Swiper(".swiper-events", {
+    spaceBetween: 30,
+    centeredSlides: false,
     autoplay: {
     delay: 6000,
     disableOnInteraction: false
@@ -20,11 +20,11 @@ var swiper = new Swiper(".mySwiper", {
     }
 });
 
-var swiper2 = new Swiper(".mySwiper2", {
+var swiper2 = new Swiper(".swiper-news", {
     spaceBetween: 24,
     slidesPerView: 3, // 슬라이드 2개씩 보이도록 설정
     initialSlide: 1,
-    centeredSlides: true,
+    centeredSlides: false,
     autoplay: {
     delay: 4000,
     disableOnInteraction: false
@@ -39,11 +39,11 @@ var swiper2 = new Swiper(".mySwiper2", {
     }
 });
 
-var swiper3 = new Swiper(".mySwiper3", {
+var swiper3 = new Swiper(".swiper-highlight", {
     spaceBetween: 24,
     slidesPerView: 4, // 슬라이드 2개씩 보이도록 설정
     initialSlide: 2,
-    centeredSlides: true,
+    centeredSlides: false,  // 슬라이드 중앙정렬 false
     autoplay: {
     delay: 4000,
     disableOnInteraction: false

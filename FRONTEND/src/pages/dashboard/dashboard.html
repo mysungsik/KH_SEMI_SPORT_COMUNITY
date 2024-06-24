@@ -31,7 +31,7 @@
                             <div id="dateDisplay"></div>
                             <img src="/FRONTEND/public/icons/right-arrow.png" class="w-15 h-15" onclick="nextDay()">
                         </div>
-                        <div class="swiper mySwiper">
+                        <div class="swiper swiper-events">
                             <div class="swiper-wrapper current-events-score">
                                 <!-- ul 내부 list 최대 7개 -->
                                 <ul class="swiper-slide card__white">
@@ -180,7 +180,7 @@
                     </div>
                     <div class="main-news card__blue">
                         <p class="content-header fs-14__b fc__white"> MAIN NEWS</p>
-                        <div class="main-news-content card__lblue mt-10 swiper mySwiper2">
+                        <div class="main-news-content card__lblue mt-10 swiper swiper-news">
                             <!-- 좌중단 메인 뉴스 작성 -->
                             <div class="news-content-top d-flex swiper-wrapper">
                                 <div class="card-thumbnail swiper-slide">
@@ -318,9 +318,10 @@
                 </div>
             </div>
             <div class="container-bot">
-                <div class="hightlight-clip card__lblue swiper mySwiper3">
-                    <p class="content-header fs-14__b fc__blue"> HIGHTLIGHT CLIP</p>
-                    <hr class="hr__gray mt-10">
+                <div class="hightlight-clip card__lblue swiper swiper-highlight">
+                    <p class="content-header fs-20__b fc__blue"> HIGHTLIGHT CLIP</p>
+                    <p class="content-all fc__blue fs-10 text-hover__blue"> See All Clips</p>
+                    <hr class="hr__gray mt-10 mb-16">
                     <!-- 하단 하이라이트 클립 작성 -->
                     <div class="news-content-top d-flex swiper-wrapper">
                         <div class="card-thumbnail swiper-slide">
@@ -393,10 +394,97 @@
                     <div class="swiper-pagination"></div>
                 </div>
                 <div class="community card__lblue">
-                    <p class="content-header fs-14__b fc__blue"> COMMUNITY </p>
+                    <p class="content-header fs-20__b fc__blue"> COMMUNITY </p>
+                    <p class="content-all fc__blue fs-10 text-hover__blue"> See All Posts</p>
+                    <hr class="hr__gray mb-16">
                     <!-- 하단 커뮤티니 작성 -->
-                    <div>
-
+                    <div class="main-bot">
+                        <!-- 자유 게시판 -->
+                        <div class="board mg-left">
+                            <p class="title fs-20__b fc__blue">자유 게시판<p>
+                            <div class="post">
+                                <div class="post-title">
+                                    <span class="fs-14__b">게시글입니다 test 1234</span>
+                                </div>
+                                <div class="post-info">
+                                    <span class="fs-10">작성자 2024-06-23</span>
+                                    <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
+                                </div>
+                            </div>
+                            <div class="post">
+                                <div class="post-title">
+                                    <span class="fs-14__b">게시글입니다 test 1234</span>
+                                </div>
+                                <div class="post-info">
+                                    <span class="fs-10">작성자 2024-06-23</span>
+                                    <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
+                                </div>
+                            </div>
+                            <div class="post">
+                                <div class="post-title">
+                                    <span class="fs-14__b">게시글입니다 test 1234</span>
+                                </div>
+                                <div class="post-info">
+                                    <span class="fs-10">작성자 2024-06-23</span>
+                                    <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
+                                </div>
+                            </div>
+                            <div class="post">
+                                <div class="post-title">
+                                    <span class="fs-14__b">게시글입니다 test 1234</span>
+                                </div>
+                                <div class="post-info">
+                                    <span class="fs-10">작성자 2024-06-23</span>
+                                    <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
+                                </div>
+                            </div>
+                            
+                        </div>
+        
+                        <!-- 응원 게시판 -->
+                        <div class="board mg-right">
+                            <p class="title fs-20__b fc__blue">응원 게시판<p>
+                            <div class="post">
+                                <div class="post-title">
+                                    <span class="fs-12 fc__gray">[ 다저스 ]</span>
+                                    <span class="fs-14__b">게시글입니다 test 1234</span>
+                                </div>
+                                <div class="post-info">
+                                    <span class="fs-10">작성자 2024-06-23</span>
+                                    <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
+                                </div>
+                            </div>
+                            <div class="post">
+                                <div class="post-title">
+                                    <span class="fs-12 fc__gray">[ 해머스 ]</span>
+                                    <span class="fs-14__b">게시글입니다 test 1234</span>
+                                </div>
+                                <div class="post-info">
+                                    <span class="fs-10">작성자 2024-06-23</span>
+                                    <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
+                                </div>
+                            </div>
+                            <div class="post">
+                                <div class="post-title">
+                                    <span class="fs-12 fc__gray">[ 다저스 ]</span>
+                                    <span class="fs-14__b">게시글입니다 test 1234</span>
+                                </div>
+                                <div class="post-info">
+                                    <span class="fs-10">작성자 2024-06-23</span>
+                                    <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
+                                </div>
+                            </div>
+                            <div class="post">
+                                <div class="post-title">
+                                    <span class="fs-12 fc__gray">[ 해머스 ]</span>
+                                    <span class="fs-14__b">게시글입니다 test 1234</span>
+                                </div>
+                                <div class="post-info">
+                                    <span class="fs-10">작성자 2024-06-23</span>
+                                    <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

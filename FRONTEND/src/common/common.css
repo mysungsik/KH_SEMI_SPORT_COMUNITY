@@ -190,6 +190,9 @@ ul{
 .mr-4{
     margin-right: 4px !important;
 }
+.mb-4{
+    margin-bottom: 4px !important;
+}
 .m-6{
     margin: 6px !important;
 }
@@ -201,6 +204,9 @@ ul{
 }
 .mr-6{
     margin-right: 6px !important;
+}
+.mb-6{
+    margin-bottom: 6px !important;
 }
 .m-8{
     margin: 8px !important;
@@ -214,6 +220,9 @@ ul{
 .mr-8{
     margin-right: 8px !important;
 }
+.mb-8{
+    margin-bottom: 8px !important;
+}
 .m-10{
     margin: 10px !important;
 }
@@ -226,11 +235,17 @@ ul{
 .mr-10{
     margin-right: 10px !important;
 }
+.mb-10{
+    margin-bottom: 10px !important;
+}
 .m-12{
     margin: 12px !important;
 }
 .mt-12{
     margin-top: 12px !important;
+}
+.mb-12{
+    margin-bottom: 12px !important;
 }
 .m-14{
     margin: 14px !important;
@@ -238,17 +253,26 @@ ul{
 .mt-14{
     margin-top: 14px !important;
 }
+.mb-14{
+    margin-bottom: 14px !important;
+}
 .m-16{
     margin: 16px !important;
 }
 .mt-16{
     margin-top: 16px !important;
 }
+.mb-16{
+    margin-bottom: 16px !important;
+}
 .m-20{
     margin: 20px !important;
 }
 .mt-20{
     margin-top: 20px !important;
+}
+.mb-20{
+    margin-bottom: 20px !important;
 }
 
 .br-5{
@@ -484,7 +508,7 @@ ul{
 .hr__gray{
     border: none;
     border-bottom: 1px solid #727272c4;
-    margin: 20px;
+    margin: 0 15px;
 }
 
 /* ELEMENTS - Button */

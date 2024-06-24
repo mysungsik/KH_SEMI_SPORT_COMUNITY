@@ -299,6 +299,18 @@
     flex-direction: column;
 }
 
+.hightlight-clip .content-all{
+    text-align: right;
+    margin-right: 20px;
+    position: absolute;
+    right: 0;
+    top: 25px;
+}
+
+.hightlight-clip .text-hover__blue{
+    font-weight: 600;
+}
+
 .hightlight-clip .card-thumbnail{
     width: 180px;
     height: 180px;
@@ -313,5 +325,39 @@
     height: 40%;
 }
 
+/* 컨테이너 하단 커뮤니티 */
+/* 메인 바텀 ( */
+
+.community{
+    flex-direction: column;
+    position: relative;
+}
+
+.community .content-all{
+    text-align: right;
+    margin-right: 20px;
+    position: absolute;
+    right: 0;
+    top: 25px;
+}
+
+.community .text-hover__blue{
+    font-weight: 600;
+}
+
+.community .main-bot{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.community .main-bot .board{
+    width: 40%;
+}
+
+.post{
+    margin: 5px;
+}
 /* ---- */
 /* ---- */
