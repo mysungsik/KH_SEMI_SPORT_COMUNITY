@@ -799,12 +799,12 @@ header .header-top-user .user-image{
 }
 
 header .header-top-user .user-name{
-    width: 200px;
     height: 100%;
-    padding: 10px;
     display: flex;
     align-items: center;
-    margin-right: 10px;
+    margin: 0 20px;
+    justify-content: end;
+
 }
 
 .header-top-user .user-name p{
