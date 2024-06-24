@@ -59,6 +59,12 @@ ul{
     font-size: 20px !important;
     font-weight: 600 !important;
 }
+
+.fs-20__ex{
+    font-size: 20px !important;
+    font-weight: 800 !important;
+}
+
 .fs-28__b{
     font-size: 28px !important;
     font-weight: 600 !important;
@@ -717,6 +723,44 @@ header .header-top .header-top-user{
     align-items: center;
     height: 50px;
 }
+
+/* 헤더 드롭다운 START ---------*/
+.header-top .header-top-user .dropdown-menu{
+    transform: translate(-250px, 52.5px) !important;
+    inset: 0px auto auto 0px !important;
+    width: 430px;
+    height: 500px;
+}
+
+.header-top .header-top-user .dropdown-menu .header-title{
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+.header-top .header-top-user .dropdown-menu > li{
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.header-top .header-top-user .dropdown-menu li:first-of-type{
+    justify-content: space-between;
+    padding: 0 20px;
+    margin: 0;
+    margin-top: 15px;
+    align-items: center;
+}
+
+.header-top .header-top-user .dropdown-menu li:first-of-type:hover{
+    cursor: default;
+    background:none;
+}
+
+.dropdown-menu li:first-of-type > div{
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+}
+/* 헤더 드롭다운 END ---------*/
 
 header .header-top-user .user-image{
     width: 40px;
