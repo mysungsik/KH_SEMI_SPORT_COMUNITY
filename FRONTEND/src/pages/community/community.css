@@ -1,20 +1,19 @@
 *{box-sizing: border-box;}
 
-/* *{border: 1px solid black;}    */
-
 
 .container{
     width: 1024px;
-    height: 1000px;
+    height: 1100px;
 }
 
 section{
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 /* main-top(인기 게시글) */
 .main-top{
     height: 200px;
+    width: 100%;
 }
 
 .title{
@@ -86,6 +85,12 @@ main hr{
 
 
 /* 전체 */
+
+
+.board-title>hr{
+    width: 500px;
+}
+
 .mg-left{
     margin-left: 70px;
 }
@@ -101,6 +106,8 @@ main hr{
 
 
 /* 베스트 댓글 */
+
+
 .right-title{
     height: 50px;
     display: flex;
@@ -116,35 +123,51 @@ main hr{
 
 .best{
     height: 300px;
-    margin-right: 70px;
+    margin-right: 0;
 }
 
 .best .post{
     display: flex;
+    justify-content: space-between;
 }
 
 .rank{
-    flex-basis: 15%;
+    flex-basis: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 10px;
+}
+
+.best-img{
+    flex-basis: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: left
+}
+
+.best-img img{
+    width: auto;
+    height: 60%;
+    border-radius: 50%;
 }
 
 .best-content-area{
-    flex-basis: 55%;
+    flex-basis: 60%;
 }
 
-.best-content{
+.best-info{
     height: 50%;
     display: flex;
-    align-items: center;
+    align-items: end;
 }
 
+
 .best-like{
-    flex-basis: 30%;
+    flex-basis: 20%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left
 }
 
 
@@ -152,14 +175,27 @@ main hr{
 /* 공지사항 */
 .info{
     height: 50px;
+    width: 100%;
     display: flex;
-    align-items: center;
+    gap: 10px;
 }
 
 .info-title{
-    margin-left: 250px;
-    margin-right: 10px;
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
 }
+
+.info-content{
+    flex-basis: 50%;
+    align-items: center;
+}
+
+/* *{
+    border: 1px solid black;
+} */
+
 
 /* 메인 바텀 ( */
 .main-bot{
@@ -168,6 +204,7 @@ main hr{
     gap: 80px;
 }
 
+
 .main-bot article{
     flex-basis: 50%;
 }
@@ -175,4 +212,5 @@ main hr{
 .mg-right{
     margin-right: 70px;
 }
+
 
