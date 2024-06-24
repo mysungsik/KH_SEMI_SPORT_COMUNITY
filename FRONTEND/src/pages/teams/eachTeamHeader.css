@@ -1,0 +1,119 @@
+*{box-sizing: border-box;}
+
+/**{border: 1px solid black;}*/   
+/* 헤더 */
+/* Header ------------------------------------------------------------------------- */
+eachTeamHeader {
+    height: 140px;
+    position: relative;
+}
+
+
+eachTeamHeader .header-top{
+    height: 80px;
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+eachTeamHeader .header-top .header-top-logo{
+    height: 100%;
+}
+
+
+eachTeamHeader .header-top .header-top-user{
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+/* 헤더 드롭다운 START ---------*/
+.header-top .header-top-user .dropdown-menu{
+    transform: translate(-250px, 52.5px) !important;
+    inset: 0px auto auto 0px !important;
+    width: 430px;
+    height: 500px;
+    border-radius: 15px;
+}
+
+.header-top .header-top-user .dropdown-menu .header-title{
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+.header-top .header-top-user .dropdown-menu > li{
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.header-top .header-top-user .dropdown-menu li:hover{
+    cursor: default;
+    background:none;
+}
+
+.header-top .header-top-user .dropdown-menu li:first-of-type{
+    justify-content: space-between;
+    padding: 0 20px;
+    margin: 0;
+    margin-top: 15px;
+    align-items: center;
+}
+
+.dropdown-menu li:first-of-type > div{
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+}
+/* 헤더 드롭다운 END ---------*/
+
+eachTeamHeader .header-top-user .user-image{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+eachTeamHeader .header-top-user .user-name{
+    width: 200px;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.header-top-user .user-name p{
+    padding: 5px;
+}
+
+eachTeamHeader .header-bot{
+    height: 140px;
+}
+
+eachTeamHeader .header-bot .header-nav{
+    height: 140px;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.header-bot .header-nav .d-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 0;
+}
+
+.header-bot .header-nav .d-flex a{
+    margin: 0 20px;
+    text-decoration: none;
+    
+}
+
+eachTeamHeader .header-bot .header-nav .header-bot-logo{
+    width: 140px;
+    height: 140px;
+}
+
+eachTeamHeader .header-bot .header-nav .header-bot-logo img{
+    width: 100%;
+}
