@@ -97,16 +97,6 @@
     font-weight: bold;
 }
 
-.details-button {
-    background-color: #003366;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    width: 150px;
-    height: 35px;
-    cursor: pointer;
-}
 
 .result-section h2,
 .game-records h2,
