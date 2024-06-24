@@ -1,0 +1,77 @@
+.eastRanking,
+.midRanking,
+.westRanking,
+.wildCard{
+    width: 100%;
+    text-align: center;
+}
+
+.eastRanking th,
+.midRanking th,
+.westRanking th,
+.wildCard th{
+    background-color: #00509e;
+    color: #fff;
+    font-weight: bold;
+}
+
+.game-records{
+    display: flex;
+    flex-direction: column;
+}
+
+.regionName{
+    width: 100px;
+}
+
+.teamName{
+    width: 200px;
+}
+.matchCount{
+    width: 80px;
+}
+
+.matchWin,
+.matchLose{
+    width: 40px;
+}
+.winRate{
+    width: 80px;
+}
+.gameBehind{
+    width: 80px;
+}
+.consequence{
+    width: 40px;
+}
+.battingAverage{
+    width: 80px;
+}
+.ERA{
+    width: 60px;
+}
+.recentMatch{
+    width: 100px;
+}
+.recordTab{
+
+    display: flex;
+    background-color: #00509e;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.nationalLeague{
+    width: 50%;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid white;
+}
+.americanLeague{
+    width: 50%;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    border:1px solid white
+}
