@@ -1,0 +1,58 @@
+/* 유틸 */
+*{box-sizing: border-box;}
+
+/* *{border: 1px solid black;}    */
+
+
+/* container */
+.container{
+    width: 1024px;
+}
+
+section{
+    margin: 30px 0;
+}
+
+
+/* 헤더 */
+.intro-title-desc img{
+    align-items: center;
+}
+
+/* 메인 */
+
+.teams-card{
+    width: 180px;
+    background-color: #D2D2D2;
+}
+
+.teams-card:hover{
+    background-color: #458BE2;
+    transition: all ease-in-out 0.1s;
+    box-shadow: 2px 2px 5px rgba(69, 69, 69, 0.486);
+}
+
+.teams-logo{
+    width: 70px;
+    padding-left: 10px;
+}
+
+.teams-name{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 5px;
+}
+
+
+.teams-name > img{
+    width: 14px;
+}
+
+.al-east-icons{
+    width: 994px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
