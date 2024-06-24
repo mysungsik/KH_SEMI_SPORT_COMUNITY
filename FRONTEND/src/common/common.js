@@ -55,6 +55,7 @@ $(document).ready(function () {
                 </div>
             </div>
         `);
+
     // 로그인 안했을 경우
     } else{
         $("header").append(`
@@ -62,10 +63,10 @@ $(document).ready(function () {
                 <div class="header-top-logo">
                     <img class="logo" src='/FRONTEND/public/images/mlb_logo.png'>
                 </div>
-                <div class="header-top-user box-hover">
+                <div class="header-top-user box-hover" onclick="location.href = '/FRONTEND/src/pages/login/login.html'">
                     <img class="user-image" src='/FRONTEND/public/icons/plus.png'>
                     <div class="user-name">
-                        <a href="/FRONTEND/src/pages/login/login.html" class="text-hover__gray fc__gray fs-14__b">로그인후 이용해주세요</a>
+                        <a class="text-hover__gray fc__gray fs-14__b">로그인후 이용해주세요</a>
                     </div>
                 </div>
             </div>

@@ -20,6 +20,7 @@ body, a, ul, li, p {
 
 a{
     text-decoration: none;
+    color: inherit;
 }
 
 ul{
@@ -730,6 +731,7 @@ header .header-top .header-top-user{
     inset: 0px auto auto 0px !important;
     width: 430px;
     height: 500px;
+    border-radius: 15px;
 }
 
 .header-top .header-top-user .dropdown-menu .header-title{
@@ -741,6 +743,10 @@ header .header-top .header-top-user{
     margin-left: 30px;
     margin-top: 10px;
 }
+.header-top .header-top-user .dropdown-menu li:hover{
+    cursor: default;
+    background:none;
+}
 
 .header-top .header-top-user .dropdown-menu li:first-of-type{
     justify-content: space-between;
@@ -748,11 +754,6 @@ header .header-top .header-top-user{
     margin: 0;
     margin-top: 15px;
     align-items: center;
-}
-
-.header-top .header-top-user .dropdown-menu li:first-of-type:hover{
-    cursor: default;
-    background:none;
 }
 
 .dropdown-menu li:first-of-type > div{
