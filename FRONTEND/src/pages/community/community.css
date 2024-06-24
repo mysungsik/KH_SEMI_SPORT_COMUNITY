@@ -1,5 +1,8 @@
 *{box-sizing: border-box;}
 
+body{
+    position: relative;
+}
 
 .container{
     width: 1024px;
@@ -80,6 +83,7 @@ main hr{
 
 .main-mid article{
     flex-basis: 50%;
+    position: absolute;
 }
 
 
@@ -107,7 +111,60 @@ main hr{
 
 /* 베스트 댓글 */
 
+.best{
+    margin-left: 650px;
+    width: 350px;
+    height: 300px;
+}
 
+.best-title{
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.best-post{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.rank{
+    flex-basis: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.best-img{
+    flex-basis: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.best-img img{
+    height: 30px;
+    width: auto;
+    border-radius: 50%;
+}
+
+.best-content-area{
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.best-like{
+    flex-basis: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 
 .right-title{
     height: 50px;
     display: flex;
@@ -121,9 +178,11 @@ main hr{
     align-items: center;
 }
 
+*{border:1px solid black;}
+
 .best{
     height: 300px;
-    margin-right: 0;
+   flex-basis: 50%; 
 }
 
 .best .post{
@@ -132,18 +191,17 @@ main hr{
 }
 
 .rank{
-    flex-basis: 5%;
+    flex-basis: 10%;
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
-    margin-left: 10px;
 }
 
 .best-img{
-    flex-basis: 10%;
+    flex-basis: 15%;
     display: flex;
     align-items: center;
-    justify-content: left
+    justify-content: center;
 }
 
 .best-img img{
@@ -153,7 +211,7 @@ main hr{
 }
 
 .best-content-area{
-    flex-basis: 60%;
+    flex-basis: 55%;
 }
 
 .best-info{
@@ -164,11 +222,11 @@ main hr{
 
 
 .best-like{
-    flex-basis: 20%;
+    flex-basis: 25%;
     display: flex;
     align-items: center;
     justify-content: left
-}
+} */
 
 
 
@@ -213,4 +271,13 @@ main hr{
     margin-right: 70px;
 }
 
+.post:hover{
+    background-color: #F4F6FD;
+    transition: 0.3s;
+}
+
+.popular-post:hover{
+    text-decoration: underline;
+    font-weight: bolder;
+}
 
