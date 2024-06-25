@@ -75,3 +75,44 @@
     text-align: center;
     border:1px solid white
 }
+.recordTab{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.nationalLeague,
+.americanLeague{
+    border: none;
+    
+}
+.teamRankingTop{
+    border-radius: 15px 15px 0px 0px;
+    background-color: antiquewhite;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+.americanLeague{
+    background-color: antiquewhite;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-weight: bold;
+}
+.nationalLeague{
+    background-color: #00509e;
+    color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
