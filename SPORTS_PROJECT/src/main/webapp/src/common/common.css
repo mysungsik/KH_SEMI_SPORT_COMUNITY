@@ -822,8 +822,10 @@ header .header-bot .header-nav{
     margin: 0 auto;
 }
 
-.header-bot .header-nav .d-flex{
-    margin-left: 100px;
+.header-bot .header-nav ul{
+	align-items:center;
+	margin-left: 100px;
+	height: 100%;
 }
 
 .header-bot .header-nav .d-flex a{

@@ -29,10 +29,9 @@
 <script src="/SPORTS_PROJECT/src/common/common.js" defer></script>
 </head>
 <body>
-	<c:set var="login" value="false" />
+	<c:set var="login" value="true" />
 	<header>
 	<c:if test="${login}">
-		
 			<div class="header-top">
 		        <div class="header-top-logo">
 		            <img class="logo" src='/SPORTS_PROJECT/public/images/mlb_logo.png'>
@@ -53,8 +52,10 @@
 		                        <a class="text-hover__blue" href="/SPORTS_PROJECT/src/pages/news/news.jsp"> 뉴스 </a>
 		                    </div>
 		                </li>
-		                <hr class="hr__gray">
-		                <p class="header-title fc__gray fs-20__b"> 컨텐츠</p>
+		           
+	                	<hr class="hr__gray">
+	                	<p class="header-title fc__gray fs-20__b"> 컨텐츠</p>
+		          
 		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="/SPORTS_PROJECT/src/pages/personal/myInfo.jsp">내 댓글</a></li>
 		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="/SPORTS_PROJECT/src/pages/personal/myInfo.jsp">내 게시글</a></li>
 		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="/SPORTS_PROJECT/src/pages/personal/myInfo.jsp">내 스크랩</a></li>
@@ -69,11 +70,21 @@
 		    <div class="header-bot">
 		        <div class="header-nav">
 		            <ul class="d-flex">
-		                <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/src/pages/dashboard/dashboard.jsp">HOME</a>
-		                <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/src/pages/news/news.jsp">TODAY</a>
-		                <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/src/pages/news/news.jsp">NEWS</a>
-		                <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/src/pages/community/community.jsp">COMMUNITY</a>
-		                <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/src/pages/teams/teams.jsp">TEAMS</a>
+		            	<li>
+			                <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/src/pages/dashboard/dashboard.jsp">HOME</a>
+		            	</li>
+		            	<li>
+			                <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/src/pages/news/news.jsp">TODAY</a>
+		            	</li>
+		            	<li>
+			                <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/src/pages/news/news.jsp">NEWS</a>
+		            	</li>
+		            	<li>
+			                <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/src/pages/community/community.jsp">COMMUNITY</a>
+		            	</li>
+		            	<li>
+			                <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/src/pages/teams/teams.jsp">TEAMS</a>
+		            	</li>
 		            </ul>
 		        </div>
 		    </div>
