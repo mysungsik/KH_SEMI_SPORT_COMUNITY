@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="./teams.css">
     <script src="./teams.js" defer></script>
-    <title>MLB Dashboard</title>
+    <title>MLB Teams</title>
 </head>
 <body>
     <jsp:include page="/src/common/layouts/header.jsp"/>
