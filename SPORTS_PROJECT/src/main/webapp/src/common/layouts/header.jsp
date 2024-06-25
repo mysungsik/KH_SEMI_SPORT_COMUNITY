@@ -49,18 +49,18 @@
 		                        <p class="fs-20__ex"> 기아 타이거즈 </p>
 		                    </div>
 		                    <div class="d-flex">
-		                        <a class="text-hover__blue" href="/SPORTS_PROJECT/src/pages/teams/teams.html"> 팀페이지 </a>
-		                        <a class="text-hover__blue" href="/SPORTS_PROJECT/src/pages/news/news.html"> 뉴스 </a>
+		                        <a class="text-hover__blue" href="/SPORTS_PROJECT/src/pages/teams/teams.jsp"> 팀페이지 </a>
+		                        <a class="text-hover__blue" href="/SPORTS_PROJECT/src/pages/news/news.jsp"> 뉴스 </a>
 		                    </div>
 		                </li>
 		                <hr class="hr__gray">
 		                <p class="header-title fc__gray fs-20__b"> 컨텐츠</p>
-		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="/SPORTS_PROJECT/src/pages/personal/myInfo.html">내 댓글</a></li>
-		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="/SPORTS_PROJECT/src/pages/personal/myInfo.html">내 게시글</a></li>
-		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="/SPORTS_PROJECT/src/pages/personal/myInfo.html">내 스크랩</a></li>
+		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="/SPORTS_PROJECT/src/pages/personal/myInfo.jsp">내 댓글</a></li>
+		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="/SPORTS_PROJECT/src/pages/personal/myInfo.jsp">내 게시글</a></li>
+		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="/SPORTS_PROJECT/src/pages/personal/myInfo.jsp">내 스크랩</a></li>
 		                
 		                <p class="header-title fc__gray fs-20__b"> 개인 정보 </p>
-		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="/SPORTS_PROJECT/src/pages/personal/myInfo.html">내 정보 관리</a></li>
+		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="/SPORTS_PROJECT/src/pages/personal/myInfo.jsp">내 정보 관리</a></li>
 		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="#">회원 탈퇴</a></li>
 		
 		            </ul>
@@ -69,11 +69,11 @@
 		    <div class="header-bot">
 		        <div class="header-nav">
 		            <ul class="d-flex">
-		                <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/src/pages/dashboard/dashboard.html">HOME</a>
-		                <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/src/pages/news/news.html">TODAY</a>
-		                <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/src/pages/news/news.html">NEWS</a>
-		                <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/src/pages/community/community.html">COMMUNITY</a>
-		                <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/src/pages/teams/teams.html">TEAMS</a>
+		                <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/src/pages/dashboard/dashboard.jsp">HOME</a>
+		                <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/src/pages/news/news.jsp">TODAY</a>
+		                <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/src/pages/news/news.jsp">NEWS</a>
+		                <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/src/pages/community/community.jsp">COMMUNITY</a>
+		                <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/src/pages/teams/teams.jsp">TEAMS</a>
 		            </ul>
 		        </div>
 		    </div>
@@ -84,7 +84,7 @@
                 <div class="header-top-logo">
                     <img class="logo" src='/SPORTS_PROJECT/public/images/mlb_logo.png'>
                 </div>
-                <div class="header-top-user box-hover" onclick="location.href = '/SPORTS_PROJECT/src/pages/login/login.html'">
+                <div class="header-top-user box-hover" onclick="location.href = '/SPORTS_PROJECT/src/pages/login/login.jsp'">
                     <img class="user-image" src='/SPORTS_PROJECT/public/icons/plus.png'>
                     <div class="user-name">
                         <a class="text-hover__gray fc__gray fs-14__b">로그인후 이용해주세요</a>
@@ -94,11 +94,11 @@
             <div class="header-bot">
                 <div class="header-nav">
                     <ul class="d-flex">
-                        <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/src/pages/dashboard/dashboard.html">HOME</a>
-                        <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/src/pages/news/news.html">TODAY</a>
-                        <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/src/pages/news/news.html">NEWS</a>
-                        <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/src/pages/community/community.html">COMMUNITY</a>
-                        <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/src/pages/teams/teams.html">TEAMS</a>
+                        <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/src/pages/dashboard/dashboard.jsp">HOME</a>
+                        <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/src/pages/news/news.jsp">TODAY</a>
+                        <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/src/pages/news/news.jsp">NEWS</a>
+                        <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/src/pages/community/community.jsp">COMMUNITY</a>
+                        <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/src/pages/teams/teams.jsp">TEAMS</a>
                     </ul>
                 </div>
             </div>

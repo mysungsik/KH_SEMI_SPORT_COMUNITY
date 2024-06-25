@@ -23,8 +23,8 @@ $(document).ready(function () {
                                 <p class="fs-20__ex"> 기아 타이거즈 </p>
                             </div>
                             <div class="d-flex">
-                                <a class="text-hover__blue" href="/SPORTS_PROJECT/src/pages/teams/teams.html"> 팀페이지 </a>
-                                <a class="text-hover__blue" href="/SPORTS_PROJECT/src/pages/news/news.html"> 뉴스 </a>
+                                <a class="text-hover__blue" href="/SPORTS_PROJECT/src/pages/teams/teams.jsp"> 팀페이지 </a>
+                                <a class="text-hover__blue" href="/SPORTS_PROJECT/src/pages/news/news.jsp"> 뉴스 </a>
                             </div>
                         </li>
                         <hr class="hr__gray">
@@ -45,7 +45,7 @@ $(document).ready(function () {
                     <ul class="d-flex">
                         <a class="fs-20__b text-hover__blue" href="#">BLUE JAYS</a>
                         <a class="fs-20__b  text-hover__blue" href="#">PLAYERS</a>
-                        <a class="header-bot-logo" href="./eachTeamMain.html">
+                        <a class="header-bot-logo" href="./eachTeamMain.jsp">
                             <img class="logo" src='/SPORTS_PROJECT/public/images/teams/FL.png'>
                         </a>
                         <a class="fs-20__b text-hover__blue" href="#">SCHEDULE</a>
@@ -60,7 +60,7 @@ $(document).ready(function () {
         $("header").append(`
             <div class="header-top">
                 
-                <div class="header-top-user box-hover" onclick="location.href = '/SPORTS_PROJECT/src/pages/login/login.html'">
+                <div class="header-top-user box-hover" onclick="location.href = '/SPORTS_PROJECT/src/pages/login/login.jsp'">
                     <img class="user-image" src='/SPORTS_PROJECT/public/icons/plus.png'>
                     <div class="user-name">
                         <a class="text-hover__gray fc__gray fs-14__b">로그인후 이용해주세요</a>
