@@ -6,7 +6,26 @@
 
 /** HEADER & FOOTER */
 $(document).ready(function () {
+
 });
+
+// 로그아웃 메서드
+function logout(){
+	let URL = "/SPORTS_PROJECT/controller/login"
+	$.ajax({
+        type: "DELETE",        // 데이터 전송 타입
+        url : URL,          // 데이터를 주고받을 파일 주소 입력
+        data: "",           // 보내는 데이터
+        async : false,
+        success: function(){
+          	console.log("Succeed to Logout")
+          	location.href = "/SPORTS_PROJECT/src/pages/login/login.jsp"
+        },
+        error:function(){  
+            console.log("Failed to Logout")
+        }
+   })
+}
 
 // 비밀번호 보기 이벤트
 $(".password-eye").on("mousedown", function(){

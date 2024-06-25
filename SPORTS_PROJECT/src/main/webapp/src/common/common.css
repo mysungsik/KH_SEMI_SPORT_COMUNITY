@@ -790,6 +790,11 @@ header .header-top .header-top-user{
     gap: 10px;
     z-index: 1000;
 }
+
+.dropdown-menu .logout{
+	text-align: right;
+	
+}
 /* 헤더 드롭다운 END ---------*/
 
 header .header-top-user .user-image{

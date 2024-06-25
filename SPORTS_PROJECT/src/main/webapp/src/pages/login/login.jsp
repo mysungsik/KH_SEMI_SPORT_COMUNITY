@@ -14,7 +14,7 @@
         <section class="container">
             <p class="header-text"> 로그인 </p>
             <hr class="hr__gray">
-            <form name="login-form" class="login-form base__lblue br-15 box-shadow" action="../dashboard/dashboard.jsp">
+            <form name="login-form" class="login-form base__lblue br-15 box-shadow" action="/SPORTS_PROJECT/controller/login" method="post">
                 <div class="login-essential mt-20">
                     <div>
                         <input class="box-shadow" type="text" name="login_id" placeholder="ID">
@@ -38,7 +38,6 @@
                         |<a class="fc__gray text-hover__gray" href="/SPORTS_PROJECT/src/pages/signup/signupTerms.jsp">회원가입</a>
                     </div>
                     <img src="/SPORTS_PROJECT/public/images/mlb_logo2.jpg">
-                    
                 </div>
             </form>
         </section>
