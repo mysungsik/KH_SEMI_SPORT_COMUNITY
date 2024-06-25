@@ -4,8 +4,9 @@
  * Connect.js
  */
 
+/** HEADER & FOOTER */
 $(document).ready(function () {
-    let login = false;
+    let login = true;
 
     // 로그인 했을 경우
     if (login){
@@ -32,12 +33,12 @@ $(document).ready(function () {
                         </li>
                         <hr class="hr__gray">
                         <p class="header-title fc__gray fs-20__b"> 컨텐츠</p>
-                        <li><a class="dropdown-item fs-20__b text-hover__blue" href="#">내 댓글</a></li>
-                        <li><a class="dropdown-item fs-20__b text-hover__blue" href="#">내 게시글</a></li>
-                        <li><a class="dropdown-item fs-20__b text-hover__blue" href="#">내 스크랩</a></li>
+                        <li><a class="dropdown-item fs-20__b text-hover__blue" href="/FRONTEND/src/pages/personal/myInfo.html">내 댓글</a></li>
+                        <li><a class="dropdown-item fs-20__b text-hover__blue" href="/FRONTEND/src/pages/personal/myInfo.html">내 게시글</a></li>
+                        <li><a class="dropdown-item fs-20__b text-hover__blue" href="/FRONTEND/src/pages/personal/myInfo.html">내 스크랩</a></li>
                         
                         <p class="header-title fc__gray fs-20__b"> 개인 정보 </p>
-                        <li><a class="dropdown-item fs-20__b text-hover__blue" href="#">내 정보 관리</a></li>
+                        <li><a class="dropdown-item fs-20__b text-hover__blue" href="/FRONTEND/src/pages/personal/myInfo.html">내 정보 관리</a></li>
                         <li><a class="dropdown-item fs-20__b text-hover__blue" href="#">회원 탈퇴</a></li>
 
                     </ul>
@@ -116,3 +117,26 @@ $(document).ready(function () {
         </div>
     `);
 });
+
+// 비밀번호 보기 이벤트
+$(".password-eye").on("mousedown", function(){
+    $("input[name*='-password']").prop("type", "text");
+    $(this).prop("src","/FRONTEND/public/icons/eye.png" )
+})
+$(".password-eye").on("mouseout", function(){
+    $(this).prop("src","/FRONTEND/public/icons/eye-closed.png" )
+})
+$(".password-eye").on("mouseup", function(){
+    $("input[name*='-password']").prop("type", "password");
+    $(this).prop("src","/FRONTEND/public/icons/eye-closed.png" )
+})
+
+
+// 체크박스 전체선택
+let chekcboxes = $("input[type='checkbox']")
+let allCheck = $("#check-all")
+allCheck.on("click", ()=>{
+    if(allCheck.prop("checked") == true){
+        $(chekcboxes).prop("checked", true);
+    }
+})
