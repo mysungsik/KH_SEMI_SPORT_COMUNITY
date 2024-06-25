@@ -1,0 +1,363 @@
+/* 메인 컨테이너 */
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(1024px - 60px);
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+/* 종합 */
+.content-header{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 컨테이너 상단 */
+.container .container-top{
+    display: flex;
+    gap: 30px;
+}
+
+/* 컨테이너 상단 좌측 */
+.container .container-top .current-events{
+    width: 450px;
+    height: 440px;
+    margin-bottom: 30px;
+    flex-direction: column;
+}
+
+.container-top .current-events .events-date-div{
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+}
+
+#dateDisplay{
+    width: 85px;
+    text-align: center;
+}
+
+
+.container-top .current-events .current-events-score{
+    width: 410px;
+    height: 338px;
+    margin: auto;
+    
+}
+
+/* 컨테이너 상단 좌측 , 스코어 li ---- START ---- */
+.current-events-score ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start !important;
+    height: 320px;
+    padding: 0;
+    margin: 0 1px;
+    margin-top: 5px;
+    left: -1.5px;
+
+    overflow: hidden;
+    border-radius: 15px;
+}
+.current-events-score ul li{
+    width: 100%;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(139, 139, 139, 0.24);
+    margin: 0;
+    padding: 3px 25px;
+    padding-bottom: 6px;
+    border-radius: 5px;
+    display: flex;
+}
+
+.right-win {
+    background: linear-gradient(
+        90deg, 
+        rgba(243, 86, 86, 0.2), 
+        white, 
+        rgba(120, 233, 110, 0.2));
+}
+.left-win{
+    background: linear-gradient(
+        270deg, 
+        rgba(243, 86, 86, 0.2), 
+        white, 
+        rgba(120, 233, 110, 0.2));
+}
+
+.score-left-symbol, .score-right-symbol{
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+}
+.score-left-team, .score-right-team{
+    width: 90px;
+    text-align: center;
+}
+.score-left-score, .score-right-score{
+    width: 20px;
+    text-align: center;
+}
+
+.score-inning{
+    width: 54px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0 13px;
+}
+
+.score-inning-down{
+    border-top: 12px solid #f35656;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+}
+.score-inning-up{
+    border-bottom: 12px solid #78e96e;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+}
+
+/* 스코어 스와이퍼 */
+.current-events .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.current-events .arrows{
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 30px;
+}
+
+/* 컨테이너 하단 커뮤니티 */
+.container .container-bot .community{
+    width: 100%;
+    height: 280px;
+    margin-bottom: 30px;
+}
+
+/* 스코어 li ---- END ---- */
+
+/* 컨테이너 상단 좌하 메인뉴스 */
+
+.main-news-content .card-thumbnail{
+    width: 130px;
+    height: 160px;
+}
+.container .container-top .main-news{
+    width: 450px;
+    height: 390px;
+    margin-bottom: 30px;
+    flex-direction: column;
+}
+
+.container-top .main-news .main-news-content{
+    width: 430px;
+    height: 310px;
+    margin: auto;
+    flex-direction: column;
+}
+
+.main-news-content .news-content-top{
+    display: flex;
+    width: 420px;
+    justify-content: space-between;
+    height: 50%;
+    margin: 3px;
+    margin-bottom: 10px;
+}
+
+.main-news-content .news-content-bottom{
+    width: 100%;
+    height: 50%;
+    padding: 0 10px;
+}
+.main-news-content .news-content-bottom:hover{
+    cursor: pointer;
+}
+.main-news-content .news-content-bottom > .new-headline{
+    padding: 4px 0;
+    justify-content: space-between;
+}
+
+.main-news-content .news-content-bottom p{
+    width: 360px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical
+}
+
+.main-news-content .news-content-bottom p:hover{
+    font-weight: 600;
+    transition: all ease-in-out 0.1s;
+}
+
+.main-news-content .news-content-bottom span{
+    width: 60px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical
+}
+
+/* 컨테이너 상단 우측 */
+
+.container-top .container-right{
+    width: 480px;
+    height: 860px;
+}
+
+.container-top .container-right .score-board{
+    width: 100%;
+}
+
+/* 컨테이너 상단 우측 스코어보드 START -------- */
+.container-right .score-board .score-board-score{
+    width: 440px;
+    height: 780px;
+    margin: 0 auto;
+}
+
+.score-board .score-board-score ul{
+    margin: 0 auto;
+    padding: 10px 25px;
+    width: 100%;
+}
+
+.score-board-score ul li{
+    height: 40px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(139, 139, 139, 0.24);
+    margin: 0 auto;
+    margin-bottom: 6px;
+}
+
+.score-board-score .score-board-infos{
+    width: 160px;
+    display: flex;
+    align-items: center;
+    
+}
+.score-board-score .score-board-infos .score-board-logo{
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    margin: 0 3px;
+}
+.score-board-score .score-board-team{
+    width: 120px;
+    text-align: center;
+}
+
+.score-board .score-board-score .score-board-symbol{
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    margin: 0 3px;
+}
+
+/* 컨테이너 상단 우측 스코어보드 END -------- */
+
+/* 컨테이너 하단 */
+.container .container-bot {
+    width: 960px;
+}
+
+
+/* 컨테이너 하단 하이라이트 클립 */
+.container .container-bot .hightlight-clip{
+    width: 100%;
+    height: 280px;
+    margin-bottom: 30px;
+    flex-direction: column;
+}
+
+.hightlight-clip .content-all{
+    text-align: right;
+    margin-right: 20px;
+    position: absolute;
+    right: 0;
+    top: 25px;
+}
+
+.hightlight-clip .text-hover__blue{
+    font-weight: 600;
+}
+
+.hightlight-clip .card-thumbnail{
+    width: 180px;
+    height: 180px;
+    margin: 0 15px;
+}
+
+.hightlight-clip .card-thumbnail .card-thumbnail-img{
+    height: 60%;
+}
+
+.hightlight-clip .card-thumbnail .card-thumbnail-infos{
+    height: 40%;
+}
+
+/* 컨테이너 하단 커뮤니티 */
+/* 메인 바텀 ( */
+
+.community{
+    flex-direction: column;
+    position: relative;
+}
+
+.community .content-all{
+    text-align: right;
+    margin-right: 20px;
+    position: absolute;
+    right: 0;
+    top: 25px;
+}
+
+.community .text-hover__blue{
+    font-weight: 600;
+}
+
+.community .main-bot{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.community .main-bot .board{
+    width: 40%;
+}
+
+.post{
+    margin: 5px;
+}
+/* ---- */
+/* ---- */

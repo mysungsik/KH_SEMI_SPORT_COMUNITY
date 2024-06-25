@@ -1,0 +1,99 @@
+/* 메인 컨테이너 */
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 650px;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* 컨텐츠 헤더 */
+.header-text{
+    font-size: 28px;
+    font-weight: 700;
+    width: 100%;
+    text-align: left;
+}
+
+.hr__gray{
+    width: 100%;
+}
+
+/* 로그인 - 전체 INPUT */
+.login-form{
+    margin-top: 20px;
+    margin-bottom: 40px;
+    width: 600px;
+    height: 560px;
+    padding: 20px;
+    text-align: center;
+}
+
+.login-form input{
+    width: 500px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 2px;
+    padding-left: 20px;
+    outline: none;
+}
+
+.login-form input:active, .login-form input:focus, .login-form input:hover{
+    outline: none;
+    border: none;
+    outline: 2px solid #458BE2;
+    box-shadow: 1px 1px 3px #458BE2;
+    transition: all ease-in-out 0.1s;
+}
+
+/* 로그인 - 정보입력 */
+.login-form .login-essential{
+    height: 110px;
+    text-align: center;
+} 
+
+.login-form .login-essential > div{
+    position: relative;
+}
+
+.login-essential .password-eye{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 45px;
+    top: 11px;
+}
+.login-essential .password-eye:hover{
+    cursor: pointer;
+}
+
+.btn-big__blue{
+    margin: 20px 0;
+}
+
+/* 로그인 BOTTOM */
+.term-check-div{
+    margin: 20px;
+    text-align: start;
+    display: flex;
+    align-items: center;
+}
+
+.login-sub a{
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.login-sub a:hover{
+    cursor: pointer;
+}
+
+.login-sub img{
+    width: 370px;
+    height: 170px;
+    margin: 30px 0;
+    border-radius: 15px;
+}
