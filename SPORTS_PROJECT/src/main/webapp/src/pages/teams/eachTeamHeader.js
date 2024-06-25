@@ -12,19 +12,19 @@ $(document).ready(function () {
         $("eachTeamHeader").append(`
             <div class="header-top">
                 <div class="header-top-user box-hover dropdown">
-                    <img class="user-image" src='/FRONTEND/public/images/user_img1.jpg'>
+                    <img class="user-image" src='/SPORTS_PROJECT/public/images/user_img1.jpg'>
                     <div class="user-name dropdown-toggle" type="button" data-bs-toggle="dropdown">
                         <a class="text-hover__blue fs-14__b">test_user1</a>
                     </div>
                     <ul class="dropdown-menu">
                         <li class="d-flex dropdown-item">
                             <div class="d-flex">
-                                <img class="user-image" src='/FRONTEND/public/images/teams/FL.png'>
+                                <img class="user-image" src='/SPORTS_PROJECT/public/images/teams/FL.png'>
                                 <p class="fs-20__ex"> 기아 타이거즈 </p>
                             </div>
                             <div class="d-flex">
-                                <a class="text-hover__blue" href="/FRONTEND/src/pages/teams/teams.html"> 팀페이지 </a>
-                                <a class="text-hover__blue" href="/FRONTEND/src/pages/news/news.html"> 뉴스 </a>
+                                <a class="text-hover__blue" href="/SPORTS_PROJECT/src/pages/teams/teams.html"> 팀페이지 </a>
+                                <a class="text-hover__blue" href="/SPORTS_PROJECT/src/pages/news/news.html"> 뉴스 </a>
                             </div>
                         </li>
                         <hr class="hr__gray">
@@ -46,7 +46,7 @@ $(document).ready(function () {
                         <a class="fs-20__b text-hover__blue" href="#">BLUE JAYS</a>
                         <a class="fs-20__b  text-hover__blue" href="#">PLAYERS</a>
                         <a class="header-bot-logo" href="./eachTeamMain.html">
-                            <img class="logo" src='/FRONTEND/public/images/teams/FL.png'>
+                            <img class="logo" src='/SPORTS_PROJECT/public/images/teams/FL.png'>
                         </a>
                         <a class="fs-20__b text-hover__blue" href="#">SCHEDULE</a>
                         <a class="fs-20__b text-hover__blue" href="#">CONTENTS</a>
@@ -60,8 +60,8 @@ $(document).ready(function () {
         $("header").append(`
             <div class="header-top">
                 
-                <div class="header-top-user box-hover" onclick="location.href = '/FRONTEND/src/pages/login/login.html'">
-                    <img class="user-image" src='/FRONTEND/public/icons/plus.png'>
+                <div class="header-top-user box-hover" onclick="location.href = '/SPORTS_PROJECT/src/pages/login/login.html'">
+                    <img class="user-image" src='/SPORTS_PROJECT/public/icons/plus.png'>
                     <div class="user-name">
                         <a class="text-hover__gray fc__gray fs-14__b">로그인후 이용해주세요</a>
                     </div>
@@ -73,7 +73,7 @@ $(document).ready(function () {
                         <a class="fs-20__b text-hover__blue" href="#">BLUE JAYS</a>
                         <a class="fs-20__b text-hover__blue" href="#">PLAYERS</a>
                         <a class="header-bot-logo">
-                            <img class="logo" src='/FRONTEND/public/images/mlb_logo.png'>
+                            <img class="logo" src='/SPORTS_PROJECT/public/images/mlb_logo.png'>
                         </a>
                         <a class="fs-20__b text-hover__blue" href="#">SCHEDULE</a>
                         <a class="fs-20__b text-hover__blue" href="#">CONTENTS</a>

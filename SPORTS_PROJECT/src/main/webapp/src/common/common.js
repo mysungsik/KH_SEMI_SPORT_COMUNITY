@@ -11,14 +11,14 @@ $(document).ready(function () {
 // 비밀번호 보기 이벤트
 $(".password-eye").on("mousedown", function(){
     $("input[name*='-password']").prop("type", "text");
-    $(this).prop("src","/FRONTEND/public/icons/eye.png" )
+    $(this).prop("src","/SPORTS_PROJECT/public/icons/eye.png" )
 })
 $(".password-eye").on("mouseout", function(){
-    $(this).prop("src","/FRONTEND/public/icons/eye-closed.png" )
+    $(this).prop("src","/SPORTS_PROJECT/public/icons/eye-closed.png" )
 })
 $(".password-eye").on("mouseup", function(){
     $("input[name*='-password']").prop("type", "password");
-    $(this).prop("src","/FRONTEND/public/icons/eye-closed.png" )
+    $(this).prop("src","/SPORTS_PROJECT/public/icons/eye-closed.png" )
 })
 
 
