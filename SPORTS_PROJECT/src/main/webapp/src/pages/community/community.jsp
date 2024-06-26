@@ -23,7 +23,7 @@
                     <span class="fs-28__b">주간 인기글</span>
                 </article>
                 <article class="swiper-wrapper">
-                    <div class="popular base__lblue swiper-slide">
+                    <div class="popular base__lblue swiper-slide d-flex">
             
                         <div class="popular-area">
                             <div class="popular-post">
@@ -68,7 +68,7 @@
                         </div>
             
                     </div>
-                    <div class="popular base__lblue swiper-slide">
+                    <div class="popular base__lblue swiper-slide d-flex">
             
                         <div class="popular-area">
                             <div class="popular-post">
@@ -113,7 +113,7 @@
                         </div>
             
                     </div>
-                    <div class="popular base__lblue swiper-slide">
+                    <div class="popular base__lblue swiper-slide d-flex">
             
                         <div class="popular-area">
                             <div class="popular-post">
@@ -158,7 +158,7 @@
                         </div>
             
                     </div>
-                    <div class="popular base__lblue swiper-slide">
+                    <div class="popular base__lblue swiper-slide d-flex">
             
                         <div class="popular-area">
                             <div class="popular-post">
@@ -203,7 +203,7 @@
                         </div>
             
                     </div>
-                    <div class="popular base__lblue swiper-slide">
+                    <div class="popular base__lblue swiper-slide d-flex">
             
                         <div class="popular-area">
                             <div class="popular-post">

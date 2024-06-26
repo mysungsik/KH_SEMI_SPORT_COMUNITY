@@ -1,4 +1,6 @@
-*{box-sizing: border-box;}
+*{box-sizing: border-box;
+border: 1px solid black;}
+
 
 body{
     position: relative;
@@ -37,17 +39,19 @@ section{
 }
 
 .popular-area{
+	height: 150px;
     flex-basis: 50%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
 .popular-post{
     width: 380px;
     height: 100px;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
 }
 
 .post-title{
@@ -165,71 +169,6 @@ main hr{
     align-items: center;
     justify-content: center;
 }
-
-/* 
-.right-title{
-    height: 50px;
-    display: flex;
-    align-items: center;
-}
-
-.best-title{
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-*{border:1px solid black;}
-
-.best{
-    height: 300px;
-   flex-basis: 50%; 
-}
-
-.best .post{
-    display: flex;
-    justify-content: space-between;
-}
-
-.rank{
-    flex-basis: 10%;
-    display: flex;
-    justify-content: right;
-    align-items: center;
-}
-
-.best-img{
-    flex-basis: 15%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.best-img img{
-    width: auto;
-    height: 60%;
-    border-radius: 50%;
-}
-
-.best-content-area{
-    flex-basis: 55%;
-}
-
-.best-info{
-    height: 50%;
-    display: flex;
-    align-items: end;
-}
-
-
-.best-like{
-    flex-basis: 25%;
-    display: flex;
-    align-items: center;
-    justify-content: left
-} */
-
 
 
 /* 공지사항 */
