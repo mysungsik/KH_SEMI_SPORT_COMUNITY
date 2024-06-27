@@ -1,6 +1,31 @@
-*{border: 1px solid black;}
+*{border: 1px solid black;} 
 
 main{
     width: 1024px;
     height: 845px;
+}
+
+/* 게시글 */
+section:first-child{
+    margin-top: 40px;
+    height: 350px;
+
+    display: flex;
+    justify-content: center;
+}
+/* 게시글 */
+
+.content-area{
+    height: 350px;
+    width: 850px;
+}
+
+.title{
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.content{
+    height: 300px;
 }
