@@ -1,5 +1,4 @@
-*{box-sizing: border-box;
-border: 1px solid black;}
+*{box-sizing: border-box;}
 
 
 body{
@@ -55,7 +54,7 @@ section{
 }
 
 .post-title{
-    height: 30px;
+    height: 50px;
     align-content: center;
 }
 
@@ -74,9 +73,6 @@ section{
     justify-content: space-between;
 }
 
-main hr{
-    width: 400px;
-}
 
 /* 메인 미드 (전체, 베스트 댓글) */
 .main-mid{
