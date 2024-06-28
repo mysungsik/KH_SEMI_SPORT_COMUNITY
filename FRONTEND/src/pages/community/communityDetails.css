@@ -22,8 +22,7 @@ section:first-child{
 
 .title{
     height: 50px;
-    display: flex;
-    flex-direction: column;
+    border-bottom: 1px solid;
 }
 
 .content{
