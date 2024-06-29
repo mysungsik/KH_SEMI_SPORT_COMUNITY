@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="community.css">
-    <script src="community.js" defer></script>
+    <link rel="stylesheet" href="/SPORTS_PROJECT/src/css/community.css">
+    <script src="/SPORTS_PROJECT/src/js/community.js" defer></script>
     
     <title>COMMUNITY</title>
 </head>

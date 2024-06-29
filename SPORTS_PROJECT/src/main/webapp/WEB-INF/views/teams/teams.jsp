@@ -6,12 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./teams.css">
-    <script src="./teams.js" defer></script>
+    <link rel="stylesheet" href="/SPORTS_PROJECT/src/css/teams.css">
+    <script src="/SPORTS_PROJECT/src/css/teams.js" defer></script>
     <title>MLB Teams</title>
 </head>
 <body>
-    <<jsp:include page="/WEB-INF/views/layouts/header.jsp"/>
+    <jsp:include page="/WEB-INF/views/layouts/header.jsp"/>
     <main>
         <main class="container">
             <section class="main-top">
@@ -27,7 +27,7 @@
                 <article class="teams">
                     <p class="fs-20__b mt-20">AL-EAST</p>
                     <div class="al-east-icons">
-                        <a href="./eachTeamMain.jsp" >
+                        <a href="/SPORTS_PROJECT/teams/teamsEach" >
                             <div class="teams-card br-10">
                                 <img src="/SPORTS_PROJECT/public/images/teams/FL.png" class="teams-logo" alt="구단사진1">
                                 <div class="teams-name">
