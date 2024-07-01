@@ -50,12 +50,12 @@
 	                	<hr class="hr__gray">
 	                	<p class="header-title fc__gray fs-20__b"> 컨텐츠</p>
 		          
-		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="/SPORTS_PROJECT/src/pages/personal/myInfo.jsp">내 댓글</a></li>
-		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="/SPORTS_PROJECT/src/pages/personal/myInfo.jsp">내 게시글</a></li>
-		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="/SPORTS_PROJECT/src/pages/personal/myInfo.jsp">내 스크랩</a></li>
+		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="/SPORTS_PROJECT/profile">내 댓글</a></li>
+		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="/SPORTS_PROJECT/profile">내 게시글</a></li>
+		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="/SPORTS_PROJECT/profile">내 스크랩</a></li>
 		                
 		                <p class="header-title fc__gray fs-20__b"> 개인 정보 </p>
-		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="/SPORTS_PROJECT/src/pages/personal/myInfo.jsp">내 정보 관리</a></li>
+		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="/SPORTS_PROJECT/profile">내 정보 관리</a></li>
 		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="#">회원 탈퇴</a></li>
 		            
 		            	<li>
