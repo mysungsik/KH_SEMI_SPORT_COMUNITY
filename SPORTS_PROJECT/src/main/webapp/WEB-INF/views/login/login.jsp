@@ -4,8 +4,8 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="./src/css/login.css">
-	<script src="./src/js/login.js" defer></script>
+	<link rel="stylesheet" href="/SPORTS_PROJECT/src/css/login.css">
+	<script src="/SPORTS_PROJECT/src/js/login.js" defer></script>
 	<title>MLB - Login</title>
 </head>
 <body>
@@ -21,7 +21,7 @@
                     </div>
                     <div>
                         <input class="box-shadow"  type="password" name="login-password" placeholder="PASSWORD">
-                        <img class="password-eye" src="./public/icons/eye-closed.png">
+                        <img class="password-eye" src="/SPORTS_PROJECT/public/icons/eye-closed.png">
                     </div>
                 </div>
                 <button class="btn-big__blue">
@@ -35,9 +35,9 @@
                     <div>
                         <a class="fc__gray">아이디 찾기</a>
                         |<a class="fc__gray">비밀번호 찾기</a>
-                        |<a class="fc__gray text-hover__gray" href="./signup/signupTerms">회원가입</a>
+                        |<a class="fc__gray text-hover__gray" href="/SPORTS_PROJECT/signup/signupTerms">회원가입</a>
                     </div>
-                    <img src="./public/images/mlb_logo2.jpg">
+                    <img src="/SPORTS_PROJECT/public/images/mlb_logo2.jpg">
                 </div>
             </form>
         </section>

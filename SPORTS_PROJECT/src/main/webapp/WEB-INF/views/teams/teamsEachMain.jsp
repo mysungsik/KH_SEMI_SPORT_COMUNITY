@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./src/css/teamsEachMain.css">
-    <script src="./src/js/teamsEachMain.js" defer></script>
+    <link rel="stylesheet" href="/SPORTS_PROJECT/src/css/teamsEachMain.css">
+    <script src="/SPORTS_PROJECT/src/js/teamsEachMain.js" defer></script>
     <title>Team Main</title>
 </head>
 <body>

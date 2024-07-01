@@ -4,9 +4,9 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="../src/css/signupTerms.css">
+	<link rel="stylesheet" href="/SPORTS_PROJECT/src/css/signupTerms.css">
 	
-    <script src="../src/js/signup.js" defer></script>
+    <script src="/SPORTS_PROJECT/src/js/signup.js" defer></script>
 	<title>MLB - Signup</title>
 </head>
 <body>
@@ -87,7 +87,7 @@
                     </div>
                 </div>
                 <!-- 임시 페이지이동 -->
-                <button class="btn-big__blue" type="button" onclick="location.href = './signup';">
+                <button class="btn-big__blue" type="button" onclick="location.href = '/SPORTS_PROJECT/signup';">
                     다음
                 </button>
             </form>

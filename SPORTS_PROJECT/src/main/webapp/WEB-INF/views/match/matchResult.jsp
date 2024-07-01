@@ -4,9 +4,9 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="./matchResult.css">
+    <link rel="stylesheet" href="/SPORTS_PROJECT/matchResult.css">
     
-    <script src="./matchResult.js" defer></script>
+    <script src="/SPORTS_PROJECT/matchResult.js" defer></script>
     <title>MLB Dashboard</title>
 </head>
 

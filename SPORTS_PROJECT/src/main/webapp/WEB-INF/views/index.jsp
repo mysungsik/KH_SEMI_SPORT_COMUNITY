@@ -10,8 +10,8 @@
     <!-- pagination.js CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.css">
     <!-- pagination.js JavaScript -->
-    <script src="../../src/common/pagination.js" defer></script>
-    <script src="./index.js" defer></script>
+    <script src="/SPORTS_PROJECT/src/common/pagination.js" defer></script>
+    <script src="/SPORTS_PROJECT/index.js" defer></script>
 
 </head>
 <body>

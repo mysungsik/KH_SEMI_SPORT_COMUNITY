@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="./src/css/profile.css">
-    <script src="./src/js/profile.js" defer></script>
+    <link rel="stylesheet" href="/SPORTS_PROJECT/src/css/profile.css">
+    <script src="/SPORTS_PROJECT/src/js/profile.js" defer></script>
     
     <title>MLB - Na</title>
 </head>
@@ -18,7 +18,7 @@
         <section class="container">
             <div class="myInfo-left">
                 <div class="user-profile">
-                    <img src="./public/images/user_img1.jpg">
+                    <img src="/SPORTS_PROJECT/public/images/user_img1.jpg">
                     <p> test_id </p>
                     <p> test_email@email.com</p>
                 </div>
@@ -49,7 +49,7 @@
                         <label for="term-personal" class="fs-20__b">전체선택</label>
                     </div>
                     <div>
-                        <img src="./public/icons/bin.png">
+                        <img src="/SPORTS_PROJECT/public/icons/bin.png">
                         <span> 선택 삭제 </span>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                                 <p> 커뮤니티 그렇게 쓰는게 맞습니다! </p>
                             </div>
                             <div class="element-edit">
-                                <img src="./public/icons/edit.png">
+                                <img src="/SPORTS_PROJECT/public/icons/edit.png">
                             </div>
                         </div>
                         <div class="comment checkbox__blue small-square">
@@ -72,7 +72,7 @@
                                 <p> 커뮤니티 그렇게 쓰는게 맞습니다! </p>
                             </div>
                             <div class="element-edit">
-                                <img src="./public/icons/edit.png">
+                                <img src="/SPORTS_PROJECT/public/icons/edit.png">
                             </div>
                         </div>
                         <div class="comment checkbox__blue small-square">
@@ -82,7 +82,7 @@
                                 <p> 커뮤니티 그렇게 쓰는게 맞습니다! </p>
                             </div>
                             <div class="element-edit">
-                                <img src="./public/icons/edit.png">
+                                <img src="/SPORTS_PROJECT/public/icons/edit.png">
                             </div>
                         </div>
                     </div>

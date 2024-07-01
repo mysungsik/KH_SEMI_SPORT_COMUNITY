@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./src/css/dashboard.css">
-    <script src="./src/js/dashboard.js" defer></script>
+    <link rel="stylesheet" href="/SPORTS_PROJECT/src/css/dashboard.css">
+    <script src="/SPORTS_PROJECT/src/js/dashboard.js" defer></script>
     
     <title>MLB - Dashboard</title>
 </head>
@@ -20,9 +20,9 @@
                     <div class="current-events card__lblue ">
                         <p class="content-header fs-14__b fc__blue"> CURRENT MAIN EVENT</p>
                         <div class="events-date-div d-flex">
-                            <img src="./public/icons/left-arrow.png" class="w-15 h-15" onclick="beforeDay()">
+                            <img src="/SPORTS_PROJECT/public/icons/left-arrow.png" class="w-15 h-15" onclick="beforeDay()">
                             <div id="dateDisplay"></div>
-                            <img src="./public/icons/right-arrow.png" class="w-15 h-15" onclick="nextDay()">
+                            <img src="/SPORTS_PROJECT/public/icons/right-arrow.png" class="w-15 h-15" onclick="nextDay()">
                         </div>
                         <div class="swiper swiper-events">
                             <div class="swiper-wrapper current-events-score">
@@ -167,8 +167,8 @@
                             </div>
                         </div>
                         <div class="d-flex arrows">
-                            <img src="./public/icons/left-arrow.png" style="width: 13px; height: 13px;">
-                            <img src="./public/icons/right-arrow.png" style="width: 13px; height: 13px;">
+                            <img src="/SPORTS_PROJECT/public/icons/left-arrow.png" style="width: 13px; height: 13px;">
+                            <img src="/SPORTS_PROJECT/public/icons/right-arrow.png" style="width: 13px; height: 13px;">
                         </div>
                     </div>
                     <div class="main-news card__blue">
@@ -177,7 +177,7 @@
                             <!-- 좌중단 메인 뉴스 작성 -->
                             <div class="news-content-top d-flex swiper-wrapper">
                                 <div class="card-thumbnail swiper-slide">
-                                    <img class="card-thumbnail-img" src="./public/images/news_example.jpg">
+                                    <img class="card-thumbnail-img" src="/SPORTS_PROJECT/public/images/news_example.jpg">
                                     <div class="card-thumbnail-infos">
                                         <div class="card-thumbnail-title">
                                             '9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
@@ -189,7 +189,7 @@
                                     </div>
                                 </div>
                                 <div class="card-thumbnail swiper-slide">
-                                    <img class="card-thumbnail-img" src="./public/images/news_example.jpg">
+                                    <img class="card-thumbnail-img" src="/SPORTS_PROJECT/public/images/news_example.jpg">
                                     <div class="card-thumbnail-infos">
                                         <div class="card-thumbnail-title">
                                             '9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
@@ -201,7 +201,7 @@
                                     </div>
                                 </div>
                                 <div class="card-thumbnail swiper-slide">
-                                    <img class="card-thumbnail-img" src="./public/images/news_example.jpg">
+                                    <img class="card-thumbnail-img" src="/SPORTS_PROJECT/public/images/news_example.jpg">
                                     <div class="card-thumbnail-infos">
                                         <div class="card-thumbnail-title">
                                             '9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
@@ -213,7 +213,7 @@
                                     </div>
                                 </div>
                                 <div class="card-thumbnail swiper-slide">
-                                    <img class="card-thumbnail-img" src="./public/images/news_example.jpg">
+                                    <img class="card-thumbnail-img" src="/SPORTS_PROJECT/public/images/news_example.jpg">
                                     <div class="card-thumbnail-infos">
                                         <div class="card-thumbnail-title">
                                             '9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
@@ -225,7 +225,7 @@
                                     </div>
                                 </div>
                                 <div class="card-thumbnail swiper-slide">
-                                    <img class="card-thumbnail-img" src="./public/images/news_example.jpg">
+                                    <img class="card-thumbnail-img" src="/SPORTS_PROJECT/public/images/news_example.jpg">
                                     <div class="card-thumbnail-infos">
                                         <div class="card-thumbnail-title">
                                             '9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
@@ -265,7 +265,7 @@
                             <ul>
                                 <li class="d-flex">
                                     <div class="score-board-infos">
-                                        <img class="score-board-logo" src="./public/images/teams/FL.png">
+                                        <img class="score-board-logo" src="/SPORTS_PROJECT/public/images/teams/FL.png">
                                         <span class="score-board-team fs-14"> 한화 </span>
                                     </div>
                                     <div class="score-board-symbols d-flex">
@@ -279,7 +279,7 @@
                                 </li>
                                 <li class="d-flex">
                                     <div class="score-board-infos">
-                                        <img class="score-board-logo" src="./public/images/teams/FL.png">
+                                        <img class="score-board-logo" src="/SPORTS_PROJECT/public/images/teams/FL.png">
                                         <span class="score-board-team fs-14"> 기아 타이거즈 </span>
                                     </div>
                                     <div class="score-board-symbols d-flex">
@@ -293,7 +293,7 @@
                                 </li>
                                 <li class="d-flex">
                                     <div class="score-board-infos">
-                                        <img class="score-board-logo" src="./public/images/teams/FL.png">
+                                        <img class="score-board-logo" src="/SPORTS_PROJECT/public/images/teams/FL.png">
                                         <span class="score-board-team fs-14"> 제이 블루즌 </span>
                                     </div>
                                     <div class="score-board-symbols d-flex">
@@ -318,7 +318,7 @@
                     <!-- 하단 하이라이트 클립 작성 -->
                     <div class="news-content-top d-flex swiper-wrapper">
                         <div class="card-thumbnail swiper-slide">
-                            <img class="card-thumbnail-img" src="./public/images/news_example.jpg">
+                            <img class="card-thumbnail-img" src="/SPORTS_PROJECT/public/images/news_example.jpg">
                             <div class="card-thumbnail-infos">
                                 <div class="card-thumbnail-title">
                                     '9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
@@ -331,7 +331,7 @@
                             </div>
                         </div>
                         <div class="card-thumbnail swiper-slide">
-                            <img class="card-thumbnail-img" src="./public/images/news_example.jpg">
+                            <img class="card-thumbnail-img" src="/SPORTS_PROJECT/public/images/news_example.jpg">
                             <div class="card-thumbnail-infos">
                                 <div class="card-thumbnail-title">
                                     '9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
@@ -344,7 +344,7 @@
                             </div>
                         </div>
                         <div class="card-thumbnail swiper-slide">
-                            <img class="card-thumbnail-img" src="./public/images/news_example.jpg">
+                            <img class="card-thumbnail-img" src="/SPORTS_PROJECT/public/images/news_example.jpg">
                             <div class="card-thumbnail-infos">
                                 <div class="card-thumbnail-title">
                                     '9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
@@ -357,7 +357,7 @@
                             </div>
                         </div>
                         <div class="card-thumbnail swiper-slide">
-                            <img class="card-thumbnail-img" src="./public/images/news_example.jpg">
+                            <img class="card-thumbnail-img" src="/SPORTS_PROJECT/public/images/news_example.jpg">
                             <div class="card-thumbnail-infos">
                                 <div class="card-thumbnail-title">
                                     '9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
@@ -370,7 +370,7 @@
                             </div>
                         </div>
                         <div class="card-thumbnail swiper-slide">
-                            <img class="card-thumbnail-img" src="./public/images/news_example.jpg">
+                            <img class="card-thumbnail-img" src="/SPORTS_PROJECT/public/images/news_example.jpg">
                             <div class="card-thumbnail-infos">
                                 <div class="card-thumbnail-title">
                                     '9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
