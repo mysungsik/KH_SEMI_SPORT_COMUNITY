@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="/SPORTS_PROJECT/src/css/community.css">
-    <script src="/SPORTS_PROJECT/src/js/community.js" defer></script>
+    <link rel="stylesheet" href="./src/css/community.css">
+    <script src="./src/js/community.js" defer></script>
     
     <title>COMMUNITY</title>
 </head>
@@ -320,7 +320,7 @@
                             <span class="fs-14__b fc__blue">1</span>
                         </div>
                         <div class="best-img">
-                            <img src="/SPORTS_PROJECT/public/images/user_img1.jpg">
+                            <img src="./public/images/user_img1.jpg">
                         </div>
                         <div class="best-content-area">
                             <div class="best-info">
@@ -343,7 +343,7 @@
                             <span class="fs-14__b fc__blue">2</span>
                         </div>
                         <div class="best-img">
-                            <img src="/SPORTS_PROJECT/public/images/user_img1.jpg">
+                            <img src="./public/images/user_img1.jpg">
                         </div>
                         <div class="best-content-area">
                             <div class="best-info">
@@ -367,7 +367,7 @@
                             <span class="fs-14__b fc__blue">3</span>
                         </div>
                         <div class="best-img">
-                            <img src="/SPORTS_PROJECT/public/images/user_img1.jpg">
+                            <img src="./public/images/user_img1.jpg">
                         </div>
                         <div class="best-content-area">
                             <div class="best-info">
@@ -391,7 +391,7 @@
                             <span class="fs-14__b fc__blue">4</span>
                         </div>
                         <div class="best-img">
-                            <img src="/SPORTS_PROJECT/public/images/user_img1.jpg">
+                            <img src="./public/images/user_img1.jpg">
                         </div>
                         <div class="best-content-area">
                             <div class="best-info">
@@ -415,7 +415,7 @@
                             <span class="fs-14__b fc__blue">5</span>
                         </div>
                         <div class="best-img">
-                            <img src="/SPORTS_PROJECT/public/images/user_img1.jpg">
+                            <img src="./public/images/user_img1.jpg">
                         </div>
                         <div class="best-content-area">
                             <div class="best-info">
