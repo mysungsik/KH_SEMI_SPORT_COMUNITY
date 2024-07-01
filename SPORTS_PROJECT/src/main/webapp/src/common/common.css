@@ -7,12 +7,20 @@
     font-style: normal;
 }	
 
+@font-face {
+    font-family: 'GongGothicMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Tags ------------------------------------------------------------------------- */
 
 body *{
     box-sizing: border-box;
     /* font-family: "Rubik", sans-serif; */
-    font-family : 'GmarketSansMedium';
+    /* font-family : 'GmarketSansMedium'; */
+    font-family: 'GongGothicMedium';
     font-optical-sizing: auto;
     font-size: 12px;
     font-weight: 400;
