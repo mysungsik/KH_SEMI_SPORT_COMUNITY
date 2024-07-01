@@ -1,23 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../common/common.css">
-    <link rel="stylesheet" href="./myInfo.js">
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="../../common/common.js" defer></script>
-    <script src="./myInfo.jsp" defer></script>
+    
+    <link rel="stylesheet" href="/SPORTS_PROJECT/src/css/profile.css">
+    <script src="/SPORTS_PROJECT/src/js/profile.js" defer></script>
+    
     <title>MLB - Na</title>
 </head>
 <body>
-    <header></header>
+    <jsp:include page="/WEB-INF/views/layouts/header.jsp"/>
 
     <main>
         <section class="container">
@@ -49,7 +44,7 @@
                 <p class="content-title">내 댓글</p>
                 <hr class="hr__gray">
                 <div class="content-header">
-                    <div class="checkbox__blue">
+                    <div class="checkbox__blue small-square">
                         <input type="checkbox" id="check-all" name="check-all">
                         <label for="term-personal" class="fs-20__b">전체선택</label>
                     </div>
@@ -60,7 +55,7 @@
                 </div>
                 <div class="content-main">
                     <div class="content-elements">
-                        <div class="comment checkbox__blue">
+                        <div class="comment checkbox__blue small-square">
                             <input type="checkbox" id="post-check" name="post-check" value="1">
                             <div class="element-text">
                                 <p> <span>[ 커뮤니티 - 공지 ]</span> 커뮤니티 글 이렇게 쓰는게 맞나요</p>
@@ -70,7 +65,7 @@
                                 <img src="/SPORTS_PROJECT/public/icons/edit.png">
                             </div>
                         </div>
-                        <div class="comment checkbox__blue">
+                        <div class="comment checkbox__blue small-square">
                             <input type="checkbox" id="post-check" name="post-check" value="1">
                             <div class="element-text">
                                 <p> <span>[ 커뮤니티 - 공지 ]</span> 커뮤니티 글 이렇게 쓰는게 맞나요</p>
@@ -80,7 +75,7 @@
                                 <img src="/SPORTS_PROJECT/public/icons/edit.png">
                             </div>
                         </div>
-                        <div class="comment checkbox__blue">
+                        <div class="comment checkbox__blue small-square">
                             <input type="checkbox" id="post-check" name="post-check" value="1">
                             <div class="element-text">
                                 <p> <span>[ 커뮤니티 - 공지 ]</span> 커뮤니티 글 이렇게 쓰는게 맞나요</p>
@@ -95,7 +90,6 @@
             </div>
         </section>
     </main>
-
-    <footer></footer>
+	<jsp:include page="/WEB-INF/views/layouts/footer.jsp"/>
 </body>
 </html>
