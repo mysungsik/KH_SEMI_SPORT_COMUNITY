@@ -21,13 +21,17 @@
 
             <section class="swiper mySwiper main-top">
                 <article class="title mg-left">
-                    <span class="fs-28__b">주간 인기글</span>
-                    <span class="see-more fs-10 fc__gray"><a>더보기▶</a></span>
-                    <form action="#" class="search">
-                    	<input type="text">
-                    	<button class="fa-solid fa-magnifying-glass"></button>
-                    </form>
-                    <button type="button" class="write-btn mg-right">글쓰기</button>
+	                <div class="title-area">
+	                    <span class="fs-28__b">주간 인기글</span>
+	                    <span class="see-more fs-10 fc__gray"><a href="/SPORTS_PROJECT/community/communityBoard">더보기▶</a></span>
+	                </div>
+                    <div class="search-area">
+	                    <form action="#" class="search">
+	                    	<input type="text">
+	                    	<button class="fa-solid fa-magnifying-glass"></button>
+	                    </form>
+	                    <button type="button" class="write-btn mg-right">글쓰기</button>
+                    </div>
                 </article>
                 <article class="swiper-wrapper">
                     <div class="popular base__lblue swiper-slide d-flex">

@@ -1,0 +1,47 @@
+*{border: 1px solid black;}
+
+*{box-sizing: border-box;}
+
+main{
+    width: 1024px;
+    height: 900px;
+}
+
+/* 메뉴 */
+.nav{
+	height: 30px;
+	margin-top: 70px;
+	display: flex;
+	justify-content: center;
+}
+
+.switch{
+	width: 500px;
+	display: flex;
+}
+
+.switch input{
+}
+
+.switch input:checked + label{
+	background-color: #458BE2;
+}
+
+.switch label{
+	flex-basis: 20%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* 게시판 */
+.board{
+	height: 650px;
+	margin-top: 30px;
+}
+
+/* 페이지 */
+.page{
+	height: 30px;
+	margin-top: 30px;
+}

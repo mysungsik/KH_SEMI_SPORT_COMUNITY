@@ -39,6 +39,10 @@ public class communityController extends HttpServlet {
 			dispatcher = req.getRequestDispatcher(defaultURLPath + "community.jsp");
 			dispatcher.forward(req, resp);
 			}break;
+		case "communityBoard": {
+			dispatcher = req.getRequestDispatcher(defaultURLPath + "communityBoard.jsp");
+			dispatcher.forward(req, resp);
+			};break;
 		default:System.out.println("404 페이지로 이동");}
 		
 	}

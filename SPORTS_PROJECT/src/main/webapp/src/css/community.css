@@ -1,6 +1,6 @@
 *{box-sizing: border-box;}
 
-/* *{border: 1px solid black;} */
+/* *{border: 1px solid black;}  */
 
 .mg-right{
 	margin-right: 70px;
@@ -19,7 +19,22 @@ body{
     height: 1100px;
 }
 
-.main-top input{
+.title-area{
+	display: flex;
+	gap: 10px;
+}
+
+.title-area span{
+	display: flex;
+	align-self: center;
+}
+
+.search-area{
+	display: flex;
+	gap: 5px;
+}
+
+.search-area input{
 	border: 0;
 	outline: 0;
 }
@@ -65,6 +80,7 @@ section{
 
 .main-top .title{
     border: 0;
+    display: flex;
 }
 
 
