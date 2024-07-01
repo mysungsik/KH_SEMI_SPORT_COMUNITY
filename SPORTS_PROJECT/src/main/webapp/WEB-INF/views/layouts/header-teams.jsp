@@ -22,9 +22,13 @@
 </head>
 
 <body>
-	<c:set var="login" value="false" />
+	<%-- 로그인 여부 판단 --%>
+    <c:if test="${sessionScope.isLogin == null}">
+        <c:set var="isLogin" value="false" scope="session" />
+    </c:if>
+  
 	<eachTeamHeader>
-	<c:if test="${login}">
+	<c:if test="${isLogin}">
 		
 			<div class="header-top">
 		        <div class="header-top-logo">
@@ -56,6 +60,9 @@
 		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="/SPORTS_PROJECT/src/pages/personal/myInfo.jsp">내 정보 관리</a></li>
 		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="#">회원 탈퇴</a></li>
 		
+						<li>
+		            		<p class="dropdown-item logout fs-12 text-hover__blue" onclick="logout()"> 로그아웃 </p>
+		            	</li>
 		            </ul>
 		        </div>
 		    </div>
@@ -71,13 +78,13 @@
 		        </div>
 		    </div>
 	</c:if>
-	<c:if test="${!login}">
+	<c:if test="${!isLogin}">
 	
 		<div class="header-top">
                 <div class="header-top-logo">
                     <img class="logo" src='/SPORTS_PROJECT/public/images/mlb_logo.png'>
                 </div>
-                <div class="header-top-user box-hover" onclick="location.href = '/SPORTS_PROJECT/src/pages/login/login.jsp'">
+                <div class="header-top-user box-hover" onclick="location.href = '/SPORTS_PROJECT/login'">
                     <img class="user-image" src='/SPORTS_PROJECT/public/icons/plus.png'>
                     <div class="user-name">
                         <a class="text-hover__gray fc__gray fs-14__b">로그인후 이용해주세요</a>
