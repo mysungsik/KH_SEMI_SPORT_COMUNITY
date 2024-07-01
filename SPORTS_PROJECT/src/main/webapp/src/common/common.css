@@ -624,11 +624,6 @@ ul{
 .checkbox__blue input[type=checkbox]:not(.switch) {
     width: 21px;
 }
-.checkbox__blue.small-square input[type=checkbox]:not(.switch){
-	width: 15px;
-	height: 15px;
-}
-
 .checkbox__blue input[type=checkbox]:not(.switch):after {
     opacity: var(--o, 0);
 }
@@ -645,10 +640,6 @@ ul{
 .checkbox__blue input[type=checkbox]:not(.switch) {
     border-radius: 10px;
 }
-
-.checkbox__blue.small-square input[type=checkbox]:not(.switch){
-	border-radius: 0;
-}
 .checkbox__blue input[type=checkbox]:not(.switch):after {
     width: 6px;
     height: 9px;
@@ -659,17 +650,6 @@ ul{
     top: 4px;
     transform: rotate(var(--r, 20deg));
 }
-.checkbox__blue.small-square input[type=checkbox]:not(.switch):after {
-    width: 4px;
-    height: 6px;
-    border: 1px solid var(--active-inner);
-    border-top: 0;
-    border-left: 0;
-    left: 4px;
-    top: 3px;
-    transform: rotate(var(--r, 20deg));
-}
-
 .checkbox__blue input[type=checkbox]:not(.switch):checked {
     --r: 43deg;
 }
