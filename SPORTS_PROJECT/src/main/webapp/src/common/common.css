@@ -1,12 +1,12 @@
 /* Fonts ------------------------------------------------------------------------ */
 /* @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap');*/
-@font-face {
+/* @font-face {
     font-family: 'GmarketSansMedium';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }	
-
+ */
 @font-face {
     font-family: 'GongGothicMedium';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
@@ -285,6 +285,9 @@ ul{
 }
 .mt-20{
     margin-top: 20px !important;
+}
+.mr-20{
+    margin-right: 20px !important;
 }
 .mb-20{
     margin-bottom: 20px !important;
