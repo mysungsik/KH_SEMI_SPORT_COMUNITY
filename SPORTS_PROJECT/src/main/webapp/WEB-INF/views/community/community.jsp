@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="/SPORTS_PROJECT/src/css/community.css">
     <script src="/SPORTS_PROJECT/src/js/community.js" defer></script>
+    <script src="https://kit.fontawesome.com/e245e5bbb1.js" crossorigin="anonymous"></script>
     
     <title>COMMUNITY</title>
 </head>
@@ -21,6 +22,12 @@
             <section class="swiper mySwiper main-top">
                 <article class="title mg-left">
                     <span class="fs-28__b">주간 인기글</span>
+                    <span class="see-more fs-10 fc__gray"><a>더보기▶</a></span>
+                    <form action="#" class="search">
+                    	<input type="text">
+                    	<button class="fa-solid fa-magnifying-glass"></button>
+                    </form>
+                    <button type="button" class="write-btn mg-right">글쓰기</button>
                 </article>
                 <article class="swiper-wrapper">
                     <div class="popular base__lblue swiper-slide d-flex">
@@ -258,6 +265,7 @@
                 <article class="board mg-left">
                     <div class="title">
                         <span class="fs-28__b">전체</span>
+                        <span class="see-more fs-10 fc__gray"><a>더보기▶</a></span>
                     </div>
                     
                     <div class="post">
@@ -310,7 +318,7 @@
 
 
                 <!-- best -->
-                <article class="best card__lblue br-15 ">
+                <article class="best card__lblue br-15 mg-right">
                     <div class="best-title">
                         <span class="fs-14__b fc__blue">베스트 댓글</span>
                     </div>
@@ -456,6 +464,7 @@
                <article class="board mg-left">
                 <div class="title">
                     <span class="fs-28__b">자유 게시판</span>
+                    <span class="see-more fs-10 fc__gray"><a>더보기▶</a></span>
                 </div>
                 
                 <div class="post">
@@ -509,6 +518,7 @@
                 <article class="board mg-right">
                     <div class="title">
                         <span class="fs-28__b">응원 게시판</span>
+                        <span class="see-more fs-10 fc__gray"><a>더보기▶</a></span>
                     </div>
                     
                     <div class="post">

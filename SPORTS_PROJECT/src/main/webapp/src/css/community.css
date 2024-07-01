@@ -19,6 +19,31 @@ body{
     height: 1100px;
 }
 
+.main-top input{
+	border: 0;
+	outline: 0;
+}
+
+.search button{
+	border: 0;
+	background-color: white;
+}
+
+.search{
+	border: 2px solid gray;
+	border-radius: 5px;
+}
+
+.write-btn{
+	width: 70px;
+	height: 25px;
+	background-color: #458BE2;
+	color: white;
+	border: 0;
+	border-radius: 5px;
+	text-align: center;
+}
+
 section{
     margin-top: 50px;
 }
@@ -33,8 +58,8 @@ section{
     height: 50px;
     display: flex;
     align-items: center;
-    cursor: pointer;
     border-bottom: 1px solid black;
+    justify-content: space-between;
 }
 
 
@@ -67,11 +92,14 @@ section{
 .post-title{
 	width: 100%;
     height: 50px;
-    align-content: center;
+    display: flex;
+	align-items: center;    
+	gap: 5px;
 }
 
 .post-content{
     height: 50px;
+    display: flex;
     align-content: center;
 }
 
@@ -90,7 +118,7 @@ section{
 }
 
 .main-mid>.board{
-    flex-basis: 60%;
+    flex-basis: 50%;
 }
 
 
@@ -99,7 +127,6 @@ section{
 
 .board{
     height: 300px;
-    cursor: pointer;
 }
 
 
@@ -107,6 +134,7 @@ section{
     height: 50px;
     display: flex;
     flex-direction: column;
+    cursor:pointer;
 }
 
 
@@ -211,5 +239,13 @@ section{
 .popular-post:hover{
     text-decoration: underline;
     font-weight: bolder;
+}
+
+.see-more{
+	cursor:pointer;
+}
+
+.see-more:hover{
+	text-decoration: underline;
 }
 
