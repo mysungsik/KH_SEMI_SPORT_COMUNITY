@@ -19,7 +19,7 @@
             <!-- main-top -->
 
             <section class="swiper mySwiper main-top">
-                <article class="title">
+                <article class="title mg-left">
                     <span class="fs-28__b">주간 인기글</span>
                 </article>
                 <article class="swiper-wrapper">
@@ -257,7 +257,7 @@
             <section class="main-mid">
                 <article class="board mg-left">
                     <div class="title">
-                        <span class="fs-28__b board-title">전체<hr></span>
+                        <span class="fs-28__b">전체</span>
                     </div>
                     
                     <div class="post">
@@ -439,11 +439,11 @@
 
 
             <!-- info -->
-            <section class="info base__lblue swiper mySwiper">
+            <section class="info base__lblue">
                 <article class="info-title">
                     <span class="fs-14__b">공지사항</span>
                 </article>
-                <article class="swiper-wrapper info-content">
+                <article class="info-content">
                     <div>공지사항 없습니다.</div>
                 </article>
             </section>
@@ -455,7 +455,7 @@
                 <!-- 자유 게시판 -->
                <article class="board mg-left">
                 <div class="title">
-                    <span class="fs-28__b">자유 게시판<hr></span>
+                    <span class="fs-28__b">자유 게시판</span>
                 </div>
                 
                 <div class="post">
@@ -508,7 +508,7 @@
                <!-- 응원 게시판 -->
                 <article class="board mg-right">
                     <div class="title">
-                        <span class="fs-28__b">응원 게시판<hr></span>
+                        <span class="fs-28__b">응원 게시판</span>
                     </div>
                     
                     <div class="post">

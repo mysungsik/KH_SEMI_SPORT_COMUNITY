@@ -1,5 +1,14 @@
 *{box-sizing: border-box;}
 
+/* *{border: 1px solid black;} */
+
+.mg-right{
+	margin-right: 70px;
+}
+
+.mg-left{
+	margin-left: 70px;
+}
 
 body{
     position: relative;
@@ -25,10 +34,12 @@ section{
     display: flex;
     align-items: center;
     cursor: pointer;
+    border-bottom: 1px solid black;
 }
 
-.main-top .title span{
-    margin-left: 70px;
+
+.main-top .title{
+    border: 0;
 }
 
 
@@ -54,12 +65,9 @@ section{
 }
 
 .post-title{
+	width: 100%;
     height: 50px;
     align-content: center;
-}
-
-.post-title span{
-    margin-right: 5px;
 }
 
 .post-content{
@@ -78,43 +86,34 @@ section{
 .main-mid{
     height: 300px;
     display: flex;
-    gap : 80px;
+    justify-content: space-between;
 }
 
-.main-mid article{
-    flex-basis: 50%;
-    position: absolute;
+.main-mid>.board{
+    flex-basis: 60%;
 }
 
 
 
 /* 전체 */
 
-
-.board-title>hr{
-    width: 500px;
-}
-
-.mg-left{
-    margin-left: 70px;
-}
-
 .board{
     height: 300px;
     cursor: pointer;
 }
 
+
 .post{
     height: 50px;
+    display: flex;
+    flex-direction: column;
 }
 
 
 /* 베스트 댓글 */
 
 .best{
-    margin-left: 650px;
-    width: 350px;
-    height: 300px;
+	flex-basis: 30%;
     display: flex;
     flex-direction: column;
 }
@@ -170,7 +169,6 @@ section{
 /* 공지사항 */
 .info{
     height: 50px;
-    width: 100%;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -185,21 +183,18 @@ section{
 
 .info-content{
     flex-basis: 80%;
-    margin-left: 20px;
     display: flex;
     align-items: center;
 }
 
-/* *{
-    border: 1px solid black;
-} */
+
 
 
 /* 메인 바텀 ( */
 .main-bot{
     height: 300px;
     display: flex;
-    gap: 80px;
+    gap: 150px;
 }
 
 
@@ -207,9 +202,6 @@ section{
     flex-basis: 50%;
 }
 
-.mg-right{
-    margin-right: 70px;
-}
 
 .post:hover{
     background-color: #F4F6FD;
