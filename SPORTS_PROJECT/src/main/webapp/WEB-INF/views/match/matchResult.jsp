@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="/SPORTS_PROJECT/matchResult.css">
+    <link rel="stylesheet" href="/SPORTS_PROJECT/src/css/matchResult.css">
     
     <script src="/SPORTS_PROJECT/matchResult.js" defer></script>
     <title>MLB Dashboard</title>
