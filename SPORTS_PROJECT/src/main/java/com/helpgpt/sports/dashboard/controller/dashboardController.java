@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "dashboardController",
 			urlPatterns = {
-				"/",
 				"/dashboard",	
 				"/dashboard/*"}
 )
