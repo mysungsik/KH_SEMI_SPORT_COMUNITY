@@ -12,7 +12,14 @@
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/layouts/header-teams.jsp"/>
-	
+    <main>
+        <section class="container">
+            <div class="team-each-image">
+                <div></div>
+            </div>
+
+        </section>
+    </main>
 	<jsp:include page="/WEB-INF/views/layouts/footer.jsp"/>
 </body>
 </html>

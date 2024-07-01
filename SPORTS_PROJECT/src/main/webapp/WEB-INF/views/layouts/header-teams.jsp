@@ -71,7 +71,7 @@
 		            <ul class="d-flex">
 		                <a class="fs-20__b text-hover__blue" href="/SPORTS_PROJECT/src/pages/teams/team.jsp">BLUE JAYS</a>
 		                <a class="fs-20__b text-hover__blue" href="/SPORTS_PROJECT/src/pages/teams/players.jsp">PLAYERS</a>
-						<a href="/SPORTS_PROJECT/src/pages/teams/eachTeamMain.jsp"><img class="logo" src='/SPORTS_PROJECT/public/images/teams/FL.png'></a>
+						<a href="/SPORTS_PROJECT/teams/teamsEach"><img class="logo" src='/SPORTS_PROJECT/public/images/teams/FL.png'></a>
 		                <a class="fs-20__b text-hover__blue" href="/SPORTS_PROJECT/src/pages/teams/schedule.jsp">SCHEDULE</a>
 		                <a class="fs-20__b text-hover__blue" href="/SPORTS_PROJECT/src/pages/teams/contents.jsp">CONTENTS</a>
 		            </ul>

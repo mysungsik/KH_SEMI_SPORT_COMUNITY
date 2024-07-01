@@ -3,9 +3,13 @@
 
 /* container */
 .container{
-    width: 1024px;
+    width: 1200px;
 }
 
 section{
     margin: 30px 0;
+}
+
+.team-each-image{
+    background-image: url("/FRONTEND/public/images/kia.png");
 }
