@@ -10,12 +10,12 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-<link rel="stylesheet" href="./src/common/common.css">
+<link rel="stylesheet" href="/SPORTS_PROJECT/src/common/common.css">
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script src="./src/common/common.js" defer></script>
+<script src="/SPORTS_PROJECT/src/common/common.js" defer></script>
 
 </head>
 <body>
@@ -28,34 +28,34 @@
 	<c:if test="${isLogin}">
 			<div class="header-top">
 		        <div class="header-top-logo">
-		            <img class="logo" src='./public/images/mlb_logo.png'>
+		            <img class="logo" src='/SPORTS_PROJECT/public/images/mlb_logo.png'>
 		        </div>
 		        <div class="header-top-user box-hover dropdown">
-		            <img class="user-image" src='./public/images/user_img1.jpg'>
+		            <img class="user-image" src='/SPORTS_PROJECT/public/images/user_img1.jpg'>
 		            <div class="user-name dropdown-toggle" type="button" data-bs-toggle="dropdown">
 		                <a class="text-hover__blue fs-14__b">test_user1</a>
 		            </div>
 		            <ul class="dropdown-menu">
 		                <li class="d-flex dropdown-item">
 		                    <div class="d-flex">
-		                        <img class="user-image" src='./public/images/teams/FL.png'>
+		                        <img class="user-image" src='/SPORTS_PROJECT/public/images/teams/FL.png'>
 		                        <p class="fs-20__ex"> 기아 타이거즈 </p>
 		                    </div>
 		                    <div class="d-flex">
-		                        <a class="text-hover__blue" href="./src/pages/teams/teams.jsp"> 팀페이지 </a>
-		                        <a class="text-hover__blue" href="./src/pages/news/news.jsp"> 뉴스 </a>
+		                        <a class="text-hover__blue" href="/SPORTS_PROJECT/src/pages/teams/teams.jsp"> 팀페이지 </a>
+		                        <a class="text-hover__blue" href="/SPORTS_PROJECT/src/pages/news/news.jsp"> 뉴스 </a>
 		                    </div>
 		                </li>
 		           
 	                	<hr class="hr__gray">
 	                	<p class="header-title fc__gray fs-20__b"> 컨텐츠</p>
 		          
-		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="./profile">내 댓글</a></li>
-		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="./src/pages/personal/myInfo.jsp">내 게시글</a></li>
-		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="./src/pages/personal/myInfo.jsp">내 스크랩</a></li>
+		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="/SPORTS_PROJECT/profile">내 댓글</a></li>
+		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="/SPORTS_PROJECT/src/pages/personal/myInfo.jsp">내 게시글</a></li>
+		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="/SPORTS_PROJECT/src/pages/personal/myInfo.jsp">내 스크랩</a></li>
 		                
 		                <p class="header-title fc__gray fs-20__b"> 개인 정보 </p>
-		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="./src/pages/personal/myInfo.jsp">내 정보 관리</a></li>
+		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="/SPORTS_PROJECT/src/pages/personal/myInfo.jsp">내 정보 관리</a></li>
 		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="#">회원 탈퇴</a></li>
 		            
 		            	<li>
@@ -68,19 +68,19 @@
 		        <div class="header-nav">
 		            <ul class="d-flex">
 		            	<li>
-			                <a class="fs-14 fc__white text-hover__white" href="./dashboard">HOME</a>
+			                <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/dashboard">HOME</a>
 		            	</li>
 		            	<li>
-			                <a class="fs-14 fc__white text-hover__white" href="./match">TODAY</a>
+			                <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/match">TODAY</a>
 		            	</li>
 		            	<li>
-			                <a class="fs-14 fc__white text-hover__white" href="./news">NEWS</a>
+			                <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/news">NEWS</a>
 		            	</li>
 		            	<li>
-			                <a class="fs-14 fc__white text-hover__white" href="./community">COMMUNITY</a>
+			                <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/community">COMMUNITY</a>
 		            	</li>
 		            	<li>
-			                <a class="fs-14 fc__white text-hover__white" href="./teams">TEAMS</a>
+			                <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/teams">TEAMS</a>
 		            	</li>
 		            </ul>
 		        </div>
@@ -90,10 +90,10 @@
 	
 		<div class="header-top">
                 <div class="header-top-logo">
-                    <img class="logo" src='./public/images/mlb_logo.png'>
+                    <img class="logo" src='/SPORTS_PROJECT/public/images/mlb_logo.png'>
                 </div>
-                <div class="header-top-user box-hover" onclick="location.href='./login'">
-                    <img class="user-image" src='./public/icons/plus.png'>
+                <div class="header-top-user box-hover" onclick="location.href='/SPORTS_PROJECT/login'">
+                    <img class="user-image" src='/SPORTS_PROJECT/public/icons/plus.png'>
                     <div class="user-name">
                         <a class="text-hover__gray fc__gray fs-14__b">로그인후 이용해주세요</a>
                     </div>
@@ -103,19 +103,19 @@
                 <div class="header-nav">
      		            <ul class="d-flex">
 		            	<li>
-			                <a class="fs-14 fc__white text-hover__white" href="./dashboard">HOME</a>
+			                <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/dashboard">HOME</a>
 		            	</li>
 		            	<li>
-			                <a class="fs-14 fc__white text-hover__white" href="./match">TODAY</a>
+			                <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/match">TODAY</a>
 		            	</li>
 		            	<li>
-			                <a class="fs-14 fc__white text-hover__white" href="./news">NEWS</a>
+			                <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/news">NEWS</a>
 		            	</li>
 		            	<li>
-			                <a class="fs-14 fc__white text-hover__white" href="./community">COMMUNITY</a>
+			                <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/community">COMMUNITY</a>
 		            	</li>
 		            	<li>
-			                <a class="fs-14 fc__white text-hover__white" href="./teams">TEAMS</a>
+			                <a class="fs-14 fc__white text-hover__white" href="/SPORTS_PROJECT/teams">TEAMS</a>
 		            	</li>
 		            </ul>
                 </div>

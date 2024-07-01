@@ -4,9 +4,9 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="./src/css/signupTerms.css">
+	<link rel="stylesheet" href="../src/css/signupTerms.css">
 	
-    <script src="./src/js/signup.js" defer></script>
+    <script src="../src/js/signup.js" defer></script>
 	<title>MLB - Signup</title>
 </head>
 <body>
