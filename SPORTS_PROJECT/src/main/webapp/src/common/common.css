@@ -23,8 +23,7 @@ body *{
     font-family: 'GongGothicMedium';
     font-optical-sizing: auto;
     font-size: 12px;
-    font-weight: 400;
-    font-style: normal;
+    font-weight: 300;
 
 }
 
@@ -271,6 +270,12 @@ ul{
 .mb-14{
     margin-bottom: 14px !important;
 }
+.ml-14{
+    margin-left: 14px !important;
+}
+.ml-14{
+    margin-right: 14px !important;
+}
 .m-16{
     margin: 16px !important;
 }
@@ -280,11 +285,20 @@ ul{
 .mb-16{
     margin-bottom: 16px !important;
 }
+.mr-16{
+    margin-right: 16px !important;
+}
+.ml-16{
+    margin-left: 16px !important;
+}
 .m-20{
     margin: 20px !important;
 }
 .mt-20{
     margin-top: 20px !important;
+}
+.ml-20{
+    margin-left: 20px !important;
 }
 .mr-20{
     margin-right: 20px !important;
@@ -731,7 +745,7 @@ box-sizing: inherit;
 .text-hover__blue:hover{
     cursor: pointer;
     color: #4468E9;
-    font-weight: 700;
+    font-weight: 400;
     text-decoration: underline !important;
     transition: all ease-in-out 0.1s;
 }
@@ -739,7 +753,7 @@ box-sizing: inherit;
 .text-hover__gray:hover{
     cursor: pointer;
     color: #727272;
-    font-weight: 600;
+    font-weight: 400;
     text-decoration: underline !important;
     transition: all ease-in-out 0.1s;
 }
@@ -747,7 +761,7 @@ box-sizing: inherit;
 .text-hover__white:hover{
     cursor: pointer;
     color: #ffffff;
-    font-weight: 600;
+    font-weight: 400;
     text-decoration: underline !important;
     transition: all ease-in-out 0.1s;
 }

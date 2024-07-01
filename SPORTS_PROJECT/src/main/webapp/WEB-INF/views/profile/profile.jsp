@@ -16,31 +16,39 @@
 
     <main>
         <section class="container">
-            <div class="myInfo-left">
-                <div class="user-profile">
+            <div class="profile-left">
+                <div class="user-profile d-flex">
                     <img src="/SPORTS_PROJECT/public/images/user_img1.jpg">
                     <p> test_id </p>
                     <p> test_email@email.com</p>
                 </div>
-                <div class="user-nav">
+                <hr class="hr__gray mr-12 ml-12">
+                <div class="user-nav mt-20">
                     <div>
-                        <p> 컨텐츠 </p>
-                        <ul>
-                            <li> 내 댓글</li>
-                            <li> 내 게시글</li>
-                            <li> 내 스크랩</li>
+                        <p class="fc__gray fs-20"> 컨텐츠 </p>
+                        <ul class="ml-20">
+                            <li class="text-hover__blue"> 내 댓글</li>
+                            <li class="text-hover__blue"> 내 게시글</li>
+                            <li class="text-hover__blue"> 내 스크랩</li>
                         </ul>
                     </div>
                     <div>
-                        <p> 개인 정보 </p>
-                        <ul>
-                            <li> 내 정보 관리</li>
-                            <li> 회원 탈퇴</li>
+                        <p class="fc__gray fs-20"> 개인 정보 </p>
+                        <ul class="ml-20">
+                            <li class="text-hover__blue"> 내 정보 관리</li>
+                            <li class="text-hover__blue"> 회원 탈퇴</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="fc__gray fs-20"> 회원 관리 </p>
+                        <ul class="ml-20">
+                            <li class="text-hover__blue"> 유저 관리 </li>
+                            <li class="text-hover__blue"> 신고 관리 </li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="myInfo-content">
+            <div class="profile-content">
                 <p class="content-title">내 댓글</p>
                 <hr class="hr__gray">
                 <div class="content-header">
