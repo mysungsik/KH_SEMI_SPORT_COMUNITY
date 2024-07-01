@@ -21,7 +21,8 @@ section{
 /* 메인 */
 
 .teams-card{
-    width: 180px;
+    width: 230px;
+    height: 130px;
     background-color: #D2D2D2;
 }
 
@@ -32,8 +33,9 @@ section{
 }
 
 .teams-logo{
-    width: 70px;
-    padding-left: 10px;
+    width: 100px;
+    padding-left: 5px;
+    margin-bottom: 5px;
 }
 
 .teams-name{
@@ -41,6 +43,7 @@ section{
     justify-content: space-between;
     align-items: center;
     padding-bottom: 5px;
+    padding-left: 5px;
 }
 
 
@@ -52,6 +55,6 @@ section{
     width: 994px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
