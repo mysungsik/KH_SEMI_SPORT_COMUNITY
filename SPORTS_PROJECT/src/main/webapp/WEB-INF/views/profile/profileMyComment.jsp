@@ -49,52 +49,81 @@
                 </div>
             </div>
             <div class="profile-content">
-                <p class="content-title">내 댓글</p>
-                <hr class="hr__gray">
-                <div class="content-header">
+            	<!-- 컨텐츠 > 헤더 -->
+                <p class="content-title fs-20__b"> 내 댓글</p>
+                <hr class="hr__gray mt-20">
+                <div class="content-header d-flex">
                     <div class="checkbox__blue small-square">
                         <input type="checkbox" id="check-all" name="check-all">
-                        <label for="term-personal" class="fs-20__b">전체선택</label>
+                        <label for="check-all" class="fs-12">전체 선택</label>
                     </div>
+<<<<<<< Updated upstream:SPORTS_PROJECT/src/main/webapp/WEB-INF/views/profile/profile.jsp
                     <div>
                         <img src="${contextPath}/public/icons/bin.png">
                         <span> 선택 삭제 </span>
+=======
+                    <div class="delete-box d-flex">
+                        <img src="/SPORTS_PROJECT/public/icons/bin.png" />
+                        <p> 선택 삭제 </p>
+>>>>>>> Stashed changes:SPORTS_PROJECT/src/main/webapp/WEB-INF/views/profile/profileMyComment.jsp
                     </div>
                 </div>
+                
+                <!-- 컨텐츠 > 메인 -->
                 <div class="content-main">
                     <div class="content-elements">
-                        <div class="comment checkbox__blue small-square">
-                            <input type="checkbox" id="post-check" name="post-check" value="1">
+                        <comment class="comment checkbox__blue small-square base__lblue">
                             <div class="element-text">
-                                <p> <span>[ 커뮤니티 - 공지 ]</span> 커뮤니티 글 이렇게 쓰는게 맞나요</p>
-                                <p> 커뮤니티 그렇게 쓰는게 맞습니다! </p>
+	                            <input type="checkbox" id="post-check" name="post-check" value="1">
+	                            <div>
+	                                <p> <span>[ 커뮤니티 - 공지 ]</span> 커뮤니티 글 이렇게 쓰는게 맞나요</p>
+	                                <p> 커뮤니티 그렇게 쓰는게 맞습니다! </p>
+	                            </div>
                             </div>
                             <div class="element-edit">
                                 <img src="${contextPath}/public/icons/edit.png">
                             </div>
-                        </div>
-                        <div class="comment checkbox__blue small-square">
-                            <input type="checkbox" id="post-check" name="post-check" value="1">
+                        </comment>
+                        <comment class="comment checkbox__blue small-square base__lblue">
                             <div class="element-text">
-                                <p> <span>[ 커뮤니티 - 공지 ]</span> 커뮤니티 글 이렇게 쓰는게 맞나요</p>
-                                <p> 커뮤니티 그렇게 쓰는게 맞습니다! </p>
+	                            <input type="checkbox" id="post-check" name="post-check" value="1">
+	                            <div>
+	                                <p> <span>[ 커뮤니티 - 공지 ]</span> 커뮤니티 글 이렇게 쓰는게 맞나요</p>
+	                                <p> 커뮤니티 그렇게 쓰는게 맞습니다! </p>
+	                            </div>
                             </div>
                             <div class="element-edit">
                                 <img src="${contextPath}/public/icons/edit.png">
                             </div>
-                        </div>
-                        <div class="comment checkbox__blue small-square">
-                            <input type="checkbox" id="post-check" name="post-check" value="1">
+                        </comment>
+                        <comment class="comment checkbox__blue small-square base__lblue">
                             <div class="element-text">
-                                <p> <span>[ 커뮤니티 - 공지 ]</span> 커뮤니티 글 이렇게 쓰는게 맞나요</p>
-                                <p> 커뮤니티 그렇게 쓰는게 맞습니다! </p>
+	                            <input type="checkbox" id="post-check" name="post-check" value="1">
+	                            <div>
+	                                <p> <span>[ 커뮤니티 - 공지 ]</span> 커뮤니티 글 이렇게 쓰는게 맞나요</p>
+	                                <p> 커뮤니티 그렇게 쓰는게 맞습니다! </p>
+	                            </div>
                             </div>
                             <div class="element-edit">
                                 <img src="${contextPath}/public/icons/edit.png">
                             </div>
-                        </div>
+                        </comment>
+                        <comment class="comment checkbox__blue small-square base__lblue">
+                            <div class="element-text">
+	                            <input type="checkbox" id="post-check" name="post-check" value="1">
+	                            <div>
+	                                <p> <span>[ 커뮤니티 - 공지 ]</span> 커뮤니티 글 이렇게 쓰는게 맞나요</p>
+	                                <p> 커뮤니티 그렇게 쓰는게 맞습니다! </p>
+	                            </div>
+                            </div>
+                            <div class="element-edit">
+                                <img src="/SPORTS_PROJECT/public/icons/edit.png">
+                            </div>
+                        </comment>
+                   
                     </div>
                 </div>
+                <!-- 컨텐츠 메인 종료 -->
             </div>
         </section>
     </main>

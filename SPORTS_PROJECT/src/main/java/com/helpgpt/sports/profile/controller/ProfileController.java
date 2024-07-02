@@ -49,7 +49,11 @@ public class ProfileController extends HttpServlet {
 		// 경로에 따라 필요한 페이지로 추가 이동
 		switch (path) {
 		case "": {
-			dispatcher = req.getRequestDispatcher(defaultURLPath + "profile.jsp");
+			dispatcher = req.getRequestDispatcher(defaultURLPath + "profileMyComment.jsp");
+			dispatcher.forward(req, resp);
+			}break;
+		case "myComment": {
+			dispatcher = req.getRequestDispatcher(defaultURLPath + "profileMyComment.jsp");
 			dispatcher.forward(req, resp);
 			}break;
 		default:System.out.println("404 페이지로 이동");}

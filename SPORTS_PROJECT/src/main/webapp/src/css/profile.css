@@ -34,8 +34,62 @@
 	margin: 10px 0;
 	font-size : 20px;
 }
-/* 프로플 우측 컨텐츠 */
+/* 프로필 우측 컨텐츠 */
 .profile-content{
 	width: calc(1024px - 320px);
-    border: 1px solid;
+}
+
+.profile-content .content-header{
+	justify-content: space-between;
+	align-items: center;
+	padding: 5px;
+	margin-top: 10px;
+}
+
+.profile-content .content-header > div{
+	height: 20px;
+	align-items: center;
+}
+
+.profile-content .content-header > div:hover{
+	cursor: pointer;
+}
+
+.profile-content .content-header img{
+	width: 20px;
+}
+
+.profile-content .content-main{
+	padding: 10px;
+	border: 1px solid;
+}
+.content-main .content-elements{
+	border: 1px solid;
+}
+.content-main .content-elements .comment{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 4px 0;
+	border-radius: 5px;
+}
+
+.content-elements .comment img{
+	width: 20px;
+}
+
+.content-elements .comment img:hover{
+	cursor: pointer;
+}
+
+.content-elements .comment .element-text{
+	display: flex;
+	align-items: center;
+	padding : 5px 10px;
+	gap: 15px;
+}
+
+.content-elements .comment .element-edit{
+	margin-right: 10px;
+	margin-top : 5px;
 }
