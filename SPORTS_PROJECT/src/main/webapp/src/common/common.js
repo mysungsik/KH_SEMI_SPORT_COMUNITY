@@ -5,7 +5,7 @@
  */
 
 /** HEADER & FOOTER */
-let contextPath = "";
+var contextPath = "";
 
 $(document).ready(function () {
 	contextPath = "/" + window.location.pathname.split("/")[1];

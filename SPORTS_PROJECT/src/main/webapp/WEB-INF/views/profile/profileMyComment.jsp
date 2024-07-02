@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="${contextPath}/src/css/profile.css">
+    <script src="${contextPath}/src/util/pagination.js" defer></script>
     <script src="${contextPath}/src/js/profile.js" defer></script>
     
     <title>MLB - Na</title>
@@ -57,71 +58,16 @@
                         <input type="checkbox" id="check-all" name="check-all">
                         <label for="check-all" class="fs-12">전체 선택</label>
                     </div>
-<<<<<<< Updated upstream:SPORTS_PROJECT/src/main/webapp/WEB-INF/views/profile/profile.jsp
                     <div>
                         <img src="${contextPath}/public/icons/bin.png">
                         <span> 선택 삭제 </span>
-=======
-                    <div class="delete-box d-flex">
-                        <img src="/SPORTS_PROJECT/public/icons/bin.png" />
-                        <p> 선택 삭제 </p>
->>>>>>> Stashed changes:SPORTS_PROJECT/src/main/webapp/WEB-INF/views/profile/profileMyComment.jsp
                     </div>
                 </div>
                 
                 <!-- 컨텐츠 > 메인 -->
                 <div class="content-main">
-                    <div class="content-elements">
-                        <comment class="comment checkbox__blue small-square base__lblue">
-                            <div class="element-text">
-	                            <input type="checkbox" id="post-check" name="post-check" value="1">
-	                            <div>
-	                                <p> <span>[ 커뮤니티 - 공지 ]</span> 커뮤니티 글 이렇게 쓰는게 맞나요</p>
-	                                <p> 커뮤니티 그렇게 쓰는게 맞습니다! </p>
-	                            </div>
-                            </div>
-                            <div class="element-edit">
-                                <img src="${contextPath}/public/icons/edit.png">
-                            </div>
-                        </comment>
-                        <comment class="comment checkbox__blue small-square base__lblue">
-                            <div class="element-text">
-	                            <input type="checkbox" id="post-check" name="post-check" value="1">
-	                            <div>
-	                                <p> <span>[ 커뮤니티 - 공지 ]</span> 커뮤니티 글 이렇게 쓰는게 맞나요</p>
-	                                <p> 커뮤니티 그렇게 쓰는게 맞습니다! </p>
-	                            </div>
-                            </div>
-                            <div class="element-edit">
-                                <img src="${contextPath}/public/icons/edit.png">
-                            </div>
-                        </comment>
-                        <comment class="comment checkbox__blue small-square base__lblue">
-                            <div class="element-text">
-	                            <input type="checkbox" id="post-check" name="post-check" value="1">
-	                            <div>
-	                                <p> <span>[ 커뮤니티 - 공지 ]</span> 커뮤니티 글 이렇게 쓰는게 맞나요</p>
-	                                <p> 커뮤니티 그렇게 쓰는게 맞습니다! </p>
-	                            </div>
-                            </div>
-                            <div class="element-edit">
-                                <img src="${contextPath}/public/icons/edit.png">
-                            </div>
-                        </comment>
-                        <comment class="comment checkbox__blue small-square base__lblue">
-                            <div class="element-text">
-	                            <input type="checkbox" id="post-check" name="post-check" value="1">
-	                            <div>
-	                                <p> <span>[ 커뮤니티 - 공지 ]</span> 커뮤니티 글 이렇게 쓰는게 맞나요</p>
-	                                <p> 커뮤니티 그렇게 쓰는게 맞습니다! </p>
-	                            </div>
-                            </div>
-                            <div class="element-edit">
-                                <img src="/SPORTS_PROJECT/public/icons/edit.png">
-                            </div>
-                        </comment>
-                   
-                    </div>
+                    <div id="data-container" class="content-elements"></div>
+                    <div id="pagination-container"></div>
                 </div>
                 <!-- 컨텐츠 메인 종료 -->
             </div>

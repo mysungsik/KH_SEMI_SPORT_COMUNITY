@@ -10,6 +10,8 @@
 /* 프로필 좌측 네비게이션 */
 .profile-left{
 	width: 320px;
+	border: none;
+    border-right: 1px solid rgb(114 114 114 / 25%);
 }
 
 .profile-left .user-profile{
@@ -37,6 +39,7 @@
 /* 프로필 우측 컨텐츠 */
 .profile-content{
 	width: calc(1024px - 320px);
+	margin-left: 20px;
 }
 
 .profile-content .content-header{
@@ -61,16 +64,14 @@
 
 .profile-content .content-main{
 	padding: 10px;
-	border: 1px solid;
+	height: 780px;
 }
-.content-main .content-elements{
-	border: 1px solid;
-}
+
 .content-main .content-elements .comment{
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	margin: 4px 0;
+	margin: 10px 0;
 	border-radius: 5px;
 }
 
@@ -93,3 +94,33 @@
 	margin-right: 10px;
 	margin-top : 5px;
 }
+
+/* 페이지네이션*/
+.paginationjs-pages{
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+}
+.paginationjs-pages ul {
+	display: flex;
+	gap: 10px;
+}
+
+.paginationjs-pages .J-paginationjs-page a:hover{
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
