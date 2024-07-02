@@ -32,6 +32,153 @@
 			</section>
 			<!-- 게시판 -->
 			<section class="board">
+				<div class="title">
+					<span class="fs-28__b">전체</span>
+				</div>
+				<div class="post">
+					<div class="category">
+						<span class="fs-12 fc__gray">[응원]</span>
+					</div>
+					<div class="content">
+						<div class="post-title">
+							<span class="fs-14__b">야구 룰이 너무 어려움</span>
+						</div>
+						<div class="post-info">
+							<span>작성자 2024-07-02</span>
+							<span>조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
+						</div>
+					</div>
+				</div>
+				
+				<div class="post">
+					<div class="category">
+						<span class="fs-12 fc__gray">[응원]</span>
+					</div>
+					<div class="content">
+						<div class="post-title">
+							<span class="fs-14__b">야구 룰이 너무 어려움</span>
+						</div>
+						<div class="post-info">
+							<span>작성자 2024-07-02</span>
+							<span>조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
+						</div>
+					</div>
+				</div>
+				
+				<div class="post">
+					<div class="category">
+						<span class="fs-12 fc__gray">[응원]</span>
+					</div>
+					<div class="content">
+						<div class="post-title">
+							<span class="fs-14__b">야구 룰이 너무 어려움</span>
+						</div>
+						<div class="post-info">
+							<span>작성자 2024-07-02</span>
+							<span>조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
+						</div>
+					</div>
+				</div>
+				
+				<div class="post">
+					<div class="category">
+						<span class="fs-12 fc__gray">[응원]</span>
+					</div>
+					<div class="content">
+						<div class="post-title">
+							<span class="fs-14__b">야구 룰이 너무 어려움</span>
+						</div>
+						<div class="post-info">
+							<span>작성자 2024-07-02</span>
+							<span>조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
+						</div>
+					</div>
+				</div>
+				<div class="post">
+					<div class="category">
+						<span class="fs-12 fc__gray">[응원]</span>
+					</div>
+					<div class="content">
+						<div class="post-title">
+							<span class="fs-14__b">야구 룰이 너무 어려움</span>
+						</div>
+						<div class="post-info">
+							<span>작성자 2024-07-02</span>
+							<span>조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
+						</div>
+					</div>
+				</div>
+				<div class="post">
+					<div class="category">
+						<span class="fs-12 fc__gray">[응원]</span>
+					</div>
+					<div class="content">
+						<div class="post-title">
+							<span class="fs-14__b">야구 룰이 너무 어려움</span>
+						</div>
+						<div class="post-info">
+							<span>작성자 2024-07-02</span>
+							<span>조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
+						</div>
+					</div>
+				</div>
+				<div class="post">
+					<div class="category">
+						<span class="fs-12 fc__gray">[응원]</span>
+					</div>
+					<div class="content">
+						<div class="post-title">
+							<span class="fs-14__b">야구 룰이 너무 어려움</span>
+						</div>
+						<div class="post-info">
+							<span>작성자 2024-07-02</span>
+							<span>조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
+						</div>
+					</div>
+				</div>
+				<div class="post">
+					<div class="category">
+						<span class="fs-12 fc__gray">[응원]</span>
+					</div>
+					<div class="content">
+						<div class="post-title">
+							<span class="fs-14__b">야구 룰이 너무 어려움</span>
+						</div>
+						<div class="post-info">
+							<span>작성자 2024-07-02</span>
+							<span>조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
+						</div>
+					</div>
+				</div>
+				<div class="post">
+					<div class="category">
+						<span class="fs-12 fc__gray">[응원]</span>
+					</div>
+					<div class="content">
+						<div class="post-title">
+							<span class="fs-14__b">야구 룰이 너무 어려움</span>
+						</div>
+						<div class="post-info">
+							<span>작성자 2024-07-02</span>
+							<span>조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
+						</div>
+					</div>
+				</div>
+				<div class="post">
+					<div class="category">
+						<span class="fs-12 fc__gray">[응원]</span>
+					</div>
+					<div class="content">
+						<div class="post-title">
+							<span class="fs-14__b">야구 룰이 너무 어려움</span>
+						</div>
+						<div class="post-info">
+							<span>작성자 2024-07-02</span>
+							<span>조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
+						</div>
+					</div>
+				</div>
+				
 			</section>
 			<!-- 페이지 -->
 			<section class="page">

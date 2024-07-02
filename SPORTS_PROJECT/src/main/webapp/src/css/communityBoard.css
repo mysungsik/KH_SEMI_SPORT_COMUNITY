@@ -1,10 +1,10 @@
-*{border: 1px solid black;}
+/* *{border: 1px solid black;} */
 
 *{box-sizing: border-box;}
 
 main{
-    width: 1024px;
-    height: 900px;
+    width: 1300px;
+    height: 1000px;
 }
 
 /* 메뉴 */
@@ -36,8 +36,43 @@ main{
 
 /* 게시판 */
 .board{
-	height: 650px;
+	height: 750px;
 	margin-top: 30px;
+}
+
+.title{
+	border-bottom: 1px solid black;
+}
+
+
+.post{
+	height: 70px;
+	display: flex;
+	border-bottom: 1px solid gray;
+}
+
+.category{
+	flex-basis: 10%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.content{
+	flex-basis: 90%;
+}
+
+.post-title{
+	height: 70%;
+	display: flex;
+	align-items: center;
+}
+
+
+.post-info{
+	height: 30%;
+	display: flex;
+	justify-content: space-between;
 }
 
 /* 페이지 */

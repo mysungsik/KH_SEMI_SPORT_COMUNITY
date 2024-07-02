@@ -31,22 +31,25 @@ body{
 
 .search-area{
 	display: flex;
-	gap: 5px;
+	gap: 10px;
 }
 
 .search-area input{
 	border: 0;
 	outline: 0;
+	border-radius: 5px;
 }
 
 .search button{
 	border: 0;
 	background-color: white;
+	border-radius: 5px;
 }
 
 .search{
 	border: 2px solid gray;
 	border-radius: 5px;
+	display: flex;
 }
 
 .write-btn{
