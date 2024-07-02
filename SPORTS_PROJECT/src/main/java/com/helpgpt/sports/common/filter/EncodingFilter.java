@@ -25,16 +25,6 @@ public class EncodingFilter extends HttpFilter implements Filter {
 		
 		chain.doFilter(request, response);
 		
-		// application scope로 최상위 경로를 얻어올 수 있는 값 세팅
-		// application 내장 객체 얻어오기
-		ServletContext application = request.getServletContext();
-		
-		// 최상위 주소
-		String contextPath = ((HttpServletRequest)request).getContextPath();
-		
-		// 세팅
-		application.setAttribute("contextPath", contextPath);
-		
 	}
 
 }
