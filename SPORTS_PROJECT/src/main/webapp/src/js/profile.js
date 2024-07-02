@@ -15,8 +15,8 @@ function pagingTemplate(data) {
 	            <div class="element-text">
 	                <input type="checkbox" id="post-check" name="post-check" value="1">
 	                <div>
-	                    <p> <span>${item.category}</span> ${item.content}</p>
-	                    <p> ${item.comment} </p>
+	                    <p class="fc__gray"> <span>${item.category}</span> ${item.content}</p>
+	                    <p class="comment-text"> ${item.comment} </p>
 	                </div>
 	            </div>
 	            <div class="element-edit">
@@ -68,7 +68,15 @@ $('#pagination-container').pagination({
         allChecks();
 
 		var currentPage = pagination.pageNumber;	// 현재 페이지 번호
-		console.log(currentPage)
+		var pagingEl = $(`.paginationjs-page[data-num='${currentPage}'] a`);
+		
+		console.log(pagingEl)
+		pagingEl.css({
+			fontSize : "14px",
+			textDecoration : "underline"
+		})
+		
+		
 		
 		
 }

@@ -51,7 +51,7 @@
             </div>
             <div class="profile-content">
             	<!-- 컨텐츠 > 헤더 -->
-                <p class="content-title fs-20__b"> 내 댓글</p>
+                <p class="content-title fs-28__b"> 내 댓글</p>
                 <hr class="hr__gray mt-20">
                 <div class="content-header d-flex">
                     <div class="checkbox__blue small-square">
@@ -67,8 +67,8 @@
                 <!-- 컨텐츠 > 메인 -->
                 <div class="content-main">
                     <div id="data-container" class="content-elements"></div>
-                    <div id="pagination-container"></div>
                 </div>
+                <div id="pagination-container"></div>
                 <!-- 컨텐츠 메인 종료 -->
             </div>
         </section>
