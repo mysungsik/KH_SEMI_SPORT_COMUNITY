@@ -1,0 +1,66 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    justify-content: center;
+
+}
+
+.main-top-bar{
+    background-color: #00509e;
+    color: #fff;
+    font-weight: bold;
+}
+.ranking-tab {
+    display: flex;
+    width: 100%;
+}
+.ranking-tab > div{
+    border: 1px solid gray;
+}
+
+.ranking-tab > div a{
+    text-decoration: none;
+}
+.teamRanking{
+    border: 1px solid gray;
+    width: 100%;
+    border-collapse: collapse;
+}
+.teamRanking th,
+.teamRanking td{
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.matchschedule{
+    height: 400px;
+    width: 100%;
+    background-color: blue;
+}
+
+.player-ranking{
+    height: 400px;
+    width: 100%;
+    background: lightpink;
+}
+
+.player-ranking-top{
+    height: 50px;
+    background-color: beige;
+    width: 100%;
+    color: black;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    border-radius: 15% 15% 0 0;
+}
+
+.win-ranking{
+    display: flex;
+    height: 100px;
+
+}
