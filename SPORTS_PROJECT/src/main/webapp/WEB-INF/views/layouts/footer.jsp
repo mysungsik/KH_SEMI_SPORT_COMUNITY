@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +9,7 @@
 	<footer>
 		<div class="footer-top d-flex">
             <div class="footer-top-left d-flex">
-                <img class="logo" src='/SPORTS_PROJECT/public/images/mlb_logo2.jpg'>
+                <img class="logo" src='${contextPath }/public/images/mlb_logo2.jpg'>
                 <div class="footer-top-anno d-flex">
                     <p class="fs-14__ex fc__dgray mr-10"> 공지사항 </p>
                     <p class="fs-14 fc__gray text-hover__gray"> KH 커뮤니티 페이지가 오픈했습니다! </p>

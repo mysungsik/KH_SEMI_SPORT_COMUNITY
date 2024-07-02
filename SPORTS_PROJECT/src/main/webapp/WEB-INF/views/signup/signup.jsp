@@ -4,8 +4,8 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="/SPORTS_PROJECT/src/css/signup.css">
-	<script src="/SPORTS_PROJECT/src/js/signup.js" defer></script>
+	<link rel="stylesheet" href="${contextPath}/src/css/signup.css">
+	<script src="${contextPath}/src/js/signup.js" defer></script>
 	<title>MLB - Signup</title>
 </head>
 <body>
@@ -22,7 +22,7 @@
                     </div>
                     <div>
                         <input class="box-shadow"  type="password" name="signup-password" placeholder="PASSWORD">
-                        <img class="password-eye" src="/SPORTS_PROJECT/public/icons/eye-closed.png">
+                        <img class="password-eye" src="${contextPath}/public/icons/eye-closed.png">
                     </div>
                     <div>
                         <input class="box-shadow" type="email" name="signup-email" placeholder="EMAIL">
@@ -49,7 +49,7 @@
                 </div>
             </form>
             <!-- 임시 페이지이동 -->
-            <button class="btn-big__blue" onclick="location.href = '/SPORTS_PROJECT/login';">    
+            <button class="btn-big__blue" onclick="location.href = '${contextPath}/login';">    
                 회원가입
             </button>
         </section>

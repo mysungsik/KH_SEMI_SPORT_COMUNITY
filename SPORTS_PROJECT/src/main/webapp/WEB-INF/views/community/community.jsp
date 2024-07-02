@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="/SPORTS_PROJECT/src/css/community.css">
-    <script src="/SPORTS_PROJECT/src/js/community.js" defer></script>
+    <link rel="stylesheet" href="${contextPath}/src/css/community.css">
+    <script src="${contextPath}/src/js/community.js" defer></script>
     <script src="https://kit.fontawesome.com/e245e5bbb1.js" crossorigin="anonymous"></script>
     
     <title>COMMUNITY</title>
@@ -23,7 +23,7 @@
                 <article class="title mg-left">
 	                <div class="title-area">
 	                    <span class="fs-28__b">주간 인기글</span>
-	                    <span class="see-more fs-10 fc__gray"><a href="/SPORTS_PROJECT/community/communityBoard">더보기▶</a></span>
+	                    <span class="see-more fs-10 fc__gray"><a href="${contextPath}/community/communityBoard">더보기▶</a></span>
 	                </div>
                     <div class="search-area">
 	                    <form action="#" class="search">
@@ -332,7 +332,7 @@
                             <span class="fs-14__b fc__blue">1</span>
                         </div>
                         <div class="best-img">
-                            <img src="/SPORTS_PROJECT/public/images/user_img1.jpg">
+                            <img src="${contextPath}/public/images/user_img1.jpg">
                         </div>
                         <div class="best-content-area">
                             <div class="best-info">
@@ -355,7 +355,7 @@
                             <span class="fs-14__b fc__blue">2</span>
                         </div>
                         <div class="best-img">
-                            <img src="/SPORTS_PROJECT/public/images/user_img1.jpg">
+                            <img src="${contextPath}/public/images/user_img1.jpg">
                         </div>
                         <div class="best-content-area">
                             <div class="best-info">
@@ -379,7 +379,7 @@
                             <span class="fs-14__b fc__blue">3</span>
                         </div>
                         <div class="best-img">
-                            <img src="/SPORTS_PROJECT/public/images/user_img1.jpg">
+                            <img src="${contextPath}/public/images/user_img1.jpg">
                         </div>
                         <div class="best-content-area">
                             <div class="best-info">
@@ -403,7 +403,7 @@
                             <span class="fs-14__b fc__blue">4</span>
                         </div>
                         <div class="best-img">
-                            <img src="/SPORTS_PROJECT/public/images/user_img1.jpg">
+                            <img src="${contextPath}/public/images/user_img1.jpg">
                         </div>
                         <div class="best-content-area">
                             <div class="best-info">
@@ -427,7 +427,7 @@
                             <span class="fs-14__b fc__blue">5</span>
                         </div>
                         <div class="best-img">
-                            <img src="/SPORTS_PROJECT/public/images/user_img1.jpg">
+                            <img src="${contextPath}/public/images/user_img1.jpg">
                         </div>
                         <div class="best-content-area">
                             <div class="best-info">

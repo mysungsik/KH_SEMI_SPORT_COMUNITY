@@ -5,8 +5,8 @@
 
 <head>
     
-    <link rel="stylesheet" href="/SPORTS_PROJECT/teamRanking.css">
-    <script src="/SPORTS_PROJECT/matchResult.js" defer></script>
+    <link rel="stylesheet" href="${contextPath}/teamRanking.css">
+    <script src="${contextPath}/matchResult.js" defer></script>
     <title>TeamRanking</title>
 </head>
 <body>
