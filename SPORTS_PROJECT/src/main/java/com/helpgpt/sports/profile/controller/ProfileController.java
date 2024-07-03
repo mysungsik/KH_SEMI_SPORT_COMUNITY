@@ -56,6 +56,14 @@ public class ProfileController extends HttpServlet {
 			dispatcher = req.getRequestDispatcher(defaultURLPath + "profileMyComment.jsp");
 			dispatcher.forward(req, resp);
 			}break;
+		case "myBoard": {
+			dispatcher = req.getRequestDispatcher(defaultURLPath + "profileMyBoards.jsp");
+			dispatcher.forward(req, resp);
+			}break;
+		case "myScrab": {
+			dispatcher = req.getRequestDispatcher(defaultURLPath + "profileMyScrab.jsp");
+			dispatcher.forward(req, resp);
+			}break;
 		default:System.out.println("404 페이지로 이동");}
 		
 	}

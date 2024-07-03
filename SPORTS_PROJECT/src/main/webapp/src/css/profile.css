@@ -34,6 +34,9 @@
 
 .profile-left .user-nav ul li{
 	margin: 10px 0;
+}
+
+.profile-left .user-nav ul li a{
 	font-size : 20px;
 }
 /* 프로필 우측 컨텐츠 */
@@ -67,7 +70,7 @@
 	height: 600px;
 }
 
-.content-main .content-elements .comment{
+.content-main .content-elements .item{
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -75,25 +78,37 @@
 	border-radius: 5px;
 }
 
-.content-elements .comment img{
+.content-elements .item img{
 	width: 20px;
 }
 
-.content-elements .comment img:hover{
+.content-elements .item img:hover{
 	cursor: pointer;
 }
 
-.content-elements .comment .element-text{
+.content-elements .item .element-text{
 	display: flex;
 	align-items: center;
 	padding : 5px 10px;
 	gap: 15px;
 }
-.content-elements .comment .comment-text:hover{
+
+/* ellipsis 적용하여 ... 으로 보이게하기 */
+.content-elements .item .item-text{
+	width: 500px;
+    overflow: hidden;
+    text-overflow: ellipsis;  
+    word-break: break-word;
+    display: -webkit-box;    
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical
+}
+
+.content-elements .item .item-text:hover{
 	cursor: pointer;
 }
 
-.content-elements .comment .element-edit{
+.content-elements .item .element-edit{
 	margin-right: 10px;
 	margin-top : 5px;
 }

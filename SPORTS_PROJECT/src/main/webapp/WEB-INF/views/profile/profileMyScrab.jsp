@@ -23,7 +23,7 @@
             <!-- 메인컨텐츠 -->
             <div class="profile-content">
             	<!-- 컨텐츠 > 헤더 -->
-                <p class="content-title fs-28__b"> 내 댓글</p>
+                <p class="content-title fs-28__b"> 내 스크랩</p>
                 <hr class="hr__gray mt-20">
                 <div class="content-header d-flex">
                     <div class="checkbox__blue small-square">
@@ -38,9 +38,9 @@
                 
                 <!-- 컨텐츠 > 메인 -->
                 <div class="content-main">
-                    <div id="comments-data" class="content-elements"></div>
+                    <div id="scrab-data" class="content-elements"></div>
                 </div>
-                <div id="comments-pagination"></div>
+                <div id="scrab-pagination"></div>
                 <!-- 컨텐츠 메인 종료 -->
             </div>
         </section>
