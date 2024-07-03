@@ -19,14 +19,11 @@
 			<!-- 게시판 메뉴 -->
 			<section class="nav">
 				<div class="switch">
-					<label>
-					<span>전체</span>
-					<input type="radio" name="tabs">
-					</label>
-					<input type="radio" name="tabs">
-					<input type="radio" name="tabs">
-					<input type="radio" name="tabs">
-					<input type="radio" name="tabs">
+					<div class="switch-category base__blue"><span class="fs-14 fc__white">전체</span></div>
+					<div class="switch-category base__lblue"><span class="fs-14 fc__gray">인기</span></div>
+					<div class="switch-category base__lblue"><span class="fs-14 fc__gray">응원</span></div>
+					<div class="switch-category base__lblue"><span class="fs-14 fc__gray">자유</span></div>
+					<div class="switch-category base__lblue"><span class="fs-14 fc__gray">공지사항</span></div>
 				</div>
 				
 			</section>

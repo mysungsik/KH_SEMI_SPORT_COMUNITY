@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="${contextPath}/src/css/community.css">
     <script src="${contextPath}/src/js/community.js" defer></script>
+    <script src="${contextPath}/src/util/pagination.js" defer></script>
     <script src="https://kit.fontawesome.com/e245e5bbb1.js" crossorigin="anonymous"></script>
     
     <title>COMMUNITY</title>
@@ -272,51 +273,8 @@
                         <span class="see-more fs-10 fc__gray"><a>더보기▶</a></span>
                     </div>
                     
-                    <div class="post">
-                        <div class="post-title">
-                            <span class="fs-14__b">게시글입니다 test 1234</span>
-                        </div>
-                        <div class="post-info">
-                            <span class="fs-10">작성자 2024-06-23</span>
-                            <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-                        </div>
-                    </div>
-                    <div class="post">
-                        <div class="post-title">
-                            <span class="fs-14__b">게시글입니다 test 1234</span>
-                        </div>
-                        <div class="post-info">
-                            <span class="fs-10">작성자 2024-06-23</span>
-                            <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-                        </div>
-                    </div>
-                    <div class="post">
-                        <div class="post-title">
-                            <span class="fs-14__b">게시글입니다 test 1234</span>
-                        </div>
-                        <div class="post-info">
-                            <span class="fs-10">작성자 2024-06-23</span>
-                            <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-                        </div>
-                    </div>
-                    <div class="post">
-                        <div class="post-title">
-                            <span class="fs-14__b">게시글입니다 test 1234</span>
-                        </div>
-                        <div class="post-info">
-                            <span class="fs-10">작성자 2024-06-23</span>
-                            <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-                        </div>
-                    </div>
-                    <div class="post">
-                        <div class="post-title">
-                            <span class="fs-14__b">게시글입니다 test 1234</span>
-                        </div>
-                        <div class="post-info">
-                            <span class="fs-10">작성자 2024-06-23</span>
-                            <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-                        </div>
-                    </div>
+                   	<div id="community-data"></div>
+					<div id="community-pagination"></div>
 
                 </article>
 
