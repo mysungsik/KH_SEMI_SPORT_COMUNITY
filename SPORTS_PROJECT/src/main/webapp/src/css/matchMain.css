@@ -13,11 +13,12 @@
 }
 .ranking-tab {
     display: flex;
-    width: 100%;
 }
 .ranking-tab > div{
     border: 1px solid gray;
+    width: 100%;
 }
+
 
 .ranking-tab > div a{
     text-decoration: none;
@@ -44,7 +45,7 @@
 
 .player-ranking{
     height: 400px;
-    width: 100%;
+    width: 1200px;
     background: lightpink;
 }
 
@@ -63,4 +64,27 @@
     display: flex;
     height: 100px;
 
+}
+
+.ranking-category{
+    display: flex;
+    flex-direction: row;
+}
+
+.player_record{
+	display: flex;
+	flex-direction: row;
+}
+.box-ranking{
+	width: 240px;
+	height:300px;
+	border: 1px solid gray;
+	display:flex;
+	align-items: center;
+	justify-content:center;
+	flex-direction:column;
+}
+.rankingCategory{
+	height : 30px;
+	margin-bottom: 120px;
 }

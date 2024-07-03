@@ -33,9 +33,21 @@ public class MatchController extends HttpServlet {
 	
 		switch (path) {
 		case "": {
+			dispatcher = req.getRequestDispatcher(defaultURLPath + "matchMain.jsp");
+			dispatcher.forward(req, resp);
+		};break;
+		case "detail" : {
+			dispatcher = req.getRequestDispatcher(defaultURLPath + "matchDeatil.jsp");
+			dispatcher.forward(req, resp);
+		};break;
+		case "matchResult" : {
 			dispatcher = req.getRequestDispatcher(defaultURLPath + "matchResult.jsp");
 			dispatcher.forward(req, resp);
-		}break;
+		};break;
+		case "teamRanking" : {
+			dispatcher = req.getRequestDispatcher(defaultURLPath + "teamRanking.jsp");
+			dispatcher.forward(req, resp);
+		};break;
 		default:System.out.println("404 페이지로 이동");
 		}
 	
