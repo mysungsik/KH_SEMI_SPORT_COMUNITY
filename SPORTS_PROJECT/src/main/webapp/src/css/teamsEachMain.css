@@ -1,6 +1,7 @@
 /* 유틸 */
 * {
   box-sizing: border-box;
+  /* border: 1px solid black; */
 }
 
 /* container */
@@ -81,13 +82,13 @@
 }
 
 .hot-issue .main-news .content-header{
-  color:#f35656 ;
+	margin: 10px 0;
+  	color:#f35656 ;
 }
 
 .main-news-content .card-thumbnail {
   width: 300px;
   height: 310px;
-  margin: 0 10px;
 }
 
 
@@ -99,7 +100,7 @@
 }
 
 .container-top .main-news .main-news-content {
-  width: 200px;
+  width: 430px;
   height: 310px;
   margin: auto;
   flex-direction: column;
@@ -157,3 +158,5 @@
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical
 }
+
+

@@ -116,7 +116,7 @@
 			<div class="hot-issue">
 				<div class="main-news">
 					<p class="content-header fs-28__b">Hot Issue</p>
-					<div class="main-news-content card__lblue mt-10 swiper swiper-news">
+					<div class="main-news-content mt-10 swiper swiper-news">
 						<!-- 좌중단 메인 뉴스 작성 -->
 						<div class="news-content-top d-flex swiper-wrapper">
 							<div class="card-thumbnail swiper-slide">
@@ -200,11 +200,12 @@
 								</div>
 							</div>
 						</div>
-						<div class="swiper-button-next fc__white"></div>
-						<div class="swiper-button-prev fc__white"></div>
+						<div class="swiper-button-next fc__gray"></div>
+						<div class="swiper-button-prev fc__gray"></div>
 						<div class="swiper-pagination"></div>
 					</div>
 				</div>
+				
 			</div>
 		</section>
 	</main>
