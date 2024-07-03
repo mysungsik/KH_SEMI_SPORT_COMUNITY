@@ -27,8 +27,8 @@
         <div>
             <p class="fc__gray fs-20"> 회원 관리 </p>
             <ul class="ml-20">
-                <li class="text-hover__blue"> <a>유저 관리</a> </li>
-                <li class="text-hover__blue"> <a>신고 관리</a> </li>
+                <li class="text-hover__blue"> <a href="${contextPath}/admin/profile/userManagement">유저 관리</a> </li>
+                <li class="text-hover__blue"> <a href="${contextPath}/admin/profile/reportManagement">신고 관리</a> </li>
             </ul>
         </div>
     </div>

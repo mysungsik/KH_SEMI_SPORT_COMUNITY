@@ -23,24 +23,17 @@
             <!-- 메인컨텐츠 -->
             <div class="profile-content">
             	<!-- 컨텐츠 > 헤더 -->
-                <p class="content-title fs-28__b"> 내 댓글</p>
+                <p class="content-title fs-28__b"> 신고 관리</p>
                 <hr class="hr__gray mt-20">
                 <div class="content-header d-flex">
-                    <div class="checkbox__blue small-square">
-                        <input type="checkbox" id="check-all" name="check-all">
-                        <label for="check-all" class="fs-12">전체 선택</label>
-                    </div>
-                    <div>
-                        <img src="${contextPath}/public/icons/bin.png">
-                        <span> 선택 삭제 </span>
-                    </div>
+                 	검색 칸입니다.
                 </div>
                 
                 <!-- 컨텐츠 > 메인 -->
                 <div class="content-main">
-                    <div id="comments-data" class="content-elements"></div>
+                    <div id="report-data" class="content-elements"></div>
                 </div>
-                <div id="comments-pagination"></div>
+                <div id="report-pagination"></div>
                 <!-- 컨텐츠 메인 종료 -->
             </div>
         </section>

@@ -199,11 +199,17 @@
 	text-align: center;
 }
 
-.content-main .manage-table tr > td:first-of-type,
-.content-main .manage-table tr > td:nth-of-type(4),
-.content-main .manage-table tr > td:last-of-type{
+.content-main .manage-table tr > td{
 	text-align: center;
 }
+
+.content-main .manage-table tr > td img{
+	width: 20px;
+}
+.content-main .manage-table tr > td img:hover{
+	cursor: pointer;
+}
+
 .content-main .manage-table tr > td:first-of-type{
 	width: 40px;
 }

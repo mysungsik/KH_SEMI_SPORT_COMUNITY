@@ -138,6 +138,47 @@ let userData = [
 		{no : 41 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
 ]
 
+let reportData = [
+	{no : 1 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 2 , id : "test_id1", rep_type : "게시글",  vio_type: "허위사실", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 3 , id : "test_id1", rep_type : "뉴스",  vio_type: "허위사실", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 4 , id : "test_id1", rep_type : "댓글",  vio_type: "사행성조장", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 5 , id : "test_id1", rep_type : "댓글",  vio_type: "혐오발언", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 6 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 7 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 8 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 9 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 10 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 11 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 12 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 13 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 14 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 15 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 16 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 17 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 18 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 19 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 20 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 21 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 22 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 23 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 24 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 25 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 26 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 27 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 28 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 29 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 30 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 31 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 32 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 33 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 34 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 35 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 36 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	{no : 37 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
+	
+]
+	
 // 더미데이터 END ---------------------------------
 
 $(document).ready(function () {
@@ -147,7 +188,11 @@ $(document).ready(function () {
 	paginationActive("comments", commentsData, paginationTemplate);
 	paginationActive("board", contentsData, paginationTemplate);
 	paginationActive("scrab", scrabData, paginationTemplate);
-	paginationActive("user", userData, adminTableTemplate);
+	paginationActive("user", userData, adminUserTemplate);
+	paginationActive("report", reportData, adminReportTemplate);
+	
+	informationAgree();
+	
 });
 
 // 체크박스 전체선택 함수
@@ -187,7 +232,7 @@ function paginationTemplate(data) {
 }
 
 // 관리자용 페이지네이션 템플릿 함수
-function adminTableTemplate(data) {
+function adminUserTemplate(data) {
     let item = `
 	<table class="manage-table">
 		<thead>
@@ -197,7 +242,7 @@ function adminTableTemplate(data) {
 				<td>Email</td> 
 				<td>Role</td> 
 				<td>Number</td> 
-				<td>ETC</td> 
+				<td>상세</td> 
 			</tr>
 		</thead>
 		<tbody>
@@ -211,7 +256,42 @@ function adminTableTemplate(data) {
 				<td>${d.email}</td> 
 				<td>${d.role}</td> 
 				<td>${d.number}</td> 
-				<td>사진</td> 
+				<td data-num=${d.no}><img src="/SPORTS_PROJECT/public/icons/edit.png"></td> 
+			</tr>`
+	})
+	item += `</tbody>
+             </table>`
+
+    return item;
+}
+
+
+// 관리자용 페이지네이션 템플릿 함수
+function adminReportTemplate(data) {
+    let item = `
+	<table class="manage-table">
+		<thead>
+			<tr> 
+				<td>No</td> 
+				<td>아이디</td> 
+				<td>신고 유형</td> 
+				<td>위반 유형</td> 
+				<td>신고 내용</td> 
+				<td>상세</td> 
+			</tr>
+		</thead>
+		<tbody>
+		`;
+	
+    $.each(data, function(index, d){
+	  	item += 
+	  		`<tr> 
+				<td>${d.no}</td> 
+				<td>${d.id}</td> 
+				<td>${d.rep_type}</td> 
+				<td>${d.vio_type}</td> 
+				<td>${d.rep_content}</td> 
+				<td data-num=${d.no}><img src="/SPORTS_PROJECT/public/icons/edit.png"></td> 
 			</tr>`
 	})
 	item += `</tbody>
@@ -225,7 +305,7 @@ function adminTableTemplate(data) {
 function paginationActive(id, datas, template){
 	let page_size = 10;
 	
-	if (id == "user"){
+	if (id == "user" || id == "report"){
 		page_size = 20;
 	}
 	if ( $(`#${id}-pagination`).length > 0 ){
@@ -256,12 +336,32 @@ function paginationActive(id, datas, template){
 	}
 }
 
-$(".form-check-input").on("change", function(){
-	if ($(this).prop("checked") == true){
-		$(this).next().html("ON")
-	}else{
-		$(this).next().html("OFF")
-	}
-})
+function informationAgree(){
+	// 정보 제공 동의 메소드
+	let currentCheckbox="";
+	
+	// 체크박스 클릭 이벤트 리스너 (OFF -> ON 일때만 모달 띄움)
+    $('.form-check').on('click', function() {
+		currentCheckbox = $(this).data('type');
+		if($(`input[name='${currentCheckbox}Agree']`).prop('checked') == true){
+			$('#exampleModal').modal('show');
+		}else{
+	 		$(`label[for='${currentCheckbox}Agree']`).html("OFF");
+		}
+	});
 
+    // 확인 버튼 클릭 이벤트 리스너
+    $('#confirmButton').on('click', function() {
+      if (currentCheckbox) {
+        $(`input[name='${currentCheckbox}Agree']`).prop('checked', true);
+        $(`label[for='${currentCheckbox}Agree']`).html("ON");
+      }
+    });
+
+    // 취소 버튼 클릭 이벤트 리스너
+    $('#cancelButton').on('click', function() {
+      $(`input[name='${currentCheckbox}Agree']`).prop('checked', false);
+      $(`label[for='${currentCheckbox}Agree']`).html("OFF");
+    });
+}
 

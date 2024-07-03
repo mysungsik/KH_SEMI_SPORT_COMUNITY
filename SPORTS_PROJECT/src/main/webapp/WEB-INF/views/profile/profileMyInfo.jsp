@@ -43,26 +43,28 @@
                 		</div>
                 	</div>
                 </div>
+                
+                <!-- Button trigger modal -->
                 <div class="profile-info">
                 	<p class="info-header fs-20__b"> 정보 제공 동의 </p>
                 	<div class="info-contents card__lblue">
                 		<div>
                 			<p class="fs-12__b"> E-mail </p>
-                			<div class="form-check form-switch">
+                			<div class="form-check form-switch" data-type="email">
 							  <input class="form-check-input" type="checkbox" role="switch" id="emailAgree" name="emailAgree">
 							  <label class="form-check-label" for="emailAgree">OFF</label>
 							</div>
                 		</div>
                 		<div>
                 			<p class="fs-12__b"> Phone Number </p>
-               				<div class="form-check form-switch">
+               				<div class="form-check form-switch" data-type="phone">
 							  <input class="form-check-input" type="checkbox" role="switch" id="phoneAgree" name="phoneAgree">
 							  <label class="form-check-label" for="phoneAgree">OFF</label>
 							</div>
                 		</div>
                 		<div>
                 			<p class="fs-12__b"> SNS Address </p>
-               				<div class="form-check form-switch">
+               				<div class="form-check form-switch" data-type="sns">
 							  <input class="form-check-input" type="checkbox" role="switch" id="snsAgree" name="snsAgree">
 							  <label class="form-check-label" for="snsAgree">OFF</label>
 							</div>
@@ -86,10 +88,27 @@
                 		</div>
                 	</div>
                 </div>
-                
             </div>
         </section>
     </main>
+    <!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h1 class="modal-title fs-5" id="exampleModalLabel">동의 하시겠습니까?</h1>
+	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	      </div>
+	      <div class="modal-body">
+	        모달 내용입니다.
+	      </div>
+	      <div class="modal-footer">
+	        <button id="cancelButton" type="button" class="btn btn-secondary" data-bs-dismiss="modal" > 취소 </button>
+	        <button id="confirmButton" type="button" class="btn btn-primary" data-bs-dismiss="modal"> 확인 </button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 	<jsp:include page="/WEB-INF/views/layouts/footer.jsp"/>
 </body>
 </html>
