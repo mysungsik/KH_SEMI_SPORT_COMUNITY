@@ -71,7 +71,7 @@
 
 .profile-content .content-main{
 	padding: 10px;
-	height: 600px;
+	height: 580px;
 }
 
 .content-main .content-elements .item{
@@ -112,12 +112,32 @@
 	cursor: pointer;
 }
 
+
+.content-elements .item input.item-text{
+	outline: none;
+	border: none;
+	color: black;
+}
+.content-elements .item input.item-text:hover{
+	cursor: default;
+}
+
+.content-elements .item input.item-text.active{
+	border: 1px solid;
+	background: white;
+}
+
+.content-elements .item input.item-text.active:hover{
+	cursor: pointer;
+	
+}
+
 .content-elements .item .element-edit{
 	margin-right: 10px;
 	margin-top : 5px;
 }
 
-/* 페이지네이션*/
+/* 일반 유저의 페이지네이션*/
 .paginationjs-pages{
 	display: flex;
 	justify-content: center;
@@ -190,8 +210,8 @@
 
 /* 관리자페이지 페이지네이션*/ 
 .content-main .manage-table{
-	width: 90%;
-	max-height: 600px;
+	width: 100%;
+	max-height: 580px;
 	overflow-y: scroll;
 }
 .content-main .manage-table thead{

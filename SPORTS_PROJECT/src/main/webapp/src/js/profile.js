@@ -3,7 +3,7 @@ var contextPath = "";
 // 더미데이터 START ---------------------------------
 let commentsData = [
 	{category : "[ 커뮤니티 - 구호 ]", title : "커뮤니티 글1", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
-	{category : "[ 커뮤니티 - 지호 ]", title : "커뮤니티 글 이렇게 쓰는게 맞나요", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
+	{category : "[ 커뮤니티 - 지호 ]", title : "커뮤니티 글 이렇게 쓰는게 맞나요", content : "댓글임둥!!"},
 	{category : "[ 커뮤니티 - 공지 ]", title : "커뮤니티 글 이렇게 쓰는게 맞나요", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
 	{category : "[ 커뮤니티 - 공지 ]", title : "커뮤니티 글 이렇게 쓰는게 맞나요", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
 	{category : "[ 커뮤니티 - 공지 ]", title : "커뮤니티 글 이렇게 쓰는게 맞나요", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
@@ -188,11 +188,11 @@ $(document).ready(function () {
 	paginationActive("comments", commentsData, paginationTemplate);
 	paginationActive("board", contentsData, paginationTemplate);
 	paginationActive("scrab", scrabData, paginationTemplate);
-	paginationActive("user", userData, adminUserTemplate);
-	paginationActive("report", reportData, adminReportTemplate);
+	paginationActive("user", userData, adminTemplate);
+	paginationActive("report", reportData, adminTemplate);
 	
+	// 정보 제공 동의 실행함수
 	informationAgree();
-	
 });
 
 // 체크박스 전체선택 함수
@@ -210,45 +210,80 @@ function allChecks(){
 }
 
 // 일반 유저 페이지네이션 템플릿 함수
-function paginationTemplate(data) {
+function paginationTemplate(data, id) {
     let item = "";
-    $.each(data, function(index, d){
-	  	item += 
-	  		`<div class="item checkbox__blue small-square base__lblue">
-	            <div class="element-text">
-	                <input type="checkbox" id="post-check" name="post-check" value="1">
-	                <div>
-	                    <p class="fc__gray"> <span>${d.category}</span> ${d.title}</p>
-	                    <p class="item-text"> ${d.content} </p>
-	                </div>
-	            </div>
-	            <div class="element-edit">
-	                <img src="/SPORTS_PROJECT/public/icons/edit.png"">
-	            </div>
-	        </div>`
-	})
+    
+    if (id == "comments"){
+		$.each(data, function(index, d){
+		  	item += 
+		  		`<div class="item checkbox__blue small-square base__lblue">
+		            <div class="element-text">
+		                <input type="checkbox" id="post-check" name="post-check">
+		                <div>
+		                    <p class="fc__gray"> <span>${d.category}</span> ${d.title}</p>
+		                    <input type="text" class="item-text" value="${d.content}" disabled/> 
+		                </div>
+		            </div>
+		            <div class="element-edit">
+		                <img class="edit" src="/SPORTS_PROJECT/public/icons/edit.png">
+		            </div>
+		        </div>`
+		})
+	} else if (id == "board"){
+		$.each(data, function(index, d){
+		  	item += 
+		  		`<div class="item checkbox__blue small-square base__lblue">
+		            <div class="element-text">
+		                <input type="checkbox" id="post-check" name="post-check">
+		                <div>
+		                    <p class="fc__gray"> <span>${d.category}</span> ${d.title}</p>
+		                    <p class="item-text"> ${d.content} </p>
+		                </div>
+		            </div>
+		            <div class="element-edit">
+		                <img class="edit" src="/SPORTS_PROJECT/public/icons/edit.png">
+		            </div>
+		        </div>`
+		})
+	}else if (id == "scrab"){
+		$.each(data, function(index, d){
+		  	item += 
+		  		`<div class="item checkbox__blue small-square base__lblue">
+		            <div class="element-text">
+		                <input type="checkbox" id="post-check" name="post-check">
+		                <div>
+		                    <p class="fc__gray"> <span>${d.category}</span> ${d.title}</p>
+		                    <p class="item-text"> ${d.content} </p>
+		                </div>
+		            </div>
+		            <div class="element-edit">
+		                <img class="delete" src="/SPORTS_PROJECT/public/icons/edit.png">
+		            </div>
+		        </div>`
+		})
+	}
 
     return item;
 }
 
-// 관리자용 페이지네이션 템플릿 함수
-function adminUserTemplate(data) {
-    let item = `
-	<table class="manage-table">
-		<thead>
-			<tr> 
-				<td>No</td> 
-				<td>아이디</td> 
-				<td>Email</td> 
-				<td>Role</td> 
-				<td>Number</td> 
-				<td>상세</td> 
-			</tr>
-		</thead>
-		<tbody>
-		`;
-		
-    $.each(data, function(index, d){
+// 관리자용 페이지네이션 템플릿 함수 (User)
+function adminTemplate(data, id) {
+	let item = ""
+	if (id == "user"){
+		item += `
+			<table class="manage-table">
+				<thead>
+					<tr> 
+						<td>No</td> 
+						<td>아이디</td> 
+						<td>Email</td> 
+						<td>Role</td> 
+						<td>Number</td> 
+						<td>상세</td> 
+					</tr>
+				</thead>
+				<tbody>`
+		$.each(data, function(index, d){
 	  	item += 
 	  		`<tr> 
 				<td>${d.no}</td> 
@@ -256,34 +291,27 @@ function adminUserTemplate(data) {
 				<td>${d.email}</td> 
 				<td>${d.role}</td> 
 				<td>${d.number}</td> 
-				<td data-num=${d.no}><img src="/SPORTS_PROJECT/public/icons/edit.png"></td> 
+				<td data-num=${d.no}><img class="edit" src="/SPORTS_PROJECT/public/icons/edit.png"></td> 
 			</tr>`
-	})
-	item += `</tbody>
-             </table>`
-
-    return item;
-}
-
-
-// 관리자용 페이지네이션 템플릿 함수
-function adminReportTemplate(data) {
-    let item = `
-	<table class="manage-table">
-		<thead>
-			<tr> 
-				<td>No</td> 
-				<td>아이디</td> 
-				<td>신고 유형</td> 
-				<td>위반 유형</td> 
-				<td>신고 내용</td> 
-				<td>상세</td> 
-			</tr>
-		</thead>
-		<tbody>
-		`;
-	
-    $.each(data, function(index, d){
+		})
+		item += `</tbody>
+	             </table>`
+	} else {
+		item += `
+			<table class="manage-table">
+				<thead>
+					<tr> 
+						<td>No</td> 
+						<td>아이디</td> 
+						<td>신고 유형</td> 
+						<td>위반 유형</td> 
+						<td>신고 내용</td> 
+						<td>상세</td> 
+					</tr>
+				</thead>
+				<tbody>
+				`;
+		$.each(data, function(index, d){
 	  	item += 
 	  		`<tr> 
 				<td>${d.no}</td> 
@@ -291,11 +319,12 @@ function adminReportTemplate(data) {
 				<td>${d.rep_type}</td> 
 				<td>${d.vio_type}</td> 
 				<td>${d.rep_content}</td> 
-				<td data-num=${d.no}><img src="/SPORTS_PROJECT/public/icons/edit.png"></td> 
+				<td data-num=${d.no}><img class="edit" src="/SPORTS_PROJECT/public/icons/edit.png"></td> 
 			</tr>`
-	})
-	item += `</tbody>
-             </table>`
+		})
+		item += `</tbody>
+	             </table>`
+	}
 
     return item;
 }
@@ -303,11 +332,15 @@ function adminReportTemplate(data) {
 
 // 페이지네이션 실행 함수
 function paginationActive(id, datas, template){
+	
+	// 한 페이지당 개수 정하기
 	let page_size = 10;
 	
 	if (id == "user" || id == "report"){
 		page_size = 20;
 	}
+	
+	// 각 조건에 맞게 페이지네이션 실행
 	if ( $(`#${id}-pagination`).length > 0 ){
 
 		 $(`#${id}-pagination`).pagination({
@@ -316,7 +349,7 @@ function paginationActive(id, datas, template){
 		    pageSize: page_size,
 		    
 		    callback: function(data, pagination) {
-		        var html = template(data);
+		        var html = template(data,id);
 		        
 		        $(`#${id}-data`).html(html);	// 데이터 페이지네이션
 		        
@@ -332,6 +365,33 @@ function paginationActive(id, datas, template){
 					textDecoration : "underline"
 				})
 			}
+		})
+	}
+	
+	// 조건에 맞는 edit 수행
+	if (id == "comments"){
+		$(".edit").on("click", function(){
+			let comment = $(this).parent().parent().find(".item-text")
+			comment.addClass("active");
+			comment.prop("disabled", false);
+			console.log("엔터 누르면 수정하시겠습니까? 팝업창 나오도록")
+			console.log("수정 완료 누르면 DB에 저장되고, 다시 disabled 되도록")
+		})
+	} else if (id == "board"){
+		$(".edit").on("click", function(){
+			console.log("게시글 상세로 이동")
+		})
+	} else if (id == "scrab"){
+		$(".delete").on("click", function(){
+			console.log("페이지 스크랩 삭제")
+		})
+	} else if (id == "user"){
+		$(".edit").on("click", function(){
+			console.log("유저 상세 정보 모달 show()")
+		})
+	} else if (id == "board"){
+		$(".edit").on("click", function(){
+			console.log("신고 상세 정보 모달 show()")
 		})
 	}
 }
