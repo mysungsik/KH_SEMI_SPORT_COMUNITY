@@ -1,4 +1,4 @@
-/* *{border: 1px solid black;} */
+/* *{border: 1px solid black;}  */
 
 *{box-sizing: border-box;}
 
@@ -20,19 +20,16 @@ main{
 	display: flex;
 }
 
-.switch input{
-}
-
-.switch input:checked + label{
-	background-color: #458BE2;
-}
-
-.switch label{
+.switch-category{
 	flex-basis: 20%;
 	display: flex;
-	align-items: center;
 	justify-content: center;
+	align-items: center;
+	border: 1px solid gray;
+	cursor: pointer;
 }
+
+
 
 /* 게시판 */
 .board{
