@@ -1,15 +1,159 @@
 /* 유틸 */
-*{box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+}
 
 /* container */
-.container{
-    width: 1200px;
+.container {
+  width: 1024px;
 }
 
-section{
-    margin: 30px 0;
+
+.team-each-image .today-schedule {
+  width: 370px;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: yellow; */
+  height: 250px;
+  margin-bottom: 20px;
 }
 
-.team-each-image{
-    background-image: url("/FRONTEND/public/images/kia.png");
+/* 스와이퍼 - 메인  */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-logo {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.swiper-logo img {
+  width: 105px;
+  height: 105px;
+}
+
+.swiper-logo span {
+  font-size: 28px;
+}
+
+.swiper-team-info {
+  width: 100%;
+}
+
+.swiper-team-name {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.swiper-team-name button {
+  outline: 0;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* Hot issue */
+
+/* 컨테이너 상단 좌하 메인뉴스 */
+
+.hot-issue {
+  width: 100%;
+}
+
+.hot-issue .main-news .content-header{
+  color:#f35656 ;
+}
+
+.main-news-content .card-thumbnail {
+  width: 300px;
+  height: 310px;
+  margin: 0 10px;
+}
+
+
+.container .container-top .main-news {
+  width: 450px;
+  height: 390px;
+  margin-bottom: 30px;
+  flex-direction: column;
+}
+
+.container-top .main-news .main-news-content {
+  width: 200px;
+  height: 310px;
+  margin: auto;
+  flex-direction: column;
+}
+
+.main-news-content .news-content-top {
+  display: flex;
+  width: 420px;
+  justify-content: space-between;
+  height: 50%;
+  margin: 3px;
+  margin-bottom: 10px;
+}
+
+.main-news-content .news-content-bottom {
+  width: 100%;
+  height: 50%;
+  padding: 0 10px;
+}
+
+.main-news-content .news-content-bottom:hover {
+  cursor: pointer;
+}
+
+.main-news-content .news-content-bottom>.new-headline {
+  padding: 4px 0;
+  justify-content: space-between;
+}
+
+.card-thumbnail-title p{
+  margin-top: 10px;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical
+}
+
+.main-news-content .news-content-bottom p:hover {
+  font-weight: 600;
+  transition: all ease-in-out 0.1s;
+}
+
+.main-news-content .news-content-bottom span {
+  width: 60px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical
 }

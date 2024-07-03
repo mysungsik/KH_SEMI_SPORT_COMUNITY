@@ -1,0 +1,12 @@
+.team-each-image{
+    height: 600px;
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: end;
+    background-repeat: no-repeat;
+    background-size : cover;
+    background-position: center;
+	background-image: url('https://img4.yna.co.kr/photo/etc/epa/2011/06/27/PEP20110627082201034_P2.jpg');
+	
+}
