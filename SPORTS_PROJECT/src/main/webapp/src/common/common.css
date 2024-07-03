@@ -539,13 +539,13 @@ ul{
 /* ELEMENTS - hr */
 .hr__gray{
     border: none;
-    border-bottom: 1px solid #727272c4;
+    border-bottom: 1px solid #727272;
     margin: 0 15px;
 }
 
 /* ELEMENTS - Button */
 .btn-big__blue{
-    width: 350px;
+    width: 300px;
     height: 50px;
     color: white;
     background-color: #458BE2;
@@ -557,6 +557,26 @@ ul{
 }
 .btn-big__blue:hover{
     background-color: #2a7ce0;
+    font-weight: 700;
+    transition: all ease-in-out 0.1s;
+    box-shadow: 2px 2px 5px rgba(69, 69, 69, 0.486);
+    cursor: pointer;
+}
+
+.btn-big__gray{
+    width: 300px;
+    height: 50px;
+    color: white;
+    background-color: rgba(139, 139, 139, 0.24);
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    box-shadow: 2px 2px 5px rgba(69, 69, 69, 0.3);
+}
+
+.btn-big__gray:hover{
+    background-color: rgba(139, 139, 139, 0.44);
     font-weight: 700;
     transition: all ease-in-out 0.1s;
     box-shadow: 2px 2px 5px rgba(69, 69, 69, 0.486);
@@ -580,6 +600,45 @@ ul{
     box-shadow: 2px 2px 5px rgba(69, 69, 69, 0.486);
     cursor: pointer;
 }
+.btn-medium__blue{
+    width: 150px;
+    height: 35px;
+    color: white;
+    background-color: #458BE2;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    border: none;
+    box-shadow: 2px 2px 5px rgba(69, 69, 69, 0.3);
+}
+.btn-medium__blue:hover{
+    background-color: #2a7ce0;
+    font-weight: 700;
+    transition: all ease-in-out 0.1s;
+    box-shadow: 2px 2px 5px rgba(69, 69, 69, 0.486);
+    cursor: pointer;
+}
+
+.btn-medium__gray{
+    width: 150px;
+    height: 35px;
+    color: white;
+    background-color: rgba(139, 139, 139, 0.24);
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    border: none;
+    box-shadow: 2px 2px 5px rgba(69, 69, 69, 0.3);
+}
+
+.btn-medium__gray:hover{
+    background-color: rgba(139, 139, 139, 0.44);
+    font-weight: 700;
+    transition: all ease-in-out 0.1s;
+    box-shadow: 2px 2px 5px rgba(69, 69, 69, 0.486);
+    cursor: pointer;
+}
+
 
 /* ELEMENTS - chkbox */
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {

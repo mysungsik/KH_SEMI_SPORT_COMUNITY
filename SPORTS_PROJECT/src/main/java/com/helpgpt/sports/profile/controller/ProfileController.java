@@ -23,19 +23,6 @@ public class ProfileController extends HttpServlet {
 	RequestDispatcher dispatcher;
 	final String defaultURLPath = "/WEB-INF/views/profile/";
 
-	/* TODO
-	 쿠키나 세션정보에서 받아온 USER EMAIL(중복불가) 로 조회하여 가져올 수 있도록 요청해야할듯
-	 그래야 데이터 은닉이 가능할것같다. (적어도 URL 로 유저를 판단하지는 못하게 하도록)
-	 추가적으로 PAGE 이동은 아래와 같이 하면 될 것 같다.
-		/profile/myComment
-	 	/profile/myContent
-	 	/profile/myScrab
-	 	/profile/myInfo
-	 	/profile/resign
-	 	/profile/manager/userManage    (추가적인 컨트롤러로 이동시키거나** 여기서 처리)
-	 	/profile/manager/reportManage  (추가적인 컨트롤러로 이동시키거나** 여기서 처리)
-	 	 
-	 */
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// Path 지정
@@ -64,6 +51,14 @@ public class ProfileController extends HttpServlet {
 			dispatcher = req.getRequestDispatcher(defaultURLPath + "profileMyScrab.jsp");
 			dispatcher.forward(req, resp);
 			}break;
+		case "myInfo" :{
+			dispatcher = req.getRequestDispatcher(defaultURLPath + "profileMyInfo.jsp");
+			dispatcher.forward(req, resp);
+			};break;
+		case "resign" :{
+			dispatcher = req.getRequestDispatcher(defaultURLPath + "profileResign.jsp");
+			dispatcher.forward(req, resp);
+			};break;
 		default:System.out.println("404 페이지로 이동");}
 		
 	}

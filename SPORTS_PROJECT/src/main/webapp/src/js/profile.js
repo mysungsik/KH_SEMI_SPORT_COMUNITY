@@ -174,4 +174,12 @@ function paginationActive(id, datas){
 	}
 }
 
+$(".form-check-input").on("change", function(){
+	if ($(this).prop("checked") == true){
+		$(this).next().html("ON")
+	}else{
+		$(this).next().html("OFF")
+	}
+})
+
 

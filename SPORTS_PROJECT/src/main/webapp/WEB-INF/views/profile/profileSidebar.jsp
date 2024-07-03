@@ -20,8 +20,8 @@
         <div>
             <p class="fc__gray fs-20"> 개인 정보 </p>
             <ul class="ml-20">
-                <li class="text-hover__blue"> <a>내 정보 관리</a></li>
-                <li class="text-hover__blue"> <a>회원 탈퇴</a></li>
+                <li class="text-hover__blue"> <a href="${contextPath}/profile/myInfo">내 정보 관리</a></li>
+                <li class="text-hover__blue"> <a href="${contextPath}/profile/resign">회원 탈퇴</a></li>
             </ul>
         </div>
         <div>
