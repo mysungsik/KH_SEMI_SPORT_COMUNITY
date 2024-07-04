@@ -18,7 +18,7 @@
 <body>
 	<jsp:include page="/WEB-INF/views/layouts/header-teams.jsp" />
 	<div class="main-img"></div>
-
+	<!-- 날짜 슬라이드 시작 -->
 	<div class="team-each-image">
 		<div class="today-schedule br-10">
 			<!-- Swiper -->
@@ -110,14 +110,14 @@
 			</div>
 		</div>
 	</div>
-
+	<!-- 날짜 슬라이드 끝 -->
 	<main>
 		<section class="container">
+			<!-- 뉴스 슬라이드 시작 -->
 			<div class="hot-issue">
 				<div class="main-news">
 					<p class="content-header fs-28__b">Hot Issue</p>
 					<div class="main-news-content mt-10 swiper swiper-news">
-						<!-- 좌중단 메인 뉴스 작성 -->
 						<div class="news-content-top d-flex swiper-wrapper">
 							<div class="card-thumbnail swiper-slide">
 								<img class="card-thumbnail-img"
@@ -200,15 +200,33 @@
 								</div>
 							</div>
 						</div>
-						<div class="swiper-button-next fc__gray"></div>
-						<div class="swiper-button-prev fc__gray"></div>
 						<div class="swiper-pagination"></div>
 					</div>
+					<div class="swiper-button-next fc__gray mr-20"></div>
+					<div class="swiper-button-prev fc__gray ml-20"></div>
 				</div>
-				
 			</div>
+			<!-- 뉴스 슬라이드 끝 -->
 		</section>
 	</main>
+	<!-- 공지사항 시작 -->
+    <section class="info base__lblue">
+    	<div class="info-one">
+	        <article class="info-title">
+	            <span class="fs-14__b">공지사항</span>
+	        </article>
+	        <article class="info-content swiper-info">
+	        	<div class="swiper-wrapper">
+	            	<div class="swiper-slide fs-12"><span>안녕히 계세요 여러분~ 저는 행복과 자유를 찾아 떠납니다~~~ 모두 행복하세요~~~~~</span></div>
+	            	<div class="swiper-slide fs-12"><span>서버 접습니다.</span></div>
+	            	<div class="swiper-slide fs-12"><span>집에 가고 싶습니다.</span></div>
+	            	<div class="swiper-slide fs-12"><span>포켓몬고 시작하세요. 동준님. 선물 하루에 하나씩 줄게~~~~~~~~~~~~~~~~~~ 어때!!!!!!!!!!!</span></div>
+	        	</div>
+	        </article>
+    	</div>
+    </section>
+    
+    <!--  -->
 	<jsp:include page="/WEB-INF/views/layouts/footer.jsp" />
 	<script
 		src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
