@@ -214,24 +214,55 @@ section{
 
 
 /* 공지사항 */
+/* 공지사항 */
 .info{
-    height: 50px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+	height: 40px;
 }
 
-.info-title{
-    flex-basis: 20%;
-    display: flex;
-    align-items: center;
-    justify-content: right;
+.info .info-one{
+	max-width : 1024px;
+	margin: 0 auto;
+	height : 40px;
+	display: flex;
+}
+
+.info .info-one .info-title{
+	width:20%;
+	height: 100%;
+	align-content: center;
+	text-align: center;	
 }
 
 .info-content{
-    flex-basis: 80%;
-    display: flex;
-    align-items: center;
+	width: 80%;
+	display: flex;
+	height:100%;
+	overflow: hidden;
+}
+
+.info-content > .swiper-wrapper{
+	display: flex;
+}
+
+.info-content .swiper-wrapper .swiper-slide{
+  height:100%;
+  width: 100%;
+
+}
+
+.swiper-info .swiper-wrapper .swiper-slide > span{
+  text-align: start;
+  align-content:center;
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  margin-top: 10px;
+  height:20px;
+  width: 300px;
+
 }
 
 
@@ -248,6 +279,8 @@ section{
 .main-bot article{
     flex-basis: 50%;
 }
+
+/* 더보기 */
 
 
 .post:hover{
