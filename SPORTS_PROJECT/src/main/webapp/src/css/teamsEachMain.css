@@ -101,8 +101,9 @@
 
 .container .main-news .main-news-content {
   width: 800px;
-  height: 350px;
+  height: 370px;
   margin: auto;
+  padding:10px;
   flex-direction: column;
   
 }
@@ -177,16 +178,21 @@
 	width:20%;
 	height: 100%;
 	align-content: center;
-  text-align: center;
+  	text-align: center;
 }
 
 .info-content{
-	width: 80%;
+	width: 70%;
 	display: flex;
 	height:100%;
 	overflow: hidden;
 }
 
+.info-one .suppl{
+	width: 10%;
+	text-align: start;
+	align-content: center;
+}
 .info-content > .swiper-wrapper{
 	display: flex;
 }
@@ -210,6 +216,10 @@
   height:20px;
   width: 300px;
 
+}
+
+.swiper-info .swiper-wrapper .swiper-slide > span:hover{
+	text-decoration:underline;
 }
 
 /* 응원게시판 */

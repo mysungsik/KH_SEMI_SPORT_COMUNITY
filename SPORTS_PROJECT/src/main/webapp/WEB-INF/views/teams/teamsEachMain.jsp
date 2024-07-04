@@ -210,18 +210,21 @@
 		</section>
 	</main>
 	<!-- 공지사항 시작 -->
-    <section class="info base__lblue">
+    <section class="info base__lblue mt-20">
     	<div class="info-one">
 	        <article class="info-title">
 	            <span class="fs-14__b">공지사항</span>
 	        </article>
 	        <article class="info-content swiper-info">
 	        	<div class="swiper-wrapper">
-	            	<div class="swiper-slide fs-12"><span>안녕히 계세요 여러분~ 저는 행복과 자유를 찾아 떠납니다~~~ 모두 행복하세요~~~~~</span></div>
-	            	<div class="swiper-slide fs-12"><span>서버 접습니다.</span></div>
-	            	<div class="swiper-slide fs-12"><span>집에 가고 싶습니다.</span></div>
-	            	<div class="swiper-slide fs-12"><span>포켓몬고 시작하세요. 동준님. 선물 하루에 하나씩 줄게~~~~~~~~~~~~~~~~~~ 어때!!!!!!!!!!!</span></div>
+	            	<a class="swiper-slide fs-12" href="#"><span>안녕히 계세요 여러분~ 저는 행복과 자유를 찾아 떠납니다~~~ 모두 행복하세요~~~~~</span></a>
+	            	<a class="swiper-slide fs-12"  href="#" href="#"><span>서버 접습니다.</span></a>
+	            	<a class="swiper-slide fs-12"  href="#"><span>집에 가고 싶습니다.</span></a>
+	            	<a class="swiper-slide fs-12"  href="#"><span>포켓몬고 시작하세요. 동준님. 선물 하루에 하나씩 줄게~~~~~~~~~~~~~~~~~~ 어때!!!!!!!!!!!</span></a>
 	        	</div>
+	        </article>
+	        <article class="suppl">
+	        	<a href="#"><span class="see-more fs-12 fc__gray">더보기▶</span></a>
 	        </article>
     	</div>
     </section>
