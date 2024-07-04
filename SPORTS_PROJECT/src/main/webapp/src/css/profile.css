@@ -71,7 +71,7 @@
 
 .profile-content .content-main{
 	padding: 10px;
-	height: 580px;
+	height: 630px;
 }
 
 .content-main .content-elements .item{
@@ -116,14 +116,16 @@
 .content-elements .item input.item-text{
 	outline: none;
 	border: none;
+	border: 1px solid rgba(255, 0, 0, 0);
 	color: black;
+	box-sizing: border-box;
 }
 .content-elements .item input.item-text:hover{
 	cursor: default;
 }
 
 .content-elements .item input.item-text.active{
-	border: 1px solid;
+	border: 1px solid black;
 	background: white !important;
 }
 

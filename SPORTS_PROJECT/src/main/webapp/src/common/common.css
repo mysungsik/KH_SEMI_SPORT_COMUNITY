@@ -811,7 +811,7 @@ box-sizing: inherit;
 /* Hover - text */
 .text-hover__blue:hover{
     cursor: pointer;
-    color: #4468E9;
+    color: #4468E9  !important;
     font-weight: 400;
     text-decoration: underline !important;
     transition: all ease-in-out 0.1s;
@@ -819,7 +819,7 @@ box-sizing: inherit;
 
 .text-hover__gray:hover{
     cursor: pointer;
-    color: #727272;
+    color: #727272  !important;
     font-weight: 400;
     text-decoration: underline !important;
     transition: all ease-in-out 0.1s;
@@ -827,7 +827,15 @@ box-sizing: inherit;
 
 .text-hover__white:hover{
     cursor: pointer;
-    color: #ffffff;
+    color: #ffffff  !important;
+    font-weight: 400;
+    text-decoration: underline !important;
+    transition: all ease-in-out 0.1s;
+}
+
+.text-hover__black:hover{
+    cursor: pointer;
+    color: #000000 !important;
     font-weight: 400;
     text-decoration: underline !important;
     transition: all ease-in-out 0.1s;

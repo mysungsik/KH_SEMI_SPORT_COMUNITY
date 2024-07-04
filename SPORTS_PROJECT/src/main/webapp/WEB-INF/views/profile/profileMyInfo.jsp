@@ -30,16 +30,16 @@
                 	<p class="info-header fs-20__b"> 로그인 정보 </p>
                 	<div class="info-contents card__lblue">
                 		<div>
-                			<p class="fs-12__b"> E-mail </p>
-                			<p class="fc__blue fs-12__b text-hover__blue" data-type="email" onclick="showModal(this)"> test_email@test.com <span> > </span></p>
+                			<p class="fc__blue fs-12__b"> E-mail </p>
+                			<p class="fc__gray fs-12__b text-hover__black" data-type="email" onclick="showModal(this)"> test_email@test.com <span> > </span></p>
                 		</div>
                 		<div>
-                			<p class="fs-12__b"> Phone Number </p>
-                			<p class="fc__blue fs-12__b text-hover__blue" data-type="number"  onclick="showModal(this)"> 010-0101-0101 <span> > </span></p>
+                			<p class="fc__blue fs-12__b"> Phone Number </p>
+                			<p class="fc__gray fs-12__b text-hover__black" data-type="number"  onclick="showModal(this)"> 010-0101-0101 <span> > </span></p>
                 		</div>
                 		<div>
-                			<p class="fs-12__b"> SNS Address </p>
-                			<p class="fc__blue fs-12__b text-hover__blue" data-type="sns"  onclick="showModal(this)"> instagram@insta.com <span> > </span></p>
+                			<p class="fc__blue fs-12__b"> SNS Address </p>
+                			<p class="fc__gray fs-12__b text-hover__black" data-type="sns"  onclick="showModal(this)"> instagram@insta.com <span> > </span></p>
                 		</div>
                 	</div>
                 </div>
@@ -49,21 +49,21 @@
                 	<p class="info-header fs-20__b"> 정보 제공 동의 </p>
                 	<div class="info-contents card__lblue">
                 		<div>
-                			<p class="fs-12__b"> E-mail </p>
+                			<p class="fc__blue fs-12__b"> E-mail </p>
                 			<div class="form-check form-switch" data-type="email">
 							  <input class="form-check-input" type="checkbox" role="switch" id="emailAgree" name="emailAgree" data-type="emailAgree" onclick="showModal(this)">
 							  <label class="form-check-label" for="emailAgree">OFF</label>
 							</div>
                 		</div>
                 		<div>
-                			<p class="fs-12__b"> Phone Number </p>
+                			<p class="fc__blue fs-12__b"> Phone Number </p>
                				<div class="form-check form-switch" data-type="phone">
 							  <input class="form-check-input" type="checkbox" role="switch" id="phoneAgree" name="phoneAgree" data-type="phoneAgree" onclick="showModal(this)">
 							  <label class="form-check-label" for="phoneAgree">OFF</label>
 							</div>
                 		</div>
                 		<div>
-                			<p class="fs-12__b"> SNS Address </p>
+                			<p class="fc__blue fs-12__b"> SNS Address </p>
                				<div class="form-check form-switch" data-type="sns">
 							  <input class="form-check-input" type="checkbox" role="switch" id="snsAgree" name="snsAgree" data-type="snsAgree" onclick="showModal(this)">
 							  <label class="form-check-label" for="snsAgree">OFF</label>
@@ -75,15 +75,15 @@
                 	<p class="info-header fs-20__b"> 추가 정보 </p>
                 	<div class="info-contents card__lblue">
                 		<div>
-                			<p class="fs-12__b"> BirthDay </p>
-                			<p class="fc__blue fs-12__b text-hover__blue" data-type="birthday" onclick="showModal(this)"> 1992-01-01 <span> > </span></p>                		</div>
+                			<p class="fc__blue fs-12__b"> BirthDay </p>
+                			<p class="fc__gray fs-12__b text-hover__black" data-type="birthday" onclick="showModal(this)"> 1992-01-01 <span> > </span></p>                		</div>
                 		<div>
-                			<p class="fs-12__b"> Address </p>
-                			<p class="fc__blue fs-12__b text-hover__blue" data-type="address" onclick="showModal(this)"> 경기도 용인시 처인구 ... <span> > </span></p>
+                			<p class="fc__blue fs-12__b"> Address </p>
+                			<p class="fc__gray fs-12__b text-hover__black" data-type="address" onclick="showModal(this)"> 경기도 용인시 처인구 ... <span> > </span></p>
                 		</div>
                 		<div>
-                			<p class="fs-12__b"> Login History </p>
-                			<p class="fc__blue fs-12__b text-hover__blue"> VIEW <span> > </span></p>
+                			<p class="fc__blue fs-12__b"> Login History </p>
+                			<p class="fc__gray fs-12__b text-hover__black"> VIEW <span> > </span></p>
                 		</div>
                 	</div>
                 </div>
