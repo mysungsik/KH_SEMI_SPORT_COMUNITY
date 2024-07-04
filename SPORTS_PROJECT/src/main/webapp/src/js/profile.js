@@ -68,7 +68,6 @@ let contentsData = [
 		{category : "[ 응원 - 한화 ]", title : "", content : "한화 응원합니다!!"},
 	
 	]
-
 	
 let scrabData = [
 		{category : "[ 뉴스 종류1 ]", title : "", content : " ‘9실점 악몽’ 준 키움과 2달 만에 재회하여 무진장 털려버렸다. 감독 뉴스 길이가 아무리 길어도 Eclipsis 로 없앨 수 있지! "},
@@ -94,90 +93,7 @@ let scrabData = [
 		{category : "[ 뉴스 종류1 ]", title : "", content : " ‘9실점 악몽’ 준 키움과 2달 만에 재회하여 무진장 털려버렸다. 감독 뉴스 길이가 아무리 길어도 Eclipsis 로 없앨 수 있지!"},
 ]
 
-let userData = [
-		{no : 1 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 2 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 3 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 4 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 5 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 6 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 7 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 8 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 9 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 10 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 11 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 12 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 13 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 14 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 15 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 16 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 17 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 18 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 19 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 20 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 21 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 22 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 23 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 24 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 25 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 26 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 27 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 28 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 29 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 30 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 31 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 32 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 33 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 34 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 35 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 36 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 37 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 38 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 39 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 40 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-		{no : 41 , id : "test_id1", email : "test_email@email.com", role : "A", number:"010-1111-2222"},
-]
 
-let reportData = [
-	{no : 1 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 2 , id : "test_id1", rep_type : "게시글",  vio_type: "허위사실", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 3 , id : "test_id1", rep_type : "뉴스",  vio_type: "허위사실", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 4 , id : "test_id1", rep_type : "댓글",  vio_type: "사행성조장", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 5 , id : "test_id1", rep_type : "댓글",  vio_type: "혐오발언", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 6 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 7 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 8 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 9 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 10 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 11 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 12 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 13 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 14 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 15 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 16 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 17 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 18 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 19 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 20 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 21 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 22 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 23 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 24 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 25 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 26 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 27 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 28 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 29 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 30 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 31 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 32 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 33 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 34 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 35 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 36 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	{no : 37 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕"},
-	
-]
 	
 // 더미데이터 END ---------------------------------
 
@@ -188,8 +104,6 @@ $(document).ready(function () {
 	paginationActive("comments", commentsData, paginationTemplate);
 	paginationActive("board", contentsData, paginationTemplate);
 	paginationActive("scrab", scrabData, paginationTemplate);
-	paginationActive("user", userData, adminTemplate);
-	paginationActive("report", reportData, adminTemplate);
 
 });
 
@@ -264,68 +178,6 @@ function paginationTemplate(data, id) {
     return item;
 }
 
-// 관리자용 페이지네이션 템플릿 함수 (User)
-function adminTemplate(data, id) {
-	let item = ""
-	if (id == "user"){
-		item += `
-			<table class="manage-table">
-				<thead>
-					<tr> 
-						<td>No</td> 
-						<td>아이디</td> 
-						<td>Email</td> 
-						<td>Role</td> 
-						<td>Number</td> 
-						<td>상세</td> 
-					</tr>
-				</thead>
-				<tbody>`
-		$.each(data, function(index, d){
-	  	item += 
-	  		`<tr> 
-				<td>${d.no}</td> 
-				<td>${d.id}</td> 
-				<td>${d.email}</td> 
-				<td>${d.role}</td> 
-				<td>${d.number}</td> 
-				<td data-num=${d.no}><img class="edit" src="/SPORTS_PROJECT/public/icons/edit.png"></td> 
-			</tr>`
-		})
-		item += `</tbody>
-	             </table>`
-	} else {
-		item += `
-			<table class="manage-table">
-				<thead>
-					<tr> 
-						<td>No</td> 
-						<td>아이디</td> 
-						<td>신고 유형</td> 
-						<td>위반 유형</td> 
-						<td>신고 내용</td> 
-						<td>상세</td> 
-					</tr>
-				</thead>
-				<tbody>
-				`;
-		$.each(data, function(index, d){
-	  	item += 
-	  		`<tr> 
-				<td>${d.no}</td> 
-				<td>${d.id}</td> 
-				<td>${d.rep_type}</td> 
-				<td>${d.vio_type}</td> 
-				<td>${d.rep_content}</td> 
-				<td data-num=${d.no}><img class="edit" src="/SPORTS_PROJECT/public/icons/edit.png"></td> 
-			</tr>`
-		})
-		item += `</tbody>
-	             </table>`
-	}
-
-    return item;
-}
 
 
 // 페이지네이션 실행 함수
@@ -333,10 +185,6 @@ function paginationActive(id, datas, template){
 	
 	// 한 페이지당 개수 정하기
 	let page_size = 10;
-	
-	if (id == "user" || id == "report"){
-		page_size = 20;
-	}
 	
 	// 각 조건에 맞게 페이지네이션 실행
 	if ( $(`#${id}-pagination`).length > 0 ){
@@ -384,14 +232,6 @@ function paginationActive(id, datas, template){
 		$(".delete").on("click", function(){
 			console.log("페이지 스크랩 삭제")
 		})
-	} else if (id == "user"){
-		$(".edit").on("click", function(){
-			console.log("유저 상세 정보 모달 show()")
-		})
-	} else if (id == "board"){
-		$(".edit").on("click", function(){
-			console.log("신고 상세 정보 모달 show()")
-		})
 	}
 }
 
@@ -416,7 +256,7 @@ function showModal(el){
 		
         let name = checkboxInput.prop("name")	// [sns, phone, email] Agree 
       	let value = checkboxInput.prop("checked") 	// [ ON, OFF ]
-      
+
 		
 		switch(modalType){
 			// 정보 제공 종의 수정
@@ -451,8 +291,6 @@ function showModal(el){
 			checkboxLabel.html("OFF")
 		}
 	} 
-	
-	// 
 	
 	// 정보수정 일 경우 모달
 	else{
@@ -517,7 +355,6 @@ function showModal(el){
 		}
 		modalEl.modal('show');
 	}
-	
 }
 
 // 모달의 확인 클릭

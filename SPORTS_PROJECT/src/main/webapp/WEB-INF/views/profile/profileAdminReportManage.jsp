@@ -8,7 +8,8 @@
     
     <link rel="stylesheet" href="${contextPath}/src/css/profile.css">
     <script src="${contextPath}/src/util/pagination.js" defer></script>
-    <script src="${contextPath}/src/js/profile.js" defer></script>
+    <script src="${contextPath}/src/js/profileAdmin.js" defer></script>
+    
     
     <title>MLB - Na</title>
 </head>
