@@ -47,6 +47,12 @@ switch-title{
 	align-items: center;
 }
 
+.title{
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
 /* 검색 */
 .search-area{
 	display: flex;

@@ -23,8 +23,9 @@
 		<section class="swiper mySwiper main-top">
 			<article class="title mg-left">
 				<div class="title-area">
-					<span class="fs-28__b">주간 인기글</span> 
-					<span class="see-more fs-10 fc__gray"><a href="${contextPath}/community/communityBoard/popular">더보기▶</a></span>
+					<span class="fs-28__b">주간 인기글</span> <span
+						class="see-more fs-10 fc__gray"><a
+						href="${contextPath}/community/communityBoard/popular">더보기▶</a></span>
 				</div>
 				<div class="search-area">
 					<form action="#" class="search">
@@ -74,8 +75,8 @@
 						<div class="popular-post">
 
 							<div class="post-title">
-								<span class="fs-12 fc__gray">[ 응원 게시판 ]</span> 
-								<span class="fs-14__b">파이팅 다저스</span>
+								<span class="fs-12 fc__gray">[ 응원 게시판 ]</span> <span
+									class="fs-14__b">파이팅 다저스</span>
 							</div>
 							<div class="post-content">
 								<span class="fs-12 fc__gray"> 사회 생활을 하며 사람을 화나게 하는 방법은
@@ -108,8 +109,8 @@
 					<div class="popular-area">
 						<div class="popular-post">
 							<div class="post-title">
-								<span class="fs-12 fc__gray">[ 응원 게시판 ]</span> 
-								<span class="fs-14__b">파이팅 다저스</span>
+								<span class="fs-12 fc__gray">[ 응원 게시판 ]</span> <span
+									class="fs-14__b">파이팅 다저스</span>
 							</div>
 							<div class="post-content">
 								<span class="fs-12 fc__gray"> 사회 생활을 하며 사람을 화나게 하는 방법은
@@ -216,7 +217,8 @@
 			<article class="board mg-left">
 				<div class="title">
 					<span class="fs-28__b">전체</span> <span
-						class="see-more fs-10 fc__gray"><a href="${contextPath}/community/communityBoard/all">더보기▶</a></span>
+						class="see-more fs-10 fc__gray"><a
+						href="${contextPath}/community/communityBoard/all">더보기▶</a></span>
 				</div>
 				<div class="post">
 					<div class="post-title">
@@ -379,28 +381,30 @@
 			</article>
 		</section>
 
-		<!-- 공지사항 -->
-		<section class="info base__lblue">
+		<!-- 공지사항 시작 -->
+		<section class="info base__lblue mt-20">
 			<div class="info-one">
 				<article class="info-title">
 					<span class="fs-14__b">공지사항</span>
 				</article>
 				<article class="info-content swiper-info">
 					<div class="swiper-wrapper">
-						<div class="swiper-slide fs-12">
+						<a class="swiper-slide fs-12" href="#">
 							<span>안녕히 계세요 여러분~ 저는 행복과 자유를 찾아 떠납니다~~~ 모두 행복하세요~~~~~</span>
-						</div>
-						<div class="swiper-slide fs-12">
+						</a> 
+						<a class="swiper-slide fs-12" href="#" href="#">
 							<span>서버 접습니다.</span>
-						</div>
-						<div class="swiper-slide fs-12">
+						</a> 
+						<a class="swiper-slide fs-12" href="#">
 							<span>집에 가고 싶습니다.</span>
-						</div>
-						<div class="swiper-slide fs-12">
-							<span>포켓몬고 시작하세요. 동준님. 선물 하루에 하나씩 줄게~~~~~~~~~~~~~~~~~~
-								어때!!!!!!!!!!!</span>
-						</div>
+						</a> 
+						<a class="swiper-slide fs-12" href="#">
+							<span>포켓몬고 시작하세요. 동준님. 선물 하루에 하나씩 줄게~~~~~~~~~~~~~~~~~~ 어때!!!!!!!!!!!</span>
+						</a>
 					</div>
+				</article>
+				<article class="suppl">
+					<a href="${contextPath}/community/communityBoard/info"><span class="see-more fs-12 fc__gray">더보기▶</span></a>
 				</article>
 			</div>
 		</section>
@@ -411,30 +415,16 @@
 			<article class="board mg-left">
 				<div class="title">
 					<span class="fs-28__b">자유 게시판</span> <span
-						class="see-more fs-10 fc__gray"><a href="${contextPath}/community/communityBoard/free">더보기▶</a></span>
+						class="see-more fs-10 fc__gray"><a
+						href="${contextPath}/community/communityBoard/free">더보기▶</a></span>
 				</div>
 				<div class="post">
 					<div class="post-title">
 						<span class="fs-14__b">게시글입니다 test 1234</span>
 					</div>
 					<div class="post-info">
-						<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-					</div>
-				</div>
-				<div class="post">
-					<div class="post-title">
-						<span class="fs-14__b">게시글입니다 test 1234</span>
-					</div>
-					<div class="post-info">
-						<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-					</div>
-				</div>
-				<div class="post">
-					<div class="post-title">
-						<span class="fs-14__b">게시글입니다 test 1234</span>
-					</div>
-					<div class="post-info">
-						<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
+						<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
+							30 | 댓글 2 | 좋아요 3 ♡</span>
 					</div>
 				</div>
 				<div class="post">
@@ -442,7 +432,8 @@
 						<span class="fs-14__b">게시글입니다 test 1234</span>
 					</div>
 					<div class="post-info">
-						<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
+						<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
+							30 | 댓글 2 | 좋아요 3 ♡</span>
 					</div>
 				</div>
 				<div class="post">
@@ -450,7 +441,26 @@
 						<span class="fs-14__b">게시글입니다 test 1234</span>
 					</div>
 					<div class="post-info">
-						<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
+						<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
+							30 | 댓글 2 | 좋아요 3 ♡</span>
+					</div>
+				</div>
+				<div class="post">
+					<div class="post-title">
+						<span class="fs-14__b">게시글입니다 test 1234</span>
+					</div>
+					<div class="post-info">
+						<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
+							30 | 댓글 2 | 좋아요 3 ♡</span>
+					</div>
+				</div>
+				<div class="post">
+					<div class="post-title">
+						<span class="fs-14__b">게시글입니다 test 1234</span>
+					</div>
+					<div class="post-info">
+						<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
+							30 | 댓글 2 | 좋아요 3 ♡</span>
 					</div>
 				</div>
 			</article>
@@ -458,8 +468,9 @@
 			<!-- 응원 게시판 -->
 			<article class="board mg-right">
 				<div class="title">
-					<span class="fs-28__b">응원 게시판</span> 
-					<span class="see-more fs-10 fc__gray"><a href="${contextPath}/community/communityBoard/cheer">더보기▶</a></span>
+					<span class="fs-28__b">응원 게시판</span> <span
+						class="see-more fs-10 fc__gray"><a
+						href="${contextPath}/community/communityBoard/cheer">더보기▶</a></span>
 				</div>
 
 				<div class="post">

@@ -214,7 +214,6 @@ section{
 
 
 /* 공지사항 */
-/* 공지사항 */
 .info{
 	height: 40px;
 }
@@ -230,16 +229,21 @@ section{
 	width:20%;
 	height: 100%;
 	align-content: center;
-	text-align: center;	
+  	text-align: center;
 }
 
 .info-content{
-	width: 80%;
+	width: 70%;
 	display: flex;
 	height:100%;
 	overflow: hidden;
 }
 
+.info-one .suppl{
+	width: 10%;
+	text-align: start;
+	align-content: center;
+}
 .info-content > .swiper-wrapper{
 	display: flex;
 }
@@ -263,6 +267,10 @@ section{
   height:20px;
   width: 300px;
 
+}
+
+.swiper-info .swiper-wrapper .swiper-slide > span:hover{
+	text-decoration:underline;
 }
 
 
