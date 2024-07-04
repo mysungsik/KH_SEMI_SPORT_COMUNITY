@@ -536,6 +536,14 @@ ul{
     color: #727272;
 }
 
+
+/* ELEMENTS BOOTSTRAP MODAL (중앙정렬)*/
+.modal-dialog{
+	margin: 0;
+	top: 50%;
+	left : 50%;
+	transform : translate(-50%, -50%) !important;
+}
 /* ELEMENTS - hr */
 .hr__gray{
     border: none;

@@ -31,15 +31,15 @@
                 	<div class="info-contents card__lblue">
                 		<div>
                 			<p class="fs-12__b"> E-mail </p>
-                			<p class="fc__blue fs-12__b text-hover__blue"> test_email@test.com <span> > </span></p>
+                			<p class="fc__blue fs-12__b text-hover__blue" data-type="email" onclick="showModal(this)"> test_email@test.com <span> > </span></p>
                 		</div>
                 		<div>
                 			<p class="fs-12__b"> Phone Number </p>
-                			<p class="fc__blue fs-12__b text-hover__blue"> 010-0101-0101 <span> > </span></p>
+                			<p class="fc__blue fs-12__b text-hover__blue" data-type="number"  onclick="showModal(this)"> 010-0101-0101 <span> > </span></p>
                 		</div>
                 		<div>
                 			<p class="fs-12__b"> SNS Address </p>
-                			<p class="fc__blue fs-12__b text-hover__blue"> instagram@insta.com <span> > </span></p>
+                			<p class="fc__blue fs-12__b text-hover__blue" data-type="sns"  onclick="showModal(this)"> instagram@insta.com <span> > </span></p>
                 		</div>
                 	</div>
                 </div>
@@ -51,21 +51,21 @@
                 		<div>
                 			<p class="fs-12__b"> E-mail </p>
                 			<div class="form-check form-switch" data-type="email">
-							  <input class="form-check-input" type="checkbox" role="switch" id="emailAgree" name="emailAgree">
+							  <input class="form-check-input" type="checkbox" role="switch" id="emailAgree" name="emailAgree" data-type="emailAgree" onclick="showModal(this)">
 							  <label class="form-check-label" for="emailAgree">OFF</label>
 							</div>
                 		</div>
                 		<div>
                 			<p class="fs-12__b"> Phone Number </p>
                				<div class="form-check form-switch" data-type="phone">
-							  <input class="form-check-input" type="checkbox" role="switch" id="phoneAgree" name="phoneAgree">
+							  <input class="form-check-input" type="checkbox" role="switch" id="phoneAgree" name="phoneAgree" data-type="phoneAgree" onclick="showModal(this)">
 							  <label class="form-check-label" for="phoneAgree">OFF</label>
 							</div>
                 		</div>
                 		<div>
                 			<p class="fs-12__b"> SNS Address </p>
                				<div class="form-check form-switch" data-type="sns">
-							  <input class="form-check-input" type="checkbox" role="switch" id="snsAgree" name="snsAgree">
+							  <input class="form-check-input" type="checkbox" role="switch" id="snsAgree" name="snsAgree" data-type="snsAgree" onclick="showModal(this)">
 							  <label class="form-check-label" for="snsAgree">OFF</label>
 							</div>
                 		</div>
@@ -76,11 +76,10 @@
                 	<div class="info-contents card__lblue">
                 		<div>
                 			<p class="fs-12__b"> BirthDay </p>
-                			<p class="fc__blue fs-12__b text-hover__blue"> EDIT <span> > </span></p>
-                		</div>
+                			<p class="fc__blue fs-12__b text-hover__blue" data-type="birthday" onclick="showModal(this)"> 1992-01-01 <span> > </span></p>                		</div>
                 		<div>
-                			<p class="fs-12__b"> Local Address </p>
-                			<p class="fc__blue fs-12__b text-hover__blue"> EDIT <span> > </span></p>
+                			<p class="fs-12__b"> Address </p>
+                			<p class="fc__blue fs-12__b text-hover__blue" data-type="address" onclick="showModal(this)"> 경기도 용인시 처인구 ... <span> > </span></p>
                 		</div>
                 		<div>
                 			<p class="fs-12__b"> Login History </p>
@@ -92,19 +91,19 @@
         </section>
     </main>
     <!-- Modal -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal" id="commonModal" tabindex="-1" aria-hidden="true">
 	  <div class="modal-dialog">
 	    <div class="modal-content">
 	      <div class="modal-header">
-	        <h1 class="modal-title fs-5" id="exampleModalLabel">동의 하시겠습니까?</h1>
+	        <h1 class="modal-title fs-5" id="commonModalLabel"></h1>
 	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 	      </div>
 	      <div class="modal-body">
-	        모달 내용입니다.
 	      </div>
 	      <div class="modal-footer">
-	        <button id="cancelButton" type="button" class="btn btn-secondary" data-bs-dismiss="modal" > 취소 </button>
-	        <button id="confirmButton" type="button" class="btn btn-primary" data-bs-dismiss="modal"> 확인 </button>
+	      	<input type="hidden" name="modalType" value=""/>
+	        <button id="cancelBtn" type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="modalCancel()"> 취소 </button>
+	        <button id=confirmBtn type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="modalConfirm()"> 확인 </button>
 	      </div>
 	    </div>
 	  </div>

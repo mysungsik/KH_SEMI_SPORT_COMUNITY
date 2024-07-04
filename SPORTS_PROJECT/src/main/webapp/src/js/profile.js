@@ -190,9 +190,7 @@ $(document).ready(function () {
 	paginationActive("scrab", scrabData, paginationTemplate);
 	paginationActive("user", userData, adminTemplate);
 	paginationActive("report", reportData, adminTemplate);
-	
-	// 정보 제공 동의 실행함수
-	informationAgree();
+
 });
 
 // 체크박스 전체선택 함수
@@ -221,7 +219,7 @@ function paginationTemplate(data, id) {
 		                <input type="checkbox" id="post-check" name="post-check">
 		                <div>
 		                    <p class="fc__gray"> <span>${d.category}</span> ${d.title}</p>
-		                    <input type="text" class="item-text" value="${d.content}" disabled/> 
+		                    <input type="text" class="item-text base__lblue" value="${d.content}" disabled/> 
 		                </div>
 		            </div>
 		            <div class="element-edit">
@@ -376,6 +374,7 @@ function paginationActive(id, datas, template){
 			comment.prop("disabled", false);
 			console.log("엔터 누르면 수정하시겠습니까? 팝업창 나오도록")
 			console.log("수정 완료 누르면 DB에 저장되고, 다시 disabled 되도록")
+			console.log("수정 중간에 다른 수정 칸 못누르도록, 팝업창 띄우기")
 		})
 	} else if (id == "board"){
 		$(".edit").on("click", function(){
@@ -396,32 +395,172 @@ function paginationActive(id, datas, template){
 	}
 }
 
-function informationAgree(){
-	// 정보 제공 동의 메소드
-	let currentCheckbox="";
+// 모달의 팝업 함수
+function showModal(el){
+	// TODO : 각 MODAL 타입에 맞는 MODAL 내용 변경 후 SHOW 하기
+	let modalEl = $('#commonModal');
+	let modalType = $(el).data("type");
+	$("[name='modalType']").val(modalType);
 	
-	// 체크박스 클릭 이벤트 리스너 (OFF -> ON 일때만 모달 띄움)
-    $('.form-check').on('click', function() {
-		currentCheckbox = $(this).data('type');
-		if($(`input[name='${currentCheckbox}Agree']`).prop('checked') == true){
-			$('#exampleModal').modal('show');
-		}else{
-	 		$(`label[for='${currentCheckbox}Agree']`).html("OFF");
+	
+	let value = $(el).text();
+	let data = value.substring(0, value.length - 2).trim()
+	
+	// 정보제공동의 일 경우 모달
+	if (modalType == "emailAgree" ||
+		modalType == "phoneAgree" ||
+		modalType == "snsAgree"){
+			
+		let checkboxInput = $(`input[name='${modalType}']`)
+		let checkboxLabel = $(`label[for='${modalType}']`)
+		
+        let name = checkboxInput.prop("name")	// [sns, phone, email] Agree 
+      	let value = checkboxInput.prop("checked") 	// [ ON, OFF ]
+      
+		
+		switch(modalType){
+			// 정보 제공 종의 수정
+			case "emailAgree" : {
+				modalEl.find(".modal-title").html("정말로 이메일 정보 제공에 동의하시겠습니까?")
+				modalEl.find(".modal-body").html("모달 내용임둥")
+				
+			} break;
+	
+			case "phoneAgree" : {
+				modalEl.find(".modal-title").html("정말로 번호 정보 제공에 동의하시겠습니까?요")
+				modalEl.find(".modal-body").html("모달 내용임둥")
+				
+			} break;
+			
+			case "snsAgree" : {
+				modalEl.find(".modal-title").html("정말로 SNS 주소 정보 제공에 동의하시겠습니까?")
+				modalEl.find(".modal-body").html("모달 내용임둥")
+				
+			} break;
+			
+			
+			default  : {
+				modalEl.find(".modal-title").html("잘못된 모달")
+				modalEl.find(".modal-body").html("잘못된 모달")
+			}
 		}
-	});
 
-    // 확인 버튼 클릭 이벤트 리스너
-    $('#confirmButton').on('click', function() {
-      if (currentCheckbox) {
-        $(`input[name='${currentCheckbox}Agree']`).prop('checked', true);
-        $(`label[for='${currentCheckbox}Agree']`).html("ON");
-      }
-    });
-
-    // 취소 버튼 클릭 이벤트 리스너
-    $('#cancelButton').on('click', function() {
-      $(`input[name='${currentCheckbox}Agree']`).prop('checked', false);
-      $(`label[for='${currentCheckbox}Agree']`).html("OFF");
-    });
+		if (value){
+			modalEl.modal('show');		
+		}else{
+			checkboxLabel.html("OFF")
+		}
+	} 
+	
+	// 
+	
+	// 정보수정 일 경우 모달
+	else{
+		switch(modalType){
+			// 수정을 위한 비밀번호 재확인
+			case "pwChk" : {
+				modalEl.find(".modal-title").html("비밀번호 재확인")
+				modalEl.find(".modal-body").html(`
+					<p> 현재 비밀번호를 입력해주세요 </p>
+					<input type="text" name="${modalType}" value="${data}">`
+				);
+			} break;
+			
+			// 정보 수정
+			case "pw" : {
+				modalEl.find(".modal-title").html("비밀번호 변경")
+				modalEl.find(".modal-body").html(`
+					<p> 변경할 비밀번호를 입력해주세요 </p>
+					<input type="text" name="${modalType}" value="${data}">`
+				);
+			} break;
+			
+			case "email" : {
+				modalEl.find(".modal-title").html("이메일 변경")
+				modalEl.find(".modal-body").html(`
+					<p> 변경할 이메일을 입력해주세요 </p>
+					<input type="text" name="${modalType}" value="${data}">`
+				);
+			} break;
+			
+			case "number" : {
+				modalEl.find(".modal-title").html("핸드폰 번호 변경")
+				modalEl.find(".modal-body").html(`
+					<p> 변경할 번호를 입력해주세요 </p>
+					<input type="text" name="${modalType}" value="${data}">`
+				);
+			} break;
+			
+			case "sns" : {
+				modalEl.find(".modal-title").html("SNS 주소 변경")
+				modalEl.find(".modal-body").html(`
+					<p> 변경할 SNS 주소를 입력해주세요 </p>
+					<input type="text" name="${modalType}" value="${data}">`
+				);
+			} break;
+			
+			case "birthday" : {
+				modalEl.find(".modal-title").html("생일 변경")
+				modalEl.find(".modal-body").html(`
+					<p> 변경할 생일을 입력해주세요 </p>
+					<input type="text" name="${modalType}" value="${data}">`
+				);
+			} break;
+			
+			case "address" : {
+				modalEl.find(".modal-title").html("주소 변경")
+				modalEl.find(".modal-body").html(`
+					<p> 변경할 주소를 입력해주세요 </p>
+					<input type="text" name="${modalType}" value="${data}">`
+				);
+			} break;
+		}
+		modalEl.modal('show');
+	}
+	
 }
 
+// 모달의 확인 클릭
+function modalConfirm(){
+	let typeReg = /(Agree)$/
+	let modalType = $("[name='modalType']").val()
+	
+	// 정보 동의일 경우
+	if (typeReg.test(modalType)){
+		let input = $(`input[name="${modalType}"]`)
+		let label = $(`[for="${modalType}"]`)
+		input.prop("checked", true)
+		label.html("ON")
+		
+		// TODO : 값을 백엔드로 전달
+	}
+	// 정보 수정일 경우
+	else{
+		// TODO : 값을 백엔드로 전달
+		
+	}
+}
+
+// 모달의 취소 클릭
+function modalCancel(){
+	let typeReg = /(Agree)$/
+	let modalType = $("[name='modalType']").val();
+	let checkboxInput = $(`input[name='${modalType}']`)
+	let checkboxLabel = $(`label[for='${modalType}']`)
+		
+	
+	// 정보 동의일 경우
+	if (typeReg.test(modalType)){
+		if(checkboxInput.prop("checked")){
+			checkboxInput.prop("checked", false)
+			checkboxLabel.html("OFF")
+		}
+		
+		// TODO : 값을 백엔드로 전달
+	}
+	// 정보 수정일 경우
+	else{
+		// TODO : 값을 백엔드로 전달
+	}
+
+}
