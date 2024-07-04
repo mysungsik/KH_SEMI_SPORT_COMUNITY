@@ -225,8 +225,74 @@
 	        </article>
     	</div>
     </section>
+    <!-- 공지사항 끝 -->
     
-    <!--  -->
+    <!-- 응원 게시판 시작 -->
+	 <main>
+
+		 <section class="container">
+			 <article class="board mg-right">
+				 <div class="title">
+					 <span class="fs-28__b">응원 게시판</span>
+					 <span class="see-more fs-10 fc__gray"><a>더보기▶</a></span>
+				 </div>
+				 <hr>
+				 <div class="post">
+					 <div class="post-title">
+						 <span class="fs-12 fc__gray">[ 다저스 ]</span>
+						 <span class="fs-14__b">게시글입니다 test 1234</span>
+					 </div>
+					 <div class="post-info">
+						 <span class="fs-10">작성자 2024-06-23</span>
+						 <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
+					 </div>
+				 </div>
+				 <div class="post">
+					 <div class="post-title">
+						 <span class="fs-12 fc__gray">[ 해머스 ]</span>
+						 <span class="fs-14__b">게시글입니다 test 1234</span>
+					 </div>
+					 <div class="post-info">
+						 <span class="fs-10">작성자 2024-06-23</span>
+						 <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
+					 </div>
+				 </div>
+				 <div class="post">
+					 <div class="post-title">
+						 <span class="fs-12 fc__gray">[ 다저스 ]</span>
+						 <span class="fs-14__b">게시글입니다 test 1234</span>
+					 </div>
+					 <div class="post-info">
+						 <span class="fs-10">작성자 2024-06-23</span>
+						 <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
+					 </div>
+				 </div>
+				 <div class="post">
+					 <div class="post-title">
+						 <span class="fs-12 fc__gray">[ 해머스 ]</span>
+						 <span class="fs-14__b">게시글입니다 test 1234</span>
+					 </div>
+					 <div class="post-info">
+						 <span class="fs-10">작성자 2024-06-23</span>
+						 <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
+					 </div>
+				 </div>
+				 <div class="post">
+					 <div class="post-title">
+						 <span class="fs-12 fc__gray">[ 다저스 ]</span>
+						 <span class="fs-14__b">게시글입니다 test 1234</span>
+					 </div>
+					 <div class="post-info">
+						 <span class="fs-10">작성자 2024-06-23</span>
+						 <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
+					 </div>
+				 </div>
+			 </article>
+			 
+		 </section>
+		 <!-- 응원게시판 끝 -->
+		 
+	 </main>
 	<jsp:include page="/WEB-INF/views/layouts/footer.jsp" />
 	<script
 		src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
