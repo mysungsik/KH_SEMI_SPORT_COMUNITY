@@ -52,6 +52,10 @@
     
 }
 
+.swiper{
+	padding : 0 10px !important;
+}
+
 /* 컨테이너 상단 좌측 , 스코어 li ---- START ---- */
 .current-events-score ul{
     display: flex;

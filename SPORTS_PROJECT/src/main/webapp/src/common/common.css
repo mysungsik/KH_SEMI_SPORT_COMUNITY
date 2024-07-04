@@ -630,7 +630,7 @@ ul{
 .btn-medium__gray{
     width: 150px;
     height: 35px;
-    color: white;
+    color: gray;
     background-color: rgba(139, 139, 139, 0.24);
     border-radius: 5px;
     font-size: 12px;
@@ -641,6 +641,26 @@ ul{
 
 .btn-medium__gray:hover{
     background-color: rgba(139, 139, 139, 0.44);
+    font-weight: 700;
+    transition: all ease-in-out 0.1s;
+    box-shadow: 2px 2px 5px rgba(69, 69, 69, 0.486);
+    cursor: pointer;
+}
+
+.btn-medium__red{
+    width: 150px;
+    height: 35px;
+    color: white;
+    background-color: rgba(239, 78, 78, 0.8);
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    border: none;
+    box-shadow: 2px 2px 5px rgba(69, 69, 69, 0.3);
+}
+
+.btn-medium__red:hover{
+    background-color: rgba(239, 78, 78, 1.0);
     font-weight: 700;
     transition: all ease-in-out 0.1s;
     box-shadow: 2px 2px 5px rgba(69, 69, 69, 0.486);

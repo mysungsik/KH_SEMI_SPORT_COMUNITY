@@ -111,12 +111,12 @@ function adminTemplate(data, id) {
 		$.each(data, function(index, d){
 	  	item += 
 	  		`<tr>
-				<td>${d.no}</td> 
-				<td>${d.id}</td> 
-				<td>${d.email}</td> 
-				<td>${d.role}</td> 
-				<td>${d.number}</td> 
-				<td data-num=${d.no}><img class="edit" src="/SPORTS_PROJECT/public/icons/edit.png"></td> 
+				<td class="no">${d.no}</td> 
+				<td class="id">${d.id}</td> 
+				<td class="email">${d.email}</td> 
+				<td class="role">${d.role}</td> 
+				<td class="number">${d.number}</td> 
+				<td data-num=${d.no}><img class="edit"  src="/SPORTS_PROJECT/public/icons/edit.png"></td> 
 			</tr>`
 		})
 		item += `</tbody>
@@ -141,11 +141,11 @@ function adminTemplate(data, id) {
 		$.each(data, function(index, d){
 	  	item += 
 	  		`<tr> 
-				<td>${d.no}</td> 
-				<td>${d.id}</td> 
-				<td>${d.rep_type}</td> 
-				<td>${d.vio_type}</td> 
-				<td>${d.rep_content}</td> 
+				<td class="no" >${d.no}</td> 
+				<td class="id" >${d.id}</td> 
+				<td class="rep_type" >${d.rep_type}</td> 
+				<td class="vio_type" >${d.vio_type}</td> 
+				<td class="rep_content" >${d.rep_content}</td> 
 				<td data-num=${d.no}><img class="edit" src="/SPORTS_PROJECT/public/icons/edit.png"></td> 
 			</tr>`
 		})
@@ -174,9 +174,6 @@ function paginationActive(id, datas, template){
 		        var html = template(data,id);
 		        
 		        $(`#${id}-data`).html(html);	// 데이터 페이지네이션
-		        
-		        // 체크박스 전체선택 함수
-		        allChecks();
 		
 				var currentPage = pagination.pageNumber;	// 현재 페이지 번호
 				
@@ -188,143 +185,100 @@ function paginationActive(id, datas, template){
 				})
 			}
 		})
+		
+		// 조건에 맞는 edit 수행
+		if (id == "user"){
+			$(".edit").on("click", function(){
+				let data = {
+					no : $(this).parent().parent().find(".no").text(),
+					id : $(this).parent().parent().find(".id").text(),
+					email : $(this).parent().parent().find(".email").text(),
+					role : $(this).parent().parent().find(".role").text(),
+					number : $(this).parent().parent().find(".number").text()
+				}
+				
+				showModal(id, data)
+				
+			})
+				
+		} else if (id == "report"){
+			$(".edit").on("click", function(){
+				let data = {
+					no : $(this).parent().parent().find(".no").text(),
+					id : $(this).parent().parent().find(".id").text(),
+					rep_type : $(this).parent().parent().find(".rep_type").text(),
+					vio_type : $(this).parent().parent().find(".vio_type").text(),
+					rep_content : $(this).parent().parent().find(".rep_content").text()
+				}
+
+				showModal(data)
+			})
+		}
 	}
+}
 	
-	// 조건에 맞는 edit 수행
+	
+
+function showModal(id, data){
+	let modalEl = $('#adminModal');
+	
 	if (id == "user"){
-		$(".edit").on("click", function(){
-			console.log("유저 상세 정보 모달 show()")
-		})
-	} else if (id == "report"){
-		$(".edit").on("click", function(){
-			console.log("신고 상세 정보 모달 show()")
-		})
+		modalEl.find(".modal-title").html(`<p>회원관리 / ${data.no}</p>`)
+		
+		modalEl.find(".modal-body").html(`
+			<div class="modal-row">
+				<div>
+					<label for="user_id"> USER ID </label>
+					<input type="text" id="user_id" name="user_id" value="${data.id}">				
+				</div>
+				<div>
+					<label for="user_email"> USER EMAIL </label>
+					<input type="text" id="user_email" name="user_email" value="${data.email}">								
+				</div>
+			</div>
+			<div  class="modal-row">
+				<div>
+					<label for="user_id"> USER ID </label>
+					<input type="text" id="user_id" name="user_id" value="${data.id}">				
+				</div>
+				<div>
+					<label for="user_email"> USER EMAIL </label>
+					<input type="text" id="user_email" name="user_email" value="${data.email}">								
+				</div>
+			</div>
+			<div  class="modal-row">
+				<div>
+					<label for="user_id"> USER ID </label>
+					<input type="text" id="user_id" name="user_id" value="${data.id}">				
+				</div>
+				<div>
+					<label for="user_email"> USER EMAIL </label>
+					<input type="text" id="user_email" name="user_email" value="${data.email}">								
+				</div>
+			</div>
+			<div  class="modal-row">
+				<div>
+					<label for="user_id"> USER ID </label>
+					<input type="text" id="user_id" name="user_id" value="${data.id}">				
+				</div>
+				<div>
+					<label for="user_email"> USER EMAIL </label>
+					<input type="text" id="user_email" name="user_email" value="${data.email}">								
+				</div>
+			</div>
+			
+			<div class="modal-btns">
+				<button class="btn-medium__blue"> Accept </button>
+				<button class="btn-medium__gray"> Cancel </button>
+				<button class="btn-medium__red"> Delete</button>
+			</div>
+			`
+		);
 	}
+	
+	modalEl.modal('show');
 }
 
-
-
-// 모달의 팝업 함수
-function showModal(el){
-	// TODO : 각 MODAL 타입에 맞는 MODAL 내용 변경 후 SHOW 하기
-	let modalEl = $('#commonModal');
-	let modalType = $(el).data("type");
-	$("[name='modalType']").val(modalType);
-	
-	
-	let value = $(el).text();
-	let data = value.substring(0, value.length - 2).trim()
-	
-	// 정보제공동의 일 경우 모달
-	if (modalType == "emailAgree" ||
-		modalType == "phoneAgree" ||
-		modalType == "snsAgree"){
-			
-		let checkboxInput = $(`input[name='${modalType}']`)
-		let checkboxLabel = $(`label[for='${modalType}']`)
-		
-        let name = checkboxInput.prop("name")	// [sns, phone, email] Agree 
-      	let value = checkboxInput.prop("checked") 	// [ ON, OFF ]
-
-		
-		switch(modalType){
-			// 정보 제공 종의 수정
-			case "emailAgree" : {
-				modalEl.find(".modal-title").html("정말로 이메일 정보 제공에 동의하시겠습니까?")
-				modalEl.find(".modal-body").html("모달 내용임둥")
-				
-			} break;
-	
-			case "phoneAgree" : {
-				modalEl.find(".modal-title").html("정말로 번호 정보 제공에 동의하시겠습니까?요")
-				modalEl.find(".modal-body").html("모달 내용임둥")
-				
-			} break;
-			
-			case "snsAgree" : {
-				modalEl.find(".modal-title").html("정말로 SNS 주소 정보 제공에 동의하시겠습니까?")
-				modalEl.find(".modal-body").html("모달 내용임둥")
-				
-			} break;
-			
-			
-			default  : {
-				modalEl.find(".modal-title").html("잘못된 모달")
-				modalEl.find(".modal-body").html("잘못된 모달")
-			}
-		}
-
-		if (value){
-			modalEl.modal('show');		
-		}else{
-			checkboxLabel.html("OFF")
-		}
-	} 
-	
-	// 정보수정 일 경우 모달
-	else{
-		switch(modalType){
-			// 수정을 위한 비밀번호 재확인
-			case "pwChk" : {
-				modalEl.find(".modal-title").html("비밀번호 재확인")
-				modalEl.find(".modal-body").html(`
-					<p> 현재 비밀번호를 입력해주세요 </p>
-					<input type="text" name="${modalType}" value="${data}">`
-				);
-			} break;
-			
-			// 정보 수정
-			case "pw" : {
-				modalEl.find(".modal-title").html("비밀번호 변경")
-				modalEl.find(".modal-body").html(`
-					<p> 변경할 비밀번호를 입력해주세요 </p>
-					<input type="text" name="${modalType}" value="${data}">`
-				);
-			} break;
-			
-			case "email" : {
-				modalEl.find(".modal-title").html("이메일 변경")
-				modalEl.find(".modal-body").html(`
-					<p> 변경할 이메일을 입력해주세요 </p>
-					<input type="text" name="${modalType}" value="${data}">`
-				);
-			} break;
-			
-			case "number" : {
-				modalEl.find(".modal-title").html("핸드폰 번호 변경")
-				modalEl.find(".modal-body").html(`
-					<p> 변경할 번호를 입력해주세요 </p>
-					<input type="text" name="${modalType}" value="${data}">`
-				);
-			} break;
-			
-			case "sns" : {
-				modalEl.find(".modal-title").html("SNS 주소 변경")
-				modalEl.find(".modal-body").html(`
-					<p> 변경할 SNS 주소를 입력해주세요 </p>
-					<input type="text" name="${modalType}" value="${data}">`
-				);
-			} break;
-			
-			case "birthday" : {
-				modalEl.find(".modal-title").html("생일 변경")
-				modalEl.find(".modal-body").html(`
-					<p> 변경할 생일을 입력해주세요 </p>
-					<input type="text" name="${modalType}" value="${data}">`
-				);
-			} break;
-			
-			case "address" : {
-				modalEl.find(".modal-title").html("주소 변경")
-				modalEl.find(".modal-body").html(`
-					<p> 변경할 주소를 입력해주세요 </p>
-					<input type="text" name="${modalType}" value="${data}">`
-				);
-			} break;
-		}
-		modalEl.modal('show');
-	}
-}
 
 // 모달의 확인 클릭
 function modalConfirm(){

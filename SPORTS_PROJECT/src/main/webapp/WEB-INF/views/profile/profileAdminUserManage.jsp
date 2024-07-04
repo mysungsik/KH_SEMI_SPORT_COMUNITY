@@ -51,7 +51,7 @@
 	      <div class="modal-footer">
 	      	<input type="hidden" name="modalType" value=""/>
 	        <button id="cancelBtn" type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="modalCancel()"> 취소 </button>
-	        <button id=confirmBtn type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="modalConfirm()"> 확인 </button>
+	        <button id="confirmBtn" type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="modalConfirm()"> 확인 </button>
 	      </div>
 	    </div>
 	  </div>

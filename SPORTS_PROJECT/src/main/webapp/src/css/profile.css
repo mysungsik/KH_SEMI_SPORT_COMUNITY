@@ -245,7 +245,27 @@
 }
 
 
+/* 관리자 페이지 모달 */
 
+#adminModal .modal-dialog {
+	max-width: 900px;
+	height: 650px;
+}
+
+#adminModal .modal-dialog .modal-content{
+	height: 100%
+}
+#adminModal .modal-body .modal-row{
+	display: flex;
+	text-align: center;
+	margin-top: 30px;
+}
+
+#adminModal .modal-body .modal-row label,
+#adminModal .modal-body .modal-row input{
+	width : 400px;
+	height: 30px;
+}
 
 
 
