@@ -44,8 +44,9 @@
 									class="fs-14__b">파이팅 다저스</span>
 							</div>
 							<div class="post-content">
-								<span class="fs-12 fc__gray"> 사회 생활을 하며 사람을 화나게 하는 방법은
-									여러가지가 있습니다. 그 중 첫 번째는 말을 하다 마는 것입니다... 이어서 두 번째는 바로.. </span>
+								<span class="fs-12 fc__gray">
+								 경기력이 정말 화가 납니다..사회 생활을 하며 사람을 화나게 하는 방법은 여러가지가 있습니다. 그 중 첫 번째는 말을 하다 마는 것입니다. 이어서 두 번째는 바로.. 
+								 </span>
 							</div>
 							<div class="post-info">
 								<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
@@ -286,8 +287,8 @@
 								class="fs-10 fc__gray">한국이 야구 못하는 이유</span>
 						</div>
 						<div class="best-content">
-							<span class="fs-10">작성자</span> <span class="fs-12__b">댓글입니다
-								test 1234</span>
+							<span class="fs-10">작성자</span> 
+							<span class="fs-10__b">댓글입니다 베스트 댓글 노리는 중입니다동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</span>
 						</div>
 					</div>
 					<div class="best-like">
@@ -307,8 +308,8 @@
 								class="fs-10 fc__gray">한국이 야구 못하는 이유</span>
 						</div>
 						<div class="best-content">
-							<span class="fs-10">작성자</span> <span class="fs-12__b">댓글입니다
-								test 1234</span>
+							<span class="fs-10__b">작성자</span> 
+							<span class="fs-10__b">댓글입니다 베스트 댓글 노리는 중입니다동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</span>
 						</div>
 					</div>
 					<div class="best-like">
@@ -328,8 +329,8 @@
 								class="fs-10 fc__gray">한국이 야구 못하는 이유</span>
 						</div>
 						<div class="best-content">
-							<span class="fs-10">작성자</span> <span class="fs-12__b">댓글입니다
-								test 1234</span>
+							<span class="fs-10">작성자</span> 
+							<span class="fs-10__b">댓글입니다 베스트 댓글 노리는 중입니다동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</span>
 						</div>
 					</div>
 					<div class="best-like">
@@ -349,8 +350,8 @@
 								class="fs-10 fc__gray">한국이 야구 못하는 이유</span>
 						</div>
 						<div class="best-content">
-							<span class="fs-10">작성자</span> <span class="fs-12__b">댓글입니다
-								test 1234</span>
+							<span class="fs-10">작성자</span>
+							<span class="fs-10__b">댓글입니다 베스트 댓글 노리는 중입니다동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</span>
 						</div>
 					</div>
 					<div class="best-like">
@@ -370,8 +371,8 @@
 								class="fs-10 fc__gray">한국이 야구 못하는 이유</span>
 						</div>
 						<div class="best-content">
-							<span class="fs-10">작성자</span> <span class="fs-12__b">댓글입니다
-								test 1234</span>
+							<span class="fs-10">작성자</span> 
+							<span class="fs-10__b">댓글입니다 베스트 댓글 노리는 중입니다동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</span>
 						</div>
 					</div>
 					<div class="best-like">
