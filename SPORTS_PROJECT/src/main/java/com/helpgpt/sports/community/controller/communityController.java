@@ -28,9 +28,11 @@ public class communityController extends HttpServlet {
 		// Path 지정
 		String reqPath = req.getPathInfo();
 		String path = "";
+		String sub = "";
 		
 		if(reqPath != null) {
 			path = reqPath.split("/")[1];
+			sub = reqPath.split("/")[2];
 		}
 		
 		// 경로에 따라 필요한 페이지로 추가 이동
@@ -41,6 +43,12 @@ public class communityController extends HttpServlet {
 			}break;
 		case "communityBoard": {
 			dispatcher = req.getRequestDispatcher(defaultURLPath + "communityBoard.jsp");
+			req.setAttribute("sub", sub);
+			dispatcher.forward(req, resp);
+			};break;
+		case "detail": {
+			dispatcher = req.getRequestDispatcher(defaultURLPath + "communityDetail.jsp");
+			req.setAttribute("sub", sub);
 			dispatcher.forward(req, resp);
 			};break;
 		default:System.out.println("404 페이지로 이동");}

@@ -7,184 +7,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="${contextPath}/src/css/communityBoard.css">
-    <script src="${contextPath}/src/js/community.js" defer></script>
+    <script src="${contextPath}/src/js/communityBoard.js" defer></script>
+        <script src="${contextPath}/src/util/pagination.js" defer></script>
     <script src="https://kit.fontawesome.com/e245e5bbb1.js" crossorigin="anonymous"></script>
     
     <title>COMMUNITY</title>
 </head>
 <body>
     <jsp:include page="/WEB-INF/views/layouts/header.jsp"/>
+    <input type="hidden" name="sub" value="${requestScope.sub}">
     <!-- Write Main Content -->
 		<main>
 			<!-- 게시판 메뉴 -->
 			<section class="nav">
 				<div class="switch">
-					<div class="switch-category base__blue"><span class="fs-14 fc__white">전체</span></div>
-					<div class="switch-category base__lblue"><span class="fs-14 fc__gray">인기</span></div>
-					<div class="switch-category base__lblue"><span class="fs-14 fc__gray">응원</span></div>
-					<div class="switch-category base__lblue"><span class="fs-14 fc__gray">자유</span></div>
-					<div class="switch-category base__lblue"><span class="fs-14 fc__gray">공지사항</span></div>
+					<a href="all" class="switch-category"><span class="switch-title">전체</span></a>
+					<a href="popular" class="switch-category"><span class="switch-title">인기</span></a>
+					<a href="cheer" class="switch-category"><span class="switch-title">응원</span></a>
+					<a href="free" class="switch-category"><span class="switch-title">자유</span></a>
+					<a href="info" class="switch-category"><span class="switch-title">공지사항</span></a>
 				</div>
 				
 			</section>
 			<!-- 게시판 -->
 			<section class="board">
-				<div class="title">
-					<span class="fs-28__b">전체</span>
+				<div class="title-area">
+					<span class="fs-28__b title"></span>
+                    <div class="search-area">
+	                    <form action="#" class="search">
+	                    	<input type="text">
+	                    	<button class="fa-solid fa-magnifying-glass"></button>
+	                    </form>
+	                    <button type="button" class="write-btn mg-right">글쓰기</button>
+                    </div>
 				</div>
-				<div class="post">
-					<div class="category">
-						<span class="fs-12 fc__gray">[응원]</span>
-					</div>
-					<div class="content">
-						<div class="post-title">
-							<span class="fs-14__b">야구 룰이 너무 어려움</span>
-						</div>
-						<div class="post-info">
-							<span>작성자 2024-07-02</span>
-							<span>조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-						</div>
-					</div>
-				</div>
-				
-				<div class="post">
-					<div class="category">
-						<span class="fs-12 fc__gray">[응원]</span>
-					</div>
-					<div class="content">
-						<div class="post-title">
-							<span class="fs-14__b">야구 룰이 너무 어려움</span>
-						</div>
-						<div class="post-info">
-							<span>작성자 2024-07-02</span>
-							<span>조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-						</div>
-					</div>
-				</div>
-				
-				<div class="post">
-					<div class="category">
-						<span class="fs-12 fc__gray">[응원]</span>
-					</div>
-					<div class="content">
-						<div class="post-title">
-							<span class="fs-14__b">야구 룰이 너무 어려움</span>
-						</div>
-						<div class="post-info">
-							<span>작성자 2024-07-02</span>
-							<span>조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-						</div>
-					</div>
-				</div>
-				
-				<div class="post">
-					<div class="category">
-						<span class="fs-12 fc__gray">[응원]</span>
-					</div>
-					<div class="content">
-						<div class="post-title">
-							<span class="fs-14__b">야구 룰이 너무 어려움</span>
-						</div>
-						<div class="post-info">
-							<span>작성자 2024-07-02</span>
-							<span>조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-						</div>
-					</div>
-				</div>
-				<div class="post">
-					<div class="category">
-						<span class="fs-12 fc__gray">[응원]</span>
-					</div>
-					<div class="content">
-						<div class="post-title">
-							<span class="fs-14__b">야구 룰이 너무 어려움</span>
-						</div>
-						<div class="post-info">
-							<span>작성자 2024-07-02</span>
-							<span>조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-						</div>
-					</div>
-				</div>
-				<div class="post">
-					<div class="category">
-						<span class="fs-12 fc__gray">[응원]</span>
-					</div>
-					<div class="content">
-						<div class="post-title">
-							<span class="fs-14__b">야구 룰이 너무 어려움</span>
-						</div>
-						<div class="post-info">
-							<span>작성자 2024-07-02</span>
-							<span>조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-						</div>
-					</div>
-				</div>
-				<div class="post">
-					<div class="category">
-						<span class="fs-12 fc__gray">[응원]</span>
-					</div>
-					<div class="content">
-						<div class="post-title">
-							<span class="fs-14__b">야구 룰이 너무 어려움</span>
-						</div>
-						<div class="post-info">
-							<span>작성자 2024-07-02</span>
-							<span>조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-						</div>
-					</div>
-				</div>
-				<div class="post">
-					<div class="category">
-						<span class="fs-12 fc__gray">[응원]</span>
-					</div>
-					<div class="content">
-						<div class="post-title">
-							<span class="fs-14__b">야구 룰이 너무 어려움</span>
-						</div>
-						<div class="post-info">
-							<span>작성자 2024-07-02</span>
-							<span>조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-						</div>
-					</div>
-				</div>
-				<div class="post">
-					<div class="category">
-						<span class="fs-12 fc__gray">[응원]</span>
-					</div>
-					<div class="content">
-						<div class="post-title">
-							<span class="fs-14__b">야구 룰이 너무 어려움</span>
-						</div>
-						<div class="post-info">
-							<span>작성자 2024-07-02</span>
-							<span>조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-						</div>
-					</div>
-				</div>
-				<div class="post">
-					<div class="category">
-						<span class="fs-12 fc__gray">[응원]</span>
-					</div>
-					<div class="content">
-						<div class="post-title">
-							<span class="fs-14__b">야구 룰이 너무 어려움</span>
-						</div>
-						<div class="post-info">
-							<span>작성자 2024-07-02</span>
-							<span>조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-						</div>
-					</div>
-				</div>
+				    <div id="community-data"></div>
 				
 			</section>
 			<!-- 페이지 -->
 			<section class="page">
+					<div id="community-pagination"></div>
 			</section>
         </main>
     <!-- Be sure to include this TAG -->
     <jsp:include page="/WEB-INF/views/layouts/footer.jsp"/>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
 
 </body>
 </html>

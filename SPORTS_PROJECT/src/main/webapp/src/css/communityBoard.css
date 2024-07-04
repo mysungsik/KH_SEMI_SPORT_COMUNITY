@@ -29,6 +29,9 @@ main{
 	cursor: pointer;
 }
 
+switch-title{
+	font-size: 14px;
+}
 
 
 /* 게시판 */
@@ -37,8 +40,45 @@ main{
 	margin-top: 30px;
 }
 
-.title{
+.title-area{
 	border-bottom: 1px solid black;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/* 검색 */
+.search-area{
+	display: flex;
+	gap: 10px;
+}
+
+.search-area input{
+	border: 0;
+	outline: 0;
+	border-radius: 5px;
+}
+
+.search button{
+	border: 0;
+	background-color: white;
+	border-radius: 5px;
+}
+
+.search{
+	border: 2px solid gray;
+	border-radius: 5px;
+	display: flex;
+}
+
+.write-btn{
+	width: 70px;
+	height: 25px;
+	background-color: #458BE2;
+	color: white;
+	border: 0;
+	border-radius: 5px;
+	text-align: center;
 }
 
 
@@ -46,6 +86,12 @@ main{
 	height: 70px;
 	display: flex;
 	border-bottom: 1px solid gray;
+	cursor: pointer;
+}
+
+.post:hover{
+    background-color: #F4F6FD;
+    transition: 0.3s;
 }
 
 .category{
@@ -76,4 +122,19 @@ main{
 .page{
 	height: 30px;
 	margin-top: 30px;
+	display: flex;
+	justify-content: center;
 }
+
+.paginationjs-pages>ul{
+	display: flex;
+	gap: 15px;
+}
+
+.paginationjs-pages a{
+	font-size: 20px;
+	cursor: pointer;
+}
+
+
+
