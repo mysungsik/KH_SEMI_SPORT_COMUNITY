@@ -248,26 +248,69 @@
 /* 관리자 페이지 모달 */
 
 #adminModal .modal-dialog {
-	max-width: 900px;
-	height: 650px;
+	max-width: 720px;
+	height: 480px;
+}
+
+#adminModal .modal-header .modal-title{
+	width: 100%;
+	text-align: center;
+}
+
+#adminModal .modal-body{
+	align-self: center;
+	padding-top : 0;
 }
 
 #adminModal .modal-dialog .modal-content{
 	height: 100%
 }
+
 #adminModal .modal-body .modal-row{
 	display: flex;
+	width : 80%;
 	text-align: center;
-	margin-top: 30px;
+	margin-top: 25px;
+	gap: 30px;
+	justify-content: space-between;
 }
 
 #adminModal .modal-body .modal-row label,
 #adminModal .modal-body .modal-row input{
-	width : 400px;
+	width : 300px;
 	height: 30px;
 }
 
+#adminModal .modal-body .modal-row label{
+	text-align: left;
+	height: 20px;
+	display:flex;
+	align-items: center;
+}
 
+#adminModal .modal-body .modal-row [name='content'],
+#adminModal .modal-body .modal-row [name='board_title']{
+	width: 630px;
+}
+
+#adminModal .modal-body .move-board{
+    display: block;
+    width: 100px;
+    text-align: center;
+    margin : 0 auto;
+    margin-top: 10px;
+}
+
+#adminModal .modal-body .modal-btns{
+    margin-top: 35px;
+    justify-content: space-between;
+    display: flex;
+}
+
+#adminModal .modal-body .modal-btns [class*='btn-']{
+	width: 200px;
+}
+	
 
 
 

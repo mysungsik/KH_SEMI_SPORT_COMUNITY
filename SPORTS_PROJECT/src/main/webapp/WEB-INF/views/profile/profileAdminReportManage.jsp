@@ -10,7 +10,6 @@
     <script src="${contextPath}/src/util/pagination.js" defer></script>
     <script src="${contextPath}/src/js/profileAdmin.js" defer></script>
     
-    
     <title>MLB - Na</title>
 </head>
 <body>
@@ -39,6 +38,19 @@
             </div>
         </section>
     </main>
+    <!-- Modal -->
+	<div class="modal" id="adminModal" tabindex="-1" aria-hidden="true">
+      <input type="hidden" name="modalType" value=""/>
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header base__blue">
+	        <h1 class="modal-title" id="commonModalLabel"></h1>
+	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	      </div>
+	      <div class="modal-body"></div>
+	    </div>
+	  </div>
+	</div>
 	<jsp:include page="/WEB-INF/views/layouts/footer.jsp"/>
 </body>
 </html>

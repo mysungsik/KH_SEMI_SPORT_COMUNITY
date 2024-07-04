@@ -40,19 +40,14 @@
     </main>
     <!-- Modal -->
 	<div class="modal" id="adminModal" tabindex="-1" aria-hidden="true">
+      <input type="hidden" name="modalType" value=""/>
 	  <div class="modal-dialog">
 	    <div class="modal-content">
-	      <div class="modal-header">
-	        <h1 class="modal-title fs-5" id="commonModalLabel"></h1>
+	      <div class="modal-header base__blue">
+	        <h1 class="modal-title" id="commonModalLabel"></h1>
 	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 	      </div>
-	      <div class="modal-body">
-	      </div>
-	      <div class="modal-footer">
-	      	<input type="hidden" name="modalType" value=""/>
-	        <button id="cancelBtn" type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="modalCancel()"> 취소 </button>
-	        <button id="confirmBtn" type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="modalConfirm()"> 확인 </button>
-	      </div>
+	      <div class="modal-body"></div>
 	    </div>
 	  </div>
 	</div>
