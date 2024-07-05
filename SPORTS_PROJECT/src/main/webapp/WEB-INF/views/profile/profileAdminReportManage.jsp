@@ -26,7 +26,17 @@
                 <p class="content-title fs-28__b"> 신고 관리</p>
                 <hr class="hr__gray mt-20">
                 <div class="content-header d-flex">
-                 	검색 칸입니다.
+                 	<form action="#" class="search-area">
+						<select class="search-category" name="category">
+							<option value="" selected> 카테고리</option>
+							<option value="" > 신고 유형 </option>
+							<option value="" > 위반 유형 </option>
+							<option value="" > 신고 내용 </option>
+							<option value="" > 게시글 제목 </option>
+						</select>
+						<input type="text">
+						<button class="search fa-solid fa-magnifying-glass"></button>
+					</form>
                 </div>
                 
                 <!-- 컨텐츠 > 메인 -->

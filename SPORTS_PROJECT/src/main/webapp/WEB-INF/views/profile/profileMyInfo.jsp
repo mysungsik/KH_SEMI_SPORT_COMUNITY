@@ -22,7 +22,7 @@
             <!-- 메인컨텐츠 -->
             <div class="profile-content">
             	<!-- 컨텐츠 > 헤더 -->
-                <p class="content-title fs-28__b"> 내 정보 관리</p>
+                <p class="content-title fs-28__b" onclick="toastPop('팝ㅍ바팝')"> 내 정보 관리</p>
                 <hr class="hr__gray mt-20">
             
                 <!-- 컨텐츠 > 메인 -->
@@ -102,7 +102,7 @@
 	      <div class="modal-footer">
 	      	<input type="hidden" name="modalType" value=""/>
 	        <button id="cancelBtn" type="button" class="btn btn-medium__gray" data-bs-dismiss="modal" onclick="modalCancel()"> 취소 </button>
-	        <button id=confirmBtn type="button" class="btn btn-medium__blue" data-bs-dismiss="modal" onclick="modalConfirm()"> 변경 </button>
+	        <button id="confirmBtn" type="button" class="btn btn-medium__blue" onclick="modalConfirm()"> 변경 </button>
 	      </div>
 	    </div>
 	  </div>

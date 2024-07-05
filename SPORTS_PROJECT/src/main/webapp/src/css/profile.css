@@ -50,6 +50,7 @@
 }
 
 .profile-content .content-header{
+	position : relative;
 	justify-content: space-between;
 	align-items: center;
 	padding: 5px;
@@ -69,6 +70,29 @@
 	width: 20px;
 }
 
+.profile-content .content-header .search-area{
+	display: flex;
+	gap: 10px;
+}
+
+.profile-content .content-header .search-area input{
+	border: 1px solid black;
+	outline: 0;
+	border-radius: 5px;
+	width: 450px;
+	padding : 2px 5px;
+}
+.profile-content .content-header .search-category{
+	width: 90px;
+	border-radius: 5px;
+	padding : 2px 1px;
+}
+
+.profile-content .content-header .search{
+	border: 0;
+	background-color: white;
+	border-radius: 5px;
+}
 .profile-content .content-main{
 	padding: 10px;
 	height: 630px;
