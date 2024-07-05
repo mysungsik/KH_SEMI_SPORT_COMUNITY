@@ -69,7 +69,7 @@
 		    <div class="header-bot">
 		        <div class="header-nav">
 		            <ul class="d-flex">
-		                <a class="fs-20__b text-hover__blue" href="${contextPath}/src/pages/teams/team.jsp">BLUE JAYS</a>
+		                <a class="fs-20__b text-hover__blue" href="${contextPath}/src/pages/teams/teamInfo.jsp">BLUE JAYS</a>
 		                <a class="fs-20__b text-hover__blue" href="${contextPath}/src/pages/teams/players.jsp">PLAYERS</a>
 						<a href="${contextPath}/teams/teamsEach"><img class="logo" src='${contextPath}/public/images/teams/FL.png'></a>
 		                <a class="fs-20__b text-hover__blue" href="${contextPath}/src/pages/teams/schedule.jsp">SCHEDULE</a>
@@ -94,7 +94,7 @@
             <div class="header-bot">
                 <div class="header-nav">
                     <ul class="d-flex">
-                        <a class="fs-20__b text-hover__blue" href="${contextPath}/src/pages/teams/team.jsp">BLUE JAYS</a>
+                        <a class="fs-20__b text-hover__blue" href="${contextPath}/src/pages/teams/teamInfo.jsp">BLUE JAYS</a>
 		                <a class="fs-20__b text-hover__blue" href="${contextPath}/src/pages/teams/players.jsp">PLAYERS</a>
 		                <a href="${contextPath}/src/pages/teams/eachTeamMain.jsp"><img class="logo" src='${contextPath}/public/images/teams/FL.png'></a>
 		                <a class="fs-20__b text-hover__blue" href="${contextPath}/src/pages/teams/schedule.jsp">SCHEDULE</a>

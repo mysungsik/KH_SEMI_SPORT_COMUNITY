@@ -1,0 +1,139 @@
+/* 유틸 */
+*{box-sizing: border-box;}
+
+/* *{border: 1px solid black;} */
+
+/* container */
+.container{
+    width: 1024px;
+}
+
+section{
+    margin: 30px 0;
+}
+
+/* 페이지 커버 */
+.pagecover{
+	height: 200px; 
+	
+}
+
+.pagecover-img{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 150px;
+	background-color: red;
+}
+
+/* 소개띠 */
+.pagecover-bottom{
+	height: 50px;
+	background-color: green;
+	
+}
+
+.pagecover-bottom-inner{
+	max-width: 1024px;
+	justify-content: end;
+	margin: 0 auto;
+	text-align: center;
+}
+
+
+/* 메인 */
+/* 유틸 */
+.container hr{
+	margin:0;
+}
+/* team-video */ 
+.team-video{
+	max-width: 1024px;
+	margin: 0 auto;
+	position: relative;
+	overflow:hidden;
+	height: 500px;
+	
+}
+
+.team-video .main-video{
+	width:100%;
+	position: absolute;
+	height: 100%;
+}
+
+/* team-video 끝 */ 
+
+/* team-story 시작 */
+.team-story{
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.team-story p{
+	line-height:2;
+	text-align: center;
+}
+
+.team-story p:first-child{
+	padding: 10px 0;
+}
+
+/* team-story 끝 */
+
+/* team-ci 시작 */
+.team-ci{
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.team-ci p:first-child{
+	padding: 10px 0;
+}
+
+
+.team-ci-content{
+	width:100%;
+	gap: 20px;
+}
+
+.team-ci-content-img{
+	width:60%;
+}
+
+.team-ci-content p{
+	line-height:2;
+}
+/* team-ci 끝 */
+
+/* team-logo 시작 */
+.team-logo{
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 50px;
+}
+
+.team-logo p:first-child{
+	padding: 10px 0;
+}
+
+
+.team-logo-content{
+	width:100%;
+	gap: 20px;
+}
+
+.team-logo-content-img{
+	width:60%;
+}
+
+.team-logo-content p{
+	line-height:2;
+}
+/* team-logo 끝 */
