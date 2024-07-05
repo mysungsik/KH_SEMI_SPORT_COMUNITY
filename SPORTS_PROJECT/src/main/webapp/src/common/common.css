@@ -544,6 +544,53 @@ ul{
 	left : 50%;
 	transform : translate(-50%, -50%) !important;
 }
+
+#commonModal .modal-header{
+	background-color: #71A1DD;
+}
+
+#commonModal .modal-body{
+	height: 100px;
+    text-align: center;
+}
+
+#commonModal .modal-body input{
+	width: 80%;
+    margin: 5px;
+    padding: 10px;
+}
+
+#commonModal .modal-footer{
+	align-self: center;
+	border: none;
+}
+
+#commonModal .modal-footer button{
+	margin : 3px 10px;
+}
+
+
+
+/* ELEMENTS BOOTSTRAP TOAST (상단 중앙 정렬) */
+.toast-container{
+	top:20px;
+	left:0;
+	margin: 0 auto;
+}
+.toast-container .toast{
+	width: auto !important;
+}
+.toast-body {
+	display: flex;
+	align-items: center;
+}
+
+.toast-body .toast-message{
+	margin: 0 15px;
+	display: flex;
+	align-items: center;
+}
+
 /* ELEMENTS - hr */
 .hr__gray{
     border: none;

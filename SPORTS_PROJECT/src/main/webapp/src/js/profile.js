@@ -237,16 +237,12 @@ function paginationActive(id, datas, template){
 
 // 모달의 팝업 함수
 function showModal(el){
-	// TODO : 각 MODAL 타입에 맞는 MODAL 내용 변경 후 SHOW 하기
-	let modalEl = $('#commonModal');
+	
+	let infoModal = $('#commonModal');
 	let modalType = $(el).data("type");
 	$("[name='modalType']").val(modalType);
 	
-	
-	let value = $(el).text();
-	let data = value.substring(0, value.length - 2).trim()
-	
-	// 정보제공동의 일 경우 모달
+	// [개인 정보 - 내 정보 관리] 정보제공동의 모달
 	if (modalType == "emailAgree" ||
 		modalType == "phoneAgree" ||
 		modalType == "snsAgree"){
@@ -261,44 +257,56 @@ function showModal(el){
 		switch(modalType){
 			// 정보 제공 종의 수정
 			case "emailAgree" : {
-				modalEl.find(".modal-title").html("정말로 이메일 정보 제공에 동의하시겠습니까?")
-				modalEl.find(".modal-body").html("모달 내용임둥")
+				infoModal.find(".modal-title").html("정말로 이메일 정보 제공에 동의하시겠습니까?")
+				infoModal.find(".modal-body").html("모달 내용임둥")
 				
 			} break;
 	
 			case "phoneAgree" : {
-				modalEl.find(".modal-title").html("정말로 번호 정보 제공에 동의하시겠습니까?요")
-				modalEl.find(".modal-body").html("모달 내용임둥")
+				infoModal.find(".modal-title").html("정말로 번호 정보 제공에 동의하시겠습니까?")
+				infoModal.find(".modal-body").html("모달 내용임둥")
 				
 			} break;
 			
 			case "snsAgree" : {
-				modalEl.find(".modal-title").html("정말로 SNS 주소 정보 제공에 동의하시겠습니까?")
-				modalEl.find(".modal-body").html("모달 내용임둥")
+				infoModal.find(".modal-title").html("정말로 SNS 주소 정보 제공에 동의하시겠습니까?")
+				infoModal.find(".modal-body").html("모달 내용임둥")
 				
 			} break;
 			
 			
 			default  : {
-				modalEl.find(".modal-title").html("잘못된 모달")
-				modalEl.find(".modal-body").html("잘못된 모달")
+				infoModal.find(".modal-title").html("잘못된 모달")
+				infoModal.find(".modal-body").html("잘못된 모달")
 			}
 		}
 
 		if (value){
-			modalEl.modal('show');		
+			infoModal.modal('show');		
 		}else{
 			checkboxLabel.html("OFF")
 		}
-	} 
+	}
 	
-	// 정보수정 일 경우 모달
+	// [개인 정보 - 회원 탈퇴] 회원 탈퇴 모달
+	else if (modalType == "resignAgree"){
+		
+		infoModal.find(".modal-title").html("정말로 탈퇴하시겠습니까?")
+		infoModal.find(".modal-body").html("모달 내용임둥")
+	
+		infoModal.modal('show');
+	}
+	
+	// [개인 정보 - 내 정보 관리] 정보수정 일 경우 모달
 	else{
+		let value = $(el).text();
+		let data = value.substring(0, value.length - 2).trim()
+		
 		switch(modalType){
 			// 수정을 위한 비밀번호 재확인
 			case "pwChk" : {
-				modalEl.find(".modal-title").html("비밀번호 재확인")
-				modalEl.find(".modal-body").html(`
+				infoModal.find(".modal-title").html("비밀번호 재확인")
+				infoModal.find(".modal-body").html(`
 					<p> 현재 비밀번호를 입력해주세요 </p>
 					<input type="text" name="${modalType}" value="${data}">`
 				);
@@ -306,54 +314,54 @@ function showModal(el){
 			
 			// 정보 수정
 			case "pw" : {
-				modalEl.find(".modal-title").html("비밀번호 변경")
-				modalEl.find(".modal-body").html(`
+				infoModal.find(".modal-title").html("비밀번호 변경")
+				infoModal.find(".modal-body").html(`
 					<p> 변경할 비밀번호를 입력해주세요 </p>
 					<input type="text" name="${modalType}" value="${data}">`
 				);
 			} break;
 			
 			case "email" : {
-				modalEl.find(".modal-title").html("이메일 변경")
-				modalEl.find(".modal-body").html(`
+				infoModal.find(".modal-title").html("이메일 변경")
+				infoModal.find(".modal-body").html(`
 					<p> 변경할 이메일을 입력해주세요 </p>
 					<input type="text" name="${modalType}" value="${data}">`
 				);
 			} break;
 			
 			case "number" : {
-				modalEl.find(".modal-title").html("핸드폰 번호 변경")
-				modalEl.find(".modal-body").html(`
+				infoModal.find(".modal-title").html("핸드폰 번호 변경")
+				infoModal.find(".modal-body").html(`
 					<p> 변경할 번호를 입력해주세요 </p>
 					<input type="text" name="${modalType}" value="${data}">`
 				);
 			} break;
 			
 			case "sns" : {
-				modalEl.find(".modal-title").html("SNS 주소 변경")
-				modalEl.find(".modal-body").html(`
+				infoModal.find(".modal-title").html("SNS 주소 변경")
+				infoModal.find(".modal-body").html(`
 					<p> 변경할 SNS 주소를 입력해주세요 </p>
 					<input type="text" name="${modalType}" value="${data}">`
 				);
 			} break;
 			
 			case "birthday" : {
-				modalEl.find(".modal-title").html("생일 변경")
-				modalEl.find(".modal-body").html(`
+				infoModal.find(".modal-title").html("생일 변경")
+				infoModal.find(".modal-body").html(`
 					<p> 변경할 생일을 입력해주세요 </p>
 					<input type="text" name="${modalType}" value="${data}">`
 				);
 			} break;
 			
 			case "address" : {
-				modalEl.find(".modal-title").html("주소 변경")
-				modalEl.find(".modal-body").html(`
+				infoModal.find(".modal-title").html("주소 변경")
+				infoModal.find(".modal-body").html(`
 					<p> 변경할 주소를 입력해주세요 </p>
 					<input type="text" name="${modalType}" value="${data}">`
 				);
 			} break;
 		}
-		modalEl.modal('show');
+		infoModal.modal('show');
 	}
 }
 
@@ -378,16 +386,29 @@ function modalConfirm(){
 	}
 }
 
+// 모달 회색 부분을 클릭시 취소버튼과 동일하게 
+const commonModal = $('#commonModal');
+commonModal.on('hidden.bs.modal', function (e) {
+    if (!e.target.contains(e.relatedTarget)) {
+	modalCancel();
+    }
+});
+
 // 모달의 취소 클릭
 function modalCancel(){
+	let modalEl = $("#commonModal")
 	let typeReg = /(Agree)$/
 	let modalType = $("[name='modalType']").val();
 	let checkboxInput = $(`input[name='${modalType}']`)
 	let checkboxLabel = $(`label[for='${modalType}']`)
-		
 	
 	// 정보 동의일 경우
 	if (typeReg.test(modalType)){
+		if(modalEl.hasClass("show")){
+			
+			console.log("꺼졌다.")
+		}
+		
 		if(checkboxInput.prop("checked")){
 			checkboxInput.prop("checked", false)
 			checkboxLabel.html("OFF")
@@ -401,3 +422,16 @@ function modalCancel(){
 	}
 
 }
+
+
+
+function test1(el){
+	if($(el).hasClass("show")){
+		console.log("켜졌다.")
+	}else{
+		
+	}
+}
+
+let test = $(".content-title")
+test.on("click", ()=>toastPop("토스트팝!"))

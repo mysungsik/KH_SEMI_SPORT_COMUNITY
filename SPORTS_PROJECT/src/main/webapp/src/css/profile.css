@@ -46,7 +46,7 @@
 /* 프로필 우측 컨텐츠 */
 .profile-content{
 	width: calc(1024px - 320px);
-	margin-left: 20px;
+	margin-left: 30px;
 }
 
 .profile-content .content-header{

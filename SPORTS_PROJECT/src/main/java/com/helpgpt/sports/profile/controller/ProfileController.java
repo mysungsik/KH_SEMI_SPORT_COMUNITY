@@ -38,19 +38,19 @@ public class ProfileController extends HttpServlet {
 		case "": {
 			dispatcher = req.getRequestDispatcher(defaultURLPath + "profileMyComment.jsp");
 			dispatcher.forward(req, resp);
-			}break;
+			};break;
 		case "myComment": {
 			dispatcher = req.getRequestDispatcher(defaultURLPath + "profileMyComment.jsp");
 			dispatcher.forward(req, resp);
-			}break;
+			};break;
 		case "myBoard": {
 			dispatcher = req.getRequestDispatcher(defaultURLPath + "profileMyBoards.jsp");
 			dispatcher.forward(req, resp);
-			}break;
+			};break;
 		case "myScrab": {
 			dispatcher = req.getRequestDispatcher(defaultURLPath + "profileMyScrab.jsp");
 			dispatcher.forward(req, resp);
-			}break;
+			};break;
 		case "myInfo" :{
 			dispatcher = req.getRequestDispatcher(defaultURLPath + "profileMyInfo.jsp");
 			dispatcher.forward(req, resp);
@@ -59,7 +59,6 @@ public class ProfileController extends HttpServlet {
 			dispatcher = req.getRequestDispatcher(defaultURLPath + "profileResign.jsp");
 			dispatcher.forward(req, resp);
 			};break;
-		default:System.out.println("404 페이지로 이동");}
-		
+		}
 	}
 }

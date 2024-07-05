@@ -55,13 +55,30 @@
 	                    </p>
 	                </div>
 	                <div class="resign-btns d-flex">
-	                	<button class="btn-big__blue">동의 후 탈퇴 </button>
-	                	<button class="btn-big__gray">취소 </button>
+	                	<button class="btn-big__blue" class="resignBtn" data-type="resignAgree" onclick="showModal(this)">동의 후 탈퇴 </button> 
 	                </div>
                 </div>
             </div>
         </section>
     </main>
+    <!-- Modal -->
+	<div class="modal" id="commonModal" tabindex="-1" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h1 class="modal-title fs-5" id="commonModalLabel"></h1>
+	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	      </div>
+	      <div class="modal-body">
+	      </div>
+	      <div class="modal-footer">
+	      	<input type="hidden" name="modalType" value=""/>
+	        <button id="cancelBtn" type="button" class="btn btn-medium__blue" data-bs-dismiss="modal" onclick="modalCancel()"> 취소 </button>
+	        <button id=confirmBtn type="button" class="btn btn-medium__red" data-bs-dismiss="modal" onclick="modalConfirm()"> 탈퇴 </button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 	<jsp:include page="/WEB-INF/views/layouts/footer.jsp"/>
 </body>
 </html>

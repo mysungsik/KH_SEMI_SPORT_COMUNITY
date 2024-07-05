@@ -16,9 +16,33 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="${contextPath}/src/common/common.js" defer></script>
+<script>
+	function toastPop(message){
+		const toastBtn = $('.toastPop')
+		const toastLiveExample = $('#liveToast')
+		
+		// 메시지로 변경
+		$(".toast-body").find(".toast-message").text(message);
+		
+		if (toastBtn) {
+			const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+			toastBootstrap.show()
+	
+		}
+	}
+</script>
 
 </head>
 <body>
+	<!-- 토스트 -->
+	<div class="toast-container position-fixed bottom-0 end-0 p-3">
+	  	<div id="liveToast" class="toast base-warn__red " role="alert" aria-live="assertive" aria-atomic="true">
+	    	<div class="toast-body">
+				<p class="toast-message fc__white">Hello, world! This is a toast message.</p>
+				<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+	    	</div>
+	  	</div>
+	</div>
 	<%-- 로그인 여부 판단 --%>
     <c:if test="${sessionScope.isLogin == null}">
         <c:set var="isLogin" value="false" scope="session" />
@@ -87,7 +111,6 @@
 		    </div>
 	</c:if>
 	<c:if test="${!isLogin}">
-	
 		<div class="header-top">
                 <div class="header-top-logo">
                     <img class="logo" src='${contextPath}/public/images/mlb_logo.png'>
