@@ -12,8 +12,7 @@ import javax.servlet.http.HttpSession;
 
 @WebServlet(name = "LoginController",
 		urlPatterns = {
-			"/login",	
-			"/login/*"}
+			"/login"}
 		)
 
 public class LoginController extends HttpServlet {
@@ -24,22 +23,8 @@ public class LoginController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// Path 지정
-		String reqPath = req.getPathInfo();
-		String path = "";
-		
-		if(reqPath != null) {
-			path = reqPath.split("/")[1];
-		}
-		
-		// 경로에 따라 필요한 페이지로 추가 이동
-		switch (path) {
-		case "": {
-			dispatcher = req.getRequestDispatcher(defaultURLPath + "login.jsp");
-			dispatcher.forward(req, resp);
-			}break;
-		default:System.out.println("404 페이지로 이동");}
-		
+		dispatcher = req.getRequestDispatcher(defaultURLPath + "login.jsp");
+		dispatcher.forward(req, resp);
 	}
 }
 
