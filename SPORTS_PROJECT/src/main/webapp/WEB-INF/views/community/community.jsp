@@ -23,9 +23,10 @@
 		<section class="swiper mySwiper main-top">
 			<article class="title mg-left">
 				<div class="title-area">
-					<span class="fs-28__b">주간 인기글</span> <span
-						class="see-more fs-10 fc__gray"><a
-						href="${contextPath}/community/communityBoard/popular">더보기▶</a></span>
+					<span class="fs-28__b">주간 인기글</span> 
+					<span class="see-more fs-10 fc__gray">
+						<a href="${contextPath}/community/communityBoard/popular">더보기▶</a>
+					</span>
 				</div>
 				<div class="search-area">
 					<form action="#" class="search">
@@ -38,7 +39,7 @@
 			<article class="swiper-wrapper">
 				<div class="popular base__lblue swiper-slide d-flex">
 					<div class="popular-area">
-						<div class="popular-post">
+						<div class="popular-post" onclick="location.href='${contextPath}/community/communityDetail/1'">
 							<div class="post-title">
 								<span class="fs-12 fc__gray">[ 응원 게시판 ]</span> <span
 									class="fs-14__b">파이팅 다저스</span>
@@ -383,7 +384,7 @@
 		</section>
 
 		<!-- 공지사항 시작 -->
-		<section class="info base__lblue mt-20">
+		<section class="info base__lblue mt-30">
 			<div class="info-one">
 				<article class="info-title">
 					<span class="fs-14__b">공지사항</span>

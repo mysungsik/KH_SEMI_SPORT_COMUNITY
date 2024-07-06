@@ -5,9 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <link rel="stylesheet" href="${contextPath}/src/css/communityDetail.css">
-<script src="${contextPath}/src/js/community.js" defer></script>
+<script src="${contextPath}/src/js/communityDetail.js" defer></script>
 <script src="${contextPath}/src/util/pagination.js" defer></script>
 <script src="https://kit.fontawesome.com/e245e5bbb1.js"
 	crossorigin="anonymous"></script>
@@ -16,8 +15,67 @@
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/layouts/header.jsp" />
+	<input type="hidden" name="sub" value="${requestScope.sub}">
 	<!-- Write Main Content -->
 	<main class="container">
+	
+	<section class="board">
+		<!-- 게시글 제목 -->
+		<section class="title-area base__lblue">
+			<div class="title"> 
+				<span class="fs-14__b">게시글 제목입니다.</span> 
+			</div>
+			<div class="info"> 
+				<span class="fs-10">작성자</span>
+				<span class="fs-10"> | </span>
+				<span class="fs-10">2024-07-06 14:59:20</span> 
+			</div>
+		</section>
+		
+		<!-- 게시글 내용 -->
+		<section class="content-area">
+			<div class="content">
+				<img src="${contextPath}/public/images/user_img1.jpg">
+				<pre>
+내용 들어올 자리
+주저리 주저리	
+				</pre>
+			</div>
+		</section>
+		
+		<section class="info-area">
+			<div class="info">
+				<span>조회수 30</span>
+				<span> | </span>
+				<span>댓글 2</span>
+				<span> | </span>
+				<span>좋아요 3 ♥</span>
+				<span> | </span>
+				<span>신고</span>
+			</div>
+			<div class="btn-area">
+				<button>목록으로</button>
+			</div>
+		</section>
+		
+		<section class="input-area">
+			<form>
+				<textarea rows="3" cols="100" style="resize: none" placeholder="댓글을 입력해주세요."></textarea>
+				<button>댓글</button>
+			</form>
+		</section>
+		
+		<section class="reply-area">
+			<div id="community-data"></div>
+
+		</section>
+		
+		<section class="page-area">
+			<div id="community-pagination"></div>
+		
+		</section>
+	</section>
+	
 
 
 	</main>

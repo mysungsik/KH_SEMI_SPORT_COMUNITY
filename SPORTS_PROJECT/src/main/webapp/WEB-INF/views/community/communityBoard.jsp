@@ -5,7 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <link rel="stylesheet" href="${contextPath}/src/css/communityBoard.css">
 <script src="${contextPath}/src/js/communityBoard.js" defer></script>
 <script src="${contextPath}/src/util/pagination.js" defer></script>
@@ -54,9 +53,6 @@
 	</main>
 	<!-- Be sure to include this TAG -->
 	<jsp:include page="/WEB-INF/views/layouts/footer.jsp" />
-
-	<script
-		src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 
 </body>

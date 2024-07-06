@@ -1,1 +1,154 @@
-@charset "EUC-KR";
+*{
+	box-sizing: border-box;
+	/* border: 1px solid black;  */
+}
+
+.container{
+	display: flex;
+	justify-content: center;
+}
+
+.board{
+	width: 1024px;
+	margin-top: 40px;
+}
+
+/* 게시글 제목 */
+.title-area{
+	height: 60px;
+	width: 1024px;
+	display: flex;
+	flex-direction: column;
+	
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.title{
+	flex-basis: 80%;
+	align-content: center;
+	margin-left: 10px;
+}
+
+.info{
+	flex-basis: 20%;
+	margin-left: 10px;
+}
+
+/* 게시글 내용 */
+.content-area{
+	margin-left: 10px;
+}
+
+.content{
+	margin-top: 10px;
+	margin-bottom: 50px;
+	margin-right: 10px;
+}
+
+.content>img{
+	height: 200px;
+	width: auto;
+}
+
+.info-area{
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid black;
+}
+
+.info-area>.info{
+	align-self: center;
+	font-size: 10px;
+}
+
+.btn-area{
+	margin-right: 437px;
+	margin-bottom: 10px;
+}
+
+.btn-area button{
+	width: 150px;
+	height: 30px;
+	border: none;
+	background-color: #ddd;
+	border-radius: 5px;
+}
+
+/* 댓글 입력 */
+.input-area{
+	margin-top: 20px;
+	margin-left: 10px;
+}
+
+form{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+textarea{
+	border-radius: 5px;
+}
+
+form>button{
+	width: 70px;
+	height: 30px;
+	
+	border: none;
+	border-radius: 5px;
+	background: #458BE2;
+	color: white;
+}
+
+/* 댓글 */
+.reply-area{
+	margin-top: 20px;
+	height: 250px;
+}
+
+
+.reply{
+	
+	height: 50px;
+	display: flex;
+}
+
+.author{
+	flex-basis: 10%;
+	align-content: center;
+	text-align: center;
+	margin-left: 10px;
+}
+
+.comment{
+	flex-basis: 75%;
+	align-content: center;
+}
+
+.reply-info{
+	flex-basis: 15%;
+	text-align: end;
+	align-content: center;
+	margin-right: 10px;
+
+	font-size: 10px;
+}
+
+.page-area{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.page-area ul{
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+
+
+
+
+
+

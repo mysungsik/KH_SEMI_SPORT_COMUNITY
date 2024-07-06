@@ -92,7 +92,7 @@ function paginationTemplate(data) {
 	let item = ""
 	$.each(data, function(index, d) {
 		item +=
-			`       <div class="post">
+			`     <div class="post">
 					<div class="category">
 						<span class="fs-12 fc__gray">${d.category}</span>
 					</div>
@@ -133,7 +133,7 @@ function paginationActive(id, datas, template) {
 				// 페이지네이션 변경
 				var pagingEl = $(`.paginationjs-page[data-num='${currentPage}'] a`);
 				pagingEl.css({
-					fontSize: "20px",
+					fontSize: "14px",
 					textDecoration: "underline",
 					color: "#458BE2"
 				})
