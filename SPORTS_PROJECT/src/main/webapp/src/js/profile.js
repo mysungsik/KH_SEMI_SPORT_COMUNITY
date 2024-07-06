@@ -390,11 +390,11 @@ function modalConfirm(){
 		// 이메일 정보 수정일 경우
 		if (modalType == "email"){
 			if (value == ""){
-				toastPop("이메일이 비어있습니다.")
+				toastPop("warn","이메일이 비어있습니다.")
 			} else{
 				// 이메일 정보 DB 로 전달
 				infoModal.hide();
-				toastPop("정상 처리되었습니다.")
+				toastPop("info", "정상 처리되었습니다.")
 				
 			}
 		}
@@ -441,7 +441,3 @@ function modalCancel(){
 	}
 
 }
-
-
-let test = $(".content-title")
-test.on("click", ()=>toastPop("토스트팝!"))

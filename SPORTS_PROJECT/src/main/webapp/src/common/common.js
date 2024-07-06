@@ -14,7 +14,7 @@ $(document).ready(function () {
 
 // 로그아웃 메서드
 function logout(){
-	let URL = `${contextPath}/api/login/logout`
+	let URL = `${contextPath}/api/user/logout`
 	$.ajax({
         type: "POST",        // 데이터 전송 타입
         url : URL,          // 데이터를 주고받을 파일 주소 입력

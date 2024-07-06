@@ -18,15 +18,26 @@
 <script src="https://kit.fontawesome.com/e245e5bbb1.js" crossorigin="anonymous"></script>
 <script src="${contextPath}/src/common/common.js" defer></script>
 <script>
-	function toastPop(message){
+	function toastPop(type, message){
 		const toastBtn = $('.toastPop')
-		const toastLiveExample = $('#liveToast')
+		const toastElement = $('#liveToast')
 		
 		// 메시지로 변경
 		$(".toast-body").find(".toast-message").text(message);
+		$(".toast").removeClass("base-warn__red");
+		$(".toast").removeClass("base-info__green");
 		
+		// 토스트 스타일 변경
+		if (type == "warn"){
+			$(".toast").addClass("base-warn__red");
+			
+		} else if(type == "info"){
+			$(".toast").addClass("base-info__green");
+		}
+			
+		// 토스트 실행
 		if (toastBtn) {
-			const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+			const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastElement)
 			toastBootstrap.show()
 	
 		}
@@ -37,7 +48,7 @@
 <body>
 	<!-- 토스트 -->
 	<div class="toast-container position-fixed bottom-0 end-0 p-3">
-	  	<div id="liveToast" class="toast base-warn__red " role="alert" aria-live="assertive" aria-atomic="true">
+	  	<div id="liveToast" class="toast " role="alert" aria-live="assertive" aria-atomic="true">
 	    	<div class="toast-body">
 				<p class="toast-message fc__white">Hello, world! This is a toast message.</p>
 				<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>

@@ -110,6 +110,9 @@ ul{
 .base-warn__red{
     background-color: #EF4E4E !important;
 }
+.base-info__green{
+    background-color: #38C90C !important;
+}
 .nav__white{
     background-color: #EFEFEF !important;
 }
@@ -573,7 +576,7 @@ ul{
 
 /* ELEMENTS BOOTSTRAP TOAST (상단 중앙 정렬) */
 .toast-container{
-	top:20px;
+	top:40px;
 	left:0;
 	margin: 0 auto;
 }
