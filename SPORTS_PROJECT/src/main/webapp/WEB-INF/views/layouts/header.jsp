@@ -55,13 +55,9 @@
 	    	</div>
 	  	</div>
 	</div>
-	<%-- 로그인 여부 판단 --%>
-    <c:if test="${sessionScope.isLogin == null}">
-        <c:set var="isLogin" value="false" scope="session" />
-    </c:if>
-    
+   
 	<header>
-	<c:if test="${isLogin}">
+	<c:if test="${!empty loginUser}">
 			<div class="header-top">
 		        <div class="header-top-logo">
 		            <img class="logo" src='${contextPath }/public/images/mlb_logo.png'>
@@ -69,7 +65,7 @@
 		        <div class="header-top-user box-hover dropdown">
 		            <img class="user-image" src='${contextPath}/public/images/user_img1.jpg'>
 		            <div class="user-name dropdown-toggle" type="button" data-bs-toggle="dropdown">
-		                <a class="text-hover__blue fs-14__b">test_user1</a>
+		                <a class="text-hover__blue fs-14__b"> ${loginUser.getUserId()}</a>
 		            </div>
 		            <ul class="dropdown-menu">
 		                <li class="d-flex dropdown-item">
@@ -86,13 +82,13 @@
 	                	<hr class="hr__gray">
 	                	<p class="header-title fc__gray fs-20__b"> 컨텐츠</p>
 		          
-		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="${contextPath}/profile">내 댓글</a></li>
-		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="${contextPath}/profile">내 게시글</a></li>
-		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="${contextPath}/profile">내 스크랩</a></li>
+		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="${contextPath}/profile/myComment">내 댓글</a></li>
+		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="${contextPath}/profile/myBoard">내 게시글</a></li>
+		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="${contextPath}/profile/myScrab">내 스크랩</a></li>
 		                
 		                <p class="header-title fc__gray fs-20__b"> 개인 정보 </p>
-		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="${contextPath}/profile">내 정보 관리</a></li>
-		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="#">회원 탈퇴</a></li>
+		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="${contextPath}/profile/myInfo">내 정보 관리</a></li>
+		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="${contextPath}/profile/resign">회원 탈퇴</a></li>
 		            
 		            	<li>
 		            		<p class="dropdown-item logout fs-12 text-hover__blue" onclick="logout()"> 로그아웃 </p>
@@ -122,7 +118,7 @@
 		        </div>
 		    </div>
 	</c:if>
-	<c:if test="${!isLogin}">
+	<c:if test="${empty loginUser}">
 		<div class="header-top">
                 <div class="header-top-logo">
                     <img class="logo" src='${contextPath}/public/images/mlb_logo.png'>

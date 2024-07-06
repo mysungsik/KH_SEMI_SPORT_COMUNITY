@@ -47,7 +47,11 @@ public class UserApi extends HttpServlet {
 				/** TODO [로그인객체생성]
 					DAO 접근 후 DB 데이터 확인, 로그인유저객체 생성 할 것
 				*/
-				loginUser = new User(1, inputId, "test@email.com", inputPw);
+				
+				// Admin 유저 예시
+				loginUser = new User(1, inputId, "test@email.com", inputPw, "admin", "kia");
+				// 일반 유저 예시
+//				loginUser = new User(2, inputId, "test@email.com", inputPw, "user", "");
 	
 				/** TODO [로그인 조건 변경]
 				 	위 로그인객체생성 TODO완료시, 로그인 성공 조건을 looginUser != null 로 변경할것
@@ -59,11 +63,10 @@ public class UserApi extends HttpServlet {
 					inputPw.equals("KQZ3dpm+3daZEkqDpEvtnk6AMuxOJ22ZNR1WmZoxVVq+5YWwAZ+SflpCH26gc3X2nVzfL1zre30F+jsMxgowaw==")){
 					HttpSession session = req.getSession();
 					
-					session.setAttribute("isLogin", true);
+					session.setAttribute("loginUser", loginUser);
 					session.setMaxInactiveInterval(3600);
 					
 					/** TODO: 로그인유저객체도 GSON 으로 전달 
-						보낼 loginUser 객체의 데이터는 최소환으로만 보낼것 (no, ID, Email, Name 정도만)
 					*/
 					result.put("message", "환영합니다.");
 					result.put("data", loginUser);
@@ -81,7 +84,7 @@ public class UserApi extends HttpServlet {
 				
 			case "logout" : {
 				HttpSession session = req.getSession();
-				session.setAttribute("isLogin", false);
+				session.setAttribute("loginUser", null);
 				
 				res.sendRedirect(contextPath + "/login");
 			}break;

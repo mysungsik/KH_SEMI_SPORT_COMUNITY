@@ -8,6 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.helpgpt.sports.login.model.vo.User;
 
 
 @WebServlet(name = "ProfileController",
@@ -25,7 +28,11 @@ public class ProfileController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// Path 지정
+		HttpSession session = req.getSession();
+		String contextPath =  req.getContextPath();
+		
+		User loginUser = (User)session.getAttribute("loginUser");
+		
 		String reqPath = req.getPathInfo();
 		String path = "";
 		
@@ -33,32 +40,43 @@ public class ProfileController extends HttpServlet {
 			path = reqPath.split("/")[1];
 		}
 		
-		// 경로에 따라 필요한 페이지로 추가 이동
-		switch (path) {
-		case "": {
-			dispatcher = req.getRequestDispatcher(defaultURLPath + "profileMyComment.jsp");
-			dispatcher.forward(req, resp);
-			};break;
-		case "myComment": {
-			dispatcher = req.getRequestDispatcher(defaultURLPath + "profileMyComment.jsp");
-			dispatcher.forward(req, resp);
-			};break;
-		case "myBoard": {
-			dispatcher = req.getRequestDispatcher(defaultURLPath + "profileMyBoards.jsp");
-			dispatcher.forward(req, resp);
-			};break;
-		case "myScrab": {
-			dispatcher = req.getRequestDispatcher(defaultURLPath + "profileMyScrab.jsp");
-			dispatcher.forward(req, resp);
-			};break;
-		case "myInfo" :{
-			dispatcher = req.getRequestDispatcher(defaultURLPath + "profileMyInfo.jsp");
-			dispatcher.forward(req, resp);
-			};break;
-		case "resign" :{
-			dispatcher = req.getRequestDispatcher(defaultURLPath + "profileResign.jsp");
-			dispatcher.forward(req, resp);
-			};break;
+		// 로그인한 유저가 아니라면, login 페이로 이동
+		if (loginUser == null) {
+			resp.sendRedirect(contextPath +"/login");
+		}else {
+			// 경로에 따라 필요한 페이지로 추가 이동
+			switch (path) {
+				case "": {
+					dispatcher = req.getRequestDispatcher(defaultURLPath + "profileMyComment.jsp");
+					req.setAttribute("page", "myComment");
+					dispatcher.forward(req, resp);
+				};break;
+				case "myComment": {
+					dispatcher = req.getRequestDispatcher(defaultURLPath + "profileMyComment.jsp");
+					req.setAttribute("page", "myComment");
+					dispatcher.forward(req, resp);
+				};break;
+				case "myBoard": {
+					dispatcher = req.getRequestDispatcher(defaultURLPath + "profileMyBoards.jsp");
+					req.setAttribute("page", "myBoard");
+					dispatcher.forward(req, resp);
+				};break;
+				case "myScrab": {
+					dispatcher = req.getRequestDispatcher(defaultURLPath + "profileMyScrab.jsp");
+					req.setAttribute("page", "myScrab");
+					dispatcher.forward(req, resp);
+				};break;
+				case "myInfo" :{
+					dispatcher = req.getRequestDispatcher(defaultURLPath + "profileMyInfo.jsp");
+					req.setAttribute("page", "myInfo");
+					dispatcher.forward(req, resp);
+				};break;
+				case "resign" :{
+					dispatcher = req.getRequestDispatcher(defaultURLPath + "profileResign.jsp");
+					req.setAttribute("page", "resign");
+					dispatcher.forward(req, resp);
+				};break;
+			}
 		}
 	}
 }

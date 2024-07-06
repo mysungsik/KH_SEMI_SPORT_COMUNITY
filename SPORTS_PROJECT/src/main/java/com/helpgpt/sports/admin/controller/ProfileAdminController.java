@@ -8,7 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import com.helpgpt.sports.login.model.vo.User;
 
 @WebServlet(name = "profileAdminController",
 			urlPatterns = {
@@ -26,7 +28,11 @@ public class ProfileAdminController extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// Path 지정
+		HttpSession session = req.getSession();
+		String contextPath =  req.getContextPath();
+		
+		User loginUser = (User)session.getAttribute("loginUser");
+		
 		String reqPath = req.getPathInfo();
 		String path = "";
 		
@@ -34,21 +40,34 @@ public class ProfileAdminController extends HttpServlet {
 			path = reqPath.split("/")[1];
 		}
 		
-		// 경로에 따라 필요한 페이지로 추가 이동
-		switch (path) {
-		case "":{
-			dispatcher = req.getRequestDispatcher(defaultURLPath + "profileAdminUserManage.jsp");
-			dispatcher.forward(req, resp);
+		// 로그인을 안했을경우
+		if (loginUser == null) {
+			resp.sendRedirect(contextPath +"/login");
+		} 
+		// 로그인헸지만, Admin 이 아닐경우
+		else if (loginUser != null && loginUser.getUserAuthority() != "admin") {
+			resp.sendRedirect(contextPath +"/profile");
+		}
+		else {
+			// 경로에 따라 필요한 페이지로 추가 이동
+			switch (path) {
+			case "":{
+				dispatcher = req.getRequestDispatcher(defaultURLPath + "profileAdminUserManage.jsp");
+				req.setAttribute("page", "userManagement");
+				dispatcher.forward(req, resp);
 			};break;
-		case "userManagement": {
-			dispatcher = req.getRequestDispatcher(defaultURLPath + "profileAdminUserManage.jsp");
-			dispatcher.forward(req, resp);
+			case "userManagement": {
+				dispatcher = req.getRequestDispatcher(defaultURLPath + "profileAdminUserManage.jsp");
+				req.setAttribute("page", "userManagement");
+				dispatcher.forward(req, resp);
 			};break;
-		case "reportManagement": {
-			dispatcher = req.getRequestDispatcher(defaultURLPath + "profileAdminReportManage.jsp");
-			dispatcher.forward(req, resp);
+			case "reportManagement": {
+				dispatcher = req.getRequestDispatcher(defaultURLPath + "profileAdminReportManage.jsp");
+				req.setAttribute("page", "reportManagement");
+				dispatcher.forward(req, resp);
 			};break;
-		default:System.out.println("404 페이지로 이동");}
-		
+			default:System.out.println("404 페이지로 이동");
+			}
+		}
 	}
 }

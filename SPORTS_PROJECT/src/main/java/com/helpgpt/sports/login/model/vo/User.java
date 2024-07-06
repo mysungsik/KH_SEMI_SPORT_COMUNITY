@@ -6,14 +6,22 @@ public class User {
 	private String UserId;
 	private String UserEmail;
 	private String UserPw;
+	private String UserAuthority;
+	private String UserFavorite;
 	
 	// TODO: Password가 생성자에 들어가있음을 확인
-	public User(int userNo, String userId, String userEmail, String userPw) {
-		super();
-		UserNo = userNo;
-		UserId = userId;
-		UserEmail = userEmail;
-		UserPw = userPw;
+	public User(int userNo, 
+				String userId,
+				String userEmail, 
+				String userPw, 
+				String UserAuthority,
+				String UserFavorite) {
+		this.UserNo = userNo;
+		this.UserId = userId;
+		this.UserEmail = userEmail;
+		this.UserPw = userPw;
+		this.UserAuthority = UserAuthority;
+		this.UserFavorite = UserFavorite;
 	}
 
 	public int getUserNo() {
@@ -48,7 +56,20 @@ public class User {
 		UserPw = userPw;
 	}
 
-	
-	
+	public String getUserAuthority() {
+		return UserAuthority;
+	}
+
+	public void setUserAuthority(String userAuthority) {
+		UserAuthority = userAuthority;
+	}
+
+	public String getUserFavorite() {
+		return UserFavorite;
+	}
+
+	public void setUserFavorite(String userFavorite) {
+		UserFavorite = userFavorite;
+	}
 	
 }

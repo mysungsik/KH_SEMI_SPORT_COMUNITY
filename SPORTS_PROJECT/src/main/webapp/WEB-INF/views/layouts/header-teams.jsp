@@ -22,13 +22,9 @@
 </head>
 
 <body>
-	<%-- 로그인 여부 판단 --%>
-    <c:if test="${sessionScope.isLogin == null}">
-        <c:set var="isLogin" value="false" scope="session" />
-    </c:if>
-  
+
 	<eachTeamHeader>
-	<c:if test="${isLogin}">
+	<c:if test="${!empty loginUser}">
 		
 			<div class="header-top">
 		        <div class="header-top-logo">
@@ -78,7 +74,7 @@
 		        </div>
 		    </div>
 	</c:if>
-	<c:if test="${!isLogin}">
+	<c:if test="${!empty loginUser}">
 	
 		<div class="header-top">
                 <div class="header-top-logo">

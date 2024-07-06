@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.helpgpt.sports.login.model.vo.User;
+
 @WebServlet(name = "LoginController",
 		urlPatterns = {
 			"/login"}
@@ -23,8 +25,18 @@ public class LoginController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		dispatcher = req.getRequestDispatcher(defaultURLPath + "login.jsp");
-		dispatcher.forward(req, resp);
+		HttpSession session = req.getSession();
+		String contextPath =  req.getContextPath();
+		
+		User loginUser = (User)session.getAttribute("loginUser");
+		
+		// 로그인 하지 않은 유저만 페이지 접근 가능
+		if (loginUser == null) {
+			dispatcher = req.getRequestDispatcher(defaultURLPath + "login.jsp");
+			dispatcher.forward(req, resp);
+		} else {
+			resp.sendRedirect(contextPath + "/dashboard");
+		}
 	}
 }
 
