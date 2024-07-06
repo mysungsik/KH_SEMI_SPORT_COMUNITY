@@ -117,6 +117,12 @@ eachTeamHeader .header-bot .header-nav .d-flex a{
     align-items:center;
 }
 
+eachTeamHeader .header-bot .header-nav .d-flex a:hover{
+	text-decoration:underline;
+	text-underline-offset: 3px;
+	text-decoration-thickness : 1.5px;
+}
+
 eachTeamHeader .header-bot .header-nav .d-flex img{
 	height: 140px;
 }

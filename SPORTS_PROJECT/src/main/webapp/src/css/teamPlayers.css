@@ -1,0 +1,105 @@
+/* 유틸 */
+*{box-sizing: border-box;}
+
+/* *{border: 1px solid black;} */
+
+/* container */
+.container{
+    width: 1024px;
+}
+
+section{
+    margin: 30px 0;
+}
+
+/* 페이지 커버 */
+.pagecover{
+	height: 200px; 
+	
+}
+
+.pagecover-img{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 150px;
+	background-color: #D2D2D2;
+}
+
+/* 소개띠 */
+.pagecover-bottom{
+	height: 50px;
+	background-color: #458BE2;
+	
+}
+
+.pagecover-bottom-inner{
+	height:50px;
+	max-width: 1024px;
+	margin: 0 auto;
+	justify-content: end;
+}
+
+.pagecover-bottom-inner ul{
+	display: flex;
+	height:50px;
+	align-items: center;
+	list-style:none;
+	gap: 0 10px;
+}
+
+.pagecover-bottom-inner ul:hover{
+	cursor: pointer;
+}
+
+.pagecover-bottom-inner ul li:hover{
+	text-decoration:underline;
+	text-underline-offset: 3px;
+	text-decoration-thickness : 1.5px;
+}
+
+
+/* 선수 카드 */
+
+.team-players {
+  width: 100%;
+  margin:50px 0;
+}
+
+.team-table{
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+  	border-spacing: 10px;
+  	border-collapse: separate;
+}
+
+.team-players .card-thumbnail {
+  height: 250px;
+  width: 200px;
+}
+
+.team-players .card-thumbnail .card-thumbnail-img{
+	height:70%;
+}
+
+.card-thumbnail-position p{
+  margin-top: 10px;
+  width: 100%;
+
+}
+
+.team-players .card-thumbnail .card-thumbnail-infos .card-thumbnail-content a:hover{
+	text-decoration:underline;
+	text-underline-offset:5px;
+	text-decoration-thickness : 1.5px;
+	text-decoration-color : white;
+}
+
+
+.team-players .card-thumbnail .card-thumbnail-infos{
+	margin:0;
+	height:30%;
+	background-color :#458BE2;
+}

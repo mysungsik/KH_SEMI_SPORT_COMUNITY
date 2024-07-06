@@ -24,13 +24,13 @@ section{
 	justify-content: center;
 	align-items: center;
 	height: 150px;
-	background-color: red;
+	background-color: #D2D2D2;
 }
 
 /* 소개띠 */
 .pagecover-bottom{
 	height: 50px;
-	background-color: green;
+	background-color: #458BE2
 	
 }
 
