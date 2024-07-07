@@ -5,9 +5,9 @@
 
 <head>
     <link rel="stylesheet" href="${contextPath}/src/css/matchResult.css">
-    
+    <jsp:include page="/WEB-INF/views/layouts/header-dependencies.jsp"/>
     <script src="${contextPath}/matchResult.js" defer></script>
-    <title>MLB Dashboard</title>
+    <title>MLB Match</title>
 </head>
 
 <body>
@@ -94,8 +94,11 @@
                     </div>
                 </div>
                 <div class="game-summary-bot">
-                    <button class="btn-medium__dblue">경기장 정보</button>
+                    <button type="button" class="btn-medium__dblue" onclick="location.href='matchStadiumInfo.jsp'">경기장 정보</button>
                 </div>
+                <div>
+		<a href="${contextPath}/match/matchStadiumInfo.jsp">경기장 정보</a>
+	</div>
             </div>
             <br><br>
             <div class="result-section card__lblue ">
@@ -458,6 +461,9 @@
                 </div>
             </div>
         </div>
+        <div>
+		<a href="${contextPath}/match/matchResultPlus">경기결과 추가</a>
+	</div>
     </main>
     <jsp:include page="/WEB-INF/views/layouts/footer.jsp"/>
 </body>

@@ -21,6 +21,7 @@ public class MatchController extends HttpServlet {
 	
 	RequestDispatcher dispatcher;
 	final String defaultURLPath = "/WEB-INF/views/match/";
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// Path 지정
@@ -45,7 +46,19 @@ public class MatchController extends HttpServlet {
 			dispatcher.forward(req, resp);
 		};break;
 		case "teamRanking" : {
-			dispatcher = req.getRequestDispatcher(defaultURLPath + "teamRanking.jsp");
+			dispatcher = req.getRequestDispatcher(defaultURLPath + "matchTeamRanking.jsp");
+			dispatcher.forward(req, resp);
+		};break;
+		case "matchResultPlus" : {
+			dispatcher = req.getRequestDispatcher(defaultURLPath + "matchResultPlus.jsp");
+			dispatcher.forward(req, resp);
+		};break;
+		case "matchResultEdit" : {
+			dispatcher = req.getRequestDispatcher(defaultURLPath + "matchResultEdit.jsp");
+			dispatcher.forward(req, resp);
+		};break;
+		case "matchStadiumInfo" : {
+			dispatcher = req.getRequestDispatcher(defaultURLPath + "matchStadiumInfo.jsp");
 			dispatcher.forward(req, resp);
 		};break;
 		default:System.out.println("404 페이지로 이동");

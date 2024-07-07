@@ -5,7 +5,8 @@
 
 <head>
     
-    <link rel="stylesheet" href="${contextPath}/teamRanking.css">
+    <link rel="stylesheet" href="${contextPath}/matchTeamRanking.css">
+    <jsp:include page="/WEB-INF/views/layouts/header-dependencies.jsp"/>
     <script src="${contextPath}/matchResult.js" defer></script>
     <title>TeamRanking</title>
 </head>
@@ -13,8 +14,12 @@
     <jsp:include page="/WEB-INF/views/layouts/header.jsp"/>
     <main>
         <div class="recordTab">
+        	<div>
             <a href="#" class="nationalLeague box-hover:hover" onclick=""><span>내셔널 리그</span></a>
+            </div>
+            <div>
             <a href="TRAmerican_.jsp" class="americanLeague box-hover:hover" onclick=""><span>아메리칸 리그</span></a>
+            </div>
         </div>
         <div class="game-records card__lblue ">
             <div class="teamRankingTop ">팀 순위</div>

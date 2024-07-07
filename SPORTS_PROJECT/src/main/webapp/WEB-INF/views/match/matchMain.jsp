@@ -6,6 +6,7 @@
 <head>
 <title>matchMain</title>
 <link rel="stylesheet" href="${contextPath}/src/css/matchMain.css">
+<jsp:include page="/WEB-INF/views/layouts/header-dependencies.jsp" />
 <script src="${contextPath}/matchResult.js" defer></script>
 </head>
 
@@ -177,7 +178,7 @@
 
 
 	</main>
-	<jsp:include page="/WEB-INF/views/layouts/footer.jsp" />
+	
 </body>
 
 

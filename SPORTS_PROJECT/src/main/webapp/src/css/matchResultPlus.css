@@ -1,0 +1,202 @@
+.cardBackground {
+	margin-top: 30px;
+}
+.cardBackgroundLast{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.matchEnroll {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.matchEnroll_Top {
+	background-color: blue;
+	color: white;
+	height: 30px;
+	border-radius: 15px 15px 0px 0px;
+	display: flex;
+	align-items: center;
+}
+
+.matchEnroll_Top > div{
+	margin-left:30px;
+}
+
+.matchEnroll_Mid {
+	display: flex;
+	flex-direction: column;
+}
+
+.dateSelectBox, .winTeamBox, .loseTeamBox, .matchPlaceBox,
+	.winTeamScoreBox, .loseTeamScoreBox {
+	display: flex;
+	height: 30px;
+}
+
+.dateSelect, .winTeam, .loseTeam, .matchPlace, .winTeamScore,
+	.loseTeamScore {
+	width: 200px;
+	border: 1px solid black;
+	border-left: none;
+	border-top: none;
+}
+.dateSelect > div,
+.winTeam > div,
+.loseTeam > div,
+.matchPlace > div,
+.winTeamScore > div,
+.loseTeamScore > div{
+	margin-left:30px;
+	display:flex;
+	align-items:center;
+	height: 30px;
+}
+
+.loseTeamScore {
+	border-bottom: none;
+}
+
+.dateSelectDetail, .winTeamDetail, .loseTeamDetail, .matchPlaceDetail,
+	.winTeamScoreDetail, .loseTeamScoreDetail {
+	width: 824px;
+	border-bottom: 1px solid black;
+	display: flex;
+	align-items: center;
+}
+
+.loseTeamScoreDetail {
+	border-bottom: none;
+}
+
+.dateSelectDetail input, .winTeamDetail input, .loseTeamDetail input,
+	.matchPlaceDetail input, .winTeamScoreDetail input,
+	.loseTeamScoreDetail input {
+	width: 300px;
+	margin-left: 30px;
+}
+/* 경기 상세 */
+.matchDetail {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.matchDetail_Top {
+	background-color: blue;
+	color: white;
+	height: 30px;
+	border-radius: 15px 15px 0px 0px;
+	display: flex;
+	align-items: center;
+}
+.matchDetail_Top > div{
+	margin-left: 30px;
+}
+
+.matchDetail_Mid {
+	display: flex;
+	flex-direction: column;
+}
+
+.winPitcherBox, .losePitcherBox, .hitBox, .homeRunBox, .threeStrikeBox,
+	.stoleBaseBox, .doublePlayBox, .errorBox {
+	display: flex;
+	height: 30px;
+}
+
+.winPitcher, .losePitcher, .hit, .homeRun, .threeStrike, .stoleBase,
+	.doublePlay, .error {
+	width: 200px;
+	border: 1px solid black;
+	border-left: none;
+	border-top: none;
+}
+.winPitcher > div,
+.losePitcher > div,
+.hit > div,
+.homeRun > div,
+.threeStrike > div,
+.stoleBase > div,
+.doublePlay > div,
+.error > div{
+	margin-left:30px;
+	display:flex;
+	align-items:center;
+	height: 30px;
+}
+
+.winPitcherDetail, .losePitcherDetail, .hitDetail, .homeRunDetail,
+	.threeStrikeDetail, .stoleBaseDetail, .doublePlayDetail, .errorDetail {
+	width: 824px;
+	border-bottom: 1px solid black;
+	display: flex;
+	align-items: center;
+}
+
+.winPitcherDetail input, .losePitcherDetail input {
+	width: 300px;
+	margin-left: 30px;
+}
+
+.hitDetail input, .homeRunDetail input, .threeStrikeDetail input,
+	.stoleBaseDetail input, .doublePlayDetail input, .errorDetail input {
+	width: 50px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.hitDetail div, .homeRunDetail div, .threeStrikeDetail div,
+	.stoleBaseDetail div, .doublePlayDetail div, .errorDetail div {
+	margin-left: 30px;
+	margin-right: 33px;
+}
+/*승리/패배 팀 투수/타자 기록 표 */
+table {
+	width: 100%;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+th, td {
+	height: 30px;
+	border:1px solid lightgray;
+}
+
+th {
+	background-color: lightgray;
+	font-weight: bold;
+	border:none;
+}
+tr{
+	border:1px solid lightgray;
+	border-radius:15%;
+}
+tbody{
+	border-radius:15%;
+}
+.buttons{
+	margin-right:30px;
+}
+.buttons button{
+	border-radius: 12px;
+}
+.matchDetail_Top{
+	display:flex;
+	justify-content: space-between;
+}
+/* 등록 버튼 */
+.enrollButton {
+	display:flex;
+	justify-content: center;
+	margin-bottom:30px;
+}
+
+.editButton{
+	display:flex;
+	justify-content: space-between;
+	margin: 30px;
+	
+	
+}

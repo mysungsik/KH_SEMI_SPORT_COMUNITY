@@ -1,0 +1,147 @@
+body {
+	font-family: Arial, sans-serif;
+}
+.cardBackground{
+	margin-bottom:30px;
+}
+
+.quick-view {
+	display: flex;
+	flex-direction: column;
+	background-color: #f0f0f0;
+	padding: 20px;
+	margin-top: 20px;
+	border-radius: 10px;
+}
+
+.quick-view .final-score {
+	text-align: center;
+	font-size: 24px;
+	margin-bottom: 20px;
+}
+
+.league-info {
+	background-color: #4a90e2;
+	color: white;
+	padding: 10px;
+	border-radius: 10px;
+	display: flex;
+	justify-content: space-around;
+	flex-direction:column;
+}
+.league-info-mid{
+	display:flex;
+}
+.league-info-top{
+	height: 40px;
+	border-bottom: 1px solid white;
+	display:flex;
+	align-items:center;
+}
+.league-info-top > div{
+	margin-left:30px;
+}
+.league-info-mid-left,
+.league-info-mid-mid,
+.league-info-mid-right{
+	display:flex;
+	flex-direction:column;
+	width: 250px;
+	margin-left: 30px;
+	margin-top: 10px;
+}
+/*구장 이미지*/
+.stadium-image {
+	display:flex;
+	flex-direction:column;
+}
+.stadiumImageTop{
+	margin-bottom:10px;
+}
+.stadiumImageTop > div{
+	margin-left:30px;
+	margin-top:30px;
+	font-size:20px;
+}
+.stadium-imageBox{
+	margin: 30px;
+}
+.stadium-imageBox > div{
+	background-color: #4a90e2;
+	padding: 10px;
+	border-radius: 10px;
+	display: flex;
+	justify-content: space-around;
+	height:200px;
+	margin-bottom:30px;
+}
+/*구장 내부 이미지*/
+.stadium-details{
+	display:flex;
+	flex-direction:column;
+}
+.stadium-image{
+	display:flex;
+	flex-direction:column;
+}
+.stadiumDetailsTop{
+	margin-bottom:10px;
+}
+.stadiumDetailsTop > div{
+	margin-left:30px;
+	margin-top:30px;
+	font-size:20px;
+}
+.stadium-details > img{
+	width:70%;
+}
+.stadium-details {
+	background-color: #f0f0f0;
+	padding: 20px;
+	margin-top: 20px;
+	border-radius: 10px;
+}
+.stadium-imageBox2 > div{
+	background-color: #4a90e2;
+	padding: 10px;
+	border-radius: 10px;
+	display: flex;
+	justify-content: space-around;
+	height:400px;
+	margin-bottom:30px;
+	margin-top:30px;
+}
+.placeDetails > div {
+	font-size:18px;
+	margin-bottom:10px;
+	margin-top:30px;
+}
+.detailsBox{
+	display:flex;
+	flex-direction:column;
+	width:400px;
+	margin-top:50px;
+}
+.details{
+	display:flex;
+	margin-bottom:10px;
+}
+.details1{
+	width:100px;
+	font-size:14px;
+}
+.details2{
+	width:200px;
+	font-size:14px;
+}
+
+.comments-section {
+	margin-top: 20px;
+}
+
+.comments-section .comment {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	border-bottom: 1px solid #ddd;
+}
