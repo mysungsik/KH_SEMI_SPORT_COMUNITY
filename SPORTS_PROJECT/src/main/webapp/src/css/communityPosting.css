@@ -1,0 +1,85 @@
+*{
+	box-sizing: border-box;
+	/* border: 1px solid black; */
+}
+
+form{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+/* 제목 */
+.title-area{
+	margin-top: 40px;
+	width: 100%;
+	height: 50px;
+	display: flex;
+	gap: 10px;
+	
+	border-bottom: 1px solid black;
+}
+
+.title{
+	align-content: center;
+}
+
+.category{
+	align-content: center;
+}
+
+.team{
+	align-content: center;
+}
+
+/* 게시글 작성 */
+.posting-area{
+	width: 850px;
+	height: 600px;
+	margin-top: 20px;
+	border: 2px solid #ddd; 
+	border-radius: 20px;
+}
+
+.input-title{
+	height: 50px;
+	margin: 10px 30px 0;
+	border-bottom: 2px solid #ddd;
+	display: flex;
+	align-items: center;
+}
+
+.input-title>input:nth-child(1){
+	flex-basis: 95%;
+	border: none;
+	outline: none;
+}
+
+.input-img{
+	flex-basis: 5%;
+	display: flex;
+}
+
+.input-img input{
+	display: none;
+}
+
+.input-content{
+	height: 550px;
+	margin: 10px 30px;
+}
+
+.btn-area{
+	margin: 30px 0 50px;
+	display: flex;
+	gap: 10px;
+}
+
+button {
+	width: 70px;
+	height: 30px;
+	
+	border: none;
+}
+
