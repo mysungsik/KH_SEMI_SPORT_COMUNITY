@@ -26,25 +26,25 @@
                         <img class="password-eye" src="${contextPath}/public/icons/eye-closed.png">
                     </div>
                     <div>
-                        <input class="box-shadow" type="text" name="signup_email" placeholder="EMAIL">
+                        <input class="box-shadow" type="text" name="signup_email" placeholder="EMAIL : 이메일 형식">
                     </div>
                     <div>
-                        <input class="box-shadow" type="text" name="signup_name" placeholder="NAME">
+                        <input class="box-shadow" type="text" name="signup_name" placeholder="NAME : 2~4글자의 한글">
                     </div>
                 </div>
                 <p class="fs-20__b"> 추가 정보</p>
                 <div class="signup-unnecessary mt-10">
-                    <input class="box-shadow" type="text" name="signup_ssn" placeholder="YYYYMMDD">
-                    <input class="box-shadow" type="text" name="signup_number" placeholder="PHONE NUMBER">
-                    <input class="box-shadow" type="text" name="signup_address" placeholder="ADDRESS">
+                    <input class="box-shadow" type="text" name="signup_ssn" placeholder="생년원일 : YYYYMMDD 형식 입력">
+                    <input class="box-shadow" type="text" name="signup_number" placeholder="전화번호 : ( - 없이 입력)">
+                    <input class="box-shadow" type="text" name="signup_address" placeholder="주소 : OO시, OO동 형식 입력">
                     <div class="radio-box-container">
                         <div class="radio-box">
-                            <input type="radio" name="signup_gender" id="signup-gender" value="m"><label for="gender-m">남자</label>
-                            <input type="radio" name="signup_gender" id="signup-gender" value="f"><label for="gender-f">여자</label>
+                            <input type="radio" name="signup_gender" id="gender-m" value="m"><label for="gender-m">남자</label>
+                            <input type="radio" name="signup_gender" id="gender-f" value="f"><label for="gender-f">여자</label>
                         </div>
                         <div class="radio-box">
-                            <input type="radio" name="signup_region" id="signup-region" value="ko"><label for="region-ko">내국인</label>
-                            <input type="radio" name="signup_region" id="signup-region" value="fo"><label for="region-fo">외국인</label>
+                            <input type="radio" name="signup_region" id="region-ko" value="ko"><label for="region-ko">내국인</label>
+                            <input type="radio" name="signup_region" id="region-fo" value="fo"><label for="region-fo">외국인</label>
                         </div>
                     </div>
                 </div>
