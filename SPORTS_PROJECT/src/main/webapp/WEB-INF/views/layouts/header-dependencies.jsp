@@ -10,29 +10,3 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/e245e5bbb1.js" crossorigin="anonymous"></script>
 <script src="${contextPath}/src/common/common.js" defer></script>
-<script>
-	function toastPop(type, message){
-		const toastBtn = $('.toastPop')
-		const toastElement = $('#liveToast')
-		
-		// 메시지로 변경
-		$(".toast-body").find(".toast-message").text(message);
-		$(".toast").removeClass("base-warn__red");
-		$(".toast").removeClass("base-info__green");
-		
-		// 토스트 스타일 변경
-		if (type == "warn"){
-			$(".toast").addClass("base-warn__red");
-			
-		} else if(type == "info"){
-			$(".toast").addClass("base-info__green");
-		}
-			
-		// 토스트 실행
-		if (toastBtn) {
-			const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastElement)
-			toastBootstrap.show()
-	
-		}
-	}
-</script>

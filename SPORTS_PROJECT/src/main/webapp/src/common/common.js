@@ -11,19 +11,30 @@ $(document).ready(function () {
 	contextPath = "/" + window.location.pathname.split("/")[1];
 });
 
+// 토스트 메소드
+function toastPop(type, message){
+	const toastBtn = $('.toastPop')
+	const toastElement = $('#liveToast')
+	
+	// 메시지로 변경
+	$(".toast-body").find(".toast-message").text(message);
+	$(".toast").removeClass("base-warn__red");
+	$(".toast").removeClass("base-info__green");
+	
+	// 토스트 스타일 변경
+	if (type == "warn"){
+		$(".toast").addClass("base-warn__red");
+		
+	} else if(type == "info"){
+		$(".toast").addClass("base-info__green");
+	}
+		
+	// 토스트 실행
+	if (toastBtn) {
+		const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastElement)
+		toastBootstrap.show()
 
-// 로그아웃 메서드
-function logout(){
-	let URL = `${contextPath}/api/user/logout`
-	$.ajax({
-        type: "POST",        // 데이터 전송 타입
-        url : URL,          // 데이터를 주고받을 파일 주소 입력
-        data: "",           // 보내는 데이터
-        async : false,
-        success : function(){
-			location.href = `${contextPath}/login`;
-		}
-   })
+	}
 }
 
 // 비밀번호 보기 이벤트
@@ -48,6 +59,20 @@ allCheck.on("click", ()=>{
         $(chekcboxes).prop("checked", true);
     }
 })
+
+// 로그아웃 메소드
+function logout(){
+	let URL = `${contextPath}/api/user/logout`
+	$.ajax({
+        type: "POST",        // 데이터 전송 타입
+        url : URL,          // 데이터를 주고받을 파일 주소 입력
+        data: "",           // 보내는 데이터
+        async : false,
+        success : function(){
+			location.href = `${contextPath}/login`;
+		}
+   })
+}
 
 // VALIDATING METHOD
 function idValidate(id){
