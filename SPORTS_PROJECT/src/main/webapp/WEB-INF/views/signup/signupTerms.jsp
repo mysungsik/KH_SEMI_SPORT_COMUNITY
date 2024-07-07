@@ -4,8 +4,8 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<jsp:include page="/WEB-INF/views/layouts/header-dependencies.jsp"/>
 	<link rel="stylesheet" href="${contextPath}/src/css/signupTerms.css">
-	
     <script src="${contextPath}/src/js/signup.js" defer></script>
 	<title>MLB - Signup</title>
 </head>

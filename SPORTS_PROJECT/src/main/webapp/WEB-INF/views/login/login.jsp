@@ -3,6 +3,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<jsp:include page="/WEB-INF/views/layouts/header-dependencies.jsp"/>
 	<link rel="stylesheet" href="${contextPath}/src/css/login.css">
 	<script src="${contextPath}/src/js/login.js" defer></script>
 	<title>MLB - Login</title>

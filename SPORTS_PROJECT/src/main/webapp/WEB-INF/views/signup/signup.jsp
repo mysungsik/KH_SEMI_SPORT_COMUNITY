@@ -4,6 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<jsp:include page="/WEB-INF/views/layouts/header-dependencies.jsp"/>
 	<link rel="stylesheet" href="${contextPath}/src/css/signup.css">
 	<script src="${contextPath}/src/js/signup.js" defer></script>
 	<title>MLB - Signup</title>
@@ -18,24 +19,24 @@
                 <p class="fs-20__b"> 필수 정보</p>
                 <div class="signup-essential mt-10">
                     <div>
-                        <input class="box-shadow" type="text" name="signup_id" placeholder="ID">
+                        <input class="box-shadow" type="text" name="signup_id" placeholder="ID : *소문자를 포함 5~13 글자 / 대문자 및 숫자 사용가능">
                     </div>
                     <div>
-                        <input class="box-shadow"  type="password" name="signup-password" placeholder="PASSWORD">
+                        <input class="box-shadow"  type="password" name="signup_pw" placeholder="PW : *최소 한개의 소문자, 대문자, 숫자를 포함 10~20 글자 / 특수문자 사용가능">
                         <img class="password-eye" src="${contextPath}/public/icons/eye-closed.png">
                     </div>
                     <div>
-                        <input class="box-shadow" type="email" name="signup-email" placeholder="EMAIL">
+                        <input class="box-shadow" type="email" name="signup_email" placeholder="EMAIL">
                     </div>
                     <div>
-                        <input class="box-shadow" type="text" name="signup-name" placeholder="NAME">
+                        <input class="box-shadow" type="text" name="signup_name" placeholder="NAME">
                     </div>
                 </div>
                 <p class="fs-20__b"> 추가 정보</p>
                 <div class="signup-unnecessary mt-10">
-                    <input class="box-shadow" type="text" name="signup-ssn" placeholder="YYYYMMDD">
-                    <input class="box-shadow" type="text" name="signup-number" placeholder="PHONE NUMBER">
-                    <input class="box-shadow" type="text" name="signup-address" placeholder="ADDRESS">
+                    <input class="box-shadow" type="text" name="signup_ssn" placeholder="YYYYMMDD">
+                    <input class="box-shadow" type="text" name="signup_number" placeholder="PHONE NUMBER">
+                    <input class="box-shadow" type="text" name="signup_address" placeholder="ADDRESS">
                     <div class="radio-box-container">
                         <div class="radio-box">
                             <input type="radio" name="signup-gender" id="gender-m" value="m"><label for="gender-m">남자</label>
