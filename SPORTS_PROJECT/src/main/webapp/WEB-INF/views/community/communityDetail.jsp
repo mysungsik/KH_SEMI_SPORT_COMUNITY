@@ -23,6 +23,7 @@
 		<!-- 게시글 제목 -->
 		<section class="title-area base__lblue">
 			<div class="title"> 
+				<span class="fs-12 fc__gray">[ 자유 ] </span>
 				<span class="fs-14__b">게시글 제목입니다.</span> 
 			</div>
 			<div class="info"> 
@@ -49,9 +50,9 @@
 				<span> | </span>
 				<span>댓글 2</span>
 				<span> | </span>
-				<span>좋아요 3 ♥</span>
+				<span class="pointer">좋아요 3 ♥</span>
 				<span> | </span>
-				<span>신고</span>
+				<span class="pointer">신고</span>
 			</div>
 			<div class="btn-area">
 				<button>목록으로</button>

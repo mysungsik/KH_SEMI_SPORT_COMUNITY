@@ -33,7 +33,7 @@
 						<input type="text">
 						<button class="fa-solid fa-magnifying-glass"></button>
 					</form>
-					<button type="button" class="write-btn mg-right">글쓰기</button>
+					<button type="button" class="write-btn mg-right" onclick="location.href='${contextPath}/community/communityPosting/free'">글쓰기</button>
 				</div>
 			</article>
 			<article class="swiper-wrapper">
@@ -41,8 +41,8 @@
 					<div class="popular-area">
 						<div class="popular-post" onclick="location.href='${contextPath}/community/communityDetail/1'">
 							<div class="post-title">
-								<span class="fs-12 fc__gray">[ 응원 게시판 ]</span> <span
-									class="fs-14__b">파이팅 다저스</span>
+								<span class="fs-12 fc__gray">[ 타이거즈 ]</span> 
+								<span class="fs-14__b">파이팅 다저스</span>
 							</div>
 							<div class="post-content">
 								<span class="fs-12 fc__gray">
@@ -50,163 +50,94 @@
 								 </span>
 							</div>
 							<div class="post-info">
-								<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
-									30 | 댓글 3 | 좋아요 3 ♡</span>
+								<span class="fs-10">작성자 2024-06-23</span> 
+								<span class="fs-10">조회수 30 | 댓글 3 | 좋아요 3 ♡</span>
 							</div>
 						</div>
 					</div>
 					<div class="popular-area">
-						<div class="popular-post">
+						<div class="popular-post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
 							<div class="post-title">
-								<span class="fs-12 fc__gray">[ 자유 게시판 ]</span> <span
-									class="fs-14__b">한국이 야구 못하는 이유</span>
+								<span class="fs-12 fc__gray">[ 다저스 ]</span> 
+								<span class="fs-14__b">한국이 야구 못하는 이유</span>
 							</div>
 							<div class="post-content">
 								<span class="fs-12 fc__gray"> 사회 생활을 하며 사람을 화나게 하는 방법은
 									여러가지가 있습니다. 그 중 첫 번째는 말을 하다 마는 것입니다... 이어서 두 번째는 바로.. </span>
 							</div>
 							<div class="post-info">
-								<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
-									30 | 댓글 3 | 좋아요 3 ♡</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="popular base__lblue swiper-slide d-flex">
-					<div class="popular-area">
-						<div class="popular-post">
-
-							<div class="post-title">
-								<span class="fs-12 fc__gray">[ 응원 게시판 ]</span> <span
-									class="fs-14__b">파이팅 다저스</span>
-							</div>
-							<div class="post-content">
-								<span class="fs-12 fc__gray"> 사회 생활을 하며 사람을 화나게 하는 방법은
-									여러가지가 있습니다. 그 중 첫 번째는 말을 하다 마는 것입니다... 이어서 두 번째는 바로.. </span>
-							</div>
-							<div class="post-info">
-								<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
-									30 | 댓글 3 | 좋아요 3 ♡</span>
-							</div>
-						</div>
-					</div>
-					<div class="popular-area">
-						<div class="popular-post">
-							<div class="post-title">
-								<span class="fs-12 fc__gray">[ 자유 게시판 ]</span> <span
-									class="fs-14__b">한국이 야구 못하는 이유</span>
-							</div>
-							<div class="post-content">
-								<span class="fs-12 fc__gray"> 사회 생활을 하며 사람을 화나게 하는 방법은
-									여러가지가 있습니다. 그 중 첫 번째는 말을 하다 마는 것입니다... 이어서 두 번째는 바로.. </span>
-							</div>
-							<div class="post-info">
-								<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
-									30 | 댓글 3 | 좋아요 3 ♡</span>
+								<span class="fs-10">작성자 2024-06-23</span> 
+								<span class="fs-10">조회수 30 | 댓글 3 | 좋아요 3 ♡</span>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="popular base__lblue swiper-slide d-flex">
 					<div class="popular-area">
-						<div class="popular-post">
+						<div class="popular-post" onclick="location.href='${contextPath}/community/communityDetail/1'">
 							<div class="post-title">
-								<span class="fs-12 fc__gray">[ 응원 게시판 ]</span> <span
-									class="fs-14__b">파이팅 다저스</span>
+								<span class="fs-12 fc__gray">[ 타이거즈 ]</span> 
+								<span class="fs-14__b">파이팅 다저스</span>
 							</div>
 							<div class="post-content">
-								<span class="fs-12 fc__gray"> 사회 생활을 하며 사람을 화나게 하는 방법은
-									여러가지가 있습니다. 그 중 첫 번째는 말을 하다 마는 것입니다... 이어서 두 번째는 바로.. </span>
+								<span class="fs-12 fc__gray">
+								 경기력이 정말 화가 납니다..사회 생활을 하며 사람을 화나게 하는 방법은 여러가지가 있습니다. 그 중 첫 번째는 말을 하다 마는 것입니다. 이어서 두 번째는 바로.. 
+								 </span>
 							</div>
 							<div class="post-info">
-								<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
-									30 | 댓글 3 | 좋아요 3 ♡</span>
+								<span class="fs-10">작성자 2024-06-23</span> 
+								<span class="fs-10">조회수 30 | 댓글 3 | 좋아요 3 ♡</span>
 							</div>
 						</div>
 					</div>
 					<div class="popular-area">
-						<div class="popular-post">
+						<div class="popular-post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
 							<div class="post-title">
-								<span class="fs-12 fc__gray">[ 자유 게시판 ]</span> <span
-									class="fs-14__b">한국이 야구 못하는 이유</span>
+								<span class="fs-12 fc__gray">[ 다저스 ]</span> 
+								<span class="fs-14__b">한국이 야구 못하는 이유</span>
 							</div>
 							<div class="post-content">
 								<span class="fs-12 fc__gray"> 사회 생활을 하며 사람을 화나게 하는 방법은
 									여러가지가 있습니다. 그 중 첫 번째는 말을 하다 마는 것입니다... 이어서 두 번째는 바로.. </span>
 							</div>
 							<div class="post-info">
-								<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
-									30 | 댓글 3 | 좋아요 3 ♡</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="popular base__lblue swiper-slide d-flex">
-					<div class="popular-area">
-						<div class="popular-post">
-							<div class="post-title">
-								<span class="fs-12 fc__gray">[ 응원 게시판 ]</span> <span
-									class="fs-14__b">파이팅 다저스</span>
-							</div>
-							<div class="post-content">
-								<span class="fs-12 fc__gray"> 사회 생활을 하며 사람을 화나게 하는 방법은
-									여러가지가 있습니다. 그 중 첫 번째는 말을 하다 마는 것입니다... 이어서 두 번째는 바로.. </span>
-							</div>
-							<div class="post-info">
-								<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
-									30 | 댓글 3 | 좋아요 3 ♡</span>
-							</div>
-						</div>
-					</div>
-					<div class="popular-area">
-						<div class="popular-post">
-							<div class="post-title">
-								<span class="fs-12 fc__gray">[ 자유 게시판 ]</span> <span
-									class="fs-14__b">한국이 야구 못하는 이유</span>
-							</div>
-							<div class="post-content">
-								<span class="fs-12 fc__gray"> 사회 생활을 하며 사람을 화나게 하는 방법은
-									여러가지가 있습니다. 그 중 첫 번째는 말을 하다 마는 것입니다... 이어서 두 번째는 바로.. </span>
-							</div>
-							<div class="post-info">
-								<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
-									30 | 댓글 3 | 좋아요 3 ♡</span>
+								<span class="fs-10">작성자 2024-06-23</span> 
+								<span class="fs-10">조회수 30 | 댓글 3 | 좋아요 3 ♡</span>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="popular base__lblue swiper-slide d-flex">
+								<div class="popular base__lblue swiper-slide d-flex">
 					<div class="popular-area">
-						<div class="popular-post">
-
+						<div class="popular-post" onclick="location.href='${contextPath}/community/communityDetail/1'">
 							<div class="post-title">
-								<span class="fs-12 fc__gray">[ 응원 게시판 ]</span> <span
-									class="fs-14__b">파이팅 다저스</span>
+								<span class="fs-12 fc__gray">[ 타이거즈 ]</span> 
+								<span class="fs-14__b">파이팅 다저스</span>
 							</div>
 							<div class="post-content">
-								<span class="fs-12 fc__gray"> 사회 생활을 하며 사람을 화나게 하는 방법은
-									여러가지가 있습니다. 그 중 첫 번째는 말을 하다 마는 것입니다... 이어서 두 번째는 바로.. </span>
+								<span class="fs-12 fc__gray">
+								 경기력이 정말 화가 납니다..사회 생활을 하며 사람을 화나게 하는 방법은 여러가지가 있습니다. 그 중 첫 번째는 말을 하다 마는 것입니다. 이어서 두 번째는 바로.. 
+								 </span>
 							</div>
 							<div class="post-info">
-								<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
-									30 | 댓글 3 | 좋아요 3 ♡</span>
+								<span class="fs-10">작성자 2024-06-23</span> 
+								<span class="fs-10">조회수 30 | 댓글 3 | 좋아요 3 ♡</span>
 							</div>
 						</div>
 					</div>
 					<div class="popular-area">
-						<div class="popular-post">
-
+						<div class="popular-post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
 							<div class="post-title">
-								<span class="fs-12 fc__gray">[ 자유 게시판 ]</span> <span
-									class="fs-14__b">한국이 야구 못하는 이유</span>
+								<span class="fs-12 fc__gray">[ 다저스 ]</span> 
+								<span class="fs-14__b">한국이 야구 못하는 이유</span>
 							</div>
 							<div class="post-content">
 								<span class="fs-12 fc__gray"> 사회 생활을 하며 사람을 화나게 하는 방법은
 									여러가지가 있습니다. 그 중 첫 번째는 말을 하다 마는 것입니다... 이어서 두 번째는 바로.. </span>
 							</div>
 							<div class="post-info">
-								<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
-									30 | 댓글 3 | 좋아요 3 ♡</span>
+								<span class="fs-10">작성자 2024-06-23</span> 
+								<span class="fs-10">조회수 30 | 댓글 3 | 좋아요 3 ♡</span>
 							</div>
 						</div>
 					</div>
@@ -222,51 +153,57 @@
 						class="see-more fs-10 fc__gray"><a
 						href="${contextPath}/community/communityBoard/all">더보기▶</a></span>
 				</div>
-				<div class="post">
+				<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
 					<div class="post-title">
+						<span class="fs-12 fc__gray">[ 해머스 ]</span>
 						<span class="fs-14__b">게시글입니다 test 1234</span>
 					</div>
 					<div class="post-info">
-						<span class="fs-10">작성자 2024-07-04</span> <span class="fs-10">조회수
-							30 | 댓글 2 | 좋아요 3 ♡</span>
+						<span class="fs-10">작성자 2024-07-04</span> 
+						<span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
 					</div>
 				</div>
-				<div class="post">
+				<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
 					<div class="post-title">
+						<span class="fs-12 fc__gray">[ 해머스 ]</span>
 						<span class="fs-14__b">게시글입니다 test 1234</span>
 					</div>
 					<div class="post-info">
-						<span class="fs-10">작성자 2024-07-04</span> <span class="fs-10">조회수
-							30 | 댓글 2 | 좋아요 3 ♡</span>
+						<span class="fs-10">작성자 2024-07-04</span> 
+						<span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
 					</div>
 				</div>
-				<div class="post">
+				<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
 					<div class="post-title">
+						<span class="fs-12 fc__gray">[ 해머스 ]</span>
 						<span class="fs-14__b">게시글입니다 test 1234</span>
 					</div>
 					<div class="post-info">
-						<span class="fs-10">작성자 2024-07-04</span> <span class="fs-10">조회수
-							30 | 댓글 2 | 좋아요 3 ♡</span>
+						<span class="fs-10">작성자 2024-07-04</span> 
+						<span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
 					</div>
 				</div>
-				<div class="post">
+				<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
 					<div class="post-title">
+						<span class="fs-12 fc__gray">[ 해머스 ]</span>
 						<span class="fs-14__b">게시글입니다 test 1234</span>
 					</div>
 					<div class="post-info">
-						<span class="fs-10">작성자 2024-07-04</span> <span class="fs-10">조회수
-							30 | 댓글 2 | 좋아요 3 ♡</span>
+						<span class="fs-10">작성자 2024-07-04</span> 
+						<span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
 					</div>
 				</div>
-				<div class="post">
+				<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
 					<div class="post-title">
+						<span class="fs-12 fc__gray">[ 해머스 ]</span>
 						<span class="fs-14__b">게시글입니다 test 1234</span>
 					</div>
 					<div class="post-info">
-						<span class="fs-10">작성자 2024-07-04</span> <span class="fs-10">조회수
-							30 | 댓글 2 | 좋아요 3 ♡</span>
+						<span class="fs-10">작성자 2024-07-04</span> 
+						<span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
 					</div>
 				</div>
+				
 			</article>
 
 
@@ -420,49 +357,54 @@
 						class="see-more fs-10 fc__gray"><a
 						href="${contextPath}/community/communityBoard/free">더보기▶</a></span>
 				</div>
-				<div class="post">
+				<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
 					<div class="post-title">
+						<span class="fs-12 fc__gray">[ 자유 ]</span>
 						<span class="fs-14__b">게시글입니다 test 1234</span>
 					</div>
 					<div class="post-info">
-						<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
-							30 | 댓글 2 | 좋아요 3 ♡</span>
+						<span class="fs-10">작성자 2024-07-04</span> 
+						<span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
 					</div>
 				</div>
-				<div class="post">
+				<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
 					<div class="post-title">
+						<span class="fs-12 fc__gray">[ 자유 ]</span>
 						<span class="fs-14__b">게시글입니다 test 1234</span>
 					</div>
 					<div class="post-info">
-						<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
-							30 | 댓글 2 | 좋아요 3 ♡</span>
+						<span class="fs-10">작성자 2024-07-04</span> 
+						<span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
 					</div>
 				</div>
-				<div class="post">
+				<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
 					<div class="post-title">
+						<span class="fs-12 fc__gray">[ 자유 ]</span>
 						<span class="fs-14__b">게시글입니다 test 1234</span>
 					</div>
 					<div class="post-info">
-						<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
-							30 | 댓글 2 | 좋아요 3 ♡</span>
+						<span class="fs-10">작성자 2024-07-04</span> 
+						<span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
 					</div>
 				</div>
-				<div class="post">
+				<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
 					<div class="post-title">
+						<span class="fs-12 fc__gray">[ 자유 ]</span>
 						<span class="fs-14__b">게시글입니다 test 1234</span>
 					</div>
 					<div class="post-info">
-						<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
-							30 | 댓글 2 | 좋아요 3 ♡</span>
+						<span class="fs-10">작성자 2024-07-04</span> 
+						<span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
 					</div>
 				</div>
-				<div class="post">
+				<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
 					<div class="post-title">
+						<span class="fs-12 fc__gray">[ 자유 ]</span>
 						<span class="fs-14__b">게시글입니다 test 1234</span>
 					</div>
 					<div class="post-info">
-						<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
-							30 | 댓글 2 | 좋아요 3 ♡</span>
+						<span class="fs-10">작성자 2024-07-04</span> 
+						<span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
 					</div>
 				</div>
 			</article>
@@ -474,55 +416,54 @@
 						class="see-more fs-10 fc__gray"><a
 						href="${contextPath}/community/communityBoard/cheer">더보기▶</a></span>
 				</div>
-
-				<div class="post">
+				<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
 					<div class="post-title">
-						<span class="fs-12 fc__gray">[ 다저스 ]</span> <span class="fs-14__b">게시글입니다
-							test 1234</span>
+						<span class="fs-12 fc__gray">[ 다저스 ]</span>
+						<span class="fs-14__b">게시글입니다 test 1234</span>
 					</div>
 					<div class="post-info">
-						<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
-							30 | 댓글 2 | 좋아요 3 ♡</span>
+						<span class="fs-10">작성자 2024-07-04</span> 
+						<span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
 					</div>
 				</div>
-				<div class="post">
+				<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
 					<div class="post-title">
-						<span class="fs-12 fc__gray">[ 해머스 ]</span> <span class="fs-14__b">게시글입니다
-							test 1234</span>
+						<span class="fs-12 fc__gray">[ 타이거즈 ]</span>
+						<span class="fs-14__b">게시글입니다 test 1234</span>
 					</div>
 					<div class="post-info">
-						<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
-							30 | 댓글 2 | 좋아요 3 ♡</span>
+						<span class="fs-10">작성자 2024-07-04</span> 
+						<span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
 					</div>
 				</div>
-				<div class="post">
+				<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
 					<div class="post-title">
-						<span class="fs-12 fc__gray">[ 다저스 ]</span> <span class="fs-14__b">게시글입니다
-							test 1234</span>
+						<span class="fs-12 fc__gray">[ 해머스 ]</span>
+						<span class="fs-14__b">게시글입니다 test 1234</span>
 					</div>
 					<div class="post-info">
-						<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
-							30 | 댓글 2 | 좋아요 3 ♡</span>
+						<span class="fs-10">작성자 2024-07-04</span> 
+						<span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
 					</div>
 				</div>
-				<div class="post">
+				<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
 					<div class="post-title">
-						<span class="fs-12 fc__gray">[ 해머스 ]</span> <span class="fs-14__b">게시글입니다
-							test 1234</span>
+						<span class="fs-12 fc__gray">[ 베어스 ]</span>
+						<span class="fs-14__b">게시글입니다 test 1234</span>
 					</div>
 					<div class="post-info">
-						<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
-							30 | 댓글 2 | 좋아요 3 ♡</span>
+						<span class="fs-10">작성자 2024-07-04</span> 
+						<span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
 					</div>
 				</div>
-				<div class="post">
+				<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
 					<div class="post-title">
-						<span class="fs-12 fc__gray">[ 다저스 ]</span> <span class="fs-14__b">게시글입니다
-							test 1234</span>
+						<span class="fs-12 fc__gray">[ 다저스 ]</span>
+						<span class="fs-14__b">게시글입니다 test 1234</span>
 					</div>
 					<div class="post-info">
-						<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
-							30 | 댓글 2 | 좋아요 3 ♡</span>
+						<span class="fs-10">작성자 2024-07-04</span> 
+						<span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
 					</div>
 				</div>
 			</article>

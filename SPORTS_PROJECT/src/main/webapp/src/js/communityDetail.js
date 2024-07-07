@@ -1,23 +1,7 @@
 let communityData = [
-	{ author: "[작성자]", comments: "야구 룰이 너무 어려움", date: "2024-07-06 22:49:31", like: 3 },
-	{ author: "[작성자]", comments: "야구 룰이 너무 어려움", date: "2024-07-06 22:49:31", like: 3 },
-	{ author: "[작성자]", comments: "야구 룰이 너무 어려움", date: "2024-07-06 22:49:31", like: 3 },
-	{ author: "[작성자]", comments: "야구 룰이 너무 어려움", date: "2024-07-06 22:49:31", like: 3 },
-	{ author: "[작성자]", comments: "야구 룰이 너무 어려움", date: "2024-07-06 22:49:31", like: 3 },
-	{ author: "[작성자]", comments: "야구 룰이 너무 어려움", date: "2024-07-06 22:49:31", like: 3 },
-	{ author: "[작성자]", comments: "야구 룰이 너무 어려움", date: "2024-07-06 22:49:31", like: 3 },
-	{ author: "[작성자]", comments: "야구 룰이 너무 어려움", date: "2024-07-06 22:49:31", like: 3 },
-	{ author: "[작성자]", comments: "야구 룰이 너무 어려움", date: "2024-07-06 22:49:31", like: 3 },
-	{ author: "[작성자]", comments: "야구 룰이 너무 어려움", date: "2024-07-06 22:49:31", like: 3 },
-	{ author: "[작성자]", comments: "야구 룰이 너무 어려움", date: "2024-07-06 22:49:31", like: 3 },
-	{ author: "[작성자]", comments: "야구 룰이 너무 어려움", date: "2024-07-06 22:49:31", like: 3 },
-	{ author: "[작성자]", comments: "야구 룰이 너무 어려움", date: "2024-07-06 22:49:31", like: 3 },
-	{ author: "[작성자]", comments: "야구 룰이 너무 어려움", date: "2024-07-06 22:49:31", like: 3 },
-	{ author: "[작성자]", comments: "야구 룰이 너무 어려움", date: "2024-07-06 22:49:31", like: 3 },
-	{ author: "[작성자]", comments: "야구 룰이 너무 어려움", date: "2024-07-06 22:49:31", like: 3 },
-	{ author: "[작성자]", comments: "야구 룰이 너무 어려움", date: "2024-07-06 22:49:31", like: 3 },
-	{ author: "[작성자]", comments: "야구 룰이 너무 어려움", date: "2024-07-06 22:49:31", like: 3 },
-	{ author: "[작성자]", comments: "야구 룰이 너무 어려움", date: "2024-07-06 22:49:31", like: 3 },
+	{ author: "[ 작성자 ]", comments: "야구 룰이 너무 어려움", date: "2024-07-06 22:49:31", like: 3 },
+	{ author: "[ 작성자 ]", comments: "야구 룰이 너무 어려움", date: "2024-07-06 22:49:31", like: 3 },
+
 
 
 ]
@@ -38,7 +22,7 @@ function paginationTemplate(data) {
 					<span class="fs-12">${d.comments}</span>
 				</div>
 				<div class="reply-info">
-					<div><span class="fs-10">좋아요 ${d.like} ♥</span><span class="fs-10"> | </span><span class="fs-10">신고</span></div>
+					<div><span class="fs-10 pointer">좋아요 ${d.like} ♥</span><span class="fs-10"> | </span><span class="fs-10 pointer">신고</span></div>
 					<div><span class="fs-10">${d.date}</span></div>
 				</div>
 			</div>`

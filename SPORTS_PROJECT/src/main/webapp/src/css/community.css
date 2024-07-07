@@ -15,7 +15,7 @@ body{
 }
 
 .container{
-    width: 1024px;
+	width: 1024px;
     height: 1100px;
 }
 
@@ -180,6 +180,7 @@ section{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 10px;
 }
 
 .best-post{
@@ -214,6 +215,7 @@ section{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-content: center;
     
    text-overflow: ellipsis;
    overflow: hidden;

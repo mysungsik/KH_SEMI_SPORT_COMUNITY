@@ -92,7 +92,7 @@ function paginationTemplate(data) {
 	let item = ""
 	$.each(data, function(index, d) {
 		item +=
-			`     <div class="post">
+			`     <div class="post" onclick="location.href='${contextPath}/community/communityDetail/1'">
 					<div class="category">
 						<span class="fs-12 fc__gray">${d.category}</span>
 					</div>
