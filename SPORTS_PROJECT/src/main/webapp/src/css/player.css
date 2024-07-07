@@ -1,0 +1,315 @@
+/* 유틸 */
+*{box-sizing: border-box;}
+
+/* *{border: 1px solid black;} */
+
+/* container */
+.container{
+    width: 1024px;
+}
+
+section{
+    margin: 30px 0;
+}
+
+/* 페이지 커버 */
+.pagecover{
+	height: 200px; 
+	
+}
+
+.pagecover-img{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 150px;
+	background-color: #D2D2D2;
+}
+
+/* 소개띠 */
+.pagecover-bottom{
+	height: 50px;
+	background-color: #458BE2;
+	
+}
+
+.pagecover-bottom-inner{
+	height:50px;
+	max-width: 1024px;
+	margin: 0 auto;
+	justify-content: end;
+}
+
+.pagecover-bottom-inner ul{
+	display: flex;
+	height:50px;
+	align-items: center;
+	list-style:none;
+	gap: 0 10px;
+}
+
+.pagecover-bottom-inner ul:hover{
+	cursor: pointer;
+}
+
+.pagecover-bottom-inner ul li:hover{
+	text-decoration:underline;
+	text-underline-offset: 3px;
+	text-decoration-thickness : 1.5px;
+}
+
+/* 소개띠 끝 */
+
+/* 메인 시작 */
+.player-info{
+	width: 100%;
+	height: 500px;
+	display: flex;
+}
+
+.player-info-content{
+	width: 50%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.player-info-content .info-content{
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+}
+
+.player-info-content .info-content-top{
+	line-height:2;
+	margin-bottom: 50px;
+}
+
+.player-info-content .info-content-top span{
+	font-size: 48px;
+}
+.player-info-content .info-content-top .player-name{
+	padding-left:30px;
+	padding-right: 20px;
+}
+
+.player-num{
+	color: #EF4E4E ;
+}
+
+.player-info-content .info-content-top i{
+	font-size: 48px;
+}
+
+
+.player-info-content .info-content .info-content-bottom{
+	font-size: 20px;
+	width: 100%;
+}
+.player-info-content .info-content .info-content-bottom th{
+	width: 30%;
+}
+
+.player-info-img{
+	width: 50%;
+	height: 100%;
+}
+
+.player-info-img img{
+	width: 100%;
+	height: 100%;
+}
+
+/* card */
+.player-card{
+	display: flex;
+	justify-content: space-around;
+	margin: -15px auto 0;
+}
+
+.player-card .card-thumbnail{
+	height: 120px;
+	width: calc(18% - 4px);
+	background-color:#727272ad;
+	
+}
+
+.player-card .card-thumbnail .card-thumbnail-infos{
+	display: flex;
+	height: 100%;
+}
+
+.player-card .card-thumbnail .card-thumbnail-infos hr{
+	margin: 0;
+	color: white;
+}
+
+.player-card .card-thumbnail .card-thumbnail-position{
+	font-size: 20px;
+	margin: auto;
+	height: 40%;
+	align-content: center;
+}
+
+.player-card .card-thumbnail .card-thumbnail-content{
+	margin: auto;
+	font-size: 28px;
+	height: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+/* 상세 프로필 */
+.player-profile{
+	width: 100%;
+	height: 300px;
+	margin: 30px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.player-profile .player-profile-detail{
+	height: 95%;
+	width: 95%;
+	border-collapse: separate;
+	border-spacing: 0;
+	border-radius: 10px;
+	border-style: hidden;
+	text-align: center;
+	overflow: hidden;
+}
+
+
+.player-profile .player-profile-detail th{
+	background-color: #458BE2;
+	color: white;
+	font-size: 14px;
+}
+.player-profile .player-profile-detail td{
+	background-color: white;
+	font-size: 14px;
+}
+
+.player-profile .player-profile-detail pre{
+	background-color: white;
+	font-size: 14px;
+	overflow: auto;
+	margin: auto 0;
+}
+
+/* 상세 프로필 끝 */
+
+/* 뉴스 */
+
+/* 컨테이너 하단 하이라이트 클립 */
+
+.main-news {
+	width: 100%;
+	position:relative;
+	margin: 30px 0;
+}
+  
+.main-news .main-news-content {
+width: 1000px;
+height: 370px;
+margin: auto;
+padding:10px;
+flex-direction: column;
+}
+
+.main-news-content .news-content-top {
+	display: flex;
+	/* width:80%; */
+	justify-content: space-between;
+	height: 50%;
+	margin: 3px;
+	margin-bottom: 10px;
+}
+	
+.main-news-content .card-thumbnail {
+	height: 310px;
+	width: 420px;
+}
+
+.card-thumbnail-title p{
+margin-top: 10px;
+width: 100%;
+overflow: hidden;
+text-overflow: ellipsis;
+word-break: break-word;
+
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical
+}
+
+.main-news-content .navigation-wrapper {
+	max-width: 1020px;
+	margin:0 auto;
+	display:flex;
+	justify-content:space-between;
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+}
+
+.main-news-content .swiper-button-prev,
+.main-news-content .swiper-button-next {
+  position:static;
+  margin-top:0;
+}
+
+/* 뉴스끝 */
+
+/* 투수 기록 */
+
+.pitching-records {
+	width: 100%;
+	height: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 30px 0;
+}
+
+.pitching-records .pitching-records-table {
+	height: 95%;
+	width: 95%;
+	border-collapse: separate;
+	border-spacing: 0;
+	border-radius: 10px;
+	border-style: hidden;
+	text-align: center;
+	overflow: hidden;
+}
+
+.pitching-records th,
+.pitching-records td{
+    font-size: 14x;
+    text-align: center;
+}
+
+
+
+.pitching-records th{
+    background-color: #D2D2D2;
+	color: black;
+	font-size: 14px;
+	padding: 5px 0;
+}
+
+.pitching-records-table-title th{
+	background-color: #458BE2;
+    color: #fff;
+	font-size: 20px;
+	padding:10px 0;
+}
+
+.pitching-records td{
+	background-color: white;
+}

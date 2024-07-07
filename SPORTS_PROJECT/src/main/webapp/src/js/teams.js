@@ -110,8 +110,6 @@ var swiper3 = new Swiper(".swiper-info", {
 	
 });
 
-
-
 // nav
 $(document).ready(function() {
 	contextPath = "/" + window.location.pathname.split("/")[1];
