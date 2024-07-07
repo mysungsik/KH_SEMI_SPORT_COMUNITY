@@ -9,6 +9,17 @@
   width: 1024px;
 }
 
+.team-each-image{
+	height: 600px;
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: end;
+    background-repeat: no-repeat;
+    background-size : cover;
+    background-position: center;
+}
+
 
 .team-each-image .today-schedule {
   width: 370px;

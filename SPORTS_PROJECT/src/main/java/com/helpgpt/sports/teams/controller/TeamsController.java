@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 				"/teams",	
 				"/teams/*"}
 )
-
 public class TeamsController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -40,7 +39,7 @@ public class TeamsController extends HttpServlet {
 			dispatcher = req.getRequestDispatcher(defaultURLPath + "teams.jsp");
 			dispatcher.forward(req, resp);
 			}break;
-		case "teamsEach":{
+		case "team":{
 			req.setAttribute("team", team);
 			dispatcher = req.getRequestDispatcher(defaultURLPath + "teamsEachMain.jsp");
 			dispatcher.forward(req, resp);

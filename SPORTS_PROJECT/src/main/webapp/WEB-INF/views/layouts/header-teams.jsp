@@ -17,12 +17,12 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="<%= request.getContextPath() %>/src/common/common.js" defer></script>
-
+<script src="${contextPath}/src/js/teams.js" defer></script>
 
 </head>
 
 <body>
-
+	<input type="hidden" name="team" value="${requestScope.team }">
 	<eachTeamHeader>
 	<c:if test="${!empty loginUser}">
 		
@@ -65,16 +65,16 @@
 		    <div class="header-bot">
 		        <div class="header-nav">
 		            <ul class="d-flex">
-		                <a class="fs-20__b text-hover__blue" href="${contextPath}/src/pages/teams/teamInfo.jsp">BLUE JAYS</a>
+		                <a class="fs-20__b text-hover__blue team-name" href="${contextPath}/src/pages/teams/teamInfo.jsp"></a>
 		                <a class="fs-20__b text-hover__blue" href="${contextPath}/src/pages/teams/teamPlayers.jsp">PLAYERS</a>
-						<a href="${contextPath}/src/pages/teams/teamsEach"><img class="logo" src='${contextPath}/public/images/teams/FL.png'></a>
+						<a href="${contextPath}/src/pages/teams/teamsEach"><img class="team-logo" src='${contextPath}/public/images/teams/FL.png'></a>
 		                <a class="fs-20__b text-hover__blue" href="${contextPath}/src/pages/teams/schedule.jsp">SCHEDULE</a>
 		                <a class="fs-20__b text-hover__blue" href="${contextPath}/src/pages/teams/contents.jsp">CONTENTS</a>
 		            </ul>
 		        </div>
 		    </div>
 	</c:if>
-	<c:if test="${!empty loginUser}">
+	<c:if test="${empty loginUser}">
 	
 		<div class="header-top">
                 <div class="header-top-logo">
@@ -90,9 +90,9 @@
             <div class="header-bot">
                 <div class="header-nav">
                     <ul class="d-flex">
-                        <a class="fs-20__b text-hover__blue" href="${contextPath}/src/pages/teams/teamInfo.jsp">BLUE JAYS</a>
+                        <a class="fs-20__b text-hover__blue team-name" href="${contextPath}/src/pages/teams/teamInfo.jsp"></a>
 		                <a class="fs-20__b text-hover__blue" href="${contextPath}/src/pages/teams/teamPlayers.jsp">PLAYERS</a>
-		                <a href="${contextPath}/src/pages/teams/eachTeamMain.jsp"><img class="logo" src='${contextPath}/public/images/teams/FL.png'></a>
+		                <a href="${contextPath}/src/pages/teams/eachTeamMain.jsp"><img class="team-logo" src='${contextPath}/public/images/teams/FL.png'></a>
 		                <a class="fs-20__b text-hover__blue" href="${contextPath}/src/pages/teams/schedule.jsp">SCHEDULE</a>
 		                <a class="fs-20__b text-hover__blue" href="${contextPath}/src/pages/teams/contents.jsp">CONTENTS</a>
                     </ul>

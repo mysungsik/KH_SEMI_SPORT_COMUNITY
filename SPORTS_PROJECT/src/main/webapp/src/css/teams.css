@@ -33,12 +33,18 @@ section{
     box-shadow: 2px 2px 5px rgba(69, 69, 69, 0.486);
 }
 
-.teams-logo{
+.team-logo{
     width: 100px;
     padding-left: 5px;
     margin-bottom: 5px;
 }
 
+
+.team-logo-img{
+	height: 80%;
+	display: flex;
+	align-items:center;
+}
 .teams-name{
     display: flex;
     justify-content: space-between;

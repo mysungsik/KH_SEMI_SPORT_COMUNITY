@@ -17,7 +17,7 @@
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/layouts/header-teams.jsp" />
-	<div class="main-img"></div>
+	<input type="hidden" name="team" value="${requestScope.team }">
 	<!-- 날짜 슬라이드 시작 -->
 	<div class="team-each-image">
 		<div class="today-schedule br-10">
