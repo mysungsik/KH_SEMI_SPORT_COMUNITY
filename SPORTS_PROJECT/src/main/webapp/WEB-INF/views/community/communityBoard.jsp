@@ -37,10 +37,14 @@
 				<span class="fs-28__b title"></span>
 				<div class="search-area">
 					<form action="#" class="search">
+						<select name="searchType" style="border: none; outline: none;" class="br-5">
+					    	<option value="author" name="author">작성자</option>
+					    	<option value="title" name="title">제목</option>
+						</select>
 						<input type="text">
 						<button class="fa-solid fa-magnifying-glass"></button>
 					</form>
-					<button type="button" class="write-btn mg-right">글쓰기</button>
+					<button type="button" class="write-btn mg-right" onclick="location.href='${contextPath}/community/communityPosting/free'">글쓰기</button>
 				</div>
 			</div>
 			<div id="community-data"></div>
