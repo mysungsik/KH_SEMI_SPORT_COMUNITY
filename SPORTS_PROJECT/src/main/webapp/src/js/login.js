@@ -5,6 +5,7 @@ $(document).ready(function () {
 
 	// 로그인 폼 연결
 	userLogin()
+	observingInput();
 });
 
 function userLogin(){
@@ -57,7 +58,16 @@ function idValidate(id){
 	*/
 	let idRegex = /^(?=.*[a-z])(?!^\d+$)[a-zA-Z\d]{5,13}$/
 
+	// 형식에 맞지 않을경우
 	if (!idRegex.test(id)){
+
+		// 컬러변경 및 진동효과
+		$("input[name='login_id']").addClass("base-warn__red fc__white vibration")
+		$("input[name='login_id']").eq(0).focus();
+		setTimeout(()=>{
+			$("input[name='login_id']").removeClass("vibration")
+		}, 300)
+		
 		toastPop("warn", "올바른 아이디 형식이 아닙니다.")
 		return false;
 	}
@@ -72,10 +82,29 @@ function pwValidate(password){
 	*/
 	let idRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{10,20}$/
 
+	// 형식에 맞지 않을경우
 	if (!idRegex.test(password)){
+
+		// 컬러변경 및 진동효과
+		$("input[name='login_pw']").addClass("base-warn__red fc__white vibration")
+		$("input[name='login_pw']").eq(0).focus();
+		setTimeout(()=>{
+			$("input[name='login_pw']").removeClass("vibration")
+		}, 300)
+
 		toastPop("warn", "올바른 비밀번호 형식이 아닙니다.")
 		return false;
 	}
 
 	return true;
+}
+
+function observingInput(){
+	$("input[name='login_id']").on("input",function(){
+		$(this).removeClass("base-warn__red fc__white")
+	})
+
+	$("input[name='login_pw']").on("input",function(){
+		$(this).removeClass("base-warn__red fc__white")
+	})
 }

@@ -918,6 +918,20 @@ box-sizing: inherit;
     transition: all ease-in-out 0.1s;
 }
 
+/* Animation */
+.vibration {
+    animation: vibration 0.1s infinite;
+  }
+  
+@keyframes vibration {
+from {
+    transform: translateY(2px);
+}
+to {
+    transform: translateY(-2px);
+}
+}
+
 /* Header ------------------------------------------------------------------------- */
 header {
     height: 140px;

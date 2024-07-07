@@ -16,10 +16,10 @@
             <form name="loginForm" class="login-form base__lblue br-15 box-shadow" action="<%=request.getContextPath()%>/api/user/login" method="post">
                 <div class="login-essential mt-20">
                     <div>
-                        <input class="box-shadow" type="text" name="login_id" placeholder="ID">
+                        <input class="box-shadow" type="text" name="login_id" placeholder="ID : *소문자를 포함 5~13 글자 / 대문자 및 숫자 사용가능">
                     </div>
                     <div>
-                        <input class="box-shadow"  type="password" name="login_pw" placeholder="PASSWORD">
+                        <input class="box-shadow"  type="password" name="login_pw" placeholder="PW : *최소 한개의 소문자, 대문자, 숫자를 포함 10~20 글자 / 특수문자 사용가능">
                         <img class="password-eye" src="${contextPath}/public/icons/eye-closed.png">
                     </div>
                 </div>
