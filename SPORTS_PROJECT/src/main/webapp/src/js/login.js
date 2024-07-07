@@ -1,8 +1,4 @@
-var contextPath = "";
-
 $(document).ready(function () {
-	contextPath = "/" + window.location.pathname.split("/")[1];
-
 	// 로그인 폼 연결
 	userLogin()
 	observingInput();

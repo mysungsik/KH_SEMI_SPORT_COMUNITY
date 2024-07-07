@@ -1,5 +1,3 @@
-var contextPath = "";
-
 // 더미데이터 START ---------------------------------
 let commentsData = [
 	{category : "[ 커뮤니티 - 구호 ]", title : "커뮤니티 글1", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
@@ -98,7 +96,6 @@ let scrabData = [
 // 더미데이터 END ---------------------------------
 
 $(document).ready(function () {
-	contextPath = "/" + window.location.pathname.split("/")[1];
 	
 	// 페이지네이션 실행
 	paginationActive("comments", commentsData, paginationTemplate);

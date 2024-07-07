@@ -83,8 +83,6 @@ let reportData = [
 ]
 
 $(document).ready(function () {
-	contextPath = "/" + window.location.pathname.split("/")[1];
-	
 	// 페이지네이션 실행
 	paginationActive("user", userData, adminTemplate);
 	paginationActive("report", reportData, adminTemplate);

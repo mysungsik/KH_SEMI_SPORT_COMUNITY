@@ -63,10 +63,10 @@ function idValidate(id){
 	if (!idRegex.test(id)){
 
 		// 컬러변경 및 진동효과
-		$("input[name='login_id']").addClass("base-warn__red fc__white vibration")
-		$("input[name='login_id']").eq(0).focus();
+		$("input[name*='_id']").addClass("base-warn__red fc__white vibration")
+		$("input[name*='_id']").eq(0).focus();
 		setTimeout(()=>{
-			$("input[name='login_id']").removeClass("vibration")
+			$("input[name*='_id']").removeClass("vibration")
 		}, 300)
 		
 		toastPop("warn", "올바른 아이디 형식이 아닙니다.")
@@ -75,22 +75,23 @@ function idValidate(id){
 
 	return true;
 }
+
 function pwValidate(password){
 	/* password 체크 
 		- 최소 10글자, 최대 20글자
 		- 최소 하나의 소문자, 대문자, 숫자를 반드시 포함
 		- 특수문자 사용 가능
 	*/
-	let idRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{10,20}$/
+	let pwRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{10,20}$/
 
 	// 형식에 맞지 않을경우
-	if (!idRegex.test(password)){
+	if (!pwRegex.test(password)){
 
 		// 컬러변경 및 진동효과
-		$("input[name='login_pw']").addClass("base-warn__red fc__white vibration")
-		$("input[name='login_pw']").eq(0).focus();
+		$("input[name*='_pw']").addClass("base-warn__red fc__white vibration")
+		$("input[name*='_pw']").eq(0).focus();
 		setTimeout(()=>{
-			$("input[name='login_pw']").removeClass("vibration")
+			$("input[name*='_pw']").removeClass("vibration")
 		}, 300)
 
 		toastPop("warn", "올바른 비밀번호 형식이 아닙니다.")
@@ -100,12 +101,70 @@ function pwValidate(password){
 	return true;
 }
 
+function emailValidate(email){
+	/* email 체크 
+		- 이메일 형식
+	*/
+	let emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+
+	// 형식에 맞지 않을경우
+	if (!emailRegex.test(email)){
+
+		// 컬러변경 및 진동효과
+		$("input[name*='_email']").addClass("base-warn__red fc__white vibration")
+		$("input[name*='_email']").eq(0).focus();
+		setTimeout(()=>{
+			$("input[name*='_email']").removeClass("vibration")
+		}, 300)
+
+		toastPop("warn", "올바른 이메일 형식이 아닙니다.")
+		return false;
+	}
+
+	return true;
+}
+
+function nameValidate(name){
+	/* name 체크 
+		- 최소 10글자, 최대 20글자
+		- 최소 하나의 소문자, 대문자, 숫자를 반드시 포함
+		- 특수문자 사용 가능
+	*/
+	let nameRegex = /^[ㄱ-힣]{2,4}$/
+
+	// 형식에 맞지 않을경우
+	if (!nameRegex.test(name)){
+
+		// 컬러변경 및 진동효과
+		$("input[name*='_name']").addClass("base-warn__red fc__white vibration")
+		$("input[name*='_name']").eq(0).focus();
+		setTimeout(()=>{
+			$("input[name*='_name']").removeClass("vibration")
+		}, 300)
+
+		toastPop("warn", "올바른 이름 형식이 아닙니다.")
+		return false;
+	}
+
+	return true;
+}
+
+
+// INPUT Observing Method
 function observingInput(){
-	$("input[name='login_id']").on("input",function(){
+	$("input[name*='_id']").on("input",function(){
 		$(this).removeClass("base-warn__red fc__white")
 	})
 
-	$("input[name='login_pw']").on("input",function(){
+	$("input[name*='_pw']").on("input",function(){
+		$(this).removeClass("base-warn__red fc__white")
+	})
+	
+	$("input[name*='_email']").on("input",function(){
+		$(this).removeClass("base-warn__red fc__white")
+	})
+
+	$("input[name*='_name']").on("input",function(){
 		$(this).removeClass("base-warn__red fc__white")
 	})
 }
