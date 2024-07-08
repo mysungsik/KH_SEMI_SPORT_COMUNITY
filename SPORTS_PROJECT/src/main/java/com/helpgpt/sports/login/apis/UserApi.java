@@ -49,9 +49,9 @@ public class UserApi extends HttpServlet {
 				*/
 				
 				// Admin 유저 예시
-				loginUser = new User(1, inputId, "test@email.com", inputPw, "admin", "kia");
+//				loginUser = new User(1, inputId, "test@email.com", inputPw, "admin", "kia");
 				// 일반 유저 예시
-//				loginUser = new User(2, inputId, "test@email.com", inputPw, "user", "");
+				loginUser = new User(2, inputId, "test@email.com", inputPw, "user", "");
 	
 				/** TODO [로그인 조건 변경]
 				 	위 로그인객체생성 TODO완료시, 로그인 성공 조건을 looginUser != null 로 변경할것

@@ -33,8 +33,8 @@
                 </div>
                 <div class="login-sub">
                     <div>
-                        <a class="fc__gray">아이디 찾기</a>
-                        |<a class="fc__gray">비밀번호 찾기</a>
+                        <a class="fc__gray text-hover__gray" href="${contextPath}/forgetInfo/findId">아이디 찾기</a>
+                        |<a class="fc__gray text-hover__gray" href="${contextPath}/forgetInfo/findPw">비밀번호 찾기</a>
                         |<a class="fc__gray text-hover__gray" href="${contextPath}/signup/signupTerms">회원가입</a>
                     </div>
                     <img src="${contextPath}/public/images/mlb_logo2.jpg">
