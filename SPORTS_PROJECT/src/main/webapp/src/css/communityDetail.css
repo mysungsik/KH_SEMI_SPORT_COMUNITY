@@ -141,8 +141,14 @@ form>button{
 	align-content: center;
 	margin-right: 10px;
 
+
+}
+
+.reply-info *{
+	cursor: pointer;
 	font-size: 10px;
 }
+
 
 .page-area{
 	margin-top: 30px;
@@ -164,12 +170,20 @@ form>button{
 }
 
 /* 모달 */
-.delete-modal{
+.modal-body>form{
+	flex-direction: column;
+}
+
+.modal-row{
 	display: flex;
-	text-align: center;
+	flex-direction: column;
 	width : 80%;
-	justify-content: space-between;
 	margin-bottom: 20px;
+	
+}
+
+.select-wrapper{
+	border-bottom: 2px solid #ddd;
 }
 
 .modal-btns{
@@ -182,6 +196,13 @@ form>button{
 	width: 70%;
 	margin: auto;
 }
+
+.modal-row textarea{
+	border: none;
+	outline: none;
+	resize: none;
+}
+
 
 
 

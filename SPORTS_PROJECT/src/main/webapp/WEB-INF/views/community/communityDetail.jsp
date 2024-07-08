@@ -53,7 +53,7 @@
 				<span> | </span>
 				<span class="pointer">좋아요 3 ♥</span>
 				<span> | </span>
-				<span class="pointer" data-type="report" onclick="showModal(this)">신고</span>
+				<span class="pointer" data-type="board-report" onclick="showModal(this)">신고</span>
 			</div>
 			<div class="btn-area">
 				<button>목록으로</button>
@@ -61,7 +61,7 @@
 			<div class="update-area">
 				<span class="pointer">수정</span>
 				<span> | </span>
-				<span class="delete pointer" data-type="delete" onclick="showModal(this)">삭제</span>
+				<span class="delete pointer" data-type="board-delete" onclick="showModal(this)">삭제</span>
 			</div>
 		</section>
 		
@@ -73,7 +73,8 @@
 		</section>
 		
 		<section class="reply-area">
-			<div id="community-data"></div>
+			<div id="community-data">
+			</div>
 
 		</section>
 		

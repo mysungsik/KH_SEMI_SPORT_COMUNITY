@@ -11,7 +11,8 @@ let communityData = [
 
 // 일반 유저 페이지네이션 템플릿 함수
 function paginationTemplate(data) {
-	let item = ""
+	let item = "";
+	
 	$.each(data, function(index, d) {
 		item +=
 			`<div class="reply">
@@ -22,7 +23,15 @@ function paginationTemplate(data) {
 					<span class="fs-12">${d.comments}</span>
 				</div>
 				<div class="reply-info">
-					<div><span class="fs-10 pointer">좋아요 ${d.like} ♥</span><span class="fs-10"> | </span><span class="fs-10 pointer">신고</span></div>
+					<div>
+						<span>좋아요 ${d.like} ♥</span>
+						<span> | </span>
+						<span>수정</span>
+						<span> | </span>
+						<span data-type="reply-delete" onclick="showModal(this)">삭제</span>
+						<span> | </span>
+						<span data-type="reply-report" onclick="showModal(this)">신고</span>
+					</div>
 					<div><span class="fs-10">${d.date}</span></div>
 				</div>
 			</div>`
@@ -78,41 +87,51 @@ function showModal(el){
 	
 	console.log(modalType);
 	
+	let item = "";
 	switch(modalType){
-		case "delete" : 
-		modalEl.find(".modal-title").html(`<p class="fs-14 fc__white">게시글 삭제</p>`)
-				
-		modalEl.find(".modal-body").html(` 
-		
-			<div class="modal-row">정말 삭제하시겠습니까?</div>
-			
-			<div class="modal-btns">
-				<button class="btn-medium__blue acceptBtn"> 확인 </button>
-				<button class="btn-medium__gray cancelBtn" data-bs-dismiss="modal"> 취소 </button>
-			</div>
-			`
-		); break;
-		case "report" :
-				modalEl.find(".modal-title").html(`<p class="fs-14 fc__white">신고</p>`)
-				
-		modalEl.find(".modal-body").html(` 
-		
-			<div class="delete-modal">
-				<form>
-					
-				</form>
-			</div>
-			
-			<div class="modal-btns">
-				<button class="btn-medium__blue acceptBtn"> 제출 </button>
-				<button class="btn-medium__gray cancelBtn" data-bs-dismiss="modal"> 취소 </button>
-			</div>
-			`
-		); break;
-		
-		
-		
+		case "board-delete" : case "board-report" : item = "게시글"; break;
+		case "reply-delete" : case "reply-report" : item = "댓글"; break;
 	}
+	
+	if(modalType == "board-delete" || modalType == "reply-delete"){
+			modalEl.find(".modal-title").html(`<p class="fs-14 fc__white">${item} 삭제</p>`)
+					
+			modalEl.find(".modal-body").html(` 
+			
+				<div class="modal-row">정말 삭제하시겠습니까?</div>
+				
+				<div class="modal-btns">
+					<button class="btn-medium__blue acceptBtn"> 확인 </button>
+					<button class="btn-medium__gray cancelBtn" data-bs-dismiss="modal"> 취소 </button>
+				</div>
+				`
+			);
+	}else if(modalType == "board-report" || modalType == "reply-report"){
+		modalEl.find(".modal-title").html(`<p class="fs-14 fc__white">${item} 신고</p>`)
+		
+		modalEl.find(".modal-body").html(` 
+			<form>
+				<div class="modal-row">
+					<div class="select-wrapper">
+						<select name="team" id="team" style="border: none; outline: none;">
+					         <option value="kia">욕설 및 비하발언</option>
+					         <option value="dusan">허위사실 유포</option>
+					         <option value="la">사행성 ${item}</option>
+					    </select>
+				    </div>
+				    <div>
+				    	<textarea rows="5" cols="30" placeholder="상세 내용" ></textarea>
+				    </div>
+				</div>
+				<div class="modal-btns">
+					<button class="btn-medium__blue acceptBtn"> 확인 </button>
+					<button class="btn-medium__gray cancelBtn" data-bs-dismiss="modal"> 취소 </button>
+				</div>
+			</form>	
+				`
+			);
+	}
+	
 		
 		
 	modalEl.modal('show');
