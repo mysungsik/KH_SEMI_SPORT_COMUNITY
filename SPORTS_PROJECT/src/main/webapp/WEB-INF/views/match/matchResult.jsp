@@ -94,7 +94,7 @@
                     </div>
                 </div>
                 <div class="game-summary-bot">
-                    <button type="button" class="btn-medium__dblue" onclick="location.href='matchStadiumInfo.jsp'">경기장 정보</button>
+                    <button type="button" class="btn-medium__dblue" onclick="location.href='matchStadiumInfo'">경기장 정보</button>
                 </div>
                 <div>
 		<a href="${contextPath}/match/matchStadiumInfo.jsp">경기장 정보</a>

@@ -61,6 +61,10 @@ public class MatchController extends HttpServlet {
 			dispatcher = req.getRequestDispatcher(defaultURLPath + "matchStadiumInfo.jsp");
 			dispatcher.forward(req, resp);
 		};break;
+		case "matchStadiumInfoPlus" : {
+			dispatcher = req.getRequestDispatcher(defaultURLPath + "matchStadiumInfoPlus.jsp");
+			dispatcher.forward(req, resp);
+		};break;
 		default:System.out.println("404 페이지로 이동");
 		}
 	

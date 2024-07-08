@@ -1,0 +1,89 @@
+.cardBackground {
+	margin-top: 30px;
+	margin-bottom:30px;
+}
+.matchPlaceEnroll {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.matchPlaceEnroll_Top {
+	background-color: blue;
+	color: white;
+	height: 30px;
+	border-radius: 15px 15px 0px 0px;
+	display: flex;
+	align-items: center;
+}
+
+.matchPlaceEnroll_Top > div{
+	margin-left:30px;
+}
+
+.matchPlaceEnroll_Mid {
+	display: flex;
+	flex-direction: column;
+}
+
+.matchPlaceBox, .maxPeopleBox, .placeWidthBox, .matchPlaceImageBox,
+	.matchPlaceSeatBox {
+	display: flex;
+	height: 30px;
+}
+
+.matchPlaceName, .maxPeople, .placeWidth, .matchPlaceImage, .matchPlaceSeat
+	 {
+	width: 200px;
+	border: 1px solid black;
+	border-left: none;
+	border-top: none;
+}
+.matchPlaceImageDetail, .matchPlaceSeatDetail{
+	display:flex;
+	justify-content: space-between;
+}
+.matchPlaceName > div,
+.maxPeople > div,
+.placeWidth > div,
+.matchPlaceImage > div,
+.matchPlaceSeat > div{
+	margin-left:30px;
+	display:flex;
+	align-items:center;
+	height: 30px;
+}
+
+
+.matchPlaceDetail, .maxPeopleDetail, .placeWidthDetail, .matchPlaceImageDetail,
+	.matchPlaceSeatDetail{
+	width: 824px;
+	border-bottom: 1px solid black;
+	display: flex;
+	align-items: center;
+}
+
+
+.matchPlaceDetail input, .maxPeopleDetail input, .placeWidthDetail input,
+	.matchPlaceImageDetail input, .matchPlaceSeatDetail input{
+	width: 300px;
+	margin-left: 30px;
+}
+
+/* 등록 버튼 */
+.enrollButton {
+	display:flex;
+	justify-content: center;
+	margin-bottom:30px;
+}
+
+.editButton{
+	display:flex;
+	justify-content: space-between;
+	margin: 30px;
+	
+}
+.buttons button{
+	margin-right: 30px;
+	border-radius: 12px;
+}

@@ -28,7 +28,7 @@
 								<div>날짜 선택</div>
 							</div>
 							<div class="dateSelectDetail">
-								<input type="text">
+								<input type="date">
 							</div>
 						</div>
 						<div class="winTeamBox">
@@ -179,58 +179,62 @@
 						</div>
 					</div>
 					<table id=statsTableWin>
-						<tr>
-							<th>선수이름</th>
-							<th>이닝</th>
-							<th>투구 수</th>
-							<th>피안타</th>
-							<th>피홈런</th>
-							<th>탈삼진</th>
-							<th>사사구</th>
-							<th>실점</th>
-							<th>자책</th>
-							<th>ERA</th>
-							<th>whip</th>
-						</tr>
-						<tr>
-							<td>김동준</td>
-							<td>6</td>
-							<td>83</td>
-							<td>7</td>
-							<td>1</td>
-							<td>5</td>
-							<td>0</td>
-							<td>3</td>
-							<td>3</td>
-							<td>3.02</td>
-							<td>1.20</td>
-						</tr>
-						<tr>
-							<td>김동준</td>
-							<td>6</td>
-							<td>83</td>
-							<td>7</td>
-							<td>1</td>
-							<td>5</td>
-							<td>0</td>
-							<td>3</td>
-							<td>3</td>
-							<td>3.02</td>
-							<td>1.20</td>
-						</tr>
-						<tr>
-							<td>김동준</td>
-							<td>6</td>
-							<td>83</td>
-							<td>7</td>
-							<td>1</td>
-							<td>5</td>
-							<td>0</td>
-							<td>3</td>
-							<td>3</td>
-							<td>3.02</td>
-							<td>1.20</td>
-						</tr>
+						<thead>
+							<tr>
+								<th>선수이름</th>
+								<th>이닝</th>
+								<th>투구 수</th>
+								<th>피안타</th>
+								<th>피홈런</th>
+								<th>탈삼진</th>
+								<th>사사구</th>
+								<th>실점</th>
+								<th>자책</th>
+								<th>ERA</th>
+								<th>whip</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>김동준</td>
+								<td>6</td>
+								<td>83</td>
+								<td>7</td>
+								<td>1</td>
+								<td>5</td>
+								<td>0</td>
+								<td>3</td>
+								<td>3</td>
+								<td>3.02</td>
+								<td>1.20</td>
+							</tr>
+							<tr>
+								<td>김동준</td>
+								<td>6</td>
+								<td>83</td>
+								<td>7</td>
+								<td>1</td>
+								<td>5</td>
+								<td>0</td>
+								<td>3</td>
+								<td>3</td>
+								<td>3.02</td>
+								<td>1.20</td>
+							</tr>
+							<tr>
+								<td>김동준</td>
+								<td>6</td>
+								<td>83</td>
+								<td>7</td>
+								<td>1</td>
+								<td>5</td>
+								<td>0</td>
+								<td>3</td>
+								<td>3</td>
+								<td>3.02</td>
+								<td>1.20</td>
+							</tr>
+						</tbody>
 					</table>
 				</div>
 			</div>
