@@ -379,6 +379,8 @@ function modalConfirm(){
 		label.html("ON")
 		
 		// TODO : 값을 백엔드로 전달
+		infoModal.hide();
+		
 	}
 	// 정보 수정일 경우
 	else{
@@ -399,16 +401,6 @@ function modalConfirm(){
 		
 	}
 }
-
-// 모달 회색 부분을 클릭시 취소버튼과 동일하게 
-const commonModal = $('#commonModal');
-
-// 부트스트랩의 특수 이벤트(hidden.bs.modal : 모달이 닫힐때)
-commonModal.on('hidden.bs.modal', function (e) {
-    if (!e.target.contains(e.relatedTarget)) {
-	modalCancel();
-    }
-});
 
 // 모달의 취소 클릭
 function modalCancel(){
