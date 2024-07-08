@@ -60,10 +60,10 @@
 .info-area>.info{
 	align-self: center;
 	font-size: 10px;
+	width: 200px;
 }
 
 .btn-area{
-	margin-right: 437px;
 	margin-bottom: 10px;
 }
 
@@ -73,6 +73,15 @@
 	border: none;
 	border-radius: 5px;
 }
+
+.update-area{
+	padding-right: 10px;
+	align-content: center;
+	text-align: end;
+	width: 200px;
+}
+
+
 
 /* 댓글 입력 */
 .input-area{
@@ -153,6 +162,28 @@ form>button{
 .pointer{
 	cursor: pointer;
 }
+
+/* 모달 */
+.delete-modal{
+	display: flex;
+	text-align: center;
+	width : 80%;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.modal-btns{
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+
+.modal-content{
+	width: 70%;
+	margin: auto;
+}
+
+
 
 
 

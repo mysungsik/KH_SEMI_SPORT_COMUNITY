@@ -47,6 +47,7 @@
 		
 		</form>
 	</main>
+	
 	<!-- Be sure to include this TAG -->
 	<jsp:include page="/WEB-INF/views/layouts/footer.jsp" />
 

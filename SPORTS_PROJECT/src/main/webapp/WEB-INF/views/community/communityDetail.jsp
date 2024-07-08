@@ -53,10 +53,15 @@
 				<span> | </span>
 				<span class="pointer">좋아요 3 ♥</span>
 				<span> | </span>
-				<span class="pointer">신고</span>
+				<span class="pointer" data-type="report" onclick="showModal(this)">신고</span>
 			</div>
 			<div class="btn-area">
 				<button>목록으로</button>
+			</div>
+			<div class="update-area">
+				<span class="pointer">수정</span>
+				<span> | </span>
+				<span class="delete pointer" data-type="delete" onclick="showModal(this)">삭제</span>
 			</div>
 		</section>
 		
@@ -81,6 +86,19 @@
 
 
 	</main>
+	<!-- Modal -->
+	<div class="modal" id="communityModal" tabindex="-1" aria-hidden="true">
+      <input type="hidden" name="modalType" value=""/>
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header base__blue">
+	        <h1 class="modal-title" id="commonModalLabel"></h1>
+	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	      </div>
+	      <div class="modal-body"></div>
+	    </div>
+	  </div>
+	</div>
 	<!-- Be sure to include this TAG -->
 	<jsp:include page="/WEB-INF/views/layouts/footer.jsp" />
 

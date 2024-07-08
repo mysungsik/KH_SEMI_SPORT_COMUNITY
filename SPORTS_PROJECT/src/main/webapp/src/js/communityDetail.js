@@ -70,3 +70,52 @@ function paginationActive(id, datas, template) {
 	}
 }
 
+// 모달
+function showModal(el){
+	let modalEl = $('#communityModal');
+	
+	let modalType = $(el).data("type");
+	
+	console.log(modalType);
+	
+	switch(modalType){
+		case "delete" : 
+		modalEl.find(".modal-title").html(`<p class="fs-14 fc__white">게시글 삭제</p>`)
+				
+		modalEl.find(".modal-body").html(` 
+		
+			<div class="modal-row">정말 삭제하시겠습니까?</div>
+			
+			<div class="modal-btns">
+				<button class="btn-medium__blue acceptBtn"> 확인 </button>
+				<button class="btn-medium__gray cancelBtn" data-bs-dismiss="modal"> 취소 </button>
+			</div>
+			`
+		); break;
+		case "report" :
+				modalEl.find(".modal-title").html(`<p class="fs-14 fc__white">신고</p>`)
+				
+		modalEl.find(".modal-body").html(` 
+		
+			<div class="delete-modal">
+				<form>
+					
+				</form>
+			</div>
+			
+			<div class="modal-btns">
+				<button class="btn-medium__blue acceptBtn"> 제출 </button>
+				<button class="btn-medium__gray cancelBtn" data-bs-dismiss="modal"> 취소 </button>
+			</div>
+			`
+		); break;
+		
+		
+		
+	}
+		
+		
+	modalEl.modal('show');
+}
+
+
