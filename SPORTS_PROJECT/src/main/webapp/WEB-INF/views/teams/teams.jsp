@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+	<jsp:include page="/WEB-INF/views/layouts/header-dependencies.jsp"/>
     <link rel="stylesheet" href="${contextPath}/src/css/teams.css">
     <script src="${contextPath}/src/css/teams.js" defer></script>
     <title>MLB Teams</title>
@@ -26,7 +26,7 @@
             <section class="main-content">
                 <article class="teams">
                     <div class="al-east-icons">
-                        <a href="${contextPath}/teams/team/kia" >
+                        <a href="${contextPath}/teams/kia" >
                             <div class="teams-card br-10 mb-10 mr-20">
                             	<div class="team-logo-img">
 	                                <img src="https://upload.wikimedia.org/wikipedia/en/e/e0/Kia_Tigers_2017_New_Team_Logo.png" class="team-logo" alt="구단사진1">
@@ -38,7 +38,7 @@
                             </div>
                         </a>
 						
-						<a href="${contextPath}/teams/team/lg" >
+						<a href="${contextPath}/teams/lg" >
                             <div class="teams-card br-10 mb-10 mr-20">
                             	<div class="team-logo-img">
 	                                <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LG_Twins_2017.png" class="team-logo" alt="구단사진1">
@@ -50,7 +50,7 @@
                             </div>
                         </a>
                         
-                        <a href="${contextPath}/teams/team/doosan" >
+                        <a href="${contextPath}/teams/doosan" >
                             <div class="teams-card br-10 mb-10 mr-20">
                             	<div class="team-logo-img">
 	                                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/98/Doosan_Bears.svg/177px-Doosan_Bears.svg.png" class="team-logo" alt="구단사진1">

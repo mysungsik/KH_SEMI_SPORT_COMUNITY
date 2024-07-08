@@ -26,25 +26,20 @@ public class TeamsController extends HttpServlet {
 		// Path 지정
 		String reqPath = req.getPathInfo();
 		String path = "";
-		String team = "";
 		
 		if(reqPath != null) {
 			path = reqPath.split("/")[1];
-			team = reqPath.split("/")[2];
 		}
 		
 		// 경로에 따라 필요한 페이지로 추가 이동
-		switch (path) {
-		case "": {
+		if(path.equals("")) {
 			dispatcher = req.getRequestDispatcher(defaultURLPath + "teams.jsp");
 			dispatcher.forward(req, resp);
-			}break;
-		case "team":{
-			req.setAttribute("team", team);
+		}else{
+			req.setAttribute("path", path);
 			dispatcher = req.getRequestDispatcher(defaultURLPath + "teamsEachMain.jsp");
 			dispatcher.forward(req, resp);
-		};break;
-		default:System.out.println("404 페이지로 이동");}
+		}
 		
 	}
 }

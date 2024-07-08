@@ -7,7 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="${contextPath}/src/css/player.css">
+    
+	<script src="${contextPath}/src/util/pagination.js" defer></script>
+    <script src="${contextPath}/src/js/communityDetail.js" defer></script>
     <script src="${contextPath}/src/css/teams.js" defer></script>
+    
     <title>Player</title>
     <script src="https://kit.fontawesome.com/cb5f1fee4d.js" crossorigin="anonymous"></script>
 </head>
@@ -601,29 +605,32 @@
 					
 				</thead>
 				<tbody>
-					<img src="" alt="">
 				</tbody>
 			</table>
 		</div>
 
 		<!-- 응원 댓글 -->
-		<div class="pitching-records card__lblue">
-			<table class="pitching-records-table">
-				<thead>
-					<tr class="pitching-records-table-title">
-						<th  colspan="12">응원 댓글</th>
-					</tr>
+		<div class="player-comment card__lblue">
+			<div class="player-comment-content">
+				<div class="title">응원댓글</div>
+				<div class="former-comment">
 					
-				</thead>
-				<tbody>
-					<tr>
-						<td colspan="12">
-							<input type="text">
-							<button type="submit">댓글 입력</button>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+				<section class="reply-area">
+					<div id="community-data"></div>
+				</section>
+				
+				<section class="page-area">
+					<div id="community-pagination"></div>
+				</section>
+				
+				<section class="input-area">
+					<form>
+						<textarea style="resize: none" placeholder="댓글을 입력해주세요."></textarea>
+						<button>댓글</button>						
+					</form>
+				</section>
+				
+			</div>
 		</div>
 	</main>
 	

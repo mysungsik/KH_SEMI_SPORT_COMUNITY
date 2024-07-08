@@ -7,8 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="${contextPath}/src/css/teamsEachMain.css">
-<link rel="stylesheet"
-	href="${contextPath}/src/css/team/${requestScope.team}.css">
 <!-- Link Swiper's CSS -->
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -17,7 +15,7 @@
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/layouts/header-teams.jsp" />
-	<input type="hidden" name="team" value="${requestScope.team }">
+	<input type="hidden" name="path" value="${requestScope.path}">
 	<!-- 날짜 슬라이드 시작 -->
 	<div class="team-each-image">
 		<div class="today-schedule br-10">

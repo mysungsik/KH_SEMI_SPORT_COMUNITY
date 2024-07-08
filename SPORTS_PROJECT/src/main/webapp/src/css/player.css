@@ -313,3 +313,122 @@ display: -webkit-box;
 .pitching-records td{
 	background-color: white;
 }
+
+
+/* 응원댓글 */ 
+.player-comment{
+	display: flex;
+	justify-content: center;
+	align-items:center;
+}
+
+.player-comment .player-comment-content{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-content:center;
+	width:95%;
+	height:95%;
+	border-radius: 10px;
+	overflow: hidden;
+	
+}
+
+.player-comment .title{
+	width:100%;
+	background-color: #458BE2;
+    color: #fff;
+	font-size: 20px;
+	padding:10px 0;
+	text-align: center;
+	
+	
+}
+
+.player-comment-content .former-comment{
+    display:row;
+    margin: 10px 0; 
+}
+
+.player-comment-content .former-comment span{
+	display: inlin-block;
+ 	border-radius:10px;
+    padding:5px;
+    font-size: 18px;
+}
+
+
+.player-comment textarea{
+	width: 100%;
+	border-radius: 10px;
+	border:0;
+}
+
+.player-comment button{
+	height : 30px;
+	width: 90px;
+	border-radius : 10px;
+	position: absolute;
+	bottom:42px;
+	right: 50px;
+	background-color: #458BE2;
+	color: #fff;
+	border: 0;
+}
+
+/* 댓글 */
+.reply-area{
+	margin-top: 20px;
+	height: 250px;
+}
+
+
+.reply{
+	height: 50px;
+	display: flex;
+	border-bottom: 1px sollid black;
+}
+
+.author{
+	flex-basis: 10%;
+	align-content: center;
+	text-align: center;
+	margin-left: 10px;
+}
+
+.comment{
+	flex-basis: 75%;
+	align-content: center;
+}
+
+.reply-info{
+	flex-basis: 15%;
+	text-align: end;
+	align-content: center;
+	margin-right: 10px;
+
+	font-size: 10px;
+}
+
+.page-area{
+	margin-top: 30px;
+	margin-bottom: 60px;
+}
+
+.page-area ul{
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+
+.page-area a{
+	cursor: pointer;
+}
+
+.pointer{
+	cursor: pointer;
+}
+
+
+
+
