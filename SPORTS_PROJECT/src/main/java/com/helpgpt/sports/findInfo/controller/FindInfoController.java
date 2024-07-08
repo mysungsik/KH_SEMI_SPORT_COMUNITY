@@ -1,4 +1,4 @@
-package com.helpgpt.sports.forgetInfo.controller;
+package com.helpgpt.sports.findInfo.controller;
 
 import java.io.IOException;
 
@@ -12,15 +12,15 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ForgetInfoController
  */
-@WebServlet(name = "/ForgetInfoController",
+@WebServlet(name = "/FindInfoController",
 			urlPatterns ={
-					"/forgetInfo",
-					"/forgetInfo/*"
+					"/findInfo",
+					"/findInfo/*"
 				}
 			)
-public class ForgetInfoController extends HttpServlet {
+public class FindInfoController extends HttpServlet {
 	RequestDispatcher dispatcher;
-	final String defaultURLPath = "/WEB-INF/views/forgetInfo/";
+	final String defaultURLPath = "/WEB-INF/views/findInfo/";
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -44,11 +44,11 @@ public class ForgetInfoController extends HttpServlet {
 			case "findPw" : {
 				RequestDispatcher dispatcher = request.getRequestDispatcher(defaultURLPath + "findPw.jsp");
 				dispatcher.forward(request, response);
-			}
+			};break;
 			case "findResult" : {
 				RequestDispatcher dispatcher = request.getRequestDispatcher(defaultURLPath + "findResult.jsp");
 				dispatcher.forward(request, response);
-			}
+			};break;
 		}
 	}
 }

@@ -1,4 +1,4 @@
-package com.helpgpt.sports.forgetInfo.apis;
+package com.helpgpt.sports.findInfo.apis;
 
 import java.io.IOException;
 import java.io.PrintWriter;
