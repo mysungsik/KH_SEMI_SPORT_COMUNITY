@@ -47,29 +47,13 @@
 	                <li><a class="dropdown-item fs-20__b text-hover__blue" href="${contextPath}/profile/myInfo">내 정보 관리</a></li>
 	                <li><a class="dropdown-item fs-20__b text-hover__blue" href="${contextPath}/profile/resign">회원 탈퇴</a></li>
 	            
+	            	<c:if test="${loginUser.getUserAuthority() == 'admin' }">
+		                <p class="header-title fc__gray fs-20__b"> 회원 관리 </p>
+		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="${contextPath}/admin/profile/userManagement">유저 관리</a></li>
+		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="${contextPath}/admin/profile/reportManagement">신고 관리</a></li>
+					</c:if>
 	            	<li>
 	            		<p class="dropdown-item logout fs-12 text-hover__blue" onclick="logout()"> 로그아웃 </p>
-	            	</li>
-	            </ul>
-	        </div>
-	    </div>
-	    <div class="header-bot">
-	        <div class="header-nav">
-	            <ul class="d-flex">
-	            	<li>
-		                <a class="fs-14 fc__white text-hover__white" href="${contextPath}/dashboard">HOME</a>
-	            	</li>
-	            	<li>
-		                <a class="fs-14 fc__white text-hover__white" href="${contextPath}/match">TODAY</a>
-	            	</li>
-	            	<li>
-		                <a class="fs-14 fc__white text-hover__white" href="${contextPath}/news">NEWS</a>
-	            	</li>
-	            	<li>
-		                <a class="fs-14 fc__white text-hover__white" href="${contextPath}/community">COMMUNITY</a>
-	            	</li>
-	            	<li>
-		                <a class="fs-14 fc__white text-hover__white" href="${contextPath}/teams">TEAMS</a>
 	            	</li>
 	            </ul>
 	        </div>
@@ -86,27 +70,27 @@
                    <a class="text-hover__gray fc__gray fs-14__b">로그인후 이용해주세요</a>
                </div>
            </div>
-       </div>
-        <div class="header-bot">
-            <div class="header-nav">
-           		<ul class="d-flex">
-		           	<li>
-		                <a class="fs-14 fc__white text-hover__white" href="${contextPath}/dashboard">HOME</a>
-		           	</li>
-		           	<li>
-		                <a class="fs-14 fc__white text-hover__white" href="${contextPath}/match">TODAY</a>
-		           	</li>
-		           	<li>
-		                <a class="fs-14 fc__white text-hover__white" href="${contextPath}/news">NEWS</a>
-		           	</li>
-		           	<li>
-		                <a class="fs-14 fc__white text-hover__white" href="${contextPath}/community">COMMUNITY</a>
-		           	</li>
-		           	<li>
-		                <a class="fs-14 fc__white text-hover__white" href="${contextPath}/teams">TEAMS</a>
-		           	</li>
-          		</ul>
-            </div>
         </div>
 	</c:if>
+    <div class="header-bot">
+        <div class="header-nav">
+       		<ul class="d-flex">
+	         	<li>
+	              <a class="fs-14 fc__white text-hover__white" href="${contextPath}/dashboard">HOME</a>
+	         	</li>
+	         	<li>
+	              <a class="fs-14 fc__white text-hover__white" href="${contextPath}/match">TODAY</a>
+	         	</li>
+	         	<li>
+	              <a class="fs-14 fc__white text-hover__white" href="${contextPath}/news">NEWS</a>
+	         	</li>
+	         	<li>
+	              <a class="fs-14 fc__white text-hover__white" href="${contextPath}/community">COMMUNITY</a>
+	         	</li>
+	         	<li>
+	              <a class="fs-14 fc__white text-hover__white" href="${contextPath}/teams">TEAMS</a>
+	         	</li>
+      		</ul>
+        </div>
+    </div>
 </header>

@@ -967,7 +967,6 @@ header .header-top .header-top-user{
     transform: translate(-250px, 52.5px) !important;
     inset: 0px auto auto 0px !important;
     width: 430px;
-    height: 500px;
     border-radius: 15px;
 }
 
