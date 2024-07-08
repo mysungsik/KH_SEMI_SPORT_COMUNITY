@@ -1,0 +1,78 @@
+body {
+	font-family: Arial, sans-serif;
+}
+
+.matchDate_Top {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.matchDate_Top h1 {
+	margin: 0;
+}
+
+.date {
+	font-size: 1.2em;
+	margin: 10px 0;
+}
+
+.navigation {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.matchDate_Top .navigation span {
+	margin: 0 10px;
+}
+
+.days {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 10px;
+}
+
+.days div {
+	margin: 0 5px;
+}
+
+table {
+	width: 964px;
+	border-collapse: collapse;
+}
+
+table, th, td {
+	border: 1px solid lightgray;
+}
+
+th, td {
+	padding: 8px;
+	text-align: center;
+}
+
+th {
+	background-color: #f2f2f2;
+}
+
+.game_records{
+	display:flex;
+	justify-content: center;
+	flex-direction:column;
+	margin-left:30px;
+}
+.game_recordsTop{
+	background-color:blue;
+	margin-top:20px;
+	border-radius:15px 15px 0 0;
+}
+.game_recordsTop div{
+	color: white;
+	height:30px;
+	display:flex;
+	align-items:center;
+}
+.game_recordsTable{
+	display:flex;
+	justify-content: center;
+}
