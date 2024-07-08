@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<jsp:include page="/WEB-INF/views/layouts/header-dependencies.jsp"/>
 <link rel="stylesheet" href="${contextPath}/src/css/communityPosting.css">
 <script src="${contextPath}/src/js/communityPosting.js" defer></script>
 <script src="${contextPath}/src/util/pagination.js" defer></script>
@@ -36,7 +37,7 @@
 					</div>
 				</div>
 				<div class="input-content">
-					<textarea rows="28" cols="101" name="content" style="resize: none; outline: none; border: none;" placeholder="내용을 입력하세요."></textarea>
+					<textarea rows="28" cols="95" name="content" style="resize: none; outline: none; border: none;" placeholder="내용을 입력하세요."></textarea>
 				</div>
 			</section>
 			<section class="btn-area">

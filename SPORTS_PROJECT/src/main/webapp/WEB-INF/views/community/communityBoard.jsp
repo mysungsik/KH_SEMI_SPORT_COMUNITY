@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<jsp:include page="/WEB-INF/views/layouts/header-dependencies.jsp"/>
 <link rel="stylesheet" href="${contextPath}/src/css/communityBoard.css">
 <script src="${contextPath}/src/js/communityBoard.js" defer></script>
 <script src="${contextPath}/src/util/pagination.js" defer></script>

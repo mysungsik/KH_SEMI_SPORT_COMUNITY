@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<jsp:include page="/WEB-INF/views/layouts/header-dependencies.jsp"/>
 <link rel="stylesheet" href="${contextPath}/src/css/community.css">
 <script src="${contextPath}/src/js/community.js" defer></script>
 <script src="${contextPath}/src/util/pagination.js" defer></script>
@@ -15,7 +15,7 @@
 <title>COMMUNITY</title>
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/layouts/header.jsp" />
+	<jsp:include page="/WEB-INF/views/layouts/header.jsp"/>
 	<!-- Write Main Content -->
 	<main class="container">
 
