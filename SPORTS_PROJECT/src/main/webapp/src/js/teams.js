@@ -59,7 +59,6 @@ var swiper3 = new Swiper(".swiper-info", {
 // nav
 // http://localhost:8083/ksy/teams/kia
 $(document).ready(function() {
-	contextPath ="/"+ window.location.pathname.split("/")[1];
 	let team = $("input[name='team']");
 	let team_value = team.val();
 	console.log(team_value);

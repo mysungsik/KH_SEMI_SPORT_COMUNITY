@@ -50,7 +50,7 @@
 				<tr >
 					<td>
 						<div class="card-thumbnail">
-							<a href="${contextPath }/src/pages/teams/player.jsp">
+							<a href="${contextPath }/src/pages/teams/players.jsp">
 								<img class="card-thumbnail-img"
 									src="${contextPath}/public/images/news_example.jpg">
 							</a>

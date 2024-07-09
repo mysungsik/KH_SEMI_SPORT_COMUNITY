@@ -62,32 +62,33 @@ public class TeamEachController extends HttpServlet{
 			switch(page) {
 			case "" :{
 				dispatcher = req.getRequestDispatcher(defaultURLPath + "teamsEachMain.jsp");
-
 				dispatcher.forward(req, resp);
 			};break;
 			case "info" :{
 				dispatcher = req.getRequestDispatcher(defaultURLPath + "teamInfo.jsp");
-				req.setAttribute("page", page); 
 				dispatcher.forward(req, resp);
 			};break;
 
 			case "players" :{
 				dispatcher = req.getRequestDispatcher(defaultURLPath + "teamPlayers.jsp");
-				req.setAttribute("page", page); 
 				dispatcher.forward(req, resp);
 			};break;
 
 			case "schedule" :{
 				dispatcher = req.getRequestDispatcher(defaultURLPath + "teamSchedule.jsp");
-				req.setAttribute("page", page); 
 				dispatcher.forward(req, resp);
 			};break;
 
 			case "content" :{
 				dispatcher = req.getRequestDispatcher(defaultURLPath + "teamContent.jsp");
-				req.setAttribute("page", page); 
 				dispatcher.forward(req, resp);
 			};break;
+			
+			case "player":{
+				String playerNo = req.getParameter("playerNo");
+				//DB에서 값 조회
+				dispatcher = req.getRequestDispatcher(defaultURLPath + "player.jsp");
+			}
 
 			default:System.out.println("404 페이지로 이동");}
 		}
