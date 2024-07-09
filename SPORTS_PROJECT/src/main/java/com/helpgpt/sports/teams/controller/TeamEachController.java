@@ -88,6 +88,7 @@ public class TeamEachController extends HttpServlet{
 				String playerNo = req.getParameter("playerNo");
 				//DB에서 값 조회
 				dispatcher = req.getRequestDispatcher(defaultURLPath + "player.jsp");
+				dispatcher.forward(req, resp);
 			}
 
 			default:System.out.println("404 페이지로 이동");}

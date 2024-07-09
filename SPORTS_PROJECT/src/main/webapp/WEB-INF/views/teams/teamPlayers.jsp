@@ -12,6 +12,7 @@
     <script src="https://kit.fontawesome.com/cb5f1fee4d.js" crossorigin="anonymous"></script>
 </head>
 <body>
+	<input type="hidden" name="team" value="${requestScope.team}">
 	<jsp:include page="/WEB-INF/views/layouts/header-teams.jsp"/>
 	<!-- 페이지 커버 -->
 	<div class="pagecover">
@@ -50,16 +51,15 @@
 				<tr >
 					<td>
 						<div class="card-thumbnail">
-							<a href="${contextPath }/src/pages/teams/players.jsp">
-								<img class="card-thumbnail-img"
-									src="${contextPath}/public/images/news_example.jpg">
+							<a href="${contextPath }/team/${requestScope.team}/player">
+								<img class="card-thumbnail-img" src="${contextPath}/public/images/news_example.jpg">
 							</a>
 							<div class="card-thumbnail-infos">
 								<div class="card-thumbnail-position ml-10">
 									<p class="fs-12 fc__white">투수</p>
 								</div>
 								<div class="card-thumbnail-content fs-20">
-									<a href="${contextPath }/src/pages/teams/player.jsp" class="fs-20 fc__white">99 류현진</a>
+									<a href="${contextPath }/team/${requestScope.team}/player" class="fs-20 fc__white">99 류현진</a>
 								</div>
 							</div>
 						</div>	

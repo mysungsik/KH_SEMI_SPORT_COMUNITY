@@ -38,7 +38,7 @@
 									<p class="fs-14  fc__white">BLUE JAYS</p>
 									<p class="fs-12 fc__white">선발 : 김승연</p>
 								</div>
-								<a href="${contextPath}/src/pages/match/matchResult.jsp"><button>경기
+								<a href="${contextPath}/match/matchResult"><button>경기
 										결과</button></a>
 								<div class="swiper-right-team">
 									<p class="fs-14  fc__white">BLUE JAYS</p>
@@ -64,7 +64,7 @@
 									<p class="fs-14  fc__white">BLUE JAYS</p>
 									<p class="fs-12 fc__white">선발 : 김승연</p>
 								</div>
-								<a href="${contextPath}/src/pages/match/matchResult.jsp"><button>경기
+								<a href="${contextPath}/match/matchResult"><button>경기
 										결과</button></a>
 								<div class="swiper-right-team">
 									<p class="fs-14  fc__white">BLUE JAYS</p>
@@ -90,7 +90,7 @@
 									<p class="fs-14  fc__white">BLUE JAYS</p>
 									<p class="fs-12 fc__white">선발 : 김승연</p>
 								</div>
-								<a href="${contextPath}/src/pages/match/matchResult.jsp"><button>경기
+								<a href="${contextPath}/match/matchResult"><button>경기
 										결과</button></a>
 								<div class="swiper-right-team">
 									<p class="fs-14  fc__white">BLUE JAYS</p>
@@ -215,14 +215,14 @@
 	        </article>
 	        <article class="info-content swiper-info">
 	        	<div class="swiper-wrapper">
-	            	<a class="swiper-slide fs-12" href="#"><span>안녕히 계세요 여러분~ 저는 행복과 자유를 찾아 떠납니다~~~ 모두 행복하세요~~~~~</span></a>
-	            	<a class="swiper-slide fs-12"  href="#" href="#"><span>서버 접습니다.</span></a>
-	            	<a class="swiper-slide fs-12"  href="#"><span>집에 가고 싶습니다.</span></a>
-	            	<a class="swiper-slide fs-12"  href="#"><span>포켓몬고 시작하세요. 동준님. 선물 하루에 하나씩 줄게~~~~~~~~~~~~~~~~~~ 어때!!!!!!!!!!!</span></a>
+	            	<a class="swiper-slide fs-12" href="${contextPath}/community/communityDetail/1"><span>안녕히 계세요 여러분~ 저는 행복과 자유를 찾아 떠납니다~~~ 모두 행복하세요~~~~~</span></a>
+	            	<a class="swiper-slide fs-12"  href="${contextPath}/community/communityDetail/2"><span>서버 접습니다.</span></a>
+	            	<a class="swiper-slide fs-12"  href="${contextPath}/community/communityDetail/3"><span>집에 가고 싶습니다.</span></a>
+	            	<a class="swiper-slide fs-12"  href="${contextPath}/community/communityDetail/4"><span>포켓몬고 시작하세요. 동준님. 선물 하루에 하나씩 줄게~~~~~~~~~~~~~~~~~~ 어때!!!!!!!!!!!</span></a>
 	        	</div>
 	        </article>
 	        <article class="suppl">
-	        	<a href="#"><span class="see-more fs-12 fc__gray">더보기▶</span></a>
+	        	<a href="${contextPath}/community/communityBoard/info"><span class="see-more fs-12 fc__gray">더보기▶</span></a>
 	        </article>
     	</div>
     </section>

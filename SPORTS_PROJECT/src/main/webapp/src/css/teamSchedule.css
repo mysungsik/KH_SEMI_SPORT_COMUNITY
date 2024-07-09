@@ -1,0 +1,119 @@
+/* 유틸 */
+* {
+box-sizing: border-box;
+/*   border: 1px solid black;  */
+}
+
+/* 페이지 커버 */
+.pagecover{
+	height: 200px; 
+	
+}
+
+.pagecover-img{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 150px;
+	background-color: #D2D2D2;
+}
+
+/* 소개띠 */
+.pagecover-bottom{
+	height: 50px;
+	background-color: #458BE2
+	
+}
+
+.pagecover-bottom-inner{
+	max-width: 1024px;
+	justify-content: end;
+	margin: 0 auto;
+	text-align: center;
+}
+
+
+/* container */
+.container {
+width: 1024px;
+}
+
+/*  팀 경기 날짜  */
+.team-match-area{
+  width: 1024px;
+  height: 400px;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.team-match-area .team-match{
+  width:320px;
+  height:220px;
+  border:1px solid #727272;
+}
+
+.team-match-area .team-match-today{
+  width:370px;
+  height:250px;
+  border:1px solid #727272;
+}
+
+
+.team-match-area .team-match-date p{
+  text-align: center;
+  padding: 5px 0;
+}
+
+
+.team-match-area .team-match-info> p{
+  text-align: center;
+}
+
+.team-match-info .score-area{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.score-area img{
+  width:100px;
+  height:100px;
+}
+
+.team-match-today .score-area img{
+  width: 105px;
+  height: 105px;
+}
+
+.score-area .left-team,
+.score-area .middle-info,
+.score-area .right-team{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score-area .middle-info{
+  margin-top: 30px;
+}
+
+.score-area .middle-info button{
+  padding: 10px 20px;
+  margin-top: 20px;
+  border:0;
+  overflow: hidden;
+}
+
+.team-match-today .middle-info{
+  margin-top: 40px;
+}
+
+.team-match-today .middle-info button{
+  padding: 15px 25px;
+}
+
+/*  팀 경기 날짜 끝 */
+
+/* 스케쥴  api */
