@@ -22,9 +22,14 @@
 		<form action="#">
 			<section class="title-area">
 				<div class="title">
-					<span class="fs-28__b">게시글 작성</span>
+					<span class="fs-28__b posting-type">게시글 작성</span>
 				</div>
-				<div class="category"></div>
+				<div class="category">
+					<select name="category" id="category"  onchange="selectCategory(this)" style="border: none; outline: none;">
+		            	<option value="free" name="free">자유 게시판</option>
+				    	<option value="cheer" name="cheer">응원 게시판</option>
+					</select>
+				</div>
 				<div class="team"></div>
 			</section>
 			<section class="posting-area">

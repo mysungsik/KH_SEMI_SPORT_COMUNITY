@@ -59,7 +59,7 @@
 				<button>목록으로</button>
 			</div>
 			<div class="update-area">
-				<span class="pointer">수정</span>
+				<span class="pointer" onclick="location.href='${contextPath}/community/communityPosting/update'">수정</span>
 				<span> | </span>
 				<span class="delete pointer" data-type="board-delete" onclick="showModal(this)">삭제</span>
 			</div>

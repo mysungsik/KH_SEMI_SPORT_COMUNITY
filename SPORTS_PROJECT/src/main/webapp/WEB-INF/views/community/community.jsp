@@ -37,7 +37,7 @@
 						<input type="text">
 						<button class="fa-solid fa-magnifying-glass"></button>
 					</form>
-					<button type="button" class="write-btn mg-right" onclick="location.href='${contextPath}/community/communityPosting/free'">글쓰기</button>
+					<button type="button" class="write-btn mg-right" onclick="location.href='${contextPath}/community/communityPosting/new'">글쓰기</button>
 				</div>
 			</article>
 			<article class="swiper-wrapper">

@@ -172,6 +172,7 @@ form>button{
 /* 모달 */
 .modal-body>form{
 	flex-direction: column;
+	width: 100%;
 }
 
 .modal-row{

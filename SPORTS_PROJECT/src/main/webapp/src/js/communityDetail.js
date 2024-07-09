@@ -119,9 +119,7 @@ function showModal(el){
 					         <option value="la">사행성 ${item}</option>
 					    </select>
 				    </div>
-				    <div>
-				    	<textarea rows="5" cols="30" placeholder="상세 내용" ></textarea>
-				    </div>
+				    <textarea rows="5" cols="30" placeholder="상세 내용" ></textarea>
 				</div>
 				<div class="modal-btns">
 					<button class="btn-medium__blue acceptBtn"> 확인 </button>
