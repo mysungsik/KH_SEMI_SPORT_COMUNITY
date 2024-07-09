@@ -2,6 +2,7 @@ package com.helpgpt.sports.findInfo.apis;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,6 +35,9 @@ public class FindUserApi extends HttpServlet {
 		
  		switch (path) {
 			case "findId" : {
+				String inputEmail = request.getParameter("inputEmail");
+				String inputName = request.getParameter("inputName");
+				
 				String userId = null;
 				
 				// TODO : ID 를 DB 로 부터 찾는다. with Service, DAO
@@ -55,7 +59,10 @@ public class FindUserApi extends HttpServlet {
 			};break;
 			
 			case "findPw" : {
-				boolean isFindPw = false;
+				String inputId = request.getParameter("inputId");
+				String inputEmail = request.getParameter("inputEmail");
+				
+				boolean isFindPw = true;
 				
 				// TODO : PW 를 DB 로 부터 찾는다. with Service, DAO
 				System.out.println("PW 를 DB 로 부터 찾는다. with Service, DAO");
@@ -65,7 +72,6 @@ public class FindUserApi extends HttpServlet {
 					result.put("message", "일치하는 비밀번호를 찾았습니다.");
 					result.put("status", 200);
 				} else {
-					result.put("data", "fail");
 					result.put("message", "일치하는 비밀번호를 찾지 못했습니다.");
 					result.put("status", 200);
 				}

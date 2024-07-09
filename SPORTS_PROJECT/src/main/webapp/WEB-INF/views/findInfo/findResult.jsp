@@ -12,28 +12,28 @@
 	<jsp:include page="/WEB-INF/views/layouts/header.jsp"/>
 	<main>
         <section class="container">
-            <p class="header-text"> 비밀번호 찾기 </p>
+            <p class="header-text"> 아이디 찾기 </p>
             <hr class="hr__gray">
-            <form name="findPwForm" class="login-form base__lblue br-15 box-shadow" action="<%=request.getContextPath()%>/api/user/login" method="post">
+            <div class="findResultForm base__lblue br-15 box-shadow">
+                <p> 고객님 아이디 찾기 결과입니다. </p>
                 <div class="login-essential mt-20">
-                    <div>
-                        <input class="box-shadow"  type="text" name="find_id" placeholder="ID : *가입에 사용하신 ID를 입력해주세요">
-                    </div>
-                    <div>
-                        <input class="box-shadow" type="text" name="find_email" placeholder="EMAIL : *가입에 사용하신 이메일을 입력해주세요">
-                    </div>
+                   <p> 입력한 정보로 조회된 아이디는 <span>AAAAA</span> 입니다.</p>
+	                <div>
+	                	<p> 이름 : <span> 이이이름 </span></p>
+	                	<p> 이메일 : <span> eamil@email.com </span></p>
+	                </div>
                 </div>
-                <button class="btn-big__blue">
-                    비밀번호 찾기
-                </button>
+                <a class="btn-big__blue" href="${contextPath}/login">
+                    로그인 페이지로 이동
+                </a>
                 <div class="login-sub">
                     <div>
-                        <a class="fc__gray text-hover__gray" href="${contextPath}/forgetinfo/findId">아이디 찾기</a>
+                        <a class="fc__gray text-hover__gray" href="${contextPath}/findInfo/findPw">비밀번호 찾기</a>
                         |<a class="fc__gray text-hover__gray" href="${contextPath}/login">로그인</a>
                     </div>
                     <img src="${contextPath}/public/images/mlb_logo2.jpg">
                 </div>
-            </form>
+            </div>
         </section>
     </main>
 	<jsp:include page="/WEB-INF/views/layouts/footer.jsp"/>
