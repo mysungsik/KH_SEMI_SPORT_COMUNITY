@@ -103,6 +103,15 @@ section{
 	font-size: 48px;
 }
 
+#heart{
+	color:#ddd;
+	cursor:pointer;
+}
+
+#heart.active{
+	color:#EF4E4E;
+	cursor:pointer;
+}
 
 .player-info-content .info-content .info-content-bottom{
 	font-size: 20px;
@@ -376,6 +385,7 @@ display: -webkit-box;
 	border: 0;
 }
 
+
 /* 댓글 */
 .reply-area{
 	margin-top: 20px;
@@ -407,8 +417,14 @@ display: -webkit-box;
 	align-content: center;
 	margin-right: 10px;
 
+
+}
+
+.reply-info *{
+	cursor: pointer;
 	font-size: 10px;
 }
+
 
 .page-area{
 	margin-top: 30px;
@@ -428,7 +444,5 @@ display: -webkit-box;
 .pointer{
 	cursor: pointer;
 }
-
-
 
 

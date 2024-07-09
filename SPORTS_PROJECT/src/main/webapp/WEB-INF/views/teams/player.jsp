@@ -10,7 +10,8 @@
     
 	<script src="${contextPath}/src/util/pagination.js" defer></script>
     <script src="${contextPath}/src/js/communityDetail.js" defer></script>
-    <script src="${contextPath}/src/css/teams.js" defer></script>
+    <script src="${contextPath}/src/js/teams.js" defer></script>
+	<script src="${contextPath}/src/js/player.js" defer></script>
     
     <title>Player</title>
     <script src="https://kit.fontawesome.com/cb5f1fee4d.js" crossorigin="anonymous"></script>
@@ -56,7 +57,7 @@
 						<p class="position fs-20">투수 / 좌투좌타</p>
 						<span class="player-num">54</span>
 						<span class="player-name"> 양현종</span>
-						<i class="fa-regular fa-heart"></i>
+						<i class="fa-solid fa-heart" id="heart"></i>
 					</div>
 					<table class="info-content-bottom">
 						<tr>
