@@ -1,6 +1,10 @@
 package com.helpgpt.sports.teams.controller;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -25,21 +29,33 @@ public class TeamsController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// Path 지정
 		String reqPath = req.getPathInfo();
-		String path = "";
+		String team = "";
+		String[] teams={"kia", "lg", "doosan"};
+
+		List<String> teamList = Arrays.asList(teams);
+		
 		
 		if(reqPath != null) {
-			path = reqPath.split("/")[1];
+			team = reqPath.split("/")[1];
 		}
 		
 		// 경로에 따라 필요한 페이지로 추가 이동
-		if(path.equals("")) {
+		if(team=="") {
 			dispatcher = req.getRequestDispatcher(defaultURLPath + "teams.jsp");
 			dispatcher.forward(req, resp);
-		}else{
-			req.setAttribute("path", path);
-			dispatcher = req.getRequestDispatcher(defaultURLPath + "teamsEachMain.jsp");
-			dispatcher.forward(req, resp);
+			
+		}else {
+			if(teamList.contains(team)){
+				req.setAttribute("team", team);
+				dispatcher = req.getRequestDispatcher(defaultURLPath + "teamsEachMain.jsp");
+				dispatcher.forward(req, resp);
+			}
+			else {
+				System.out.println("404페이지로 이동");
+			}
+			
 		}
+		
 		
 	}
 }

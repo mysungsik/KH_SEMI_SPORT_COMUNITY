@@ -1,0 +1,78 @@
+/* 유틸 */
+* {
+box-sizing: border-box;
+/*   border: 1px solid black;  */
+}
+
+/* container */
+.container {
+width: 1024px;
+}
+
+
+.team-each-image{
+	height: 600px;
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: end;
+    background-repeat: no-repeat;
+    background-size : cover;
+    background-position: center;
+}
+
+  
+/* 날짜 스와이퍼 - 메인  */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-logo {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.swiper-logo img {
+  width: 105px;
+  height: 105px;
+}
+
+.swiper-logo span {
+  font-size: 28px;
+}
+
+.swiper-team-info {
+  width: 100%;
+}
+
+.swiper-team-name {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.swiper-team-name button {
+  outline: 0;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+}

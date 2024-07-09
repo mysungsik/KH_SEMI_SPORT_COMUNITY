@@ -22,8 +22,8 @@
 </head>
 
 <body>
-	<input type="hidden" name="path" value="${requestScope.path}">
-	<input type="hidden" name="sub" value="${requestScope.sub}">
+	<input type="hidden" name="team" value="${requestScope.team}">
+	<input type="hidden" name="page" value="${requestScope.page}">
 	<eachTeamHeader>
 	<c:if test="${!empty loginUser}">
 		
@@ -66,11 +66,21 @@
 		    <div class="header-bot">
 		        <div class="header-nav">
 		            <ul class="d-flex">
-		                <a class="fs-20__b text-hover__blue team-name" href="${contextPath}/team/info">BLUE JAYS</a>
-		                <a class="fs-20__b text-hover__blue" href="${contextPath}/team/players">PLAYERS</a>
-						<a href="${contextPath}/team"><img class="team-logo" src='${contextPath}/public/images/teams/FL.png'></a>
-		                <a class="fs-20__b text-hover__blue" href="${contextPath}/team/schedule">SCHEDULE</a>
-		                <a class="fs-20__b text-hover__blue" href="${contextPath}/team/content">CONTENTS</a>
+		            	<li>
+							<a class="fs-20__b text-hover__blue team-name" href="${contextPath}/team/info">BLUE JAYS</a>
+						</li>
+						<li>
+							<a class="fs-20__b text-hover__blue" href="${contextPath}/team/players">PLAYERS</a>
+						</li>
+						<li>
+							<a href="${contextPath}/team"><img class="team-logo" src='${contextPath}/public/images/teams/FL.png'></a>
+						</li>
+						<li>
+							<a class="fs-20__b text-hover__blue" href="${contextPath}/team/schedule">SCHEDULE</a>
+						</li>
+						<li>
+							<a class="fs-20__b text-hover__blue" href="${contextPath}/team/content">CONTENTS</a>
+						</li>
 		            </ul>
 		        </div>
 		    </div>
@@ -91,11 +101,21 @@
             <div class="header-bot">
                 <div class="header-nav">
                     <ul class="d-flex">
-                        <a class="fs-20__b text-hover__blue team-name" href="${contextPath}/team/info">BLUE JAYS</a>
-		                <a class="fs-20__b text-hover__blue" href="${contextPath}/team/players">PLAYERS</a>
-						<a href="${contextPath}/team"><img class="team-logo" src='${contextPath}/public/images/teams/FL.png'></a>
-		                <a class="fs-20__b text-hover__blue" href="${contextPath}/team/schedule">SCHEDULE</a>
-		                <a class="fs-20__b text-hover__blue" href="${contextPath}/team/content">CONTENTS</a>
+						<li>
+							<a class="fs-20__b text-hover__blue team-name" href="${contextPath}/team/${requestScope.team }/info">BLUE JAYS</a>
+						</li>
+						<li>
+							<a class="fs-20__b text-hover__blue" href="${contextPath}/team/${requestScope.team }/players">PLAYERS</a>
+						</li>
+						<li>
+							<a href="${contextPath}/team/${requestScope.team }"><img class="team-logo" src='${contextPath}/public/images/teams/FL.png'></a>
+						</li>
+						<li>
+							<a class="fs-20__b text-hover__blue" href="${contextPath}/team/${requestScope.team }/schedule">SCHEDULE</a>
+						</li>
+						<li>
+							<a class="fs-20__b text-hover__blue" href="${contextPath}/team/${requestScope.team }/content">CONTENTS</a>
+						</li>
                     </ul>
                 </div>
             </div>

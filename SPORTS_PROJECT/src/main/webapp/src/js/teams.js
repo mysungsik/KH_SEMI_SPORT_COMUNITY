@@ -60,13 +60,11 @@ var swiper3 = new Swiper(".swiper-info", {
 // http://localhost:8083/ksy/teams/kia
 $(document).ready(function() {
 	contextPath ="/"+ window.location.pathname.split("/")[1];
-	console.log(contextPath);
-	let path = $("input[name='path']");
-	console.log(path);
-	let path_value = path.val();
-	console.log(path_value);
+	let team = $("input[name='team']");
+	let team_value = team.val();
+	console.log(team_value);
 	
-	switch (path_value) {
+	switch (team_value) {
 		case "kia": {
 			$(".team-name").text("KIA TIGERS");
 			$(".team-logo").attr({ src: "https://upload.wikimedia.org/wikipedia/en/e/e0/Kia_Tigers_2017_New_Team_Logo.png" });
