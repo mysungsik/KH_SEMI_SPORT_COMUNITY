@@ -6,7 +6,8 @@
 <head>
     <link rel="stylesheet" href="${contextPath}/src/css/matchResult.css">
     <jsp:include page="/WEB-INF/views/layouts/header-dependencies.jsp"/>
-    <script src="${contextPath}/matchResult.js" defer></script>
+    <script src="${contextPath}/src/js/matchResult.js" defer></script>
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>MLB Match</title>
 </head>
 
@@ -128,6 +129,9 @@
                         <div class="team-logo">팀 로고 이미지</div>
                     </div>
                     <div class="inning-chart">차트</div>
+					<div class='chart-container'>
+						<canvas id="teamStatsChart" class="w-100"></canvas>
+					</div>
                 </div>
             </div>
             <br><br>

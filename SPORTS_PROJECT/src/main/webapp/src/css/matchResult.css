@@ -1,199 +1,193 @@
 .scoreboard {
-    background-color: #003366;
-    color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    width: 100%;
-    margin-bottom: 20px;
-    display: flex;
+	background-color: #003366;
+	color: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	text-align: center;
+	width: 100%;
+	margin-bottom: 20px;
+	display: flex;
 }
 
 .team {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    margin-bottom: 10px;
-    width: 30%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 24px;
+	margin-bottom: 10px;
+	width: 30%;
 }
 
 .team-name {
-    font-weight: bold;
+	font-weight: bold;
 }
 
 .score {
-    font-size: 36px;
-    font-weight: bold;
-    color: #ffd700;
-    margin: 30px;
+	font-size: 36px;
+	font-weight: bold;
+	color: #ffd700;
+	margin: 30px;
 }
 
 .game-info {
-    font-size: 14px;
-    margin-top: 20px;
+	font-size: 14px;
+	margin-top: 20px;
 }
 
 .inning-scores table {
-    width: 100%;
-    border-collapse: collapse;
+	width: 100%;
+	border-collapse: collapse;
 }
 
-.inning-scores th,
-.inning-scores td {
-    border: 1px solid #fff;
-    padding: 8px;
-    font-size: 14px;
+.inning-scores th, .inning-scores td {
+	border: 1px solid #fff;
+	padding: 8px;
+	font-size: 14px;
 }
 
 .inning-scores th {
-    background-color: #00509e;
-    font-weight: bold;
+	background-color: #00509e;
+	font-weight: bold;
 }
 
 .inning-scores td {
-    background-color: #004080;
+	background-color: #004080;
 }
 
-.game-summary{
-    display:flex;
-    flex-direction: column;
+.game-summary {
+	display: flex;
+	flex-direction: column;
 }
-.game-summary-bot{
-    display: flex;
-    justify-content: center;
+
+.game-summary-bot {
+	display: flex;
+	justify-content: center;
 }
-.game-summary,
-.result-section,
-.game-records,
-.pitching-records,
-.batting-records {
-    
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    margin-top:20px;
+
+.game-summary, .result-section, .game-records, .pitching-records,
+	.batting-records {
+	border-radius: 10px;
+	padding: 20px;
+	margin-bottom: 20px;
+	margin-top: 20px;
 }
 
 .team-score {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
 }
 
 .team-logo {
-    background-color: #ccc;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	background-color: #ccc;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .score-box {
-    font-size: 24px;
-    font-weight: bold;
+	font-size: 24px;
+	font-weight: bold;
 }
 
-
-.result-section h2,
-.game-records h2,
-.pitching-records h2,
-.batting-records h2 {
-    margin-top: 0;
+.result-section h2, .game-records h2, .pitching-records h2,
+	.batting-records h2 {
+	margin-top: 0;
 }
 
 .team-results {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 }
 
 .team-result {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .team-image {
-    background-color: #ccc;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
+	background-color: #ccc;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 10px;
 }
 
-.player-name{
-    font-size: 20px;
-    font-weight: bold;
-
-}
-.result-win,
-.result-lose {
-    font-size: 16px;
+.player-name {
+	font-size: 20px;
+	font-weight: bold;
 }
 
-.scoreboard,
-.game-records,
-.inning-scores,
-.pitching-records,
-.batting-records,
-.game-summary,
-.result-section{
-    width: 100%;
+.result-win, .result-lose {
+	font-size: 16px;
+}
+
+.scoreboard, .game-records, .inning-scores, .pitching-records,
+	.batting-records, .game-summary, .result-section {
+	width: 100%;
 }
 
 .team-logos {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-bottom: 20px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-bottom: 20px;
 }
 
 .inning-chart {
-    background-color: #eee;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	background-color: #eee;
+	height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.game-summary p,
-.result-section p,
-.game-records p,
-.batting-records p,
-.pitching-records p{
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 30px;
+.game-summary p, .result-section p, .game-records p, .batting-records p,
+	.pitching-records p {
+	font-size: 24px;
+	text-align: center;
+	margin-bottom: 30px;
 }
-.pitching-records table,
-.batting-records table {
-    width: 100%;
-    border-collapse: collapse;
+
+.pitching-records table, .batting-records table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.pitching-records th, .pitching-records td, .batting-records th,
+	.batting-records td {
+	border: 1px solid #ccc;
+	padding: 20px;
+	margin: 20px;
+	font-size: 12px;
+	text-align: center;
+}
+
+.pitching-records th, .batting-records th {
+	background-color: #00509e;
+	color: #fff;
+	font-weight: bold;
+}
+
+.chart-container {
+	position: relative;
+	height: 400px;
+	width: 100%;
+}
+
+.team-logo {
+	width: 100px;
+	text-align: center;
 }
 
 
-.pitching-records th,
-.pitching-records td,
-.batting-records th,
-.batting-records td {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin: 20px;
-    font-size: 12px;
-    text-align: center;
-}
-
-.pitching-records th,
-.batting-records th {
-    background-color: #00509e;
-    color: #fff;
-    font-weight: bold;
-}

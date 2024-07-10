@@ -16,7 +16,7 @@
 <body>
 	<jsp:include page="/WEB-INF/views/layouts/header.jsp" />
 	<main>
-		<div class="matchDate_Top">
+		<div class="matchDate_Top fc__dblue">
 			<div class="navigation">
 				<span>&lt;</span> <span class="date">24.06.11 (화)</span> <span>&gt;</span>
 			</div>
