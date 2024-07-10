@@ -62,6 +62,12 @@ section{
 /* 소개띠 끝 */
 
 /* 메인 시작 */
+.main-background-img{
+	background-image: url("https://tigers.co.kr/img/sub/player_view01.png");
+	height:500px;
+	position: relative;
+}
+
 .player-info{
 	width: 100%;
 	height: 500px;
@@ -122,8 +128,8 @@ section{
 }
 
 .player-info-img{
-	width: 50%;
 	height: 100%;
+	object-fit:contain;
 }
 
 .player-info-img img{
@@ -287,20 +293,22 @@ display: -webkit-box;
 }
 
 .pitching-records .pitching-records-table {
-	height: 95%;
-	width: 95%;
+	height: 100%;
+	width: 100%;
 	border-collapse: separate;
 	border-spacing: 0;
 	border-radius: 10px;
 	border-style: hidden;
 	text-align: center;
 	overflow: hidden;
+	border: 1px solid gray;
 }
 
 .pitching-records th,
 .pitching-records td{
     font-size: 14x;
     text-align: center;
+    border: 1px solid gray;
 }
 
 
@@ -323,6 +331,64 @@ display: -webkit-box;
 	background-color: white;
 }
 
+/* 컨디션 기록 */
+.pitching-records-condition{
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	margin-bottom: 30px;
+	width:100%;
+}
+
+.pitching-records-condition .pitching-comment-content{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-content:center;
+	width:100%;
+	height:99%;
+	border-radius: 10px;
+	overflow: hidden;
+	
+}
+
+.pitching-records-condition .title{
+	width:100%;
+	background-color: #458BE2;
+    color: #fff;
+	font-size: 20px;
+	padding:10px 0;
+	text-align: center;
+	
+}
+
+.pitching-records-condition .pitching-button-area{
+	display: flex;
+	justify-content: end;
+	gap:10px;
+}
+
+.pitching-records-condition .pitching-button-area button{
+	padding: 10px 20px;
+	border-radius: 5px;
+	border:0;
+	margin:5px 0;
+	background-color: #458BE2;
+	color: white;
+	
+}
+
+/* 컨디션 표 */
+.chart-container {
+  width: 100%;
+  text-align: center;
+  gap:10px;
+}
+
+#myChart {
+  width: 100%;
+  height: 100%;
+}
 
 /* 응원댓글 */ 
 .player-comment{
@@ -336,8 +402,8 @@ display: -webkit-box;
 	justify-content: center;
 	flex-direction: column;
 	align-content:center;
-	width:95%;
-	height:95%;
+	width:100%;
+	height:99%;
 	border-radius: 10px;
 	overflow: hidden;
 	
@@ -351,7 +417,6 @@ display: -webkit-box;
 	padding:10px 0;
 	text-align: center;
 	
-	
 }
 
 .player-comment-content .former-comment{
@@ -360,15 +425,25 @@ display: -webkit-box;
 }
 
 .player-comment-content .former-comment span{
-	display: inlin-block;
+	display: inline-block;
  	border-radius:10px;
     padding:5px;
     font-size: 18px;
 }
 
+.player-comment .input-area{
+	width: 90%;
+	margin: 0 auto;
+}
+
+.player-comment .player-comment-content .input-area form{
+	display: flex;
+	align-items:center;
+	justify-content: space-between;
+}
 
 .player-comment textarea{
-	width: 100%;
+	width: 90%;
 	border-radius: 10px;
 	border:0;
 }
@@ -377,72 +452,81 @@ display: -webkit-box;
 	height : 30px;
 	width: 90px;
 	border-radius : 10px;
-	position: absolute;
-	bottom:42px;
-	right: 50px;
 	background-color: #458BE2;
 	color: #fff;
 	border: 0;
 }
 
 
-/* 댓글 */
-.reply-area{
-	margin-top: 20px;
-	height: 250px;
-}
-
+/* 답장 공간 */
 
 .reply{
-	height: 50px;
+	height: 100%;
+	width: 90%;
+	margin: 0 auto;
 	display: flex;
 	border-bottom: 1px sollid black;
+	justify-content: space-between;
+	
 }
 
 .author{
-	flex-basis: 10%;
+	display: flex;
 	align-content: center;
 	text-align: center;
-	margin-left: 10px;
 }
 
 .comment{
-	flex-basis: 75%;
+	width: 70%;
 	align-content: center;
+	display: flex;
+	flex-direction: column;
 }
 
 .reply-info{
-	flex-basis: 15%;
+	display: flex;
+	justify-content: end;
+	width: 30%;
 	text-align: end;
 	align-content: center;
 	margin-right: 10px;
 
-
 }
 
-.reply-info *{
+.reply-info>*{
 	cursor: pointer;
-	font-size: 10px;
+	font-size: 10px !important;
 }
 
 
-.page-area{
-	margin-top: 30px;
-	margin-bottom: 60px;
-}
 
-.page-area ul{
+/* 답장 공간 */
+/* 댓글 입력 */
+
+form{
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	gap: 10px;
 }
 
-.page-area a{
-	cursor: pointer;
+textarea{
+	border-radius: 5px;
 }
 
-.pointer{
-	cursor: pointer;
+form>button{
+	width: 70px;
+	height: 30px;
+	
+	border: none;
+	border-radius: 5px;
+	background: #458BE2;
+	color: white;
+}
+
+.page-area #paginationjs-pages{
+	width:0;
+	height:0;
 }
 
 

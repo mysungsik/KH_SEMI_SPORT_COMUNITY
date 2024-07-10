@@ -1,45 +1,44 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="${contextPath}/src/css/player.css">
-    
-	<script src="${contextPath}/src/util/pagination.js" defer></script>
-    <script src="${contextPath}/src/js/communityDetail.js" defer></script>
-    <script src="${contextPath}/src/js/teams.js" defer></script>
-	<script src="${contextPath}/src/js/player.js" defer></script>
-    
-    <title>Player</title>
-    <script src="https://kit.fontawesome.com/cb5f1fee4d.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="${contextPath}/src/css/player.css">
+
+<script src="${contextPath}/src/util/pagination.js" defer></script>
+<script src="${contextPath}/src/js/teams.js" defer></script>
+<script src="${contextPath}/src/js/player.js" defer></script>
+
+<title>Player</title>
+<script src="https://kit.fontawesome.com/cb5f1fee4d.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/layouts/header-teams.jsp"/>
+	<jsp:include page="/WEB-INF/views/layouts/header-teams.jsp" />
 	<!-- 페이지 커버 -->
 	<div class="pagecover">
 		<div class="pagecover-img">
 			<div class="fc__white fs-28__b">선수 소개</div>
-			
+
 			<div class="fc__white">
-				<i class="fa-solid fa-house"></i>
-				 > PLAYERS > 선수 소개
+				<i class="fa-solid fa-house"></i> > PLAYERS > 선수 소개
 			</div>
 		</div>
 		<!-- 소개띠 -->
 		<div class="pagecover-bottom">
 			<div class="pagecover-bottom-inner d-flex fc__white">
 				<ul>
-					<li>코칭스태프</li>
-					|
-					<li>투수</li>
-					|
-					<li>포수</li>
-					|
-					<li>내야수</li>
-					|
+					<li>코칭스태프</li> 
+					<li><span>|</span></li>
+					<li>투수</li> 
+					<li><span>|</span></li>
+					<li>포수</li> 
+					<li><span>|</span></li>
+					<li>내야수</li> 
+					<li><span>|</span></li>
 					<li>외야수</li>
 				</ul>
 			</div>
@@ -49,15 +48,15 @@
 	<!-- 페이지 커버 끝 -->
 
 	<!-- 메인 시작 -->
+	<div class="main-background-img">
 	<main class="container">
 		<div class="player-info">
 			<div class="player-info-content">
 				<div class="info-content">
 					<div class="info-content-top">
 						<p class="position fs-20">투수 / 좌투좌타</p>
-						<span class="player-num">54</span>
-						<span class="player-name"> 양현종</span>
-						<i class="fa-solid fa-heart" id="heart"></i>
+						<span class="player-num">54</span> <span class="player-name">
+							양현종</span> <i class="fa-solid fa-heart" id="heart"></i>
 					</div>
 					<table class="info-content-bottom">
 						<tr>
@@ -81,74 +80,52 @@
 							<td class="fs-20">50,000만원</td>
 						</tr>
 					</table>
-
 				</div>
-
 			</div>
 			<div class="player-info-img">
-				<img src="https://tigers.co.kr/files/playerImg/tigersImg2/2024_54_C.png" alt="">
+				<img
+					src="https://tigers.co.kr/files/playerImg/tigersImg2/2024_54_C.png"
+					alt="">
 			</div>
-			
 		</div>
-
 		<div class="player-card">
 			<div class="card-thumbnail">
 				<div class="card-thumbnail-infos">
-					<div class="card-thumbnail-position fc__white">
-						ERA
-					</div>
+					<div class="card-thumbnail-position fc__white">ERA</div>
 					<hr>
-					<div class="card-thumbnail-content fc__white">
-						3.91
-					</div>
+					<div class="card-thumbnail-content fc__white">3.91</div>
 				</div>
 			</div>
 
 			<div class="card-thumbnail">
 				<div class="card-thumbnail-infos">
-					<div class="card-thumbnail-position fc__white">
-						승
-					</div>
+					<div class="card-thumbnail-position fc__white">승</div>
 					<hr>
-					<div class="card-thumbnail-content fc__white">
-						6
-					</div>
+					<div class="card-thumbnail-content fc__white">6</div>
 				</div>
 			</div>
 
 			<div class="card-thumbnail">
 				<div class="card-thumbnail-infos">
-					<div class="card-thumbnail-position fc__white">
-						패
-					</div>
+					<div class="card-thumbnail-position fc__white">패</div>
 					<hr>
-					<div class="card-thumbnail-content fc__white">
-						3
-					</div>
+					<div class="card-thumbnail-content fc__white">3</div>
 				</div>
 			</div>
 
 			<div class="card-thumbnail">
 				<div class="card-thumbnail-infos">
-					<div class="card-thumbnail-position fc__white">
-						세이브
-					</div>
+					<div class="card-thumbnail-position fc__white">세이브</div>
 					<hr>
-					<div class="card-thumbnail-content fc__white">
-						-
-					</div>
+					<div class="card-thumbnail-content fc__white">-</div>
 				</div>
 			</div>
 
 			<div class="card-thumbnail">
 				<div class="card-thumbnail-infos">
-					<div class="card-thumbnail-position fc__white">
-						탈삼진
-					</div>
+					<div class="card-thumbnail-position fc__white">탈삼진</div>
 					<hr>
-					<div class="card-thumbnail-content fc__white">
-						69
-					</div>
+					<div class="card-thumbnail-content fc__white">69</div>
 				</div>
 			</div>
 		</div>
@@ -161,8 +138,7 @@
 					<th>생년월일</th>
 					<td>1988년 03월 01일</td>
 					<th rowspan="7">경력사항</th>
-					<td rowspan="7">
-						<pre>
+					<td rowspan="7"><pre>
 2007 KIA타이거즈
 2021 텍사스 레인저스
 2022 KIA 타이거즈
@@ -175,8 +151,7 @@
 2017 KBO 한국시리즈 MVP
 2017 KBO 골든글러브 수상
 2018 아시안게임 국가대표"
-						</pre>
-					</td>
+						</pre></td>
 				</tr>
 				<tr>
 					<th>신장/체중</th>
@@ -302,110 +277,110 @@
 			</div>
 		</div>
 		<!-- 투수 기록 - 김박사님 감사합니다 -->
-		<div class="pitching-records card__lblue">
-				<table class="pitching-records-table">
-					<thead>
-						<tr class="pitching-records-table-title">
-							<th  colspan="12">통산기록</th>
-						</tr>
-						<tr>
-							<th>시카고C</th>
-							<th>이닝</th>
-							<th>투구수</th>
-							<th>피안타</th>
-							<th>피홈런</th>
-							<th>탈삼진</th>
-							<th>볼넷</th>
-							<th>사사구</th>
-							<th>실점</th>
-							<th>자책</th>
-							<th>ERA</th>
-							<th>WHIP</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>김동준</td>
-							<td>6</td>
-							<td>83</td>
-							<td>7</td>
-							<td>1</td>
-							<td>5</td>
-							<td>0</td>
-							<td>3</td>
-							<td>3</td>
-							<td>3</td>
-							<td>3.02</td>
-							<td>1.20</td>
-						</tr>
-						<tr>
-							<td>동동동</td>
-							<td>6</td>
-							<td>83</td>
-							<td>7</td>
-							<td>1</td>
-							<td>5</td>
-							<td>0</td>
-							<td>3</td>
-							<td>3</td>
-							<td>3</td>
-							<td>3.02</td>
-							<td>1.20</td>
-						</tr>
-						<tr>
-							<td>김김김</td>
-							<td>6</td>
-							<td>83</td>
-							<td>7</td>
-							<td>1</td>
-							<td>5</td>
-							<td>0</td>
-							<td>3</td>
-							<td>3</td>
-							<td>3</td>
-							<td>3.02</td>
-							<td>1.20</td>
-						</tr>
-						<tr>
-							<td>준준준</td>
-							<td>6</td>
-							<td>83</td>
-							<td>7</td>
-							<td>1</td>
-							<td>5</td>
-							<td>0</td>
-							<td>3</td>
-							<td>3</td>
-							<td>3</td>
-							<td>3.02</td>
-							<td>1.20</td>
-						</tr>
-						<tr>
-							<td>djkim</td>
-							<td>6</td>
-							<td>83</td>
-							<td>7</td>
-							<td>1</td>
-							<td>5</td>
-							<td>0</td>
-							<td>3</td>
-							<td>3</td>
-							<td>3</td>
-							<td>3.02</td>
-							<td>1.20</td>
-						</tr>
-					</tbody>
-				</table>
-		</div>
-
-		<!-- 통산 기록 끝 -->
-		 
-		<!-- 상세 기록 시작 -->
-		<div class="pitching-records card__lblue">
+		<div class="pitching-records">
 			<table class="pitching-records-table">
 				<thead>
 					<tr class="pitching-records-table-title">
-						<th  colspan="12">상세기록</th>
+						<th colspan="12">통산기록</th>
+					</tr>
+					<tr>
+						<th>시카고C</th>
+						<th>이닝</th>
+						<th>투구수</th>
+						<th>피안타</th>
+						<th>피홈런</th>
+						<th>탈삼진</th>
+						<th>볼넷</th>
+						<th>사사구</th>
+						<th>실점</th>
+						<th>자책</th>
+						<th>ERA</th>
+						<th>WHIP</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>김동준</td>
+						<td>6</td>
+						<td>83</td>
+						<td>7</td>
+						<td>1</td>
+						<td>5</td>
+						<td>0</td>
+						<td>3</td>
+						<td>3</td>
+						<td>3</td>
+						<td>3.02</td>
+						<td>1.20</td>
+					</tr>
+					<tr>
+						<td>동동동</td>
+						<td>6</td>
+						<td>83</td>
+						<td>7</td>
+						<td>1</td>
+						<td>5</td>
+						<td>0</td>
+						<td>3</td>
+						<td>3</td>
+						<td>3</td>
+						<td>3.02</td>
+						<td>1.20</td>
+					</tr>
+					<tr>
+						<td>김김김</td>
+						<td>6</td>
+						<td>83</td>
+						<td>7</td>
+						<td>1</td>
+						<td>5</td>
+						<td>0</td>
+						<td>3</td>
+						<td>3</td>
+						<td>3</td>
+						<td>3.02</td>
+						<td>1.20</td>
+					</tr>
+					<tr>
+						<td>준준준</td>
+						<td>6</td>
+						<td>83</td>
+						<td>7</td>
+						<td>1</td>
+						<td>5</td>
+						<td>0</td>
+						<td>3</td>
+						<td>3</td>
+						<td>3</td>
+						<td>3.02</td>
+						<td>1.20</td>
+					</tr>
+					<tr>
+						<td>djkim</td>
+						<td>6</td>
+						<td>83</td>
+						<td>7</td>
+						<td>1</td>
+						<td>5</td>
+						<td>0</td>
+						<td>3</td>
+						<td>3</td>
+						<td>3</td>
+						<td>3.02</td>
+						<td>1.20</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<!-- 통산 기록 끝 -->
+
+		<!-- 상세 기록 시작 -->
+		<div class="pitching-records">
+			<table class="pitching-records-table">
+				<thead>
+					<tr class="pitching-records-table-title">
+						<th colspan="12">상세기록</th>
 					</tr>
 					<tr>
 						<th>시카고C</th>
@@ -499,11 +474,11 @@
 		<!-- 상세 기록 끝 -->
 
 		<!-- 투수 기록 시작 -->
-		<div class="pitching-records card__lblue">
+		<div class="pitching-records">
 			<table class="pitching-records-table">
 				<thead>
 					<tr class="pitching-records-table-title">
-						<th  colspan="12">투수기록</th>
+						<th colspan="12">투수기록</th>
 					</tr>
 					<tr>
 						<th>시카고C</th>
@@ -597,43 +572,52 @@
 		<!-- 투수 기록 끝 -->
 
 		<!-- 컨디션 기록 -->
-		<div class="pitching-records card__lblue">
-			<table class="pitching-records-table">
-				<thead>
-					<tr class="pitching-records-table-title">
-						<th  colspan="12">컨디션기록</th>
-					</tr>
-					
-				</thead>
-				<tbody>
-				</tbody>
-			</table>
+		<div class="pitching-records-condition">
+			<div class="pitching-comment-content">
+				<div class="title">컨디션기록</div>
+				<div class="pitching-button-area">
+					<button>방어율</button>
+					<button>승리</button>
+					<button>홀드</button>
+					<button>세이브</button>
+					<button>승률</button>
+					<button>탈삼진</button>
+				</div>
+				
+				<div class="chart-container">
+				  <canvas id="myChart"></canvas>
+				</div>
+				
+				<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+				
+			</div>
 		</div>
+		
 
 		<!-- 응원 댓글 -->
 		<div class="player-comment card__lblue">
 			<div class="player-comment-content">
 				<div class="title">응원댓글</div>
 				<div class="former-comment">
-					
-				<section class="reply-area">
-					<div id="community-data"></div>
-				</section>
-				
-				<section class="page-area">
-					<div id="community-pagination"></div>
-				</section>
+					<section class="reply-area">
+						<div id="player-data">
+						</div>
+					</section>
+					<div id="player-pagination"></div>
+				</div>
 				
 				<section class="input-area">
 					<form>
 						<textarea style="resize: none" placeholder="댓글을 입력해주세요."></textarea>
-						<button>댓글</button>						
+						<button>댓글</button>
 					</form>
 				</section>
+				
 				
 			</div>
 		</div>
 	</main>
-	
+	</div>
+
 </body>
 </html>
