@@ -1,6 +1,7 @@
 package com.helpgpt.sports.community.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,6 +9,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.helpgpt.sports.community.model.service.CommunityService;
+import com.helpgpt.sports.community.model.vo.Board;
 
 
 @WebServlet(name = "communityController",
@@ -35,6 +39,8 @@ public class communityController extends HttpServlet {
 			sub = reqPath.split("/")[2]; 
 		}
 		
+		CommunityService service = new CommunityService();
+		
 		// 경로에 따라 필요한 페이지로 추가 이동
 		switch (path) {
 		case "": {
@@ -43,6 +49,16 @@ public class communityController extends HttpServlet {
 			}break;
 		case "communityBoard": {
 			dispatcher = req.getRequestDispatcher(defaultURLPath + "communityBoard.jsp");
+			
+			Board board = null;
+			
+			for(int i = 0; i < 100; i++) {
+				board = new Board();
+				
+				board.setBoardAuthor("작성자"+i);
+			}
+			
+			
 			req.setAttribute("sub", sub); 
 			dispatcher.forward(req, resp);
 			};break;

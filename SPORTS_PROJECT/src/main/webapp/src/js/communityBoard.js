@@ -36,8 +36,6 @@ $(document).ready(function() {
 
 	let sub = $("input[name='sub']");
 	let sub_value = sub.val()
-	$(".switch-category").addClass("base__lblue")
-	$(".switch-title").addClass("fc__gray")
 
 	switch (sub_value) {
 		case "all": {
@@ -83,10 +81,10 @@ $(document).ready(function() {
 
 
 	// 페이지네이션 실행
-	paginationActive("community", communityData, paginationTemplate);
+	// paginationActive("community", communityData, paginationTemplate);
 });
 
-
+/*
 // 일반 유저 페이지네이션 템플릿 함수
 function paginationTemplate(data) {
 	let item = ""
@@ -141,4 +139,4 @@ function paginationActive(id, datas, template) {
 		})
 	}
 }
-
+*/
