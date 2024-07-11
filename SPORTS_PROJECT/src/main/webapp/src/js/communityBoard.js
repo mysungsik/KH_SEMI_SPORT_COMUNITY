@@ -32,7 +32,6 @@ let communityData = [
 
 // nav
 $(document).ready(function() {
-	contextPath = "/" + window.location.pathname.split("/")[1];
 
 	let sub = $("input[name='sub']");
 	let sub_value = sub.val()

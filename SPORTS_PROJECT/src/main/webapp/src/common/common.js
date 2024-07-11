@@ -5,11 +5,6 @@
  */
 
 /** HEADER & FOOTER */
-var contextPath = "";
-
-$(document).ready(function () {
-	contextPath = "/" + window.location.pathname.split("/")[1];
-});
 
 // 토스트 메소드
 function toastPop(type, message){
