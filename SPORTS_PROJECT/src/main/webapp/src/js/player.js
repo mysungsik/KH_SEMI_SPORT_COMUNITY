@@ -68,153 +68,141 @@ function paginationActive(id, datas, template) {
 }
 
 // 컨디션 표
-const ctx = document.getElementById('myChart').getContext('2d');
+var ctx= document.getElementById("myChart");
 
-function addData(chart, label, newData) {
-    chart.data.labels.push(label);
-    chart.data.datasets.forEach((dataset) => {
-        dataset.data.push(newData);
-    });
-    chart.update();
-}
+var config = {
+	type : 'line', 
+	
+	data:{
+		datasets:[{
+			label: '방어율',
+			data: [
+				{ x: '03월', y: 1.69 }, 
+				{ x: '04월', y: 3.86 }, 
+				{ x: '05월', y: 3.2 }, 
+				{ x: '06월', y: 5.94 }, 
+				{ x: '07월', y: 5.4 }
+			],
+			borderWidth: 2,
+			tension: 0.5
+		},{
+			label: '승리',
+			data: [
+			{ x: '03월', y: 0 }, 
+			{ x: '04월', y: 2 }, 
+			{ x: '05월', y: 2 }, 
+			{ x: '06월', y: 2 }, 
+			{ x: '07월', y: 0 }
+			],
+			borderWidth: 2,
+			tension: 0.5
 
-function removeData(chart) {
-    chart.data.labels.pop();
-    chart.data.datasets.forEach((dataset) => {
-        dataset.data.pop();
-    });
-    chart.update();
-}
-
-
-new Chart(ctx, {
-  type: 'line',
-  data: {
-    datasets: [
-	{
-	  label: '방어율',
-	  data: [
-	    { x: '03월', y: 1.69 }, 
-	    { x: '04월', y: 3.86 }, 
-	    { x: '05월', y: 3.2 }, 
-	    { x: '06월', y: 5.94 }, 
-	    { x: '07월', y: 5.4 }
-	  ],
-	  borderWidth: 2,
-	  borderColor: 'rgb(75, 192, 192)',
-	  tension: 0.5,
-    },
-    {
-	  label: '승리',
-      data: [
-        { x: '03월', y: 0 }, 
-        { x: '04월', y: 2 }, 
-        { x: '05월', y: 2 }, 
-        { x: '06월', y: 2 }, 
-        { x: '07월', y: 0 }
-      ],
-      borderWidth: 2,
-      borderColor: 'rgb(75, 192, 192)',
-      tension: 0.5,
+		},{
+			label: '패배',
+			data: [
+			{ x: '03월', y: 0 }, 
+			{ x: '04월', y: 0 }, 
+			{ x: '05월', y: 0 }, 
+			{ x: '06월', y: 0 }, 
+			{ x: '07월', y: 0 }
+			],
+			borderWidth: 2,
+			tension: 0.5
+		},{
+			label: '세이브',
+			data: [],
+			borderWidth: 2,
+			tension: 0.5
+		},{
+			label: '승률',
+			data: [
+			{ x: '04월', y: 0.667 }, 
+			{ x: '05월', y: 0.5 }, 
+			{ x: '06월', y: 1 }
+			],
+			borderWidth: 2,
+			tension: 0.5
+		},{
+			label: '탈삼진',
+			data: [
+			{ x: '03월', y: 4 }, 
+			{ x: '04월', y: 23 }, 
+			{ x: '05월', y: 24 }, 
+			{ x: '06월', y: 13 }, 
+			{ x: '07월', y: 5 }
+			],
+			borderWidth: 2,
+			tension: 0.5
+		}]
 	},
-	
-	 {
-	  label: '패배',
-      data: [
-        { x: '03월', y: 0 }, 
-        { x: '04월', y: 0 }, 
-        { x: '05월', y: 0 }, 
-        { x: '06월', y: 0 }, 
-        { x: '07월', y: 0 }
-      ],
-      borderWidth: 2,
-      borderColor: 'rgb(75, 192, 192)',
-      tension: 0.5,
-      scales:{y:{beginAtZero: false}}
-	},
-	
-	{
-	  label: '세이브',
-      data: [],
-      borderWidth: 2,
-      borderColor: 'rgb(75, 192, 192)',
-      tension: 0.5,
-	},
-	
-	{
-	  label: '승률',
-      data: [
-        { x: '04월', y: 0.667 }, 
-        { x: '05월', y: 0.5 }, 
-        { x: '06월', y: 1 }
-      ],
-      borderWidth: 2,
-      borderColor: 'rgb(75, 192, 192)',
-      tension: 0.5,
-	},
-	
-	{
-	  label: '탈삼진',
-      data: [
-        { x: '03월', y: 4 }, 
-        { x: '04월', y: 23 }, 
-        { x: '05월', y: 24 }, 
-        { x: '06월', y: 13 }, 
-        { x: '07월', y: 5 }
-      ],
-      borderWidth: 2,
-      borderColor: 'rgb(75, 192, 192)',
-      tension: 0.5,
+		
+	options: {
+		plugins:{
+					legend: {
+						display: false
+					}
+				},
+		scales: {
+		  y: {
+			beginAtZero: true
+		  }
+		}
 	}
-	
-    ]
-  },
-  options: {
-	plugins:{
-                legend: {
-                    display: false
-                }
-            },
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
-  }
-});
 
+};
+
+//  chart  생성
+var myChart = new Chart(ctx, config);
+
+// button 눌렀을 때 차트 숨기기
 document.getElementById("era-button").addEventListener("click", function(){
-	Chart(ctx, {
-  		type: 'line',
-  		data: {
-		    datasets: [{
-				label: '방어율',
-				data: [
-				    { x: '03월', y: 1.69 }, 
-				    { x: '04월', y: 3.86 }, 
-				    { x: '05월', y: 3.2 }, 
-				    { x: '06월', y: 5.94 }, 
-				    { x: '07월', y: 5.4 }
-				],
-			  	borderWidth: 2,
-				borderColor: 'rgb(75, 192, 192)',
-				tension: 0.5,
-			}]
-    	},
-  		options: {
-			plugins:{
-                legend: {
-                    display: false
-                }
-           	},
-           	
-    		scales: {
-      			y: {
-        		beginAtZero: true
-  				}
-    		}
-		}	
-	})
+	myChart.data.datasets[0].hidden = !this.click;
+	myChart.data.datasets[1].hidden= this.click;
+	myChart.data.datasets[2].hidden = this.click;
+	myChart.data.datasets[3].hidden = this.click;
+	myChart.data.datasets[4].hidden = this.click;
+	myChart.data.datasets[5].hidden = this.click;
+	myChart.update();
 })
 
+document.getElementById("victory-button").addEventListener("click", function(){
+	myChart.data.datasets[0].hidden = this.click;
+	myChart.data.datasets[1].hidden= !this.click;
+	myChart.data.datasets[2].hidden = this.click;
+	myChart.data.datasets[3].hidden = this.click;
+	myChart.data.datasets[4].hidden = this.click;
+	myChart.data.datasets[5].hidden = this.click;
+	myChart.update();
+})
 
+document.getElementById("hold-button").addEventListener("click", function(){
+	for(let i=0; i<6; i++){
+		myChart.data.datasets[i].hidden=this.click;
+	}
+	myChart.data.datasets[2].hidden=!this.click;
+	myChart.update();
+})
+
+document.getElementById("save-button").addEventListener("click", function(){
+	for(let i=0; i<6; i++){
+		myChart.data.datasets[i].hidden=this.click;
+	}
+	myChart.data.datasets[3].hidden=!this.click;
+	myChart.update();
+})
+
+document.getElementById("odd-button").addEventListener("click", function(){
+	for(let i=0; i<6; i++){
+		myChart.data.datasets[i].hidden=this.click;
+	}
+	myChart.data.datasets[4].hidden=!this.click;
+	myChart.update();
+})
+
+document.getElementById("k-button").addEventListener("click", function(){
+	for(let i=0; i<6; i++){
+		myChart.data.datasets[i].hidden=this.click;
+	}
+	myChart.data.datasets[5].hidden=!this.click;
+	myChart.update();
+})
