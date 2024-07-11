@@ -373,9 +373,31 @@ display: -webkit-box;
 	border-radius: 5px;
 	border:0;
 	margin:5px 0;
-	background-color: #458BE2;
 	color: white;
-	
+}
+
+#era-button{
+	background-color : #007aff;
+}
+
+#victory-button{
+	background-color : #dc3545;
+}
+
+#hold-button{
+	background-color: #fd7e14;
+}
+
+#save-button{
+	background-color : #aaa;
+}
+
+#odd-button{
+	background-color: #20c997;
+}
+
+#k-button{
+	background-color: #6f42c1;
 }
 
 /* 컨디션 표 */
