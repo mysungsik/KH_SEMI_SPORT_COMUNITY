@@ -576,12 +576,12 @@
 			<div class="pitching-comment-content">
 				<div class="title">컨디션기록</div>
 				<div class="pitching-button-area">
-					<button>방어율</button>
-					<button>승리</button>
-					<button>홀드</button>
-					<button>세이브</button>
-					<button>승률</button>
-					<button>탈삼진</button>
+					<button id="era-button">방어율</button>
+					<button id="victory-button">승리</button>
+					<button id="hold-button">홀드</button>
+					<button id="save-button">세이브</button>
+					<button id="odd-button">승률</button>
+					<button id="k-button">탈삼진</button>
 				</div>
 				
 				<div class="chart-container">

@@ -70,6 +70,23 @@ function paginationActive(id, datas, template) {
 // 컨디션 표
 const ctx = document.getElementById('myChart').getContext('2d');
 
+function addData(chart, label, newData) {
+    chart.data.labels.push(label);
+    chart.data.datasets.forEach((dataset) => {
+        dataset.data.push(newData);
+    });
+    chart.update();
+}
+
+function removeData(chart) {
+    chart.data.labels.pop();
+    chart.data.datasets.forEach((dataset) => {
+        dataset.data.pop();
+    });
+    chart.update();
+}
+
+
 new Chart(ctx, {
   type: 'line',
   data: {
@@ -165,3 +182,39 @@ new Chart(ctx, {
     }
   }
 });
+
+document.getElementById("era-button").addEventListener("click", function(){
+	Chart(ctx, {
+  		type: 'line',
+  		data: {
+		    datasets: [{
+				label: '방어율',
+				data: [
+				    { x: '03월', y: 1.69 }, 
+				    { x: '04월', y: 3.86 }, 
+				    { x: '05월', y: 3.2 }, 
+				    { x: '06월', y: 5.94 }, 
+				    { x: '07월', y: 5.4 }
+				],
+			  	borderWidth: 2,
+				borderColor: 'rgb(75, 192, 192)',
+				tension: 0.5,
+			}]
+    	},
+  		options: {
+			plugins:{
+                legend: {
+                    display: false
+                }
+           	},
+           	
+    		scales: {
+      			y: {
+        		beginAtZero: true
+  				}
+    		}
+		}	
+	})
+})
+
+

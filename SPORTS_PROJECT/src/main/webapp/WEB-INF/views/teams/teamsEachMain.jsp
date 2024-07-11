@@ -11,6 +11,10 @@
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <script src="${contextPath}/src/js/teams.js" defer></script>
+<script src="${contextPath}/src/js/teamEach.js" defer></script>
+
+<script src="https://kit.fontawesome.com/cb5f1fee4d.js"
+	crossorigin="anonymous"></script>
 <title>Team Main</title>
 </head>
 <body>
@@ -18,95 +22,102 @@
 	<input type="hidden" name="path" value="${requestScope.path}">
 	<!-- 날짜 슬라이드 시작 -->
 	<div class="team-each-image">
-		<div class="today-schedule br-10">
-			<!-- Swiper -->
-			<div class="swiper mySwiper">
-				<div class="swiper-wrapper">
-
-					<div class="swiper-slide">
-						<p class="fs-20 fc__white mt-10">24.07.02 (화)</p>
-						<p class="fc__white">광주 18:30</p>
-						<div class="swiper-logo">
-							<img src="${contextPath}/public/images/teams/FL.png"
-								class="ml-20" alt=""> <span class="fc__white">vs</span> <img
-								src="${contextPath}/public/images/teams/FL.png" class="mr-20"
-								alt="">
-						</div>
-						<div class="swiper-team-info">
-							<div class="swiper-team-name">
-								<div class="swiper-left-team">
-									<p class="fs-14  fc__white">BLUE JAYS</p>
-									<p class="fs-12 fc__white">선발 : 김승연</p>
+		<div class="main-header">
+			<div class="like-button">
+				<i class="fa-solid fa-heart" id="heart"></i> <span>좋아요</span>
+			</div>
+			<div class="today-schedule-area">
+				<div class="today-schedule br-10">
+					<!-- Swiper -->
+					<div class="swiper mySwiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<p class="fs-20 fc__white mt-10">24.07.02 (화)</p>
+								<p class="fc__white">광주 18:30</p>
+								<div class="swiper-logo">
+									<img src="${contextPath}/public/images/teams/FL.png"
+										class="ml-20" alt=""> <span class="fc__white">vs</span>
+									<img src="${contextPath}/public/images/teams/FL.png"
+										class="mr-20" alt="">
 								</div>
-								<a href="${contextPath}/match/matchResult"><button>경기
-										결과</button></a>
-								<div class="swiper-right-team">
-									<p class="fs-14  fc__white">BLUE JAYS</p>
-									<p class="fs-12 fc__white">선발 : 김승연</p>
-								</div>
+								<div class="swiper-team-info">
+									<div class="swiper-team-name">
+										<div class="swiper-left-team">
+											<p class="fs-14  fc__white">BLUE JAYS</p>
+											<p class="fs-12 fc__white">선발 : 김승연</p>
+										</div>
+										<a href="${contextPath}/match/matchResult"><button>경기
+												결과</button></a>
+										<div class="swiper-right-team">
+											<p class="fs-14  fc__white">BLUE JAYS</p>
+											<p class="fs-12 fc__white">선발 : 김승연</p>
+										</div>
 
+									</div>
+								</div>
+							</div>
+
+							<div class="swiper-slide">
+								<div class="fs-20 fc__white mt-10" id="dateDisplay"></div>
+								<p class="fc__white">광주 18:30</p>
+								<div class="swiper-logo">
+									<img src="${contextPath}/public/images/teams/FL.png"
+										class="ml-20" alt=""> <span class="fc__white">vs</span>
+									<img src="${contextPath}/public/images/teams/FL.png"
+										class="mr-20" alt="">
+								</div>
+								<div class="swiper-team-info">
+									<div class="swiper-team-name">
+										<div class="swiper-left-team">
+											<p class="fs-14  fc__white">BLUE JAYS</p>
+											<p class="fs-12 fc__white">선발 : 김승연</p>
+										</div>
+										<a href="${contextPath}/match/matchResult"><button>경기
+												결과</button></a>
+										<div class="swiper-right-team">
+											<p class="fs-14  fc__white">BLUE JAYS</p>
+											<p class="fs-12 fc__white">선발 : 김승연</p>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<div class="swiper-slide">
+								<p class="fs-20 fc__white mt-10">24.07.04 (목)</p>
+								<p class="fc__white">광주 18:30</p>
+								<div class="swiper-logo">
+									<img src="${contextPath}/public/images/teams/FL.png"
+										class="ml-20" alt=""> <span class="fc__white">vs</span>
+									<img src="${contextPath}/public/images/teams/FL.png"
+										class="mr-20" alt="">
+								</div>
+								<div class="swiper-team-info">
+									<div class="swiper-team-name">
+										<div class="swiper-left-team">
+											<p class="fs-14  fc__white">BLUE JAYS</p>
+											<p class="fs-12 fc__white">선발 : 김승연</p>
+										</div>
+										<a href="${contextPath}/match/matchResult"><button>경기
+												결과</button></a>
+										<div class="swiper-right-team">
+											<p class="fs-14  fc__white">BLUE JAYS</p>
+											<p class="fs-12 fc__white">선발 : 김승연</p>
+										</div>
+
+									</div>
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="swiper-slide">
-						<div class="fs-20 fc__white mt-10" id="dateDisplay"></div>
-						<p class="fc__white">광주 18:30</p>
-						<div class="swiper-logo">
-							<img src="${contextPath}/public/images/teams/FL.png"
-								class="ml-20" alt=""> <span class="fc__white">vs</span> <img
-								src="${contextPath}/public/images/teams/FL.png" class="mr-20"
-								alt="">
-						</div>
-						<div class="swiper-team-info">
-							<div class="swiper-team-name">
-								<div class="swiper-left-team">
-									<p class="fs-14  fc__white">BLUE JAYS</p>
-									<p class="fs-12 fc__white">선발 : 김승연</p>
-								</div>
-								<a href="${contextPath}/match/matchResult"><button>경기
-										결과</button></a>
-								<div class="swiper-right-team">
-									<p class="fs-14  fc__white">BLUE JAYS</p>
-									<p class="fs-12 fc__white">선발 : 김승연</p>
-								</div>
-
-							</div>
-						</div>
-					</div>
-
-					<div class="swiper-slide">
-						<p class="fs-20 fc__white mt-10">24.07.04 (목)</p>
-						<p class="fc__white">광주 18:30</p>
-						<div class="swiper-logo">
-							<img src="${contextPath}/public/images/teams/FL.png"
-								class="ml-20" alt=""> <span class="fc__white">vs</span> <img
-								src="${contextPath}/public/images/teams/FL.png" class="mr-20"
-								alt="">
-						</div>
-						<div class="swiper-team-info">
-							<div class="swiper-team-name">
-								<div class="swiper-left-team">
-									<p class="fs-14  fc__white">BLUE JAYS</p>
-									<p class="fs-12 fc__white">선발 : 김승연</p>
-								</div>
-								<a href="${contextPath}/match/matchResult"><button>경기
-										결과</button></a>
-								<div class="swiper-right-team">
-									<p class="fs-14  fc__white">BLUE JAYS</p>
-									<p class="fs-12 fc__white">선발 : 김승연</p>
-								</div>
-
-							</div>
-						</div>
+						<div class="swiper-button-next fc__white"></div>
+						<div class="swiper-button-prev fc__white"></div>
+						<div class="swiper-pagination"></div>
 					</div>
 				</div>
-
-				<div class="swiper-button-next fc__white"></div>
-				<div class="swiper-button-prev fc__white"></div>
-				<div class="swiper-pagination"></div>
 			</div>
 		</div>
+
 	</div>
 	<!-- 날짜 슬라이드 끝 -->
 	<main>
@@ -208,92 +219,99 @@
 		</section>
 	</main>
 	<!-- 공지사항 시작 -->
-    <section class="info base__lblue mt-20">
-    	<div class="info-one">
-	        <article class="info-title">
-	            <span class="fs-14__b">공지사항</span>
-	        </article>
-	        <article class="info-content swiper-info">
-	        	<div class="swiper-wrapper">
-	            	<a class="swiper-slide fs-12" href="${contextPath}/community/communityDetail/1"><span>안녕히 계세요 여러분~ 저는 행복과 자유를 찾아 떠납니다~~~ 모두 행복하세요~~~~~</span></a>
-	            	<a class="swiper-slide fs-12"  href="${contextPath}/community/communityDetail/2"><span>서버 접습니다.</span></a>
-	            	<a class="swiper-slide fs-12"  href="${contextPath}/community/communityDetail/3"><span>집에 가고 싶습니다.</span></a>
-	            	<a class="swiper-slide fs-12"  href="${contextPath}/community/communityDetail/4"><span>포켓몬고 시작하세요. 동준님. 선물 하루에 하나씩 줄게~~~~~~~~~~~~~~~~~~ 어때!!!!!!!!!!!</span></a>
-	        	</div>
-	        </article>
-	        <article class="suppl">
-	        	<a href="${contextPath}/community/communityBoard/info"><span class="see-more fs-12 fc__gray">더보기▶</span></a>
-	        </article>
-    	</div>
-    </section>
-    <!-- 공지사항 끝 -->
-    
-    <!-- 응원 게시판 시작 -->
-	 <main>
+	<section class="info base__lblue mt-20">
+		<div class="info-one">
+			<article class="info-title">
+				<span class="fs-14__b">공지사항</span>
+			</article>
+			<article class="info-content swiper-info">
+				<div class="swiper-wrapper">
+					<a class="swiper-slide fs-12"
+						href="${contextPath}/community/communityDetail/1"><span>안녕히
+							계세요 여러분~ 저는 행복과 자유를 찾아 떠납니다~~~ 모두 행복하세요~~~~~</span></a> <a
+						class="swiper-slide fs-12"
+						href="${contextPath}/community/communityDetail/2"><span>서버
+							접습니다.</span></a> <a class="swiper-slide fs-12"
+						href="${contextPath}/community/communityDetail/3"><span>집에
+							가고 싶습니다.</span></a> <a class="swiper-slide fs-12"
+						href="${contextPath}/community/communityDetail/4"><span>포켓몬고
+							시작하세요. 동준님. 선물 하루에 하나씩 줄게~~~~~~~~~~~~~~~~~~ 어때!!!!!!!!!!!</span></a>
+				</div>
+			</article>
+			<article class="suppl">
+				<a href="${contextPath}/community/communityBoard/info"><span
+					class="see-more fs-12 fc__gray">더보기▶</span></a>
+			</article>
+		</div>
+	</section>
+	<!-- 공지사항 끝 -->
 
-		 <section class="container">
-			 <article class="board mg-right">
-				 <div class="title">
-					 <span class="fs-28__b">응원 게시판</span>
-					 <span class="see-more fs-10 fc__gray"><a>더보기▶</a></span>
-				 </div>
-				 <hr>
-				 <div class="post">
-					 <div class="post-title">
-						 <span class="fs-12 fc__gray">[ 다저스 ]</span>
-						 <span class="fs-14__b">게시글입니다 test 1234</span>
-					 </div>
-					 <div class="post-info">
-						 <span class="fs-10">작성자 2024-06-23</span>
-						 <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-					 </div>
-				 </div>
-				 <div class="post">
-					 <div class="post-title">
-						 <span class="fs-12 fc__gray">[ 해머스 ]</span>
-						 <span class="fs-14__b">게시글입니다 test 1234</span>
-					 </div>
-					 <div class="post-info">
-						 <span class="fs-10">작성자 2024-06-23</span>
-						 <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-					 </div>
-				 </div>
-				 <div class="post">
-					 <div class="post-title">
-						 <span class="fs-12 fc__gray">[ 다저스 ]</span>
-						 <span class="fs-14__b">게시글입니다 test 1234</span>
-					 </div>
-					 <div class="post-info">
-						 <span class="fs-10">작성자 2024-06-23</span>
-						 <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-					 </div>
-				 </div>
-				 <div class="post">
-					 <div class="post-title">
-						 <span class="fs-12 fc__gray">[ 해머스 ]</span>
-						 <span class="fs-14__b">게시글입니다 test 1234</span>
-					 </div>
-					 <div class="post-info">
-						 <span class="fs-10">작성자 2024-06-23</span>
-						 <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-					 </div>
-				 </div>
-				 <div class="post">
-					 <div class="post-title">
-						 <span class="fs-12 fc__gray">[ 다저스 ]</span>
-						 <span class="fs-14__b">게시글입니다 test 1234</span>
-					 </div>
-					 <div class="post-info">
-						 <span class="fs-10">작성자 2024-06-23</span>
-						 <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-					 </div>
-				 </div>
-			 </article>
-			 
-		 </section>
-		 <!-- 응원게시판 끝 -->
-		 
-	 </main>
+	<!-- 응원 게시판 시작 -->
+	<main>
+
+		<section class="container">
+			<article class="board mg-right">
+				<div class="title">
+					<span class="fs-28__b">응원 게시판</span> <span
+						class="see-more fs-10 fc__gray"><a>더보기▶</a></span>
+				</div>
+				<hr>
+				<div class="post">
+					<div class="post-title">
+						<span class="fs-12 fc__gray">[ 다저스 ]</span> <span class="fs-14__b">게시글입니다
+							test 1234</span>
+					</div>
+					<div class="post-info">
+						<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
+							30 | 댓글 2 | 좋아요 3 ♡</span>
+					</div>
+				</div>
+				<div class="post">
+					<div class="post-title">
+						<span class="fs-12 fc__gray">[ 해머스 ]</span> <span class="fs-14__b">게시글입니다
+							test 1234</span>
+					</div>
+					<div class="post-info">
+						<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
+							30 | 댓글 2 | 좋아요 3 ♡</span>
+					</div>
+				</div>
+				<div class="post">
+					<div class="post-title">
+						<span class="fs-12 fc__gray">[ 다저스 ]</span> <span class="fs-14__b">게시글입니다
+							test 1234</span>
+					</div>
+					<div class="post-info">
+						<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
+							30 | 댓글 2 | 좋아요 3 ♡</span>
+					</div>
+				</div>
+				<div class="post">
+					<div class="post-title">
+						<span class="fs-12 fc__gray">[ 해머스 ]</span> <span class="fs-14__b">게시글입니다
+							test 1234</span>
+					</div>
+					<div class="post-info">
+						<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
+							30 | 댓글 2 | 좋아요 3 ♡</span>
+					</div>
+				</div>
+				<div class="post">
+					<div class="post-title">
+						<span class="fs-12 fc__gray">[ 다저스 ]</span> <span class="fs-14__b">게시글입니다
+							test 1234</span>
+					</div>
+					<div class="post-info">
+						<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
+							30 | 댓글 2 | 좋아요 3 ♡</span>
+					</div>
+				</div>
+			</article>
+
+		</section>
+		<!-- 응원게시판 끝 -->
+
+	</main>
 	<jsp:include page="/WEB-INF/views/layouts/footer.jsp" />
 	<script
 		src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

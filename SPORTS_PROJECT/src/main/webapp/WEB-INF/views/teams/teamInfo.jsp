@@ -60,7 +60,7 @@
 			</div>
 		</div>
 		<hr>
-		<div class="container team-logo mt-20 d-flex">
+		<div class="container teams-logo mt-20 d-flex">
 			<p class="fs-28__b mb-10">BLUE JAYS LOGO</p>
 			<div class="team-logo-content d-flex">
 				<div>

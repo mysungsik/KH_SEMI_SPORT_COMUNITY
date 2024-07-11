@@ -111,7 +111,7 @@ section{
 /* team-ci 끝 */
 
 /* team-logo 시작 */
-.team-logo{
+.teams-logo{
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
@@ -119,7 +119,7 @@ section{
 	margin-bottom: 50px;
 }
 
-.team-logo p:first-child{
+.teams-logo p:first-child{
 	padding: 10px 0;
 }
 

@@ -126,3 +126,8 @@ eachTeamHeader .header-bot .header-nav .d-flex a:hover{
 eachTeamHeader .header-bot .header-nav .d-flex img{
 	height: 140px;
 }
+
+eachTeamHeader .header-bot{
+	margin-bottom: 30px;
+}
+
