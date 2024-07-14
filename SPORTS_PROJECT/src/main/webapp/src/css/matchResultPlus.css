@@ -70,11 +70,15 @@
 	border-bottom: none;
 }
 
-.dateSelectDetail input, .winTeamDetail input, .loseTeamDetail input,
-	.matchPlaceDetail input, .winTeamScoreDetail input,
+.dateSelectDetail input, 
+	.winTeamScoreDetail input,
 	.loseTeamScoreDetail input {
 	width: 300px;
 	margin-left: 30px;
+}
+.winTeamDetail select, .loseTeamDetail select, .matchPlaceDetail select{
+	width: 300px;
+	margin-lefT: 30px;
 }
 /* 경기 상세 */
 .matchDetail {

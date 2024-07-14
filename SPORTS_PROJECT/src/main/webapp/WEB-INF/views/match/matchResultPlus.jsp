@@ -36,7 +36,14 @@
 								<div>승리 팀 이름</div>
 							</div>
 							<div class="winTeamDetail">
-								<input type="text">
+								<select name="teamName" id="teamName">
+									<option>----선택하세요----</option>
+									<option value="KIA">KIA</option>
+									<option value="LOTTE">LOTTE</option>
+									<option value="SAMSUNG">SAMSUNG</option>
+									<option value="HANWHA">HANWHA</option>
+									<option value="KIUM">KIUM</option>
+								</select>
 							</div>
 						</div>
 						<div class="loseTeamBox">
@@ -44,7 +51,14 @@
 								<div>패배 팀 이름</div>
 							</div>
 							<div class="loseTeamDetail">
-								<input type="text">
+								<select name="teamName" id="teamName">
+									<option>----선택하세요----</option>
+									<option value="KIA">KIA</option>
+									<option value="LOTTE">LOTTE</option>
+									<option value="SAMSUNG">SAMSUNG</option>
+									<option value="HANWHA">HANWHA</option>
+									<option value="KIUM">KIUM</option>
+								</select>
 							</div>
 						</div>
 						<div class="matchPlaceBox">
@@ -52,7 +66,18 @@
 								<div>경기장 이름</div>
 							</div>
 							<div class="matchPlaceDetail">
-								<input type="text">
+								<select name="matchPlaceName" id="matchPlaceName">
+									<option>----선택하세요----</option>
+									<option value="창원NC파크">창원NC파크</option>
+									<option value="대구삼성라이온즈파크">대구삼성라이온즈파크</option>
+									<option value="고척스카이돔">고척스카이돔</option>
+									<option value="광주기아챔피언스필드">광주기아챔피언스필드</option>
+									<option value="인천SSG랜더스필드">인천SSG랜더스필드</option>
+									<option value="수원KT위즈파크">수원KT위즈파크</option>
+									<option value="사직야구장">사직야구장</option>
+									<option value="서울종합운동장야구장">서울종합운동장야구장</option>
+									<option value="대전한화생명이글스파크">대전한화생명이글스파크</option>
+								</select>
 							</div>
 						</div>
 						<div class="winTeamScoreBox">
@@ -60,7 +85,7 @@
 								<div>승리 팀 스코어</div>
 							</div>
 							<div class="winTeamScoreDetail">
-								<input type="text">
+								<input type="number" id="winnerScore" min="0">
 							</div>
 						</div>
 						<div class="loseTeamScoreBox">
@@ -68,7 +93,7 @@
 								<div>패배 팀 스코어</div>
 							</div>
 							<div class="loseTeamScoreDetail">
-								<input type="text">
+								<input type="number" id="loserScore" min="0">
 							</div>
 						</div>
 					</div>
@@ -104,9 +129,9 @@
 							</div>
 							<div class="hitDetail">
 								<div>승리 팀</div>
-								<input type="text">
+								<input type="number" id="hitsWinner">
 								<div>패배 팀</div>
-								<input type="text">
+								<input type="number" id="hitsLoser">
 							</div>
 						</div>
 						<div class="homeRunBox">
@@ -115,9 +140,9 @@
 							</div>
 							<div class="homeRunDetail">
 								<div>승리 팀</div>
-								<input type="text">
+								<input type="number" id="hrWinner">
 								<div>패배 팀</div>
-								<input type="text">
+								<input type="number" id="hrLoser">
 							</div>
 						</div>
 						<div class="threeStrikeBox">
@@ -126,9 +151,9 @@
 							</div>
 							<div class="threeStrikeDetail">
 								<div>승리 팀</div>
-								<input type="text">
+								<input type="number" id="soWinner">
 								<div>패배 팀</div>
-								<input type="text">
+								<input type="number" id="soLoser">
 							</div>
 						</div>
 						<div class="stoleBaseBox">
@@ -137,9 +162,9 @@
 							</div>
 							<div class="stoleBaseDetail">
 								<div>승리 팀</div>
-								<input type="text">
+								<input type="number" id="sbWinner">
 								<div>패배 팀</div>
-								<input type="text">
+								<input type="number" id="sbLoser">
 							</div>
 						</div>
 						<div class="doublePlayBox">
@@ -148,9 +173,9 @@
 							</div>
 							<div class="doublePlayDetail">
 								<div>승리 팀</div>
-								<input type="text">
+								<input type="number" id="dpWinner">
 								<div>패배 팀</div>
-								<input type="text">
+								<input type="number" id="dpLoser">
 							</div>
 						</div>
 						<div class="errorBox">
@@ -159,15 +184,16 @@
 							</div>
 							<div class="errorDetail">
 								<div>승리 팀</div>
-								<input type="text">
+								<input type="number" id="erWinner">
 								<div>패배 팀</div>
-								<input type="text">
+								<input type="number" id="erLoser">
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<button onclick ="calculateResults()">결과 계산</button>
 		<div class=cardBackground>
 			<div class="matchDetail card__lblue ">
 				<div class="matchDetail">
@@ -196,7 +222,14 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td>김동준</td>
+								<td>
+									<select>
+										<option>--선택해보셈--</option>
+										<option value=김김김>김김김</option>
+										<option value=동동동>동동동</option>
+									</select>
+								
+								</td>
 								<td>6</td>
 								<td>83</td>
 								<td>7</td>

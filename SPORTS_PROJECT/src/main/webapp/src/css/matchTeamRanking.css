@@ -17,7 +17,7 @@
 
 .game-records{
     display: flex;
-    flex-direction: column;
+    flex-direction:column;
 }
 
 .regionName{
