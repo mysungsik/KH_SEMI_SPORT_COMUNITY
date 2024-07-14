@@ -2,6 +2,7 @@ package com.helpgpt.sports.common.util;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -10,21 +11,21 @@ import javax.sql.DataSource;
 
 public class JDBCTemplate {
     // 전 프로젝트에 공유하기 위해 Static 으로 생성
-    private static Connection conn;
     
-	public static Connection connect() {
+	public static Connection getConnection() {
+		Connection conn = null;
         try {
-                        
-          Context initContext = new InitialContext();
-          Context envContext = (Context)initContext.lookup("java:/comp/env");
-          DataSource ds = (DataSource)envContext.lookup("jdbc/oracle");
-          
-          conn = ds.getConnection();
-          conn.setAutoCommit(false);
+	         
+	        Context initContext = new InitialContext();
+	        Context envContext = (Context)initContext.lookup("java:/comp/env");
+	        DataSource ds = (DataSource)envContext.lookup("jdbc/oracle");
+	          
+	        conn = ds.getConnection();
+	        conn.setAutoCommit(false);
 
         } catch (Exception e) {
-            e.printStackTrace();
-            System.err.println("[ERROR] : 연결중 오류 발생");
+        	e.printStackTrace();
+        	System.err.println("[ERROR] : 연결중 오류 발생");
         }
         return conn;
     }

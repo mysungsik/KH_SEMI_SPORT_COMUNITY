@@ -47,7 +47,7 @@
 	                <li><a class="dropdown-item fs-20__b text-hover__blue" href="${contextPath}/profile/myInfo">내 정보 관리</a></li>
 	                <li><a class="dropdown-item fs-20__b text-hover__blue" href="${contextPath}/profile/resign">회원 탈퇴</a></li>
 	            
-	            	<c:if test="${loginUser.getUserAuthority() == 'admin' }">
+	            	<c:if test="${loginUser.getUserAuthority() == 'A' }">
 		                <p class="header-title fc__gray fs-20__b"> 회원 관리 </p>
 		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="${contextPath}/admin/profile/userManagement">유저 관리</a></li>
 		                <li><a class="dropdown-item fs-20__b text-hover__blue" href="${contextPath}/admin/profile/reportManagement">신고 관리</a></li>

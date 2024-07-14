@@ -37,7 +37,9 @@ function userLogin(){
 					
 				},
 				error : function(request, status, error){
-
+					console.log(request);
+					console.log(status);
+					console.log(error);
 				}
 			});
 

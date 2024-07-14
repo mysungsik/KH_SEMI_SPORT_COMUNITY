@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
+import com.helpgpt.sports.login.model.service.UserService;
 import com.helpgpt.sports.login.model.vo.User;
 
 /**
@@ -21,12 +22,13 @@ import com.helpgpt.sports.login.model.vo.User;
 @WebServlet("/api/user/*")
 public class UserApi extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private UserService service = new UserService();
+	
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		PrintWriter out = res.getWriter();
 		String contextPath = req.getContextPath();
 		User loginUser = null;
-		User loginAdmin = null;	// 테스트용 admin
 		
 		// Path 지정
 		String reqPath = req.getPathInfo();
@@ -42,62 +44,29 @@ public class UserApi extends HttpServlet {
 				String inputId = req.getParameter("inputId");
 				String inputPw = req.getParameter("inputPw");
 				
+				User loginInfo = new User(inputId,inputPw);
+				
+				loginUser = service.userLogin(loginInfo);
 				
 				Map<String, Object> result = new HashMap<>();
 				
-				/** TODO [로그인객체생성]
-					DAO 접근 후 DB 데이터 확인, 로그인유저객체 생성 할 것
-				*/
+				System.out.println(loginUser);
 				
-				// Admin 유저 예시 TEST용 ADMIN
-				loginAdmin = new User(1, inputId, "test@email.com", inputPw, "admin", "kia");
-				// 일반 유저 예시
-				loginUser = new User(2, inputId, "test@email.com", inputPw, "user", "");
-	
-				/** TODO [로그인 조건 변경]
-				 	위 로그인객체생성 TODO완료시, 로그인 성공 조건을 looginUser != null 로 변경할것
-				 	현재 로그인 가능한 아이디와 비밀번호
-				 		id : sportsUser / sportsAdmin
-				 		pw : Qwertyuiop1
-				*/
-				if (inputId.equals("sportsUser") && 
-					inputPw.equals("KQZ3dpm+3daZEkqDpEvtnk6AMuxOJ22ZNR1WmZoxVVq+5YWwAZ+SflpCH26gc3X2nVzfL1zre30F+jsMxgowaw==")){
+				if (loginUser != null){
 					HttpSession session = req.getSession();
 					
 					session.setAttribute("loginUser", loginUser);
 					session.setMaxInactiveInterval(3600);
 					
-					/** TODO: 로그인유저객체도 GSON 으로 전달 
-					*/
 					result.put("message", "환영합니다.");
 					result.put("data", loginUser);
 					
 					new Gson().toJson(result, out);
-					
-				// 테스트용 Admin
-				} 
-				else if (inputId.equals("sportsAdmin") && 
-						inputPw.equals("KQZ3dpm+3daZEkqDpEvtnk6AMuxOJ22ZNR1WmZoxVVq+5YWwAZ+SflpCH26gc3X2nVzfL1zre30F+jsMxgowaw==")){
-						HttpSession session = req.getSession();
-						
-						session.setAttribute("loginUser", loginAdmin);
-						session.setMaxInactiveInterval(3600);
-						
-						/** TODO: 로그인유저객체도 GSON 으로 전달 
-						*/
-						result.put("message", "환영합니다.");
-						result.put("data", loginAdmin);
-						
-						new Gson().toJson(result, out);
-						
-					
 				}
 				
 				// 로그인 실패시
 				else {
 					result.put("message", "해당 유저는 존재하지 않습니다.");
-					result.put("data", null);
-					
 					new Gson().toJson(result, out);
 				}
 			}break;

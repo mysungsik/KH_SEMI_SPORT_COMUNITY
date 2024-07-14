@@ -146,9 +146,8 @@ function emailValidate(email){
 
 function nameValidate(name){
 	/* name 체크 
-		- 최소 10글자, 최대 20글자
-		- 최소 하나의 소문자, 대문자, 숫자를 반드시 포함
-		- 특수문자 사용 가능
+		- 최소 2글자, 최대 4글자
+		- 한글만 사용가능
 	*/
 	let nameRegex = /^[ㄱ-힣]{2,4}$/
 
