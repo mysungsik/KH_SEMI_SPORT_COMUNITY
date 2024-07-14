@@ -4,6 +4,18 @@ $(document).ready(function () {
 	observingInput();
 });
 
+function termCheck(){
+	let termPage = $('input[name="term-page"]');
+	let termPersonal = $('input[name="term-personal"]');
+	
+	if (termPage.prop("checked") == true
+		&& termPersonal.prop("checked") == true){
+		window.location.href = `${contextPath}/signup`
+	} else{
+		toastPop("warn", "필수 약관에 동의해주세요")
+	}
+}
+
 function signup(){
 
 	let signupForm = document.signupForm
@@ -19,20 +31,29 @@ function signup(){
 			let inputBd = signupForm.signup_bd.value;
 			let inputPhone = signupForm.signup_phone.value;
 			let inputAddress = signupForm.signup_address.value;
-			
-			let inputGender = signupForm.signup_gender.value;
-			if (inputGender != null){
-				inputGender = inputGender.toUpperCase();
-			}
-			let inputNation  = signupForm.signup_nation.value;
-			if (inputNation != null){
-				inputNation = inputNation.toUpperCase();
-			}
+			let inputGender = signupForm.signup_gender.value.toUpperCase();
+			let inputNation  = signupForm.signup_nation.value.toUpperCase();
 			
 			if (idValidate(inputId) &&
 				pwValidate(inputPw) &&
 				emailValidate(inputEmail) &&
 				nameValidate(inputName)) {
+				
+				
+				if (inputBd != ""){
+					birthdayValidate();
+					return;
+				}
+				
+				if (inputPhone != ""){
+					phoneValidate();
+					return;
+				}
+				
+				if (inputAddress != ""){
+					addressValidate();
+					return
+				}
 				
 				let request_url = `${contextPath}/api/sign/signup`
 				$.ajax({

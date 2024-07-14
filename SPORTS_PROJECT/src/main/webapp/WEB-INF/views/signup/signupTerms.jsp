@@ -87,7 +87,7 @@
                     </div>
                 </div>
                 <!-- 임시 페이지이동 -->
-                <button class="btn-big__blue" type="button" onclick="location.href = '${contextPath}/signup';">
+                <button class="btn-big__blue" type="button" onclick="termCheck()">
                     다음
                 </button>
             </form>
