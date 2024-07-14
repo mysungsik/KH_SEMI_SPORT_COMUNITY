@@ -8,16 +8,17 @@
 	
 	<link rel="stylesheet" href="${contextPath}/src/css/teamSchedule.css">
 	<title>schedule</title>
-	<link rel="stylesheet" href="${contextPath}/js/teamSchedule.js" defer>
 	<script src="https://kit.fontawesome.com/cb5f1fee4d.js" crossorigin="anonymous"></script>
+
 	<!-- jQuery -->
-     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.14/index.global.min.js'></script>
-   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- pagination.js CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.css">
-    <!-- pagination.js JavaScript -->
-    <script src="${contextPath }/src/common/pagination.js" defer></script>
-    <script src="${contextPath }/index.js" defer></script>
+	<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.14/index.global.min.js'></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	 <!-- pagination.js CSS -->
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.css">
+	 <link rel="stylesheet" href="./index.css">
+	 <!-- pagination.js JavaScript -->
+	 <script src="${contextPath }/src/js/teamSchedule.js" defer></script>
+
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/layouts/header-teams.jsp" />
@@ -124,7 +125,10 @@
 	<!-- 팀 경기 날짜 끝 -->
 
 	<!-- 달력 api -->
-    <div id='calendar'></div>
+    <div id='calendar-container'>
+  		<div id='calendar'></div>
+	</div>
+
 </body>
 <jsp:include page="/WEB-INF/views/layouts/footer.jsp" />
 </body>

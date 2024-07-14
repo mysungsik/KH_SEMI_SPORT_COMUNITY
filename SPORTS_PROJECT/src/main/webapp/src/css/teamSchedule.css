@@ -117,18 +117,6 @@ width: 1024px;
 /*  팀 경기 날짜 끝 */
 
 /* 달력  api */
-
-#external-events {
-  position: fixed;
-  z-index: 2;
-  top: 20px;
-  left: 20px;
-  width: 150px;
-  padding: 0 10px;
-  border: 1px solid #ccc;
-  background: #eee;
-}
-
 #external-events .fc-event {
   cursor: move;
   margin: 3px 0;
@@ -137,10 +125,102 @@ width: 1024px;
 #calendar-container {
   position: relative;
   z-index: 1;
-  margin-left: 200px;
+  margin: 0 auto 50px;
+ 
 }
 
 #calendar {
   max-width: 1100px;
   margin: 20px auto;
+}
+
+/* 버튼 */
+.fc-header-toolbar{
+  display: flex;
+}
+
+.fc-toolbar-chunk{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.fc-toolbar-chunk > .fc-button{
+  background-color: white;
+  color:black;
+  font-size: 30px;
+  border: 0;
+  padding: 0;
+}
+
+.fc-toolbar-chunk > .fc-button:hover{
+  background-color: #458BE2;
+  color:white;
+  font-size: 30px;
+  border: 0;
+  padding:0;
+}
+.fc-day-sun a{
+  color: red;
+}
+
+.fc-day-sat a{
+  color: blue;
+}
+
+/* 스케쥴 css */
+.mini-date{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mini-date img{
+  width: 80px;
+  height: 80px;
+}
+
+.mini-date .mini-schedule{
+  font-size: 14px;
+  color: #727272;
+}
+
+.event-victory {
+  color:#458BE2;
+}
+
+.event-lose{
+  color: #EF4E4E;
+}
+
+.event-draw{
+  color: mediumseagreen;
+}
+
+.mini-date .mini-rank i{
+  font-size: 20px;
+}
+.mini-date .mini-rank span{
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.fc-daygrid-day-events{
+  background-color: none !important;
+  border: none !important;
+}
+
+.fc-h-event{
+  background-color: transparent !important;
+  border: none;
+
+}
+
+.fc .fc-daygrid-day-frame{
+  min-height: 180px;
+}
+
+.calendar-container{
+  height: auto;
 }
