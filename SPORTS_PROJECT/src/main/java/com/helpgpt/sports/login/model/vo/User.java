@@ -20,10 +20,24 @@ public class User {
 	private String createdDate;
 	private String deletedDate;
 	
-	// 유저 로그인객체
+	// 유저 로그인용객체
 	public User(String userId, String userPw) {
 		this.userId = userId;
 		this.userPw = userPw;
+	}
+	
+	// 유저 회원가입용객체
+	public User(String userId, String userPw, String userEmail, String userName,String userPhone,
+			String userBd, String userAddress, String userGender, String userNation) {
+		this.userId = userId;
+		this.userPw = userPw;
+		this.userEmail = userEmail;
+		this.userName = userName;
+		this.userPhone = userPhone;
+		this.userBd = userBd;
+		this.userAddress = userAddress;
+		this.userGender = userGender;
+		this.userNation = userNation;
 	}
 	
 	// 유저 정보 전달 객체 (pw 제외 전부)

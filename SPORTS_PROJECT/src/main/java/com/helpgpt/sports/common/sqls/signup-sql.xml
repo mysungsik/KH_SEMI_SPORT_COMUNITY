@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>sql file for signup</comment>
+	
+	<entry key="user-signup">
+		INSERT INTO USER_INFO 
+		VALUES(
+		    SEQ_USER_NO.nextval,
+		    NULL,
+		    ?,
+		    ?, 
+		    ?,
+		    ?, 
+		    ?, 
+		    NULL, 
+		    ?,
+		    ?,
+		    ?,
+		    ?,
+		    NULL,
+		    NULL,
+		    DEFAULT,
+		    DEFAULT,
+		    DEFAULT,
+		    NULL
+		)
+	</entry>
+</properties>

@@ -34,8 +34,8 @@
                 </div>
                 <p class="fs-20__b"> 추가 정보</p>
                 <div class="signup-unnecessary mt-10">
-                    <input class="box-shadow" type="text" name="signup_ssn" placeholder="생년원일 : YYYYMMDD 형식 입력">
-                    <input class="box-shadow" type="text" name="signup_number" placeholder="전화번호 : ( - 없이 입력)">
+                    <input class="box-shadow" type="text" name="signup_bd" placeholder="생년원일 : YYYYMMDD 형식 입력">
+                    <input class="box-shadow" type="text" name="signup_phone" placeholder="전화번호 : ( - 없이 입력)">
                     <input class="box-shadow" type="text" name="signup_address" placeholder="주소 : OO시, OO동 형식 입력">
                     <div class="radio-box-container">
                         <div class="radio-box">
@@ -43,8 +43,8 @@
                             <input type="radio" name="signup_gender" id="gender-f" value="f"><label for="gender-f">여자</label>
                         </div>
                         <div class="radio-box">
-                            <input type="radio" name="signup_region" id="region-ko" value="ko"><label for="region-ko">내국인</label>
-                            <input type="radio" name="signup_region" id="region-fo" value="fo"><label for="region-fo">외국인</label>
+                            <input type="radio" name="signup_nation" id="region-ko" value="ko"><label for="region-ko">내국인</label>
+                            <input type="radio" name="signup_nation" id="region-fo" value="fo"><label for="region-fo">외국인</label>
                         </div>
                     </div>
                 </div>

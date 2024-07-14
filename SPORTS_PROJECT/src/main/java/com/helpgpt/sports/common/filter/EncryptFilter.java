@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 @WebFilter(filterName = "EncryptFilter", 
 			urlPatterns = {
 				"/api/user/login",
-				"/api/signup",
+				"/api/sign/*",
 				"/api/updateUser/*"
 			}
 )

@@ -1,4 +1,4 @@
-package com.helpgpt.sports.login.apis;
+package com.helpgpt.sports.signup.apis;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,20 +15,19 @@ import javax.servlet.http.HttpSession;
 import com.google.gson.Gson;
 import com.helpgpt.sports.login.model.service.UserService;
 import com.helpgpt.sports.login.model.vo.User;
+import com.helpgpt.sports.signup.model.service.SignupService;
 
 /**
  * Servlet implementation class Login
  */
-@WebServlet("/api/user/*")
-public class UserApi extends HttpServlet {
+@WebServlet("/api/sign/*")
+public class signApi extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private UserService service = new UserService();
+	private SignupService service = new SignupService();
 	
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		PrintWriter out = res.getWriter();
-		String contextPath = req.getContextPath();
-		User loginUser = null;
 		
 		// Path 지정
 		String reqPath = req.getPathInfo();
@@ -40,41 +39,42 @@ public class UserApi extends HttpServlet {
 		
 		// 경로에 따라 필요한 기능을 사용 ("*" 이후 들어갈 첫번째 값이 해당 기능)
 		switch (path) {
-			case "login": {
+			case "signup": {
 				String inputId = req.getParameter("inputId");
 				String inputPw = req.getParameter("inputPw");
+				String inputEmail = req.getParameter("inputEmail");
+				String inputName = req.getParameter("inputName");
+				String inputPhone = req.getParameter("inputPhone");
+				String inputBd = req.getParameter("inputBd");
+				String inputAddress = req.getParameter("inputAddress");
+				String inputGender = req.getParameter("inputGender");
+				String inputNation = req.getParameter("inputNation");
 				
-				User loginInfo = new User(inputId,inputPw);
+				User signupInfo = new User(inputId, inputPw, inputEmail, inputName, inputPhone, inputBd, inputAddress, inputGender, inputNation);
 				
-				loginUser = service.userLogin(loginInfo);
+				int signupResult = service.signup(signupInfo);
 				
 				Map<String, Object> result = new HashMap<>();
 				
-				// 로그인 성공 여부
-				if (loginUser != null){
-					HttpSession session = req.getSession();
+				// 회원가입 성공 여부
+				if (signupResult > 0){
 					
-					session.setAttribute("loginUser", loginUser);
-					session.setMaxInactiveInterval(3600);
-					
-					result.put("message", "환영합니다.");
-					result.put("data", "Login Success");	// 로그인 성공시만 data 전달
+					result.put("message", "회원가입에 성공했습니다.");
+					result.put("data", "Signup Success");	// 회원가입 성공시만 data 전달
 					
 					new Gson().toJson(result, out);
 				}
 				else {
-					result.put("message", "해당 유저는 존재하지 않습니다.");
+					result.put("message", "회원가입에 실패하였습니다.");
 					new Gson().toJson(result, out);
 				}
+				
 			}break;
 				
-			case "logout" : {
-				HttpSession session = req.getSession();
-				session.setAttribute("loginUser", null);
-				
-				res.sendRedirect(contextPath + "/login");
+			case "resign" : {
+				System.out.println("회원탈퇴");
 			}break;
-			default:System.out.println("[ERROR] LOGIN API");
+			default:System.out.println("[ERROR] Failed to Signup");
 		}
 	}
 }

@@ -15,13 +15,14 @@ public class UserDAO {
 	ResultSet rs;
 	
 	public UserDAO() {
-		String filePath = UserDAO.class.getResource("/com/helpgpt/sports/common/sqls/user-sql.xml").getPath();
+		String defaultpath = "/com/helpgpt/sports/common/sqls/";
+		String filePath = UserDAO.class.getResource(defaultpath + "user-sql.xml").getPath();
 		try {
 			prop = new Properties();
 			FileInputStream fis = new FileInputStream(filePath);
 			prop.loadFromXML(fis);
 		} catch (Exception e) {
-			System.out.println("[ERROR] Failed to Load SQL file");
+			System.out.println("[ERROR] Failed to Load user-sql file");
 			e.printStackTrace();
 		}
 	}
