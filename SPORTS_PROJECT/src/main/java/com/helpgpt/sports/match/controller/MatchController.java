@@ -69,6 +69,10 @@ public class MatchController extends HttpServlet {
 			dispatcher = req.getRequestDispatcher(defaultURLPath + "matchDate.jsp");
 			dispatcher.forward(req, resp);
 		};break;
+		case "TRAmerican" : {
+			dispatcher = req.getRequestDispatcher(defaultURLPath + "TRAmerican.jsp");
+			dispatcher.forward(req, resp);
+		};break;
 		default:System.out.println("404 페이지로 이동");
 		}
 	

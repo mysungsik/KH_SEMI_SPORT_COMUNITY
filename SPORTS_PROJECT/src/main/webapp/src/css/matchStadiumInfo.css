@@ -1,8 +1,9 @@
 body {
 	font-family: Arial, sans-serif;
 }
-.cardBackground{
-	margin-bottom:30px;
+
+.cardBackground {
+	margin-bottom: 30px;
 }
 
 .quick-view {
@@ -27,112 +28,164 @@ body {
 	border-radius: 10px;
 	display: flex;
 	justify-content: space-around;
-	flex-direction:column;
+	flex-direction: column;
 }
-.league-info-mid{
-	display:flex;
+
+.league-info-mid {
+	display: flex;
 }
-.league-info-top{
+
+.league-info-top {
 	height: 40px;
 	border-bottom: 1px solid white;
-	display:flex;
-	align-items:center;
+	display: flex;
+	align-items: center;
 }
-.league-info-top > div{
-	margin-left:30px;
+
+.league-info-top>div {
+	margin-left: 30px;
 }
-.league-info-mid-left,
-.league-info-mid-mid,
-.league-info-mid-right{
-	display:flex;
-	flex-direction:column;
+
+.league-info-mid-left, .league-info-mid-mid, .league-info-mid-right {
+	display: flex;
+	flex-direction: column;
 	width: 250px;
 	margin-left: 30px;
 	margin-top: 10px;
 }
 /*구장 이미지*/
 .stadium-image {
-	display:flex;
-	flex-direction:column;
+	display: flex;
+	flex-direction: column;
 }
-.stadiumImageTop{
-	margin-bottom:10px;
+
+.stadiumImageTop {
+	margin-bottom: 10px;
 }
-.stadiumImageTop > div{
-	margin-left:30px;
-	margin-top:30px;
-	font-size:20px;
+
+.stadiumImageTop>div {
+	margin-left: 30px;
+	margin-top: 30px;
+	font-size: 20px;
 }
-.stadium-imageBox{
+
+.stadium-imageBox {
 	margin: 30px;
 }
-.stadium-imageBox > div{
+
+.stadium-imageBox>div {
 	background-color: #4a90e2;
 	padding: 10px;
 	border-radius: 10px;
 	display: flex;
 	justify-content: space-around;
-	height:200px;
-	margin-bottom:30px;
+	height: 200px;
+	margin-bottom: 30px;
 }
 /*구장 내부 이미지*/
-.stadium-details{
-	display:flex;
-	flex-direction:column;
+.stadium-details {
+	display: flex;
+	flex-direction: column;
 }
-.stadium-image{
-	display:flex;
-	flex-direction:column;
+
+.stadium-image {
+	display: flex;
+	flex-direction: column;
 }
-.stadiumDetailsTop{
-	margin-bottom:10px;
+
+.stadiumDetailsTop {
+	margin-bottom: 20px;
+	text-align: center;
 }
-.stadiumDetailsTop > div{
-	margin-left:30px;
-	margin-top:30px;
-	font-size:20px;
+
+.stadiumDetailsTop>div {
+	margin-left: 30px;
+	margin-top: 30px;
+	font-size: 20px;
 }
-.stadium-details > img{
-	width:70%;
-}
+
+
 .stadium-details {
 	background-color: #f0f0f0;
 	padding: 20px;
-	margin-top: 20px;
+	margin-top: 10px;
 	border-radius: 10px;
 }
-.stadium-imageBox2 > div{
+
+.stadium-imageBox2 {
+	position: relative;
+	width: 500px;
+	height: 500px;
+}
+
+.image-section {
+	position: absolute;
+	width: 100%;
+	height: 50%;
+	cursor: pointer;
+	display:flex;
+	justify-content: center;
+}
+  .image-section img {
+        width: 100%;
+        height: 100%;
+    }
+
+.magnify {
+	display: none;
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+	border: 2px solid #000;
+	z-index: 10;
+}
+
+.magnify img {
+	position: absolute;
+	width: 400%;
+	height: 400%;
+}
+
+.stadium-imageBox2>div {
 	background-color: #4a90e2;
 	padding: 10px;
 	border-radius: 10px;
 	display: flex;
 	justify-content: space-around;
-	height:400px;
-	margin-bottom:30px;
-	margin-top:30px;
+	height: 400px;
+	margin-bottom: 30px;
+	margin-top: 30px;
 }
-.placeDetails > div {
-	font-size:18px;
-	margin-bottom:10px;
-	margin-top:30px;
+.placeDetails{
+	margin-top:20px;
 }
-.detailsBox{
-	display:flex;
-	flex-direction:column;
-	width:400px;
-	margin-top:50px;
+.placeDetails>div {
+	font-size: 18px;
+	margin-bottom: 10px;
+	margin-top: 30px;
 }
-.details{
-	display:flex;
-	margin-bottom:10px;
+
+.detailsBox {
+	display: flex;
+	flex-direction: column;
+	width: 400px;
+	margin-top: 50px;
 }
-.details1{
-	width:100px;
-	font-size:14px;
+
+.details {
+	display: flex;
+	margin-bottom: 10px;
 }
-.details2{
-	width:200px;
-	font-size:14px;
+
+.details1 {
+	width: 100px;
+	font-size: 14px;
+}
+
+.details2 {
+	width: 200px;
+	font-size: 14px;
 }
 
 .comments-section {
