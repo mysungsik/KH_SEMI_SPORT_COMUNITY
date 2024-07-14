@@ -12,6 +12,7 @@ function userLogin(){
 
 		let inputId = loginForm.login_id.value;
 		let inputPw = loginForm.login_pw.value;
+		let stayLogin = $("input[name='stay_login']").prop("checked")
 		
 		if (idValidate(inputId) &&
 			pwValidate(inputPw)) {
@@ -22,7 +23,8 @@ function userLogin(){
 				url: request_url,
 				data: {
 					inputId,
-					inputPw
+					inputPw,
+					stayLogin
 				},
 				dataType: "json",
 				success: function (res) {

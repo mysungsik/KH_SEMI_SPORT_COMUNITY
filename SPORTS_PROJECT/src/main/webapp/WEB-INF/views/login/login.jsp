@@ -29,7 +29,7 @@
                 </button>
                 <div class="term-check-div checkbox__blue">
                     <input type="checkbox" id="stay-login" name="stay_login">
-                    <label for="term-all" class="fs-14">로그인 상태유지</label>
+                    <label for="stay-login" class="fs-14">로그인 상태유지</label>
                 </div>
                 <div class="login-sub">
                     <div>
