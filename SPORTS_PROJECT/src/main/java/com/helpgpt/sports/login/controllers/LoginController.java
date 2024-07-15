@@ -25,10 +25,14 @@ public class LoginController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		HttpSession session = req.getSession();
+		HttpSession session = req.getSession(false);
 		String contextPath =  req.getContextPath();
+		User loginUser = null;
 		
-		User loginUser = (User)session.getAttribute("loginUser");
+		if (session != null) {
+			loginUser = (User)session.getAttribute("loginUser");
+			
+		}
 		
 		// 로그인 하지 않은 유저만 페이지 접근 가능
 		if (loginUser == null) {

@@ -55,20 +55,21 @@ public class UserApi extends HttpServlet {
 			// 로그인 성공 여부
 			if (loginUser != null) {
 				HttpSession session = req.getSession();
+				session.setMaxInactiveInterval(300);
 
 				session.setAttribute("loginUser", loginUser);
-				session.setMaxInactiveInterval(10);
 
 				// 로그인 성공 && 로그인상태유지를 체크한경우 (30일간 저장) - 쿠키에 UUID 를 만들어서 저장시킴
 				if (stayLogin.equals("true")) {
-					Cookie cookie = new Cookie("rememberLogin", UUID.randomUUID().toString());
+					String sessionUUID = UUID.randomUUID().toString();
+					Cookie cookie = new Cookie("rememberLogin", sessionUUID );
 					cookie.setHttpOnly(true); // 클라이언트 측 스크립트에서 접근 불가
 					cookie.setMaxAge(3600 * 24 * 30); // 30일간 지속
 					cookie.setPath(req.getContextPath()); // 쿠키 경로 contextPath 로 설정
-					res.addCookie(cookie);
 					
-					// 추가적으로 UUID token 과, userId 를 DB 에 저장
-					// TODO : userID, userPw, token 저장 (DB에) -> AuthFilter 에서 rememberLogin 토큰 확인 후 (있을경우) 로그인 수행
+					// 세션정보 DB 에 저장
+					service.updateSessionUUID(loginUser, sessionUUID);
+					res.addCookie(cookie);
 				}
 
 				result.put("message", "환영합니다.");
@@ -83,7 +84,7 @@ public class UserApi extends HttpServlet {
 			break;
 
 		case "logout": {
-			HttpSession session = req.getSession();
+			HttpSession session = req.getSession(false);
 
 			if (session != null) {
 				session.setAttribute("loginUser", null);
@@ -92,8 +93,9 @@ public class UserApi extends HttpServlet {
 			// 쿠키 제거
 			Cookie cookie = new Cookie("rememberLogin", null);
 			cookie.setMaxAge(0);
+			cookie.setPath(req.getContextPath()); // 쿠키 경로 contextPath 로 설정
 			res.addCookie(cookie);
-
+			
 			res.sendRedirect(contextPath + "/login");
 		}break;
 		default:

@@ -12,6 +12,10 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.helpgpt.sports.login.model.service.UserService;
+import com.helpgpt.sports.login.model.vo.User;
 
 @WebFilter("/*")
 public class AuthFilter extends HttpFilter implements Filter {
@@ -36,11 +40,28 @@ public class AuthFilter extends HttpFilter implements Filter {
 		        }
 		    }
 			
-			// 2. 만약 있다면, DB 에서 token 값을 이용해 USER ID, USER PW 를 불러와 재로그인시킨다.
-		    if (existSessionID != null) {
-		    	// DB 에서 값을 불러와 재로그인시키는 로직
+			// 2. 해당 쿠키 존재 + 로그인하지 않아있음 -> 로그인처리
+		    HttpSession session = req.getSession(false);
+		    User loginUser = null;
+		    
+		    if (session != null) {
+		    	loginUser = (User) session.getAttribute("loginUser");
+		    }
+		    
+		    if (existSessionID != null && loginUser == null) {
+		    	// 1. DB 에서 USER INFO 가져온다
+		    	UserService service = new UserService();
+		    	User loginInfo = service.getLoginInfoFromSessionUUID(existSessionID);
+		    	
+		    	// 2. 로그인처리한다.
+		    	loginUser = service.userLogin(loginInfo);
+		    	session = req.getSession();
+				session.setMaxInactiveInterval(300);
+
+				session.setAttribute("loginUser", loginUser);
 		    }
 		}
+		
 		
 		chain.doFilter(request, response);
 	}

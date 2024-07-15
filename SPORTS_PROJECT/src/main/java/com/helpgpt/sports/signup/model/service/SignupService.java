@@ -14,8 +14,10 @@ public class SignupService {
 		Connection conn = getConnection();
 		
 		int signupResult = dao.signup(conn, signupInfo);
+		int createSessionResult = dao.createSessionUUID(conn);
 		
-		if (signupResult > 0) {
+		if (signupResult > 0 &&
+			createSessionResult > 0) {
 			commit(conn);
 		} else {
 			rollback(conn);

@@ -27,4 +27,16 @@
 		AND USER_PW = ?
 		AND DELETE_DT IS NULL
 	</entry>
+	
+	<entry key="update-sessionUUID">
+		UPDATE USER_SESSION 
+		SET SESSION_UUID = ?
+		WHERE USER_NO = ?
+	</entry>
+	
+	<entry key="getUserInfo-from-sessionUUID">
+		SELECT USER_ID, USER_PW FROM USER_INFO U
+		JOIN USER_SESSION S ON (U.USER_NO = S.USER_NO)
+		WHERE S.SESSION_UUID = ?
+	</entry>
 </properties>

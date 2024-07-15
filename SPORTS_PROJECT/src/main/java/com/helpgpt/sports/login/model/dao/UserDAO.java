@@ -68,4 +68,50 @@ public class UserDAO {
 		return loginUser;
 	}
 
+	public int updateSessionUUID(Connection conn, int userNo, String sessionUUID) {
+		String sql = prop.getProperty("update-sessionUUID");
+		int result = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, sessionUUID);
+			pstmt.setInt(2, userNo);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	public User getLoginInfoFromSessionUUID(Connection conn, String sessionUUID) {
+		String sql = prop.getProperty("getUserInfo-from-sessionUUID");
+		User loginInfo = null;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, sessionUUID);
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+
+				String userId = rs.getString("USER_ID");
+				String userPw = rs.getString("USER_PW");
+			
+				loginInfo = new User(userId, userPw);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return loginInfo;
+	}
 }

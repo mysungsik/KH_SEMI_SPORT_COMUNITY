@@ -26,4 +26,12 @@
 		    NULL
 		)
 	</entry>
+	
+	<entry key="create_session">
+		INSERT INTO USER_SESSION 
+		VALUES(
+		   SEQ_USER_NO.currval,
+		   NULL
+		)
+	</entry>
 </properties>

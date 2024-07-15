@@ -18,4 +18,27 @@ public class UserService {
 		
 		return loginUser;
 	}
+	
+	public User getLoginInfoFromSessionUUID(String sessionUUID) {
+		Connection conn = getConnection();
+		User loginInfo = dao.getLoginInfoFromSessionUUID(conn, sessionUUID);
+		
+		close(conn);
+		
+		return loginInfo;
+	}
+
+	public void updateSessionUUID(User loginUser, String sessionUUID) {
+		Connection conn = getConnection();
+		
+		int result = dao.updateSessionUUID(conn, loginUser.getUserNo(), sessionUUID);
+		
+		if (result > 0 ) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+		
+		close(conn);
+	}
 }

@@ -65,5 +65,23 @@ public class SignupDAO {
 		
 		return result;
 	}
+	
+	public int createSessionUUID(Connection conn) {
+		int result = 0;
+		
+		String sql = prop.getProperty("create_session");
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("[ERROR] Failed to signup");
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
 
 }
