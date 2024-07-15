@@ -160,12 +160,48 @@ width: 1024px;
   border: 0;
   padding:0;
 }
-.fc-day-sun a{
-  color: red;
+
+.fc-col-header-cell{
+	background-color: #458BE2;
+	color: white;
+	font-size: 20px;
 }
+
+.fc-day-sun a{
+  color: #EF4E4E;
+  font-size:20px;
+}
+
 
 .fc-day-sat a{
   color: blue;
+  font-size:20px;
+}
+
+.fc-day-mon a,
+.fc-day-tue a,
+.fc-day-wed a,
+.fc-day-thu a,
+.fc-day-fri a{
+	font-size:20px;
+}
+
+.fc-col-header th{
+	padding:20px 0;
+}
+
+.fc-col-header .fc-day-sun{
+	border-top-left-radius: 10px;
+}
+
+.fc-col-header .fc-day-sat{
+	border-top-right-radius: 10px;
+}
+
+.fc-scrollgrid{
+	border-radius:15px;
+	border:1px solid black !important;
+	box-shadow: 2px 2px 5px rgba(69, 69, 69, 0.3);
 }
 
 /* 스케쥴 css */
@@ -195,7 +231,8 @@ width: 1024px;
 }
 
 .event-draw{
-  color: mediumseagreen;
+  color: black
+  ;
 }
 
 .mini-date .mini-rank i{

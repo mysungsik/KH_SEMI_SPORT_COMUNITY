@@ -1,12 +1,34 @@
-document.addEventListener('DOMContentLoaded', function() {
-  var Calendar = FullCalendar.Calendar;
+var Calendar = FullCalendar.Calendar;	// FULL CALENDAR
 
-  var calendarEl = document.getElementById('calendar');
+var calendar;	// CALENDAR 쓸 변수
 
+var calendarEl = document.getElementById('calendar');	// CALENDAR 렌더링할 위치
 
-  // initialize the calendar
-  // -----------------------------------------------------------------
-  var calendar = new Calendar(calendarEl, {
+	  let data =[
+	      {
+	        id : 'victory',
+	        start : '2024-07-14',
+	        img : "../../public/images/teams/FL.png"
+	      },
+	      {
+	        id : 'lose',
+	        start : '2024-07-16',
+	        img : "../../public/images/user_img1.jpg"
+	      },
+	      {
+	        id:'draw',
+	        start : '2024-07-21',
+	        img : "../../public/images/mlb_logo.png"
+	      }
+	    ]
+	  		createCalendar(data);
+				
+		// 4. 생성한 캘린더를 랜더링함
+		calendar.render();
+	    
+function createCalendar(data){
+	
+	calendar = new Calendar(calendarEl, {
     headerToolbar: {
       left: '',
       center: 'prev title next',
@@ -32,41 +54,30 @@ document.addEventListener('DOMContentLoaded', function() {
       return {
         html:number.outerHTML
       };
-      return{
-        domNodes:[]
-      };
     },
     contentHeight:"auto", // 스크롤바 없애기
 
-    events:[
-      {
-        id : 'victory',
-        start : '2024-07-14'
-      },
-      {
-        id : 'lose',
-        start : '2024-07-16'
-      },
-      {
-        id:'draw',
-        start : '2024-07-21'
-      }
-    ],
+	// 데이터
+    events: data,
+    
+    // id에 따라 (victory|lose|draw) event 구현 내용 바꾸기 
     eventContent: function(eventInfo){
+	console.log(eventInfo.event)
       if( eventInfo.event.id==="victory"){
-        return {html: `<div class="mini-date">
-                  <img src="../../public/images/teams/FL.png" class="mini-icon"/>
-                  <div class="mini-schedule">광주 18:30</div>
-                  <div class="mini-rank event-victory">
-                      <i class="fa-solid fa-trophy"></i>
-                      <span>4 vs 2</span>
-                  </div>
-                </div>`
+        return {
+			html: `<div class="mini-date">
+	                  <img src="${eventInfo.event.extendedProps.img}" class="mini-icon"/>
+	                  <div class="mini-schedule">광주 18:30</div>
+	                  <div class="mini-rank event-victory">
+	                      <i class="fa-solid fa-trophy"></i>
+	                      <span>4 vs 2</span>
+	                  </div>
+	                </div>`
         }
       }else if(eventInfo.event.id==="lose"){
         return{
           html: `<div class="mini-date">
-                  <img src="../../public/images/teams/FL.png" class="mini-icon"/>
+                  <img src="${eventInfo.event.extendedProps.img}" class="mini-icon"/>
                   <div class="mini-schedule">광주 18:30</div>
                   <div class="mini-rank event-lose">
                     <i class="fa-solid fa-circle-exclamation"></i>
@@ -77,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }else{
         return{
           html: `<div class="mini-date">
-                  <img src="../../public/images/teams/FL.png" class="mini-icon"/>
+                  <img src="${eventInfo.event.extendedProps.img}" class="mini-icon"/>
                   <div class="mini-schedule">광주 18:30</div>
                   <div class="mini-rank event-draw">
                     <span>2 vs 2</span>
@@ -86,10 +97,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
     },
+    
+    
   });
-
- 
-  calendar.render();
-  
-});
+}
 
