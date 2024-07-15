@@ -59,6 +59,7 @@ public class UserDAO {
 			}
 			
 		} catch (Exception e) {
+			System.out.println("[ERROR] Failed to Login");
 			e.printStackTrace();
 		} finally {
 			close(rs);
@@ -80,6 +81,7 @@ public class UserDAO {
 			result = pstmt.executeUpdate();
 			
 		} catch (Exception e) {
+			System.out.println("[ERROR] Failed to Update sessionUUID");
 			e.printStackTrace();
 		} finally {
 			close(pstmt);
@@ -106,6 +108,7 @@ public class UserDAO {
 			}
 			
 		} catch (Exception e) {
+			System.out.println("[ERROR] Failed to get loginInfo From sessionUUID");
 			e.printStackTrace();
 		} finally {
 			close(rs);

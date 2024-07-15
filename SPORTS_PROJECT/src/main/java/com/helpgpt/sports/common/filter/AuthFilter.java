@@ -54,11 +54,18 @@ public class AuthFilter extends HttpFilter implements Filter {
 		    	User loginInfo = service.getLoginInfoFromSessionUUID(existSessionID);
 		    	
 		    	// 2. 로그인처리한다.
-		    	loginUser = service.userLogin(loginInfo);
-		    	session = req.getSession();
-				session.setMaxInactiveInterval(300);
+		    	if (loginInfo != null) {
+		    		loginUser = service.userLogin(loginInfo);
+		    	}
+		    	
+		    	if (loginUser != null) {
+		    		session = req.getSession();
+		    		session.setMaxInactiveInterval(300);
+		    		session.setAttribute("loginUser", loginUser);
+		    	} else {
+		    		
+		    	}
 
-				session.setAttribute("loginUser", loginUser);
 		    }
 		}
 		
