@@ -22,7 +22,7 @@
             <!-- 메인컨텐츠 -->
             <div class="profile-content">
             	<!-- 컨텐츠 > 헤더 -->
-                <p class="content-title fs-28__b" onclick="toastPop('팝ㅍ바팝')"> 내 정보 관리</p>
+                <p class="content-title fs-28__b"> 내 정보 관리</p>
                 <hr class="hr__gray mt-20">
             
                 <!-- 컨텐츠 > 메인 -->
@@ -31,15 +31,15 @@
                 	<div class="info-contents card__lblue">
                 		<div>
                 			<p class="fc__blue fs-12__b"> E-mail </p>
-                			<p class="fc__gray fs-12__b text-hover__black" data-type="email" onclick="showModal(this)"> test_email@test.com <span> > </span></p>
+                			<p class="fc__gray fs-12__b text-hover__black" data-type="email" onclick="showModal(this)"> ${loginUser.getUserEmail()} <span> > </span></p>
                 		</div>
                 		<div>
                 			<p class="fc__blue fs-12__b"> Phone Number </p>
-                			<p class="fc__gray fs-12__b text-hover__black" data-type="number"  onclick="showModal(this)"> 010-0101-0101 <span> > </span></p>
+                			<p class="fc__gray fs-12__b text-hover__black" data-type="number"  onclick="showModal(this)"> ${!empty loginUser.getUserPhone() ? loginUser.getUserPhone() : '등록된 번호가 없습니다'} <span> > </span></p>
                 		</div>
                 		<div>
                 			<p class="fc__blue fs-12__b"> SNS Address </p>
-                			<p class="fc__gray fs-12__b text-hover__black" data-type="sns"  onclick="showModal(this)"> instagram@insta.com <span> > </span></p>
+                			<p class="fc__gray fs-12__b text-hover__black" data-type="sns"  onclick="showModal(this)"> ${!empty loginUser.getUserSns() ? loginUser.getUserSns() : '등록된 SNS 주소가 없습니다'} <span> > </span></p>
                 		</div>
                 	</div>
                 </div>

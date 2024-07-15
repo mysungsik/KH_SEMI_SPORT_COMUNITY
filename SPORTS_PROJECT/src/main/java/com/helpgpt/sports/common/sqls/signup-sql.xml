@@ -27,6 +27,15 @@
 		)
 	</entry>
 	
+	<entry key="create-user-policy">
+		INSERT INTO USER_POLICY 
+		VALUES(SEQ_USER_NO.CURRVAL, 
+				DEFAULT, 
+				DEFAULT,
+				DEFAULT
+			)
+	</entry>
+	
 	<entry key="create_session">
 		INSERT INTO USER_SESSION 
 		VALUES(

@@ -66,6 +66,24 @@ public class SignupDAO {
 		return result;
 	}
 	
+	public int createUserPolicy(Connection conn) {
+		int result = 0;
+		
+		String sql = prop.getProperty("create-user-policy");
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("[ERROR] Failed to create policy");
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+	
 	public int createSessionUUID(Connection conn) {
 		int result = 0;
 		
@@ -75,7 +93,7 @@ public class SignupDAO {
 			pstmt = conn.prepareStatement(sql);
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
-			System.out.println("[ERROR] Failed to signup");
+			System.out.println("[ERROR] Failed to create session UUID");
 			e.printStackTrace();
 		} finally {
 			close(pstmt);
