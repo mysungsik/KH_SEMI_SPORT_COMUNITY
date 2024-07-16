@@ -7,14 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<jsp:include page="/WEB-INF/views/layouts/header-dependencies.jsp"/>
     <link rel="stylesheet" href="${contextPath}/src/css/teamAdd.css">
-    <script src="${contextPath}/src/css/teams.js" defer></script>
     <script src="${contextPath}/src/js/teamAdd.js" defer></script>
     <title>MLB Teams</title>
 </head>
 <body>
     <jsp:include page="/WEB-INF/views/layouts/header.jsp"/>
     <div class="container">
-        <form action="#">
+        <form action="#" method="post">
             <h1>구단 추가</h1>
             <hr>
             <div class="step step-count-3">
@@ -42,9 +41,8 @@
                     <p class="title h7">기본정보</p>
                 </div>
             </div>
-			
+            <hr>
             <div class="base-info">
-                <hr>
                 <div class="input-area">
                     <input type="text" name="teamName" placeholder="구단명">
                     <input type="text" name="teamLeader" placeholder="단장">
