@@ -305,7 +305,7 @@ function showModal(el){
 				infoModal.find(".modal-title").html("비밀번호 재확인")
 				infoModal.find(".modal-body").html(`
 					<p> 현재 비밀번호를 입력해주세요 </p>
-					<input type="text" name="${modalType}" value="${data}">`
+					<input type="text" name="profile_${modalType}" value="${data}">`
 				);
 			} break;
 			
@@ -314,7 +314,7 @@ function showModal(el){
 				infoModal.find(".modal-title").html("비밀번호 변경")
 				infoModal.find(".modal-body").html(`
 					<p> 변경할 비밀번호를 입력해주세요 </p>
-					<input type="text" name="${modalType}" value="${data}">`
+					<input type="text" name="profile_${modalType}" value="${data}">`
 				);
 			} break;
 			
@@ -322,15 +322,15 @@ function showModal(el){
 				infoModal.find(".modal-title").html("이메일 변경")
 				infoModal.find(".modal-body").html(`
 					<p> 변경할 이메일을 입력해주세요 </p>
-					<input type="text" name="${modalType}" value="${data}">`
+					<input type="text" name="profile_${modalType}" value="${data}">`
 				);
 			} break;
 			
-			case "number" : {
+			case "phone" : {
 				infoModal.find(".modal-title").html("핸드폰 번호 변경")
 				infoModal.find(".modal-body").html(`
 					<p> 변경할 번호를 입력해주세요 </p>
-					<input type="text" name="${modalType}" value="${data}">`
+					<input type="text" name="profile_${modalType}" value="${data}">`
 				);
 			} break;
 			
@@ -338,7 +338,7 @@ function showModal(el){
 				infoModal.find(".modal-title").html("SNS 주소 변경")
 				infoModal.find(".modal-body").html(`
 					<p> 변경할 SNS 주소를 입력해주세요 </p>
-					<input type="text" name="${modalType}" value="${data}">`
+					<input type="text" name="profile_${modalType}" value="${data}">`
 				);
 			} break;
 			
@@ -346,7 +346,7 @@ function showModal(el){
 				infoModal.find(".modal-title").html("생일 변경")
 				infoModal.find(".modal-body").html(`
 					<p> 변경할 생일을 입력해주세요 </p>
-					<input type="text" name="${modalType}" value="${data}">`
+					<input type="text" name="profile_${modalType}" value="${data}">`
 				);
 			} break;
 			
@@ -354,7 +354,7 @@ function showModal(el){
 				infoModal.find(".modal-title").html("주소 변경")
 				infoModal.find(".modal-body").html(`
 					<p> 변경할 주소를 입력해주세요 </p>
-					<input type="text" name="${modalType}" value="${data}">`
+					<input type="text" name="profile_${modalType}" value="${data}">`
 				);
 			} break;
 		}
@@ -373,7 +373,7 @@ function modalConfirm(){
 	
 	// 정보 동의일 경우
 	if (typeReg.test(modalType)){
-		let input = $(`input[name="${modalType}"]`)
+		let input = $(`input[name="profile_${modalType}"]`)
 		let label = $(`[for="${modalType}"]`)
 		input.prop("checked", true)
 		label.html("ON")
@@ -384,27 +384,71 @@ function modalConfirm(){
 	}
 	// 정보 수정일 경우
 	else{
-		let value = $(`input[name='${modalType}']`).val().trim();
+		let value = $(`input[name='profile_${modalType}']`).val().trim();
 		
 		// 이메일 정보 수정일 경우
-		if (modalType == "email"){
-			if (value == ""){
-				toastPop("warn","이메일이 비어있습니다.")
-			} else{
-				// 이메일 정보 DB 로 전달
-				infoModal.hide();
-				toastPop("info", "정상 처리되었습니다.")
-				
-			}
+		switch(modalType){
+			case "email" : {
+				if (emailValidate(value)){
+					// TODO: Email Data 업데이트
+					let data = {
+						"type" : "USER_EMAIL",
+						"data" : value
+					}
+					updateUserInfo(data, modalType)
+					infoModal.hide();
+				}
+			};break;
+			case "phone" : {
+				if (phoneValidate(value)){
+					// TODO: Phone Data 업데이트
+					let data = {
+						"type" : "USER_PHONE",
+						"data" : value
+					}
+					updateUserInfo(data, modalType)
+					infoModal.hide();
+				}
+			};break;
+			case "sns" : {
+				if (emailValidate(value)){
+					// TODO: SNS Data 업데이트
+					let data = {
+						"type" : "USER_SNS",
+						"data" : value
+					}
+					updateUserInfo(data, modalType)
+					infoModal.hide();
+				}
+			};break;
+			case "birthday" : {
+				if (birthdayValidate(value)){
+					// TODO: BD Data 업데이트
+					let data = {
+						"type" : "USER_BD",
+						"data" : value
+					}
+					updateUserInfo(data, modalType)
+					infoModal.hide();
+				}
+			};break;
+			case "address" : {
+				if (addressValidate(value)){
+					// TODO: address Data 업데이트
+					let data = {
+						"type" : "USER_ADDRESS",
+						"data" : value
+					}
+					updateUserInfo(data, modalType)
+					infoModal.hide();
+				}
+			};break;
 		}
-		// TODO : 값을 백엔드로 전달
-		
 	}
 }
 
 // 모달의 취소 클릭
 function modalCancel(){
-	let modalEl = $("#commonModal")
 	let typeReg = /(Agree)$/
 	let modalType = $("[name='modalType']").val();
 	let checkboxInput = $(`input[name='${modalType}']`)
@@ -412,21 +456,36 @@ function modalCancel(){
 	
 	// 정보 동의일 경우
 	if (typeReg.test(modalType)){
-		if(modalEl.hasClass("show")){
-			
-			console.log("꺼졌다.")
-		}
-		
 		if(checkboxInput.prop("checked")){
 			checkboxInput.prop("checked", false)
 			checkboxLabel.html("OFF")
 		}
-		
-		// TODO : 값을 백엔드로 전달
 	}
-	// 정보 수정일 경우
-	else{
-		// TODO : 값을 백엔드로 전달
-	}
+}
 
+function updateUserInfo(userData, modalType){
+	let request_url = `${contextPath}/api/user/update`
+	$.ajax({
+		type: "POST",
+		url: request_url,
+		data: userData,	// {type, data}
+		dataType: "json",
+		success: function (res) {
+			// 로그인 성공 여부 판단
+			let isUpdated = res.hasOwnProperty("data")
+
+			if (isUpdated){
+				$(`p[data-type="${modalType}"]`).html(userData.data);
+				toastPop("info", "정상적으로 변경되었습니다.")
+			} else{
+				toastPop("warn", "변경에 실패하였습니다")
+			}
+			
+		},
+		error : function(request, status, error){
+			console.log(request);
+			console.log(status);
+			console.log(error);
+		}
+	});
 }

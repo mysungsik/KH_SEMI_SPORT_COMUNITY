@@ -219,8 +219,6 @@ public class User {
 	public void setUserPolicyPhone(String agreePhone) {
 		this.userPolicy.setAgreePhone(agreePhone);
 	}
-	
-
 
 	@Override
 	public String toString() {
@@ -231,8 +229,5 @@ public class User {
 				+ userAuthority + ", userState=" + userState + ", createdDate=" + createdDate + ", deletedDate="
 				+ deletedDate + "]";
 	}
-	
-	
-	
 	
 }

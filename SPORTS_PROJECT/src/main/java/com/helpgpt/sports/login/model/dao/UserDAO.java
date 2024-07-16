@@ -126,4 +126,24 @@ public class UserDAO {
 		
 		return loginInfo;
 	}
+
+	public int updateUserInfo(Connection conn, int userNo, String inputType, String inputData) {
+		String sql = String.format("UPDATE USER_INFO "
+									+ "SET %s = '%s'"
+									+ "WHERE USER_NO = %d", inputType, inputData, userNo);
+		int result = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			result = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("[ERROR] Failed to Update sessionUUID");
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
 }

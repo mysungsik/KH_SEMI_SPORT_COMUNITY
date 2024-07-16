@@ -41,4 +41,20 @@ public class UserService {
 		
 		close(conn);
 	}
+
+	public int updateUserInfo(int userNo, String inputType, String inputData) {
+		Connection conn = getConnection();
+		
+		int result = dao.updateUserInfo(conn, userNo, inputType, inputData);
+		
+		if (result > 0 ) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+		
+		close(conn);
+		
+		return result;
+	}
 }

@@ -35,7 +35,7 @@
                 		</div>
                 		<div>
                 			<p class="fc__blue fs-12__b"> Phone Number </p>
-                			<p class="fc__gray fs-12__b text-hover__black" data-type="number"  onclick="showModal(this)"> ${!empty loginUser.getUserPhone() ? loginUser.getUserPhone() : '등록된 번호가 없습니다'} <span> > </span></p>
+                			<p class="fc__gray fs-12__b text-hover__black" data-type="phone"  onclick="showModal(this)"> ${!empty loginUser.getUserPhone() ? loginUser.getUserPhone() : '등록된 번호가 없습니다'} <span> > </span></p>
                 		</div>
                 		<div>
                 			<p class="fc__blue fs-12__b"> SNS Address </p>

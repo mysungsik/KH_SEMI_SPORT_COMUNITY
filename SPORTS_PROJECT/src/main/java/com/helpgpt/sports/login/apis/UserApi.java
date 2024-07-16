@@ -80,8 +80,7 @@ public class UserApi extends HttpServlet {
 				result.put("message", "해당 유저는 존재하지 않습니다.");
 				new Gson().toJson(result, out);
 			}
-		}
-			break;
+		}break;
 
 		case "logout": {
 			HttpSession session = req.getSession(false);
@@ -98,8 +97,56 @@ public class UserApi extends HttpServlet {
 			
 			res.sendRedirect(contextPath + "/login");
 		}break;
+		
+		case "update" : {
+			HttpSession session = req.getSession(false);
+			
+			String inputType = req.getParameter("type");
+			String inputData = req.getParameter("data");
+			int updateResult = 0;
+			
+			Map<String, Object> result = new HashMap<>();
+			
+			if (session != null) {
+				loginUser = (User)session.getAttribute("loginUser");
+				int userNo = loginUser.getUserNo();
+				
+				updateResult = service.updateUserInfo(userNo, inputType, inputData);
+			
+				if(updateResult > 0) {
+					updateLoginUserInfo(loginUser, inputType, inputData);
+					result.put("data", "update Success");
+					result.put("message", "성공적으로 업데이트되었습니다.");
+				}else {
+					result.put("message", "업데이트에 실패하였습니다.");
+				}
+				
+				new Gson().toJson(result, out);
+			}
+		};break;
+		
 		default:
-			System.out.println("[ERROR] LOGIN API");
+			System.out.println("[ERROR] USER API");
+		}
+	}
+	
+	private void updateLoginUserInfo(User loginUser, String inputType, String inputData) {
+		switch (inputType) {
+			case "USER_EMAIL": {
+				loginUser.setUserEmail(inputData);
+			};break;
+			case "USER_PHONE": {
+				loginUser.setUserPhone(inputData);
+			};break;
+			case "USER_SNS": {
+				loginUser.setUserSns(inputData);
+			};break;
+			case "USER_BD": {
+				loginUser.setUserBd(inputData);
+			};break;
+			case "USER_ADDRESS": {
+				loginUser.setUserAddress(inputData);
+			};break;
 		}
 	}
 }

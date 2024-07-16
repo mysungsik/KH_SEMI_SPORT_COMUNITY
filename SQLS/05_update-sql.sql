@@ -1,0 +1,3 @@
+UPDATE USER_INFO
+SET USER_EMAIL = 'test@test.com'
+WHERE USER_NO = 1;
