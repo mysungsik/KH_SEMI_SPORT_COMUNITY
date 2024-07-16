@@ -89,6 +89,10 @@ $(document).ready(function () {
 
 });
 
+function getUserData(){
+	
+}
+
 // 관리자용 페이지네이션 템플릿 함수 (User)
 function adminTemplate(data, id) {
 	let item = ""

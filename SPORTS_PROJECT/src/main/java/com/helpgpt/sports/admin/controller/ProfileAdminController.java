@@ -28,7 +28,7 @@ public class ProfileAdminController extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		HttpSession session = req.getSession();
+		HttpSession session = req.getSession(false);
 		String contextPath =  req.getContextPath();
 		
 		User loginUser = (User)session.getAttribute("loginUser");
@@ -45,7 +45,7 @@ public class ProfileAdminController extends HttpServlet {
 			resp.sendRedirect(contextPath +"/login");
 		} 
 		// 로그인헸지만, Admin 이 아닐경우
-		else if (loginUser != null && loginUser.getUserAuthority() != "admin") {
+		else if (loginUser != null && !loginUser.getUserAuthority().equals("A")) {
 			resp.sendRedirect(contextPath +"/profile");
 		}
 		else {
