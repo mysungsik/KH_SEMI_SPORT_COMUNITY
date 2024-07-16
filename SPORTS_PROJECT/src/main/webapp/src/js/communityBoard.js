@@ -80,10 +80,10 @@ $(document).ready(function() {
 
 
 	// 페이지네이션 실행
-	// paginationActive("community", communityData, paginationTemplate);
+    paginationActive("community", communityData, paginationTemplate);
 });
 
-/*
+
 // 일반 유저 페이지네이션 템플릿 함수
 function paginationTemplate(data) {
 	let item = ""
@@ -138,4 +138,4 @@ function paginationActive(id, datas, template) {
 		})
 	}
 }
-*/
+

@@ -48,22 +48,7 @@
 					<button type="button" class="write-btn mg-right" onclick="location.href='${contextPath}/community/communityPosting/free'">글쓰기</button>
 				</div>
 			</div>
-			<div id="community-data">
-				     <div class="post" onclick="location.href='${contextPath}/community/communityDetail/1'">
-					<div class="category">
-						<span class="fs-12 fc__gray">자유</span>
-					</div>
-					<div class="content">
-						<div class="post-title">
-							<span class="fs-14__b">야구 룰이 너무 어려움</span>
-						</div>
-						<div class="post-info">
-							<span>${d.author} ${d.date}</span>
-							<span>조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-						</div>
-					</div>
-				</div>
-			</div>
+			<div id="community-data"></div>
 
 		</section>
 		<!-- 페이지 -->
