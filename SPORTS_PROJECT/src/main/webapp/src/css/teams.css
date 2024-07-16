@@ -19,6 +19,38 @@ section{
     align-items: center;
 }
 
+
+.title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button-area button{
+    padding: 10px 20px;
+    border: 0;
+    background-color: 0;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.button-area #add-team-btn{
+    background-color: #458BE2;
+    color: white;
+    margin-right: 10px;
+}
+
+.button-area #add-team-btn:hover,
+.button-area #delete-team-btn:hover{
+    box-shadow: 2px 2px 5px rgba(69, 69, 69, 0.3) !important;
+}
+
+.button-area #delete-team-btn{
+    background-color: white;
+    color: #458BE2;
+    border: 1px solid #458BE2;
+}
+
 /* 메인 */
 
 .teams-card{

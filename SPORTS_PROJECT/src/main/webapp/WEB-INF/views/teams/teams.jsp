@@ -20,6 +20,10 @@
                         <span class="fs-28__b ">구단 소개</span>
                         <p class="fs-14 mt-10"> <img src="${contextPath}/public/icons/right-arrow.png" alt="오른쪽화살표" class="w-20"> <span class="fs-14">구단 정보</span> ∙ 각 구단을 선택하시면 구단의 상세정보를 확인하실 수 있습니다.</p>
                     </div>
+                    <div class="button-area">
+                        <button id="add-team-btn" onclick="location.href='${contextPath}/teams/teamAdd' ">구단 추가</button>
+                        <button id="delete-team-btn">구단 삭제</button>
+                    </div>
                 </article>
             </section>
 

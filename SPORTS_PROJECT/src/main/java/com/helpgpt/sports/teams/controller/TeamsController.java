@@ -30,7 +30,7 @@ public class TeamsController extends HttpServlet {
 		// Path 지정
 		String reqPath = req.getPathInfo();
 		String team = "";
-		String[] teams={"kia", "lg", "doosan"};
+		String[] teams={"kia", "lg", "doosan","teamAdd"};
 
 		List<String> teamList = Arrays.asList(teams);
 		
@@ -47,10 +47,14 @@ public class TeamsController extends HttpServlet {
 		}else {
 			if(teamList.contains(team)){
 				req.setAttribute("team", team);
-				dispatcher = req.getRequestDispatcher(defaultURLPath + "teamsEachMain.jsp");
+				if(team.equals("teamAdd")){
+					dispatcher=req.getRequestDispatcher(defaultURLPath + "teamAdd.jsp");
+				}else{
+					dispatcher = req.getRequestDispatcher(defaultURLPath + "teamsEachMain.jsp");
+				}
+
 				dispatcher.forward(req, resp);
-			}
-			else {
+			}else {
 				System.out.println("404페이지로 이동");
 			}
 			
