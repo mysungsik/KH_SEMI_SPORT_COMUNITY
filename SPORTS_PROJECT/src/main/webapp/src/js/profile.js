@@ -242,7 +242,7 @@ function showModal(el){
 	// [개인 정보 - 내 정보 관리] 정보제공동의 모달
 	if (modalType == "emailAgree" ||
 		modalType == "phoneAgree" ||
-		modalType == "snsAgree"){
+		modalType == "addressAgree"){
 			
 		let checkboxInput = $(`input[name='${modalType}']`)
 		let checkboxLabel = $(`label[for='${modalType}']`)
@@ -265,8 +265,8 @@ function showModal(el){
 				
 			} break;
 			
-			case "snsAgree" : {
-				infoModal.find(".modal-title").html("SNS 주소 정보 제공에 동의하시겠습니까?")
+			case "addressAgree" : {
+				infoModal.find(".modal-title").html("주소 정보 제공에 동의하시겠습니까?")
 				infoModal.find(".modal-body").html("모달 내용임둥")
 				
 			} break;

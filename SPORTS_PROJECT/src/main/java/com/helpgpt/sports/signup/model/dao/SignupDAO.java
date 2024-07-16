@@ -87,7 +87,7 @@ public class SignupDAO {
 	public int createSessionUUID(Connection conn) {
 		int result = 0;
 		
-		String sql = prop.getProperty("create_session");
+		String sql = prop.getProperty("create_user_session");
 
 		try {
 			pstmt = conn.prepareStatement(sql);

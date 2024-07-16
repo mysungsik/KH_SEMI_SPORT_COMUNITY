@@ -26,7 +26,7 @@
             </ul>
         </div>
         
-        <c:if test="${loginUser.getUserAuthority() == 'admin'}"> 
+        <c:if test="${loginUser.getUserAuthority() == 'A'}"> 
         <div>
             <p class="fc__gray fs-20"> 회원 관리 </p>
             <ul class="ml-20">

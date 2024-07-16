@@ -52,21 +52,21 @@
                 			<p class="fc__blue fs-12__b"> E-mail </p>
                 			<div class="form-check form-switch" data-type="email">
 							  <input class="form-check-input" type="checkbox" role="switch" id="emailAgree" name="emailAgree" data-type="emailAgree" onclick="showModal(this)">
-							  <label class="form-check-label" for="emailAgree">OFF</label>
+							  <label class="form-check-label" for="emailAgree">${loginUser.getUserPolicy().getAgreeEmail() == 'Y' ? 'ON' : 'OFF'}</label>
 							</div>
                 		</div>
                 		<div>
                 			<p class="fc__blue fs-12__b"> Phone Number </p>
                				<div class="form-check form-switch" data-type="phone">
 							  <input class="form-check-input" type="checkbox" role="switch" id="phoneAgree" name="phoneAgree" data-type="phoneAgree" onclick="showModal(this)">
-							  <label class="form-check-label" for="phoneAgree">OFF</label>
+							  <label class="form-check-label" for="phoneAgree">${loginUser.getUserPolicy().getAgreePhone() == 'Y' ? 'ON' : 'OFF'}</label>
 							</div>
                 		</div>
                 		<div>
-                			<p class="fc__blue fs-12__b"> SNS Address </p>
+                			<p class="fc__blue fs-12__b"> Address </p>
                				<div class="form-check form-switch" data-type="sns">
-							  <input class="form-check-input" type="checkbox" role="switch" id="snsAgree" name="snsAgree" data-type="snsAgree" onclick="showModal(this)">
-							  <label class="form-check-label" for="snsAgree">OFF</label>
+							  <input class="form-check-input" type="checkbox" role="switch" id="addressAgree" name="addressAgree" data-type="addressAgree" onclick="showModal(this)">
+							  <label class="form-check-label" for="addressAgree">${loginUser.getUserPolicy().getAgreeAddress() == 'Y' ? 'ON' : 'OFF'}</label>
 							</div>
                 		</div>
                 	</div>
@@ -76,10 +76,12 @@
                 	<div class="info-contents card__lblue">
                 		<div>
                 			<p class="fc__blue fs-12__b"> BirthDay </p>
-                			<p class="fc__gray fs-12__b text-hover__black" data-type="birthday" onclick="showModal(this)"> 1992-01-01 <span> > </span></p>                		</div>
+                			<p class="fc__gray fs-12__b text-hover__black" data-type="birthday" onclick="showModal(this)"> ${!empty loginUser.getUserBd() ? loginUser.getUserBd() : '등록된 생일이 없습니다'} <span> > </span></p>	
+                		</div>
+                		
                 		<div>
                 			<p class="fc__blue fs-12__b"> Address </p>
-                			<p class="fc__gray fs-12__b text-hover__black" data-type="address" onclick="showModal(this)"> 경기도 용인시 처인구 ... <span> > </span></p>
+                			<p class="fc__gray fs-12__b text-hover__black" data-type="address" onclick="showModal(this)"> ${!empty loginUser.getUserAddress() ? loginUser.getUserAddress() : '등록된 주소가 없습니다'} <span> > </span></p>
                 		</div>
                 		<div>
                 			<p class="fc__blue fs-12__b"> Login History </p>

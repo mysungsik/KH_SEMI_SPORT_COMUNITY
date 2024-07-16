@@ -36,7 +36,7 @@
 			)
 	</entry>
 	
-	<entry key="create_session">
+	<entry key="create_user_session">
 		INSERT INTO USER_SESSION 
 		VALUES(
 		   SEQ_USER_NO.currval,

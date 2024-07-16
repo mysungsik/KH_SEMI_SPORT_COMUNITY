@@ -19,6 +19,7 @@ public class User {
 	private String userState;
 	private String createdDate;
 	private String deletedDate;
+	private UserPolicy userPolicy = new UserPolicy();
 	
 	// 유저 로그인용객체
 	public User(String userId, String userPw) {
@@ -43,7 +44,9 @@ public class User {
 	// 유저 정보 전달 객체 (pw 제외 전부)
 	public User(int userNo, int favoriteTeamNo, String userId, String userPw, String userEmail, String userName,String userPhone,
 			String userSns, String userBd, String userAddress, String userGender, String userNation,
-			String userProfileImg, String userAuthority, String userState, String createdDate, String deletedDate) {
+			String userProfileImg, String userAuthority, String userState, String createdDate, String deletedDate,
+			String agreeAddress, String agreeEmail, String agreePhone) {
+		
 		this.userNo = userNo;
 		this.favoriteTeamNo = favoriteTeamNo;
 		this.userId = userId;
@@ -60,6 +63,9 @@ public class User {
 		this.userState = userState;
 		this.createdDate = createdDate;
 		this.deletedDate = deletedDate;
+		this.userPolicy.setAgreeAddress(agreeAddress);
+		this.userPolicy.setAgreeEmail(agreeEmail);
+		this.userPolicy.setAgreePhone(agreePhone);
 	}
 
 	public int getUserNo() {
@@ -197,6 +203,24 @@ public class User {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
+	
+	public UserPolicy getUserPolicy() {
+		return this.userPolicy;
+	}
+	
+	public void setUserPolicyAddress(String agreeAddress) {
+		this.userPolicy.setAgreeAddress(agreeAddress);
+	}
+	
+	public void setUserPolicyEmail(String agreeEmail) {
+		this.userPolicy.setAgreeAddress(agreeEmail);
+	}
+	
+	public void setUserPolicyPhone(String agreePhone) {
+		this.userPolicy.setAgreePhone(agreePhone);
+	}
+	
+
 
 	@Override
 	public String toString() {

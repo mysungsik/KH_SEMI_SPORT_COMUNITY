@@ -13,7 +13,7 @@
 INSERT INTO TEAMS 
 VALUES(SEQ_TEAMS_NO.nextval, 'kia', 'kim', '...', 'kia', 'busan', 'kiakia', 'Y');
 
--- 1. USER TABLE
+-- 1. USER TABLE ( DUMMY USER INSERT)
 INSERT INTO USER_INFO 
 VALUES(
     SEQ_USER_NO.nextval,
@@ -36,7 +36,6 @@ VALUES(
     NULL
 );
 
-COMMIT;
 -- 2. USER HISTORY TABLE
 -- 3. USER_POLICY TABLE
 -- 4. REPORT TYPE TABLE

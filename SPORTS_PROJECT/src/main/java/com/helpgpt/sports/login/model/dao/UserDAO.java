@@ -54,8 +54,17 @@ public class UserDAO {
 				String userState = rs.getString("USER_ST");
 				String createdDate = rs.getString("CREATE_DT");
 				String deletedDate = rs.getString("DELETE_DT");
+				String agreeAddress = rs.getString("AGREE_ADDRESS");
+				String agreeEmail = rs.getString("AGREE_EMAIL");
+				String agreePhone = rs.getString("AGREE_PHONE");
 				
-				loginUser = new User(userNo, favoriteTeamNo, userId, userProfileImg, userEmail, userName, userPhone, userSns, userBd, userAddress, userGender, userNation, userProfileImg, userAuthority, userState, createdDate, deletedDate);
+				loginUser = new User(userNo, favoriteTeamNo, userId, 
+						userProfileImg, userEmail, 
+						userName, userPhone, userSns, userBd, 
+						userAddress, userGender, userNation, 
+						userProfileImg, userAuthority, userState, 
+						createdDate, deletedDate,
+						agreeAddress, agreeEmail, agreePhone);
 			}
 			
 		} catch (Exception e) {
