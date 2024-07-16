@@ -373,9 +373,7 @@ function modalConfirm(){
 	
 	// 정보 동의일 경우
 	if (typeReg.test(modalType)){
-		let input = $(`input[name="profile_${modalType}"]`)
 		let label = $(`[for="${modalType}"]`)
-		input.prop("checked", true)
 		label.html("ON")
 		
 		// TODO : 값을 백엔드로 전달
@@ -390,7 +388,6 @@ function modalConfirm(){
 		switch(modalType){
 			case "email" : {
 				if (emailValidate(value)){
-					// TODO: Email Data 업데이트
 					let data = {
 						"type" : "USER_EMAIL",
 						"data" : value
@@ -401,7 +398,6 @@ function modalConfirm(){
 			};break;
 			case "phone" : {
 				if (phoneValidate(value)){
-					// TODO: Phone Data 업데이트
 					let data = {
 						"type" : "USER_PHONE",
 						"data" : value
@@ -412,7 +408,6 @@ function modalConfirm(){
 			};break;
 			case "sns" : {
 				if (emailValidate(value)){
-					// TODO: SNS Data 업데이트
 					let data = {
 						"type" : "USER_SNS",
 						"data" : value
@@ -423,7 +418,6 @@ function modalConfirm(){
 			};break;
 			case "birthday" : {
 				if (birthdayValidate(value)){
-					// TODO: BD Data 업데이트
 					let data = {
 						"type" : "USER_BD",
 						"data" : value
@@ -434,7 +428,6 @@ function modalConfirm(){
 			};break;
 			case "address" : {
 				if (addressValidate(value)){
-					// TODO: address Data 업데이트
 					let data = {
 						"type" : "USER_ADDRESS",
 						"data" : value
