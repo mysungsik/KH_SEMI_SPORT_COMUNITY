@@ -4,6 +4,9 @@ import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Properties;
 
 import static com.helpgpt.sports.common.util.JDBCTemplate.*;
@@ -128,17 +131,29 @@ public class UserDAO {
 	}
 
 	public int updateUserInfo(Connection conn, int userNo, String inputType, String inputData) {
-		String sql = String.format("UPDATE USER_INFO "
-									+ "SET %s = '%s'"
-									+ "WHERE USER_NO = %d", inputType, inputData, userNo);
+		
+		String sql = "";
 		int result = 0;
+		
+		String[] agreeType = {"AGREE_EMAIL", "AGREE_PHONE", "AGREE_ADDRESS"};
+		List<String> agreeList = new ArrayList<>(Arrays.asList(agreeType));
+		
+		if (agreeList.contains(inputType)) {
+			sql = String.format("UPDATE USER_POLICY "
+					+ "SET %s = '%s'"
+					+ "WHERE USER_NO = %d", inputType, inputData, userNo);
+		}else {
+			sql = String.format("UPDATE USER_INFO "
+					+ "SET %s = '%s'"
+					+ "WHERE USER_NO = %d", inputType, inputData, userNo);
+		}
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
 			result = pstmt.executeUpdate();
 			
 		} catch (Exception e) {
-			System.out.println("[ERROR] Failed to Update sessionUUID");
+			System.out.println("[ERROR] Failed to Update user info");
 			e.printStackTrace();
 		} finally {
 			close(pstmt);

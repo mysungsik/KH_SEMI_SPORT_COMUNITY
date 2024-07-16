@@ -3,6 +3,9 @@ package com.helpgpt.sports.login.model.service;
 import static com.helpgpt.sports.common.util.JDBCTemplate.*;
 
 import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import com.helpgpt.sports.login.model.dao.UserDAO;
 import com.helpgpt.sports.login.model.vo.User;
@@ -44,7 +47,6 @@ public class UserService {
 
 	public int updateUserInfo(int userNo, String inputType, String inputData) {
 		Connection conn = getConnection();
-		
 		int result = dao.updateUserInfo(conn, userNo, inputType, inputData);
 		
 		if (result > 0 ) {

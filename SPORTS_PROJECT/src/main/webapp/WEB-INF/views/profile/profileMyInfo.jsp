@@ -51,21 +51,21 @@
                 		<div>
                 			<p class="fc__blue fs-12__b"> E-mail </p>
                 			<div class="form-check form-switch" data-type="email">
-							  <input class="form-check-input" type="checkbox" role="switch" id="emailAgree" name="emailAgree" data-type="emailAgree" onclick="showModal(this)">
+							  <input class="form-check-input" type="checkbox" role="switch" id="emailAgree" name="emailAgree" data-type="emailAgree" onclick="showModal(this)" ${loginUser.getUserPolicy().getAgreeEmail() == 'Y' ? 'checked' : ''}>
 							  <label class="form-check-label" for="emailAgree">${loginUser.getUserPolicy().getAgreeEmail() == 'Y' ? 'ON' : 'OFF'}</label>
 							</div>
                 		</div>
                 		<div>
                 			<p class="fc__blue fs-12__b"> Phone Number </p>
                				<div class="form-check form-switch" data-type="phone">
-							  <input class="form-check-input" type="checkbox" role="switch" id="phoneAgree" name="phoneAgree" data-type="phoneAgree" onclick="showModal(this)">
+							  <input class="form-check-input" type="checkbox" role="switch" id="phoneAgree" name="phoneAgree" data-type="phoneAgree" onclick="showModal(this)" ${loginUser.getUserPolicy().getAgreePhone() == 'Y' ? 'checked' : ''}>
 							  <label class="form-check-label" for="phoneAgree">${loginUser.getUserPolicy().getAgreePhone() == 'Y' ? 'ON' : 'OFF'}</label>
 							</div>
                 		</div>
                 		<div>
                 			<p class="fc__blue fs-12__b"> Address </p>
                				<div class="form-check form-switch" data-type="sns">
-							  <input class="form-check-input" type="checkbox" role="switch" id="addressAgree" name="addressAgree" data-type="addressAgree" onclick="showModal(this)">
+							  <input class="form-check-input" type="checkbox" role="switch" id="addressAgree" name="addressAgree" data-type="addressAgree" onclick="showModal(this)" ${loginUser.getUserPolicy().getAgreeAddress() == 'Y' ? 'checked' : ''}>
 							  <label class="form-check-label" for="addressAgree">${loginUser.getUserPolicy().getAgreeAddress() == 'Y' ? 'ON' : 'OFF'}</label>
 							</div>
                 		</div>

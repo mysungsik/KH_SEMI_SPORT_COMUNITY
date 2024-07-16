@@ -213,7 +213,7 @@ public class User {
 	}
 	
 	public void setUserPolicyEmail(String agreeEmail) {
-		this.userPolicy.setAgreeAddress(agreeEmail);
+		this.userPolicy.setAgreeEmail(agreeEmail);
 	}
 	
 	public void setUserPolicyPhone(String agreePhone) {
@@ -227,7 +227,9 @@ public class User {
 				+ ", userSns=" + userSns + ", userBd=" + userBd + ", userAddress=" + userAddress + ", userGender="
 				+ userGender + ", userNation=" + userNation + ", userProfileImg=" + userProfileImg + ", userAuthority="
 				+ userAuthority + ", userState=" + userState + ", createdDate=" + createdDate + ", deletedDate="
-				+ deletedDate + "]";
+				+ deletedDate + ", userPolicy=" + userPolicy.getAgreeAddress() + userPolicy.getAgreeEmail()  + userPolicy.getAgreePhone()+ "]";
 	}
+	
+	
 	
 }

@@ -55,7 +55,7 @@
 	                    </p>
 	                </div>
 	                <div class="resign-btns d-flex">
-	                	<button class="btn-big__blue" class="resignBtn" data-type="resignAgree" onclick="showModal(this)">동의 후 탈퇴 </button> 
+	                	<button class="btn-big__blue" class="resignBtn" data-type="resign" onclick="showModal(this)">동의 후 탈퇴 </button> 
 	                </div>
                 </div>
             </div>

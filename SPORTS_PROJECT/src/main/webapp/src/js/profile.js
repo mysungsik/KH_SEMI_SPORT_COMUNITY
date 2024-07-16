@@ -211,7 +211,7 @@ function paginationActive(id, datas, template){
 		})
 	}
 	
-	// 조건에 맞는 edit 수행
+	// TODO : [컨텐츠] 조건에 맞는 edit 수행
 	if (id == "comments"){
 		$(".edit").on("click", function(){
 			let comment = $(this).parent().parent().find(".item-text")
@@ -239,7 +239,7 @@ function showModal(el){
 	let modalType = $(el).data("type");
 	$("[name='modalType']").val(modalType);
 	
-	// [개인 정보 - 내 정보 관리] 정보제공동의 모달
+	// 정보제공동의 모달
 	if (modalType == "emailAgree" ||
 		modalType == "phoneAgree" ||
 		modalType == "addressAgree"){
@@ -278,15 +278,35 @@ function showModal(el){
 			}
 		}
 
+		// 정보 제공 동의 모달 생성
 		if (value){
-			infoModal.modal('show');		
+			infoModal.modal('show');
+			
+		// 정보 제공 동의 취소	
 		}else{
-			checkboxLabel.html("OFF")
+			let policyData = {
+				"type" : "",
+				"data" : "N"
+			}
+			
+			switch(modalType){
+				case "emailAgree":{
+					policyData.type = "AGREE_EMAIL"
+				};break;
+				case "phoneAgree":{
+					policyData.type = "AGREE_PHONE"
+				};break;
+				case "addressAgree":{
+					policyData.type = "AGREE_ADDRESS"
+				}
+			} 
+			updateUserPolicy(policyData)
+			checkboxLabel.html("OFF")				
 		}
 	}
 	
 	// [개인 정보 - 회원 탈퇴] 회원 탈퇴 모달
-	else if (modalType == "resignAgree"){
+	else if (modalType == "resign"){
 		
 		infoModal.find(".modal-title").html("정말로 탈퇴하시겠습니까?")
 		infoModal.find(".modal-body").html("모달 내용임둥")
@@ -373,12 +393,30 @@ function modalConfirm(){
 	
 	// 정보 동의일 경우
 	if (typeReg.test(modalType)){
-		let label = $(`[for="${modalType}"]`)
-		label.html("ON")
+		let checkboxLabel = $(`[for="${modalType}"]`)
 		
-		// TODO : 값을 백엔드로 전달
+		let policyData = {
+				"type" : "",
+				"data" : "Y"
+		}
+			
+		switch(modalType){
+			case "emailAgree":{
+				policyData.type = "AGREE_EMAIL"
+			};break;
+			case "phoneAgree":{
+				policyData.type = "AGREE_PHONE"
+			};break;
+			case "addressAgree":{
+				policyData.type = "AGREE_ADDRESS"
+			}
+		} 
+		
+		updateUserPolicy(policyData)
+		checkboxLabel.html("ON")				
+
+			
 		infoModal.hide();
-		
 	}
 	// 정보 수정일 경우
 	else{
@@ -464,9 +502,8 @@ function updateUserInfo(userData, modalType){
 		data: userData,	// {type, data}
 		dataType: "json",
 		success: function (res) {
-			// 로그인 성공 여부 판단
 			let isUpdated = res.hasOwnProperty("data")
-
+			
 			if (isUpdated){
 				$(`p[data-type="${modalType}"]`).html(userData.data);
 				toastPop("info", "정상적으로 변경되었습니다.")
@@ -476,6 +513,33 @@ function updateUserInfo(userData, modalType){
 			
 		},
 		error : function(request, status, error){
+			toastPop("warn", "변경에 실패하였습니다")
+			console.log(request);
+			console.log(status);
+			console.log(error);
+		}
+	});
+}
+
+function updateUserPolicy(policyData){
+	let request_url = `${contextPath}/api/user/update`
+	$.ajax({
+		type: "POST",
+		url: request_url,
+		data: policyData,	// {type, data}
+		dataType: "json",
+		success: function (res) {
+			let isUpdated = res.hasOwnProperty("data")
+
+			if (isUpdated){
+				toastPop("info", "정상적으로 변경되었습니다.")
+			} else{
+				toastPop("warn", "변경에 실패하였습니다")
+			}
+			
+		},
+		error : function(request, status, error){
+			toastPop("warn", "변경에 실패하였습니다")
 			console.log(request);
 			console.log(status);
 			console.log(error);
