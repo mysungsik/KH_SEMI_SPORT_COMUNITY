@@ -3,6 +3,7 @@ package com.helpgpt.sports.admin.apis;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -47,7 +48,17 @@ public class ProfileAdminApi extends HttpServlet {
 		if (userAuthority.equals("A")) {
 			switch (path) {
 				case "getAllUsersData": {
-					service.getAllUsersData();
+					
+					List<User> userList = service.getAllUserInfo();
+					
+					if (userList.size() > 0) {
+						result.put("message", "success get all user info");
+						result.put("data", userList);
+						new Gson().toJson(result, out);
+					}else {
+						result.put("message", "failed get all user info");
+						new Gson().toJson(result, out);
+					}
 				}
 			}
 		}

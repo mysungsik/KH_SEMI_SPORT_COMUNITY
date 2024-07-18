@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>profiefor admn</comment>
+	
+	<entry key="selectAllUser">
+		SELECT 
+			I.USER_NO,
+			I.TEAM_NO,
+			I.USER_ID,
+			I.USER_EMAIL,
+			I.USER_NAME,
+			I.USER_PHONE,
+			I.USER_SNS,
+			I.USER_BD,
+			I.USER_ADDRESS,
+			I.USER_GENDER ,
+			I.USER_NATION ,
+			I.USER_IMG_ORIGIN ,
+			I.USER_IMG_RENAME,
+			I.USER_AUTHORITY ,
+			I.USER_ST,
+			TO_CHAR(I.CREATE_DT, 'YYYY-MM-DD HH24:MM:SS') AS CREATE_DT,
+			TO_CHAR(I.DELETE_DT, 'YYYY-MM-DD HH24:MM:SS') AS DELETE_DT,
+			P.AGREE_ADDRESS,
+			P.AGREE_EMAIL,
+			P.AGREE_PHONE
+		FROM USER_INFO I
+		JOIN USER_POLICY P ON (I.USER_NO = P.USER_NO)
+	</entry>
+
+</properties>

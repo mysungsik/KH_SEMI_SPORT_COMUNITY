@@ -1,47 +1,3 @@
-let userData = [
-		{no : 1 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 2 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "R", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 3 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "R", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 4 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "G", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 5 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "G", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 6 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "G", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 7 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "G", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 8 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 9 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 10 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 11 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 12 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 13 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 14 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 15 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 16 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 17 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 18 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 19 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 20 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 21 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 22 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 23 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 24 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 25 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 26 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 27 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 28 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 29 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 30 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 31 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 32 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 33 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 34 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 35 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 36 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 37 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 38 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 39 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 40 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"},
-		{no : 41 , id : "test_id1", email : "test_email@email.com", role : "Admin", number:"010-1111-2222", address : "서울 특별시...", statement : "L", last_login : "2024-12-03 16:23:23", deleted_fl : "N"}
-]
-
 let reportData = [
 	{no : 1 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕 했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
 	{no : 2 , id : "test_id1", rep_type : "게시글",  vio_type: "허위사실", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
@@ -84,7 +40,26 @@ let reportData = [
 
 $(document).ready(function () {
 	// 페이지네이션 실행
-	paginationActive("user", userData, adminTemplate);
+	const request_url = `${contextPath}/api/admin/profile/getAllUsersData`;
+	
+	$.ajax({
+		type: "GET",
+		url: request_url,
+		dataType: "json",
+		success: function (res) {
+			let isGetData = res.hasOwnProperty("data")
+			if (isGetData){
+				const userData = res.data;
+				paginationActive("user", userData, adminTemplate);
+			}
+        },
+		error : function(request, status, error){
+			console.log(request);
+			console.log(status);
+			console.log(error);
+		}
+	});
+	
 	paginationActive("report", reportData, adminTemplate);
 
 });
@@ -113,16 +88,16 @@ function adminTemplate(data, id) {
 		$.each(data, function(index, d){
 	  	item += 
 	  		`<tr>
-				<input type="hidden" class="address" value='${d.address}'> 
-				<input type="hidden" class="statement" value='${d.statement}'> 
-				<input type="hidden" class="last_login" value='${d.last_login}'> 
-				<input type="hidden" class="deleted_fl" value='${d.deleted_fl}'> 
-				<td class="no">${d.no}</td> 
-				<td class="id">${d.id}</td> 
-				<td class="email">${d.email}</td> 
-				<td class="role">${d.role}</td> 
-				<td class="number">${d.number}</td> 
-				<td data-num=${d.no}><img class="edit"  src="/SPORTS_PROJECT/public/icons/edit.png"></td> 
+				<input type="hidden" class="address" value='${d.userAddress}'> 
+				<input type="hidden" class="statement" value='${d.userState}'> 
+				<input type="hidden" class="last_login" value=''> 
+				<input type="hidden" class="deleted_fl" value=''> 
+				<td class="no">${d.userNo}</td> 
+				<td class="id" disabled>${d.userId}</td> 
+				<td class="email">${d.userEmail}</td> 
+				<td class="role">${d.userAuthority}</td> 
+				<td class="number">${d.userPhone}</td> 
+				<td data-num=${d.userNo}><img class="edit" src="/SPORTS_PROJECT/public/icons/edit.png"></td> 
 			</tr>`
 		})
 		item += `</tbody>
@@ -243,7 +218,7 @@ function showModal(id, data){
 			<div class="modal-row">
 				<div>
 					<label for="user_id"> USER ID </label>
-					<input type="text" id="user_id" name="user_id" value="${data.id}">				
+					<input type="text" id="user_id" name="user_id" value="${data.id}" disabled>				
 				</div>
 				<div>
 					<label for="user_email"> USER EMAIL </label>
@@ -267,7 +242,7 @@ function showModal(id, data){
 				</div>
 				<div>
 					<label for="user_email"> LAST LOGIN </label>
-					<input type="text" id="user_email" name="user_email" value="${data.last_login}">								
+					<input type="text" id="user_email" name="user_email" value="${data.last_login}" disabled>								
 				</div>
 			</div>
 			<div  class="modal-row">
@@ -276,8 +251,8 @@ function showModal(id, data){
 					<input type="text" id="user_id" name="user_id" value="${data.statement}">				
 				</div>
 				<div>
-					<label for="user_email"> DELETED FLAG </label>
-					<input type="text" id="user_email" name="user_email" value="${data.deleted_fl}">								
+					<label for="user_email"> DELETED DATE </label>
+					<input type="text" id="user_email" name="user_email" value="${data.deleted_fl}" disabled>								
 				</div>
 			</div>
 			
