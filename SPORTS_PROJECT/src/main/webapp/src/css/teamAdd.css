@@ -6,7 +6,7 @@
   width: 1024px;
 }
 
-form>h1{
+.step>h1{
   font-size: 30px;
   text-align: center;
   margin-top: 30px;
@@ -49,14 +49,13 @@ form>h1{
 .step ul > li:last-of-type:after { display: none; }
 
 
-.step ul > li.on:before,
-.step ul > li.on:after,
 .step ul > li.done:after,
 .step ul > li.done:after,
-.step ul > li.on + li:before,
-.step ul > li.done + li:before { background-color: #007aff; }
+.step ul > li.done + li:before { background-color: #007aff;  }
+
 .step ul > li.on > .step-item .step-circle,
 .step ul > li.done > .step-item .step-circle { background-color: #007aff; }
+
 .step ul > li.on > .step-item .step-circle:before {
   width: 18px;
   height: 18px;
@@ -241,7 +240,6 @@ form>h1{
 
 }
 
-
 .base-info{
   display: flex;
   flex-direction: column ;
@@ -257,3 +255,51 @@ form>h1{
   background-color: white;
   color: #007aff;
 }
+
+.base-info button:hover{
+   box-shadow: 2px 2px 5px rgba(69, 69, 69, 0.3) !important;
+}
+
+/* 구단 추가 step2 */
+.boardImage p{
+	font-size: 15px;
+}
+
+/* file 타입 input */
+
+.image-area{
+	display: flex;
+}
+
+.inputImage{
+	width: 250px;
+	height: 250px;
+	position: relative;
+}
+
+.image-area > pre{
+	width :500px;
+	height: 250px;
+	margin-left: 50px;
+	align-content: center;
+}
+
+.image-area .image-btn {
+	display: flex;
+}
+
+/* 이미지 삭제 */
+.delete-image{
+    position: absolute;
+    top: 0;
+    right: 7px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* 버튼 영역 */
+.btn-area button:first-child{
+	background-color: #007aff;
+	color: white;
+}
+
