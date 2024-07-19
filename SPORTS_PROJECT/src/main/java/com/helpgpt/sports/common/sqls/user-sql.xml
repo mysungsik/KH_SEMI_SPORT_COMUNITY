@@ -31,6 +31,11 @@
 		AND USER_PW = ?
 	</entry>
 	
+	<entry key="insertUserHistory">
+		INSERT INTO USER_HISTORY
+		VALUES (SEQ_USER_HISTORY.NEXTVAL, ?, DEFAULT, ?)
+	</entry>
+	
 	<entry key="userResign">
 		UPDATE USER_INFO
 		SET DELETE_DT = SYSDATE

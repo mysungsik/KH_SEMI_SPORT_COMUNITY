@@ -239,7 +239,7 @@ function showModal(el){
 	let modalType = $(el).data("type");
 	$("[name='modalType']").val(modalType);
 	
-	// 정보제공동의 모달
+	// 정보제공동의 모달 ------------
 	if (modalType == "emailAgree" ||
 		modalType == "phoneAgree" ||
 		modalType == "addressAgree"){
@@ -305,7 +305,7 @@ function showModal(el){
 		}
 	}
 	
-	// [개인 정보 - 회원 탈퇴] 회원 탈퇴 모달
+	// [개인 정보 - 회원 탈퇴] 회원 탈퇴 모달 --------------------
 	else if (modalType == "resign"){
 		
 		infoModal.find(".modal-title").html("정말로 탈퇴하시겠습니까?")
@@ -317,7 +317,48 @@ function showModal(el){
 		infoModal.modal('show');
 	}
 	
-	// [개인 정보 - 내 정보 관리] 정보수정 일 경우 모달
+	else if (modalType == "loginHistory"){
+		let request_url = `${contextPath}/api/profile/getUserHistories`
+		$.ajax({
+			type: "GET",
+			url: request_url,
+			dataType: "json",
+			success: function (res) {
+				let isGetData = res.hasOwnProperty("data");
+				let historyModal = $('#historyModal');
+
+				if (isGetData){
+					let html = `
+							<table class="history-table">
+							<thead>
+								<tr> 
+									<td>일시</td>
+									<td>서비스</td>
+									<td>로그인 형태</td>
+								</tr>
+							</thead>
+							<tbody>`
+
+					$.each(res.data, function(index, d){
+						html += `
+							<tr>
+								<td> ${d.loginDate}</td>
+								<td> 스포츠 커뮤니티 </td>
+								<td> ${d.loginAuto == 'Y' ? '자동 로그인' : '수동 로그인'} </td>
+							</tr>`
+					})
+
+					html += `
+							</tbody>
+						</table>`
+					
+					historyModal.find(".modal-body").html(html);
+					historyModal.modal("show");
+				}
+			}
+		});
+	}
+	// [개인 정보 - 내 정보 관리] 정보수정 일 경우 모달 --------------------
 	else{
 		let value = $(el).text();
 		let data = value.substring(0, value.length - 2).trim()

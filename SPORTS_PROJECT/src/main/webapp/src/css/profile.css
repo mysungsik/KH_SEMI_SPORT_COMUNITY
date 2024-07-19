@@ -233,6 +233,38 @@
 	gap:30px;
 }
 
+/* 일반 페이지 히스토리용 모달*/
+
+#historyModal .modal-dialog {
+	max-width: 500px;
+}
+
+#historyModal .modal-body {
+	width: 100%;
+	max-height: 250px;
+	overflow-y: scroll;
+}
+
+#historyModal .history-table {
+	width: 100%;
+}
+
+#historyModal .history-table thead{
+	background-color: #F4F6FD;
+	text-align: center;
+}
+
+#historyModal .history-table tr > td{
+	text-align: center;
+}
+
+
+#historyModal .history-table tr, .history-table td{
+	border: 1px solid;
+	height: 29px;
+}
+	
+
 
 /* 관리자페이지 페이지네이션*/ 
 .content-main .manage-table{

@@ -13,16 +13,17 @@ import com.helpgpt.sports.login.model.vo.User;
 public class UserService {
 	UserDAO dao = new UserDAO();
 	
-	public User userLogin(User loginInfo) {
+	public User userLogin(User loginInfo, String isAuto) {
 		Connection conn = getConnection();
 		
 		// 로그인 유저객체 생성
 		User loginUser =  dao.userLogin(conn, loginInfo);
 		
 		// 로그인 히스토리 저장 && 탈퇴일 리셋
-		int result = dao.cancelUserResign(conn, loginUser.getUserNo());
+		dao.cancelUserResign(conn, loginUser.getUserNo());
+		int insertHistoryresult = dao.insertUserHistory(conn, loginUser.getUserNo(), isAuto);
 		
-		if (result > 0 ) {
+		if (insertHistoryresult > 0) {
 			commit(conn);
 		}else {
 			rollback(conn);
@@ -33,15 +34,6 @@ public class UserService {
 		return loginUser;
 	}
 	
-	public User getLoginInfoFromSessionUUID(String sessionUUID) {
-		Connection conn = getConnection();
-		User loginInfo = dao.getLoginInfoFromSessionUUID(conn, sessionUUID);
-		
-		close(conn);
-		
-		return loginInfo;
-	}
-
 	public void updateSessionUUID(User loginUser, String sessionUUID) {
 		Connection conn = getConnection();
 		
@@ -54,6 +46,29 @@ public class UserService {
 		}
 		
 		close(conn);
+	}
+	
+	public void insertUserHistory(int userNo, String isAuto) {
+		Connection conn = getConnection();
+		
+		int result = dao.insertUserHistory(conn, userNo, isAuto);
+		
+		if (result > 0 ) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+		
+		close(conn);
+	}
+	
+	public User getLoginInfoFromSessionUUID(String sessionUUID) {
+		Connection conn = getConnection();
+		User loginInfo = dao.getLoginInfoFromSessionUUID(conn, sessionUUID);
+		
+		close(conn);
+		
+		return loginInfo;
 	}
 
 	public int updateUserInfo(int userNo, String inputType, String inputData) {

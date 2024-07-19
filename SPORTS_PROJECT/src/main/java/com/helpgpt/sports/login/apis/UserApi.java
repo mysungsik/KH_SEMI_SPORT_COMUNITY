@@ -47,8 +47,8 @@ public class UserApi extends HttpServlet {
 				String stayLogin = req.getParameter("stayLogin");
 	
 				User loginInfo = new User(inputId, inputPw);
-	
-				loginUser = service.userLogin(loginInfo);
+				String isAuto = "N";
+				loginUser = service.userLogin(loginInfo, isAuto);
 	
 				Map<String, Object> result = new HashMap<>();
 	

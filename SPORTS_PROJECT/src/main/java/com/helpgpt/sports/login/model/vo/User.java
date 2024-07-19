@@ -19,6 +19,7 @@ public class User {
 	private String userState;
 	private String createdDate;
 	private String deletedDate;
+	private String lastLogin;
 	private UserPolicy userPolicy = new UserPolicy();
 	
 	// 유저 로그인용객체
@@ -38,10 +39,10 @@ public class User {
 		this.userBd = userBd;
 		this.userAddress = userAddress;
 		this.userGender = userGender;
-		this.userNation = userNation;
+		this.userNation = userNation;;
 	}
 	
-	// 유저 정보 전달 객체 (pw 제외 전부)
+	// 일반 유저 정보 전달 객체 (pw 제외 전부)
 	public User(int userNo, int favoriteTeamNo, String userId, String userPw, String userEmail, String userName,String userPhone,
 			String userSns, String userBd, String userAddress, String userGender, String userNation,
 			String userProfileImg, String userAuthority, String userState, String createdDate, String deletedDate,
@@ -63,6 +64,34 @@ public class User {
 		this.userState = userState;
 		this.createdDate = createdDate;
 		this.deletedDate = deletedDate;
+		this.userPolicy.setAgreeAddress(agreeAddress);
+		this.userPolicy.setAgreeEmail(agreeEmail);
+		this.userPolicy.setAgreePhone(agreePhone);
+	}
+	
+	// Admin의 유저 정보 전달 객체 (pw 제외 전부 + lastLogin 추가)
+	public User(int userNo, int favoriteTeamNo, String userId, String userPw, String userEmail, String userName,String userPhone,
+			String userSns, String userBd, String userAddress, String userGender, String userNation,
+			String userProfileImg, String userAuthority, String userState, String createdDate, String deletedDate,
+			String lastLogin, String agreeAddress, String agreeEmail, String agreePhone) {
+		
+		this.userNo = userNo;
+		this.favoriteTeamNo = favoriteTeamNo;
+		this.userId = userId;
+		this.userEmail = userEmail;
+		this.userName = userName;
+		this.userPhone = userPhone;
+		this.userSns = userSns;
+		this.userBd = userBd;
+		this.userAddress = userAddress;
+		this.userGender = userGender;
+		this.userNation = userNation;
+		this.userProfileImg = userProfileImg;
+		this.userAuthority = userAuthority;
+		this.userState = userState;
+		this.createdDate = createdDate;
+		this.deletedDate = deletedDate;
+		this.lastLogin = lastLogin;
 		this.userPolicy.setAgreeAddress(agreeAddress);
 		this.userPolicy.setAgreeEmail(agreeEmail);
 		this.userPolicy.setAgreePhone(agreePhone);
@@ -202,6 +231,10 @@ public class User {
 
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+	
+	public String getUserLastLogin() {
+		return this.lastLogin;
 	}
 	
 	public UserPolicy getUserPolicy() {

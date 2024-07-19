@@ -101,6 +101,27 @@ public class UserDAO {
 		
 		return result;
 	}
+	
+	public int insertUserHistory(Connection conn, int userNo, String isAuto) {
+		String sql = prop.getProperty("insertUserHistory");
+		int result = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, userNo);
+			pstmt.setString(2, isAuto);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("[ERROR] Failed to Insert user history");
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
 
 	public User getLoginInfoFromSessionUUID(Connection conn, String sessionUUID) {
 		String sql = prop.getProperty("getUserInfo-from-sessionUUID");

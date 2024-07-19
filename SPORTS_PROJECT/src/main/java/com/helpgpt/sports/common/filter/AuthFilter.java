@@ -55,7 +55,8 @@ public class AuthFilter extends HttpFilter implements Filter {
 		    	
 		    	// 2. 로그인처리한다.
 		    	if (loginInfo != null) {
-		    		loginUser = service.userLogin(loginInfo);
+		    		String isAuto = "Y";
+		    		loginUser = service.userLogin(loginInfo, isAuto);
 		    	}
 		    	
 		    	if (loginUser != null) {

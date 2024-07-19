@@ -64,9 +64,6 @@ $(document).ready(function () {
 
 });
 
-function getUserData(){
-	
-}
 
 // 관리자용 페이지네이션 템플릿 함수 (User)
 function adminTemplate(data, id) {
@@ -88,15 +85,15 @@ function adminTemplate(data, id) {
 		$.each(data, function(index, d){
 	  	item += 
 	  		`<tr>
-				<input type="hidden" class="address" value='${d.userAddress}'> 
-				<input type="hidden" class="statement" value='${d.userState}'> 
-				<input type="hidden" class="last_login" value=''> 
-				<input type="hidden" class="deleted_fl" value=''> 
-				<td class="no">${d.userNo}</td> 
-				<td class="id" disabled>${d.userId}</td> 
-				<td class="email">${d.userEmail}</td> 
-				<td class="role">${d.userAuthority}</td> 
-				<td class="number">${d.userPhone}</td> 
+				<input type="hidden" class="userAddress" value='${d.userAddress}'> 
+				<input type="hidden" class="userState" value='${d.userState}'> 
+				<input type="hidden" class="lastLogin" value='${d.lastLogin}'> 
+				<input type="hidden" class="deletedDate" value='${d.deletedDate}'> 
+				<td class="userNo">${d.userNo}</td> 
+				<td class="userId" disabled>${d.userId}</td> 
+				<td class="userEmail">${d.userEmail}</td> 
+				<td class="userAuthority">${d.userAuthority}</td> 
+				<td class="userPhone">${d.userPhone}</td> 
 				<td data-num=${d.userNo}><img class="edit" src="/SPORTS_PROJECT/public/icons/edit.png"></td> 
 			</tr>`
 		})
@@ -173,15 +170,15 @@ function paginationActive(id, datas, template){
 		if (id == "user"){
 			$(".edit").on("click", function(){
 				let data = {
-					no : $(this).parent().parent().find(".no").text(),
-					id : $(this).parent().parent().find(".id").text(),
-					email : $(this).parent().parent().find(".email").text(),
-					role : $(this).parent().parent().find(".role").text(),
-					number : $(this).parent().parent().find(".number").text(),
-					address : $(this).parent().parent().find(".address").val(),
-					statement : $(this).parent().parent().find(".statement").val(),
-					last_login : $(this).parent().parent().find(".last_login").val(),
-					deleted_fl : $(this).parent().parent().find(".deleted_fl").val()
+					userNo : $(this).parent().parent().find(".userNo").text(),
+					userId : $(this).parent().parent().find(".userId").text(),
+					userEmail : $(this).parent().parent().find(".userEmail").text(),
+					userAuthority : $(this).parent().parent().find(".userAuthority").text(),
+					userPhone : $(this).parent().parent().find(".userPhone").text(),
+					userAddress : $(this).parent().parent().find(".userAddress").val(),
+					userState : $(this).parent().parent().find(".userState").val(),
+					lastLogin : $(this).parent().parent().find(".lastLogin").val(),
+					deletedDate : $(this).parent().parent().find(".deletedDate").val()
 				}
 				
 				showModal(id, data)
@@ -212,47 +209,47 @@ function showModal(id, data){
 	let modalEl = $('#adminModal');
 	
 	if (id == "user"){
-		modalEl.find(".modal-title").html(`<p class="fs-14 fc__white">회원관리 / 회원번호 : ${data.no}</p>`)
+		modalEl.find(".modal-title").html(`<p class="fs-14 fc__white">회원관리 / 회원번호 : ${data.userNo}</p>`)
 				
 		modalEl.find(".modal-body").html(`
 			<div class="modal-row">
 				<div>
 					<label for="user_id"> USER ID </label>
-					<input type="text" id="user_id" name="user_id" value="${data.id}" disabled>				
+					<input type="text" id="user_id" name="user_id" value="${data.userId}" disabled>				
 				</div>
 				<div>
 					<label for="user_email"> USER EMAIL </label>
-					<input type="text" id="user_email" name="user_email" value="${data.email}">								
+					<input type="text" id="user_email" name="user_email" value="${data.userEmail}">								
 				</div>
 			</div>
 			<div  class="modal-row">
 				<div>
 					<label for="user_id"> USER ROLE </label>
-					<input type="text" id="user_id" name="user_id" value="${data.role}">				
+					<input type="text" id="user_id" name="user_id" value="${data.userAuthority}">				
 				</div>
 				<div>
 					<label for="user_email"> USER ADDRESS </label>
-					<input type="text" id="user_email" name="user_email" value="${data.address}">								
+					<input type="text" id="user_email" name="user_email" value="${data.userAddress}">								
 				</div>
 			</div>
 			<div  class="modal-row">
 				<div>
 					<label for="user_id"> USER NUMBER </label>
-					<input type="text" id="user_id" name="user_id" value="${data.number}">				
+					<input type="text" id="user_id" name="user_id" value="${data.userPhone}">				
 				</div>
 				<div>
-					<label for="user_email"> LAST LOGIN </label>
-					<input type="text" id="user_email" name="user_email" value="${data.last_login}" disabled>								
+					<label for="user_lastLogin"> LAST LOGIN </label>
+					<input type="text" id="user_lastLogin" name="user_lastLogin" value="${data.lastLogin}" disabled>								
 				</div>
 			</div>
 			<div  class="modal-row">
 				<div>
 					<label for="user_id"> USER STATEMENT </label>
-					<input type="text" id="user_id" name="user_id" value="${data.statement}">				
+					<input type="text" id="user_id" name="user_id" value="${data.userState}">				
 				</div>
 				<div>
-					<label for="user_email"> DELETED DATE </label>
-					<input type="text" id="user_email" name="user_email" value="${data.deleted_fl}" disabled>								
+					<label for="user_deletedDt"> DELETED DATE </label>
+					<input type="text" id="user_deletedDt" name="user_deletedDt" value="${data.deletedDate}" disabled>								
 				</div>
 			</div>
 			

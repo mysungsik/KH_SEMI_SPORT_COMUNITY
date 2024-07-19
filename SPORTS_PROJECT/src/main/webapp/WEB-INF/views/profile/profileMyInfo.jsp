@@ -85,7 +85,7 @@
                 		</div>
                 		<div>
                 			<p class="fc__blue fs-12__b"> Login History </p>
-                			<p class="fc__gray fs-12__b text-hover__black"> VIEW <span> > </span></p>
+                			<p class="fc__gray fs-12__b text-hover__black"  data-type="loginHistory" onclick="showModal(this)"> VIEW <span> > </span></p>
                 		</div>
                 	</div>
                 </div>
@@ -105,6 +105,22 @@
 	      	<input type="hidden" name="modalType" value=""/>
 	        <button id="cancelBtn" type="button" class="btn btn-medium__gray" data-bs-dismiss="modal" onclick="modalCancel()"> 취소 </button>
 	        <button id="confirmBtn" type="button" class="btn btn-medium__blue" onclick="modalConfirm()"> 변경 </button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	 <!-- History Modal -->
+	<div class="modal" id="historyModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header base base__blue">
+	        <h1 class="modal-title fs-5" id="commonModalLabel"> 최근 7일간 로그인 정보 </h1>
+	      </div>
+	      <div class="modal-body">
+	      </div>
+	      <div class="modal-footer">
+	      	<input type="hidden" name="modalType" value=""/>
+	        <button id="confirmBtn" type="button" class="btn btn-medium__blue w-100"  data-bs-dismiss="modal"> 확인 </button>
 	      </div>
 	    </div>
 	  </div>

@@ -48,7 +48,7 @@ public class ProfileAdminDAO {
 				String userBd = rs.getString("USER_BD") != null ? rs.getString("USER_BD") : "";
 				String userAddress = rs.getString("USER_ADDRESS") != null ? rs.getString("USER_ADDRESS") : "";
 				String userGender = rs.getString("USER_GENDER")  != null ? rs.getString("USER_GENDER") : "";
-				String userNation = rs.getString("USER_NATION")  != null ? rs.getString("USER_NATION") : "";
+				String userNation = rs.getString("USER_NATION") != null ? rs.getString("USER_NATION") : "";
 				String userProfileImg = rs.getString("USER_IMG_RENAME")  != null ? rs.getString("USER_IMG_RENAME") : "";;
 				String userAuthority = rs.getString("USER_AUTHORITY");
 				String userState = rs.getString("USER_ST");
@@ -57,13 +57,14 @@ public class ProfileAdminDAO {
 				String agreeAddress = rs.getString("AGREE_ADDRESS");
 				String agreeEmail = rs.getString("AGREE_EMAIL");
 				String agreePhone = rs.getString("AGREE_PHONE");
+				String lastLogin = rs.getTimestamp("LAST_LOGIN_DT") != null ? rs.getTimestamp("LAST_LOGIN_DT").toString() : "";
 				
 				User user = new User(userNo, favoriteTeamNo, userId, 
 						userProfileImg, userEmail, 
 						userName, userPhone, userSns, userBd, 
 						userAddress, userGender, userNation, 
 						userProfileImg, userAuthority, userState, 
-						createdDate, deletedDate,
+						createdDate, deletedDate, lastLogin,
 						agreeAddress, agreeEmail, agreePhone);
 				
 				userList.add(user);
