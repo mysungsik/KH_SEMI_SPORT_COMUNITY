@@ -30,6 +30,8 @@ body {
 }
 .navigation button {
 	margin: 0 10px;
+	border: none;
+	background-color: white;
 }
 
 .matchDate_Top .navigation span {
@@ -61,6 +63,14 @@ body {
 	color: white;
 }
 
+.days :nth-child(6){
+	color: blue;
+	
+}
+
+.days :nth-child(7){
+	color: red;
+}
 table {
 	width: 964px;
 	border-collapse: collapse;
@@ -79,7 +89,7 @@ th {
 	background-color: #f2f2f2;
 }
 
-.game_records{
+.game_recordsBox{
 	display:flex;
 	justify-content: center;
 	flex-direction:column;
@@ -87,7 +97,7 @@ th {
 	margin-bottom:30px;
 }
 .game_recordsTop{
-	background-color:blue;
+	background-color:#003366;
 	margin-top:20px;
 	border-radius:15px 15px 0 0;
 }
@@ -101,4 +111,7 @@ th {
 .game_recordsTable{
 	display:flex;
 	justify-content: center;
+}
+.garme-records {
+	margin-bottom:30px;
 }
