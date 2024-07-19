@@ -309,7 +309,10 @@ function showModal(el){
 	else if (modalType == "resign"){
 		
 		infoModal.find(".modal-title").html("정말로 탈퇴하시겠습니까?")
-		infoModal.find(".modal-body").html("모달 내용임둥")
+		infoModal.find(".modal-body").html(`
+				<p>탈퇴시  7일 후 정보 완전 제거</p>
+				<p>7일 이전에 재로그인시 탈퇴 취소 처리</p>
+			`)
 	
 		infoModal.modal('show');
 	}
@@ -414,8 +417,47 @@ function modalConfirm(){
 		
 		updateUserPolicy(policyData)
 		checkboxLabel.html("ON")				
+		infoModal.hide();
+	}
+	// 회원 탈퇴의 경우
+	else if(modalType == "resign"){
+		let request_url = `${contextPath}/api/user/resign`
+		$.ajax({
+			type: "POST",
+			url: request_url,
+			dataType: "json",
+			async: false,
+			success: function (res) {
+				let isResigned = res.hasOwnProperty("data");
 
-			
+				if(isResigned){
+					// TODO : 회원 탈퇴에 성공했다는 메시지를 띄우고 메인페이지로 이동
+						// 혹은, 회원탈퇴 페이지 만들어서 넘기기
+					
+					let cnt = 3;
+
+					toastPop("info", res.message + "..."+cnt);
+					cnt --;
+
+					let messageInterval = setInterval(() => {
+						toastPop("info", res.message + "..."+cnt);
+						cnt --;
+					}, 1000);
+
+					setTimeout(()=>{
+						clearInterval(messageInterval)
+						location.href = `${contextPath}/dashboard`
+					}, 3500)
+
+					
+				}
+				else{
+					toastPop("warn", "회원 탈퇴에 실패하였습니다.");
+				}
+
+			}
+		});
+
 		infoModal.hide();
 	}
 	// 정보 수정일 경우

@@ -71,9 +71,6 @@ public class signApi extends HttpServlet {
 				
 			}break;
 				
-			case "resign" : {
-				System.out.println("회원탈퇴");
-			}break;
 			default:System.out.println("[ERROR] Failed to Signup");
 		}
 	}

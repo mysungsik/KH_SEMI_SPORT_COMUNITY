@@ -15,7 +15,18 @@ public class UserService {
 	
 	public User userLogin(User loginInfo) {
 		Connection conn = getConnection();
+		
+		// 로그인 유저객체 생성
 		User loginUser =  dao.userLogin(conn, loginInfo);
+		
+		// 로그인 히스토리 저장 && 탈퇴일 리셋
+		int result = dao.cancelUserResign(conn, loginUser.getUserNo());
+		
+		if (result > 0 ) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
 		
 		close(conn);
 		
@@ -48,6 +59,21 @@ public class UserService {
 	public int updateUserInfo(int userNo, String inputType, String inputData) {
 		Connection conn = getConnection();
 		int result = dao.updateUserInfo(conn, userNo, inputType, inputData);
+		
+		if (result > 0 ) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+		
+		close(conn);
+		
+		return result;
+	}
+
+	public int resign(int userNo) {
+		Connection conn = getConnection();
+		int result = dao.userResign(conn, userNo);
 		
 		if (result > 0 ) {
 			commit(conn);

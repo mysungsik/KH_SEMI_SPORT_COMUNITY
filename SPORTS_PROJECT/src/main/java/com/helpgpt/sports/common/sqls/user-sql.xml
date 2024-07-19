@@ -29,7 +29,18 @@
 		JOIN USER_POLICY P ON (I.USER_NO = P.USER_NO)
 		WHERE USER_ID = ?
 		AND USER_PW = ?
-		AND DELETE_DT IS NULL
+	</entry>
+	
+	<entry key="userResign">
+		UPDATE USER_INFO
+		SET DELETE_DT = SYSDATE
+		WHERE USER_NO = ?
+	</entry>
+	<entry key="cancelUserResign">
+		UPDATE USER_INFO
+		SET DELETE_DT = NULL
+		WHERE USER_NO = ?
+		AND DELETE_DT IS NOT NULL
 	</entry>
 	
 	<entry key="update-sessionUUID">

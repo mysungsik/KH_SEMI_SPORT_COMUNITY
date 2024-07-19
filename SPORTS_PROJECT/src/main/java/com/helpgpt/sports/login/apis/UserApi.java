@@ -124,7 +124,36 @@ public class UserApi extends HttpServlet {
 					new Gson().toJson(result, out);
 				}
 			};break;
-			
+
+			case "resign" :{
+				HttpSession session = req.getSession(false);
+				Map<String, Object> result = new HashMap<>();
+				
+				if (session != null) {
+					loginUser = (User)session.getAttribute("loginUser");
+					
+					int updateResult = service.resign(loginUser.getUserNo());
+					
+					if (updateResult > 0 ) {
+						// 로그아웃처리
+						session.setAttribute("loginUser", null);
+				
+						// 쿠키 제거
+						Cookie cookie = new Cookie("rememberLogin", null);
+						cookie.setMaxAge(0);
+						cookie.setPath(req.getContextPath()); // 쿠키 경로 contextPath 로 설정
+						res.addCookie(cookie);
+						
+						result.put("data", "delete Success");
+						result.put("message", "그동안 이용해 주셔서 감사합니다. 3초후 페이지가 이동합니다.");
+					} else {
+						result.put("message","업데이트에 실패하였습니다");
+					}
+					
+					new Gson().toJson(result, out);
+					
+				}
+			};break;
 			default: {
 				System.out.println("[ERROR] USER API");
 			}
