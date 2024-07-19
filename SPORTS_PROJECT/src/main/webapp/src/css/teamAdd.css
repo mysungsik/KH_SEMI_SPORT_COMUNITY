@@ -246,7 +246,7 @@
   align-items: end;
 }
 
-.base-info button{
+button{
   width: 100px;
   margin: 0 0 20px 0;
   padding: 10px 20px;
@@ -256,8 +256,8 @@
   color: #007aff;
 }
 
-.base-info button:hover{
-   box-shadow: 2px 2px 5px rgba(69, 69, 69, 0.3) !important;
+button:hover{
+  box-shadow: 2px 2px 5px rgba(69, 69, 69, 0.3) !important;
 }
 
 /* 구단 추가 step2 */
@@ -269,20 +269,42 @@
 
 .image-area{
 	display: flex;
+  justify-content: left;
+  gap: 50px;
 }
 
-.inputImage{
-	width: 250px;
-	height: 250px;
-	position: relative;
+.left-image-area{
+  width: 250px;
+  height: 250px;
+  position: relative;
+  display: inline-block;
+  text-align: center;
 }
 
-.image-area > pre{
-	width :500px;
-	height: 250px;
-	margin-left: 50px;
-	align-content: center;
+/* 미리보기 영역 */
+.left-image-area > label{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 5px rgba(69, 69, 69, 0.3);
+  border-radius: 10px;
 }
+
+/* file 타입 input */
+.inputImage{display: none;}
+
+
+/* 미리보기 이미지 */
+.preview{
+  max-width: 100%;
+  max-height: 100%;
+  /* 지정된 칸 내부에 비율을
+     변경하지 않고 이미지 배치
+  */
+}
+
 
 .image-area .image-btn {
 	display: flex;
@@ -290,11 +312,31 @@
 
 /* 이미지 삭제 */
 .delete-image{
-    position: absolute;
-    top: 0;
-    right: 7px;
-    font-size: 20px;
-    cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 7px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #8D8D8D;
+}
+
+/* right-image-area */
+.right-image-area{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+}
+
+.image-btn{
+  display: flex;
+  justify-content: left;
+  gap: 10px;
+}
+
+.image-btn button:first-child{
+  background-color: #007aff;
+	color: white;
 }
 
 /* 버튼 영역 */
@@ -303,3 +345,8 @@
 	color: white;
 }
 
+.btn-area{
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+}

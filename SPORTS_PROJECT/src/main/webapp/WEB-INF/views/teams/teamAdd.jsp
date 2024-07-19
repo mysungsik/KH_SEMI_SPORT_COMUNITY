@@ -51,7 +51,7 @@
 			</div>
 
 			<!-- Step 2  -->
-			<div class="step" id="step1">
+			<div class="step" id="step2">
 				<h1>구단 추가</h1>
 				<hr>
 				<div class="step step-count-3">
@@ -73,32 +73,155 @@
 				<hr>
 				<div class="base-info">
 					<div class="input-area">
+						<!-- 로고 시작 -->
 						<div class="img-box">
 							<div class="boardImage">
 								<p>로고</p>
 								<div class="image-area">
 								
-									<label for="img1"> <img class="preview"></label> 
-									<input type="file" class="inputImage" id="img1" accept="image/*" name="1"> 
+									<div class="left-image-area">
+										<label for="logo"> 
+											<img class="preview">
+										</label> 
+										<input type="file" class="inputImage" id="logo" accept="image/*" name="logo"> 
 										<span class="delete-image">&times;</span>
-									<!-- &times : x 모양의 문자 -->
-									<pre class="fc__gray"> - 로고 사진등록 
-   (권장사이즈 : 가로 200px X 세로 200px 혹은 가로 1 : 세로 1 비율)
-	
-- 파일양식 : jpg, jpeg, png(8MB 제한)
-									</pre>
-									<div class="image-btn">
-										<button type="button">등록</button>
-										<button type="button">등록</button>
 									</div>
+
+									<div class="right-image-area">
+										<pre class="fc__gray">
+- 로고 사진등록 
+ (권장사이즈 : 가로 200px X 세로 200px 혹은 가로 1 : 세로 1 비율)
+		
+- 파일양식 : jpg, jpeg, png(8MB 제한)
+										</pre>
+										<div class="image-btn">
+											<button type="button">사진등록</button>
+											<button type="button">삭제</button>
+										</div>
+									</div>
+
 								</div>
+								<hr>
+								<textarea name="logo-desc" placeholder="로고 설명(300자 이내)"></textarea>
 								
 							</div>
 
 							
 						</div>
+
+						<!-- 로고 끝 -->
+						<hr>
+
+
+						<!-- 엠블럼 -->
+						<div class="img-box">
+							<div class="boardImage">
+								<p>엠블럼</p>
+								<div class="image-area">
+								
+									<div class="left-image-area">
+										<label for="emblem"> 
+											<img class="preview">
+										</label> 
+										<input type="file" class="inputImage" id="emblem" accept="image/*" name="emblem"> 
+										<span class="delete-image">&times;</span>
+									</div>
+
+									<div class="right-image-area">
+										<pre class="fc__gray">
+- 엠블럼 사진등록 
+ (권장사이즈 : 가로 200px X 세로 200px 혹은 가로 1 : 세로 1 비율)
+		
+- 파일양식 : jpg, jpeg, png(8MB 제한)
+										</pre>
+										<div class="image-btn">
+											<button type="button">사진등록</button>
+											<button type="button">삭제</button>
+										</div>
+									</div>
+
+								</div>
+								<hr>
+								<textarea name="emblem-desc" placeholder="엠블럼 설명(300자 이내)"></textarea>
+								
+							</div>
+
+							
+						</div>
+
+
+						<hr>
+						<!-- 구단 메인페이지용 사진 -->
+						<div class="img-box">
+							<div class="boardImage">
+								<p>구단 메인페이지용 사진</p>
+								<div class="image-area">
+								
+									<div class="left-image-area">
+										<label for="emblem"> 
+											<img class="preview">
+										</label> 
+										<input type="file" class="inputImage" id="main-page-image" accept="image/*" name="main-page-image"> 
+										<span class="delete-image">&times;</span>
+									</div>
+
+									<div class="right-image-area">
+										<pre class="fc__gray">
+- 구단 메인페이지 사진등록 
+ (권장사이즈 : 가로 1024px X 세로 500px 혹은 가로 2 : 세로 1 비율)
+
+- 파일양식 : jpg, jpeg, png(8MB 제한)
+										</pre>
+										<div class="image-btn">
+											<button type="button">사진등록</button>
+											<button type="button">삭제</button>
+										</div>
+									</div>
+
+								</div>
+								
+							</div>
+							
+						</div>
+						<hr>
+
+						<!-- 구단 카테고리 헤더용 사진 -->
+						<div class="img-box">
+							<div class="boardImage">
+								<p>구단 카테고리 헤더용 사진</p>
+								<div class="image-area">
+								
+									<div class="left-image-area">
+										<label for="emblem"> 
+											<img class="preview">
+										</label> 
+										<input type="file" class="inputImage" id="header-image" accept="image/*" name="header-image"> 
+										<span class="delete-image">&times;</span>
+									</div>
+
+									<div class="right-image-area">
+										<pre class="fc__gray">
+- 구단 카테고리 헤더용 사진등록 
+ (권장사이즈 : 가로 1024px X 세로 500px 혹은 가로 2 : 세로 1 비율)
+		
+- 파일양식 : jpg, jpeg, png(8MB 제한)
+										</pre>
+										<div class="image-btn">
+											<button type="button">사진등록</button>
+											<button type="button">삭제</button>
+										</div>
+									</div>
+
+								</div>
+								
+							</div>
+							
+						</div>
+						<hr>
 					</div>
 					<hr>
+
+					
 					<div class="btn-area">
 						<button type="button">이전</button>
 						<button type="button">다음</button>
@@ -107,6 +230,36 @@
 			</div>
 
 
+			<!-- Step 3  -->
+			<div class="step" id="step3">
+				<h1>구단 추가</h1>
+				<hr>
+				<div class="step step-count-3">
+					<ul>
+						<li class="done"><a href="#" class="step-item"> <span
+								class="step-circle"></span> <span class="label">기본정보</span>
+						</a></li>
+						<li class="done"><a href="#" class="step-item"> <span
+								class="step-circle"></span> <span class="label">추가정보</span>
+						</a></li>
+						<li class="on"><a href="#" class="step-item"> <span
+								class="step-circle"></span> <span class="label">추가완료</span>
+						</a></li>
+					</ul>
+					<div class="more-info">
+						<p class="title h7">추가완료</p>
+					</div>
+				</div>
+				<hr>
+				<div>
+					신규 구단이 추가되었습니다.
+				</div>
+				<hr>
+				<div class="btn-area">
+					<button type="button">이전</button>
+					<button type="submit">완료</button>
+				</div>
+			</div>
 
 		</form>
 
