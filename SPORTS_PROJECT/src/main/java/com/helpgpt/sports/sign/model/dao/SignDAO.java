@@ -66,6 +66,58 @@ public class SignDAO {
 		return result;
 	}
 	
+	public int emailDupCheck(Connection conn, User signupInfo) {
+		String sql = prop.getProperty("emailDupCheck");
+		int result = 0;
+
+		String userEmail = signupInfo.getUserEmail();
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, userEmail);
+			
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				result = rs.getInt(1);
+			}
+			
+		} catch (SQLException e) {
+			System.out.println("[ERROR] Failed to Email Duplication Check");
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	public int idDupCheck(Connection conn, User signupInfo) {
+		String sql = prop.getProperty("idDupCheck");
+		int result = 0;
+
+		String userId = signupInfo.getUserId();
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, userId);
+			
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				result = rs.getInt(1);
+			}
+			
+		} catch (SQLException e) {
+			System.out.println("[ERROR] Failed to ID Duplication Check");
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+	
 	public int createUserPolicy(Connection conn) {
 		int result = 0;
 		
@@ -139,5 +191,4 @@ public class SignDAO {
 		
 		return result;
 	}
-
 }

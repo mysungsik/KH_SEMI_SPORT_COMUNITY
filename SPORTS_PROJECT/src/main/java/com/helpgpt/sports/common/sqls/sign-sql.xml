@@ -27,6 +27,16 @@
 		)
 	</entry>
 	
+	<entry key="emailDupCheck">
+		SELECT COUNT(*) FROM USER_INFO
+		WHERE USER_EMAIL = ?
+	</entry>
+	
+	<entry key="idDupCheck">
+		SELECT COUNT(*) FROM USER_INFO
+		WHERE USER_ID = ?
+	</entry>
+	
 	<entry key="create-user-policy">
 		INSERT INTO USER_POLICY 
 		VALUES(SEQ_USER_NO.CURRVAL, 

@@ -26,6 +26,20 @@ public class SignService {
 		return signupResult;
 	}
 	
+	public int emailDupCheck(User signupInfo) {
+		Connection conn = getConnection();
+		
+		int emailDupResult = dao.emailDupCheck(conn, signupInfo);
+		return emailDupResult;
+	}
+	
+	public int idDupCheck(User signupInfo) {
+		Connection conn = getConnection();
+		
+		int idDupResult = dao.idDupCheck(conn, signupInfo);
+		return idDupResult;
+	}
+	
 	public int resign(int userNo) {
 		Connection conn = getConnection();
 		int result = dao.userResign(conn, userNo);

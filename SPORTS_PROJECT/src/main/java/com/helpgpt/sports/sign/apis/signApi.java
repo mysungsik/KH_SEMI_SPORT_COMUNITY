@@ -53,9 +53,30 @@ public class signApi extends HttpServlet {
 				
 				User signupInfo = new User(inputId, inputPw, inputEmail, inputName, inputPhone, inputBd, inputAddress, inputGender, inputNation);
 				
-				int signupResult = service.signup(signupInfo);
-				
 				Map<String, Object> result = new HashMap<>();
+				
+				
+				// Email 과 ID 중복체크
+				int idDupCheck = service.idDupCheck(signupInfo);
+				int emailDupCheck = service.emailDupCheck(signupInfo);
+				
+				if (idDupCheck > 0) {
+					result.put("message", "중복된 아이디입니다.");
+					
+					new Gson().toJson(result, out);
+					
+					return;
+				}
+				
+				if (emailDupCheck > 0) {
+					result.put("message", "중복된 이메일입니다.");
+					
+					new Gson().toJson(result, out);
+					
+					return;
+				}
+				
+				int signupResult = service.signup(signupInfo);
 				
 				// 회원가입 성공 여부
 				if (signupResult > 0){
@@ -69,7 +90,6 @@ public class signApi extends HttpServlet {
 					result.put("message", "회원가입에 실패하였습니다.");
 					new Gson().toJson(result, out);
 				}
-				
 			}break;
 			
 			case "resign" :{
