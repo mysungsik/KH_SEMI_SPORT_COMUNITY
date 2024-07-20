@@ -29,6 +29,7 @@ public class ProfileAdminDAO {
 		}
 	}
 	
+	// 관리자용 모든 유저 데이터 출력
 	public List<User> getAllUserInfo(Connection conn) {
 		List<User> userList = new ArrayList<>();
 		
@@ -80,6 +81,7 @@ public class ProfileAdminDAO {
 		return userList;
 	}
 
+	// 관리자용 유저 권한 업데이트
 	public int updateUserInfo(Connection conn, User user) {
 		int result = 0;
 		

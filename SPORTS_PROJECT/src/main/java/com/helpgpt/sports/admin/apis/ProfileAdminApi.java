@@ -2,6 +2,8 @@ package com.helpgpt.sports.admin.apis;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -59,7 +61,11 @@ public class ProfileAdminApi extends HttpServlet {
 						result.put("message", "failed get all user info");
 						new Gson().toJson(result, out);
 					}
-				}
+				};break;
+				
+				default : {
+					System.out.println("잘못된 URL");
+				};
 			}
 		}
 
@@ -107,6 +113,7 @@ public class ProfileAdminApi extends HttpServlet {
 					int updateResult = service.updateUserInfo(user);
 					
 					if (updateResult > 0) {
+						
 						result.put("data", "success to update user Auth");
 						result.put("message", "유저 업데이트에 성공했습니다.");
 					}
@@ -115,7 +122,30 @@ public class ProfileAdminApi extends HttpServlet {
 					}
 					
 					new Gson().toJson(result, out);
-				}
+				};break;
+				case "deleteUser": {
+					
+					int userNo = Integer.parseInt(req.getParameter("userNo"));
+					int deleteResult = service.deleteUser(userNo);
+					
+					if (deleteResult > 0) {
+						LocalDateTime currentDateTime = LocalDateTime.now();
+						DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+						String formatedCurrentDatetime = currentDateTime.format(format);
+						
+						result.put("data", formatedCurrentDatetime);
+						result.put("message", "삭제에 성공하였습니다.");
+						new Gson().toJson(result, out);
+					}else {
+						result.put("message", "삭제에 실패하였습니다.");
+						new Gson().toJson(result, out);
+					}
+				};break;
+				default : {
+					System.out.println("잘못된 URL");
+				};
+				
+				
 			}
 		}
 

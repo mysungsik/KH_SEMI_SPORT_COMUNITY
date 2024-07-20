@@ -304,14 +304,20 @@ function showModal(id, data ,el){
 		);
 	}
 
-	// AcceptBtn 에 이벤트 리스너를 추가해 부모의 Element 전달
+	// modifyBtn 에 수정 이벤트 추가 && 부모의 Element 전달 (데이터 변경용)
 	modalEl.find(".modifyBtn").on("click", function() {
 		updateUserInfo(el);
+	});
+
+	// deleteBtn 에 삭제 이벤트 추가
+	modalEl.find(".deleteBtn").on("click", function() {
+		deleteUser(el);
 	});
 	
 	modalEl.modal('show');
 }
 
+// 유저 수정
 function updateUserInfo(el){
 	let modalEl = $('#adminModal');
 	let adminModal = bootstrap.Modal.getInstance(modalEl);
@@ -354,4 +360,43 @@ function updateUserInfo(el){
 
 		adminModal.hide();
 	}
+}
+
+// 유저 삭제일 업데이트
+function deleteUser(el){
+	let modalEl = $('#adminModal');
+	let adminModal = bootstrap.Modal.getInstance(modalEl);
+
+	const userNo = $(".modal-title .userNo").text();
+	
+	const request_url = `${contextPath}/api/admin/profile/deleteUser`
+	const data = {
+		userNo
+	}
+
+	$.ajax({
+		type: "POST",
+		url: request_url,
+		data : data,
+		dataType: "json",
+		async : false,
+		success: function (res) {
+			let isDeleted = res.hasOwnProperty("data")
+			if (isDeleted){
+				el.parent().parent().find(".deletedDate").val(res.data)
+				toastPop("info", res.message)
+			} else{
+				toastPop("warn", res.message)
+			}
+		},
+		error : function(request, status, error){
+			toastPop("warn", "유저 삭제에에 실패하였습니다.")
+			console.log(request);
+			console.log(status);
+			console.log(error);
+		}
+	});
+
+	adminModal.hide();
+
 }
