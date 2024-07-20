@@ -37,24 +37,11 @@ function signup(){
 			if (idValidate(inputId) &&
 				pwValidate(inputPw) &&
 				emailValidate(inputEmail) &&
-				nameValidate(inputName)) {
-				
-				
-				if (inputBd != ""){
-					birthdayValidate();
-					return;
-				}
-				
-				if (inputPhone != ""){
-					phoneValidate();
-					return;
-				}
-				
-				if (inputAddress != ""){
-					addressValidate();
-					return
-				}
-				
+				nameValidate(inputName) &&
+				(inputBd == "" || birthdayValidate(inputBd)) &&
+				(inputPhone == "" || phoneValidate(inputPhone)) &&
+				(inputAddress == "" || addressValidate(inputAddress))){
+
 				let request_url = `${contextPath}/api/sign/signup`
 				$.ajax({
 					type: "POST",
