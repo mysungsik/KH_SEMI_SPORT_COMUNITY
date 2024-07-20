@@ -47,4 +47,10 @@
 		JOIN USER_SESSION S ON (U.USER_NO = S.USER_NO)
 		WHERE S.SESSION_UUID = ?
 	</entry>
+	
+	<entry key="passwordCheck">
+		SELECT COUNT(*) FROM USER_INFO
+		WHERE USER_NO = ?
+		AND USER_PW = ?
+	</entry>
 </properties>

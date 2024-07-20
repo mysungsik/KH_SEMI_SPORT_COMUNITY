@@ -182,4 +182,29 @@ public class UserDAO {
 		
 		return result;
 	}
+
+	public int passwordCheck(Connection conn, int userNo, String inputPw) {
+		String sql = prop.getProperty("passwordCheck");
+		int result = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, userNo);
+			pstmt.setString(2, inputPw);
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				result = rs.getInt(1);
+			}
+			
+		} catch (Exception e) {
+			System.out.println("[ERROR] Failed to Check User Password");
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return result;
+	}
 }

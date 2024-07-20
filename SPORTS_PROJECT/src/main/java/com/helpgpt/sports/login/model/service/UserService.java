@@ -87,4 +87,13 @@ public class UserService {
 		
 		return result;
 	}
+
+	public int passwordCheck(int userNo, String inputPw) {
+		Connection conn = getConnection();
+		int result = dao.passwordCheck(conn, userNo, inputPw);
+
+		close(conn);
+		
+		return result;
+	}
 }

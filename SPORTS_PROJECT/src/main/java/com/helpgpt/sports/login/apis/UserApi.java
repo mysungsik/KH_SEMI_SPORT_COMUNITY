@@ -86,7 +86,7 @@ public class UserApi extends HttpServlet {
 				HttpSession session = req.getSession(false);
 	
 				if (session != null) {
-					session.setAttribute("loginUser", null);
+					session.invalidate();
 				}
 	
 				// 쿠키 제거
@@ -119,6 +119,32 @@ public class UserApi extends HttpServlet {
 						result.put("message", "성공적으로 업데이트되었습니다.");
 					}else {
 						result.put("message", "업데이트에 실패하였습니다.");
+					}
+					
+					new Gson().toJson(result, out);
+				}
+			};break;
+			case "passwordCheck" : {
+				HttpSession session = req.getSession(false);
+				
+				String inputPw = req.getParameter("inputPw");
+				int checkResult = 0;
+				
+				Map<String, Object> result = new HashMap<>();
+				
+				if (session != null) {
+					loginUser = (User)session.getAttribute("loginUser");
+					int userNo = loginUser.getUserNo();
+					
+					checkResult = service.passwordCheck(userNo, inputPw);
+				
+					if(checkResult > 0) {
+						// 체크 성공시 세션에 passwordCheck 라는 값으로 true 를 입력
+						session.setAttribute("passwordCheck", true);
+						result.put("data", "success to password checking");
+						result.put("message", "패스워드 인증이 완료되었습니다.");
+					}else {
+						result.put("message", "패스워드 인증에 실패하였습니다.");
 					}
 					
 					new Gson().toJson(result, out);

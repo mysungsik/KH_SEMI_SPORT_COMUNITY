@@ -8,7 +8,10 @@
     <jsp:include page="/WEB-INF/views/layouts/header-dependencies.jsp"/>
     <link rel="stylesheet" href="${contextPath}/src/css/profile.css">
     <script src="${contextPath}/src/js/profile.js" defer></script>
-    
+	<script>
+		// 패스워드 인증을 받았는지 여부 체크
+		const passwordCheck = "${passwordCheck}";
+	</script>
     <title>MLB - Na</title>
 </head>
 <body>
@@ -104,7 +107,7 @@
 	      <div class="modal-footer">
 	      	<input type="hidden" name="modalType" value=""/>
 	        <button id="cancelBtn" type="button" class="btn btn-medium__gray" data-bs-dismiss="modal" onclick="modalCancel()"> 취소 </button>
-	        <button id="confirmBtn" type="button" class="btn btn-medium__blue" onclick="modalConfirm()"> 변경 </button>
+	        <button id="confirmBtn" type="button" class="btn btn-medium__blue" onclick="modalConfirm()"> 확인 </button>
 	      </div>
 	    </div>
 	  </div>

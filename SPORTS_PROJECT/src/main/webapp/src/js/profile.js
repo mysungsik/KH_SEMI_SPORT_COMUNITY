@@ -234,10 +234,27 @@ function paginationActive(id, datas, template){
 
 // 모달의 팝업 함수
 function showModal(el){
-	
+	// 모달 지정
 	let infoModal = $('#commonModal');
+
+	// 모달의 종류를 분별할 type 을 모달에게 입력, 모달을 구분
 	let modalType = $(el).data("type");
 	$("[name='modalType']").val(modalType);
+
+	// 일회성 패스워드 체크가 안되어있을 경우
+	if (!passwordCheck){
+		let modalType = "passwordCheck"
+		$("[name='modalType']").val(modalType);	// 패스워드 체크 모달 확인 버튼을 사용하기 위해 추가
+
+		infoModal.find(".modal-title").html("비밀번호 확인")
+		infoModal.find(".modal-body").html(`
+			<p> 수정을 위해 현재 비밀번호를 입력해주세요 </p>
+			<input type="password" name="profile_${modalType}">`
+		);
+
+		infoModal.modal('show');
+		return;
+	}
 	
 	// 정보제공동의 모달 ------------
 	if (modalType == "emailAgree" ||
@@ -435,8 +452,15 @@ function modalConfirm(){
 	let typeReg = /(Agree)$/
 	let modalType = $("[name='modalType']").val()
 	
-	// 정보 동의일 경우
-	if (typeReg.test(modalType)){
+	// 초기 비빌번호 체크
+	if (modalType == "passwordCheck"){
+		let value = $(`input[name='profile_${modalType}']`).val().trim();
+
+		passwordCheckFn(value)
+	}
+
+	// 정보 동의일 경우 ------------------------------
+	else if (typeReg.test(modalType)){
 		let checkboxLabel = $(`[for="${modalType}"]`)
 		
 		let policyData = {
@@ -460,7 +484,7 @@ function modalConfirm(){
 		checkboxLabel.html("ON")				
 		infoModal.hide();
 	}
-	// 회원 탈퇴의 경우
+	// 회원 탈퇴의 경우 ------------------------------
 	else if(modalType == "resign"){
 		let request_url = `${contextPath}/api/sign/resign`
 		$.ajax({
@@ -500,12 +524,12 @@ function modalConfirm(){
 
 		infoModal.hide();
 	}
-	// 정보 수정일 경우
+	// 정보 수정일 경우 ------------------------------
 	else{
 		let value = $(`input[name='profile_${modalType}']`).val().trim();
 		
-		// 이메일 정보 수정일 경우
 		switch(modalType){
+			// 이메일 정보 수정
 			case "email" : {
 				if (emailValidate(value)){
 					let data = {
@@ -516,6 +540,7 @@ function modalConfirm(){
 					infoModal.hide();
 				}
 			};break;
+			// 전화번호 정보 수정
 			case "phone" : {
 				if (phoneValidate(value)){
 					let data = {
@@ -526,6 +551,7 @@ function modalConfirm(){
 					infoModal.hide();
 				}
 			};break;
+			// sns 정보 수정
 			case "sns" : {
 				if (emailValidate(value)){
 					let data = {
@@ -536,6 +562,7 @@ function modalConfirm(){
 					infoModal.hide();
 				}
 			};break;
+			// 생일 정보 수정
 			case "birthday" : {
 				if (birthdayValidate(value)){
 					let data = {
@@ -546,6 +573,7 @@ function modalConfirm(){
 					infoModal.hide();
 				}
 			};break;
+			// 주소 정보 수정
 			case "address" : {
 				if (addressValidate(value)){
 					let data = {
@@ -576,6 +604,41 @@ function modalCancel(){
 	}
 }
 
+// 초기 패스워드 체크
+function passwordCheckFn(password){
+	let request_url = `${contextPath}/api/user/passwordCheck`
+	$.ajax({
+		type: "POST",
+		url: request_url,
+		data: {
+			"inputPw" : password
+		},
+		dataType: "json",
+		success: function (res) {
+			let isChecked = res.hasOwnProperty("data")
+			// 인증성공 -> 서버에서 session Scope 에 "passwordCheck" 값에 true 를 넣어준다.
+			// profile을 재요청하여 해당 스코프가 들어가있는 jsp 를 재반환하여 적용
+			if (isChecked){
+				toastPop("info", res.message)
+				setTimeout(()=>{
+					location.href = `${contextPath}/profile/myInfo`
+				}, 500)
+			}
+			// 인증실패 -> 패스워드 인증 실패 toast 를 띄운다.
+			else{
+				toastPop("warn", res.message)
+			}
+		},
+		error : function(request, status, error){
+			toastPop("warn", "변경에 실패하였습니다")
+			console.log(request);
+			console.log(status);
+			console.log(error);
+		}
+	});
+}
+
+// 모달의 변경 버튼 클릭시 유저 정보 업데이트
 function updateUserInfo(userData, modalType){
 	let request_url = `${contextPath}/api/user/update`
 	$.ajax({
@@ -603,6 +666,7 @@ function updateUserInfo(userData, modalType){
 	});
 }
 
+// 모달의 변경 버튼 클릭시 유저 동의정보 업데이트
 function updateUserPolicy(policyData){
 	let request_url = `${contextPath}/api/user/update`
 	$.ajax({
