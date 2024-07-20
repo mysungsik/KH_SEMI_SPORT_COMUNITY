@@ -40,12 +40,12 @@ public class ProfileAdminApi extends HttpServlet {
 		// Admin 권한 확인
 		HttpSession session = req.getSession(false);
 		loginUser = (User)session.getAttribute("loginUser");
-		String userAuthority = loginUser.getUserAuthority();
+		String adminAuthority = loginUser.getUserAuthority();
 		
 		Map<String, Object> result = new HashMap<>();
 		
 		// 권한 있다면
-		if (userAuthority.equals("A")) {
+		if (adminAuthority.equals("A")) {
 			switch (path) {
 				case "getAllUsersData": {
 					
@@ -73,5 +73,58 @@ public class ProfileAdminApi extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		PrintWriter out = res.getWriter();
+		User loginUser = null;
+
+		// Path 지정
+		String reqPath = req.getPathInfo();
+		String path = "";
+
+		if (reqPath != null) {
+			path = reqPath.split("/")[1];
+		}
+		
+		// Admin 권한 확인
+		HttpSession session = req.getSession(false);
+		loginUser = (User)session.getAttribute("loginUser");
+		String adminAuthority = loginUser.getUserAuthority();
+		
+		Map<String, Object> result = new HashMap<>();
+		
+		// 권한 있다면
+		if (adminAuthority.equals("A")) {
+			switch (path) {
+				case "updateUserInfo": {
+					int userNo = Integer.parseInt(req.getParameter("userNo"));
+					String userAuthority =  req.getParameter("userAuthority");
+					String userState = req.getParameter("userState");
+					
+					User user = new User();
+					user.setUserNo(userNo);
+					user.setUserAuthority(userAuthority);
+					user.setUserState(userState);
+					
+					int updateResult = service.updateUserInfo(user);
+					
+					if (updateResult > 0) {
+						result.put("data", "success to update user Auth");
+						result.put("message", "유저 업데이트에 성공했습니다.");
+					}
+					else {
+						result.put("message", "유저 업데이트에 성공했습니다.");
+					}
+					
+					new Gson().toJson(result, out);
+				}
+			}
+		}
+
+		// 권한 없다면
+		else {
+			result.put("message", "You do not have permission");
+			
+			new Gson().toJson(result, out);
+			return;
+		}
 	}
 }

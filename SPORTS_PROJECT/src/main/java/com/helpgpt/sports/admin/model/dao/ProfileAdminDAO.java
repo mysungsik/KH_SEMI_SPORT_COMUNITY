@@ -79,4 +79,25 @@ public class ProfileAdminDAO {
 		
 		return userList;
 	}
+
+	public int updateUserInfo(Connection conn, User user) {
+		int result = 0;
+		
+		try {
+			String sql = p.getProperty("updateUserInfo");
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, user.getUserAuthority());
+			pstmt.setString(2, user.getUserState());
+			pstmt.setInt(3, user.getUserNo());
+			
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("[ERROR] Failed to update user authority & state");
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
 }

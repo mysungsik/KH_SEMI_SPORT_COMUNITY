@@ -147,18 +147,13 @@ function paginationActive(id, datas, template){
 
 		 $(`#${id}-pagination`).pagination({
 		    dataSource: datas,
-		 	
 		    pageSize: page_size,
-		    
 		    callback: function(data, pagination) {
-		        var html = template(data,id);
-		        
+		        let html = template(data,id);
 		        $(`#${id}-data`).html(html);	// 데이터 페이지네이션
-		
-				var currentPage = pagination.pageNumber;	// 현재 페이지 번호
-				
+				let currentPage = pagination.pageNumber;	// 현재 페이지 번호
 				// 페이지네이션 변경
-				var pagingEl = $(`.paginationjs-page[data-num='${currentPage}'] a`);
+				let pagingEl = $(`.paginationjs-page[data-num='${currentPage}'] a`);
 				pagingEl.css({
 					fontSize : "14px",
 					textDecoration : "underline"
@@ -181,7 +176,7 @@ function paginationActive(id, datas, template){
 					deletedDate : $(this).parent().parent().find(".deletedDate").val()
 				}
 				
-				showModal(id, data)
+				showModal(id, data, $(this))
 				
 			})
 				
@@ -197,7 +192,7 @@ function paginationActive(id, datas, template){
 					content : $(this).parent().parent().find(".content").val()
 				}
 
-				showModal(id, data)
+				showModal(id, data, $(this))
 			})
 		}
 	}
@@ -205,11 +200,11 @@ function paginationActive(id, datas, template){
 	
 	
 
-function showModal(id, data){
+function showModal(id, data ,el){
 	let modalEl = $('#adminModal');
 	
 	if (id == "user"){
-		modalEl.find(".modal-title").html(`<p class="fs-14 fc__white">회원관리 / 회원번호 : ${data.userNo}</p>`)
+		modalEl.find(".modal-title").html(`<p class="fs-14 fc__white">회원관리 / 회원번호 : <span class="userNo">${data.userNo}</span></p>`)
 				
 		modalEl.find(".modal-body").html(`
 			<div class="modal-row">
@@ -219,23 +214,23 @@ function showModal(id, data){
 				</div>
 				<div>
 					<label for="user_email"> USER EMAIL </label>
-					<input type="text" id="user_email" name="user_email" value="${data.userEmail}">								
+					<input type="text" id="user_email" name="user_email" value="${data.userEmail}" disabled>								
 				</div>
 			</div>
 			<div  class="modal-row">
 				<div>
 					<label for="user_id"> USER ROLE </label>
-					<input type="text" id="user_id" name="user_id" value="${data.userAuthority}">				
+					<input type="text" id="user_id" name="user_auth" value="${data.userAuthority}">				
 				</div>
 				<div>
 					<label for="user_email"> USER ADDRESS </label>
-					<input type="text" id="user_email" name="user_email" value="${data.userAddress}">								
+					<input type="text" id="user_email" name="user_address" value="${data.userAddress}" disabled>								
 				</div>
 			</div>
 			<div  class="modal-row">
 				<div>
 					<label for="user_id"> USER NUMBER </label>
-					<input type="text" id="user_id" name="user_id" value="${data.userPhone}">				
+					<input type="text" id="user_id" name="user_phone" value="${data.userPhone}" disabled>				
 				</div>
 				<div>
 					<label for="user_lastLogin"> LAST LOGIN </label>
@@ -245,7 +240,7 @@ function showModal(id, data){
 			<div  class="modal-row">
 				<div>
 					<label for="user_id"> USER STATEMENT </label>
-					<input type="text" id="user_id" name="user_id" value="${data.userState}">				
+					<input type="text" id="user_id" name="user_state" value="${data.userState}">				
 				</div>
 				<div>
 					<label for="user_deletedDt"> DELETED DATE </label>
@@ -254,15 +249,15 @@ function showModal(id, data){
 			</div>
 			
 			<div class="modal-btns">
-				<button class="btn-medium__blue acceptBtn"> Update </button>
-				<button class="btn-medium__gray cancelBtn" data-bs-dismiss="modal"> Cancel </button>
-				<button class="btn-medium__red deleteBtn"> Delete</button>
+				<button class="btn-medium__blue modifyBtn"> 수정 </button>
+				<button class="btn-medium__gray cancelBtn" data-bs-dismiss="modal"> 취소 </button>
+				<button class="btn-medium__red deleteBtn"> 삭제</button>
 			</div>
 			`
 		);
 	} else if (id == "report"){
 	
-		modalEl.find(".modal-title").html(`<p class="fs-14 fc__white">신고관리 / 신고번호 : ${data.no}</p>`)
+		modalEl.find(".modal-title").html(`<p class="fs-14 fc__white">신고관리 / 신고번호 : <span class="reportNo">${data.no}</span></p>`)
 		
 		modalEl.find(".modal-body").html(`
 			<div class="modal-row">
@@ -301,13 +296,62 @@ function showModal(id, data){
 			
 			
 			<div class="modal-btns">
-				<button class="btn-medium__blue acceptBtn"> 신고 처리 </button>
+				<button class="btn-medium__blue reportAcceptBtn"> 신고 처리 </button>
 				<button class="btn-medium__gray cancelBtn" data-bs-dismiss="modal"> 취소 </button>
-				<button class="btn-medium__red deleteBtn"> 신고 취소 </button>
+				<button class="btn-medium__red reportCancelBtn"> 신고 취소 </button>
 			</div>
 			`
 		);
 	}
+
+	// AcceptBtn 에 이벤트 리스너를 추가해 부모의 Element 전달
+	modalEl.find(".modifyBtn").on("click", function() {
+		updateUserInfo(el);
+	});
 	
 	modalEl.modal('show');
+}
+
+function updateUserInfo(el){
+	let modalEl = $('#adminModal');
+	let adminModal = bootstrap.Modal.getInstance(modalEl);
+
+	const userNo = $(".modal-title .userNo").text();
+	let userAuthority = $(".modal-body input[name='user_auth']").val().toUpperCase();
+	let userState = $(".modal-body input[name='user_state']").val().toUpperCase();
+
+	if (authValidate(userAuthority) && stateValidate(userState)){
+		const request_url = `${contextPath}/api/admin/profile/updateUserInfo`
+		const data = {
+			userNo,
+			userAuthority,
+			userState
+		}
+	
+		$.ajax({
+			type: "POST",
+			url: request_url,
+			data : data,
+			dataType: "json",
+			async : false,
+			success: function (res) {
+				let isUpdated = res.hasOwnProperty("data")
+				if (isUpdated){
+					el.parent().parent().find(".userAuthority").text(userAuthority)
+					el.parent().parent().find(".userState").text(userState)
+					toastPop("info", res.message)
+				} else{
+					toastPop("warn", res.message)
+				}
+			},
+			error : function(request, status, error){
+				toastPop("warn", "권한 변경에 실패하였습니다.")
+				console.log(request);
+				console.log(status);
+				console.log(error);
+			}
+		});
+
+		adminModal.hide();
+	}
 }

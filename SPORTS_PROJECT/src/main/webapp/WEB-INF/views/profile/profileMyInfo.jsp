@@ -119,7 +119,6 @@
 	      <div class="modal-body">
 	      </div>
 	      <div class="modal-footer">
-	      	<input type="hidden" name="modalType" value=""/>
 	        <button id="confirmBtn" type="button" class="btn btn-medium__blue w-100"  data-bs-dismiss="modal"> 확인 </button>
 	      </div>
 	    </div>

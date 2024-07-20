@@ -23,27 +23,26 @@
             <!-- 메인컨텐츠 -->
             <div class="profile-content">
             	<!-- 컨텐츠 > 헤더 -->
-                <p class="content-title fs-28__b"> 유저 관리</p>
-                <hr class="hr__gray mt-20">
-                <div class="content-header d-flex">
-					<form action="#" class="search-area">
-						<select class="search-category" name="category">
-							<option value="" selected> 카테고리</option>
-							<option value="" > 아이디 </option>
-							<option value="" > 이메일 </option>
-							<option value="" > 주소 </option>
-						</select>
-						<input type="text">
-						<button class="search fa-solid fa-magnifying-glass"></button>
-					</form>
-                </div>
-                
-                <!-- 컨텐츠 > 메인 -->
-                <div class="content-main">
-                    <div id="user-data" class="content-elements"></div>
-                </div>
-                <div id="user-pagination"></div>
-                <!-- 컨텐츠 메인 종료 -->
+              <p class="content-title fs-28__b"> 유저 관리</p>
+              <hr class="hr__gray mt-20">
+              <div class="content-header d-flex">
+                <form action="#" class="search-area">
+                  <select class="search-category" name="category">
+                    <option value="" selected> 카테고리</option>
+                    <option value="" > 아이디 </option>
+                    <option value="" > 이메일 </option>
+                    <option value="" > 주소 </option>
+                  </select>
+                  <input type="text">
+                  <button class="search fa-solid fa-magnifying-glass"></button>
+                </form>
+              </div>
+              <!-- 컨텐츠 > 메인 -->
+              <div class="content-main">
+                  <div id="user-data" class="content-elements"></div>
+              </div>
+              <div id="user-pagination"></div>
+              <!-- 컨텐츠 메인 종료 -->
             </div>
         </section>
     </main>

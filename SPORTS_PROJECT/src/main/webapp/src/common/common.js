@@ -238,6 +238,53 @@ function addressValidate(address){
 	return true;
 }
 
+function authValidate(auth){
+	/* 권한 체크
+		- A, U 
+	*/
+	let authRegex = /^[A,U]{1}$/
+
+	// 형식에 맞지 않을경우
+	if (!authRegex.test(auth)){
+
+		// 컬러변경 및 진동효과
+		$("input[name*='_auth']").addClass("base-warn__red fc__white vibration")
+		$("input[name*='_auth']").eq(0).focus();
+		setTimeout(()=>{
+			$("input[name*='_auth']").removeClass("vibration")
+		}, 300)
+
+		toastPop("warn", "올바른 권한 형식이 아닙니다 ( A / U ).")
+		return false;
+	}
+
+	return true;
+}
+
+function stateValidate(state){
+	/* 상태 체크
+		- G, R, L 
+	*/
+	let stateRegex = /^[G,R,L]{1}$/
+
+	// 형식에 맞지 않을경우
+	if (!stateRegex.test(state)){
+
+		// 컬러변경 및 진동효과
+		$("input[name*='_state']").addClass("base-warn__red fc__white vibration")
+		$("input[name*='_state']").eq(0).focus();
+		setTimeout(()=>{
+			$("input[name*='_state']").removeClass("vibration")
+		}, 300)
+
+		toastPop("warn", "올바른 상태 형식이 아닙니다 ( G / R / L).")
+		return false;
+	}
+
+	return true;
+
+}
+
 
 
 // INPUT Observing Method

@@ -22,4 +22,19 @@ public class ProfileAdminService {
 		return userList;
 	}
 
+	public int updateUserInfo(User user) {
+		int result = 0;
+		Connection conn = getConnection();
+		
+		result = dao.updateUserInfo(conn, user);
+
+		if(result > 0 ) {
+			commit(conn);
+		} else {
+			rollback(conn);
+		}
+		
+		return result;
+	}
+
 }

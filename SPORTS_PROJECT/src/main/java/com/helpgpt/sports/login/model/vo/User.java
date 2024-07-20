@@ -22,6 +22,7 @@ public class User {
 	private String lastLogin;
 	private UserPolicy userPolicy = new UserPolicy();
 	
+	public User() {}
 	// 유저 로그인용객체
 	public User(String userId, String userPw) {
 		this.userId = userId;
@@ -39,7 +40,7 @@ public class User {
 		this.userBd = userBd;
 		this.userAddress = userAddress;
 		this.userGender = userGender;
-		this.userNation = userNation;;
+		this.userNation = userNation;
 	}
 	
 	// 일반 유저 정보 전달 객체 (pw 제외 전부)
