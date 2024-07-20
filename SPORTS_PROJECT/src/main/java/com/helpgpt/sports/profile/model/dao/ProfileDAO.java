@@ -10,8 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import com.helpgpt.sports.admin.model.dao.ProfileAdminDAO;
-import com.helpgpt.sports.login.model.vo.User;
 import com.helpgpt.sports.profile.model.vo.LoginHistory;
 
 public class ProfileDAO {

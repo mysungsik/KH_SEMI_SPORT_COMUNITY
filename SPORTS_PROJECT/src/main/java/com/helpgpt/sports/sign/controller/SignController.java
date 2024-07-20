@@ -1,4 +1,4 @@
-package com.helpgpt.sports.signup.controller;
+package com.helpgpt.sports.sign.controller;
 
 import java.io.IOException;
 
@@ -18,7 +18,7 @@ import com.helpgpt.sports.login.model.vo.User;
 			"/signup/*"}
 		)
 
-public class SignupController extends HttpServlet {
+public class SignController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	RequestDispatcher dispatcher;

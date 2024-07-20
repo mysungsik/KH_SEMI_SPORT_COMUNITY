@@ -1,4 +1,4 @@
-package com.helpgpt.sports.signup.apis;
+package com.helpgpt.sports.sign.apis;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -7,15 +7,15 @@ import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
-import com.helpgpt.sports.login.model.service.UserService;
 import com.helpgpt.sports.login.model.vo.User;
-import com.helpgpt.sports.signup.model.service.SignupService;
+import com.helpgpt.sports.sign.model.service.SignService;
 
 /**
  * Servlet implementation class Login
@@ -23,11 +23,12 @@ import com.helpgpt.sports.signup.model.service.SignupService;
 @WebServlet("/api/sign/*")
 public class signApi extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private SignupService service = new SignupService();
+	private SignService service = new SignService();
 	
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		PrintWriter out = res.getWriter();
+		User loginUser = null;
 		
 		// Path 지정
 		String reqPath = req.getPathInfo();
@@ -70,8 +71,38 @@ public class signApi extends HttpServlet {
 				}
 				
 			}break;
+			
+			case "resign" :{
+				HttpSession session = req.getSession(false);
+				Map<String, Object> result = new HashMap<>();
 				
-			default:System.out.println("[ERROR] Failed to Signup");
+				if (session != null) {
+					loginUser = (User)session.getAttribute("loginUser");
+					
+					int updateResult = service.resign(loginUser.getUserNo());
+					
+					if (updateResult > 0 ) {
+						// 로그아웃처리
+						session.setAttribute("loginUser", null);
+				
+						// 쿠키 제거
+						Cookie cookie = new Cookie("rememberLogin", null);
+						cookie.setMaxAge(0);
+						cookie.setPath(req.getContextPath()); // 쿠키 경로 contextPath 로 설정
+						res.addCookie(cookie);
+						
+						result.put("data", "delete Success");
+						result.put("message", "그동안 이용해 주셔서 감사합니다. 3초후 페이지가 이동합니다.");
+					} else {
+						result.put("message","업데이트에 실패하였습니다");
+					}
+					
+					new Gson().toJson(result, out);
+					
+				}
+			};break;
+				
+			default:System.out.println("[ERROR] Wrong sign URL");
 		}
 	}
 }

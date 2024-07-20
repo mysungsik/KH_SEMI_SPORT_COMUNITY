@@ -182,42 +182,4 @@ public class UserDAO {
 		
 		return result;
 	}
-
-	public int userResign(Connection conn, int userNo) {
-		String sql = prop.getProperty("userResign");
-		int result = 0;
-		
-		try {
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, userNo);
-			result = pstmt.executeUpdate();
-			
-		} catch (Exception e) {
-			System.out.println("[ERROR] Failed to Resign User");
-			e.printStackTrace();
-		}finally {
-			close(pstmt);
-		}
-		
-		return result;
-	}
-	
-	public int cancelUserResign(Connection conn, int userNo) {
-		String sql = prop.getProperty("cancelUserResign");
-		int result = 0;
-		
-		try {
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, userNo);
-			result = pstmt.executeUpdate();
-			
-		} catch (Exception e) {
-			System.out.println("[ERROR] Failed to Cancel Resign User");
-			e.printStackTrace();
-		}finally {
-			close(pstmt);
-		}
-		
-		return result;
-	}
 }

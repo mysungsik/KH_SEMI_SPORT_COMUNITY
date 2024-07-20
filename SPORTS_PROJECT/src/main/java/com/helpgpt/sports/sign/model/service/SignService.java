@@ -1,12 +1,12 @@
-package com.helpgpt.sports.signup.model.service;
+package com.helpgpt.sports.sign.model.service;
 
 import static com.helpgpt.sports.common.util.JDBCTemplate.*;
 import com.helpgpt.sports.login.model.vo.User;
-import com.helpgpt.sports.signup.model.dao.SignupDAO;
+import com.helpgpt.sports.sign.model.dao.SignDAO;
 import java.sql.Connection;
 
-public class SignupService {
-	SignupDAO dao = new SignupDAO();
+public class SignService {
+	SignDAO dao = new SignDAO();
 	
 	public int signup(User signupInfo) {
 		Connection conn = getConnection();
@@ -25,5 +25,19 @@ public class SignupService {
 		
 		return signupResult;
 	}
-
+	
+	public int resign(int userNo) {
+		Connection conn = getConnection();
+		int result = dao.userResign(conn, userNo);
+		
+		if (result > 0 ) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+		
+		close(conn);
+		
+		return result;
+	}
 }

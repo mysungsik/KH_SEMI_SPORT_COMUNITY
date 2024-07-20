@@ -462,7 +462,7 @@ function modalConfirm(){
 	}
 	// 회원 탈퇴의 경우
 	else if(modalType == "resign"){
-		let request_url = `${contextPath}/api/user/resign`
+		let request_url = `${contextPath}/api/sign/resign`
 		$.ajax({
 			type: "POST",
 			url: request_url,
@@ -476,7 +476,6 @@ function modalConfirm(){
 						// 혹은, 회원탈퇴 페이지 만들어서 넘기기
 					
 					let cnt = 3;
-
 					toastPop("info", res.message + "..."+cnt);
 					cnt --;
 

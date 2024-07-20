@@ -36,18 +36,6 @@
 		VALUES (SEQ_USER_HISTORY.NEXTVAL, ?, DEFAULT, ?)
 	</entry>
 	
-	<entry key="userResign">
-		UPDATE USER_INFO
-		SET DELETE_DT = SYSDATE
-		WHERE USER_NO = ?
-	</entry>
-	<entry key="cancelUserResign">
-		UPDATE USER_INFO
-		SET DELETE_DT = NULL
-		WHERE USER_NO = ?
-		AND DELETE_DT IS NOT NULL
-	</entry>
-	
 	<entry key="update-sessionUUID">
 		UPDATE USER_SESSION 
 		SET SESSION_UUID = ?

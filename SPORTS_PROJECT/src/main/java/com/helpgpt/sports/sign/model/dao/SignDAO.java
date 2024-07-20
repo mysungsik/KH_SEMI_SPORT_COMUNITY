@@ -1,4 +1,4 @@
-package com.helpgpt.sports.signup.model.dao;
+package com.helpgpt.sports.sign.model.dao;
 
 import java.io.FileInputStream;
 import java.sql.Connection;
@@ -10,14 +10,14 @@ import java.util.Properties;
 import static com.helpgpt.sports.common.util.JDBCTemplate.*;
 import com.helpgpt.sports.login.model.vo.User;
 
-public class SignupDAO {
+public class SignDAO {
 	Properties prop;
 	PreparedStatement pstmt;
 	ResultSet rs;
 	
-	public SignupDAO() {
+	public SignDAO() {
 		String defaultpath = "/com/helpgpt/sports/common/sqls/";
-		String filePath = SignupDAO.class.getResource(defaultpath + "signup-sql.xml").getPath();
+		String filePath = SignDAO.class.getResource(defaultpath + "sign-sql.xml").getPath();
 		try {
 			prop = new Properties();
 			FileInputStream fis = new FileInputStream(filePath);
@@ -96,6 +96,44 @@ public class SignupDAO {
 			System.out.println("[ERROR] Failed to create session UUID");
 			e.printStackTrace();
 		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+	
+	public int userResign(Connection conn, int userNo) {
+		String sql = prop.getProperty("userResign");
+		int result = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, userNo);
+			result = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("[ERROR] Failed to Resign User");
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+	
+	public int cancelUserResign(Connection conn, int userNo) {
+		String sql = prop.getProperty("cancelUserResign");
+		int result = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, userNo);
+			result = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("[ERROR] Failed to Cancel Resign User");
+			e.printStackTrace();
+		}finally {
 			close(pstmt);
 		}
 		
