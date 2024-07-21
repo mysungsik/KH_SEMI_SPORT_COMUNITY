@@ -13,12 +13,11 @@
 <body>
 	<jsp:include page="/WEB-INF/views/layouts/header.jsp" />
 	<div class="container">
-		<form action="#" method="post">
+		<form action="#" method="post" enctype="multipart/form-data">
 			<!-- Step 1  -->
-			<div class="step" id="step1">
+			<div class="step active" id="step1">
 				<h1>구단 추가</h1>
-				<hr>
-				<div class="step step-count-3">
+				<div class="step active step-count-3">
 					<ul>
 						<li class="on"><a href="#" class="step-item"> <span
 								class="step-circle"></span> <span class="label">기본정보</span>
@@ -46,15 +45,14 @@
 						<textarea type="text" name="teamDes" placeholder="구단 설명(500자 이내)"></textarea>
 					</div>
 					<hr>
-					<button type="button">다음</button>
+					<button type="button" onclick="nextStep()">다음</button>
 				</div>
 			</div>
 
 			<!-- Step 2  -->
 			<div class="step" id="step2">
 				<h1>구단 추가</h1>
-				<hr>
-				<div class="step step-count-3">
+				<div class="step active step-count-3">
 					<ul>
 						<li class="done"><a href="#" class="step-item"> <span
 								class="step-circle"></span> <span class="label">기본정보</span>
@@ -111,7 +109,6 @@
 
 						<!-- 로고 끝 -->
 						<hr>
-
 
 						<!-- 엠블럼 -->
 						<div class="img-box">
@@ -223,8 +220,8 @@
 
 					
 					<div class="btn-area">
-						<button type="button">이전</button>
-						<button type="button">다음</button>
+						<button type="button" onclick="prevStep()">이전</button>
+						<button type="button" onclick="nextStep()">다음</button>
 					</div>
 				</div>
 			</div>
@@ -234,7 +231,7 @@
 			<div class="step" id="step3">
 				<h1>구단 추가</h1>
 				<hr>
-				<div class="step step-count-3">
+				<div class="step active step-count-3">
 					<ul>
 						<li class="done"><a href="#" class="step-item"> <span
 								class="step-circle"></span> <span class="label">기본정보</span>
@@ -256,8 +253,8 @@
 				</div>
 				<hr>
 				<div class="btn-area">
-					<button type="button">이전</button>
-					<button type="submit">완료</button>
+					<button type="button" onclick="prevStep()">이전</button>
+					<button type="submit" onclick="handleFormSubmit(event)">완료</button>
 				</div>
 			</div>
 

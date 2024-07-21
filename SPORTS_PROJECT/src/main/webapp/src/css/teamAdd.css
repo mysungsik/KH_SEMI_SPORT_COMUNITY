@@ -350,3 +350,12 @@ button:hover{
   justify-content: end;
   gap: 10px;
 }
+
+
+.step{
+  display: none;
+}
+
+.step.active{
+  display:block;
+}
