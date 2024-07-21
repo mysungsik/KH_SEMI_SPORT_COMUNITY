@@ -18,22 +18,13 @@
 			<div class="main">
 				<div class="main-top card__lblue">
 					<div class="main-top-bar fs-20__b fc__blue">
-						<p >MLB 순위</p>
+						<p>KBO 순위</p>
 						<div class="more">
 							<a href="${contextPath}/match/teamRanking">더보기</a>
 						</div>
 					</div>
 					<hr class="hr__gray mt-10 mb-16">
-					<div class="ranking-tab">
-						<div>
-							<span>AL</span> <a href=""> 동부 </a> <a href=""> 중부 </a> <a
-								href=""> 서부 </a>
-						</div>
-						<div>
-							<span>NL</span> <a href=""> 동부 </a> <a href=""> 중부 </a> <a
-								href=""> 서부 </a>
-						</div>
-					</div>
+
 					<div>
 						<table class="teamRanking">
 							<tr>
@@ -46,7 +37,17 @@
 							</tr>
 							<tr>
 								<td>1</td>
-								<td>뉴욕 Y</td>
+								<td>
+									<div class="teamNameTab">
+										<div>
+											<img src="/SPORTS_PROJECT/public/images/user_img1.jpg" alt=""
+												width="40" height="40">
+										</div>
+										<div>
+											<span>기아 타이거즈</span>
+										</div>
+									</div>
+								</td>
 								<td>81</td>
 								<td>52</td>
 								<td>29</td>
@@ -54,7 +55,17 @@
 							</tr>
 							<tr>
 								<td>2</td>
-								<td>볼티모어</td>
+								<td>
+									<div class="teamNameTab">
+										<div>
+											<img src="/SPORTS_PROJECT/public/images/user_img1.jpg" alt=""
+												width="40" height="40">
+										</div>
+										<div>
+											<span>기아 타이거즈</span>
+										</div>
+									</div>
+								</td>
 								<td>79</td>
 								<td>49</td>
 								<td>30</td>
@@ -62,7 +73,17 @@
 							</tr>
 							<tr>
 								<td>3</td>
-								<td>보스턴</td>
+								<td>
+									<div class="teamNameTab">
+										<div>
+											<img src="/SPORTS_PROJECT/public/images/user_img1.jpg" alt=""
+												width="40" height="40">
+										</div>
+										<div>
+											<span>기아 타이거즈</span>
+										</div>
+									</div>
+								</td>
 								<td>80</td>
 								<td>43</td>
 								<td>37</td>
@@ -70,7 +91,17 @@
 							</tr>
 							<tr>
 								<td>4</td>
-								<td>탬파베이</td>
+								<td>
+									<div class="teamNameTab">
+										<div>
+											<img src="/SPORTS_PROJECT/public/images/user_img1.jpg" alt=""
+												width="40" height="40">
+										</div>
+										<div>
+											<span>기아 타이거즈</span>
+										</div>
+									</div>
+								</td>
 								<td>80</td>
 								<td>40</td>
 								<td>40</td>
@@ -78,7 +109,17 @@
 							</tr>
 							<tr>
 								<td>5</td>
-								<td>토론토</td>
+								<td>
+									<div class="teamNameTab">
+										<div>
+											<img src="/SPORTS_PROJECT/public/images/user_img1.jpg" alt=""
+												width="40" height="40">
+										</div>
+										<div>
+											<span>기아 타이거즈</span>
+										</div>
+									</div>
+								</td>
 								<td>79</td>
 								<td>36</td>
 								<td>43</td>
@@ -112,11 +153,31 @@
 									id="playerImage">
 							</div>
 							<ol class="list_ranking">
-								<li><span>1 헤이수스(키움)</span> <span class="count">10승</span></li>
-								<li><span>2 엔스(LG)</span> <span class="count">9승</span></li>
-								<li><span>3 원커슨(롯데)</span> <span class="count">8승</span></li>
-								<li><span>4 후라도(키움)</span> <span class="count">7승</span></li>
-								<li><span>5 네일(KIA)</span> <span class="count">6승</span></li>
+								<li>
+									<div class="list_detail">
+										<span>1 헤이수스(키움)</span> <span class="count">10승</span>
+									</div>
+								</li>
+								<li>
+									<div class="list_detail">
+										<span>2 엔스(키움)</span> <span class="count">9승</span>
+									</div>
+								</li>
+								<li>
+									<div class="list_detail">
+										<span>3 원커슨(롯데)</span> <span class="count">8승</span>
+									</div>
+								</li>
+								<li>
+									<div class="list_detail">
+										<span>4 후라도(키움))</span> <span class="count">7승</span>
+									</div>
+								</li>
+								<li>
+									<div class="list_detail">
+										<span>5 네일(기아)</span> <span class="count">6승</span>
+									</div>
+								</li>
 							</ol>
 						</div>
 						<div class="box-ranking">
@@ -126,11 +187,23 @@
 									id="playerImage">
 							</div>
 							<ol class="list_ranking">
-								<li>네일(KIA)</li>
-								<li>하트(NC)</li>
-								<li>원태인(삼성)</li>
-								<li>후라도(키움)</li>
-								<li>헤이수스(키움)</li>
+								<li>
+									<div class="list_detail">
+										<span>1 네일(기아)</span> <span class="count">2.44</span>
+									</div>
+								</li>
+								<li><div class="list_detail">
+										<span>2 하트(NC)</span> <span class="count">2.88</span>
+									</div></li>
+								<li><div class="list_detail">
+										<span>3 헤이수스(키움)</span> <span class="count">3.34</span>
+									</div></li>
+								<li><div class="list_detail">
+										<span>4 후라도(키움)</span> <span class="count">3.42</span>
+									</div></li>
+								<li><div class="list_detail">
+										<span>5 월커슨(롯데)</span> <span class="count">3.61</span>
+									</div></li>
 							</ol>
 						</div>
 						<div class="box-ranking">
@@ -140,11 +213,21 @@
 									id="playerImage">
 							</div>
 							<ol class="list_ranking">
-								<li>하트(NC)</li>
-								<li>네일(KIA)</li>
-								<li>코너(삼성)</li>
-								<li>엄상백(KT)</li>
-								<li>쿠에바스(KT)</li>
+								<li><div class="list_detail">
+										<span>1 하트(NC)</span> <span class="count">128개</span>
+									</div></li>
+								<li><div class="list_detail">
+										<span>2 네일(기아)</span> <span class="count">115개</span>
+									</div></li>
+								<li><div class="list_detail">
+										<span>3 엄상백(KT)</span> <span class="count">114개</span>
+									</div></li>
+								<li><div class="list_detail">
+										<span>4 코너(삼성)</span> <span class="count">113개</span>
+									</div></li>
+								<li><div class="list_detail">
+										<span>5 헤이수스(키움)</span> <span class="count">112개</span>
+									</div></li>
 							</ol>
 						</div>
 						<div class="box-ranking">
@@ -154,11 +237,21 @@
 									id="playerImage">
 							</div>
 							<ol class="list_ranking">
-								<li>오승환(삼성)</li>
-								<li>정해영(KIA)</li>
-								<li>문승원(SSG)</li>
-								<li>유영찬(LG)</li>
-								<li>김원중(롯데)</li>
+								<li><div class="list_detail">
+										<span>1 오승환(삼성)</span> <span class="count">25</span>
+									</div></li>
+								<li><div class="list_detail">
+										<span>2 정해영(기아)</span> <span class="count">21</span>
+									</div></li>
+								<li><div class="list_detail">
+										<span>3 유영찬(LG)</span> <span class="count">18</span>
+									</div></li>
+								<li><div class="list_detail">
+										<span>4 문승원(SSG)</span> <span class="count">17</span>
+									</div></li>
+								<li><div class="list_detail">
+										<span>5 김원중(롯데)</span> <span class="count">16</span>
+									</div></li>
 							</ol>
 						</div>
 						<div class="box-ranking">
@@ -168,16 +261,26 @@
 									id="playerImage">
 							</div>
 							<ol class="list_ranking">
-								<li>월커슨(롯데)</li>
-								<li>하트(NC)</li>
-								<li>헤이수스(키움)</li>
-								<li>네일(KIA)</li>
-								<li>쿠에바스(KT)</li>
+								<li><div class="list_detail">
+										<span>1 하트(NC)</span> <span class="count">1.07</span>
+									</div></li>
+								<li><div class="list_detail">
+										<span>2 월커슨(롯데)</span> <span class="count">1.18</span>
+									</div></li>
+								<li><div class="list_detail">
+										<span>3 헤이수스(키움)</span> <span class="count">1.17</span>
+									</div></li>
+								<li><div class="list_detail">
+										<span>4 코너(삼성)</span> <span class="count">1.21</span>
+									</div></li>
+								<li><div class="list_detail">
+										<span>5 네일(기아)</span> <span class="count">1.21</span>
+									</div></li>
 							</ol>
 						</div>
 					</div>
 				</div>
-				<div class="container-bot" style="width:1024px">
+				<div class="container-bot" style="width: 1024px">
 					<div class="hightlight-clip card__lblue swiper swiper-highlight">
 						<p class="content-header fs-20__b fc__blue">HIGHTLIGHT CLIP</p>
 						<p class="content-all fc__blue fs-10 text-hover__blue">See All

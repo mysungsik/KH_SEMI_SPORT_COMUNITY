@@ -16,13 +16,12 @@
 	<main>
 		<div class="recordTab">
 			<div>
-				<a href="#" class="nationalLeague text-hover__white:hover"><span>내셔널
-						리그</span></a>
+				<span>KBO 팀 순위</span>
 			</div>
 			
 		</div>
 		<div class="game-records card__lblue">
-			<div class="teamRankingTop fs-20__b fc__blue ">팀 순위</div>
+			<div class="teamRankingTop fs-20">팀 순위</div>
 			<hr class="hr__gray mt-10 mb-16">
 			<table class="eastRanking">
 				<tr class="rankingTop">

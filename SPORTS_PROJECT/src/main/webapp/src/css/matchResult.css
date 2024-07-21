@@ -5,8 +5,10 @@
 	border-radius: 10px;
 	text-align: center;
 	width: 100%;
-	margin-bottom: 20px;
+	margin-top: 30px;
+	margin-bottom: 30px;
 	display: flex;
+	
 }
 
 .team {
@@ -46,7 +48,7 @@
 }
 
 .inning-scores th {
-	background-color: #00509e;
+	background-color: #003366;
 	font-weight: bold;
 }
 
@@ -174,9 +176,8 @@
 }
 
 .pitching-records th, .batting-records th {
-	background-color: #00509e;
+	background-color: #003366;
 	color: #fff;
-	font-weight: bold;
 }
 
 .chart-container {
@@ -188,6 +189,9 @@
 .team-logo {
 	width: 100px;
 	text-align: center;
+}
+.record_detail{
+	margin-bottom:30px;
 }
 
 

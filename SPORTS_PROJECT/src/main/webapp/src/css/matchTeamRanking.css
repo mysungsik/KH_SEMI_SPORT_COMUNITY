@@ -85,6 +85,9 @@
     border-radius: 15px;
     overflow: hidden;
 }
+.recordTab div span {
+	font-size: 20px;
+}
 .nationalLeague,
 .americanLeague{
     border: none;
@@ -93,6 +96,12 @@
 .teamRankingTop{
     border-radius: 15px 15px 0px 0px;
     text-align: center;
+    background-color: #003366;
+    color: white;
+    height: 50px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
 }
 
 .nationalLeague{
