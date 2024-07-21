@@ -12,7 +12,7 @@
 }
 
 .matchEnroll_Top {
-	background-color: blue;
+	background-color:#003366;
 	color: white;
 	height: 30px;
 	border-radius: 15px 15px 0px 0px;
@@ -38,7 +38,7 @@
 .dateSelect, .winTeam, .loseTeam, .matchPlace, .winTeamScore,
 	.loseTeamScore {
 	width: 200px;
-	border: 1px solid black;
+	border: 1px solid #ddd;
 	border-left: none;
 	border-top: none;
 }
@@ -61,7 +61,7 @@
 .dateSelectDetail, .winTeamDetail, .loseTeamDetail, .matchPlaceDetail,
 	.winTeamScoreDetail, .loseTeamScoreDetail {
 	width: 824px;
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid #ddd;
 	display: flex;
 	align-items: center;
 }
@@ -88,7 +88,7 @@
 }
 
 .matchDetail_Top {
-	background-color: blue;
+	background-color: #003366;
 	color: white;
 	height: 30px;
 	border-radius: 15px 15px 0px 0px;
@@ -113,7 +113,7 @@
 .winPitcher, .losePitcher, .hit, .homeRun, .threeStrike, .stoleBase,
 	.doublePlay, .error {
 	width: 200px;
-	border: 1px solid black;
+	border: 1px solid #ddd;
 	border-left: none;
 	border-top: none;
 }
@@ -134,9 +134,10 @@
 .winPitcherDetail, .losePitcherDetail, .hitDetail, .homeRunDetail,
 	.threeStrikeDetail, .stoleBaseDetail, .doublePlayDetail, .errorDetail {
 	width: 824px;
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid #ddd;
 	display: flex;
 	align-items: center;
+	
 }
 
 .winPitcherDetail input, .losePitcherDetail input {

@@ -11,6 +11,8 @@ let winPitcherData = [
 
 ]
 
+
+
 $(document).ready(function() {
 	winPitcherTable(winPitcherData);
 })
@@ -89,7 +91,6 @@ function removeRow4() {
 }
 
 
-
 function winPitcherTable(data) {
 	let html = ""
 
@@ -123,7 +124,7 @@ function calculateResults() {
 	const loserScore = parseInt(document.getElementById('loserScore').value);
 
 	if (isNaN(winnerScore) || isNaN(loserScore)) {
-		alert('스코어를 입력하세요');
+		toastPop("warn","스코어를 입력하세요");
 		return;
 	}
 
