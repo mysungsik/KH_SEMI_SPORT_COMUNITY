@@ -20,8 +20,13 @@
 	            <img class="logo" src='${contextPath }/public/images/mlb_logo.png'>
 	        </div>
 	        <div class="header-top-user box-hover dropdown">
-	            <img class="user-image" src='${contextPath}/public/images/user_img1.jpg'>
-	            <div class="user-name dropdown-toggle" type="button" data-bs-toggle="dropdown">
+	        	<c:if test="${empty loginUser.getUserProfileImg()}">
+	        		 <img class="user-image" src="${contextPath}/public/images/profile/user_img1.jpg">
+	        	</c:if>
+		   		<c:if test="${!empty loginUser.getUserProfileImg()}">
+		    		<img class="user-image"  src="${loginUser.getUserProfileImg()}"/>
+		    	</c:if>
+	            <div class="user-name dropdown-toggle" data-bs-toggle="dropdown">
 	                <a class="text-hover__blue fs-14__b"> ${loginUser.getUserId()}</a>
 	            </div>
 	            <ul class="dropdown-menu">

@@ -13,17 +13,17 @@ import java.util.Properties;
 import com.helpgpt.sports.profile.model.vo.LoginHistory;
 
 public class ProfileDAO {
-	Properties p;
+	Properties prop;
 	PreparedStatement pstmt;
 	ResultSet rs;
 	
 	public ProfileDAO() {
 		try {
-			p = new Properties();
+			prop = new Properties();
 			String defaultpath = "/com/helpgpt/sports/common/sqls/";
 			String filepath = ProfileDAO.class.getResource(defaultpath + "profile-sql.xml").getPath();
 			FileInputStream fis = new FileInputStream(filepath);
-			p.loadFromXML(fis);
+			prop.loadFromXML(fis);
 		} catch (Exception e) {
 			System.err.println("[ERROR] Load to sql");
 			e.printStackTrace();
@@ -34,7 +34,7 @@ public class ProfileDAO {
 		List<LoginHistory> historyList = new ArrayList<>();
 		
 		try {
-			String sql = p.getProperty("selectUserHistories");
+			String sql = prop.getProperty("selectUserHistories");
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, loginUserNo);
 			rs = pstmt.executeQuery();
@@ -58,6 +58,28 @@ public class ProfileDAO {
 		}
 		
 		return historyList;
+	}
+
+	public int changeUserProfileImg(Connection conn, int userNo, String originalFileName, String renamedFile) {
+		String sql = prop.getProperty("changeUserProfileImg");
+		int result = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, originalFileName);
+			pstmt.setString(2, renamedFile);
+			pstmt.setInt(3, userNo);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("[ERROR] Failed to Update User Profile Img");
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
 	}
 
 }

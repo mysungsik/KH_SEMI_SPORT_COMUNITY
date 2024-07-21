@@ -3,11 +3,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="profile-left">
     <div class="user-profile d-flex">
-    	<c:if test="${empty loginUSer.getUserProfileImg}">
-    		<img src="${contextPath}/public/images/user_img1.jpg" onclick="changeImgModal()"/>
+    	<c:if test="${empty loginUser.getUserProfileImg()}">
+    		<img src="${contextPath}/public/images/profile/user_img1.jpg" onclick="changeImgModal()"/>
     	</c:if>
-   		<c:if test="${!empty loginUSer.getUserProfileImg}">
-    		<img src="${loginUSer.getUserProfileImg}" onclick="changeImgModal()"/>
+   		<c:if test="${!empty loginUser.getUserProfileImg()}">
+    		<img src="${loginUser.getUserProfileImg()}" onclick="changeImgModal()"/>
     	</c:if>
         <p> ${ loginUser.getUserId() } </p>
         <p> ${ loginUser.getUserEmail() }</p>

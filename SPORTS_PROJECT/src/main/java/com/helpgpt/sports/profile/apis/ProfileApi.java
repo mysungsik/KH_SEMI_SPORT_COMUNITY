@@ -66,6 +66,27 @@ public class ProfileApi extends HttpServlet {
 					new Gson().toJson(result, out);
 				}
 			};break;
+			default: {
+				System.out.println("[ERROR] WRONG PROFILE API");
+			}
+		}
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		String contextPath = req.getContextPath();
+		User loginUser = null;
+
+		// Path 지정
+		String reqPath = req.getPathInfo();
+		String path = "";
+
+		if (reqPath != null) {
+			path = reqPath.split("/")[1];
+		}
+
+		// 경로에 따라 필요한 기능을 사용
+		switch (path) {
 			case "changeUserProfileImg" : {
 				HttpSession session = req.getSession(false);
 				
@@ -75,19 +96,29 @@ public class ProfileApi extends HttpServlet {
 				String filePath = root + folderPath;
 				String encoding = "UTF-8";
 				
+				// 파일 업로드
 				MultipartRequest mpReq = new MultipartRequest(req, filePath, maxSize, encoding, new MyRenamePolicy());
 				
-				Map<String, Object> result = new HashMap<>();
-				
 				if (session != null) {
+					// DB변경
 					loginUser = (User)session.getAttribute("loginUser");
+					int userNo = loginUser.getUserNo();
 					
+					String originalFileName = mpReq.getOriginalFileName("inputProfieImg");	// 클라이언트 input 의 name 속성 이름
+					String renamedFile = mpReq.getFilesystemName("inputProfieImg");	// 클라이언트 input 의 name 속성 이름
 					
+					String renamedFilePath = contextPath + folderPath + renamedFile;
+					int changeResult = service.changeUserProfileImg(userNo, originalFileName, renamedFilePath);
 					
+					// 세션의 로그인 객체 프로필 이미지 변경후, 재요청
+					if (changeResult > 0) {
+						loginUser.setUserProfileImg(renamedFilePath);
+					}
+					res.sendRedirect(contextPath + "/profile/myInfo");
 				}
 			};break;
 			default: {
-				System.out.println("[ERROR] USER API");
+				System.out.println("[ERROR] WRONG PROFILE API");
 			}
 		}
 	}

@@ -710,7 +710,7 @@ function changeImgFn(){
 	
 	if (inputedProfileImg.val() == ""){
 		// 이미지 추가해달라는 팝업
-
+		toastPop("warn", "이미지를 추가해주세요!");
 		return false;
 		
 	} else{
