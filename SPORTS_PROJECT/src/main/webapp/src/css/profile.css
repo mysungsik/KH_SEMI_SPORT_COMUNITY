@@ -27,6 +27,10 @@
 	display: flex;
 	flex-direction:column;
 	align-items: center;
+	margin-bottom: 10px;
+}
+.profile-left .user-profile img:hover{
+	cursor: pointer;
 }
 
 .profile-left .user-nav{
@@ -231,6 +235,64 @@
 	margin: 20px auto;
 	justify-content: center;
 	gap:30px;
+}
+/* 일반 페이지 이미지 변경 모달 */
+#changeImgModal .modal-dialog{
+	margin: 0;
+	top: 50%;
+	left : 50%;
+	transform : translate(-50%, -50%) !important;
+}
+
+#changeImgModal .changeImg-section{
+	align-items: center;
+	justify-content: center;
+}
+
+#changeImgModal .changeImg-section > div{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#changeImgModal .changeImg-thumbnail img{
+	width: 150px;
+	height: 150px;
+	border-radius: 100px;
+	display: flex;
+	flex-direction:column;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+#changeImgModal .changeImg-thumbnail p{
+	margin: 0;
+}
+
+#changeImgModal .changeImg-input{
+	width: 260px;
+	margin-left: 30px;
+}
+#changeImgModal .changeImg-input > div{
+	width: 100%;
+	margin: 10px 10px;
+}
+
+#changeImgModal .changeImg-input p{
+	margin: 5px;	
+}
+
+#changeImgModal .changeImg-input input{
+	margin-left: 30px;
+}
+
+#changeImgModal .modal-footer{
+	justify-content: center;
+	gap : 20px;
+}
+
+#changeImgModal .modal-footer button{
+	width: 200px;
 }
 
 /* 일반 페이지 히스토리용 모달*/

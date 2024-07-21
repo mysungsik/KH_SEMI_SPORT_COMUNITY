@@ -723,6 +723,26 @@ ul{
     cursor: pointer;
 }
 
+.btn-small__gray{
+    width: 110px;
+    height: 25px;
+    color: gray;
+    background-color: rgba(139, 139, 139, 0.24);
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    border: none;
+    box-shadow: 2px 2px 5px rgba(69, 69, 69, 0.3);
+}
+
+.btn-small__gray:hover{
+    background-color: rgba(139, 139, 139, 0.44);
+    font-weight: 700;
+    transition: all ease-in-out 0.1s;
+    box-shadow: 2px 2px 5px rgba(69, 69, 69, 0.486);
+    cursor: pointer;
+}
+
 
 /* ELEMENTS - chkbox */
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {

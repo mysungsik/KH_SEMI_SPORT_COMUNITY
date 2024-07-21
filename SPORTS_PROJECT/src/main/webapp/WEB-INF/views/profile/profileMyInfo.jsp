@@ -95,38 +95,6 @@
             </div>
         </section>
     </main>
-    <!-- Modal -->
-	<div class="modal" id="commonModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
-	  <div class="modal-dialog">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <h1 class="modal-title fs-5" id="commonModalLabel"></h1>
-	      </div>
-	      <div class="modal-body">
-	      </div>
-	      <div class="modal-footer">
-	      	<input type="hidden" name="modalType" value=""/>
-	        <button id="cancelBtn" type="button" class="btn btn-medium__gray" data-bs-dismiss="modal" onclick="modalCancel()"> 취소 </button>
-	        <button id="confirmBtn" type="button" class="btn btn-medium__blue" onclick="modalConfirm()"> 확인 </button>
-	      </div>
-	    </div>
-	  </div>
-	</div>
-	 <!-- History Modal -->
-	<div class="modal" id="historyModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
-	  <div class="modal-dialog">
-	    <div class="modal-content">
-	      <div class="modal-header base base__blue">
-	        <h1 class="modal-title fs-5" id="commonModalLabel"> 최근 7일간 로그인 정보 </h1>
-	      </div>
-	      <div class="modal-body">
-	      </div>
-	      <div class="modal-footer">
-	        <button id="confirmBtn" type="button" class="btn btn-medium__blue w-100"  data-bs-dismiss="modal"> 확인 </button>
-	      </div>
-	    </div>
-	  </div>
-	</div>
-	<jsp:include page="/WEB-INF/views/layouts/footer.jsp"/>
+    <jsp:include page="/WEB-INF/views/layouts/footer.jsp"/>
 </body>
 </html>

@@ -98,10 +98,12 @@ let scrabData = [
 $(document).ready(function () {
 	
 	// 페이지네이션 실행
-	paginationActive("comments", commentsData, paginationTemplate);
-	paginationActive("board", contentsData, paginationTemplate);
-	paginationActive("scrab", scrabData, paginationTemplate);
+	paginationActive("comments", commentsData, paginationTemplate);	// 내 댓글  관리 페이지네이션
+	paginationActive("board", contentsData, paginationTemplate);	// 내 작성글 관리 페이지네이션
+	paginationActive("scrab", scrabData, paginationTemplate);		// 내 스크랩 관리 페이지네이션
 
+	// 이미지 변경시 썸네일 생성 이벤트 리스너 연결 함수
+	showThumbnail();
 });
 
 // 체크박스 전체선택 함수
@@ -217,9 +219,13 @@ function paginationActive(id, datas, template){
 			let comment = $(this).parent().parent().find(".item-text")
 			comment.addClass("active");
 			comment.prop("disabled", false);
-			console.log("엔터 누르면 수정하시겠습니까? 팝업창 나오도록")
-			console.log("수정 완료 누르면 DB에 저장되고, 다시 disabled 되도록")
-			console.log("수정 중간에 다른 수정 칸 못누르도록, 팝업창 띄우기")
+
+			/* TODO :
+				0. 댓글 수정은 textArea 로 하는게 좋아보인다.
+				1. 엔터 누르면 수정하시겠습니까? 팝업창 나오도록
+				2. 수정 완료 누르면 DB에 저장되고, 다시 disabled 되도록
+				3. 수정 중간에 다른 수정 칸 못누르도록, 팝업창 띄우기
+			*/
 		})
 	} else if (id == "board"){
 		$(".edit").on("click", function(){
@@ -241,7 +247,7 @@ function showModal(el){
 	let modalType = $(el).data("type");
 	$("[name='modalType']").val(modalType);
 
-	// 일회성 패스워드 체크가 안되어있을 경우
+	// [초기 비밀번호 검증] 일회성 패스워드 체크가 안되어있을 경우
 	if (!passwordCheck){
 		let modalType = "passwordCheck"
 		$("[name='modalType']").val(modalType);	// 패스워드 체크 모달 확인 버튼을 사용하기 위해 추가
@@ -256,7 +262,7 @@ function showModal(el){
 		return;
 	}
 	
-	// 정보제공동의 모달 ------------
+	// [정보 제공 동의] 모달 생성 ------------
 	if (modalType == "emailAgree" ||
 		modalType == "phoneAgree" ||
 		modalType == "addressAgree"){
@@ -269,7 +275,7 @@ function showModal(el){
 
 		
 		switch(modalType){
-			// 정보 제공 종의 수정
+			// [ 정보 제공 동의 수정 ] 
 			case "emailAgree" : {
 				infoModal.find(".modal-title").html("이메일 정보 제공에 동의하시겠습니까?")
 				infoModal.find(".modal-body").html("모달 내용임둥")
@@ -295,11 +301,11 @@ function showModal(el){
 			}
 		}
 
-		// 정보 제공 동의 모달 생성
+		// [정보 제공 동의] 모달 띄우기
 		if (value){
 			infoModal.modal('show');
 			
-		// 정보 제공 동의 취소	
+		// [정보 제공 동의] 취소	
 		}else{
 			let policyData = {
 				"type" : "",
@@ -443,7 +449,7 @@ function showModal(el){
 	}
 }
 
-// 모달의 확인 클릭
+// [ 모달의 확인 클릭 ] 
 function modalConfirm(){
 	// 부트스트랩의 모달 선택 방법
 	let modalEl = $('#commonModal');
@@ -452,14 +458,14 @@ function modalConfirm(){
 	let typeReg = /(Agree)$/
 	let modalType = $("[name='modalType']").val()
 	
-	// 초기 비빌번호 체크
+	// [ 모달의 확인 클릭 ]  - 초기 비빌번호 체크
 	if (modalType == "passwordCheck"){
 		let value = $(`input[name='profile_${modalType}']`).val().trim();
 
 		passwordCheckFn(value)
 	}
 
-	// 정보 동의일 경우 ------------------------------
+	// [ 모달의 확인 클릭 ]  -정보 동의일 경우 ------------------------------
 	else if (typeReg.test(modalType)){
 		let checkboxLabel = $(`[for="${modalType}"]`)
 		
@@ -484,7 +490,7 @@ function modalConfirm(){
 		checkboxLabel.html("ON")				
 		infoModal.hide();
 	}
-	// 회원 탈퇴의 경우 ------------------------------
+	// [ 모달의 확인 클릭 ]  - 회원 탈퇴의 경우 ------------------------------
 	else if(modalType == "resign"){
 		let request_url = `${contextPath}/api/sign/resign`
 		$.ajax({
@@ -496,9 +502,6 @@ function modalConfirm(){
 				let isResigned = res.hasOwnProperty("data");
 
 				if(isResigned){
-					// TODO : 회원 탈퇴에 성공했다는 메시지를 띄우고 메인페이지로 이동
-						// 혹은, 회원탈퇴 페이지 만들어서 넘기기
-					
 					let cnt = 3;
 					toastPop("info", res.message + "..."+cnt);
 					cnt --;
@@ -524,7 +527,7 @@ function modalConfirm(){
 
 		infoModal.hide();
 	}
-	// 정보 수정일 경우 ------------------------------
+	// [ 모달의 확인 클릭 ]  - 정보 수정일 경우 ------------------------------
 	else{
 		let value = $(`input[name='profile_${modalType}']`).val().trim();
 		
@@ -588,14 +591,14 @@ function modalConfirm(){
 	}
 }
 
-// 모달의 취소 클릭
+// [ 모달의 취소 클릭 ]
 function modalCancel(){
 	let typeReg = /(Agree)$/
 	let modalType = $("[name='modalType']").val();
 	let checkboxInput = $(`input[name='${modalType}']`)
 	let checkboxLabel = $(`label[for='${modalType}']`)
 	
-	// 정보 동의일 경우
+	// [ 모달의 취소 클릭 ] - 정보 동의일 경우
 	if (typeReg.test(modalType)){
 		if(checkboxInput.prop("checked")){
 			checkboxInput.prop("checked", false)
@@ -604,7 +607,7 @@ function modalCancel(){
 	}
 }
 
-// 초기 패스워드 체크
+// 초기 패스워드 체크 함수
 function passwordCheckFn(password){
 	let request_url = `${contextPath}/api/user/passwordCheck`
 	$.ajax({
@@ -638,7 +641,7 @@ function passwordCheckFn(password){
 	});
 }
 
-// 모달의 변경 버튼 클릭시 유저 정보 업데이트
+//  유저 정보 업데이트 함수
 function updateUserInfo(userData, modalType){
 	let request_url = `${contextPath}/api/user/update`
 	$.ajax({
@@ -666,7 +669,7 @@ function updateUserInfo(userData, modalType){
 	});
 }
 
-// 모달의 변경 버튼 클릭시 유저 동의정보 업데이트
+// 유저 동의정보 업데이트 함수
 function updateUserPolicy(policyData){
 	let request_url = `${contextPath}/api/user/update`
 	$.ajax({
@@ -691,4 +694,45 @@ function updateUserPolicy(policyData){
 			console.log(error);
 		}
 	});
+}
+
+
+
+// 이미지 변경 모달
+function changeImgModal(){
+	const changeImgModalEl = $("#changeImgModal");
+	changeImgModalEl.modal("show");
+}
+
+// 이미지 변경 함수
+function changeImgFn(){
+	const inputedProfileImg = $("input[name='inputProfieImg']")
+	
+	if (inputedProfileImg.val() == ""){
+		// 이미지 추가해달라는 팝업
+
+		return false;
+		
+	} else{
+		// 이미지가 존재하므로 form 실행
+		return true;
+	}
+}
+
+// 이미지 모달의 썸네일 이벤트 리스너 연결 함수
+function showThumbnail(){
+	const inputedProfileImg = $("input[name='inputProfieImg']")
+
+	inputedProfileImg.on("change", function(){
+		if (this.files[0] != undefined){
+			const reader = new FileReader();
+
+			reader.readAsDataURL(this.files[0])
+			reader.onload = function(e){
+				const profileThumbnail = $(".profileThumbnail");
+				profileThumbnail.prop("src", e.target.result);
+			}
+
+		}
+	})
 }

@@ -16,10 +16,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
+import com.helpgpt.sports.common.filerename.MyRenamePolicy;
 import com.helpgpt.sports.login.model.service.UserService;
 import com.helpgpt.sports.login.model.vo.User;
 import com.helpgpt.sports.profile.model.vo.LoginHistory;
 import com.helpgpt.sports.profile.service.ProfileService;
+import com.oreilly.servlet.MultipartRequest;
 
 /**
  * Servlet implementation class Login
@@ -62,6 +64,26 @@ public class ProfileApi extends HttpServlet {
 					}
 				
 					new Gson().toJson(result, out);
+				}
+			};break;
+			case "changeUserProfileImg" : {
+				HttpSession session = req.getSession(false);
+				
+				int maxSize = 1024* 1024 * 30;	// 30MB
+				String root = session.getServletContext().getRealPath("/");
+				String folderPath = "/public/images/profile/";
+				String filePath = root + folderPath;
+				String encoding = "UTF-8";
+				
+				MultipartRequest mpReq = new MultipartRequest(req, filePath, maxSize, encoding, new MyRenamePolicy());
+				
+				Map<String, Object> result = new HashMap<>();
+				
+				if (session != null) {
+					loginUser = (User)session.getAttribute("loginUser");
+					
+					
+					
 				}
 			};break;
 			default: {
