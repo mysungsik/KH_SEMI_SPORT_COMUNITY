@@ -118,9 +118,26 @@ form>button{
 
 
 .reply{
-	height: 50px;
+	height: 60px;
 	display: flex;
 	border-bottom: 1px sollid black;
+	justify-content: center;
+}
+
+.reply > form{
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+
+.update > button{
+	width: 70px;
+	height: 30px;
+	
+	border: none;
+	border-radius: 5px;
+	background: #458BE2;
+	color: white;
 }
 
 .author{

@@ -75,7 +75,6 @@
 		<section class="reply-area">
 			<div id="community-data">
 			</div>
-
 		</section>
 		
 		<section class="page-area">

@@ -34,7 +34,15 @@ function paginationTemplate(data) {
 					</div>
 					<div><span class="fs-10">${d.date}</span></div>
 				</div>
-			</div>`
+			</div>
+			<div class="reply update">
+				<form>
+					<textarea rows="3" cols="90" style="resize: none"">tlqkf</textarea>
+					<button>수정</button>
+					<button>취소</button>
+				</form>
+			</div>
+			`
 	})
 
 	return item;
