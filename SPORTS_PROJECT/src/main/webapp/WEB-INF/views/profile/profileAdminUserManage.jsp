@@ -26,16 +26,15 @@
               <p class="content-title fs-28__b"> 유저 관리</p>
               <hr class="hr__gray mt-20">
               <div class="content-header d-flex">
-                <form action="#" class="search-area">
-                  <select class="search-category" name="category">
-                    <option value="" selected> 카테고리</option>
-                    <option value="" > 아이디 </option>
-                    <option value="" > 이메일 </option>
-                    <option value="" > 주소 </option>
+                <div class="search-area">
+                  <select class="search-category" name="search_category">
+                    <option value="USER_ID" selected> 아이디 </option>
+                    <option value="USER_EMAIL" > 이메일 </option>
+                    <option value="USER_ADDRESS" > 주소 </option>
                   </select>
-                  <input type="text">
-                  <button class="search fa-solid fa-magnifying-glass"></button>
-                </form>
+                  <input type="text" name="search_input">
+                  <button class="search fa-solid fa-magnifying-glass" onclick="searchUser()"></button>
+                </div>
               </div>
               <!-- 컨텐츠 > 메인 -->
               <div class="content-main">

@@ -51,22 +51,21 @@ public class ProfileAdminController extends HttpServlet {
 		else {
 			// 경로에 따라 필요한 페이지로 추가 이동
 			switch (path) {
-			case "":{
-				dispatcher = req.getRequestDispatcher(defaultURLPath + "profileAdminUserManage.jsp");
-				req.setAttribute("page", "userManagement");
-				dispatcher.forward(req, resp);
-			};break;
-			case "userManagement": {
-				dispatcher = req.getRequestDispatcher(defaultURLPath + "profileAdminUserManage.jsp");
-				req.setAttribute("page", "userManagement");
-				dispatcher.forward(req, resp);
-			};break;
-			case "reportManagement": {
-				dispatcher = req.getRequestDispatcher(defaultURLPath + "profileAdminReportManage.jsp");
-				req.setAttribute("page", "reportManagement");
-				dispatcher.forward(req, resp);
-			};break;
-			default:System.out.println("404 페이지로 이동");
+				case "":{
+					dispatcher = req.getRequestDispatcher(defaultURLPath + "profileAdminUserManage.jsp");
+					req.setAttribute("page", "userManagement");
+					dispatcher.forward(req, resp);
+				};break;
+				case "userManagement": {
+					dispatcher = req.getRequestDispatcher(defaultURLPath + "profileAdminUserManage.jsp");
+					req.setAttribute("page", "userManagement");
+					dispatcher.forward(req, resp);
+				};break;
+				case "reportManagement": {
+					dispatcher = req.getRequestDispatcher(defaultURLPath + "profileAdminReportManage.jsp");
+					req.setAttribute("page", "reportManagement");
+					dispatcher.forward(req, resp);
+				};break;
 			};
 		}
 	}

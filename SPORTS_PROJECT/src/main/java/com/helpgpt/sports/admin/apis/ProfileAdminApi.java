@@ -28,7 +28,6 @@ public class ProfileAdminApi extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		PrintWriter out = res.getWriter();
-		String contextPath = req.getContextPath();
 		User loginUser = null;
 
 		// Path 지정
@@ -59,6 +58,21 @@ public class ProfileAdminApi extends HttpServlet {
 						new Gson().toJson(result, out);
 					}else {
 						result.put("message", "failed get all user info");
+						new Gson().toJson(result, out);
+					}
+				};break;
+				case "searchUsersData": {
+					String category = req.getParameter("category");
+					String serachInput = req.getParameter("searchInput");
+					
+					List<User> userList = service.searchUsersData(category, serachInput);
+					
+					if (userList.size() > 0) {
+						result.put("message", "success get searched user info");
+						result.put("data", userList);
+						new Gson().toJson(result, out);
+					}else {
+						result.put("message", "failed get searched user info");
 						new Gson().toJson(result, out);
 					}
 				};break;

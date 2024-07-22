@@ -74,7 +74,7 @@ function adminTemplate(data, id) {
 				<thead>
 					<tr> 
 						<td>No</td> 
-						<td>아이디</td> 
+						<td>Id</td> 
 						<td>Email</td> 
 						<td>Role</td> 
 						<td>Number</td> 
@@ -401,13 +401,13 @@ function deleteUser(el){
 
 }
 
-// 이미지 변경 모달
+// 포로필 이미지 변경 모달
 function changeImgModal(){
 	const changeImgModalEl = $("#changeImgModal");
 	changeImgModalEl.modal("show");
 }
 
-// 이미지 변경 함수
+// 포로필 이미지 변경 함수
 function changeImgFn(){
 	const inputedProfileImg = $("input[name='inputProfieImg']")
 	
@@ -422,7 +422,7 @@ function changeImgFn(){
 	}
 }
 
-// 이미지 모달의 썸네일 이벤트 리스너 연결 함수
+// 포로필 이미지 모달의 썸네일 이벤트 리스너 연결 함수
 function showThumbnail(){
 	const inputedProfileImg = $("input[name='inputProfieImg']")
 
@@ -439,3 +439,40 @@ function showThumbnail(){
 		}
 	})
 }
+
+// 검색 기능 생성
+function searchUser(){
+	let category = $("[name='search_category']").val();	// id, eamil, address
+	let searchInput = $("[name='search_input']").val();
+	
+	const request_url = `${contextPath}/api/admin/profile/searchUsersData`;
+	
+	$.ajax({
+		type: "GET",
+		url: request_url,
+		data: {
+			category,
+			searchInput
+		},
+		dataType: "json",
+		success: function (res) {
+			console.log(res)
+			let isGetData = res.hasOwnProperty("data")
+			if (isGetData){
+				const userData = res.data;
+				paginationActive("user", userData, adminTemplate);
+			}
+        },
+		error : function(request, status, error){
+			console.log(request);
+			console.log(status);
+			console.log(error);
+		}
+	});
+	
+}
+
+
+
+
+

@@ -55,4 +55,15 @@ public class ProfileAdminService {
 		return result;
 	}
 
+	public List<User> searchUsersData(String category, String serachInput) {
+		List<User> userList = null;
+		Connection conn = getConnection();
+		
+		userList = dao.searchUsersData(conn, category, serachInput);
+
+		close(conn);
+		
+		return userList;
+	}
+
 }

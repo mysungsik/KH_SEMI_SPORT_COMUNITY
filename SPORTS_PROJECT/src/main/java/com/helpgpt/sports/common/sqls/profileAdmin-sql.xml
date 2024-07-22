@@ -30,6 +30,7 @@
 		     WHERE H.USER_NO = I.USER_NO) AS LAST_LOGIN_DT
 		FROM USER_INFO I
 		JOIN USER_POLICY P ON (I.USER_NO = P.USER_NO)
+		ORDER BY I.USER_NO ASC
 	</entry>
 	
 	<entry key="updateUserInfoWithFailCnt">
