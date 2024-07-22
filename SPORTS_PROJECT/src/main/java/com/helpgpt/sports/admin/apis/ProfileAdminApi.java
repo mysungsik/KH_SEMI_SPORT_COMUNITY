@@ -46,7 +46,7 @@ public class ProfileAdminApi extends HttpServlet {
 		
 		Map<String, Object> result = new HashMap<>();
 		
-		// 권한 있다면
+		// 권한 있다면 실행
 		if (adminAuthority.equals("A")) {
 			switch (path) {
 				case "getAllUsersData": {
@@ -109,7 +109,7 @@ public class ProfileAdminApi extends HttpServlet {
 					user.setUserNo(userNo);
 					user.setUserAuthority(userAuthority);
 					user.setUserState(userState);
-					
+						
 					int updateResult = service.updateUserInfo(user);
 					
 					if (updateResult > 0) {

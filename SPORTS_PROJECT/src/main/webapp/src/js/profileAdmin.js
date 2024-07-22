@@ -400,3 +400,42 @@ function deleteUser(el){
 	adminModal.hide();
 
 }
+
+// 이미지 변경 모달
+function changeImgModal(){
+	const changeImgModalEl = $("#changeImgModal");
+	changeImgModalEl.modal("show");
+}
+
+// 이미지 변경 함수
+function changeImgFn(){
+	const inputedProfileImg = $("input[name='inputProfieImg']")
+	
+	if (inputedProfileImg.val() == ""){
+		// 이미지 추가해달라는 팝업
+		toastPop("warn", "이미지를 추가해주세요!");
+		return false;
+		
+	} else{
+		// 이미지가 존재하므로 form 실행
+		return true;
+	}
+}
+
+// 이미지 모달의 썸네일 이벤트 리스너 연결 함수
+function showThumbnail(){
+	const inputedProfileImg = $("input[name='inputProfieImg']")
+
+	inputedProfileImg.on("change", function(){
+		if (this.files[0] != undefined){
+			const reader = new FileReader();
+
+			reader.readAsDataURL(this.files[0])
+			reader.onload = function(e){
+				const profileThumbnail = $(".profileThumbnail");
+				profileThumbnail.prop("src", e.target.result);
+			}
+
+		}
+	})
+}

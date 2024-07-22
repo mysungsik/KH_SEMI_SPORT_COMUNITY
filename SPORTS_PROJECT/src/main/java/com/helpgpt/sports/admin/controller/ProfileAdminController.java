@@ -67,7 +67,7 @@ public class ProfileAdminController extends HttpServlet {
 				dispatcher.forward(req, resp);
 			};break;
 			default:System.out.println("404 페이지로 이동");
-			}
+			};
 		}
 	}
 }

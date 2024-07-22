@@ -22,9 +22,7 @@ SELECT
 	P.AGREE_PHONE
 FROM USER_INFO I
 JOIN USER_POLICY P ON (I.USER_NO = P.USER_NO)
-WHERE USER_ID = 'sportsAdmin'
-AND USER_PW = 'KQZ3dpm+3daZEkqDpEvtnk6AMuxOJ22ZNR1WmZoxVVq+5YWwAZ+SflpCH26gc3X2nVzfL1zre30F+jsMxgowaw=='
-AND DELETE_DT IS NULL;
+WHERE USER_ID = 'sportsAdmin';
 
 -- 2. 스칼라 서브쿼리를 이용하여, 각 유저별 최근 로그인 정보 하나만을 들고오는 모든 유저 정보 출력
 SELECT 

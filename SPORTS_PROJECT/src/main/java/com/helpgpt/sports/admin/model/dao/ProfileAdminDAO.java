@@ -86,13 +86,24 @@ public class ProfileAdminDAO {
 		int result = 0;
 		
 		try {
-			String sql = p.getProperty("updateUserInfo");
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, user.getUserAuthority());
-			pstmt.setString(2, user.getUserState());
-			pstmt.setInt(3, user.getUserNo());
-			
-			result = pstmt.executeUpdate();
+			if (user.getUserState().equals("G")) {
+				String sql = p.getProperty("updateUserInfoWithFailCnt");
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, user.getUserAuthority());
+				pstmt.setString(2, user.getUserState());
+				pstmt.setInt(3, user.getUserNo());
+				
+				result = pstmt.executeUpdate();
+				
+			}else {
+				String sql = p.getProperty("updateUserInfo");
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, user.getUserAuthority());
+				pstmt.setString(2, user.getUserState());
+				pstmt.setInt(3, user.getUserNo());
+				
+				result = pstmt.executeUpdate();
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("[ERROR] Failed to update user authority & state");
