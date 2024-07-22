@@ -37,9 +37,9 @@ function paginationTemplate(data) {
 			</div>
 			<div class="reply update">
 				<form>
-					<textarea rows="3" cols="90" style="resize: none"">tlqkf</textarea>
+					<textarea rows="3" cols="100" style="resize: none"">tlqkf</textarea>
 					<button>수정</button>
-					<button>취소</button>
+					<button class="footer_gray fc__gray">취소</button>
 				</form>
 			</div>
 			`

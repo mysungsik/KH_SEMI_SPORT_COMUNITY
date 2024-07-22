@@ -121,12 +121,12 @@ form>button{
 	height: 60px;
 	display: flex;
 	border-bottom: 1px sollid black;
-	justify-content: center;
+	justify-content: flex-end;
 }
 
 .reply > form{
 	display: flex;
-	justify-content: center;
+	justify-content: flex-end;
 	gap: 10px;
 }
 
