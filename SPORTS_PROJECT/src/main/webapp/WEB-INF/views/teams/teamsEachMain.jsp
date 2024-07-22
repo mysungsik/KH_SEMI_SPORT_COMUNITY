@@ -46,8 +46,9 @@
 											<p class="fs-14  fc__white">BLUE JAYS</p>
 											<p class="fs-12 fc__white">선발 : 김승연</p>
 										</div>
-										<a href="${contextPath}/match/matchResult"><button>경기
-												결과</button></a>
+										<a href="${contextPath}/match/matchResult">
+											<button>경기 결과</button>
+										</a>
 										<div class="swiper-right-team">
 											<p class="fs-14  fc__white">BLUE JAYS</p>
 											<p class="fs-12 fc__white">선발 : 김승연</p>
@@ -58,7 +59,7 @@
 							</div>
 
 							<div class="swiper-slide">
-								<div class="fs-20 fc__white mt-10" id="dateDisplay"></div>
+								<p class="fs-20 fc__white mt-10">24.07.02 (화)</p>
 								<p class="fc__white">광주 18:30</p>
 								<div class="swiper-logo">
 									<img src="${contextPath}/public/images/teams/FL.png"
@@ -109,10 +110,12 @@
 								</div>
 							</div>
 						</div>
-
+						
+						<div class="swiper-pagination"></div>
+					</div>
+					<div class="btn-area">
 						<div class="swiper-button-next fc__white"></div>
 						<div class="swiper-button-prev fc__white"></div>
-						<div class="swiper-pagination"></div>
 					</div>
 				</div>
 			</div>
@@ -248,12 +251,11 @@
 
 	<!-- 응원 게시판 시작 -->
 	<main>
-
 		<section class="container">
 			<article class="board mg-right">
 				<div class="title">
-					<span class="fs-28__b">응원 게시판</span> <span
-						class="see-more fs-10 fc__gray"><a>더보기▶</a></span>
+					<span class="fs-28__b">응원 게시판</span> 
+					<span class="see-more fs-10 fc__gray"><a>더보기▶</a></span>
 				</div>
 				<hr>
 				<div class="post">
