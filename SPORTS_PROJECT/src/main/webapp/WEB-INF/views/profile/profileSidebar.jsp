@@ -87,7 +87,7 @@
                 <div class="changeImg-section d-flex">
                     <div class="changeImg-thumbnail">
                         <p> 이미지 미리보기 </p>
-                        <img class="profileThumbnail" src="./public/images/user_img1.jpg"/>
+                        <img class="profileThumbnail" src="${loginUser.getUserProfileImg()}" />
                     </div>
                     <div class="changeImg-input">
                         <div>
@@ -96,7 +96,7 @@
                         </div>
                         <div>
                             <p class="fs-14"> 기본 이미지로 변경</p>
-                            <input type="button" class="btn-small__gray" value="기본 이미지로 변경">
+                            <input type="button" class="btn-small__gray" value="기본 이미지로 변경" onclick="changeImgDefault()">
                         </div>
                     </div>
                 </div>

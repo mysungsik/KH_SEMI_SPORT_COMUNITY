@@ -82,4 +82,25 @@ public class ProfileDAO {
 		return result;
 	}
 
+	public int resetUserProfileImg(Connection conn, int userNo, String defaultFilePath) {
+		String sql = prop.getProperty("resetUserProfileImg");
+		int result = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, defaultFilePath);
+			pstmt.setInt(2, userNo);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("[ERROR] Failed to Reset User Profile Img");
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
 }

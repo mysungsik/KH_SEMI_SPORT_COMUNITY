@@ -117,6 +117,25 @@ public class ProfileApi extends HttpServlet {
 					res.sendRedirect(contextPath + "/profile/myInfo");
 				}
 			};break;
+			case "restUserProfileImg" : {
+				HttpSession session = req.getSession(false);
+
+				String folderPath = "/public/images/profile/user_img1.jpg";
+				String defaultFilePath = contextPath + folderPath;
+
+				if (session != null) {
+					// DB변경
+					loginUser = (User)session.getAttribute("loginUser");
+					int userNo = loginUser.getUserNo();
+					
+					int changeResult = service.resetUserProfileImg(userNo, defaultFilePath);
+					
+					// 세션의 로그인 객체 프로필 이미지 변경
+					if (changeResult > 0) {
+						loginUser.setUserProfileImg(defaultFilePath);
+					}
+				}
+			};break;
 			default: {
 				System.out.println("[ERROR] WRONG PROFILE API");
 			}

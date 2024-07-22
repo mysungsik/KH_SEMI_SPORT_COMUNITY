@@ -286,6 +286,15 @@
 	margin-left: 30px;
 }
 
+#changeImgModal .changeImg-input #inputProfieImg{
+	width : 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;  
+    word-break: break-word;  
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical
+}
+
 #changeImgModal .modal-footer{
 	justify-content: center;
 	gap : 20px;
