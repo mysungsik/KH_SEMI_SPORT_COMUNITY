@@ -128,9 +128,7 @@
 						</table>
 					</div>
 				</div>
-				<div>
-					<a href="${contextPath}/match/matchResult">경기결과</a>
-				</div>
+				
 				<div class="matchschedule">
 					<video class="main-video" autoplay muted loop>
 						<source src="/SPORTS_PROJECT/public/video/backgroundVideo.mp4"

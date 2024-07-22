@@ -34,7 +34,7 @@
 		</div>
 		<div class="game-records card__lblue">
 			<div class="game_recordsBox">
-				<div class="game_recordsTop">
+				<div class="game_recordsTop base__mblue">
 					<div>경기 일정</div>
 				</div>
 				<div class="game_recordsTable">
@@ -66,7 +66,7 @@
 								<td><img src="/SPORTS_PROJECT/public/images/user_img1.jpg" alt="" width="40" height="40"></td>
 								<td>탬파베이</td>
 								<td>아메리칸리그</td>
-								<td><a href="#">상세</a></td>
+								<td><a href="${contextPath}/match/matchResult">상세</a></td>
 							</tr>
 							<tr>
 								<td>2:10</td>
@@ -95,6 +95,19 @@
 								<td><a href="#">상세</a></td>
 							</tr>
 								<tr>
+								<td>1:10</td>
+								<td>트로피카나</td>
+								<td>시애틀</td>
+								<td><img src="/SPORTS_PROJECT/public/images/user_img1.jpg" alt="" width="40" height="40"></td>
+								<td>5</td>
+								<td>종료</td>
+								<td>2</td>
+								<td><img src="/SPORTS_PROJECT/public/images/user_img1.jpg" alt="" width="40" height="40"></td>
+								<td>탬파베이</td>
+								<td>아메리칸리그</td>
+								<td><a href="#">상세</a></td>
+							</tr>
+							<tr>
 								<td>1:10</td>
 								<td>트로피카나</td>
 								<td>시애틀</td>
@@ -317,6 +330,19 @@
 								<td>아메리칸리그</td>
 								<td><a href="#">상세</a></td>
 							</tr>
+							<tr>
+								<td>1:10</td>
+								<td>트로피카나</td>
+								<td>시애틀</td>
+								<td><img src="/SPORTS_PROJECT/public/images/user_img1.jpg" alt="" width="40" height="40"></td>
+								<td>5</td>
+								<td>종료</td>
+								<td>2</td>
+								<td><img src="/SPORTS_PROJECT/public/images/user_img1.jpg" alt="" width="40" height="40"></td>
+								<td>탬파베이</td>
+								<td>아메리칸리그</td>
+								<td><a href="#">상세</a></td>
+							</tr>
 						</tbody>
 						<tbody id ="Wedn" class="schedule hidden">
 							<tr>
@@ -359,6 +385,19 @@
 								<td><a href="#">상세</a></td>
 							</tr>
 								<tr>
+								<td>1:10</td>
+								<td>트로피카나</td>
+								<td>시애틀</td>
+								<td><img src="/SPORTS_PROJECT/public/images/user_img1.jpg" alt="" width="40" height="40"></td>
+								<td>5</td>
+								<td>종료</td>
+								<td>2</td>
+								<td><img src="/SPORTS_PROJECT/public/images/user_img1.jpg" alt="" width="40" height="40"></td>
+								<td>탬파베이</td>
+								<td>아메리칸리그</td>
+								<td><a href="#">상세</a></td>
+							</tr>
+							<tr>
 								<td>1:10</td>
 								<td>트로피카나</td>
 								<td>시애틀</td>
@@ -581,6 +620,19 @@
 								<td>아메리칸리그</td>
 								<td><a href="#">상세</a></td>
 							</tr>
+							<tr>
+								<td>1:10</td>
+								<td>트로피카나</td>
+								<td>시애틀</td>
+								<td><img src="/SPORTS_PROJECT/public/images/user_img1.jpg" alt="" width="40" height="40"></td>
+								<td>5</td>
+								<td>종료</td>
+								<td>2</td>
+								<td><img src="/SPORTS_PROJECT/public/images/user_img1.jpg" alt="" width="40" height="40"></td>
+								<td>탬파베이</td>
+								<td>아메리칸리그</td>
+								<td><a href="#">상세</a></td>
+							</tr>
 						</tbody>
 						<tbody id ="Fri" class="schedule hidden">
 							<tr>
@@ -713,6 +765,19 @@
 								<td>아메리칸리그</td>
 								<td><a href="#">상세</a></td>
 							</tr>
+							<tr>
+								<td>1:10</td>
+								<td>트로피카나</td>
+								<td>시애틀</td>
+								<td><img src="/SPORTS_PROJECT/public/images/user_img1.jpg" alt="" width="40" height="40"></td>
+								<td>5</td>
+								<td>종료</td>
+								<td>2</td>
+								<td><img src="/SPORTS_PROJECT/public/images/user_img1.jpg" alt="" width="40" height="40"></td>
+								<td>탬파베이</td>
+								<td>아메리칸리그</td>
+								<td><a href="#">상세</a></td>
+							</tr>
 						</tbody>
 						<tbody id ="Sat" class="schedule hidden">
 							<tr>
@@ -755,6 +820,19 @@
 								<td><a href="#">상세</a></td>
 							</tr>
 								<tr>
+								<td>1:10</td>
+								<td>트로피카나</td>
+								<td>시애틀</td>
+								<td><img src="/SPORTS_PROJECT/public/images/user_img1.jpg" alt="" width="40" height="40"></td>
+								<td>5</td>
+								<td>종료</td>
+								<td>2</td>
+								<td><img src="/SPORTS_PROJECT/public/images/user_img1.jpg" alt="" width="40" height="40"></td>
+								<td>탬파베이</td>
+								<td>아메리칸리그</td>
+								<td><a href="#">상세</a></td>
+							</tr>
+							<tr>
 								<td>1:10</td>
 								<td>트로피카나</td>
 								<td>시애틀</td>

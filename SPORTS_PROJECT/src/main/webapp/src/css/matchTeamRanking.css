@@ -134,3 +134,6 @@ tr {
 	text-align: center;
 	align-items: center;
 }
+.days button {
+	font-size: 20px;
+}

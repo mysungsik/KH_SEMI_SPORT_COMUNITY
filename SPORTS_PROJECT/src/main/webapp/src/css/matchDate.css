@@ -27,12 +27,18 @@ body {
 	margin-top: 30px;
 	color: black;
 	margin-bottom: 30px;
+	
 }
 .navigation button {
 	margin: 0 10px;
 	border: none;
 	background-color: white;
+	font-size: 20px;
 }
+#currentDate{
+	font-size:20px;
+}
+
 
 .matchDate_Top .navigation span {
 	margin: 0 10px;
@@ -56,6 +62,7 @@ body {
 	width:50px;
 	padding:0;
 	width:100%;
+	font-size: 20px;
 }
 
 .days button:hover{
@@ -74,6 +81,7 @@ body {
 table {
 	width: 964px;
 	border-collapse: collapse;
+	border-radius: 15px 15px 0 0;
 }
 
 table, th, td {
@@ -93,25 +101,31 @@ th {
 	display:flex;
 	justify-content: center;
 	flex-direction:column;
-	margin-left:30px;
 	margin-bottom:30px;
+	flex-basis:100%;
 }
 .game_recordsTop{
-	background-color:#003366;
-	margin-top:20px;
+	
 	border-radius:15px 15px 0 0;
 }
 .game_recordsTop div{
 	color: white;
-	height:30px;
+	height:50px;
 	display:flex;
 	align-items:center;
-	margin-left:30px;
+	justify-content: center;
+	font-size: 20px;
 }
 .game_recordsTable{
 	display:flex;
 	justify-content: center;
 }
-.garme-records {
+.game-records {
 	margin-bottom:30px;
+	display:flex;
+	
+}
+#scheduleTable{
+	width: 100%;
+	height: 100%;
 }
