@@ -205,7 +205,6 @@
 }
 
 /* team-step-list 끝 */
-
 .base-info h1{
   font-size: 20px;
 }
@@ -243,12 +242,10 @@
 .base-info{
   display: flex;
   flex-direction: column ;
-  align-items: end;
 }
 
 button{
   width: 100px;
-  margin: 0 0 20px 0;
   padding: 10px 20px;
   border-radius: 10px;
   border: 2px solid #007aff;
@@ -358,4 +355,14 @@ button:hover{
 
 .step.active{
   display:block;
+}
+
+.comment{
+  width: 100%;
+  height: 500px;
+  font-size: 18px;
+}
+
+.btn-area{
+  margin: 30px 0 30px;
 }

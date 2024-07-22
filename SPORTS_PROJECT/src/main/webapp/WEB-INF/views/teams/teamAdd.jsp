@@ -19,14 +19,22 @@
 				<h1>구단 추가</h1>
 				<div class="step active step-count-3">
 					<ul>
-						<li class="on"><a href="#" class="step-item"> <span
-								class="step-circle"></span> <span class="label">기본정보</span>
-						</a></li>
-						<li class=""><a href="#" class="step-item"> <span
-								class="step-circle"></span> <span class="label">추가정보</span>
-						</a></li>
-						<li class=""><a href="#" class="step-item"> <span
-								class="step-circle"></span> <span class="label">추가완료</span>
+						<li class="on">
+							<a href="#" class="step-item" onclick="firstStep()"> 
+								<span class="step-circle"></span> 
+								<span class="label">기본정보</span>
+							</a>
+						</li>
+
+						<li class="">
+							<a href="#" class="step-item" onclick="secondStep()"> 
+								<span class="step-circle"></span> 
+								<span class="label">추가정보</span>
+							</a>
+						</li>
+						<li class=""><a href="#" class="step-item"> 
+							<span class="step-circle"></span> 
+							<span class="label">추가완료</span>
 						</a></li>
 					</ul>
 					<div class="more-info">
@@ -44,7 +52,9 @@
 							required>
 						<textarea type="text" name="teamDes" placeholder="구단 설명(500자 이내)"></textarea>
 					</div>
-					<hr>
+				</div>
+				<hr>
+				<div class="btn-area">
 					<button type="button" onclick="nextStep()">다음</button>
 				</div>
 			</div>
@@ -52,16 +62,23 @@
 			<!-- Step 2  -->
 			<div class="step" id="step2">
 				<h1>구단 추가</h1>
-				<div class="step active step-count-3">
+				<div class="step step-count-3">
 					<ul>
-						<li class="done"><a href="#" class="step-item"> <span
-								class="step-circle"></span> <span class="label">기본정보</span>
-						</a></li>
-						<li class="on"><a href="#" class="step-item"> <span
-								class="step-circle"></span> <span class="label">추가정보</span>
-						</a></li>
-						<li class=""><a href="#" class="step-item"> <span
-								class="step-circle"></span> <span class="label">추가완료</span>
+						<li class="done">
+							<a href="#" class="step-item"  onclick="firstStep()"> 
+								<span class="step-circle"></span> 
+								<span class="label">기본정보</span>
+							</a>
+						</li>
+						<li class="on">
+							<a href="#" class="step-item" onclick="secondStep()"> 
+								<span class="step-circle"></span> 
+								<span class="label">추가정보</span>
+							</a>
+						</li>
+						<li class=""><a href="#" class="step-item"> 
+							<span class="step-circle"></span> 
+							<span class="label">추가완료</span>
 						</a></li>
 					</ul>
 					<div class="more-info">
@@ -214,11 +231,8 @@
 							</div>
 							
 						</div>
-						<hr>
 					</div>
 					<hr>
-
-					
 					<div class="btn-area">
 						<button type="button" onclick="prevStep()">이전</button>
 						<button type="button" onclick="nextStep()">다음</button>
@@ -230,17 +244,23 @@
 			<!-- Step 3  -->
 			<div class="step" id="step3">
 				<h1>구단 추가</h1>
-				<hr>
-				<div class="step active step-count-3">
+				<div class="step step-count-3">
 					<ul>
-						<li class="done"><a href="#" class="step-item"> <span
-								class="step-circle"></span> <span class="label">기본정보</span>
-						</a></li>
-						<li class="done"><a href="#" class="step-item"> <span
-								class="step-circle"></span> <span class="label">추가정보</span>
-						</a></li>
-						<li class="on"><a href="#" class="step-item"> <span
-								class="step-circle"></span> <span class="label">추가완료</span>
+						<li class="done">
+							<a href="#" class="step-item"  onclick="firstStep()"> 
+								<span class="step-circle"></span> 
+								<span class="label">기본정보</span>
+							</a>
+						</li>
+						<li class="done">
+							<a href="#" class="step-item" onclick="secondStep()"> 
+								<span class="step-circle"></span> 
+								<span class="label">추가정보</span>
+							</a>
+						</li>
+						<li class="on"><a href="#" class="step-item"> 
+							<span class="step-circle"></span> 
+							<span class="label">추가완료</span>
 						</a></li>
 					</ul>
 					<div class="more-info">
@@ -248,13 +268,13 @@
 					</div>
 				</div>
 				<hr>
-				<div>
-					신규 구단이 추가되었습니다.
+				<div class="comment">
+					신규 구단이 성공적으로 추가되었습니다.
 				</div>
 				<hr>
 				<div class="btn-area">
 					<button type="button" onclick="prevStep()">이전</button>
-					<button type="submit" onclick="handleFormSubmit(event)">완료</button>
+					<button type="submit" id="addTeamBtn">완료</button>
 				</div>
 			</div>
 

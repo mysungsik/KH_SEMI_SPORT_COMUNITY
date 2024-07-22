@@ -1,18 +1,52 @@
+// 다음 버튼
 function nextStep() {
     const currentStep = document.querySelector('.step.active');
     if (currentStep.nextElementSibling) {
         currentStep.classList.remove('active');
+        currentStep.querySelector('.step').classList.remove('active');
         currentStep.nextElementSibling.classList.add('active');
+        currentStep.nextElementSibling.querySelector('.step').classList.add('active');
     }
 }
 
+// 이전 버튼
 function prevStep() {
     const currentStep = document.querySelector('.step.active');
     if (currentStep.previousElementSibling) {
         currentStep.classList.remove('active');
+        currentStep.querySelector('.step').classList.remove('active');
         currentStep.previousElementSibling.classList.add('active');
+        currentStep.previousElementSibling.querySelector('.step').classList.add('active');
     }
 }
+
+/* a 태그 */
+// firstStep()
+function firstStep(){
+    const currentStep = document.querySelector('.step.active');
+    const first = document.getElementById("step1");
+
+    currentStep.classList.remove('active');
+    currentStep.querySelector('.step').classList.remove('active');
+
+    first.classList.add('active');
+    first.querySelector('.step').classList.add('active');
+
+}
+
+// secondStep()
+function secondStep(){
+    const currentStep = document.querySelector('.step.active');
+    const second = document.getElementById("step2");
+
+    currentStep.classList.remove('active');
+    currentStep.querySelector('.step').classList.remove('active');
+
+    second.classList.add('active');
+    second.querySelector('.step').classList.add('active');
+
+}
+
 
 function populateConfirmation() {
     document.getElementById('confirmTeamName').innerText = document.querySelector('input[name="teamName"]').value;
@@ -27,6 +61,7 @@ function populateConfirmation() {
     document.getElementById('confirmHeaderImageDesc').innerText = document.querySelector('textarea[name="header-image-desc"]').value;
 }
 
+// 이미지 미리보기 표시
 document.querySelectorAll('.inputImage').forEach(input => {
     input.addEventListener('change', function() {
         const file = this.files[0];
@@ -40,6 +75,8 @@ document.querySelectorAll('.inputImage').forEach(input => {
     });
 });
 
+// 이미지 등록, 삭제 버튼
+// .closest => 가까운 상위조상요소 반환
 document.querySelectorAll('.image-btn button').forEach(button => {
     button.addEventListener('click', function() {
         const action = this.innerText;
@@ -54,29 +91,3 @@ document.querySelectorAll('.image-btn button').forEach(button => {
 });
 
 
-function handleFormSubmit(event) {
-    event.preventDefault(); // 기본 폼 제출 동작 방지
-
-    const form = event.target;
-
-    // 폼 데이터를 서버로 전송
-    const formData = new FormData(form);
-    fetch(form.action, {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => {
-        if (response.ok) {
-            // 성공적으로 제출된 후 teams 페이지로 이동
-            window.location.href = `${form.action}/teams`;
-        } else {
-            // 에러 처리
-            alert('폼 제출에 실패했습니다. 다시 시도해주세요.');
-        }
-    })
-    .catch(error => {
-        // 네트워크 에러 처리
-        console.error('Error:', error);
-        alert('네트워크 에러가 발생했습니다. 다시 시도해주세요.');
-    });
-}
