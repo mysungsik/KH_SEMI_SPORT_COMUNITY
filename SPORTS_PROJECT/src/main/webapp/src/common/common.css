@@ -950,12 +950,12 @@ box-sizing: inherit;
   }
   
 @keyframes vibration {
-from {
-    transform: translateY(2px);
-}
-to {
-    transform: translateY(-2px);
-}
+	from {
+	    transform: translateY(2px);
+	}
+	to {
+	    transform: translateY(-2px);
+	}
 }
 
 /* Header ------------------------------------------------------------------------- */

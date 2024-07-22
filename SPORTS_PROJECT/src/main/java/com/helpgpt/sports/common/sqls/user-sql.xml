@@ -19,7 +19,8 @@
 		    I.USER_IMG_ORIGIN ,
 		    I.USER_IMG_RENAME,
 			I.USER_AUTHORITY ,
-			I.USER_ST,
+			I.USER_ST ,
+		    I.FAIL_CNT, 
 			TO_CHAR(I.CREATE_DT, 'YYYY-MM-DD HH24:MM:SS') AS CREATE_DT,
 		    TO_CHAR(I.DELETE_DT, 'YYYY-MM-DD HH24:MM:SS') AS DELETE_DT,
 			P.AGREE_ADDRESS,
@@ -52,5 +53,29 @@
 		SELECT COUNT(*) FROM USER_INFO
 		WHERE USER_NO = ?
 		AND USER_PW = ?
+	</entry>
+	
+	<entry key="resetFailCnt">
+		UPDATE USER_INFO 
+		SET FAIL_CNT = 0
+		WHERE USER_NO = ?
+	</entry>
+	
+	<entry key="findUserbyId">
+		SELECT USER_NO, USER_ID, FAIL_CNT FROM USER_INFO 
+		WHERE USER_ID = ?
+	</entry>
+	
+	<entry key="userLock">
+		UPDATE USER_INFO 
+		SET FAIL_CNT = 5,
+			USER_ST = 'L'
+		WHERE USER_NO = ?
+	</entry>
+	
+	<entry key="addFailCnt">
+		UPDATE USER_INFO 
+		SET FAIL_CNT = ?
+		WHERE USER_NO = ?
 	</entry>
 </properties>

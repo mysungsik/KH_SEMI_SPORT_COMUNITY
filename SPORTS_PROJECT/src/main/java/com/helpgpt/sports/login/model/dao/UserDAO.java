@@ -55,6 +55,7 @@ public class UserDAO {
 				String userProfileImg = rs.getString("USER_IMG_RENAME");
 				String userAuthority = rs.getString("USER_AUTHORITY");
 				String userState = rs.getString("USER_ST");
+				int failCnt = rs.getInt("FAIL_CNT");
 				String createdDate = rs.getString("CREATE_DT");
 				String deletedDate = rs.getString("DELETE_DT");
 				String agreeAddress = rs.getString("AGREE_ADDRESS");
@@ -65,7 +66,7 @@ public class UserDAO {
 						userProfileImg, userEmail, 
 						userName, userPhone, userSns, userBd, 
 						userAddress, userGender, userNation, 
-						userProfileImg, userAuthority, userState, 
+						userProfileImg, userAuthority, userState, failCnt,
 						createdDate, deletedDate,
 						agreeAddress, agreeEmail, agreePhone);
 			}
@@ -202,6 +203,95 @@ public class UserDAO {
 			e.printStackTrace();
 		} finally {
 			close(rs);
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	public int resetFailCnt(Connection conn, int userNo) {
+		String sql = prop.getProperty("resetFailCnt");
+		int result = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, userNo);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("[ERROR] Failed to Reset Fail Count");
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	public User findUserbyId(Connection conn, String inputId) {
+		String sql = prop.getProperty("findUserbyId");
+		User userForFailCnt = null;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, inputId);
+			
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				int userNo = rs.getInt("USER_NO");
+				String userId = rs.getString("USER_ID");
+				int failCnt = rs.getInt("FAIL_CNT");
+				
+				userForFailCnt = new User(userNo, userId, failCnt);
+			}
+			
+		} catch (Exception e) {
+			System.out.println("[ERROR] Failed to Find User");
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return userForFailCnt;
+	}
+
+	public int userLock(Connection conn, int userNo) {
+		String sql = prop.getProperty("userLock");
+		int result = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, userNo);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("[ERROR] Failed to User Lock");
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	public int addFailCnt(Connection conn, int userNo, int nowFailCnt) {
+		String sql = prop.getProperty("addFailCnt");
+		int result = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, nowFailCnt + 1);
+			pstmt.setInt(2, userNo);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("[ERROR] Failed to Add FailCnt");
+			e.printStackTrace();
+		} finally {
 			close(pstmt);
 		}
 		

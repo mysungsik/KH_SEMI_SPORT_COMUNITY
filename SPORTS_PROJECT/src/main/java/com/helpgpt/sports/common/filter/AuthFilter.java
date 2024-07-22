@@ -52,14 +52,21 @@ public class AuthFilter extends HttpFilter implements Filter {
 		    	// 1. DB 에서 USER INFO 가져온다
 		    	UserService service = new UserService();
 		    	User loginInfo = service.getLoginInfoFromSessionUUID(existSessionID);
+		    	String isAuto = "Y";
 		    	
 		    	// 2. 로그인처리한다.
 		    	if (loginInfo != null) {
-		    		String isAuto = "Y";
-		    		loginUser = service.userLogin(loginInfo, isAuto);
+		    		loginUser = service.userLogin(loginInfo);
 		    	}
 		    	
+		    	// 3. 로그인 처리 성공시
 		    	if (loginUser != null) {
+					// History 추가
+					service.updateUserHisotry(loginUser, isAuto);
+					
+					// 회원탈퇴 취소
+					service.cancelUserResign(loginUser);
+					
 		    		session = req.getSession();
 		    		session.setMaxInactiveInterval(300);
 		    		session.setAttribute("loginUser", loginUser);

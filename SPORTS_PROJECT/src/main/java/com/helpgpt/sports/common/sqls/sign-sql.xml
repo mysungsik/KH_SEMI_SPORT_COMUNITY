@@ -23,7 +23,8 @@
 		    DEFAULT,
 		    DEFAULT,
 		    DEFAULT,
-		    NULL
+		    NULL,
+		    0
 		)
 	</entry>
 	

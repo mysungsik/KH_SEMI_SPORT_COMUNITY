@@ -33,7 +33,8 @@ VALUES(
     'A',
     DEFAULT,
     DEFAULT,
-    NULL
+    NULL,
+    0
 );
 
 -- 2. USER HISTORY TABLE

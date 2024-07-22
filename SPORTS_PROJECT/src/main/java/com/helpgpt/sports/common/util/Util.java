@@ -3,7 +3,7 @@ package com.helpgpt.sports.common.util;
 public class Util {
 	public static String newLineHandling(String text) {
 		// 엔터로 담긴 텍스트 <br> 로 변경하여 처리
-		return text.replaceAll("(\n|\r|\r\n|\n\r)", "<br>");
+		return text.replaceAll("(\n\r|\r\n|\n|\r)", "<br>");
 	}
 
 	public static String XSSHandling(String text){

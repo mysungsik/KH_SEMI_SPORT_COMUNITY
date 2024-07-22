@@ -17,6 +17,7 @@ public class User {
 	private String userProfileImg;
 	private String userAuthority;
 	private String userState;
+	private int failCnt;
 	private String createdDate;
 	private String deletedDate;
 	private String lastLogin;
@@ -27,6 +28,13 @@ public class User {
 	public User(String userId, String userPw) {
 		this.userId = userId;
 		this.userPw = userPw;
+	}
+	
+	// 유저 Fail Cnt 용객체
+	public User(int userNo, String userId, int failCnt) {
+		this.userNo = userNo;
+		this.userId = userId;
+		this.failCnt = failCnt;
 	}
 	
 	// 유저 회원가입용객체
@@ -46,7 +54,7 @@ public class User {
 	// 일반 유저 정보 전달 객체 (pw 제외 전부)
 	public User(int userNo, int favoriteTeamNo, String userId, String userPw, String userEmail, String userName,String userPhone,
 			String userSns, String userBd, String userAddress, String userGender, String userNation,
-			String userProfileImg, String userAuthority, String userState, String createdDate, String deletedDate,
+			String userProfileImg, String userAuthority, String userState, int failCnt, String createdDate, String deletedDate,
 			String agreeAddress, String agreeEmail, String agreePhone) {
 		
 		this.userNo = userNo;
@@ -63,6 +71,7 @@ public class User {
 		this.userProfileImg = userProfileImg;
 		this.userAuthority = userAuthority;
 		this.userState = userState;
+		this.failCnt = failCnt;
 		this.createdDate = createdDate;
 		this.deletedDate = deletedDate;
 		this.userPolicy.setAgreeAddress(agreeAddress);
@@ -253,7 +262,13 @@ public class User {
 	public void setUserPolicyPhone(String agreePhone) {
 		this.userPolicy.setAgreePhone(agreePhone);
 	}
-
+	
+	public int getFailCnt() {
+		return failCnt;
+	}
+	public void setFailCnt(int failCnt) {
+		this.failCnt = failCnt;
+	}
 	@Override
 	public String toString() {
 		return "User [userNo=" + userNo + ", favoriteTeamNo=" + favoriteTeamNo + ", userId=" + userId + ", userPw="
