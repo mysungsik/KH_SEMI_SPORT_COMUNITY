@@ -54,5 +54,29 @@ public class FindInfoDAO {
 		
 		return userId;
 	}
+	public int findUserPw(Connection conn, String inputId, String inputEmail) {
+		int findReulst = 0;
+		String sql = prop.getProperty("findUserPw");
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, inputId);
+			pstmt.setString(2, inputEmail);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				findReulst = rs.getInt(1);
+			}
+			
+		} catch (Exception e) {
+			System.out.println("[ERROR] Failed to Find UserPw");
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return findReulst;
+	}
 	
 }

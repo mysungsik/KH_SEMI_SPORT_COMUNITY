@@ -12,10 +12,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
+import com.helpgpt.sports.findInfo.model.service.UpdateInfoService;
 
 @WebServlet("/api/updateUser/*")
 public class UpdateUserApi extends HttpServlet {
-
+	UpdateInfoService service = new UpdateInfoService();
+	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String reqPath = request.getPathInfo();
@@ -36,9 +38,8 @@ public class UpdateUserApi extends HttpServlet {
 				
 				int isPasswordUpdated = 0;
 				
-				// TODO : PW를 업데이트한다. with Service, DAO
-				System.out.println("PW를 업데이트한다. with Service, DAO");
-				isPasswordUpdated =1;	// 성공시
+				
+				isPasswordUpdated = service.updateUserPw(inputId, inputEmail, inputPw);	// 성공시
 				
 				if (isPasswordUpdated == 1) {
 					result.put("data", "success");

@@ -66,12 +66,11 @@ public class FindUserApi extends HttpServlet {
 				String inputId = request.getParameter("inputId");
 				String inputEmail = request.getParameter("inputEmail");
 				
-				boolean isFindPw = true;
+				int isFindPw = 0;
 				
-				// TODO : PW 를 DB 로 부터 찾는다. with Service, DAO
-				System.out.println("PW 를 DB 로 부터 찾는다. with Service, DAO");
+				isFindPw = service.findUserPw(inputId, inputEmail);
 				
-				if (isFindPw) {
+				if (isFindPw > 0) {
 					result.put("data", "success");
 					result.put("message", "일치하는 비밀번호를 찾았습니다.");
 					result.put("status", 200);

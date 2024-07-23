@@ -4,10 +4,14 @@ $(document).ready(function(){
 })
 
 function resultMessage(){
-	let resultValue = $("#resultMessage").val();
+	let resultEl = $("#resultMessage");
 	
-	if (resultValue != ""){
-		toastPop("warn", resultValue)
+	if (resultEl.length != 0){
+		let resultValue = $("#resultMessage").val();
+	
+		if (resultValue != ""){
+			toastPop("warn", resultValue)
+		}
 	}
 }
 
@@ -61,7 +65,7 @@ function findPw(e){
 }
 
 function showModal(){
-	let modalEl = $('#commonModal');
+	let modalEl = $('#changePwModal');
 
 	modalEl.find(".modal-title").html("비밀번호 변경")
 	modalEl.find(".modal-body").html(`
@@ -73,6 +77,9 @@ function showModal(){
 }
 
 function modalConfirm(){
+	let modalEl = $('#changePwModal');
+	var changePwModal = bootstrap.Modal.getInstance(modalEl);
+	
 	let findPwForm = document.findPwForm;
 	
 	let inputId = findPwForm.find_id.value;
@@ -92,7 +99,6 @@ function modalConfirm(){
 			},
 			dataType: "json",
 			success : function(res){
-				console.log(res)
 				// 비밀번호 업데이트 되었는지 여부 판단
 				let isPasswordUpdated =  res.hasOwnProperty("data");
 				

@@ -19,4 +19,14 @@ public class FindInfoService {
 		return userID;
 	}
 
+	public int findUserPw(String inputId, String inputEmail) {
+		Connection conn = getConnection();
+
+		int findUser = dao.findUserPw(conn, inputId, inputEmail);
+		
+		close(conn);
+		
+		return findUser;
+	}
+
 }
