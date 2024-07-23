@@ -12,7 +12,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class SendMail {
-	public static void googleMailSend(String user_email, String user_pw, String receiver_email) {
+	public static void googleMailSend(String user_email, String user_pw, String receiver_email, String subject, String content) {
         String user = user_email;
         String password = user_pw;
 
@@ -37,10 +37,10 @@ public class SendMail {
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(receiver_email));  //수신자메일주소
 
             // Subject
-            message.setSubject("승연하이"); //메일 제목을 입력
+            message.setSubject(subject); //메일 제목을 입력
 
             // Text
-            message.setText("비밀번호 인증하세요");    //메일 내용을 입력
+            message.setText(content);    //메일 내용을 입력
 
             // send the message
             Transport.send(message); ////전송

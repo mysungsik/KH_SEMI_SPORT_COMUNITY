@@ -3,11 +3,17 @@
 <properties>
 	
 	<comment>sql file for user</comment>
-	<entry key="updateUserPw">
+	<entry key="resetUserPw">
 		UPDATE USER_INFO
-		SET USER_PW = ?
-		WHERE USER_ID = ?
-		AND USER_EMAIL = ?
+		SET USER_PW = 'KQZ3dpm+3daZEkqDpEvtnk6AMuxOJ22ZNR1WmZoxVVq+5YWwAZ+SflpCH26gc3X2nVzfL1zre30F+jsMxgowaw=='
+		WHERE USER_NO = ?
+	</entry>
+	
+	<entry key="userMailCheck">
+		SELECT COUNT(*)
+		FROM USER_MAIL_CHECK
+		WHERE USER_NO = ?
+		AND MAIL_UUID = ?
 	</entry>
 	
 </properties>

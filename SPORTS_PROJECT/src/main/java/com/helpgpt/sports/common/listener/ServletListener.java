@@ -28,7 +28,9 @@ public class ServletListener implements ServletContextListener {
 		// [메일]TLS 프로토콜 추가 설정 (JDK 8 이상에서 TLS 1.2 사용)
         System.setProperty("https.protocols", "TLSv1.2");
 
-        // [메일]
+        // [메일] ID 비밀번호 가져오기 (From web.xml)
+        String mailTestId = servletContext.getInitParameter("mailTestId");
+        servletContext.setAttribute("mailTestPw", mailTestId); 
         String mailTestPw = servletContext.getInitParameter("mailTestPw");
         servletContext.setAttribute("mailTestPw", mailTestPw); 
         

@@ -6,14 +6,25 @@ import java.sql.Connection;
 
 import com.helpgpt.sports.findInfo.model.dao.FindInfoDAO;
 import com.helpgpt.sports.findInfo.model.dao.UpdateInfoDAO;
+import com.helpgpt.sports.login.model.vo.User;
 
 public class UpdateInfoService {
 	UpdateInfoDAO dao = new UpdateInfoDAO();
-
-	public int updateUserPw(String inputId, String inputEmail, String inputPw) {
+	
+	public int mailCheck(int userNo, String inputMailAuth) {
 		Connection conn = getConnection();
 		
-		int result = dao.updateUserPw(conn, inputId, inputEmail, inputPw);
+		int result = dao.mailCheck(conn, userNo, inputMailAuth);
+		
+		close(conn);
+		
+		return result;
+	}
+	
+	public int resetUserPw(int userNo) {
+		Connection conn = getConnection();
+		
+		int result = dao.resetUserPw(conn, userNo);
 		
 		if (result > 0) {
 			commit(conn);
@@ -25,4 +36,6 @@ public class UpdateInfoService {
 		
 		return result;
 	}
+
+
 }

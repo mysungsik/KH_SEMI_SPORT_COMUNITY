@@ -31,17 +31,16 @@ public class UpdateUserApi extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
  		switch (path) {
-			case "updatePw" : {
-				String inputId = request.getParameter("inputId");
-				String inputEmail = request.getParameter("inputEmail");
-				String inputPw = request.getParameter("inputPw");
+			case "resetPw" : {
+				int userNo = Integer.parseInt(request.getParameter("userNo"));
+				String inputMailAuth = request.getParameter("inputMailAuth");
 				
-				int isPasswordUpdated = 0;
+				int isMailAuthChecked = 0;
 				
+				isMailAuthChecked = service.mailCheck(userNo, inputMailAuth);	// 성공시
 				
-				isPasswordUpdated = service.updateUserPw(inputId, inputEmail, inputPw);	// 성공시
-				
-				if (isPasswordUpdated == 1) {
+				if (isMailAuthChecked > 0) {
+					service.resetUserPw(userNo);
 					result.put("data", "success");
 					result.put("message", "비밀번호가 변경되었습니다.");
 					result.put("status", 200);

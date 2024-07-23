@@ -22,11 +22,28 @@ public class FindInfoService {
 	public int findUserPw(String inputId, String inputEmail) {
 		Connection conn = getConnection();
 
-		int findUser = dao.findUserPw(conn, inputId, inputEmail);
+		int foundUserNo = dao.findUserPw(conn, inputId, inputEmail);
 		
 		close(conn);
 		
-		return findUser;
+		return foundUserNo;
+	}
+
+
+	public void updateMailUUID(int foundUserNo, String mailCheckUUID) {
+		Connection conn = getConnection();
+
+		int updateReulst = dao.updateMailUUID(conn, foundUserNo, mailCheckUUID);
+		
+		
+		if (updateReulst > 0) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+		close(conn);
+
+		return;
 	}
 
 }

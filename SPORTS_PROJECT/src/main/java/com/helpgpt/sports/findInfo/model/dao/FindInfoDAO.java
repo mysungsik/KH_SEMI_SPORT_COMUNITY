@@ -55,7 +55,7 @@ public class FindInfoDAO {
 		return userId;
 	}
 	public int findUserPw(Connection conn, String inputId, String inputEmail) {
-		int findReulst = 0;
+		int foundUserNo = 0;
 		String sql = prop.getProperty("findUserPw");
 		
 		try {
@@ -65,7 +65,7 @@ public class FindInfoDAO {
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
-				findReulst = rs.getInt(1);
+				foundUserNo = rs.getInt("USER_NO");
 			}
 			
 		} catch (Exception e) {
@@ -76,7 +76,27 @@ public class FindInfoDAO {
 			close(pstmt);
 		}
 		
-		return findReulst;
+		return foundUserNo;
+	}
+	public int updateMailUUID(Connection conn, int foundUserNo, String mailCheckUUID) {
+		String sql = prop.getProperty("updateMailUUID");
+		int result = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, mailCheckUUID);
+			pstmt.setInt(2, foundUserNo);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("[ERROR] Failed to update Mail UUID");
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
 	}
 	
 }

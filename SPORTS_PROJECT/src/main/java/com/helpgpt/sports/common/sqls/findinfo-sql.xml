@@ -11,10 +11,16 @@
 	</entry>
 	
 	<entry key="findUserPw">
-		SELECT COUNT(*)
+		SELECT USER_NO
 		FROM USER_INFO
 		WHERE  USER_ID = ?
 		AND USER_EMAIL = ?
+	</entry>
+	
+	<entry key="updateMailUUID">
+		UPDATE USER_MAIL_CHECK
+		SET MAIL_UUID = ?
+		WHERE USER_NO = ?
 	</entry>
 	
 </properties>

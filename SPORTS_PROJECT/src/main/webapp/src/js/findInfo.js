@@ -54,7 +54,7 @@ function findPw(e){
 				
 				// 찾았다면 모달 띄우기
 				if (isFindUser){
-					showModal();
+					showModal(res.data);
 				}
 				else{
 					toastPop("warn", `${res.message}`)
@@ -64,13 +64,14 @@ function findPw(e){
 	}
 }
 
-function showModal(){
+function showModal(foundUserNo){
 	let modalEl = $('#changePwModal');
 
 	modalEl.find(".modal-title").html("비밀번호 변경")
 	modalEl.find(".modal-body").html(`
-		<p> 변경할 비밀번호를 입력해주세요 </p>
-		<input type="password" name="new_pw">`
+		<p> 전송된 메일의 인증번호를 입력해주세요 </p>
+		<input type="hidden" name="user_no" value=${foundUserNo}>
+		<input type="text" name="mail_auth">`
 	);
 
 	modalEl.modal('show');
@@ -80,22 +81,16 @@ function modalConfirm(){
 	let modalEl = $('#changePwModal');
 	var changePwModal = bootstrap.Modal.getInstance(modalEl);
 	
-	let findPwForm = document.findPwForm;
+	const userNo =$('input[name="user_no"]').val();
+	let inputMailAuth = $('input[name="mail_auth"]').val();
 	
-	let inputId = findPwForm.find_id.value;
-	let inputEmail = findPwForm.find_email.value;
-	let inputPw = $('input[name="new_pw"]').val();
-	
-	// 체크된 ID, EMAIL 이므로 더이상 체크하지않는다.
-	if (pwValidate(inputPw)){
-	let requestUrl = `${contextPath}/api/updateUser/updatePw`
+	let requestUrl = `${contextPath}/api/updateUser/resetPw`
 		$.ajax({
 			type : "POST",
 			url : requestUrl,
 			data : {
-				inputId,
-				inputEmail,
-				inputPw
+				userNo,
+				inputMailAuth
 			},
 			dataType: "json",
 			success : function(res){
@@ -111,5 +106,5 @@ function modalConfirm(){
 				}
 			}
 		})
-	}
+	
 }
