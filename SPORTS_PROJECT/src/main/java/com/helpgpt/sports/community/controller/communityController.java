@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
 import com.helpgpt.sports.community.model.service.CommunityService;
 import com.helpgpt.sports.community.model.vo.Board;
 
@@ -47,6 +48,10 @@ public class communityController extends HttpServlet {
 		
 		switch(sub) {
 		case "info" : type = 1; break;
+		case "free" : type = 2; break;
+		case "cheer" : type = 3; break;
+		case "popular" : type = 4; break;
+		case "all" : type = 0; break;
 		}
 		
 		try {
@@ -55,18 +60,24 @@ public class communityController extends HttpServlet {
 			switch (path) {
 			case "": {
 				dispatcher = req.getRequestDispatcher(defaultURLPath + "community.jsp");
-				
 				dispatcher.forward(req, resp);
 			}break;
 			case "communityBoard": {
 				dispatcher = req.getRequestDispatcher(defaultURLPath + "communityBoard.jsp");
 				List<Board> boardList = service.selectBoardList(type);
 				System.out.println("controller : " + boardList);
-				req.setAttribute("sub", sub); 
+				
+				req.setAttribute("boardList", boardList);
+				req.setAttribute("sub", type); 
 				dispatcher.forward(req, resp);
 			};break;
 			case "communityDetail": {
 				dispatcher = req.getRequestDispatcher(defaultURLPath + "communityDetail.jsp");
+				
+				Board board = service.selectBoardDetail(sub);
+				System.out.println(board);
+				
+				req.setAttribute("board", board);
 				req.setAttribute("sub", sub);
 				dispatcher.forward(req, resp);
 			};break;

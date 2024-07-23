@@ -12,7 +12,7 @@ public class CommunityService {
 	
 	CommunityDAO dao = new CommunityDAO();
 
-	public List<Board> selectBoardList(int type) throws Exception{
+	public List<Board> selectBoardList(int type){
 		
 		Connection conn = getConnection();
 		
@@ -22,6 +22,20 @@ public class CommunityService {
 		
 		return boardList;
 	}
+
+	public Board selectBoardDetail(String sub) {
+		
+		int boardNo = Integer.parseInt(sub);
+		
+		Connection conn = getConnection();
+		
+		Board board = dao.selectBoardDetail(conn, boardNo);
+		
+		close(conn);
+		
+		return board;
+	}
+
 
 
 

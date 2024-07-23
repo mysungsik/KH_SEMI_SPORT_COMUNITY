@@ -31,42 +31,76 @@ public class CommunityDAO {
 		}
 	}
 
-	public List<Board> selectBoardList(Connection conn, int type) throws Exception{
+	public List<Board> selectBoardList(Connection conn, int type){
 		List<Board> boardList = new ArrayList<>();
 		
 		try {
 			String sql = prop.getProperty("selectBoardList");
 			
-			System.out.println(sql);
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setInt(1, type);
 			
 			rs = pstmt.executeQuery();
-			System.out.println(type);
-			
 			
 			while(rs.next()) {
 				Board board = new Board();
 				
+				board.setBoardTitle(rs.getString("COMM_TITLE"));
 				board.setBoardAuthor(rs.getString("USER_NAME"));
 				board.setBoardCategory(rs.getString("TYPE_NAME"));
-				board.setBoardTitle(rs.getString("COMM_TITLE"));
-				board.setBoardContent(rs.getNString("COMM_CONTENT"));
+				board.setBoardCreateDate(rs.getString("CREATE_DT"));
+				board.setBoardViews(rs.getInt("COMM_VIEWS"));
+				board.setBoardNo(rs.getInt("COMM_NO"));
+			
+				boardList.add(board);
 				
-				System.out.println(board); 
 			}
 			
-			
-
-			
-			
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("[ERROR] Failed to select Board");
 		}finally {
 			close(pstmt);
 		}
 		
 		
 		return boardList;
+	}
+
+	public Board selectBoardDetail(Connection conn, int boardNo) {
+		Board board = null;
+		
+		try {
+			String sql = prop.getProperty("selectBoardDetail");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, boardNo);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				board = new Board();
+				
+				board.setBoardContent(rs.getString("COMM_CONTENT"));
+				board.setBoardTitle(rs.getString("COMM_TITLE"));
+				board.setBoardAuthor(rs.getString("USER_NAME"));
+				board.setBoardCategory(rs.getString("TYPE_NAME"));
+				board.setBoardCreateDate(rs.getString("CREATE_DT"));
+				board.setBoardViews(rs.getInt("COMM_VIEWS"));
+			
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("[ERROR] Failed to select Board");
+		}finally {
+			close(pstmt);
+		}
+		
+		
+		return board;
 	}
 
 

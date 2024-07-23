@@ -50,7 +50,7 @@ public class ServletListener implements ServletContextListener {
 
         // 매시간 스케줄링 하여 DB DELETE 시작
         executor = Executors.newScheduledThreadPool(2);	// Thread 개수
-        executor.scheduleAtFixedRate(task, 0, 1, TimeUnit.MINUTES);	// 실행시킬 메소드, 초기지연, 주기, 타임유닛
+        executor.scheduleAtFixedRate(task, 30, 30, TimeUnit.MINUTES);	// 실행시킬 메소드, 초기지연, 주기, 타임유닛
 	}
 
 	@Override
