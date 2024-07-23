@@ -53,6 +53,7 @@ VALUES(4, '내야수');
 INSERT INTO PLAYER_POSITION
 VALUES(5, '외야수');
 
+COMMIT;
 -- 1. TEAMS TABLE
 INSERT INTO TEAMS
 VALUES(SEQ_TEAM_NO.NEXTVAL, 1, 'KIA TIGERS',  '심재학', '이범호', '기아', '전라북도', 
@@ -71,48 +72,51 @@ KBO 리그의 대표적인 인기 구단 중 하나이자 삼성 라이온즈와
 
 -- 1-1. TEAM_IMG
 
+COMMIT;
+
 -- 2. PLAYER
 INSERT INTO PLAYER
-VALUES(SEQ_PLAYER_NO.NEXTVAL, 2,  1, '양현종', 54, 19880301, 2007, 183, 91, '학강초,광주동성중,광주동성고,KIA,텍사스', 50000,
+VALUES(SEQ_PLAYER_NO.NEXTVAL, 2,  9, '양현종', 54, 19880301, 2007, 183, 91, '학강초,광주동성중,광주동성고,KIA,텍사스', 50000,
 '2007 KIA타이거즈, 2021 텍사스 레인저스, 2022 KIA 타이거즈, 2010 아시안게임 국가대표 ,2017 WBC 국가대표 , 2014/2017 최동원상 수상
 , 2017 KBO리그 정규시즌 다승왕(20승), 2017 KBO리그 정규시즌 MVP, 2017 KBO 한국시리즈 MVP, 2017 KBO 골든글러브 수상
 , 2018 아시안게임 국가대표', 'Y');
 
 INSERT INTO PLAYER
-VALUES(SEQ_PLAYER_NO.NEXTVAL, 1,  1, '이범호', 71, 19811125, 2000, 183, 93, '대구수창초,경운중,대구고,목원대,한화,KIA', DEFAULT,
+VALUES(SEQ_PLAYER_NO.NEXTVAL, 1,  9, '이범호', 71, 19811125, 2000, 183, 93, '대구수창초,경운중,대구고,목원대,한화,KIA', DEFAULT,
 '2000 한화이글스, 2010 소프트뱅크호크스, 2011 KIA타이거즈', 'Y' );
 
 INSERT INTO PLAYER
-VALUES(SEQ_PLAYER_NO.NEXTVAL, 5, 1, '최형우', 34, 19831216, 2002, 180, 106,
+VALUES(SEQ_PLAYER_NO.NEXTVAL, 5, 9, '최형우', 34, 19831216, 2002, 180, 106,
 '진북초,전주동중,전주고,삼성,경찰,삼성' , 100000, 
 '2002 삼성라이온스, 2017 KIA타이거즈, 2016 KBO 골든글러브 수상, 2017 WBC 국가대표, 2017 KBO리그 정규시즌 출루율 1위, 2017 KBO 골든글러브 수상','Y');
 
 -- 2-1. PLAYER_IMG
 
+COMMIT;
+-- 3. MATCH
+INSERT INTO MATCH
+VALUES(
+SEQ_MATCH_NO.NEXTVAL, 9, 1, 1, 9, DEFAULT, 'H'
+);
+INSERT INTO MATCH
+VALUES(
+SEQ_MATCH_NO.CURRVAL, 10, 1, 1, 8, DEFAULT, 'A'
+);
+INSERT INTO MATCH
+VALUES(
+SEQ_MATCH_NO.NEXTVAL, 11, 1, 1, 7, DEFAULT, 'H'
+);
+INSERT INTO MATCH
+VALUES(
+SEQ_MATCH_NO.CURRVAL, 12, 3, 3, 6, DEFAULT, 'A'
+);
+INSERT INTO MATCH
+VALUES(
+SEQ_MATCH_NO.NEXTVAL, 13, 3, 3, 6, DEFAULT, 'H'
+);
+
 
 -- 1. USER TABLE ( DUMMY USER INSERT)
-INSERT INTO USER_INFO 
-VALUES(
-    SEQ_USER_NO.nextval,
-    NULL,
-    'sportsAdmin', 
-    'KQZ3dpm+3daZEkqDpEvtnk6AMuxOJ22ZNR1WmZoxVVq+5YWwAZ+SflpCH26gc3X2nVzfL1zre30F+jsMxgowaw==',
-    'sportAdmin@test.com', 
-    '김아무', 
-    '01011112222', 
-    NULL, 
-    NULL,
-    '김장시 배추동',
-    'F',
-    'KO',
-    NULL,
-    NULL,
-    'A',
-    DEFAULT,
-    DEFAULT,
-    NULL,
-    0
-);
 
 -- COMM(게시글)
 
@@ -122,7 +126,7 @@ BEGIN
 
     INSERT INTO COMM
     VALUES(SEQ_COMM_NO.NEXTVAL,
-           1, 1, DEFAULT, 
+           7, 1, DEFAULT, 
            SEQ_COMM_NO.CURRVAL || '번째 게시글',
            SEQ_COMM_NO.CURRVAL || '번째 게시글 내용입니다.',
            DEFAULT, DEFAULT, DEFAULT, DEFAULT
@@ -133,13 +137,14 @@ BEGIN
 END;
 /
 
+COMMIT;
 -- YTPE2(자유)
 BEGIN
     FOR I IN 1..100 LOOP 
 
     INSERT INTO COMM
     VALUES(SEQ_COMM_NO.NEXTVAL,
-           1, 2, DEFAULT, 
+           7, 2, DEFAULT, 
            SEQ_COMM_NO.CURRVAL || '번째 게시글',
            SEQ_COMM_NO.CURRVAL || '번째 게시글 내용입니다.',
            DEFAULT, DEFAULT, DEFAULT, DEFAULT
@@ -156,7 +161,7 @@ BEGIN
 
     INSERT INTO COMM
     VALUES(SEQ_COMM_NO.NEXTVAL,
-           1, 3, 1, 
+           7, 3, 1, 
            SEQ_COMM_NO.CURRVAL || '번째 게시글',
            SEQ_COMM_NO.CURRVAL || '번째 게시글 내용입니다.',
            DEFAULT, DEFAULT, DEFAULT, DEFAULT
@@ -179,6 +184,7 @@ INSERT INTO COMM_TYPE VALUES(3, '응원');
 -- 6. REPORT TABLE
 
 
+COMMIT;
 
 
     
