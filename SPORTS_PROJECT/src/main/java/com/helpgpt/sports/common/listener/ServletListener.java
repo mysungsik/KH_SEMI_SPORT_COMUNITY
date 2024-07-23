@@ -59,7 +59,7 @@ public class ServletListener implements ServletContextListener {
 		final ScheduledExecutorService executor = this.executor;
 		
 		if (executor != null) {
-			executor.shutdown();	// 반드시 executor 를 종료해야한다. 종료하지 않으면 영원히 Thread 에서 대기상태일수 있다.
+			executor.shutdownNow();	// 반드시 executor 를 종료해야한다. 종료하지 않으면 영원히 Thread 에서 대기상태일수 있다.
 			this.executor = null;	// executor 를 null 처리한다.
 		}
 	}

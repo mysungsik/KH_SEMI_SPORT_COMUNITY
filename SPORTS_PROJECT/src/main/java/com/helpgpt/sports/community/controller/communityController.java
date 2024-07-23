@@ -30,6 +30,9 @@ public class communityController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		CommunityService service = new CommunityService();
+		
 		// Path 지정
 		String reqPath = req.getPathInfo();
 		String path = "";
@@ -40,29 +43,46 @@ public class communityController extends HttpServlet {
 			sub = reqPath.split("/")[2]; 
 		}
 		
+		int type = 0;
 		
-		// 경로에 따라 필요한 페이지로 추가 이동
-		switch (path) {
-		case "": {
-			dispatcher = req.getRequestDispatcher(defaultURLPath + "community.jsp");
-			dispatcher.forward(req, resp);
+		switch(sub) {
+		case "info" : type = 1; break;
+		}
+		
+		try {
+			
+			// 경로에 따라 필요한 페이지로 추가 이동
+			switch (path) {
+			case "": {
+				dispatcher = req.getRequestDispatcher(defaultURLPath + "community.jsp");
+				
+				dispatcher.forward(req, resp);
 			}break;
-		case "communityBoard": {
-			dispatcher = req.getRequestDispatcher(defaultURLPath + "communityBoard.jsp");
-			req.setAttribute("sub", sub); 
-			dispatcher.forward(req, resp);
+			case "communityBoard": {
+				dispatcher = req.getRequestDispatcher(defaultURLPath + "communityBoard.jsp");
+				List<Board> boardList = service.selectBoardList(type);
+				System.out.println("controller : " + boardList);
+				req.setAttribute("sub", sub); 
+				dispatcher.forward(req, resp);
 			};break;
-		case "communityDetail": {
-			dispatcher = req.getRequestDispatcher(defaultURLPath + "communityDetail.jsp");
-			req.setAttribute("sub", sub);
-			dispatcher.forward(req, resp);
+			case "communityDetail": {
+				dispatcher = req.getRequestDispatcher(defaultURLPath + "communityDetail.jsp");
+				req.setAttribute("sub", sub);
+				dispatcher.forward(req, resp);
 			};break;
-		case "communityPosting": {
-			dispatcher = req.getRequestDispatcher(defaultURLPath + "communityPosting.jsp");
-			req.setAttribute("sub", sub);
-			dispatcher.forward(req, resp);
+			case "communityPosting": {
+				dispatcher = req.getRequestDispatcher(defaultURLPath + "communityPosting.jsp");
+				req.setAttribute("sub", sub);
+				dispatcher.forward(req, resp);
 			};break;
-		default:System.out.println("404 페이지로 이동");}
+			default:System.out.println("404 페이지로 이동");}
+			
+			
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 		
 	}
 }

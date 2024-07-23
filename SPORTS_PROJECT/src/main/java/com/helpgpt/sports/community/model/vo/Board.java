@@ -4,6 +4,7 @@ public class Board {
 	
 	private int boardNo;
 	private String boardTitle;
+	private String boardContent;
 	private String boardAuthor;
 	private String boardCreateDate;
 	private int boardViews;
@@ -21,6 +22,12 @@ public class Board {
 	}
 	public void setBoardTitle(String boardTitle) {
 		this.boardTitle = boardTitle;
+	}
+	public String getBoardContent() {
+		return boardContent;
+	}
+	public void setBoardContent(String boardContent) {
+		this.boardContent = boardContent;
 	}
 	public String getBoardAuthor() {
 		return boardAuthor;
@@ -58,13 +65,14 @@ public class Board {
 	public void setBoardLike(int boardLike) {
 		this.boardLike = boardLike;
 	}
-	
 	@Override
 	public String toString() {
-		return "Board [boardNo=" + boardNo + ", boardTitle=" + boardTitle + ", boardAuthor=" + boardAuthor
-				+ ", boardCreateDate=" + boardCreateDate + ", boardViews=" + boardViews + ", boardCategory="
-				+ boardCategory + ", boardComent=" + boardComent + ", boardLike=" + boardLike + "]";
+		return "Board [boardNo=" + boardNo + ", boardTitle=" + boardTitle + ", boardContent=" + boardContent
+				+ ", boardAuthor=" + boardAuthor + ", boardCreateDate=" + boardCreateDate + ", boardViews=" + boardViews
+				+ ", boardCategory=" + boardCategory + ", boardComent=" + boardComent + ", boardLike=" + boardLike
+				+ "]";
 	}
 
+	
 	
 }

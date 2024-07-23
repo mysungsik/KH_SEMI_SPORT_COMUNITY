@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>커뮤니티 xml파일</comment>
+
+	<entry key="selectBoardList">
+		SELECT T.TYPE_NAME, C.COMM_TITLE, U.USER_NAME, C.CREATE_DT, C.COMM_VIEWS
+		FROM COMM C
+		JOIN USER_INFO U USING(USER_NO)
+		JOIN COMM_TYPE T ON TYPE_NO = COMM_TYPE
+		WHERE COMM_TYPE = ?
+		ORDER BY COMM_NO DESC
+	</entry>
+</properties>
