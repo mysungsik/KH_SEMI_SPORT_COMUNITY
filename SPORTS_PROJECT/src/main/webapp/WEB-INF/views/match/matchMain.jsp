@@ -17,7 +17,7 @@
 		<section class="container">
 			<div class="main">
 				<div class="main-top card__lblue">
-					<div class="main-top-bar fs-20__b fc__blue">
+					<div class="main-top-bar fs-20__b base__mblue">
 						<p>KBO 순위</p>
 						<div class="more">
 							<a href="${contextPath}/match/teamRanking">더보기</a>

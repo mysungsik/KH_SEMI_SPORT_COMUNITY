@@ -20,6 +20,7 @@
     display: flex;
     justify-content:center;
     align-items: center;
+    border-radius: 15% 15% 0 0 ;
 }
 .main-top-bar p{
 	font-size:20px;
