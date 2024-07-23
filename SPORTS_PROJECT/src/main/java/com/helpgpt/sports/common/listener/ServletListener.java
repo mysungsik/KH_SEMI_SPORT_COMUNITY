@@ -23,11 +23,20 @@ public class ServletListener implements ServletContextListener {
 	
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
+		ServletContext servletContext = sce.getServletContext();
+		
+		// [메일]TLS 프로토콜 추가 설정 (JDK 8 이상에서 TLS 1.2 사용)
+        System.setProperty("https.protocols", "TLSv1.2");
 
+        // [메일]
+        String mailTestPw = servletContext.getInitParameter("mailTestPw");
+        servletContext.setAttribute("mailTestPw", mailTestPw); 
+        
+        
 		// 톰캣 시작시 application Scope 에 contextPath 넣기
-        ServletContext servletContext = sce.getServletContext();
+        
         String contextPath = servletContext.getContextPath();
-        servletContext.setAttribute("contextPath", contextPath);
+        servletContext.setAttribute("contextPath", contextPath); 
         
         // 서비스 생성, 현재 시간
         UserService service = new UserService();

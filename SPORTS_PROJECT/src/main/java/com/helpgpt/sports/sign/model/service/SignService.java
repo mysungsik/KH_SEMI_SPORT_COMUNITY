@@ -14,10 +14,12 @@ public class SignService {
 		int signupResult = dao.signup(conn, signupInfo);
 		int createSessionResult = dao.createSessionUUID(conn);
 		int createPolicyResult = dao.createUserPolicy(conn);
+		int createMailResult = dao.createMailResult(conn);
 		
 		if (signupResult > 0 &&
 			createSessionResult > 0 &&
-			createPolicyResult > 0) {
+			createPolicyResult > 0 &&
+			createMailResult > 0) {
 			commit(conn);
 		} else {
 			rollback(conn);

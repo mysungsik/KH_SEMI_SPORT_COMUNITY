@@ -154,6 +154,25 @@ public class SignDAO {
 		return result;
 	}
 	
+
+	public int createMailResult(Connection conn) {
+		int result = 0;
+		
+		String sql = prop.getProperty("create_mail_check");
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("[ERROR] Failed to create mail check");
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+	
 	public int userResign(Connection conn, int userNo) {
 		String sql = prop.getProperty("userResign");
 		int result = 0;
@@ -191,4 +210,5 @@ public class SignDAO {
 		
 		return result;
 	}
+
 }

@@ -55,6 +55,15 @@
 		)
 	</entry>
 	
+	<entry key="create_mail_check">
+		INSERT INTO USER_MAIL_CHECK 
+		VALUES(
+		   SEQ_USER_NO.currval,
+		   NULL
+		)
+	</entry>
+	
+	
 	<entry key="userResign">
 		UPDATE USER_INFO
 		SET DELETE_DT = SYSDATE
