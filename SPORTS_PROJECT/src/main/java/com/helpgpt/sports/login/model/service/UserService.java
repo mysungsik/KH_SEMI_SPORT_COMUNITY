@@ -3,6 +3,7 @@ package com.helpgpt.sports.login.model.service;
 import static com.helpgpt.sports.common.util.JDBCTemplate.*;
 
 import java.sql.Connection;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -169,5 +170,17 @@ public class UserService {
 		
 		return;
 		
+	}
+	
+	// 유저 정보 완전 삭제
+	public void deleteUserInfo() {
+		Connection conn = getConnection();
+		int result = dao.deleteUserInfo(conn);
+		
+		if (result > 0) {
+			commit(conn);
+		} else {
+			rollback(conn);
+		}
 	}
 }

@@ -14,7 +14,7 @@
         <section class="container">
             <p class="header-text"> 로그인 </p>
             <hr class="hr__gray">
-            <form name="loginForm" class="login-form base__lblue br-15 box-shadow" action="<%=request.getContextPath()%>/api/user/login" method="post">
+            <form name="loginForm" class="login-form base__lblue br-15 box-shadow" action="${contextPath}/api/user/login" method="post">
                 <div class="login-essential mt-20">
                     <div>
                         <input class="box-shadow" type="text" name="login_id" placeholder="ID : *소문자를 포함 5~13 글자 / 대문자 및 숫자 사용가능">

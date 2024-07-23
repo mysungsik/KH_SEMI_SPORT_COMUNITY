@@ -26,6 +26,7 @@ function userLogin(){
 					inputPw,
 					stayLogin
 				},
+				async : false,
 				dataType: "json",
 				success: function (res) {
 					// 로그인 성공 여부 판단

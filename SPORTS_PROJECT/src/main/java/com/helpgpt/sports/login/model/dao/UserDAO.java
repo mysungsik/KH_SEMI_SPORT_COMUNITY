@@ -297,4 +297,22 @@ public class UserDAO {
 		
 		return result;
 	}
+
+	public int deleteUserInfo(Connection conn) {
+		String sql = "DELETE FROM USER_INFO WHERE DELETE_DT < SYSDATE - INTERVAL '7' DAY";
+		int result = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			result = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("[ERROR] Failed to delete User Info");
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
 }
