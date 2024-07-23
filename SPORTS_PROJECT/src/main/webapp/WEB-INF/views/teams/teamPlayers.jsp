@@ -28,15 +28,15 @@
 		<div class="pagecover-bottom">
 			<div class="pagecover-bottom-inner d-flex fc__white">
 				<ul>
-					<li>코칭스태프</li>
+					<li><a href="${contextPath}/team/${requestScope.team }/players?type=1">코칭스태프</a></li>
 					|
-					<li>투수</li>
+					<li><a href="${contextPath}/team/${requestScope.team }/players?type=2">투수</a></li>
 					|
-					<li>포수</li>
+					<li><a href="${contextPath}/team/${requestScope.team }/players?type=3">포수</a></li>
 					|
-					<li>내야수</li>
+					<li><a href="${contextPath}/team/${requestScope.team }/players?type=4">내야수</a></li>
 					|
-					<li>외야수</li>
+					<li><a href="${contextPath}/team/${requestScope.team }/players?type=5">외야수</a></li>
 				</ul>
 			</div>
 		</div>
@@ -47,6 +47,10 @@
 	<main>
 		<!-- 플레이어 시작 -->
 		<div class="team-players">
+			<div class="button-area">
+				<button id="add-player-btn" onclick="location.href='${contextPath}/team/${requestScope.team}/players/playersAdd' ">선수 추가</button>
+				<button id="delete-player-btn">선수 삭제</button>
+			</div>
 			<table class="team-table">
 				<tr >
 					<td>

@@ -18,6 +18,10 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="<%= request.getContextPath() %>/src/common/common.js" defer></script>
 <script src="${contextPath}/src/js/teams.js" defer></script>
+<script>
+	const contextPath = "${contextPath}";
+	const loginUser = "${loginUser}";
+</script>
 
 </head>
 
@@ -67,19 +71,19 @@
 		        <div class="header-nav">
 		            <ul class="d-flex">
 		            	<li>
-							<a class="fs-20__b text-hover__blue team-name" href="${contextPath}/team/info">BLUE JAYS</a>
+							<a class="fs-20__b text-hover__blue team-name" href="${contextPath}/team/info"></a>
 						</li>
 						<li>
 							<a class="fs-20__b text-hover__blue" href="${contextPath}/team/players">PLAYERS</a>
 						</li>
 						<li>
-							<a href="${contextPath}/team"><img class="team-logo" src='${contextPath}/public/images/teams/FL.png'></a>
+							<a href="${contextPath}/team"><img class="team-logo"></a>
 						</li>
 						<li>
 							<a class="fs-20__b text-hover__blue" href="${contextPath}/team/schedule">SCHEDULE</a>
 						</li>
 						<li>
-							<a class="fs-20__b text-hover__blue" href="${contextPath}/team/content">CONTENTS</a>
+							<a class="fs-20__b text-hover__blue" href="${contextPath}/team/content">CHEERS</a>
 						</li>
 		            </ul>
 		        </div>
@@ -102,19 +106,19 @@
                 <div class="header-nav">
                     <ul class="d-flex">
 						<li>
-							<a class="fs-20__b text-hover__blue team-name" href="${contextPath}/team/${requestScope.team }/info">BLUE JAYS</a>
+							<a class="fs-20__b text-hover__blue team-name" href="${contextPath}/team/${requestScope.team }/info"></a>
 						</li>
 						<li>
 							<a class="fs-20__b text-hover__blue" href="${contextPath}/team/${requestScope.team }/players">PLAYERS</a>
 						</li>
 						<li>
-							<a href="${contextPath}/team/${requestScope.team }"><img class="team-logo" src='${contextPath}/public/images/teams/FL.png'></a>
+							<a href="${contextPath}/team/${requestScope.team }"><img class="team-logo"></a>
 						</li>
 						<li>
 							<a class="fs-20__b text-hover__blue" href="${contextPath}/team/${requestScope.team }/schedule">SCHEDULE</a>
 						</li>
 						<li>
-							<a class="fs-20__b text-hover__blue" href="${contextPath}/team/${requestScope.team }/content">CONTENTS</a>
+							<a class="fs-20__b text-hover__blue" href="${contextPath }/community/communityBoard/cheer">CHEERS</a>
 						</li>
                     </ul>
                 </div>

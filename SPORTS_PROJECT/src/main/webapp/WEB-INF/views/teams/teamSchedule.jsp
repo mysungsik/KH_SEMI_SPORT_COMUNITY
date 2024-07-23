@@ -15,7 +15,6 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	 <!-- pagination.js CSS -->
 	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.css">
-	 <link rel="stylesheet" href="./index.css">
 	 <!-- pagination.js JavaScript -->
 	 <script src="${contextPath }/src/js/teamSchedule.js" defer></script>
 

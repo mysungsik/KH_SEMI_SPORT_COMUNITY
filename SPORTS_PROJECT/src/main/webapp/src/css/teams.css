@@ -6,7 +6,6 @@
 /* container */
 .container{
     width: 1024px;
-    height: 651px;
 }
 
 section{
@@ -91,9 +90,17 @@ section{
 }
 
 .al-east-icons{
-    width: 994px;
+    max-width:1024px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
+
+.hover__red:hover{
+	background-color: #ea0029;
+}
+.hover__blue:hover{
+	background-color: blue;
+}

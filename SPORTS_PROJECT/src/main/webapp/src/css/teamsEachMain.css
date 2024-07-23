@@ -135,13 +135,13 @@
 }
 
 
-.btn-area .swiper-button-next{
+.btn-area> .swiper-button-next{
 	position: absolute;
 	right: -40px;
 	top: -125px;
 }
 
-.btn-area .swiper-button-prev{
+.btn-area >.swiper-button-prev{
 	position: absolute;
 	left: -40px;
 	top:-125px;

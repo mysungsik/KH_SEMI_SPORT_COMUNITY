@@ -3,5 +3,26 @@
 <properties>
 	<comment>position-sql.xml</comment>
 	
-	<!-- 포지션 -->
+	<!-- 포지션 이름 조회 -->
+	<entry key="selectPositionName">
+		SELECT POSITION_NAME 
+		FROM PLAYER_POSITION 
+		WHERE POSITION_NO = ?
+	</entry>
+	
+	<!-- 특정 포지션 전체 선수 조회 -->
+	<entry key ="selctPositionPlayer">
+		SELECT POSITION_NO, PLAYER_NAME, PLAYER_UNIFORM_NO,POSITION_NAME,
+		    (SELECT IMG_RENAME FROM PLAYER_IMG
+		     WHERE IMG_LEVEL = 0
+		     AND PLAYER_IMG.PLAYER_NO = PLAYER.PLAYER_NO) HEADSHOT
+		FROM PLAYER
+		JOIN PLAYER_POSITION USING(POSITION_NO)
+		JOIN TEAMS USING(TEAM_NO)
+		WHERE TEAM_NO = ?
+		AND TEAM_ST = 'Y'
+		AND POSITION_NO = ?
+		AND PLAYER_ST= 'Y'
+		ORDER BY PLAYER_NO DESC
+	</entry>
 </properties>

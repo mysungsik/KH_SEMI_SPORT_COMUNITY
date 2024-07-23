@@ -10,11 +10,10 @@
 <!-- Link Swiper's CSS -->
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-<script src="${contextPath}/src/js/teams.js" defer></script>
 <script src="${contextPath}/src/js/teamEach.js" defer></script>
+<script src="https://kit.fontawesome.com/cb5f1fee4d.js" crossorigin="anonymous"></script>
 
-<script src="https://kit.fontawesome.com/cb5f1fee4d.js"
-	crossorigin="anonymous"></script>
+
 <title>Team Main</title>
 </head>
 <body>
@@ -255,7 +254,7 @@
 			<article class="board mg-right">
 				<div class="title">
 					<span class="fs-28__b">응원 게시판</span> 
-					<span class="see-more fs-10 fc__gray"><a>더보기▶</a></span>
+					<a href="${contextPath }/community/communityBoard/cheer"><span class="see-more fs-10 fc__gray">더보기▶</span></a>
 				</div>
 				<hr>
 				<div class="post">

@@ -27,9 +27,6 @@ public class TeamEachController extends HttpServlet{
 		String team="";
 		String page="";
 
-
-		System.out.println(reqPath);
-
 		if(reqPath != null) {
 			if(reqPath.split("/").length == 3) {	// 페이지 비어있지 않을 때
 				team = reqPath.split("/")[1];
@@ -39,10 +36,6 @@ public class TeamEachController extends HttpServlet{
 				team = reqPath.split("/")[1];
 
 			}
-		}else {
-			System.out.println("404 페이지로 이동");
-			return ;
-
 		}
 		/*
 		 * if(reqPath != null) { }else { }
@@ -89,7 +82,7 @@ public class TeamEachController extends HttpServlet{
 				//DB에서 값 조회
 				dispatcher = req.getRequestDispatcher(defaultURLPath + "player.jsp");
 				dispatcher.forward(req, resp);
-			}
+			};break;
 
 			default:System.out.println("404 페이지로 이동");}
 		}

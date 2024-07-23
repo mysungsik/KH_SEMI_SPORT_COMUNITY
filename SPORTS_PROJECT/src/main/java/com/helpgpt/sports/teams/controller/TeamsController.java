@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.helpgpt.sports.teams.model.vo.Teams;
+
 
 @WebServlet(name = "teamsController",
 			urlPatterns = {
@@ -29,6 +31,7 @@ public class TeamsController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// Path 지정
 		String reqPath = req.getPathInfo();
+		
 		String team = "";
 		String[] teams={"kia", "lg", "doosan","teamAdd"};
 

@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="${contextPath}/src/css/player.css">
 
 <script src="${contextPath}/src/util/pagination.js" defer></script>
-<script src="${contextPath}/src/js/teams.js" defer></script>
 <script src="${contextPath}/src/js/player.js" defer></script>
 
 <title>Player</title>
@@ -54,7 +53,7 @@
 			<div class="player-info-content">
 				<div class="info-content">
 					<div class="info-content-top">
-						<p class="position fs-20">투수 / 좌투좌타</p>
+						<p class="position fs-20">투수</p>
 						<span class="player-num">54</span> <span class="player-name">
 							양현종</span> <i class="fa-solid fa-heart" id="heart"></i>
 					</div>

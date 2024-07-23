@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<jsp:include page="/WEB-INF/views/layouts/header-dependencies.jsp"/>
     <link rel="stylesheet" href="${contextPath}/src/css/teams.css">
-    <script src="${contextPath}/src/css/teams.js" defer></script>
+    <script src="${contextPath}/src/js/teams.js" defer></script>
     <title>MLB Teams</title>
 </head>
 <body>
@@ -30,117 +30,6 @@
             <section class="main-content">
                 <article class="teams">
                     <div class="al-east-icons">
-                        <a href="${contextPath}/teams/kia" >
-                            <div class="teams-card br-10 mb-10 mr-20">
-                            	<div class="team-logo-img">
-	                                <img src="https://upload.wikimedia.org/wikipedia/en/e/e0/Kia_Tigers_2017_New_Team_Logo.png" class="team-logo" alt="구단사진1">
-                            	</div>
-                                <div class="teams-name">
-                                    <span class="fs-14 fc__white ml-10">KIA TIGERS</span>
-                                    <img src="${contextPath}/public/icons/right-arrow__white.png" class="mr-10">
-                                </div>
-                            </div>
-                        </a>
-						
-						<a href="${contextPath}/teams/lg" >
-                            <div class="teams-card br-10 mb-10 mr-20">
-                            	<div class="team-logo-img">
-	                                <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LG_Twins_2017.png" class="team-logo" alt="구단사진1">
-                            	</div>
-                                <div class="teams-name">
-                                    <span class="fs-14 fc__white ml-10">LG TWINS</span>
-                                    <img src="${contextPath}/public/icons/right-arrow__white.png" class="mr-10">
-                                </div>
-                            </div>
-                        </a>
-                        
-                        <a href="${contextPath}/teams/doosan" >
-                            <div class="teams-card br-10 mb-10 mr-20">
-                            	<div class="team-logo-img">
-	                                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/98/Doosan_Bears.svg/177px-Doosan_Bears.svg.png" class="team-logo" alt="구단사진1">
-                            	</div>
-                                <div class="teams-name">
-                                    <span class="fs-14 fc__white ml-10">DOOSAN BEARS</span>
-                                    <img src="${contextPath}/public/icons/right-arrow__white.png" class="mr-10">
-                                </div>
-                            </div>
-                        </a>
-                        
-                        <a href="${contextPath}/teams/teamsEach" >
-                            <div class="teams-card br-10">
-                                <img src="${contextPath}/public/images/teams/FL.png" class="team-logo" alt="구단사진1">
-                                <div class="teams-name">
-                                    <span class="fs-14 fc__white ml-10">DOOSAN BEARS</span>
-                                    <img src="${contextPath}/public/icons/right-arrow__white.png" class="mr-10">
-                                </div>
-                            </div>
-                        </a>
-
-                    </div>
-                    
-                    <div class="al-east-icons">
-                        <a href="${contextPath}/teams/teamsEach" >
-                            <div class="teams-card br-10 mb-10 mr-20">
-                                <img src="${contextPath}/public/images/teams/FL.png" class="team-logo" alt="구단사진1">
-                                <div class="teams-name">
-                                    <span class="fs-14 fc__white ml-10">BLUE JAYS</span>
-                                    <img src="${contextPath}/public/icons/right-arrow__white.png" class="mr-10">
-                                </div>
-                            </div>
-                        </a>
-						
-						<a href="${contextPath}/teams/teamsEach" >
-                            <div class="teams-card br-10 mr-20">
-                                <img src="${contextPath}/public/images/teams/FL.png" class="team-logo" alt="구단사진1">
-                                <div class="teams-name">
-                                    <span class="fs-14 fc__white ml-10">BLUE JAYS</span>
-                                    <img src="${contextPath}/public/icons/right-arrow__white.png" class="mr-10">
-                                </div>
-                            </div>
-                        </a>
-                        
-                        <a href="${contextPath}/teams/teamsEach" >
-                            <div class="teams-card br-10 mr-20">
-                                <img src="${contextPath}/public/images/teams/FL.png" class="team-logo" alt="구단사진1">
-                                <div class="teams-name">
-                                    <span class="fs-14 fc__white ml-10">BLUE JAYS</span>
-                                    <img src="${contextPath}/public/icons/right-arrow__white.png" class="mr-10">
-                                </div>
-                            </div>
-                        </a>
-                        
-                        <a href="${contextPath}/teams/teamsEach" >
-                            <div class="teams-card br-10 ">
-                                <img src="${contextPath}/public/images/teams/FL.png" class="team-logo" alt="구단사진1">
-                                <div class="teams-name">
-                                    <span class="fs-14 fc__white ml-10">BLUE JAYS</span>
-                                    <img src="${contextPath}/public/icons/right-arrow__white.png" class="mr-10">
-                                </div>
-                            </div>
-                        </a>
-
-                    </div>
-                    
-                    <div class="al-east-icons">
-                        <a href="${contextPath}/teams/teamsEach" >
-                            <div class="teams-card br-10 mb-10 mr-20">
-                                <img src="${contextPath}/public/images/teams/FL.png" class="team-logo" alt="구단사진1">
-                                <div class="teams-name">
-                                    <span class="fs-14 fc__white ml-10">BLUE JAYS</span>
-                                    <img src="${contextPath}/public/icons/right-arrow__white.png" class="mr-10">
-                                </div>
-                            </div>
-                        </a>
-						
-						<a href="${contextPath}/teams/teamsEach" >
-                            <div class="teams-card br-10 mr-20">
-                                <img src="${contextPath}/public/images/teams/FL.png" class="team-logo" alt="구단사진1">
-                                <div class="teams-name">
-                                    <span class="fs-14 fc__white ml-10">BLUE JAYS</span>
-                                    <img src="${contextPath}/public/icons/right-arrow__white.png" class="mr-10">
-                                </div>
-                            </div>
-                        </a>
                     </div>
                 </article>
             </section>
