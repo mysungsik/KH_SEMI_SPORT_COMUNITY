@@ -42,3 +42,34 @@ VALUES(
 -- 4. REPORT TYPE TABLE
 -- 5. REPORT VIOLATION TYPE TABLE
 -- 6. REPORT TABLE
+
+-- 7. STADITUM TABLE
+
+INSERT INTO STADIUM 
+VALUES(
+    SEQ_STADIUM_NO.NEXTVAL,
+    '기아 챔피언스 필드',
+    '20500',
+    '57646',
+    '광주 북구 서림로10'
+    );
+    
+INSERT INTO STADIUM
+VALUES(
+    SEQ_STADIUM_NO.NEXTVAL,
+    '대전 한화생명 이글스파크',
+    '12000',
+    '8169',
+    '대전 광역시 중구 대종로 373'
+    );
+    
+INSERT INTO STADIUM 
+VALUES(
+    SEQ_STADIUM_NO.NEXTVAL,
+    '롯데 자이언츠 사직야구장',
+    '22754',
+    '50301',
+    '부산광역시 동래구 사직로 45'
+    );
+    
+    
