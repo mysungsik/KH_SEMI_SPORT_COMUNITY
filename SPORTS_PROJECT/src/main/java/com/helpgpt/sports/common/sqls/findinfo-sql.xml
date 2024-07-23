@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	
+	<comment>sql file for user</comment>
+	<entry key="findUserId">
+		SELECT USER_ID
+		FROM USER_INFO
+		WHERE USER_EMAIL = ?
+		AND USER_NAME = ?
+	</entry>
+	
+</properties>

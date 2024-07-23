@@ -1,39 +1,27 @@
 $(document).ready(function(){
 	observingInput();
+	resultMessage();
 })
 
-function findId(e){
-	let findIdForm = document.findIdForm;
-	e.preventDefault();
+function resultMessage(){
+	let resultValue = $("#resultMessage").val();
 	
+	if (resultValue != ""){
+		toastPop("warn", resultValue)
+	}
+}
+
+function findId(){
+	let findIdForm = document.findIdForm;
+
 	let inputEmail = findIdForm.find_email.value;
 	let inputName = findIdForm.find_name.value;
 	
 	if (emailValidate(inputEmail) && 
 		nameValidate(inputName)){
-		let requestUrl = `${contextPath}/api/findUser/findId`
-		$.ajax({
-			type : "POST",
-			url : requestUrl,
-			data : {
-				inputEmail,
-				inputName
-			},
-			dataType: "json",
-			success : function(res){
-				console.log(res)
-				// 아이디 찾았는지 여부 판단
-				let isFindUser =  res.hasOwnProperty("data");
-				
-				// 찾았다면 저기로
-				if (isFindUser){
-					window.location.href = `${contextPath}/findInfo/findResult`;
-				}
-				else{
-					toastPop("warn", `${res.message}`)
-				}
-			}
-		})
+		return true;
+	}else{
+		return false;	
 	}
 }
 

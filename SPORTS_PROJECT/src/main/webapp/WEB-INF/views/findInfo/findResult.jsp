@@ -17,10 +17,10 @@
             <div class="findResultForm base__lblue br-15 box-shadow">
                 <p> 고객님 아이디 찾기 결과입니다. </p>
                 <div class="login-essential mt-20">
-                   <p> 입력한 정보로 조회된 아이디는 <span>AAAAA</span> 입니다.</p>
+                   <p> 입력한 정보로 조회된 아이디는 <span>${userId}</span> 입니다.</p>
 	                <div>
-	                	<p> 이름 : <span> 이이이름 </span></p>
-	                	<p> 이메일 : <span> eamil@email.com </span></p>
+	                	<p> 이름 : <span> ${userName} </span></p>
+	                	<p> 이메일 : <span>${userEmail}</span></p>
 	                </div>
                 </div>
                 <a class="btn-big__blue" href="${contextPath}/login">

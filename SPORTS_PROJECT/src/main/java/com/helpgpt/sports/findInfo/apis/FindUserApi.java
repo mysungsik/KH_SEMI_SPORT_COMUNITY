@@ -14,15 +14,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
+import com.helpgpt.sports.findInfo.model.service.FindInfoService;
 
 /**
  * Servlet implementation class FindUser
  */
 @WebServlet("/api/findUser/*")
 public class FindUserApi extends HttpServlet {
-
+	FindInfoService service = new FindInfoService();
+	final String defaultURLPath = "/WEB-INF/views/findInfo/";
+	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		String reqPath = request.getPathInfo();
 		String path = "";
 		
@@ -35,26 +39,26 @@ public class FindUserApi extends HttpServlet {
 		
  		switch (path) {
 			case "findId" : {
-				String inputEmail = request.getParameter("inputEmail");
-				String inputName = request.getParameter("inputName");
+				
+				
+				String inputEmail = request.getParameter("find_email");
+				String inputName = request.getParameter("find_name");
 				
 				String userId = null;
-				
-				// TODO : ID 를 DB 로 부터 찾는다. with Service, DAO
-				System.out.println("ID 를 DB 로 부터 찾는다. with Service, DAO");
-				userId = "sportUser";
+			
+				userId = service.findUserId(inputEmail, inputName);
 				
 				if (userId != null) {
-					result.put("data", userId);
-					result.put("message", "일치하는 아이디를 찾았습니다.");
-					result.put("status", 200);
+					RequestDispatcher dispatcher = request.getRequestDispatcher(defaultURLPath + "findResult.jsp");
+					request.setAttribute("userId", userId);
+					request.setAttribute("userEmail", inputEmail);
+					request.setAttribute("userName", inputName);
+					dispatcher.forward(request, response);
 				} else {
-					result.put("message", "일치하는 아이디를 찾지 못했습니다.");
-					result.put("status", 200);
+					RequestDispatcher dispatcher = request.getRequestDispatcher(defaultURLPath + "findId.jsp");
+					request.setAttribute("message", "일치하는 유저가 존재하지 않습니다.");
+					dispatcher.forward(request, response);
 				}
-				
-				Gson gson = new Gson();
-				gson.toJson(result,out);
 			
 			};break;
 			
