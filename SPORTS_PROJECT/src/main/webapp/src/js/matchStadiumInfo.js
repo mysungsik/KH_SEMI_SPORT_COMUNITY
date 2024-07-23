@@ -1,41 +1,16 @@
-document.addEventListener('DOMContentLoaded', function() {
-	const sections = document.querySelectorAll('.image-section');
-	const magnify = document.getElementById('magnify');
-	const magnifyImg = magnify.querySelector('img');
+ const sections = document.querySelectorAll('.image-section');
+        const overlay = document.getElementById('overlay');
+        const zoomedImage = document.getElementById('zoomedImage');
 
-	sections.forEach(section => {
-		section.addEventListener('mouseenter', function() {
-			magnify.style.display = 'block';
-			const position = section.getAttribute('data-position');
-			let x, y;
-			switch (position) {
-				case 'top-left':
-					x = 0;
-					y = 0;
-					break;
-				case 'top-right':
-					x = -50;
-					y = 0;
-					break;
-				case 'bottom-left':
-					x = 0;
-					y = -50;
-					break;
-				case 'bottom-right':
-					x = -50;
-					y = -50;
-					break;
-			}
-			magnifyImg.style.transform = `translate(${x}%, ${y}%)`;
-		});
+        sections.forEach(section => {
+            section.addEventListener('mouseenter', (event) => {
+                const position = section.dataset.position;
+                zoomedImage.className = ''; // 이전 클래스를 제거합니다.
+                zoomedImage.classList.add(...position.split(' ')); // 새로운 위치 클래스를 추가합니다.
+                overlay.classList.add('active');
+            });
 
-		section.addEventListener('mousemove', function(e) {
-			magnify.style.top = `${e.pageY - magnify.offsetHeight / 2}px`;
-			magnify.style.left = `${e.pageX - magnify.offsetWidth / 2}px`;
-		});
-
-		section.addEventListener('mouseleave', function() {
-			magnify.style.display = 'none';
-		});
-	});
-});
+            section.addEventListener('mouseleave', () => {
+                overlay.classList.remove('active');
+            });
+        });

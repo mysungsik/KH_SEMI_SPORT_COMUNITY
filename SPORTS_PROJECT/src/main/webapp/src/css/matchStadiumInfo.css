@@ -9,10 +9,13 @@ body {
 .quick-view {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	background-color: #f0f0f0;
 	padding: 20px;
 	margin-top: 20px;
 	border-radius: 10px;
+	background-color: #f0f0f0;
 }
 
 .quick-view .final-score {
@@ -22,7 +25,7 @@ body {
 }
 
 .league-info {
-	background-color: #4a90e2;
+	background-color: #71A1DD;
 	color: white;
 	padding: 10px;
 	border-radius: 10px;
@@ -69,6 +72,16 @@ body {
 	font-size: 20px;
 }
 
+.stadiumImage {
+	display: flex;
+	flex-direction: row;
+}
+
+#image1 {
+	width: 100%;
+	height: 100%;
+}
+
 .stadium-imageBox {
 	margin: 30px;
 }
@@ -104,7 +117,6 @@ body {
 	font-size: 20px;
 }
 
-
 .stadium-details {
 	background-color: #f0f0f0;
 	padding: 20px;
@@ -114,22 +126,25 @@ body {
 
 .stadium-imageBox2 {
 	position: relative;
-	width: 500px;
-	height: 500px;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
 }
 
 .image-section {
-	position: absolute;
-	width: 100%;
+	width: 50%;
 	height: 50%;
 	cursor: pointer;
-	display:flex;
+	display: flex;
+	flex-direction: row;
 	justify-content: center;
 }
-  .image-section img {
-        width: 100%;
-        height: 100%;
-    }
+
+.image-section img {
+	width: 100%;
+	height: 100%;
+}
 
 .magnify {
 	display: none;
@@ -157,9 +172,11 @@ body {
 	margin-bottom: 30px;
 	margin-top: 30px;
 }
-.placeDetails{
-	margin-top:20px;
+
+.placeDetails {
+	margin-top: 20px;
 }
+
 .placeDetails>div {
 	font-size: 18px;
 	margin-bottom: 10px;
@@ -197,4 +214,102 @@ body {
 	justify-content: space-between;
 	padding: 10px;
 	border-bottom: 1px solid #ddd;
+}
+
+.final-score {
+	width: 300px;
+	border-radius: 15px;
+	color: white;
+}
+
+.stadium-imageBox2 {
+	position: relative;
+	width: 100%; /* 원본 이미지 크기 */
+	height: 80%; /* 원본 이미지 크기 */
+}
+
+.image-section {
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	overflow: hidden;
+	transition: transform 0.3s ease;
+}
+
+.image-section img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.image-section.top.left {
+	top: 0;
+	left: 0;
+}
+
+.image-section.top.right {
+	top: 0;
+	right: 0;
+}
+
+.image-section.bottom.left {
+	bottom: 0;
+	left: 0;
+}
+
+.image-section.bottom.right {
+	bottom: 0;
+	right: 0;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	display: none;
+	justify-content: center;
+	align-items: center;
+	z-index: 10;
+}
+
+.overlay.active {
+	display: flex;
+}
+
+.zoomed-image {
+	position: relative;
+	width: 50%;
+	height: 50%;
+	overflow: hidden;
+}
+
+.zoomed-image img {
+	position: absolute;
+	width: 200%;
+	height: 200%;
+	object-fit: cover;
+}
+
+.zoomed-image img.top.left {
+	top: 0;
+	left: 0;
+}
+
+.zoomed-image img.top.right {
+	top: 0;
+	left: -50%;
+}
+
+.zoomed-image img.bottom.left {
+	top: -50%;
+	left: 0;
+}
+
+.zoomed-image img.bottom.right {
+	top: -50%;
+	left: -50%;
 }
