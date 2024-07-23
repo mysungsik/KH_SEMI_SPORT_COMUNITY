@@ -8,10 +8,55 @@
 -- 6. REPORT TABLE
 
 -- ========================================================================================================
+-- STADIUM
+INSERT INTO STADIUM 
+VALUES(
+    SEQ_STADIUM_NO.NEXTVAL,
+    '기아 챔피언스 필드',
+    '20500',
+    '57646',
+    '광주 북구 서림로10'
+    );
+    
+INSERT INTO STADIUM
+VALUES(
+    SEQ_STADIUM_NO.NEXTVAL,
+    '대전 한화생명 이글스파크',
+    '12000',
+    '8169',
+    '대전 광역시 중구 대종로 373'
+    );
+    
+INSERT INTO STADIUM 
+VALUES(
+    SEQ_STADIUM_NO.NEXTVAL,
+    '롯데 자이언츠 사직야구장',
+    '22754',
+    '50301',
+    '부산광역시 동래구 사직로 45'
+    );
+    
 
--- 0. TEAMS TABLE
-INSERT INTO TEAMS 
-VALUES(SEQ_TEAMS_NO.nextval, 'kia', 'kim', '...', 'kia', 'busan', 'kiakia', 'Y');
+-- 0. PLAYER POSITION
+INSERT INTO PLAYER_POSITION
+VALUES(1, '코칭스태프');
+
+INSERT INTO PLAYER_POSITION
+VALUES(2, '투수');
+
+INSERT INTO PLAYER_POSITION
+VALUES(3, '포수');   
+
+INSERT INTO PLAYER_POSITION
+VALUES(4, '내야수');
+
+INSERT INTO PLAYER_POSITION
+VALUES(5, '외야수');
+
+-- 1. TEAMS TABLE
+INSERT INTO TEAMS
+VALUES(SEQ_TEAMS_NO.NEXTVAL, 1, 'KIA TIGERS',  '심재학', '이범호', '기아', '전라북도', '현대자동차그룹의 계열사인 기아가 운영하는 KBO 리그의 프로 야구단으로 연고지는 광주광역시, 홈구장은 광주광역시 북구 임동에 위치한 광주 기아 챔피언스 필드.', 'Y');
+
 
 -- 1. USER TABLE ( DUMMY USER INSERT)
 INSERT INTO USER_INFO 
@@ -45,31 +90,5 @@ VALUES(
 
 -- 7. STADITUM TABLE
 
-INSERT INTO STADIUM 
-VALUES(
-    SEQ_STADIUM_NO.NEXTVAL,
-    '기아 챔피언스 필드',
-    '20500',
-    '57646',
-    '광주 북구 서림로10'
-    );
-    
-INSERT INTO STADIUM
-VALUES(
-    SEQ_STADIUM_NO.NEXTVAL,
-    '대전 한화생명 이글스파크',
-    '12000',
-    '8169',
-    '대전 광역시 중구 대종로 373'
-    );
-    
-INSERT INTO STADIUM 
-VALUES(
-    SEQ_STADIUM_NO.NEXTVAL,
-    '롯데 자이언츠 사직야구장',
-    '22754',
-    '50301',
-    '부산광역시 동래구 사직로 45'
-    );
-    
+
     
