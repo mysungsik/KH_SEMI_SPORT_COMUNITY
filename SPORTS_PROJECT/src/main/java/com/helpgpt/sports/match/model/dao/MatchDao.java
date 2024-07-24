@@ -67,7 +67,11 @@ public class MatchDao {
                 match.setMatchCount(rs.getInt("MATCH_COUNT"));
                 match.setWin(rs.getInt("WIN"));
                 match.setLose(rs.getInt("LOSE"));
-                match.setAvg(rs.getDouble("AVG"));
+                match.setWinRate(rs.getDouble("WIN_RATE"));
+                match.setConsequence(rs.getString("CONSEQUENCE"));
+                match.setBattingAverage(rs.getDouble("BATTING_AVERAGE"));
+                match.setEra(rs.getDouble("ERA"));
+                match.setRecentMatch(rs.getString("RECENT_MATCH"));
                 teamRankings.add(match);
             }
         } catch (Exception e) {

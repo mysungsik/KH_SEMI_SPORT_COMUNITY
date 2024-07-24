@@ -13,6 +13,11 @@ public class Match {
     private int win;
     private int lose;
     private double avg;
+    private double winRate;
+    private String consequence;
+    private double battingAverage;
+    private double era;
+    private String recentMatch;
 
     // Getters and Setters
     public int getMatchNo() {
@@ -111,11 +116,52 @@ public class Match {
         this.avg = avg;
     }
 
-	@Override
-	public String toString() {
-		return "Match [matchNo=" + matchNo + ", teamNo=" + teamNo + ", teamName=" + teamName + ", stadiumNo="
-				+ stadiumNo + ", positionNo=" + positionNo + ", score=" + score + ", matchDate=" + matchDate
-				+ ", ground=" + ground + ", matchCount=" + matchCount + ", win=" + win + ", lose=" + lose + ", avg="
-				+ avg + "]";
-	}
+    public double getWinRate() {
+        return winRate;
+    }
+
+    public void setWinRate(double winRate) {
+        this.winRate = winRate;
+    }
+
+    public String getConsequence() {
+        return consequence;
+    }
+
+    public void setConsequence(String consequence) {
+        this.consequence = consequence;
+    }
+
+    public double getBattingAverage() {
+        return battingAverage;
+    }
+
+    public void setBattingAverage(double battingAverage) {
+        this.battingAverage = battingAverage;
+    }
+
+    public double getEra() {
+        return era;
+    }
+
+    public void setEra(double era) {
+        this.era = era;
+    }
+
+    public String getRecentMatch() {
+        return recentMatch;
+    }
+
+    public void setRecentMatch(String recentMatch) {
+        this.recentMatch = recentMatch;
+    }
+
+    @Override
+    public String toString() {
+        return "Match [matchNo=" + matchNo + ", teamNo=" + teamNo + ", teamName=" + teamName + ", stadiumNo="
+                + stadiumNo + ", positionNo=" + positionNo + ", score=" + score + ", matchDate=" + matchDate
+                + ", ground=" + ground + ", matchCount=" + matchCount + ", win=" + win + ", lose=" + lose + ", avg="
+                + avg + ", winRate=" + winRate + ", consequence=" + consequence + ", battingAverage=" + battingAverage
+                + ", era=" + era + ", recentMatch=" + recentMatch + "]";
+    }
 }
