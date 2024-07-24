@@ -98,6 +98,7 @@ section{
 }
 
 
+/* hover 용 */
 .hover__red:hover{
 	background-color: #ea0029;
 }

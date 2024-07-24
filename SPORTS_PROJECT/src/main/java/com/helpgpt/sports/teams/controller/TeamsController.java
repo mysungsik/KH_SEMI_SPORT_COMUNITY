@@ -58,7 +58,7 @@ public class TeamsController extends HttpServlet {
 
 				dispatcher.forward(req, resp);
 			}else {
-				System.out.println("404페이지로 이동");
+				System.out.println("--404 페이지로 이동--");
 			}
 			
 		}

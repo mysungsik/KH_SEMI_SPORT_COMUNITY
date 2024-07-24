@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="${contextPath}/src/css/teamPlayers.css">
-    <script src="${contextPath}/src/css/teams.js" defer></script>
+    <script src="${contextPath}/src/js/teamPlayers.js" defer></script>
     <title>TeamPlayers</title>
     <script src="https://kit.fontawesome.com/cb5f1fee4d.js" crossorigin="anonymous"></script>
 </head>
@@ -51,166 +51,9 @@
 				<button id="add-player-btn" onclick="location.href='${contextPath}/team/${requestScope.team}/players/playersAdd' ">선수 추가</button>
 				<button id="delete-player-btn">선수 삭제</button>
 			</div>
-			<table class="team-table">
-				<tr >
-					<td>
-						<div class="card-thumbnail">
-							<a href="${contextPath }/team/${requestScope.team}/player">
-								<img class="card-thumbnail-img" src="${contextPath}/public/images/news_example.jpg">
-							</a>
-							<div class="card-thumbnail-infos">
-								<div class="card-thumbnail-position ml-10">
-									<p class="fs-12 fc__white">투수</p>
-								</div>
-								<div class="card-thumbnail-content fs-20">
-									<a href="${contextPath }/team/${requestScope.team}/player" class="fs-20 fc__white">99 류현진</a>
-								</div>
-							</div>
-						</div>	
-					</td>
-					<td>
-						<div class="card-thumbnail">
-							<a href="${contextPath }/src/pages/teams/player.jsp">
-								<img class="card-thumbnail-img"
-									src="${contextPath}/public/images/news_example.jpg">
-							</a>
-							<div class="card-thumbnail-infos">
-								<div class="card-thumbnail-position ml-10">
-									<p class="fs-12 fc__white">투수</p>
-								</div>
-								<div class="card-thumbnail-content fs-20">
-									<a href="${contextPath }/src/pages/teams/player.jsp" class="fs-20 fc__white">99 류현진</a>
-								</div>
-							</div>
-						</div>	
-					</td>
-					
-					<td>
-						<div class="card-thumbnail">
-							<a href="${contextPath }/src/pages/teams/player.jsp">
-								<img class="card-thumbnail-img"
-									src="${contextPath}/public/images/news_example.jpg">
-							</a>
-							<div class="card-thumbnail-infos">
-								<div class="card-thumbnail-position ml-10">
-									<p class="fs-12 fc__white">투수</p>
-								</div>
-								<div class="card-thumbnail-content fs-20">
-									<a href="${contextPath }/src/pages/teams/player.jsp" class="fs-20 fc__white">99 류현진</a>
-								</div>
-							</div>
-						</div>	
-					</td>
-					
-					<td>
-						<div class="card-thumbnail">
-							<a href="${contextPath }/src/pages/teams/player.jsp">
-								<img class="card-thumbnail-img"
-									src="${contextPath}/public/images/news_example.jpg">
-							</a>
-							<div class="card-thumbnail-infos">
-								<div class="card-thumbnail-position ml-10">
-									<p class="fs-12 fc__white">투수</p>
-								</div>
-								<div class="card-thumbnail-content fs-20">
-									<a href="${contextPath }/src/pages/teams/player.jsp" class="fs-20 fc__white">99 류현진</a>
-								</div>
-							</div>
-						</div>	
-					</td>
-			  </tr>
-			  
-			  <tr>
-			  	<td>
-			  		<div class="card-thumbnail">
-						<a href="${contextPath }/src/pages/teams/player.jsp">
-							<img class="card-thumbnail-img"
-								src="${contextPath}/public/images/news_example.jpg">
-						</a>
-						<div class="card-thumbnail-infos">
-							<div class="card-thumbnail-position ml-10">
-								<p class="fs-12 fc__white">투수</p>
-							</div>
-							<div class="card-thumbnail-content fs-20">
-								<a href="${contextPath }/src/pages/teams/player.jsp" class="fs-20 fc__white">99 류현진</a>
-							</div>
-						</div>
-					</div>	
-			  	</td>
-			  
-			  	<td>
-			  		<div class="card-thumbnail">
-						<a href="${contextPath }/src/pages/teams/player.jsp">
-							<img class="card-thumbnail-img"
-								src="${contextPath}/public/images/news_example.jpg">
-						</a>
-						<div class="card-thumbnail-infos">
-							<div class="card-thumbnail-position ml-10">
-								<p class="fs-12 fc__white">투수</p>
-							</div>
-							<div class="card-thumbnail-content fs-20">
-								<a href="${contextPath }/src/pages/teams/player.jsp" class="fs-20 fc__white">99 류현진</a>
-							</div>
-						</div>
-					</div>		
-			  	</td>
-			  	
-			  	<td>
-			  		<div class="card-thumbnail">
-						<a href="${contextPath }/src/pages/teams/player.jsp">
-							<img class="card-thumbnail-img"
-								src="${contextPath}/public/images/news_example.jpg">
-						</a>
-						<div class="card-thumbnail-infos">
-							<div class="card-thumbnail-position ml-10">
-								<p class="fs-12 fc__white">투수</p>
-							</div>
-							<div class="card-thumbnail-content fs-20">
-								<a href="${contextPath }/src/pages/teams/player.jsp" class="fs-20 fc__white">99 류현진</a>
-							</div>
-						</div>
-					</div>	
-			  	</td>
-			  	
-			  	<td>
-			  		<div class="card-thumbnail">
-						<a href="${contextPath }/src/pages/teams/player.jsp">
-							<img class="card-thumbnail-img"
-								src="${contextPath}/public/images/news_example.jpg">
-						</a>
-						<div class="card-thumbnail-infos">
-							<div class="card-thumbnail-position ml-10">
-								<p class="fs-12 fc__white">투수</p>
-							</div>
-							<div class="card-thumbnail-content fs-20">
-								<a href="${contextPath }/src/pages/teams/player.jsp" class="fs-20 fc__white">99 류현진</a>
-							</div>
-						</div>
-					</div>
-			  	</td>
-			  </tr>
-			  
-			  <tr>
-			  	<td>
-			  		<div class="card-thumbnail">
-						<a href="${contextPath }/src/pages/teams/player.jsp">
-							<img class="card-thumbnail-img"
-								src="${contextPath}/public/images/news_example.jpg">
-						</a>
-						<div class="card-thumbnail-infos">
-							<div class="card-thumbnail-position ml-10">
-								<p class="fs-12 fc__white">투수</p>
-							</div>
-							<div class="card-thumbnail-content fs-20">
-								<a href="${contextPath }/src/pages/teams/player.jsp" class="fs-20 fc__white">99 류현진</a>
-							</div>
-						</div>
-					</div>
-			  	</td>
-			  </tr>
-			  
-		</table>
-	</div>
+			<div class="team-player-table">
+			</div>
+		</div>
 	
 	</main>
 	<jsp:include page="/WEB-INF/views/layouts/footer.jsp"/>

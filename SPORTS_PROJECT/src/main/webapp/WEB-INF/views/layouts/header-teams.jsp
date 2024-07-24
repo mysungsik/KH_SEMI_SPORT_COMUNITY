@@ -16,8 +16,9 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script src="<%= request.getContextPath() %>/src/common/common.js" defer></script>
+<script src="<%= request.getContextPath() %>/src/common/common.js" defaer></script>
 <script src="${contextPath}/src/js/teams.js" defer></script>
+<script src="${contextPath}/src/js/header-teams.js" defer></script>
 <script>
 	const contextPath = "${contextPath}";
 	const loginUser = "${loginUser}";
@@ -70,20 +71,20 @@
 		    <div class="header-bot">
 		        <div class="header-nav">
 		            <ul class="d-flex">
-		            	<li>
-							<a class="fs-20__b text-hover__blue team-name" href="${contextPath}/team/info"></a>
+		           		<li>
+							<a class="fs-20__b ${d.team_color} team-name" href="${contextPath}/team/${d.team_name}/info">${d.team_name}</a>
 						</li>
 						<li>
-							<a class="fs-20__b text-hover__blue" href="${contextPath}/team/players">PLAYERS</a>
+							<a class="fs-20__b ${d.team_color}" href="${contextPath}/team/${d.team_name}/players">PLAYERS</a>
 						</li>
 						<li>
-							<a href="${contextPath}/team"><img class="team-logo"></a>
+							<a href="${contextPath}/team/${d.team_name}"><img class="team-logo" src="${d.team_img}"></a>
 						</li>
 						<li>
-							<a class="fs-20__b text-hover__blue" href="${contextPath}/team/schedule">SCHEDULE</a>
+							<a class="fs-20__b ${d.team_color}" href="${contextPath}/team/${d.team_name}/schedule">SCHEDULE</a>
 						</li>
 						<li>
-							<a class="fs-20__b text-hover__blue" href="${contextPath}/team/content">CHEERS</a>
+							<a class="fs-20__b ${d.team_color}" href="${contextPath }/community/communityBoard/cheer">CHEERS</a>
 						</li>
 		            </ul>
 		        </div>
@@ -104,21 +105,21 @@
             </div>
             <div class="header-bot">
                 <div class="header-nav">
-                    <ul class="d-flex">
+                    <ul class="d-flex team-nav">
 						<li>
-							<a class="fs-20__b text-hover__blue team-name" href="${contextPath}/team/${requestScope.team }/info"></a>
+							<a class="fs-20__b ${d.team_color} team-name" href="${contextPath}/team/${d.team_name}/info">${d.team_name}</a>
 						</li>
 						<li>
-							<a class="fs-20__b text-hover__blue" href="${contextPath}/team/${requestScope.team }/players">PLAYERS</a>
+							<a class="fs-20__b ${d.team_color}" href="${contextPath}/team/${d.team_name}/players">PLAYERS</a>
 						</li>
 						<li>
-							<a href="${contextPath}/team/${requestScope.team }"><img class="team-logo"></a>
+							<a href="${contextPath}/team/${d.team_name}"><img class="team-logo" src="${d.team_img}"></a>
 						</li>
 						<li>
-							<a class="fs-20__b text-hover__blue" href="${contextPath}/team/${requestScope.team }/schedule">SCHEDULE</a>
+							<a class="fs-20__b ${d.team_color}" href="${contextPath}/team/${d.team_name}/schedule">SCHEDULE</a>
 						</li>
 						<li>
-							<a class="fs-20__b text-hover__blue" href="${contextPath }/community/communityBoard/cheer">CHEERS</a>
+							<a class="fs-20__b ${d.team_color}" href="${contextPath }/community/communityBoard/cheer">CHEERS</a>
 						</li>
                     </ul>
                 </div>

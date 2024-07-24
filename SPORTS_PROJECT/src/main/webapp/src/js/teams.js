@@ -28,7 +28,6 @@ $(document).ready(function() {
 				$(".team-name").text("KIA TIGERS");
 				$(".team-logo").attr({ src: "https://upload.wikimedia.org/wikipedia/en/e/e0/Kia_Tigers_2017_New_Team_Logo.png" });
 				$(".team-each-image").css("background-image", `url(${"https://tigers.co.kr/files/banner/2023/02/08/catchphrase_pc.png"})`);
-				
 			}break;
 			
 			case "lg": {

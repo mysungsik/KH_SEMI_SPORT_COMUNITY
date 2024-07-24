@@ -67,10 +67,12 @@ section{
   margin:50px 0;
 }
 
-.team-table{
+.team-player-table{
 	width: 100%;
 	display: flex;
-	justify-content: space-around;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	gap:20px;
   	border-spacing: 10px;
   	border-collapse: separate;
 }

@@ -131,3 +131,10 @@ eachTeamHeader .header-bot{
 	margin-bottom: 30px;
 }
 
+/* hover ㅇㅅㅇ */
+.hover__red:hover{
+	color: #ea0029;
+}
+.hover__blue:hover{
+	color: blue;
+}

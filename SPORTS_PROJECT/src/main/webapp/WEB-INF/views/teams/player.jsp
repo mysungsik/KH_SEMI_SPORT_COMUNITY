@@ -50,133 +50,14 @@
 	<div class="main-background-img">
 	<main class="container">
 		<div class="player-info">
-			<div class="player-info-content">
-				<div class="info-content">
-					<div class="info-content-top">
-						<p class="position fs-20">투수</p>
-						<span class="player-num">54</span> <span class="player-name">
-							양현종</span> <i class="fa-solid fa-heart" id="heart"></i>
-					</div>
-					<table class="info-content-bottom">
-						<tr>
-							<th class="fs-20__b">생년월일</th>
-							<td class="fs-20">1988년 03월 01일</td>
-						</tr>
-						<tr>
-							<th class="fs-20__b">프로입단</th>
-							<td class="fs-20">2007년</td>
-						</tr>
-						<tr>
-							<th class="fs-20__b">신장/체중</th>
-							<td class="fs-20">183cm/91kg</td>
-						</tr>
-						<tr>
-							<th class="fs-20__b">출신학교</th>
-							<td class="fs-20">학강초 - 광주동성중 - 광주동성고 - KIA - 텍사스</td>
-						</tr>
-						<tr>
-							<th class="fs-20__b">연봉</th>
-							<td class="fs-20">50,000만원</td>
-						</tr>
-					</table>
-				</div>
-			</div>
-			<div class="player-info-img">
-				<img
-					src="https://tigers.co.kr/files/playerImg/tigersImg2/2024_54_C.png"
-					alt="">
-			</div>
 		</div>
 		<div class="player-card">
-			<div class="card-thumbnail">
-				<div class="card-thumbnail-infos">
-					<div class="card-thumbnail-position fc__white">ERA</div>
-					<hr>
-					<div class="card-thumbnail-content fc__white">3.91</div>
-				</div>
-			</div>
-
-			<div class="card-thumbnail">
-				<div class="card-thumbnail-infos">
-					<div class="card-thumbnail-position fc__white">승</div>
-					<hr>
-					<div class="card-thumbnail-content fc__white">6</div>
-				</div>
-			</div>
-
-			<div class="card-thumbnail">
-				<div class="card-thumbnail-infos">
-					<div class="card-thumbnail-position fc__white">패</div>
-					<hr>
-					<div class="card-thumbnail-content fc__white">3</div>
-				</div>
-			</div>
-
-			<div class="card-thumbnail">
-				<div class="card-thumbnail-infos">
-					<div class="card-thumbnail-position fc__white">세이브</div>
-					<hr>
-					<div class="card-thumbnail-content fc__white">-</div>
-				</div>
-			</div>
-
-			<div class="card-thumbnail">
-				<div class="card-thumbnail-infos">
-					<div class="card-thumbnail-position fc__white">탈삼진</div>
-					<hr>
-					<div class="card-thumbnail-content fc__white">69</div>
-				</div>
-			</div>
+			
 		</div>
 		<!-- 카드 끝  -->
 
 		<!-- 상세 프로필 -->
 		<div class="player-profile  card__lblue ">
-			<table class="player-profile-detail">
-				<tr>
-					<th>생년월일</th>
-					<td>1988년 03월 01일</td>
-					<th rowspan="7">경력사항</th>
-					<td rowspan="7"><pre>
-2007 KIA타이거즈
-2021 텍사스 레인저스
-2022 KIA 타이거즈
-
-"2010 아시안게임 국가대표
-2017 WBC 국가대표
-2014, 2017 최동원상 수상
-2017 KBO리그 정규시즌 다승왕(20승)
-2017 KBO리그 정규시즌 MVP
-2017 KBO 한국시리즈 MVP
-2017 KBO 골든글러브 수상
-2018 아시안게임 국가대표"
-						</pre></td>
-				</tr>
-				<tr>
-					<th>신장/체중</th>
-					<td>183cm / 91kg</td>
-				</tr>
-				<tr>
-					<th>투타</th>
-					<td>좌투좌타</td>
-				</tr>
-				<tr>
-					<th>출신학교</th>
-					<td>학강초-광주동성중-광주동성고-KIA-텍사스</td>
-				</tr>
-				<tr>
-					<th>프로입단</th>
-					<td>2007년</td>
-				</tr>
-				<tr>
-					<th>연봉</th>
-					<td>50,000만원</td>
-				</tr>
-				<tr>
-					<th>입대/제대</th>
-					<td>-</td>
-				</tr>
-			</table>
 		</div>
 
 		<!-- 상세  프로필 끝 -->
@@ -577,8 +458,6 @@
 				<div class="pitching-button-area">
 					<button id="era-button">방어율</button>
 					<button id="victory-button">승리</button>
-					<button id="hold-button">홀드</button>
-					<button id="save-button">세이브</button>
 					<button id="odd-button">승률</button>
 					<button id="k-button">탈삼진</button>
 				</div>

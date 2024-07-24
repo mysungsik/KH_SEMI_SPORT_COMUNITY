@@ -214,6 +214,11 @@ section{
 	font-size: 14px;
 	overflow: auto;
 	margin: auto 0;
+	white-space: pre-wrap;
+}
+
+.player-profile .career-area{
+	width:50%;
 }
 
 /* 상세 프로필 끝 */
@@ -229,11 +234,11 @@ section{
 }
   
 .main-news .main-news-content {
-width: 1000px;
-height: 370px;
-margin: auto;
-padding:10px;
-flex-direction: column;
+	width: 1000px;
+	height: 370px;
+	margin: auto;
+	padding:10px;
+	flex-direction: column;
 }
 
 .main-news-content .news-content-top {
@@ -384,20 +389,14 @@ display: -webkit-box;
 	background-color : #dc3545;
 }
 
-#hold-button{
+
+#odd-button{
 	background-color: #fd7e14;
 }
 
-#save-button{
-	background-color : #aaa;
-}
-
-#odd-button{
-	background-color: #20c997;
-}
-
 #k-button{
-	background-color: #6f42c1;
+	background-color: #ffc107;
+	
 }
 
 /* 컨디션 표 */
