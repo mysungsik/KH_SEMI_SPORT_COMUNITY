@@ -1,0 +1,61 @@
+/* 메인 컨테이너 */
+.container{
+    width: 1024px;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* 뉴스 메인 하단 (동영상 탭 ) --------------- */
+.vods-container{
+	width: 1000px;
+	margin-top: 40px;
+
+	
+}
+.vods-container .vods{
+	width: 100%;
+	display: flex;
+	flex-wrap : wrap;
+	gap : 25px;
+}
+
+.vods-container .vods .card-thumbnail{
+	position: relative;
+    width: 300px;
+    height: 270px;
+    box-shadow: none;
+}
+
+.vods-container .vods .card-thumbnail-img{
+	height: 180px;
+}
+
+.vods-container .vods .card-thumbnail-infos{
+	height: 70px;
+}
+
+.vods-container .vods .card-thumbnail-infos > div{
+	align-items : center !important;
+}
+
+
+.vods-container .vods .card-thumbnail-infos .vod_no{
+	width: 40px;
+	text-align: center;
+}
+
+
+.vods-container .vods .card-thumbnail-title{
+	width : 100%;
+	height : 40px;
+	align-items: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+ 	display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical
+}
+
+

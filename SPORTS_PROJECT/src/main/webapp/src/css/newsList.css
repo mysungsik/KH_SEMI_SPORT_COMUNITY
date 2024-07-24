@@ -1,0 +1,67 @@
+/* 메인 컨테이너 */
+.container{
+    width: 1024px;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.news-list{
+	width: 100%;
+}
+
+.news-list .search-term{
+	display: flex;
+	gap : 30px;
+		
+}
+
+.news-list .news-card{
+	width: 95%;
+	height : 160px;
+	display : flex;
+	border-radius: 10px;
+	align-items: center;
+}
+
+.news-list .news-card:hover{
+	cursor: pointer;
+}
+
+.news-list .news-card-img{
+	width: 200px;
+	height: 150px;	
+	border-radius : 15px;
+	object-fit: cover;
+}
+
+.news-list .news-card-infos{
+	margin: 10px;
+}
+
+.news-list .news-card-infos .news-card-title{
+	width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical
+}
+.news-card .news-card-infos .news-card-content{
+	width: 100%;
+	margin-top : 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical
+}
+
+.news-card .news-card-infos .news-card-footer{
+	margin-top : 10px;
+	gap:10px;
+}
