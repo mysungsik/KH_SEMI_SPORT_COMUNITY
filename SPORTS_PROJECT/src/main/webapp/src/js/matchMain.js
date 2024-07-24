@@ -40,3 +40,7 @@ function populateTeamRankings(rankings) {
         tbody.appendChild(tr);
     });
 }
+
+const rawdata2 = [
+	{ }
+]
