@@ -13,6 +13,8 @@ public class Teams {
 	private String videoUrl;
 	private String teamColor;
 	
+	public Teams() {}
+	
 	
 	public Teams(int teamNo, int stadiumNo, String teamName, String teamLeader, String director, String sponsor,
 			String teamRegion, String teamDes, char teamSt, String videoUrl, String teamColor) {
