@@ -12,6 +12,7 @@
 <script src="https://kit.fontawesome.com/e245e5bbb1.js"
 	crossorigin="anonymous"></script>
 
+
 <title>COMMUNITY</title>
 </head>
 <body>
@@ -19,18 +20,17 @@
 	<input type="hidden" name="sub" value="${requestScope.sub}">
 	<!-- Write Main Content -->
 	<main class="container">
-	
 	<section class="board">
 		<!-- 게시글 제목 -->
 		<section class="title-area base__lblue">
 			<div class="title"> 
-				<span class="fs-12 fc__gray">[ 자유 ] </span>
-				<span class="fs-14__b">게시글 제목입니다.</span> 
+				<span class="fs-12 fc__gray">[ ${board.boardCategory} ]</span>
+				<span class="fs-14__b">${board.boardTitle}</span> 
 			</div>
 			<div class="info"> 
-				<span class="fs-10">작성자</span>
+				<span class="fs-10">${board.boardAuthor}</span>
 				<span class="fs-10"> | </span>
-				<span class="fs-10">2024-07-06 14:59:20</span> 
+				<span class="fs-10">${board.boardCreateDate}</span> 
 			</div>
 		</section>
 		
@@ -39,19 +39,18 @@
 			<div class="content">
 				<img src="${contextPath}/public/images/user_img1.jpg">
 				<pre>
-내용 들어올 자리
-주저리 주저리	
+${board.boardContent}
 				</pre>
 			</div>
 		</section>
 		
 		<section class="info-area">
 			<div class="info">
-				<span>조회수 30</span>
+				<span>조회수 ${board.boardViews}</span>
 				<span> | </span>
-				<span>댓글 2</span>
+				<span>댓글 ${board.boardComent}</span>
 				<span> | </span>
-				<span class="pointer">좋아요 3 ♥</span>
+				<span class="pointer">좋아요 ${board.boardLike}</span>
 				<span> | </span>
 				<span class="pointer" data-type="board-report" onclick="showModal(this)">신고</span>
 			</div>

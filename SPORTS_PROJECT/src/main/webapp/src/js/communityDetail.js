@@ -26,7 +26,7 @@ function paginationTemplate(data) {
 					<div>
 						<span>좋아요 ${d.like} ♥</span>
 						<span> | </span>
-						<span>수정</span>
+						<span onclick="updateReply()">수정</span>
 						<span> | </span>
 						<span data-type="reply-delete" onclick="showModal(this)">삭제</span>
 						<span> | </span>
@@ -142,5 +142,7 @@ function showModal(el){
 		
 	modalEl.modal('show');
 }
+
+
 
 
