@@ -250,7 +250,8 @@ BEGIN
 END;
 /
 
--- YTPE3(응원)
+
+-- YTPE3(기아)
 BEGIN
     FOR I IN 1..100 LOOP 
 
@@ -266,5 +267,24 @@ BEGIN
 
 END;
 /
+
+-- YTPE3(한화)
+BEGIN
+    FOR I IN 1..100 LOOP 
+
+    INSERT INTO COMM
+    VALUES(SEQ_COMM_NO.NEXTVAL,
+           1, 3, 2, 
+           SEQ_COMM_NO.CURRVAL || '번째 게시글',
+           SEQ_COMM_NO.CURRVAL || '번째 게시글 내용입니다.',
+           DEFAULT, DEFAULT, DEFAULT, DEFAULT
+    
+    );
+    END LOOP;
+
+END;
+/
+
+
 
 COMMIT;
