@@ -16,6 +16,19 @@
 .news-main-popular{
 	width: 70%;
 }
+
+.news-main-popular .news-main-header{
+	justify-content: space-between;
+	align-items: center;
+}
+
+.news-main-popular .news-main-header a{
+	margin-right: 40px;
+}
+
+.news-main-popular .news-main-header a:hover{
+	cursor: pointer;
+}
 /* 뉴스 카드*/
 .news-main-popular .news-card{
 	width: 95%;
@@ -115,9 +128,13 @@
 .news-vods-container{
 	width: 1000px;
 	margin-top: 40px;
-
-	
 }
+
+.news-vods-container .news-vods-header{
+	justify-content: space-between;
+	align-items: center;
+}
+
 .news-vods-container .new-vods{
 	width: 100%;
 	display: flex;

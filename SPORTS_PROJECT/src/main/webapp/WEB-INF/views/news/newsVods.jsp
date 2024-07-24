@@ -18,118 +18,12 @@
 	<main class="container">
 		<!-- 동영상 탭 (영상 인기순 10개)-->
 		<div class="vods-container">
-			<p class="fs-28__b mb-10 fc__blue"> 하이라이트 영상 </p>
-			<div class="vods">
-	            <div class="card-thumbnail">
-	             	<img class="card-thumbnail-img" src="${contextPath}/public/images/news_example.jpg">
-	             	<div class="card-thumbnail-infos">
-	                 	<div class="d-flex h-100">
-		                 	<p class="vod_no fs-20__b fc__gray">1</p>
-		                 	<p class="card-thumbnail-title">'9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</p>
-	                 	</div>
-	             	</div>
-	         	</div>
-	         	<div class="card-thumbnail">
-	             	<img class="card-thumbnail-img" src="${contextPath}/public/images/news_example.jpg">
-	             	<div class="card-thumbnail-infos">
-	                 	<div class="d-flex h-100">
-		                 	<p class="vod_no fs-20__b fc__gray">1</p>
-		                 	<p class="card-thumbnail-title">'9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</p>
-	                 	</div>
-	             	</div>
-	         	</div>
-	         	<div class="card-thumbnail">
-	             	<img class="card-thumbnail-img" src="${contextPath}/public/images/news_example.jpg">
-	             	<div class="card-thumbnail-infos">
-	                 	<div class="d-flex h-100">
-		                 	<p class="vod_no fs-20__b fc__gray">1</p>
-		                 	<p class="card-thumbnail-title">'9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</p>
-	                 	</div>
-	             	</div>
-	         	</div>
-	         	<div class="card-thumbnail">
-	             	<img class="card-thumbnail-img" src="${contextPath}/public/images/news_example.jpg">
-	             	<div class="card-thumbnail-infos">
-	                 	<div class="d-flex h-100">
-		                 	<p class="vod_no fs-20__b fc__gray">1</p>
-		                 	<p class="card-thumbnail-title">'9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</p>
-	                 	</div>
-	             	</div>
-	         	</div>
-	         	<div class="card-thumbnail">
-	             	<img class="card-thumbnail-img" src="${contextPath}/public/images/news_example.jpg">
-	             	<div class="card-thumbnail-infos">
-	                 	<div class="d-flex h-100">
-		                 	<p class="vod_no fs-20__b fc__gray">1</p>
-		                 	<p class="card-thumbnail-title">'9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</p>
-	                 	</div>
-	             	</div>
-	         	</div>
-	         	<div class="card-thumbnail">
-	             	<img class="card-thumbnail-img" src="${contextPath}/public/images/news_example.jpg">
-	             	<div class="card-thumbnail-infos">
-	                 	<div class="d-flex h-100">
-		                 	<p class="vod_no fs-20__b fc__gray">1</p>
-		                 	<p class="card-thumbnail-title">'9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</p>
-	                 	</div>
-	             	</div>
-	         	</div>
-	         	<div class="card-thumbnail">
-	             	<img class="card-thumbnail-img" src="${contextPath}/public/images/news_example.jpg">
-	             	<div class="card-thumbnail-infos">
-	                 	<div class="d-flex h-100">
-		                 	<p class="vod_no fs-20__b fc__gray">1</p>
-		                 	<p class="card-thumbnail-title">'9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</p>
-	                 	</div>
-	             	</div>
-	         	</div>
-	         	<div class="card-thumbnail">
-	             	<img class="card-thumbnail-img" src="${contextPath}/public/images/news_example.jpg">
-	             	<div class="card-thumbnail-infos">
-	                 	<div class="d-flex h-100">
-		                 	<p class="vod_no fs-20__b fc__gray">1</p>
-		                 	<p class="card-thumbnail-title">'9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</p>
-	                 	</div>
-	             	</div>
-	         	</div>
-	         	<div class="card-thumbnail">
-	             	<img class="card-thumbnail-img" src="${contextPath}/public/images/news_example.jpg">
-	             	<div class="card-thumbnail-infos">
-	                 	<div class="d-flex h-100">
-		                 	<p class="vod_no fs-20__b fc__gray">1</p>
-		                 	<p class="card-thumbnail-title">'9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</p>
-	                 	</div>
-	             	</div>
-	         	</div>
-	         	<div class="card-thumbnail">
-	             	<img class="card-thumbnail-img" src="${contextPath}/public/images/news_example.jpg">
-	             	<div class="card-thumbnail-infos">
-	                 	<div class="d-flex h-100">
-		                 	<p class="vod_no fs-20__b fc__gray">1</p>
-		                 	<p class="card-thumbnail-title">'9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</p>
-	                 	</div>
-	             	</div>
-	         	</div>
-	         	<div class="card-thumbnail">
-	             	<img class="card-thumbnail-img" src="${contextPath}/public/images/news_example.jpg">
-	             	<div class="card-thumbnail-infos">
-	                 	<div class="d-flex h-100">
-		                 	<p class="vod_no fs-20__b fc__gray">1</p>
-		                 	<p class="card-thumbnail-title">'9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</p>
-	                 	</div>
-	             	</div>
-	         	</div>
-	         	<div class="card-thumbnail">
-	             	<img class="card-thumbnail-img" src="${contextPath}/public/images/news_example.jpg">
-	             	<div class="card-thumbnail-infos">
-	                 	<div class="d-flex h-100">
-		                 	<p class="vod_no fs-20__b fc__gray">1</p>
-		                 	<p class="card-thumbnail-title">'9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</p>
-	                 	</div>
-	             	</div>
-	         	</div>
+			<p class="fs-20__b mb-10 fc__blue"> 하이라이트 영상 </p>
+			<div class="vods" id="news-vods-data">
+	            
 			</div>
 		</div>
+		<div id="news-vods-pagination"></div>
 	</main>
 	<!-- Be sure to include this TAG -->
 	<jsp:include page="/WEB-INF/views/layouts/footer.jsp" />

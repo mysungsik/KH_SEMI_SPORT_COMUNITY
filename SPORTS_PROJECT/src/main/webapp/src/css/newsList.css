@@ -65,3 +65,18 @@
 	margin-top : 10px;
 	gap:10px;
 }
+
+/* 페이지네이션 스타일링*/
+.paginationjs-pages{
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+}
+.paginationjs-pages ul {
+	display: flex;
+	gap: 10px;
+}
+
+.paginationjs-pages a:hover{
+	cursor: pointer;
+}

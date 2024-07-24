@@ -20,14 +20,17 @@
 		<div class="news-main">
 		<!--  인기뉴스 -->
 			<div class="news-main-popular">
-				<p class="fs-20__b mb-10 fc__blue"> 인기 뉴스 </p>
+				<div class="news-main-header d-flex">
+					<p class="fs-20__b mb-10 fc__blue"> 인기 뉴스 </p>
+					<a class="text-hover__blue" href="${contextPath}/news/list"> 전체 뉴스 > </a>
+				</div>
 			 	<div class="news-card">
                     <img class="news-card-img" src="${contextPath}/public/images/news_example.jpg">
                     <div class="news-card-infos">
                         <p class="news-card-title fs-14__b">
                             플라이강원 2대 주주 세븐브릿지PE, 투자금 전액 날렸다... “개인 고객들 피해” 날렸다... “개인 고객들 피해”
                         </p>
-                        <div class="news-card-content fc__gray">
+                        <div class="news-card-content fc__g\ray">
                             <p> 국내 저비용항공사(LCC) 플라이강원에 투자한 사모펀드(PEF) 운용사와 벤처캐피털(VC)이 
                             투자금을 전액 손실 처리하게 됐다. 플라이강원의 회생계획안에 따라 기존 주주의 주식을 모두 무상 소각해야 하기 때문이다. 
                              주식을 모두 무상 소각해야 하기 때문이다.
@@ -215,7 +218,10 @@
 		
 		<!-- 동영상 탭 (영상 인기순 10개)-->
 		<div class="news-vods-container">
-			<p class="fs-20__b mb-10 fc__blue"> 많이 본 영상 </p>
+			<div class="news-vods-header mb-10 d-flex">
+				<p class="fs-20__b fc__blue"> 많이 본 영상 </p>
+				<a class="text-hover__blue" href='${contextPath}/news/vods'> 전체 영상 > </a>
+			</div>
 			<div class="new-vods">
 	            <div class="card-thumbnail">
 	            	<p class="rank fc__white fs-28__b">1<p>
