@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import com.google.gson.Gson;
 import com.helpgpt.sports.community.model.service.CommunityService;
 import com.helpgpt.sports.community.model.vo.Board;
+import com.helpgpt.sports.teams.model.vo.Teams;
 
 /**
  * Servlet implementation class Login
@@ -41,11 +42,21 @@ public class CommunityApi extends HttpServlet {
 			case "communityBoard": {
 				
 				int type = Integer.parseInt(req.getParameter("type"));
-				List<Board> boardList = service.selectBoardList(type);
+				int teamNo = 1;
 				
-				System.out.println(boardList);
+                // 팀 선택이 있는 경우 teamNo 파라미터 수집
+                if(type == 3) {
+                    String teamNoParam = req.getParameter("teamNo");
+                    if(teamNoParam != null) {
+                        teamNo = Integer.parseInt(teamNoParam);
+                    }
+                }
+				List<Board> boardList = service.selectBoardList(type, teamNo);
+				List<Teams> teams = service.selectTeams();
+				
 				
 				if (boardList.size() > 0) {
+					result.put("teams", teams);
 					result.put("data", boardList);
 					result.put("message", "success to get BoardList");
 				} else {

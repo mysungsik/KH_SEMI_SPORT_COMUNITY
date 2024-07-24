@@ -33,6 +33,7 @@
 						<select name="searchType" style="border: none; outline: none;" class="br-5">
 					    	<option value="author" name="author">작성자</option>
 					    	<option value="title" name="title">제목</option>
+					    	<option value="content" name="content">내용</option>
 						</select>
 						<input type="text">
 						<button class="fa-solid fa-magnifying-glass"></button>

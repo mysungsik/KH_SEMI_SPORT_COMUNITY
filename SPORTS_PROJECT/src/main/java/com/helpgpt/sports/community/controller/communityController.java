@@ -64,10 +64,7 @@ public class communityController extends HttpServlet {
 			}break;
 			case "communityBoard": {
 				dispatcher = req.getRequestDispatcher(defaultURLPath + "communityBoard.jsp");
-				List<Board> boardList = service.selectBoardList(type);
-				System.out.println("controller : " + boardList);
 				
-				req.setAttribute("boardList", boardList);
 				req.setAttribute("sub", type); 
 				dispatcher.forward(req, resp);
 			};break;
@@ -75,7 +72,6 @@ public class communityController extends HttpServlet {
 				dispatcher = req.getRequestDispatcher(defaultURLPath + "communityDetail.jsp");
 				
 				Board board = service.selectBoardDetail(sub);
-				System.out.println(board);
 				
 				req.setAttribute("board", board);
 				req.setAttribute("sub", sub);
