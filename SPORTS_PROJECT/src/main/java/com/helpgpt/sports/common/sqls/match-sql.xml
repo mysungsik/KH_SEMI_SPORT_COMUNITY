@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment>Match SQL queries</comment>
+
+    <!-- 일별 매치 조회 -->
+    <entry key="getMatchesByDay">
+        SELECT * FROM MATCH WHERE TO_CHAR(MATCH_DT, 'DY', 'NLS_DATE_LANGUAGE=ENGLISH') = ?
+    </entry>
+
+    <!-- 팀 순위 조회 -->
+    <entry key="getTeamRankings">
+        SELECT TEAM_NO, TEAM_NAME, 
+               (SELECT COUNT(*) FROM MATCH WHERE TEAM_NO = T.TEAM_NO) AS MATCH_COUNT,
+               (SELECT COUNT(*) FROM MATCH WHERE TEAM_NO = T.TEAM_NO AND SCORE > 0) AS WIN,
+               (SELECT COUNT(*) FROM MATCH WHERE TEAM_NO = T.TEAM_NO AND SCORE <= 0) AS LOSE,
+               (SELECT SUM(SCORE) / COUNT(*) FROM MATCH WHERE TEAM_NO = T.TEAM_NO) AS AVG
+        FROM TEAMS T
+        ORDER BY WIN DESC, AVG DESC
+    </entry>
+</properties>

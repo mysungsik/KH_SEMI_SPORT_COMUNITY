@@ -3,11 +3,16 @@ package com.helpgpt.sports.match.model.vo;
 public class Match {
     private int matchNo;
     private int teamNo;
+    private String teamName;
     private int stadiumNo;
     private int positionNo;
     private int score;
     private String matchDate;
     private String ground;
+    private int matchCount;
+    private int win;
+    private int lose;
+    private double avg;
 
     // Getters and Setters
     public int getMatchNo() {
@@ -24,6 +29,14 @@ public class Match {
 
     public void setTeamNo(int teamNo) {
         this.teamNo = teamNo;
+    }
+
+    public String getTeamName() {
+        return teamName;
+    }
+
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
     }
 
     public int getStadiumNo() {
@@ -66,10 +79,43 @@ public class Match {
         this.ground = ground;
     }
 
+    public int getMatchCount() {
+        return matchCount;
+    }
+
+    public void setMatchCount(int matchCount) {
+        this.matchCount = matchCount;
+    }
+
+    public int getWin() {
+        return win;
+    }
+
+    public void setWin(int win) {
+        this.win = win;
+    }
+
+    public int getLose() {
+        return lose;
+    }
+
+    public void setLose(int lose) {
+        this.lose = lose;
+    }
+
+    public double getAvg() {
+        return avg;
+    }
+
+    public void setAvg(double avg) {
+        this.avg = avg;
+    }
+
 	@Override
 	public String toString() {
-		return "Match [matchNo=" + matchNo + ", teamNo=" + teamNo + ", stadiumNo=" + stadiumNo + ", positionNo="
-				+ positionNo + ", score=" + score + ", matchDate=" + matchDate + ", ground=" + ground + "]";
+		return "Match [matchNo=" + matchNo + ", teamNo=" + teamNo + ", teamName=" + teamName + ", stadiumNo="
+				+ stadiumNo + ", positionNo=" + positionNo + ", score=" + score + ", matchDate=" + matchDate
+				+ ", ground=" + ground + ", matchCount=" + matchCount + ", win=" + win + ", lose=" + lose + ", avg="
+				+ avg + "]";
 	}
 }
-

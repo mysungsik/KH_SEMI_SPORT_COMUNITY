@@ -18,11 +18,9 @@ import com.helpgpt.sports.match.model.vo.Match;
 
 @WebServlet("/api/match/*")
 public class MatchApi extends HttpServlet {
-    private static final long serialVersionUID = 1L;
     MatchService service = new MatchService();
 
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        // Path 지정
         PrintWriter out = res.getWriter();
         String reqPath = req.getPathInfo();
         String path = "";
@@ -33,30 +31,16 @@ public class MatchApi extends HttpServlet {
 
         Map<String, Object> result = new HashMap<>();
 
-        // 경로에 따라 필요한 기능을 사용 ("*" 이후 들어갈 첫번째 값이 해당 기능)
         switch (path) {
-            case "list": {
-                String day = req.getParameter("day");
-                List<Match> matchList = service.getMatchesByDay(day);
-
-                if (matchList.size() > 0) {
-                    result.put("matches", matchList);
-                    result.put("message", "success to get MatchList");
-                } else {
-                    result.put("message", "failed to get MatchList");
-                }
-
-                new Gson().toJson(result, out);
+            case "teamRankings":
+                List<Match> teamRankings = service.getTeamRankings();
+                result.put("data", teamRankings);
+                result.put("message", "success");
                 break;
-            }
-
-            default: {
-                System.out.println("[ERROR] MATCH API");
-            }
+            default:
+                result.put("message", "Invalid API path");
         }
-    }
 
-    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        doGet(req, res);
+        new Gson().toJson(result, out);
     }
 }

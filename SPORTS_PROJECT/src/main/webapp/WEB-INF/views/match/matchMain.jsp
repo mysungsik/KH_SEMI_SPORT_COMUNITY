@@ -64,31 +64,7 @@
                                     id="playerImage">
                             </div>
                             <ol class="list_ranking">
-                                <li>
-                                    <div class="list_detail">
-                                        <span>1 헤이수스(키움)</span> <span class="count">10승</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="list_detail">
-                                        <span>2 엔스(키움)</span> <span class="count">9승</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="list_detail">
-                                        <span>3 원커슨(롯데)</span> <span class="count">8승</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="list_detail">
-                                        <span>4 후라도(키움)</span> <span class="count">7승</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="list_detail">
-                                        <span>5 네일(기아)</span> <span class="count">6승</span>
-                                    </div>
-                                </li>
+                                
                             </ol>
                         </div>
                         <div class="box-ranking">
@@ -98,23 +74,7 @@
                                     id="playerImage">
                             </div>
                             <ol class="list_ranking">
-                                <li>
-                                    <div class="list_detail">
-                                        <span>1 네일(기아)</span> <span class="count">2.44</span>
-                                    </div>
-                                </li>
-                                <li><div class="list_detail">
-                                        <span>2 하트(NC)</span> <span class="count">2.88</span>
-                                    </div></li>
-                                <li><div class="list_detail">
-                                        <span>3 헤이수스(키움)</span> <span class="count">3.34</span>
-                                    </div></li>
-                                <li><div class="list_detail">
-                                        <span>4 후라도(키움)</span> <span class="count">3.42</span>
-                                    </div></li>
-                                <li><div class="list_detail">
-                                        <span>5 월커슨(롯데)</span> <span class="count">3.61</span>
-                                    </div></li>
+                                
                             </ol>
                         </div>
                         <div class="box-ranking">
@@ -124,21 +84,7 @@
                                     id="playerImage">
                             </div>
                             <ol class="list_ranking">
-                                <li><div class="list_detail">
-                                        <span>1 하트(NC)</span> <span class="count">128개</span>
-                                    </div></li>
-                                <li><div class="list_detail">
-                                        <span>2 네일(기아)</span> <span class="count">115개</span>
-                                    </div></li>
-                                <li><div class="list_detail">
-                                        <span>3 엄상백(KT)</span> <span class="count">114개</span>
-                                    </div></li>
-                                <li><div class="list_detail">
-                                        <span>4 코너(삼성)</span> <span class="count">113개</span>
-                                    </div></li>
-                                <li><div class="list_detail">
-                                        <span>5 헤이수스(키움)</span> <span class="count">112개</span>
-                                    </div></li>
+                                
                             </ol>
                         </div>
                         <div class="box-ranking">
@@ -148,21 +94,7 @@
                                     id="playerImage">
                             </div>
                             <ol class="list_ranking">
-                                <li><div class="list_detail">
-                                        <span>1 오승환(삼성)</span> <span class="count">25</span>
-                                    </div></li>
-                                <li><div class="list_detail">
-                                        <span>2 정해영(기아)</span> <span class="count">21</span>
-                                    </div></li>
-                                <li><div class="list_detail">
-                                        <span>3 유영찬(LG)</span> <span class="count">18</span>
-                                    </div></li>
-                                <li><div class="list_detail">
-                                        <span>4 문승원(SSG)</span> <span class="count">17</span>
-                                    </div></li>
-                                <li><div class="list_detail">
-                                        <span>5 김원중(롯데)</span> <span class="count">16</span>
-                                    </div></li>
+                               
                             </ol>
                         </div>
                         <div class="box-ranking">
@@ -172,21 +104,7 @@
                                     id="playerImage">
                             </div>
                             <ol class="list_ranking">
-                                <li><div class="list_detail">
-                                        <span>1 하트(NC)</span> <span class="count">1.07</span>
-                                    </div></li>
-                                <li><div class="list_detail">
-                                        <span>2 월커슨(롯데)</span> <span class="count">1.18</span>
-                                    </div></li>
-                                <li><div class="list_detail">
-                                        <span>3 헤이수스(키움)</span> <span class="count">1.17</span>
-                                    </div></li>
-                                <li><div class="list_detail">
-                                        <span>4 코너(삼성)</span> <span class="count">1.21</span>
-                                    </div></li>
-                                <li><div class="list_detail">
-                                        <span>5 네일(기아)</span> <span class="count">1.21</span>
-                                    </div></li>
+                                
                             </ol>
                         </div>
                     </div>
