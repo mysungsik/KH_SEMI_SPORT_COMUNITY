@@ -1,0 +1,104 @@
+/* 메인 컨테이너 */
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 650px !important;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* 컨텐츠 헤더 */
+.header-text{
+    font-size: 28px;
+    font-weight: 700;
+    width: 100%;
+    text-align: left;
+}
+
+/* 로그인 - 전체 INPUT */
+.findresult-form{
+    margin-top: 20px;
+    margin-bottom: 40px;
+    width: 600px;
+    height: 560px;
+    padding: 20px;
+    text-align: center;
+}
+
+.findresult-form  input{
+    width: 500px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 2px;
+    padding-left: 20px;
+    outline: none;
+}
+
+.findresult-form input:active, .findresult-form input:focus, .findresult-form input:hover{
+    outline: none;
+    border: none;
+    outline: 2px solid #458BE2;
+    box-shadow: 1px 1px 3px #458BE2;
+    transition: all ease-in-out 0.1s;
+}
+
+/* 로그인 - 정보입력 */
+.findresult-form .findresult-essential{
+    height: 110px;
+    text-align: center;
+} 
+
+.findresult-form .findresult-essential > div{
+    position: relative;
+    margin-top: 10px;
+}
+
+.findresult-essential p{
+	width: 300px;
+	margin: 2px auto;
+	text-align: left;
+}
+
+.btn-big__blue{
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 로그인 BOTTOM */
+.login-sub img{
+    width: 370px;
+    height: 170px;
+    margin: 30px 0;
+    border-radius: 15px;
+}
+
+/* 모달 */
+#changePwModal .modal-header{
+	background-color: #71A1DD;
+}
+
+#changePwModal .modal-body{
+	height: 100px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#changePwModal .modal-body input{
+	width: 80%;
+    margin: 5px;
+    padding: 10px;
+}
+
+#changePwModal .modal-footer{
+	align-self: center;
+	border: none;
+}
+
+#changePwModal .modal-footer button{
+	margin : 3px 10px;
+} 

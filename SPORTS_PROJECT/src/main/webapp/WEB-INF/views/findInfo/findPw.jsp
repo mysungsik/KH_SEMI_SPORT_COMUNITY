@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<jsp:include page="/WEB-INF/views/layouts/header-dependencies.jsp"/>
 	<link rel="stylesheet" href="${contextPath}/src/css/login.css">
+	<link rel="stylesheet" href="${contextPath}/src/css/findResult.css">
 	<script src="${contextPath}/src/js/findInfo.js" defer></script>
 	<title>MLB - findPassWord</title>
 </head>
@@ -48,7 +49,7 @@
 	      <div class="modal-footer">
 	      	<input type="hidden" name="modalType" value=""/>
 	        <button id="cancelBtn" type="button" class="btn btn-medium__gray" data-bs-dismiss="modal"> 취소 </button>
-	        <button id="confirmBtn" type="button" class="btn btn-medium__blue" onclick="modalConfirm()"> 변경 </button>
+	        <button id="confirmBtn" type="button" class="btn btn-medium__blue" onclick="modalConfirm()"> 인증 </button>
 	      </div>
 	    </div>
 	  </div>

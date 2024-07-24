@@ -67,9 +67,11 @@ function findPw(e){
 function showModal(foundUserNo){
 	let modalEl = $('#changePwModal');
 
-	modalEl.find(".modal-title").html("비밀번호 변경")
+	modalEl.find(".modal-title").html("비밀번호 메일 인증")
 	modalEl.find(".modal-body").html(`
-		<p> 전송된 메일의 인증번호를 입력해주세요 </p>
+		<p class="fs-14"> 전송된 메일의 인증번호를 입력해주세요 </p>
+		<p> 메일 인증 성공시 비밀번호는 <span class="fs-14__b fc__dblue"> Qwertyuiop1 </span>로 변경됩니다.</p>
+		<p class="fc__gray"> 반드시 임시 비밀번호를 복사하여 저장해주세요 </p>
 		<input type="hidden" name="user_no" value=${foundUserNo}>
 		<input type="text" name="mail_auth">`
 	);
