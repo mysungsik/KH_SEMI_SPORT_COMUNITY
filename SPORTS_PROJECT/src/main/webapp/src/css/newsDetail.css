@@ -1,0 +1,91 @@
+*{
+	box-sizing: border-box;
+	/* border: 1px solid black;  */
+}
+
+.container{
+	justify-content: center;
+	width: 1024px;
+	margin-top: 60px;
+}
+
+/* 뉴스*/
+.news-title-container{
+	height: 60px;
+	width: 1024px;
+	display: flex;
+	flex-direction: column;
+	
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+/* 뉴스 제목 */
+.news-title-container .news-title{
+	flex-basis: 80%;
+	align-content: center;
+	margin-left: 10px;
+}
+
+/* 뉴스 작성자 정보 */
+.news-title-container .news-writer-info{
+	flex-basis: 20%;
+	margin-left: 10px;
+}
+
+/* 뉴스 내용 */
+.news-content-container{
+	margin-left: 10px;
+}
+
+.news-content-container .news-content{
+	margin-top: 20px;
+	margin-bottom: 50px;
+	margin-right: 10px;
+}
+
+.news-content-container .news-content > img{
+	height: 200px;
+}
+
+/* 뉴스 기타 정보 (좋아요, 댓글 등) */
+.news-content-container{
+	border-bottom: 1px solid black;
+}
+
+.news-content-container .news-content-info{
+	align-self: center;
+	font-size: 10px;
+	width: 200px;
+}
+
+
+/* 뉴스 댓글 입력 */
+.reply-input-container{
+	margin-top: 20px;
+	margin-left: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+.reply-input-container textarea{
+	border-radius: 5px;
+}
+
+.reply-input-container button{
+	width: 70px;
+	height: 30px;
+	
+	border: none;
+	border-radius: 5px;
+	background: #458BE2;
+	color: white;
+}
+
+/* 댓글 출력*/
+.reply-container{
+	margin-top: 20px;
+	height: 250px;
+}

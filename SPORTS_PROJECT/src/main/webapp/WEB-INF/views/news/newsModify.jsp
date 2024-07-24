@@ -6,11 +6,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <jsp:include page="/WEB-INF/views/layouts/header-dependencies.jsp"/>
-<link rel="stylesheet" href="${contextPath}/src/css/communityPosting.css">
-<script src="${contextPath}/src/js/communityPosting.js" defer></script>
+
+<link rel="stylesheet" href="${contextPath}/src/css/newsModify.css">
+
+<script src="${contextPath}/src/js/newsModify.js" defer></script>
 <script src="${contextPath}/src/util/pagination.js" defer></script>
-<script src="https://kit.fontawesome.com/e245e5bbb1.js"
-	crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/e245e5bbb1.js" crossorigin="anonymous"></script>
 
 <title>COMMUNITY</title>
 </head>
@@ -18,43 +19,93 @@
 	<jsp:include page="/WEB-INF/views/layouts/header.jsp" />
 	<input type="hidden" name="sub" value="${requestScope.sub}">
 	<!-- Write Main Content -->
-	<main>
-		<form action="#">
-			<section class="title-area">
-				<div class="title">
-					<span class="fs-28__b posting-type">게시글 작성</span>
-				</div>
-				<div class="category">
-					<select name="category" id="category"  onchange="selectCategory(this)" style="border: none; outline: none;">
-		            	<option value="free" name="free">자유 게시판</option>
-				    	<option value="cheer" name="cheer">응원 게시판</option>
-					</select>
-				</div>
-				<div class="team"></div>
-			</section>
-			<section class="posting-area">
-				<div class="input-title">
-					<input type="text" placeholder="제목" name="title" class="fs-20">
-					<div class="input-img">
-						<label class="fa-regular fa-image">
-							<input type="file" name="img">
-						</label>
-					</div>
-				</div>
-				<div class="input-content">
-					<textarea rows="28" cols="95" name="content" style="resize: none; outline: none; border: none;" placeholder="내용을 입력하세요."></textarea>
-				</div>
-			</section>
-			<section class="btn-area">
-				<button class="base__blue fc__white br-5">저장</button>
-				<button class="br-5">취소</button>
-			</section>
-		
-		</form>
-	</main>
+	<main class="container">
 	
+	<section class="board">
+		<!-- 뉴스 제목 -->
+		<section class="title-area base__lblue">
+			<div class="title"> 
+				<span class="fs-12 fc__gray">[ 다저스 ] </span>
+				<span class="fs-14__b">뉴스 제목입니다.</span> 
+			</div>
+			<div class="info-update">
+				<div>
+					<span class="fs-10">기자명</span>
+					<span class="fs-10"> | </span>
+					<span class="fs-10">2024-07-06 14:59:20</span> 				
+				</div> 
+				<div class="update-area">
+					<span class="pointer" onclick="location.href='${contextPath}/community/communityPosting/update'">수정</span>
+					<span> | </span>
+					<span class="delete pointer" data-type="board-delete" onclick="showModal(this)">삭제</span>
+				</div>
+			</div>
+		</section>
+		
+		<!-- 뉴스 내용 -->
+		<section class="content-area">
+			<div class="content">
+				<img src="${contextPath}/public/images/user_img1.jpg">
+				<pre>
+					내용 들어올 자리
+					주저리 주저리	
+				</pre>
+			</div>
+		</section>
+		
+		<!-- 뉴스 정보 -->
+		<section class="info-area">
+			<div class="info">
+				<span>조회수 30</span>
+				<span> | </span>
+				<span>댓글 2</span>
+				<span> | </span>
+				<span class="pointer">좋아요 3 ♥</span>
+				<span> | </span>
+				<span class="pointer" data-type="board-report" onclick="showModal(this)">신고</span>
+			</div>
+			<div class="btn-area">
+				<button>목록으로</button>
+			</div>
+		</section>
+		
+		<section class="input-area">
+			<form>
+				<textarea rows="3" cols="100" style="resize: none" placeholder="댓글을 입력해주세요."></textarea>
+				<button>댓글</button>
+			</form>
+		</section>
+		
+		<section class="reply-area">
+			<div id="community-data">
+			</div>
+		</section>
+		
+		<section class="page-area">
+			<div id="community-pagination"></div>
+		
+		</section>
+	</section>
+	
+
+
+	</main>
 	<!-- Be sure to include this TAG -->
 	<jsp:include page="/WEB-INF/views/layouts/footer.jsp" />
+	
+		<!-- Modal -->
+	<div class="modal" id="communityModal" tabindex="-1" aria-hidden="true">
+      <input type="hidden" name="modalType" value=""/>
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header base__blue">
+	        <h1 class="modal-title" id="commonModalLabel"></h1>
+	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	      </div>
+	      <div class="modal-body"></div>
+	    </div>
+	  </div>
+	</div>
 
 
 </body>

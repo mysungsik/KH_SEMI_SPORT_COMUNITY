@@ -1,0 +1,231 @@
+*{
+	box-sizing: border-box;
+	/* border: 1px solid black;  */
+}
+
+.container{
+	display: flex;
+	justify-content: center;
+}
+
+.board{
+	width: 1024px;
+	margin-top: 60px;
+}
+
+/* 게시글 제목 */
+.title-area{
+	height: 60px;
+	width: 1024px;
+	display: flex;
+	flex-direction: column;
+	
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.title{
+	flex-basis: 80%;
+	align-content: center;
+	margin-left: 10px;
+}
+
+.info{
+	flex-basis: 20%;
+	margin-left: 10px;
+}
+
+/* 게시글 내용 */
+.content-area{
+	margin-left: 10px;
+}
+
+.content{
+	margin-top: 20px;
+	margin-bottom: 50px;
+	margin-right: 10px;
+}
+
+.content>img{
+	height: 200px;
+	width: auto;
+}
+
+.info-area{
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid black;
+}
+
+.info-area>.info{
+	align-self: center;
+	font-size: 10px;
+	width: 200px;
+}
+
+.btn-area{
+	margin-bottom: 10px;
+}
+
+.btn-area button{
+	width: 150px;
+	height: 30px;
+	border: none;
+	border-radius: 5px;
+}
+
+.update-area{
+	padding-right: 10px;
+	align-content: center;
+	text-align: end;
+	width: 200px;
+}
+
+
+
+/* 댓글 입력 */
+.input-area{
+	margin-top: 20px;
+	margin-left: 10px;
+}
+
+form{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+textarea{
+	border-radius: 5px;
+}
+
+form>button{
+	width: 70px;
+	height: 30px;
+	
+	border: none;
+	border-radius: 5px;
+	background: #458BE2;
+	color: white;
+}
+
+/* 댓글 */
+.reply-area{
+	margin-top: 20px;
+	height: 250px;
+}
+
+
+.reply{
+	height: 60px;
+	display: flex;
+	border-bottom: 1px sollid black;
+	justify-content: flex-end;
+}
+
+.reply > form{
+	display: flex;
+	justify-content: flex-end;
+	gap: 10px;
+}
+
+.update > button{
+	width: 70px;
+	height: 30px;
+	
+	border: none;
+	border-radius: 5px;
+	background: #458BE2;
+	color: white;
+}
+
+.author{
+	flex-basis: 10%;
+	align-content: center;
+	text-align: center;
+	margin-left: 10px;
+}
+
+.comment{
+	flex-basis: 75%;
+	align-content: center;
+}
+
+.reply-info{
+	flex-basis: 15%;
+	text-align: end;
+	align-content: center;
+	margin-right: 10px;
+
+
+}
+
+.reply-info *{
+	cursor: pointer;
+	font-size: 10px;
+}
+
+
+.page-area{
+	margin-top: 30px;
+	margin-bottom: 60px;
+}
+
+.page-area ul{
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+
+.page-area a{
+	cursor: pointer;
+}
+
+.pointer{
+	cursor: pointer;
+}
+
+/* 모달 */
+.modal-body>form{
+	flex-direction: column;
+	width: 100%;
+}
+
+.modal-row{
+	display: flex;
+	flex-direction: column;
+	width : 80%;
+	margin-bottom: 20px;
+	
+}
+
+.select-wrapper{
+	border-bottom: 2px solid #ddd;
+}
+
+.modal-btns{
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+
+.modal-content{
+	width: 70%;
+	margin: auto;
+}
+
+.modal-row textarea{
+	border: none;
+	outline: none;
+	resize: none;
+}
+
+
+
+
+
+
+
+
+

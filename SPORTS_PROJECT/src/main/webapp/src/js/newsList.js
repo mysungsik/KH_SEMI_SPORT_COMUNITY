@@ -1,21 +1,22 @@
 const newsData = [
-	{a:"a"},
-	{a:"a"},
-	{a:"a"},
-	{a:"a"},
-	{a:"a"},
-	{a:"a"},
-	{a:"a"},
-	{a:"a"},
-	{a:"a"},
-	{a:"a"},
-	{a:"a"},
-	{a:"a"},
-	{a:"a"}
+	{newsNum:1},
+	{newsNum:2},
+	{newsNum:3},
+	{newsNum:4},
+	{newsNum:5},
+	{newsNum:6},
+	{newsNum:7},
+	{newsNum:8},
+	{newsNum:9},
+	{newsNum:10},
+	{newsNum:11},
+	{newsNum:12},
+	{newsNum:13},
+	{newsNum:14}
 ]
 
 $(document).ready(function () {
-	paginationActive("news-vods", newsData, newsTemplate);
+	paginationActive("news-list", newsData, newsTemplate);
 });
 
 // 페이지네이션 실행 함수
@@ -39,6 +40,7 @@ function paginationActive(id, datas, template){
 				let pagingEl = $(`.paginationjs-page[data-num='${currentPage}'] a`);
 				pagingEl.css({
 					fontSize : "14px",
+					color: "blue",
 					textDecoration : "underline"
 				})
 			}
@@ -53,7 +55,7 @@ function newsTemplate(data) {
 	$.each(data, function(index, d){
 	  	item += 
 	  		`
-		 	<div class="news-card">
+		 	<div class="news-card" onclick="location.href='${contextPath}/news/detail/${d.newsNum}'">
                 <img class="news-card-img" src="${contextPath}/public/images/news_example.jpg">
                 <div class="news-card-infos">
                     <p class="news-card-title fs-14__b">
