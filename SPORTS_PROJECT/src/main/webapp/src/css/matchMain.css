@@ -20,7 +20,8 @@
     display: flex;
     justify-content:center;
     align-items: center;
-    border-radius: 15% 15% 0 0 ;
+    border-radius: 15px 15px 0 0 ;
+    color: white
 }
 .main-top-bar p{
 	font-size:20px;
@@ -63,6 +64,7 @@
 	text-align:center;
 	height: 30px;
 	background-color: lightgray;
+	font-size: 14px;
 }
 .teamRanking td{
     border: 1px solid lightgray;
@@ -112,11 +114,14 @@
 }
 
 .player-ranking-top{
+   
     height: 50px;
     width: 100%;
     display: flex;
     text-align: center;
     justify-content: center;
+    color: white;
+    border-radius: 15px 15px 0 0 ;
 }
 
 .player-ranking-top p{
@@ -176,4 +181,7 @@
 .list_detail{
 	display: flex;
 	justify-content: space-between;
+}
+.more{
+	position: relative;
 }

@@ -6,7 +6,7 @@
     -- 4) REPLY_TYPE
     -- 5) REPORT_TYPE
     -- 6) REPORT_VIOLATION_TYPE
-    
+     
 -- 2. ESSEENTIAL
     -- 1) STADIUM
     -- 2) TEAMS
@@ -174,6 +174,25 @@ SEQ_MATCH_NO.CURRVAL, 3, 3, 3, 6, DEFAULT, 'A'
 
 COMMIT;
 
+--2.4.2) MATCH_SCORE TABLE-------------------------------
+-- 1이 양현종 / 2가 김승연 / 3이 이범호
+-- 1이 기아 2 한화 3 롯데 
+DROP SEQUENCE SEQ_MATCH_SCORE_NO;
+CREATE SEQUENCE SEQ_MATCH_SCORE_NO;
+
+DELETE FROM MATCH_SCORE WHERE MATCH_NO =1;
+INSERT INTO MATCH_SCORE VALUES (
+SEQ_MATCH_SCORE_NO.NEXTVAL, 1, 1, 8, 2, 12, 2, 2, 4);
+
+DELETE FROM MATCH_SCORE WHERE MATCH_NO=2;
+INSERT INTO MATCH_SCORE VALUES (
+SEQ_MATCH_SCORE_NO.NEXTVAL, 2, 1, 5, 2, 8, 4, 2, 3);
+
+DELETE FROM MATCH_SCORE WHERE MATCH_NO=3;
+INSERT INTO MATCH_SCORE VALUES (
+SEQ_MATCH_SCORE_NO.NEXTVAL, 3, 3, 14, 1, 9, 1, 3, 5);
+
+
 -- 2-5) USER TABLE ----------------------------------------
 INSERT INTO USER_INFO VALUES (SEQ_USER_NO.NEXTVAL, null,'sportsAdmin','KQZ3dpm+3daZEkqDpEvtnk6AMuxOJ22ZNR1WmZoxVVq+5YWwAZ+SflpCH26gc3X2nVzfL1zre30F+jsMxgowaw==',
     'audtlr93@naver.com','최명식','01033334444',null,'19910320','김장시, 배추동','M','KO',null,null,'A','G',to_date('2024/07/24','YYYY/MM/DD'),null,0);
@@ -190,6 +209,9 @@ INSERT INTO USER_MAIL_CHECK
 VALUES(SEQ_USER_NO.CURRVAL, NULL);
 
 COMMIT;
+
+
+
 
 -- 2-6) COMMINTY ----------------------------------------
 
