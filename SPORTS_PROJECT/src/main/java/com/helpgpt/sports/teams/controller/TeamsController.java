@@ -22,7 +22,6 @@ import com.helpgpt.sports.teams.model.vo.Teams;
 				"/teams/*"}
 )
 public class TeamsController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
 
 	RequestDispatcher dispatcher;
 	final String defaultURLPath = "/WEB-INF/views/teams/";
@@ -31,8 +30,8 @@ public class TeamsController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// Path 지정
 		String reqPath = req.getPathInfo();
-		
 		String team = "";
+		
 		String[] teams={"kia", "lg", "doosan","teamAdd"};
 
 		List<String> teamList = Arrays.asList(teams);
@@ -63,6 +62,6 @@ public class TeamsController extends HttpServlet {
 			
 		}
 		
-		
 	}
+
 }

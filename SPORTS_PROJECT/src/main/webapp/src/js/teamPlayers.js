@@ -22,9 +22,11 @@ function showTeamPlayers(data){
 		`
 			<td>
 				<div class="card-thumbnail">
-					<a href="${contextPath }/team/${d.team_name}/player">
-						<img class="card-thumbnail-img" src="${d.player_headshot}">
-					</a>
+					<div class="card-thumbnail-img">
+						<a href="${contextPath }/team/${d.team_name}/player">
+							<img src="${d.player_headshot}">
+						</a>
+					</div>
 					<div class="card-thumbnail-infos">
 						<div class="card-thumbnail-position ml-10">
 							<p class="fs-12 fc__white">${d.player_position}</p>

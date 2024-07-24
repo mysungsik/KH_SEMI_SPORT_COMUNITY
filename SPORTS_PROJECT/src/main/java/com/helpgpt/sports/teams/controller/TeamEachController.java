@@ -16,7 +16,6 @@ urlPatterns = {
 		"/team/*"
 })
 public class TeamEachController extends HttpServlet{
-	private static final long serialVersionUID = 1L;
 
 	RequestDispatcher dispatcher;
 	final String defaultURLPath = "/WEB-INF/views/teams/";
@@ -31,7 +30,7 @@ public class TeamEachController extends HttpServlet{
 			if(reqPath.split("/").length == 3) {	// 페이지 비어있지 않을 때
 				team = reqPath.split("/")[1];
 				page = reqPath.split("/")[2];
-
+				System.out.println("0-0");
 			}else {
 				team = reqPath.split("/")[1];
 
@@ -51,7 +50,7 @@ public class TeamEachController extends HttpServlet{
 		if(teamList.contains(team)){
 
 			req.setAttribute("team", team);
-
+			System.out.println(page);
 			switch(page) {
 			case "" :{
 				dispatcher = req.getRequestDispatcher(defaultURLPath + "teamsEachMain.jsp");
@@ -59,6 +58,13 @@ public class TeamEachController extends HttpServlet{
 			};break;
 			case "info" :{
 				dispatcher = req.getRequestDispatcher(defaultURLPath + "teamInfo.jsp");
+				dispatcher.forward(req, resp);
+			};break;
+			
+			// 선수 추가 페이지 만들어야되는데 이거 안 잡힘 
+			// => syso로 찍어본 결과, 모든 구단 내 페이지가 두 번씩 찍히고 두번째 찍혔을 때는 page 값이 null 이 됨.,,,^-ㅠ
+			case "players/playerAdd":{
+				dispatcher = req.getRequestDispatcher(defaultURLPath + "playerAdd.jsp");
 				dispatcher.forward(req, resp);
 			};break;
 
@@ -84,9 +90,15 @@ public class TeamEachController extends HttpServlet{
 				dispatcher.forward(req, resp);
 			};break;
 
-			default:System.out.println("404 페이지로 이동");}
-		}
+			// css 확인하려고 case 추가함(임시)
+			case "playerAdd":{
+				dispatcher = req.getRequestDispatcher(defaultURLPath + "playerAdd.jsp");
+				dispatcher.forward(req, resp);
+			};break;
 
+			default:System.out.println("-- 404 페이지로 이동!! -- ");
+			}
+		}
 
 
 	}

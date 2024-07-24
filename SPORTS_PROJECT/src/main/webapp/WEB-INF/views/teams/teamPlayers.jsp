@@ -48,7 +48,7 @@
 		<!-- 플레이어 시작 -->
 		<div class="team-players">
 			<div class="button-area">
-				<button id="add-player-btn" onclick="location.href='${contextPath}/team/${requestScope.team}/players/playersAdd' ">선수 추가</button>
+				<button id="add-player-btn" onclick="location.href='${contextPath}/team/${requestScope.team}/playerAdd' ">선수 추가</button>
 				<button id="delete-player-btn">선수 삭제</button>
 			</div>
 			<div class="team-player-table">

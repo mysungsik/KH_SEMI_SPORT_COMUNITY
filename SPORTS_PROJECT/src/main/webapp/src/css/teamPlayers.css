@@ -67,14 +67,52 @@ section{
   margin:50px 0;
 }
 
+/* 선수 카드 버튼 영역 */
+.team-players .button-area{
+	width: 100%;
+	display: flex;
+	justify-content: end;
+	gap: 10px;
+	margin: 0 0 50px 0;
+}
+
+.button-area button{
+    padding: 10px 20px;
+    border: 0;
+    background-color: 0;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.button-area #add-player-btn{
+    background-color: #458BE2;
+    color: white;
+    margin-right: 10px;
+}
+
+.button-area #add-player-btn:hover,
+.button-area #delete-player-btn:hover{
+    box-shadow: 2px 2px 5px rgba(69, 69, 69, 0.3) !important;
+}
+
+.button-area #delete-player-btn{
+    background-color: white;
+    color: #458BE2;
+    border: 1px solid #458BE2;
+}
+
 .team-player-table{
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: flex-start;
-	gap:20px;
+	justify-content: space-between;
+	gap: 20px;
   	border-spacing: 10px;
   	border-collapse: separate;
+}
+
+.team-player-table td{
+	margin-bottom: 20px;
 }
 
 .team-players .card-thumbnail {
@@ -83,7 +121,15 @@ section{
 }
 
 .team-players .card-thumbnail .card-thumbnail-img{
-	height:70%;
+	height: 70%;
+}
+
+.team-players .card-thumbnail >a{
+	height:100%;
+}
+
+.team-players .card-thumbnail a>img{
+	height: 100%;
 }
 
 .card-thumbnail-position p{
