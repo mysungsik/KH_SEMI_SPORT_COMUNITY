@@ -17,8 +17,8 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="<%= request.getContextPath() %>/src/common/common.js" defaer></script>
-<script src="${contextPath}/src/js/teams.js" defer></script>
-<script src="${contextPath}/src/js/header-teams.js" defer></script>
+<script src="${contextPath}/src/js/teams.js" defer></script> 
+<script src="${contextPath}/src/js/header-teams.js" defer></script> 
 <script>
 	const contextPath = "${contextPath}";
 	const loginUser = "${loginUser}";
@@ -71,21 +71,23 @@
 		    <div class="header-bot">
 		        <div class="header-nav">
 		            <ul class="d-flex">
+						<!--
 		           		<li>
-							<a class="fs-20__b ${d.team_color} team-name" href="${contextPath}/team/${d.team_name}/info">${d.team_name}</a>
+							<a class="fs-20__b ${d.team_color} team-name" href="${contextPath}/team/${requestScope.team}/info">${requestScope.team}</a>
 						</li>
 						<li>
-							<a class="fs-20__b ${d.team_color}" href="${contextPath}/team/${d.team_name}/players">PLAYERS</a>
+							<a class="fs-20__b ${d.team_color}" href="${contextPath}/team/${requestScope.team}/players">PLAYERS</a>
 						</li>
 						<li>
-							<a href="${contextPath}/team/${d.team_name}"><img class="team-logo" src="${d.team_img}"></a>
+							<a href="${contextPath}/team/${requestScope.team}"><img class="team-logo" src="${d.team_img}"></a>
 						</li>
 						<li>
-							<a class="fs-20__b ${d.team_color}" href="${contextPath}/team/${d.team_name}/schedule">SCHEDULE</a>
+							<a class="fs-20__b ${d.team_color}" href="${contextPath}/team/${requestScope.team}/schedule">SCHEDULE</a>
 						</li>
 						<li>
 							<a class="fs-20__b ${d.team_color}" href="${contextPath }/community/communityBoard/cheer">CHEERS</a>
 						</li>
+						-->
 		            </ul>
 		        </div>
 		    </div>
@@ -106,21 +108,24 @@
             <div class="header-bot">
                 <div class="header-nav">
                     <ul class="d-flex team-nav">
+						<!--
 						<li>
-							<a class="fs-20__b ${d.team_color} team-name" href="${contextPath}/team/${d.team_name}/info">${d.team_name}</a>
+							<a class="fs-20__b ${d.team_color} team-name" href="${contextPath}/team/${requestScope.team}/info">${requestScope.team}</a>
 						</li>
 						<li>
-							<a class="fs-20__b ${d.team_color}" href="${contextPath}/team/${d.team_name}/players">PLAYERS</a>
+							<a class="fs-20__b ${d.team_color}" href="${contextPath}/team/${requestScope.team}/players">PLAYERS</a>
 						</li>
 						<li>
-							<a href="${contextPath}/team/${d.team_name}"><img class="team-logo" src="${d.team_img}"></a>
+							<a href="${contextPath}/team/${requestScope.team}"><img class="team-logo" src="${d.team_img}"></a>
 						</li>
 						<li>
-							<a class="fs-20__b ${d.team_color}" href="${contextPath}/team/${d.team_name}/schedule">SCHEDULE</a>
+							<a class="fs-20__b ${d.team_color}" href="${contextPath}/team/${requestScope.team}/schedule">SCHEDULE</a>
 						</li>
 						<li>
 							<a class="fs-20__b ${d.team_color}" href="${contextPath }/community/communityBoard/cheer">CHEERS</a>
 						</li>
+						
+					-->
                     </ul>
                 </div>
             </div>

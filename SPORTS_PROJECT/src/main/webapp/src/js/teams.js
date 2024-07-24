@@ -25,14 +25,10 @@ $(document).ready(function() {
 		
 		switch (team_value) {
 			case "kia": {
-				$(".team-name").text("KIA TIGERS");
-				$(".team-logo").attr({ src: "https://upload.wikimedia.org/wikipedia/en/e/e0/Kia_Tigers_2017_New_Team_Logo.png" });
 				$(".team-each-image").css("background-image", `url(${"https://tigers.co.kr/files/banner/2023/02/08/catchphrase_pc.png"})`);
 			}break;
 			
 			case "lg": {
-				$(".team-name").text("LG TWINS");
-				$(".team-logo").attr({src : "https://upload.wikimedia.org/wikipedia/commons/4/41/LG_Twins_2017.png"})
 				$(".team-each-image").css("background-image", `url(${"https://www.lgtwins.com/service/download.ncd?actID=BR_RetrieveFile&baRq=IN_DS&baRs=DOWNLOAD&IN_DS.FILE_TYPE=MNP&IN_DS.FILE_ID=6350"})`);
 				
 			}break;
@@ -63,5 +59,4 @@ function showTeams(data){
 	
 	const parent = $(".al-east-icons").eq(0)
 	parent.html(html)
-	
 }

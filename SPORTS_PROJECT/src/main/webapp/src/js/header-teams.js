@@ -15,19 +15,36 @@ const team_main_data = [
 const array = location.pathname.split('/');
 
 $(document).ready(function() {
+
+	let team = $("input[name='team']").val();
+
 	for(let t of team_main_data){
-		if($(location.pathname.split('/'))[3]== t.team_name){
-			console.log("팀 선택됨?");
-			//teamNav(t);
-			console.log("제대로 나옴?");
-			break;
-			
-		}else{
-			console.log("선택된 팀 구단이 아닙니다.");
+		if(team=== t.team_name){
+			teamNav([t]);
+			//$(".team-name").text(t.team_name);
+			//$(".team-logo").attr({src:t.team_img})
 		}
 	}
-});
 
+	/*
+	if (team.length > 0){
+		let team_value = team.val();
+		
+		switch (team_value) {
+			case "kia": {
+				$(".team-name").text("KIA TIGERS");
+				$(".team-logo").attr({ src: "https://upload.wikimedia.org/wikipedia/en/e/e0/Kia_Tigers_2017_New_Team_Logo.png" });
+			}break;
+			
+			case "lg": {
+				$(".team-name").text("LG TWINS");
+				$(".team-logo").attr({src : "https://upload.wikimedia.org/wikipedia/commons/4/41/LG_Twins_2017.png"})
+			}break;
+			
+		}
+	}
+*/
+});
 
 
 function teamNav(data){
