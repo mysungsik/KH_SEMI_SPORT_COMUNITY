@@ -1,10 +1,10 @@
 *{box-sizing: border-box;}
-/* 
-*{border: 1px solid black;}  */
+
+/* *{border: 1px solid black;}   */
 
 .container{
-  max-width: 1024px;
-  margin: 0 auto;
+  max-width: 1024px !important;
+  margin: auto;
 }
 
 .step>h1{
@@ -206,6 +206,8 @@
 }
 
 /* team-step-list 끝 */
+
+
 .base-info h1{
   font-size: 20px;
 }
@@ -225,6 +227,18 @@
   border: 0;
   outline: 0;
   box-shadow: 2px 2px 5px rgba(69, 69, 69, 0.3) !important;
+}
+
+input[name='playerNo'],
+input[name='playerPosition'],
+input[name='height'],
+input[name='weight']{
+  width: 50%;
+}
+
+.input-area-two{
+  display: flex;
+  gap: 10px;
 }
 
 .input-area textarea{
@@ -248,7 +262,7 @@
 button{
   width: 100px;
   padding: 10px 20px;
-  border-radius: 10px;
+  border-radius: 10px !important;
   border: 2px solid #007aff;
   background-color: white;
   color: #007aff;

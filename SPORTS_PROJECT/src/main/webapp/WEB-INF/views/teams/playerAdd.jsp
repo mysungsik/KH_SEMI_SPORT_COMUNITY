@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <jsp:include page="/WEB-INF/views/layouts/header-dependencies.jsp" />
 <link rel="stylesheet" href="${contextPath}/src/css/playerAdd.css">
-<script src="${contextPath}/src/js/playerAdd.js" defer></script>
+<script src="${contextPath}/src/js/teamAdd.js" defer></script>
 <title>MLB Teams</title>
 </head>
 <body>
@@ -45,13 +45,20 @@
 				<div class="base-info">
 					<div class="input-area">
 						<input type="text" name="playerName" placeholder="이름" required>
-						<input type="text" name="playerNo" placeholder="선수번호" required>
-						<input type="text" name="playerPosition" placeholder="포지션명" required>
+						<div class="input-area-two">
+							<input type="text" name="playerNo" placeholder="선수번호" required>
+							<input type="text" name="playerPosition" placeholder="포지션명" required>
+
+						</div>
 						<input type="text" name="playerBD" placeholder="생년월일" required>
 						<input type="text" name="hireDate" placeholder="입단년도 " required>
-						<input type="text" name="height" placeholder="신장">
-						<input type="text" name="weight" placeholder="체중">
-						<input type="text" name="weight" placeholder="출신학교(초등학교, 중학교, 고등학교, 대학교)">
+
+						<div  class="input-area-two">
+							<input type="text" name="height" placeholder="신장">
+							<input type="text" name="weight" placeholder="체중">
+							
+						</div>
+						<input type="text" name="school" placeholder="출신학교(초등학교, 중학교, 고등학교, 대학교)">
 						<input type="text" name="salary" placeholder="연봉">
 						<textarea type="text" name="career" placeholder="경력사항"></textarea>
 					</div>
@@ -121,7 +128,6 @@
 								</div>
 								
 							</div>
-
 							
 						</div>
 
