@@ -12,14 +12,14 @@ public class TeamsService {
 	TeamsDAO dao = new TeamsDAO();
 
 	/** 팀 정보(이름, 색깔, 로고) 출력 service
-	 * @param teamNo
+	 * @param teamName
 	 * @return teamsList
 	 */
-	public List<Teams> selectTeamsList(int teamNo) {
+	public List<Teams> getTeamsList() {
 		
 		Connection conn = getConnection();
 		
-		List<Teams> teamsList = dao.selectTeamsList(conn, teamNo);
+		List<Teams> teamsList = dao.getTeamsList(conn);
 		
 		close(conn);
 		

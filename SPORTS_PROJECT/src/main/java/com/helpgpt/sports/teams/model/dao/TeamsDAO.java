@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -16,6 +17,7 @@ public class TeamsDAO {
 	Properties prop;
 	PreparedStatement pstmt;
 	ResultSet rs;
+	Statement stmt;
 
 	public TeamsDAO() {
 		try {
@@ -37,20 +39,31 @@ public class TeamsDAO {
 	 * @param teamNo
 	 * @return teamsList
 	 */
-	public List<Teams> selectTeamsList(Connection conn, int teamNo) {
+	public List<Teams> getTeamsList(Connection conn) {
 		List<Teams> teamsList = new ArrayList<>();
 		
 		try {
-			String sql = prop.getProperty("selectTeamsList");
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, teamNo);
+			
+			
+			String sql = prop.getProperty("getTeamsList");
+			stmt = conn.createStatement();
+			rs= stmt.executeQuery(sql);
 			
 			while(rs.next()) {
+				int teamNo = rs.getInt("TEAM_NO");
 				String teamName = rs.getString("TEAM_NAME");
+				
+				System.out.println(rs.getString("IMG_ORIGINAL"));
+				
 				String imgOriginal = rs.getString("IMG_ORIGINAL");
+				
+				System.out.println(imgOriginal);
+				
 				String teamColor = rs.getString("TEAM_COLOR");
 				
-				Teams teams = new Teams(teamName, imgOriginal, teamColor);
+				Teams teams = new Teams(teamNo, teamName, imgOriginal, teamColor);
+				
+				teamsList.add(teams);
 			}
 			
 			
@@ -58,7 +71,6 @@ public class TeamsDAO {
 			System.out.println("[ERROR] FAILED to get team info(name, color, logo)");
 			e.printStackTrace();
 		}finally {
-			close(pstmt);
 			close(rs);
 		}
 		

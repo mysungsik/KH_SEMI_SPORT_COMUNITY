@@ -22,9 +22,12 @@ public class Teams {
 	public Teams() {}
 	
 	// 구단 모음용 객체
-	public Teams(String teamName, String imgOriginal, String teamColor) {
+	public Teams(int teamNo, String teamName, String imgOriginal, String teamColor) {
+		this.teamNo = teamNo;
 		this.teamName= teamName;
+		this.teamImage  = new TeamImage();
 		this.teamImage.setImgOriginal(imgOriginal);
+		this.teamImage.setTeamNo(teamNo);
 		this.teamColor= teamColor;
 	}
 	
@@ -154,15 +157,25 @@ public class Teams {
 	public void setTeamColor(String teamColor) {
 		this.teamColor = teamColor;
 	}
+	
 
+	public TeamImage getTeamImage() {
+		return teamImage;
+	}
+
+	public void setTeamImage(TeamImage teamImage) {
+		this.teamImage = teamImage;
+	}
+	
 
 	@Override
 	public String toString() {
 		return "Teams [teamNo=" + teamNo + ", stadiumNo=" + stadiumNo + ", teamName=" + teamName + ", teamLeader="
 				+ teamLeader + ", director=" + director + ", sponsor=" + sponsor + ", teamRegion=" + teamRegion
 				+ ", teamDes=" + teamDes + ", teamSt=" + teamSt + ", videoUrl=" + videoUrl + ", teamColor=" + teamColor
-				+ "]";
+				+ ", teamImage=" + teamImage + "]";
 	}
-	
+
+
 	
 }
