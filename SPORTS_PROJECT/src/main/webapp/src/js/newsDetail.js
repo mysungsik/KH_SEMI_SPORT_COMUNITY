@@ -13,9 +13,55 @@ $(document).ready(function() {
 	getLikes();
 });
 
+
+// 댓글 데이터 가져오는 함수
+function getReplies(){
+	const request_url = `${contextPath}/api/reply/getReplyAll`;
+	$.ajax({
+		type: "GET",
+		url: request_url,
+		data : {
+			typeNo : 4,
+			targetNo : $("input[name='newsNum']").eq(0).val()
+		},
+		dataType: "json",
+		success: function (res) {
+			let isGetData = res.hasOwnProperty("data");
+
+			if (isGetData){
+				paginationActive("reply", res.data, replyPaginationTemplate)
+				
+				$(".reply-cnt").html(res.data.length)
+			}
+		}
+	});
+}
+
+// 좋아요 데이터 가져오는 함수
+function getLikes(){
+	const request_url = `${contextPath}/api/like/getLikeAll`;
+	$.ajax({
+		type: "GET",
+		url: request_url,
+		data : {
+			typeNo : 5,
+			targetNo : $("input[name='newsNum']").eq(0).val()
+		},
+		dataType: "json",
+		success: function (res) {
+			let isGetData = res.hasOwnProperty("data");
+
+			if (isGetData){
+				$(".like-cnt").html(res.data.length)
+			}
+		}
+	});
+}
+
+
 // 페이지네이션 실행 함수
 function paginationActive(id, datas, template) {
-	let page_size = 5;
+	let page_size = 4;
 
 	if ($(`#${id}-pagination`).length > 0) {
 
@@ -48,55 +94,39 @@ function replyPaginationTemplate(data) {
 	$.each(data, function(index, d) {
 		item +=
 			`
+				<hr class="hr__gray">
+				<div class="reply">
+					<input type="hidden" name="replyNo" value="${d.replyNo}">
+					<input type="hidden" name="replyNo" value="${d.userNo}">
+					<input type="hidden" name="replyNo" value="${d.replyTypeNo}">
+					<input type="hidden" name="replyNo" value="${d.replyTargetNo}">
+					<div class="reply-author-info d-flex">
+						<div class="reply-author">
+							<img class="author-profile" 
+								src="${d.userProfileImg != '' ? d.userProfileImg : contextPath + '/public/images/profile/user_img1.jpg'}"/> 
+							<p class="author-name fs-14__b ml-8">${d.userName}</p>
+						</div>
+					</div>
+					<div class="reply-content">
+						<p class="fs-12">${d.replyContent}</p>
+					</div>
+					<div class="reply-extra-info">
+						<div>
+							<span class="fs-10 fc__gray">좋아요 0:todo ♥</span>
+							<span class="fs-10 fc__gray"> | </span>
+							<span class="fs-10 fc__gray" onclick="updateReply()">수정</span>
+							<span class="fs-10 fc__gray"> | </span>
+							<span class="fs-10 fc__gray" data-type="reply-delete" onclick="showModal(this)">삭제</span>
+							<span class="fs-10 fc__gray"> | </span>
+							<span class="fs-10 fc__gray" data-type="reply-report" onclick="showModal(this)">신고</span>
+						</div>           
+						<div><span class="fs-10 fc__gray" class="fs-10">${d.replyDt}</span></div>
+					</div>
+				</div>
 			`
 	})
 	return item;
 }
-
-// 댓글 데이터 가져오는 함수
-function getReplies(){
-	const request_url = `${contextPath}/api/reply/getReplyAll`;
-	$.ajax({
-		type: "GET",
-		url: request_url,
-		data : {
-			typeNo : 4,
-			targetNo : $("input[name='newsNum']").eq(0).val()
-		},
-		dataType: "json",
-		success: function (res) {
-			let isGetData = res.hasOwnProperty("data");
-
-			if (isGetData){
-				console.log(res.data)
-			}
-		}
-	});
-}
-
-// 좋아요 데이터 가져오는 함수
-function getLikes(){
-	const request_url = `${contextPath}/api/like/getLikeAll`;
-	$.ajax({
-		type: "GET",
-		url: request_url,
-		data : {
-			typeNo : 5,
-			targetNo : $("input[name='newsNum']").eq(0).val()
-		},
-		dataType: "json",
-		success: function (res) {
-			let isGetData = res.hasOwnProperty("data");
-
-			if (isGetData){
-				console.log(res.data)
-			}
-		}
-	});
-}
-
-
-
 
 // 모달 함수
 function showModal(el){

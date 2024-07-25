@@ -44,7 +44,7 @@ public class ReplyDAO {
 				int replyNo = rs.getInt("REPLY_NO");
 				int userNo = rs.getInt("USER_NO");
 				String userName = rs.getString("USER_NAME");
-				String userProfileImg = rs.getString("USER_IMG_RENAME");
+				String userProfileImg = rs.getString("USER_IMG_RENAME") != null ? rs.getString("USER_IMG_RENAME") : "";
 				int replyTypeNo = rs.getInt("REPLY_TYPE_NO");
 				String replyTypeName = rs.getString("REPLY_TYPE");
 				int replyTargetNo = rs.getInt("REPLY_TARGET_NO");

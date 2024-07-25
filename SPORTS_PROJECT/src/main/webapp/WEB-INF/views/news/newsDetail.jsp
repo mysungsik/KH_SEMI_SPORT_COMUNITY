@@ -66,11 +66,9 @@ ${newsInfo.getNewsContent()}
 		<!-- 뉴스 기타 정보 (좋아요, 댓글 등) -->
 		<section class="news-extra-info-container">
 			<div class="news-extra-info">
-				<span>조회수 ${newsInfo.getNewsViews()}</span>
+				<span>댓글 <span class="reply-cnt">3</span></span>
 				<span> | </span>
-				<span>댓글 3</span>
-				<span> | </span>
-				<span class="pointer">좋아요 3 ♥</span>
+				<span class="pointer">좋아요 <span class="like-cnt">3</span> ♥</span>
 				<span> | </span>
 				<span class="pointer" data-type="board-report" onclick="showModal(this)">신고</span>
 			</div>
@@ -83,57 +81,7 @@ ${newsInfo.getNewsContent()}
 		</section>
 		
 		<section class="reply-container">
-			<div id="reply-data">
-				<hr class="hr__gray">
-				<div class="reply">
-					<div class="reply-author-info d-flex">
-						<div class="reply-author">
-							<img class="author-profile" src="${contextPath}/public/images/profile/user_img1.jpg"/> 
-							<p class="author-name fs-14__b ml-8">충무로킹갓세종</p>
-						</div>
-					</div>
-					<div class="reply-content">
-						<p class="fs-12">안녕 내이름은 누구일까요<br>안녕하세요 봉주르 <br>하위</p>
-					</div>
-					<div class="reply-extra-info">
-						<div>
-							<span class="fs-10 fc__gray">좋아요 ${d.like} ♥</span>
-							<span class="fs-10 fc__gray"> | </span>
-							<span class="fs-10 fc__gray" onclick="updateReply()">수정</span>
-							<span class="fs-10 fc__gray"> | </span>
-							<span class="fs-10 fc__gray" data-type="reply-delete" onclick="showModal(this)">삭제</span>
-							<span class="fs-10 fc__gray"> | </span>
-							<span class="fs-10 fc__gray" data-type="reply-report" onclick="showModal(this)">신고</span>
-						</div>           
-						<div><span class="fs-10 fc__gray" class="fs-10">2024-03-21 15:21:30</span></div>
-					</div>
-				</div>
-				<hr class="hr__gray">
-				<div class="reply">
-					<div class="reply-author-info d-flex">
-						<div class="reply-author">
-							<img class="author-profile" src="${contextPath}/public/images/profile/202407204160785_85513.gif"/> 
-							<p class="author-name fs-14__b ml-8">엑스트라맨</p>
-						</div>
-					</div>
-					<div class="reply-content">
-						<p class="fs-12">안녕 내이름은 누구일까요<br>안녕하세요 봉주르 <br>하위</p>
-					</div>
-					<div class="reply-extra-info">
-						<div>
-							<span class="fs-10 fc__gray">좋아요 ${d.like} ♥</span>
-							<span class="fs-10 fc__gray"> | </span>
-							<span class="fs-10 fc__gray" onclick="updateReply()">수정</span>
-							<span class="fs-10 fc__gray"> | </span>
-							<span class="fs-10 fc__gray" data-type="reply-delete" onclick="showModal(this)">삭제</span>
-							<span class="fs-10 fc__gray"> | </span>
-							<span class="fs-10 fc__gray" data-type="reply-report" onclick="showModal(this)">신고</span>
-						</div>           
-						<div><span class="fs-10 fc__gray" class="fs-10">2024-03-21 15:21:30</span></div>
-					</div>
-				</div>
-
-			</div>
+			<div id="reply-data"></div>
 			<div id="reply-pagination"></div>
 		</section>
 	</main>
