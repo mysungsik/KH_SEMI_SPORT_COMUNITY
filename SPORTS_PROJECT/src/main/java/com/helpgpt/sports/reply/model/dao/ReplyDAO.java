@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -72,6 +73,54 @@ public class ReplyDAO {
 		}
 		
 		return replyList;
+	}
+
+	public int insertReply(Connection conn, int targetTypeNo, int userNo, int targetNo, String replyContent) {
+		String sql = prop.getProperty("insertReply");
+		int result = 0;
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, targetTypeNo);
+			pstmt.setInt(2, userNo);
+			pstmt.setInt(3, targetNo);
+			pstmt.setString(4, replyContent);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			System.out.println("[ERROR] Failed to insert reply");
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	public Reply getReturnReply(Connection conn) {
+		Reply tempResult = new Reply();
+		
+		try {
+			String sql = prop.getProperty("getReturnReply");
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				tempResult.setReplyDt(rs.getTimestamp("REPLY_DT").toString());
+				tempResult.setReplyNo(rs.getInt("REPLY_NO"));
+			}
+			
+		} catch (Exception e) {
+			System.out.println("[ERROR] Failed to get Replies");
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+			close(rs);
+		}
+		
+		return tempResult;
 	}
 	
 }

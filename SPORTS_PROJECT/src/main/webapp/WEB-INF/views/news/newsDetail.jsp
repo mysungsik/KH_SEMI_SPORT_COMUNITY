@@ -76,8 +76,8 @@ ${newsInfo.getNewsContent()}
 		
 		<!-- 뉴스 댓글 입력 -->
 		<section class="reply-input-container">
-			<textarea rows="3" cols="100" style="resize: none" placeholder="댓글을 입력해주세요."></textarea>
-			<button>확인</button>
+			<textarea name="reply-content" rows="3" cols="100" style="resize: none" placeholder="댓글을 입력해주세요."></textarea>
+			<button class="btn-small__blue" onclick="insertReply()">확인</button>
 		</section>
 		
 		<section class="reply-container">

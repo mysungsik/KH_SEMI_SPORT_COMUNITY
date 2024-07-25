@@ -14,7 +14,27 @@
 			R.REPLY_TYPE_NO = ?
 			AND R.REPLY_TARGET_NO = ?
 			AND R.REPLY_ST = 'N'
-		ORDER BY R.REPLY_DT ASC
+		ORDER BY R.REPLY_DT DESC
 	</entry>
+	
+	<entry key="insertReply">
+		INSERT INTO REPLY VALUES(
+			SEQ_REPLY_NO.NEXTVAL, 
+			?, 
+			?, 
+			?, 
+			DEFAULT, 
+			?, 
+			DEFAULT)
+	</entry>
+	
+	<entry key="getReturnReply">
+		SELECT 
+			SEQ_REPLY_NO.CURRVAL AS REPLY_NO, 
+			SYSTIMESTAMP AS REPLY_DT 
+		FROM DUAL
+	</entry>
+	
+	
 
 </properties>

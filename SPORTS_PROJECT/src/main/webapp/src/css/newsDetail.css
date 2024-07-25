@@ -79,6 +79,11 @@
 	gap: 10px;
 }
 
+.reply-input-container .btn-small__blue{
+	width: 70px;
+	height: 50px;
+}
+
 /*뉴스 댓글 출력*/
 
 .reply-container{

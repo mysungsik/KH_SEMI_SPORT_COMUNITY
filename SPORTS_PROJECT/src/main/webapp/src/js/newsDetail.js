@@ -1,18 +1,10 @@
-let replyData = [
-	{ author: "[ 작성자 ]", comments: "야구 룰이 너무 어려움", date: "2024-07-06 22:49:31", like: 3 },
-	{ author: "[ 작성자 ]", comments: "야구 룰이 너무 어려움", date: "2024-07-06 22:49:31", like: 3 },
-]
-
 $(document).ready(function() {
-	
-	// 페이지네이션 실행
-	// paginationActive("reply", replyData, replyPaginationTemplate);
-	
 	// 댓글 및 좋아요 가져오는 함수 실행
 	getReplies();
 	getLikes();
 });
 
+let replyData = [];
 
 // 댓글 데이터 가져오는 함수
 function getReplies(){
@@ -29,7 +21,8 @@ function getReplies(){
 			let isGetData = res.hasOwnProperty("data");
 
 			if (isGetData){
-				paginationActive("reply", res.data, replyPaginationTemplate)
+				replyData = res.data
+				paginationActive("reply", replyData, replyPaginationTemplate)
 				
 				$(".reply-cnt").html(res.data.length)
 			}
@@ -49,6 +42,7 @@ function getLikes(){
 		},
 		dataType: "json",
 		success: function (res) {
+			
 			let isGetData = res.hasOwnProperty("data");
 
 			if (isGetData){
@@ -126,6 +120,48 @@ function replyPaginationTemplate(data) {
 			`
 	})
 	return item;
+}
+
+function insertReply(){
+	let replyContent = $("textarea[name='reply-content']").val() 
+	
+	if (loginUser == ""){
+		toastPop("warn", "로그인 후 이용해주세요");
+		return;
+	}
+	
+	const request_url = `${contextPath}/api/reply/insertReply`;
+	
+	if (replyContent.trim() != ""){
+		$.ajax({
+			type: "POST",
+			url: request_url,
+			data : {
+				typeNo : 4,	// 뉴스
+				targetNo : $("input[name='newsNum']").eq(0).val(),
+				replyContent
+			},
+			dataType: "json",
+			success: function (res) {
+				let isInsertReply = res.hasOwnProperty("data");
+				
+				if(isInsertReply){
+					$("textarea[name='reply-content']").val("") 
+					
+					// 댓글 최상단에 입력 (unshift(...))
+					replyData.unshift(res.data)
+					paginationActive("reply", replyData, replyPaginationTemplate)
+				
+					// 댓글 개수 변경
+					$(".reply-cnt").html(replyData.length)
+				}
+				
+				else{
+					toastPop("warn", "댓글 입력에 실패하였습니다")
+				}
+			}
+		});
+	}
 }
 
 // 모달 함수
