@@ -69,9 +69,8 @@
 .game-summary, .result-section, .game-records, .pitching-records,
 	.batting-records {
 	border-radius: 10px;
-	padding: 20px;
-	margin-bottom: 20px;
-	margin-top: 20px;
+	padding: 0;
+	margin-bottom: 5px;
 }
 
 .team-score {
@@ -176,8 +175,8 @@
 }
 
 .pitching-records th, .batting-records th {
-	background-color: #003366;
-	color: #fff;
+	background-color: lightgray;
+	color: black;
 }
 
 .chart-container {
@@ -193,5 +192,10 @@
 .record_detail{
 	margin-bottom:30px;
 }
-
+.result-sectionTop,
+.game-recordsTop{
+	border-radius: 15px 15px 0 0 ;
+	color: white;
+	height:50px;
+}
 

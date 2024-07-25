@@ -102,7 +102,9 @@
 			<br> <br>
 			<div class="result-section card__lblue ">
 				<div class="result-section">
-					<p class="fs-14__b fc__blue">경기 결과</p>
+					<div class="result-sectionTop fs-20__b base__mblue">
+						<p>경기 결과</p>
+					</div>
 					<div class="team-results">
 						<div class="team-result">
 							<div class="team-image"></div>
@@ -120,7 +122,9 @@
 			<br> <br>
 			<div class="game-records card__lblue ">
 				<div class="game-records">
-					<p class="fs-14__b fc__blue">경기 기록</p>
+					<div class="game-recordsTop fs-20__b base__mblue">
+						<p>경기 기록</p>
+					</div>
 					<div class="team-logos">
 						<div class="team-logo">팀 로고 이미지</div>
 						<div class="score-box">11 : 1</div>
@@ -134,7 +138,9 @@
 			<br> <br>
 			<div class="pitching-records card__lblue ">
 				<div class="pitching-records">
-					<p class="fs-14__b fc__blue">투수 기록</p>
+					<div class="result-sectionTop fs-20__b base__mblue">
+						<p>투수 기록</p>
+					</div>
 					<table class=record_detail>
 						<thead>
 							<tr>
@@ -320,7 +326,9 @@
 			<br> <br>
 			<div class="batting-records card__lblue ">
 				<div class="batting-records">
-					<p class="fs-14__b fc__blue">타자 기록</p>
+					<div class="result-sectionTop fs-20__b base__mblue">
+						<p>타자 기록</p>
+					</div>
 					<table class=record_detail>
 						<thead>
 							<tr>
