@@ -3,12 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<jsp:include page="/WEB-INF/views/layouts/header-dependencies.jsp" />
-<link rel="stylesheet" href="${contextPath}/src/css/playerAdd.css">
-<script src="${contextPath}/src/js/teamAdd.js" defer></script>
-<title>MLB Teams</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<jsp:include page="/WEB-INF/views/layouts/header-dependencies.jsp" />
+	<link rel="stylesheet" href="${contextPath}/src/css/playerAdd.css">
+	<script src="${contextPath}/src/js/teamAdd.js" defer></script>
+	<title>MLB Teams</title>
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/layouts/header-teams.jsp"/>

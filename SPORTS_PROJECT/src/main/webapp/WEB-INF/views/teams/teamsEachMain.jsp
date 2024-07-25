@@ -3,21 +3,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link rel="stylesheet" href="${contextPath}/src/css/teamsEachMain.css">
-<!-- Link Swiper's CSS -->
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-<script src="${contextPath}/src/js/teamEach.js" defer></script>
-<script src="https://kit.fontawesome.com/cb5f1fee4d.js" crossorigin="anonymous"></script>
-
-
-<title>Team Main</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="${contextPath}/src/css/teamsEachMain.css">
+	<script src="${contextPath}/src/js/teams.js" defer></script>
+	<script src="${contextPath}/src/js/teamEach.js" defer></script>
+	<jsp:include page="/WEB-INF/views/layouts/header-dependencies.jsp" />
+	<title>Team Main</title>
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/layouts/header-teams.jsp" />
+	<jsp:include page="/WEB-INF/views/layouts/header-teams.jsp"/>
+	<input type="hidden" name="team" value="${requestScope.team}">
 	<input type="hidden" name="path" value="${requestScope.path}">
 	<!-- 날짜 슬라이드 시작 -->
 	<div class="team-each-image">

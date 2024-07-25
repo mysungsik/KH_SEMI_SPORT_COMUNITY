@@ -24,21 +24,24 @@ section{
 	justify-content: center;
 	align-items: center;
 	height: 150px;
-	background-color: #D2D2D2;
+	background-color: #d2d2d2;
 }
 
 /* 소개띠 */
 .pagecover-bottom{
 	height: 50px;
-	background-color: #458BE2
-	
 }
 
 .pagecover-bottom-inner{
 	max-width: 1024px;
 	justify-content: end;
 	margin: 0 auto;
-	text-align: center;
+	height: 100%;
+}
+
+.pagecover-bottom-inner> .team-name{
+	height: 100%;
+	align-content: center;
 }
 
 
@@ -57,7 +60,7 @@ section{
 	
 }
 
-.team-video .main-video{
+.team-video iframe{
 	width:100%;
 	position: absolute;
 	height: 100%;
@@ -137,3 +140,57 @@ section{
 	line-height:2;
 }
 /* team-logo 끝 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* team-color */
+.kia_color{
+	background-color: #C70025 ;
+}
+
+.hanwha_color{
+	background-color:#F1592A;
+	
+}
+
+.doosan_color{
+	background-color:#211C3D;
+}
+
+.lg_color{
+	background-color:#9F9F9F;
+}
+
+.samsung_color{
+	background-color:#094EA3;
+}
+
+.kt_color{
+	background-color:#000000;
+}
+
+.ssg_color{
+    background-color: #EC1C23;
+}
+
+.lotte_color{
+	background-color: #000000;
+}
+
+.nc_color{
+	background-color: #274576;
+}
+
+.kiwoom_color{
+	background-color: #862335;
+}

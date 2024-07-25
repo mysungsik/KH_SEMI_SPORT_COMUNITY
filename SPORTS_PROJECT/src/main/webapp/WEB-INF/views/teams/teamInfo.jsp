@@ -25,11 +25,7 @@
 			
 		</div>
 		<!-- 소개띠 -->
-		<div class="pagecover-bottom">
-			<div class="pagecover-bottom-inner d-flex">
-				<div class="fc__white fs-20 team-name mt-10">BLUE JAYS</div>
-			</div>
-		</div>
+		
 		<!-- 소개띠 끝 -->
 	</div>
 	<!-- 페이지 커버 끝 -->

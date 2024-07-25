@@ -30,15 +30,15 @@ section{
 /* 소개띠 */
 .pagecover-bottom{
 	height: 50px;
-	background-color: #458BE2;
-	
+	background-color: black;
 }
 
+
 .pagecover-bottom-inner{
-	height:50px;
 	max-width: 1024px;
-	margin: 0 auto;
 	justify-content: end;
+	margin: 0 auto;
+	height: 100%;
 }
 
 .pagecover-bottom-inner ul{
@@ -59,6 +59,11 @@ section{
 	text-decoration-thickness : 1.5px;
 }
 
+
+.pagecover-bottom-inner> .team-name{
+	height: 100%;
+	align-content: center;
+}
 
 /* 선수 카드 */
 
@@ -85,7 +90,6 @@ section{
 }
 
 .button-area #add-player-btn{
-    background-color: #458BE2;
     color: white;
     margin-right: 10px;
 }
@@ -149,5 +153,68 @@ section{
 .team-players .card-thumbnail .card-thumbnail-infos{
 	margin:0;
 	height:30%;
-	background-color :#458BE2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* team-color */
+.kia_color{
+	background-color: #C70025 ;
+}
+
+.hanwha_color{
+	background-color:#F1592A;
+	
+}
+
+.doosan_color{
+	background-color:#211C3D;
+}
+
+.lg_color{
+	background-color:#9F9F9F;
+}
+
+.samsung_color{
+	background-color:#094EA3;
+}
+
+.kt_color{
+	background-color:#000000;
+}
+
+.ssg_color{
+    background-color: #EC1C23;
+}
+
+.lotte_color{
+	background-color: #000000;
+}
+
+.nc_color{
+	background-color: #274576;
+}
+
+.kiwoom_color{
+	background-color: #862335;
 }

@@ -12,6 +12,8 @@ const teams_data = [
 	
 ]
 
+// 더미 데이터 ------------------------------------------------------------------
+
 
 // nav
 // http://localhost:8083/ksy/teams/kia
@@ -38,7 +40,10 @@ $(document).ready(function() {
 });
 
 
+const request_url = `${contextPath}/api/teams`
+
 function showTeams(data){
+	
 	html = "";
 	$.each(data, function(index, d){
 	  	html += 
@@ -60,3 +65,5 @@ function showTeams(data){
 	const parent = $(".al-east-icons").eq(0)
 	parent.html(html)
 }
+
+

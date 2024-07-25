@@ -23,6 +23,7 @@ public class TeamEachController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String reqPath = req.getPathInfo();
+		
 		String team="";
 		String page="";
 
@@ -30,10 +31,8 @@ public class TeamEachController extends HttpServlet{
 			if(reqPath.split("/").length == 3) {	// 페이지 비어있지 않을 때
 				team = reqPath.split("/")[1];
 				page = reqPath.split("/")[2];
-				System.out.println("0-0");
 			}else {
 				team = reqPath.split("/")[1];
-
 			}
 		}
 		/*
@@ -50,7 +49,6 @@ public class TeamEachController extends HttpServlet{
 		if(teamList.contains(team)){
 
 			req.setAttribute("team", team);
-			System.out.println(page);
 			switch(page) {
 			case "" :{
 				dispatcher = req.getRequestDispatcher(defaultURLPath + "teamsEachMain.jsp");
@@ -96,7 +94,8 @@ public class TeamEachController extends HttpServlet{
 				dispatcher.forward(req, resp);
 			};break;
 
-			default:System.out.println("-- 404 페이지로 이동!! -- ");
+			default:
+				System.out.println("-- 404 페이지로 이동!! -- ");
 			}
 		}
 

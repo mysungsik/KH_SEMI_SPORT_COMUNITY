@@ -42,7 +42,7 @@ public class TeamsController extends HttpServlet {
 		}
 		
 		// 경로에 따라 필요한 페이지로 추가 이동
-		if(team=="") {
+		if(team.equals("")) {
 			dispatcher = req.getRequestDispatcher(defaultURLPath + "teams.jsp");
 			dispatcher.forward(req, resp);
 			
