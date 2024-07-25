@@ -10,4 +10,23 @@
 		WHERE L.LIKE_TYPE_NO = ? 
 			AND L.LIKE_TARGET_NO = ?
 	</entry>
+	
+	<entry key="checkExistLike">
+		SELECT COUNT(*) FROM "LIKE"
+		WHERE USER_NO = ?
+		AND LIKE_TYPE_NO = ?
+		AND LIKE_TARGET_NO = ?
+	</entry>
+	
+	<entry key="insertLike">
+		INSERT INTO "LIKE" 
+		VALUES(?, ?, ?)
+	</entry>
+	
+	<entry key="deleteLike">
+		DELETE FROM "LIKE"
+		WHERE USER_NO = ?
+		AND LIKE_TYPE_NO = ?
+		AND LIKE_TARGET_NO = ?
+	</entry>
 </properties>

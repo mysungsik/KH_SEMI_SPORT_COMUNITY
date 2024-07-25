@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -56,11 +57,86 @@ public class LikeDAO {
 			System.out.println("[ERROR] Failed to get likes");
 			e.printStackTrace();
 		}finally {
-			close(pstmt);
 			close(rs);
+			close(pstmt);
 		}
 		
 		return likeList;
+	}
+	
+	public int checkExistLike(Connection conn, int targetTypeNo, int targetNo, int userNo) {
+		String sql = prop.getProperty("checkExistLike");
+		int result = 0;
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, userNo);
+			pstmt.setInt(2, targetTypeNo);
+			pstmt.setInt(3, targetNo);
+			
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				result = rs.getInt(1);
+			}
+			
+		} catch (SQLException e) {
+			System.out.println("[ERROR] Failed to check Exist Like");
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return result;
+	}
+	
+
+	public int insertLike(Connection conn, int targetTypeNo, int targetNo, int userNo) {
+		String sql = prop.getProperty("insertLike");
+		int result = 0;
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, userNo);
+			pstmt.setInt(2, targetTypeNo);
+			pstmt.setInt(3, targetNo);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			System.out.println("[ERROR] Failed to insert like");
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	public int deleteLike(Connection conn, int targetTypeNo, int targetNo, int userNo) {
+		String sql = prop.getProperty("deleteLike");
+		int result = 0;
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, userNo);
+			pstmt.setInt(2, targetTypeNo);
+			pstmt.setInt(3, targetNo);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			System.out.println("[ERROR] Failed to delete like");
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
 	}
 
 }

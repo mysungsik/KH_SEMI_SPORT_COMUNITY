@@ -5,6 +5,7 @@ $(document).ready(function() {
 });
 
 let replyData = [];
+let likeData = [];
 
 // 댓글 데이터 가져오는 함수
 function getReplies(){
@@ -44,9 +45,9 @@ function getLikes(){
 		success: function (res) {
 			
 			let isGetData = res.hasOwnProperty("data");
-
 			if (isGetData){
-				$(".like-cnt").html(res.data.length)
+				likeData = res.data
+				$(".like-cnt").html(likeData.length)
 			}
 		}
 	});
@@ -157,11 +158,66 @@ function insertReply(){
 				}
 				
 				else{
-					toastPop("warn", "댓글 입력에 실패하였습니다")
+					toastPop("warn", res.message)
 				}
 			}
 		});
 	}
+}
+
+let beforeState = "";	// 이전 상태를 기록하기 위한 값
+function modifyLike(){
+	
+	if (loginUser == ""){
+		toastPop("warn", "로그인 후 이용해주세요");
+		return;
+	}
+	
+	const request_url = `${contextPath}/api/like/modifyLike`;
+	
+	$.ajax({
+		type: "POST",
+		url: request_url,
+		data : {
+			typeNo : 5,	// 뉴스
+			targetNo : $("input[name='newsNum']").eq(0).val()
+		},
+		dataType: "json",
+		success: function (res) {
+		
+			let isModifyLike = res.hasOwnProperty("data");
+			
+			if(isModifyLike){
+				// 기존 상태에 따라 좋아요 수 변경
+				if (beforeState == ""){
+					if (res.data == "deleteLike"){
+						beforeState = "deleteLike"
+						$(".like-cnt").html(likeData.length -1)			
+					}
+					else if (res.data == "insertLike"){
+						beforeState = "insertLike"
+						$(".like-cnt").html(likeData.length + 1)
+					}
+					
+				} else if(beforeState == "deleteLike"){
+					if (res.data == "insertLike"){
+						beforeState = "insertLike"
+						$(".like-cnt").html(likeData.length +1)
+					}
+					
+				} else if (beforeState == "insertLike"){
+					if (res.data == "deleteLike"){
+						beforeState = "deleteLike"
+						$(".like-cnt").html(likeData.length)
+					}
+				}
+			}
+			else{
+				toastPop("warn", res.message)
+			}
+		}
+	});
+	
 }
 
 // 모달 함수

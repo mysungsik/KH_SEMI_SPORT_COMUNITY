@@ -68,7 +68,7 @@ ${newsInfo.getNewsContent()}
 			<div class="news-extra-info">
 				<span>댓글 <span class="reply-cnt">3</span></span>
 				<span> | </span>
-				<span class="pointer">좋아요 <span class="like-cnt">3</span> ♥</span>
+				<span class="pointer" onclick="modifyLike()">좋아요 <span class="like-cnt"></span> ♥</span>
 				<span> | </span>
 				<span class="pointer" data-type="board-report" onclick="showModal(this)">신고</span>
 			</div>
