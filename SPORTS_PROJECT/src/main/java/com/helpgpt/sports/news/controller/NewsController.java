@@ -68,6 +68,13 @@ public class NewsController extends HttpServlet {
 				req.setAttribute("newsNum", newsNum);
 				dispatcher.forward(req, res);
 			};break;
+			case "modify": {
+				dispatcher = req.getRequestDispatcher(defaultURLPath + "newsModify.jsp");
+				// TODO : DAO 에서 데이터를 찾아 뉴스 페이지 만들기
+				// 		  NEWS 데이터를 찾아 JSP 로 만들고, 댓글은 페이지 생성시 JS 로 불러오기
+				req.setAttribute("newsNum", newsNum);
+				dispatcher.forward(req, res);
+			};break;
 		}
 	}
 }

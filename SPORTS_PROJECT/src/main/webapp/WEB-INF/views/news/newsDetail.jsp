@@ -17,7 +17,7 @@
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/layouts/header.jsp" />
-	<input type="hidden" name="sub" value="${requestScope.sub}">
+	<input type="hidden" name="newsNum" value="${newsNum}">
 	<!-- Write Main Content -->
 	<main class="container">
 		<!-- 뉴스 제목 -->
@@ -34,7 +34,7 @@
 				</div> 
 			</div>
 			<div class="news-update-btns mr-10">
-				<span>수정</span>
+				<span onclick="location.href='${contextPath}/news/modify/${newsNum}'">수정</span>
 				<span> | </span>
 				<span class="delete" data-type="delete" onclick="showModal(this)">삭제</span>
 			</div>
