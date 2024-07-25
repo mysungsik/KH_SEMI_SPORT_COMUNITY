@@ -7,6 +7,10 @@ $(document).ready(function() {
 	
 	// 페이지네이션 실행
 	// paginationActive("reply", replyData, replyPaginationTemplate);
+	
+	// 댓글 및 좋아요 가져오는 함수 실행
+	getReplies();
+	getLikes();
 });
 
 // 페이지네이션 실행 함수
@@ -17,9 +21,7 @@ function paginationActive(id, datas, template) {
 
 		$(`#${id}-pagination`).pagination({
 			dataSource: datas,
-
 			pageSize: page_size,
-
 			callback: function(data, pagination) {
 				var html = template(data);
 
@@ -39,22 +41,64 @@ function paginationActive(id, datas, template) {
 	}
 }
 
-// 일반 유저 페이지네이션 템플릿 함수
+// 댓글 페이지네이션 템플릿 함수
 function replyPaginationTemplate(data) {
 	let item = "";
 	
 	$.each(data, function(index, d) {
 		item +=
 			`
-
 			`
 	})
-
 	return item;
 }
 
+// 댓글 데이터 가져오는 함수
+function getReplies(){
+	const request_url = `${contextPath}/api/reply/getReplyAll`;
+	$.ajax({
+		type: "GET",
+		url: request_url,
+		data : {
+			typeNo : 4,
+			targetNo : $("input[name='newsNum']").eq(0).val()
+		},
+		dataType: "json",
+		success: function (res) {
+			let isGetData = res.hasOwnProperty("data");
 
-// 모달
+			if (isGetData){
+				console.log(res.data)
+			}
+		}
+	});
+}
+
+// 좋아요 데이터 가져오는 함수
+function getLikes(){
+	const request_url = `${contextPath}/api/like/getLikeAll`;
+	$.ajax({
+		type: "GET",
+		url: request_url,
+		data : {
+			typeNo : 5,
+			targetNo : $("input[name='newsNum']").eq(0).val()
+		},
+		dataType: "json",
+		success: function (res) {
+			let isGetData = res.hasOwnProperty("data");
+
+			if (isGetData){
+				console.log(res.data)
+			}
+		}
+	});
+}
+
+
+
+
+// 모달 함수
 function showModal(el){
 	let modalEl = $('#communityModal');
 	
@@ -102,10 +146,8 @@ function showModal(el){
 				</div>
 			</form>	
 				`
-			);
+		);
 	}
-	
-		
 		
 	modalEl.modal('show');
 }

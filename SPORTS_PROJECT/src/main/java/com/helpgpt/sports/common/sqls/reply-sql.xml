@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	
+	<comment>sql file for reply</comment>
+	<entry key="getReplyAllByOneTarget">
+		SELECT R.*, U.USER_NAME, T.REPLY_TYPE, U.USER_IMG_RENAME
+			FROM REPLY R
+		JOIN USER_INFO U 
+			ON R.USER_NO = U.USER_NO
+		JOIN REPLY_TYPE T 
+			ON R.REPLY_TYPE_NO = T.REPLY_TYPE_NO
+		WHERE 
+			R.REPLY_TYPE_NO = ?
+			AND R.REPLY_TARGET_NO = ?
+			AND R.REPLY_ST = 'N'
+		ORDER BY R.REPLY_DT ASC
+	</entry>
+
+</properties>

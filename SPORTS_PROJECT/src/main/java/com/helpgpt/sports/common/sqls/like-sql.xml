@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	
+	<comment>sql file for like</comment>
+	<entry key="getLikeAllByOneTarget">
+		SELECT L.*, U.USER_NAME, T.LIKE_TYPE FROM "LIKE" L
+		JOIN USER_INFO U ON L.USER_NO = U.USER_NO
+		JOIN LIKE_TYPE T ON L.LIKE_TYPE_NO = T.LIKE_TYPE_NO
+		WHERE L.LIKE_TYPE_NO = ? 
+			AND L.LIKE_TARGET_NO = ?
+	</entry>
+</properties>

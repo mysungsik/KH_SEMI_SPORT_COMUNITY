@@ -200,15 +200,37 @@ SEQ_MATCH_SCORE_NO.NEXTVAL, 3, 3, 14, 1, 9, 1, 3, 5);
 -- 2-5) USER TABLE ----------------------------------------
 INSERT INTO USER_INFO VALUES (SEQ_USER_NO.NEXTVAL, null,'sportsAdmin','KQZ3dpm+3daZEkqDpEvtnk6AMuxOJ22ZNR1WmZoxVVq+5YWwAZ+SflpCH26gc3X2nVzfL1zre30F+jsMxgowaw==',
     'audtlr93@naver.com','최명식','01033334444',null,'19910320','김장시, 배추동','M','KO',null,null,'A','G',to_date('2024/07/24','YYYY/MM/DD'),null,0);
-
 INSERT INTO USER_POLICY 
 VALUES(SEQ_USER_NO.CURRVAL, DEFAULT, DEFAULT, DEFAULT);
-
-
 INSERT INTO USER_SESSION 
 VALUES( SEQ_USER_NO.CURRVAL, NULL);
+INSERT INTO USER_MAIL_CHECK 
+VALUES(SEQ_USER_NO.CURRVAL, NULL);
 
+INSERT INTO USER_INFO VALUES (SEQ_USER_NO.NEXTVAL, null,'sportsAdmin2','KQZ3dpm+3daZEkqDpEvtnk6AMuxOJ22ZNR1WmZoxVVq+5YWwAZ+SflpCH26gc3X2nVzfL1zre30F+jsMxgowaw==',
+    '1010tmddus@naver.com','김승연','01013334444',null,'19910320','김장시, 배추동','M','KO',null,null,'A','G',to_date('2024/07/24','YYYY/MM/DD'),null,0);
+INSERT INTO USER_POLICY 
+VALUES(SEQ_USER_NO.CURRVAL, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO USER_SESSION 
+VALUES( SEQ_USER_NO.CURRVAL, NULL);
+INSERT INTO USER_MAIL_CHECK 
+VALUES(SEQ_USER_NO.CURRVAL, NULL);
 
+INSERT INTO USER_INFO VALUES (SEQ_USER_NO.NEXTVAL, null,'sportsAdmin3','KQZ3dpm+3daZEkqDpEvtnk6AMuxOJ22ZNR1WmZoxVVq+5YWwAZ+SflpCH26gc3X2nVzfL1zre30F+jsMxgowaw==',
+    'dongjun_k@naver.com','김동준','01023334444',null,'19910320','김장시, 배추동','M','KO',null,null,'A','G',to_date('2024/07/24','YYYY/MM/DD'),null,0);
+INSERT INTO USER_POLICY 
+VALUES(SEQ_USER_NO.CURRVAL, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO USER_SESSION 
+VALUES( SEQ_USER_NO.CURRVAL, NULL);
+INSERT INTO USER_MAIL_CHECK 
+VALUES(SEQ_USER_NO.CURRVAL, NULL);
+
+INSERT INTO USER_INFO VALUES (SEQ_USER_NO.NEXTVAL, null,'sportsAdmin4','KQZ3dpm+3daZEkqDpEvtnk6AMuxOJ22ZNR1WmZoxVVq+5YWwAZ+SflpCH26gc3X2nVzfL1zre30F+jsMxgowaw==',
+    'mlmb7801@naver.com','이지혁','01043334444',null,'19910320','김장시, 배추동','M','KO',null,null,'A','G',to_date('2024/07/24','YYYY/MM/DD'),null,0);
+INSERT INTO USER_POLICY 
+VALUES(SEQ_USER_NO.CURRVAL, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO USER_SESSION 
+VALUES( SEQ_USER_NO.CURRVAL, NULL);
 INSERT INTO USER_MAIL_CHECK 
 VALUES(SEQ_USER_NO.CURRVAL, NULL);
 
@@ -288,7 +310,7 @@ END;
 
 COMMIT;
 
--- 2-7) NEWS 
+-- 2-7) NEWS TABLE
 INSERT INTO NEWS VALUES(
     SEQ_NEWS_NO.NEXTVAL, 1, 1, '한화 이글스 기아에게 충격 패배', '스포츠 낚시 티비', 
     '한화 이글스 기아에게 충격 패배 <br> 그럼에도 불구하고 정신 못차려 <br> 회식 장소에서 ...',
@@ -374,3 +396,44 @@ INSERT INTO NEWS_IMG VALUES(
 INSERT INTO TEAM_IMG 
 VALUES(1, '/public/images/teams/kia.png', 'kia-logo.png', 1, 'KIA타이거즈의 로고는 워드마크와 함께 구단명칭을 표현한 것으로 각종 매체에 적용되어 대외적인 커뮤니케이션을 보다 친밀감 있게 연결해 주는 역할을 한다.
 야구장의 홈베이스와 Tiger nose 형태를 결합하여 프레임화한 형태의 로고는 승리를 나타내는 V모티프를 통해 전통 명문구단의 대표성과 위상을 표현하고 다이아몬드의 강인한 속성을 은유적으로 표현하였다.');
+COMMIT;
+
+-- 2-8) REPLY TABLE (뉴스에 댓글 추가) - REPLY_NO, REPLY_TYPE_NO(4), USER_NO, REPLY_TARGET_NO, REPLY_DT, REPLY_CONTENT, REPLY_ST
+INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 4, 1, 1, DEFAULT, '안녕 내이름은 안녕안녕! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
+INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 4, 2, 1, DEFAULT, '안녕 내이름은 김승연!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
+INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 4, 1, 1, DEFAULT, '안녕 내이름은 최명식!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
+INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 4, 2, 1, DEFAULT, '안녕 내이름은 지혁지혁!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
+INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 4, 3, 1, DEFAULT, '안녕 내이름은 이지혁!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
+INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 4, 4, 1, DEFAULT, '안녕 내이름은 김동준! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
+INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 4, 4, 1, DEFAULT, '안녕 내이름은 김동준 안녕난녕!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
+
+INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 4, 1, 2, DEFAULT, '안녕 내이름은 최명식!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
+INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 4, 2, 2, DEFAULT, '안녕 내이름은 지혁지혁!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
+INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 4, 3, 2, DEFAULT, '안녕 내이름은 이지혁!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
+INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 4, 4, 2, DEFAULT, '안녕 내이름은 김동준! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
+INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 4, 4, 2, DEFAULT, '안녕 내이름은 김동준 안녕난녕!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
+
+INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 4, 2, 3, DEFAULT, '안녕 내이름은 지혁지혁!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
+INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 4, 3, 3, DEFAULT, '안녕 내이름은 이지혁!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
+INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 4, 4, 3, DEFAULT, '안녕 내이름은 김동준 안녕난녕!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
+COMMIT;
+
+-- 2-9) LIKE TABLE (뉴스에 좋아요 추가) - USER, LIKE_TYPE_NO (5), LIKE_TARGET_NO
+INSERT INTO "LIKE" VALUES(1, 5, 1);
+INSERT INTO "LIKE" VALUES(1, 5, 2);
+INSERT INTO "LIKE" VALUES(1, 5, 3);
+INSERT INTO "LIKE" VALUES(1, 5, 4);
+INSERT INTO "LIKE" VALUES(1, 5, 5);
+INSERT INTO "LIKE" VALUES(1, 5, 6);
+INSERT INTO "LIKE" VALUES(2, 5, 1);
+INSERT INTO "LIKE" VALUES(2, 5, 2);
+INSERT INTO "LIKE" VALUES(2, 5, 3);
+INSERT INTO "LIKE" VALUES(2, 5, 4);
+INSERT INTO "LIKE" VALUES(2, 5, 5);
+INSERT INTO "LIKE" VALUES(3, 5, 1);
+INSERT INTO "LIKE" VALUES(3, 5, 2);
+INSERT INTO "LIKE" VALUES(3, 5, 3);
+INSERT INTO "LIKE" VALUES(4, 5, 1);
+INSERT INTO "LIKE" VALUES(4, 5, 1);
+
+COMMIT;

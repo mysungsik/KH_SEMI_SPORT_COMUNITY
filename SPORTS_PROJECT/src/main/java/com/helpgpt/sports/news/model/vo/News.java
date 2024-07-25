@@ -3,6 +3,9 @@ package com.helpgpt.sports.news.model.vo;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.helpgpt.sports.like.model.vo.Like;
+import com.helpgpt.sports.reply.model.vo.Reply;
+
 public class News {
 	private int newsNo;
 	private int userNo;
@@ -96,13 +99,6 @@ public class News {
 		this.createDt = createDt;
 	}
 	
-	public void addNewsImg(NewsImg img) {
-		this.newsImgList.add(img);
-	}
-	
-	public List<NewsImg> getNewsImg() {
-		return this.newsImgList;
-	}
 	public String getUserName() {
 		return userName;
 	}
@@ -116,6 +112,12 @@ public class News {
 		this.teamName = teamName;
 	}
 	
+	// 뉴스 이미지 추가
+	public void addNewsImg(NewsImg img) {
+		this.newsImgList.add(img);
+	}
 	
-	
+	public List<NewsImg> getNewsImg() {
+		return this.newsImgList;
+	}
 }
