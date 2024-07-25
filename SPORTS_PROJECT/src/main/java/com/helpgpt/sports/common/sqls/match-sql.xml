@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
-    <comment>Match SQL queries</comment>
+    <comment>Match 관련 SQL 쿼리 모음</comment>
+    
+    <!-- 팀 순위를 가져오는 쿼리 -->
+    <entry key="getTeamRankings"><![CDATA[
+        SELECT T.TEAM_NAME, COUNT(M.MATCH_NO) AS MATCH_COUNT, 
+               SUM(CASE WHEN M.SCORE > O.SCORE THEN 1 ELSE 0 END) AS WIN, 
+               SUM(CASE WHEN M.SCORE < O.SCORE THEN 1 ELSE 0 END) AS LOSE
+        FROM MATCH M
+        JOIN TEAMS T ON M.TEAM_NO = T.TEAM_NO
+        JOIN MATCH O ON M.MATCH_NO = O.MATCH_NO AND M.TEAM_NO != O.TEAM_NO
+        GROUP BY T.TEAM_NAME
+        ORDER BY WIN DESC
+    ]]></entry>
 
-    <!-- 일별 매치 조회 -->
-    <entry key="getMatchesByDay">
-        SELECT * FROM MATCH WHERE TO_CHAR(MATCH_DT, 'DY', 'NLS_DATE_LANGUAGE=ENGLISH') = ?
-    </entry>
-
-    <!-- 팀 순위 조회 -->
-    <entry key="getTeamRankings">
-        SELECT TEAM_NO, TEAM_NAME, 
-               (SELECT COUNT(*) FROM MATCH WHERE TEAM_NO = T.TEAM_NO) AS MATCH_COUNT,
-               (SELECT COUNT(*) FROM MATCH WHERE TEAM_NO = T.TEAM_NO AND SCORE &gt; 0) AS WIN,
-               (SELECT COUNT(*) FROM MATCH WHERE TEAM_NO = T.TEAM_NO AND SCORE &lt;= 0) AS LOSE,
-               (SELECT ROUND(CAST((SUM(SCORE) / COUNT(*)) AS NUMERIC), 3) FROM MATCH WHERE TEAM_NO = T.TEAM_NO) AS WIN_RATE,
-               (SELECT STRING_AGG(CONSEQUENCE, ', ') FROM MATCH WHERE TEAM_NO = T.TEAM_NO) AS CONSEQUENCE,
-               (SELECT ROUND(AVG(BATTING_AVERAGE), 3) FROM MATCH WHERE TEAM_NO = T.TEAM_NO) AS BATTING_AVERAGE,
-               (SELECT ROUND(AVG(ERA), 2) FROM MATCH WHERE TEAM_NO = T.TEAM_NO) AS ERA,
-               (SELECT STRING_AGG(RECENT_MATCH, ', ') FROM MATCH WHERE TEAM_NO = T.TEAM_NO) AS RECENT_MATCH
-        FROM TEAMS T
-        ORDER BY WIN DESC, WIN_RATE DESC
-    </entry>
+    <!-- 선수 순위를 가져오는 쿼리 -->
+    <entry key="getPlayerRankings"><![CDATA[
+        SELECT CATEGORY, PLAYER_NAME, TEAM_NAME, COUNT 
+        FROM PLAYER_RANKINGS
+    ]]></entry>
 </properties>

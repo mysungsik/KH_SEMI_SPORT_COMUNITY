@@ -1,30 +1,20 @@
 package com.helpgpt.sports.match.model.service;
 
-import static com.helpgpt.sports.common.util.JDBCTemplate.close;
-import static com.helpgpt.sports.common.util.JDBCTemplate.getConnection;
+import static com.helpgpt.sports.common.util.JDBCTemplate.*;
 
 import java.sql.Connection;
 import java.util.List;
 
-import com.helpgpt.sports.match.model.dao.MatchDao;
-import com.helpgpt.sports.match.model.vo.Match;
+import com.helpgpt.sports.match.model.dao.MatchDAO;
+import com.helpgpt.sports.match.model.vo.TeamRanking;
 
 public class MatchService {
-    MatchDao dao = new MatchDao();
+    private MatchDAO matchDAO = new MatchDAO();
 
-//    public List<Match> getMatchesByDay(String day) {
-//        Connection conn = getConnection();
-//        List<Match> matchList = dao.getMatchesByDay(conn, day);
-//        close(conn);
-//        return matchList;
-//    }
-
-    public List<Match> getTeamRankings() {
+    public List<TeamRanking> getTeamRankings() {
         Connection conn = getConnection();
-        List<Match> teamRankings = dao.getTeamRankings(conn);
+        List<TeamRanking> rankings = matchDAO.getTeamRankings(conn);
         close(conn);
-        return teamRankings;
+        return rankings;
     }
-    
-    
 }
