@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.helpgpt.sports.news.model.service.NewsService;
+import com.helpgpt.sports.news.model.vo.News;
+
 
 @WebServlet(name = "newsController",
 urlPatterns = {
@@ -22,6 +25,7 @@ public class NewsController extends HttpServlet {
 	
 	RequestDispatcher dispatcher;
 	final String defaultURLPath = "/WEB-INF/views/news/";
+	NewsService service = new NewsService();
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		String contextPath = req.getContextPath();
@@ -63,9 +67,9 @@ public class NewsController extends HttpServlet {
 			};break;
 			case "detail": {
 				dispatcher = req.getRequestDispatcher(defaultURLPath + "newsDetail.jsp");
-				// TODO : DAO 에서 데이터를 찾아 뉴스 페이지 만들기
-				// 		  NEWS 데이터를 찾아 JSP 로 만들고, 댓글은 페이지 생성시 JS 로 불러오기
+				News newsInfo = service.getNewsOne(newsNum);
 				req.setAttribute("newsNum", newsNum);
+				req.setAttribute("newsInfo", newsInfo);
 				dispatcher.forward(req, res);
 			};break;
 			case "modify": {

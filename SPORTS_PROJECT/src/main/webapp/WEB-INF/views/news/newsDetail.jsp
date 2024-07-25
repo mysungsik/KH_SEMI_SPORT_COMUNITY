@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,13 +26,19 @@
 		<section class="news-info-container base__lblue">
 			<div class="news-info">
 				<div class="news-title-info ml-8"> 
-					<span class="fs-12 fc__gray">[ 다저스 ] </span>
-					<span class="fs-14__b">뉴스 제목입니다.</span> 
+					<span class="fs-12 fc__gray">[ ${newsInfo.getTeamName()} ] </span>
+					<span class="fs-14__b">${newsInfo.getNewsTitle()}</span> 
 				</div>
 				<div class="news-writer-info ml-8">
-					<span class="fs-10">기자명</span>
+					<span class="fs-10">${newsInfo.getUserName()}</span>
 					<span class="fs-10"> | </span>
-					<span class="fs-10">2024-07-06 14:59:20</span> 				
+					<c:if test="${empty newsInfo.getUpdateDt()}">
+						<span class="fs-10">작성일 : ${newsInfo.getCreateDt()}</span> 				
+					</c:if>
+					<c:if test="${!empty newsInfo.getUpdateDt()}">
+						<span class="fs-10">수정일 : ${newsInfo.getUpdateDt()}</span> 				
+					</c:if>
+					
 				</div> 
 			</div>
 			<div class="news-update-btns mr-10">
@@ -43,10 +51,14 @@
 		<!-- 뉴스 내용 -->
 		<section class="news-content-container">
 			<div class="news-content">
-				<img src="${contextPath}/public/images/user_img1.jpg">
+				<c:if test="${newsInfo.getNewsImg().size() > 0}">
+					<c:forEach items="${newsInfo.getNewsImg()}" var="img">
+						<img src="${img.getImgRename()}">
+					</c:forEach>
+				</c:if>
+		
 				<pre>
-					내용 들어올 자리dd
-					주저리 주저리	
+${newsInfo.getNewsContent()}
 				</pre>
 			</div>
 		</section>
@@ -54,9 +66,9 @@
 		<!-- 뉴스 기타 정보 (좋아요, 댓글 등) -->
 		<section class="news-extra-info-container">
 			<div class="news-extra-info">
-				<span>조회수 30</span>
+				<span>조회수 ${newsInfo.getNewsViews()}</span>
 				<span> | </span>
-				<span>댓글 2</span>
+				<span>댓글</span>
 				<span> | </span>
 				<span class="pointer">좋아요 3 ♥</span>
 				<span> | </span>

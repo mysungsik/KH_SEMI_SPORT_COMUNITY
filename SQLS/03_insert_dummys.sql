@@ -214,9 +214,6 @@ VALUES(SEQ_USER_NO.CURRVAL, NULL);
 
 COMMIT;
 
-
-
-
 -- 2-6) COMMINTY ----------------------------------------
 
 -- TYPE1(공지사항)
@@ -289,6 +286,88 @@ BEGIN
 END;
 /
 
+COMMIT;
 
+-- 2-7) NEWS 
+INSERT INTO NEWS VALUES(
+    SEQ_NEWS_NO.NEXTVAL, 1, 1, '한화 이글스 기아에게 충격 패배', '스포츠 낚시 티비', 
+    '한화 이글스 기아에게 충격 패배 <br> 그럼에도 불구하고 정신 못차려 <br> 회식 장소에서 ...',
+    DEFAULT,
+    DEFAULT,
+    DEFAULT,
+    NULL
+);
+INSERT INTO NEWS_IMG VALUES(
+    SEQ_NEWS_NO.CURRVAL, '/SPORTS_PROJECT/public/images/profile/202407207110760_63885.jpg', 'origin', 1
+);
+
+INSERT INTO NEWS VALUES(
+    SEQ_NEWS_NO.NEXTVAL, 1, 1, '빰 빠라밤밤밤밤 축33333하 !', '스포츠 낚시 티비', 
+    '롯데 타이거즈 기아에게 충격 패배 <br> 그럼에도 불구하고 정신 못차려 <br> 회식 장소에서 ...',
+    DEFAULT,
+    DEFAULT,
+    DEFAULT,
+    NULL
+);
+INSERT INTO NEWS_IMG VALUES(
+    SEQ_NEWS_NO.CURRVAL, '/SPORTS_PROJECT/public/images/profile/202407207110760_63885.jpg', 'origin', 1
+);
+
+INSERT INTO NEWS VALUES(
+    SEQ_NEWS_NO.NEXTVAL, 1, 1, '빰 빠라밤밤밤밤 축2222하 !', '스포츠 낚시 티비', 
+    '롯데 타이거즈 기아에게 충격 패배 <br> 그럼에도 불구하고 정신 못차려 <br> 회식 장소에서 ...',
+    DEFAULT,
+    DEFAULT,
+    DEFAULT,
+    NULL
+);
+INSERT INTO NEWS_IMG VALUES(
+    SEQ_NEWS_NO.CURRVAL, '/SPORTS_PROJECT/public/images/profile/202407207110760_63885.jpg', 'origin', 1
+);
+
+INSERT INTO NEWS VALUES(
+    SEQ_NEWS_NO.NEXTVAL, 1, 2, '롯데 타이거즈 기아에게 충격 패배', '스포츠 낚시 티비', 
+    '롯데 타이거즈 기아에게 충격 패배 <br> 그럼에도 불구하고 정신 못차려 <br> 회식 장소에서 ...',
+    DEFAULT,
+    DEFAULT,
+    DEFAULT,
+    NULL
+);
+INSERT INTO NEWS_IMG VALUES(
+    SEQ_NEWS_NO.CURRVAL, '/SPORTS_PROJECT/public/images/profile/202407207110760_63885.jpg', 'origin', 1
+);
+INSERT INTO NEWS_IMG VALUES(
+    SEQ_NEWS_NO.CURRVAL, '/SPORTS_PROJECT/public/images/profile/202407207110760_63885.jpg', 'origin', 2
+);
+
+INSERT INTO NEWS VALUES(
+    SEQ_NEWS_NO.NEXTVAL, 1, 2, '빰 빠라밤밤밤밤 축하 !', '스포츠 낚시 티비', 
+    '롯데 타이거즈 기아에게 충격 패배 <br> 그럼에도 불구하고 정신 못차려 <br> 회식 장소에서 ...',
+    DEFAULT,
+    DEFAULT,
+    DEFAULT,
+    NULL
+);
+INSERT INTO NEWS_IMG VALUES(
+    SEQ_NEWS_NO.CURRVAL, '/SPORTS_PROJECT/public/images/profile/202407207110760_63885.jpg', 'origin', 1
+);
+
+INSERT INTO NEWS VALUES(
+    SEQ_NEWS_NO.NEXTVAL, 1, 3, '롯데 타이거즈 기아에게 충격 패배', '스포츠 낚시 티비', 
+    '롯데 타이거즈 기아에게 충격 패배 <br> 그럼에도 불구하고 정신 못차려 <br> 회식 장소에서 ...',
+    DEFAULT,
+    DEFAULT,
+    DEFAULT,
+    NULL
+);
+INSERT INTO NEWS_IMG VALUES(
+    SEQ_NEWS_NO.CURRVAL, '/SPORTS_PROJECT/public/images/profile/202407207110760_63885.jpg', 'origin', 1
+);
+INSERT INTO NEWS_IMG VALUES(
+    SEQ_NEWS_NO.CURRVAL, '/SPORTS_PROJECT/public/images/profile/202407207110760_63885.jpg', 'origin', 2
+);
+INSERT INTO NEWS_IMG VALUES(
+    SEQ_NEWS_NO.CURRVAL, '/SPORTS_PROJECT/public/images/profile/202407207110760_63885.jpg', 'origin', 3
+);
 
 COMMIT;
