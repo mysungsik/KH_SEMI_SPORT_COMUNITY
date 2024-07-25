@@ -28,31 +28,31 @@ public class MatchDao {
         }
     }
 
-    public List<Match> getMatchesByDay(Connection conn, String day) {
-        List<Match> matchList = new ArrayList<>();
-        String sql = prop.getProperty("getMatchesByDay");
-
-        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, day.toUpperCase());
-            try (ResultSet rs = pstmt.executeQuery()) {
-                while (rs.next()) {
-                    Match match = new Match();
-                    match.setMatchNo(rs.getInt("MATCH_NO"));
-                    match.setTeamNo(rs.getInt("TEAM_NO"));
-                    match.setStadiumNo(rs.getInt("STADIUM_NO"));
-                    match.setPositionNo(rs.getInt("POSITION_NO"));
-                    match.setScore(rs.getInt("SCORE"));
-                    match.setMatchDate(rs.getString("MATCH_DT"));
-                    match.setGround(rs.getString("GROUND"));
-                    matchList.add(match);
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return matchList;
-    }
+//    public List<Match> getMatchesByDay(Connection conn, String day) {
+//        List<Match> matchList = new ArrayList<>();
+//        String sql = prop.getProperty("getMatchesByDay");
+//
+//        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+//            pstmt.setString(1, day.toUpperCase());
+//            try (ResultSet rs = pstmt.executeQuery()) {
+//                while (rs.next()) {
+//                    Match match = new Match();
+//                    match.setMatchNo(rs.getInt("MATCH_NO"));
+//                    match.setTeamNo(rs.getInt("TEAM_NO"));
+//                    match.setStadiumNo(rs.getInt("STADIUM_NO"));
+//                    match.setPositionNo(rs.getInt("POSITION_NO"));
+//                    match.setScore(rs.getInt("SCORE"));
+//                    match.setMatchDate(rs.getString("MATCH_DT"));
+//                    match.setGround(rs.getString("GROUND"));
+//                    matchList.add(match);
+//                }
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//
+//        return matchList;
+//    }
 
     public List<Match> getTeamRankings(Connection conn) {
         List<Match> teamRankings = new ArrayList<>();
@@ -62,16 +62,16 @@ public class MatchDao {
              ResultSet rs = pstmt.executeQuery()) {
             while (rs.next()) {
                 Match match = new Match();
-                match.setTeamNo(rs.getInt("TEAM_NO"));
                 match.setTeamName(rs.getString("TEAM_NAME"));
                 match.setMatchCount(rs.getInt("MATCH_COUNT"));
                 match.setWin(rs.getInt("WIN"));
                 match.setLose(rs.getInt("LOSE"));
                 match.setWinRate(rs.getDouble("WIN_RATE"));
-                match.setConsequence(rs.getString("CONSEQUENCE"));
-                match.setBattingAverage(rs.getDouble("BATTING_AVERAGE"));
+                match.setConseq(rs.getString("CONSEQUENCE"));
+                //match.setBattingAverage(rs.getDouble("BATTING_AVERAGE"));
                 match.setEra(rs.getDouble("ERA"));
-                match.setRecentMatch(rs.getString("RECENT_MATCH"));
+                //match.setRecentMatch(rs.getString("RECENT_MATCH"));
+                
                 teamRankings.add(match);
             }
         } catch (Exception e) {

@@ -12,12 +12,12 @@ import com.helpgpt.sports.match.model.vo.Match;
 public class MatchService {
     MatchDao dao = new MatchDao();
 
-    public List<Match> getMatchesByDay(String day) {
-        Connection conn = getConnection();
-        List<Match> matchList = dao.getMatchesByDay(conn, day);
-        close(conn);
-        return matchList;
-    }
+//    public List<Match> getMatchesByDay(String day) {
+//        Connection conn = getConnection();
+//        List<Match> matchList = dao.getMatchesByDay(conn, day);
+//        close(conn);
+//        return matchList;
+//    }
 
     public List<Match> getTeamRankings() {
         Connection conn = getConnection();
@@ -25,4 +25,6 @@ public class MatchService {
         close(conn);
         return teamRankings;
     }
+    
+    
 }

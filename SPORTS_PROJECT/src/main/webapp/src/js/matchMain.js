@@ -35,13 +35,16 @@ const rawPlayerData = [
         { name: "문승원", team: "SSG", count: "17" },
         { name: "김원중", team: "롯데", count: "16" }
     ]},
-    { category: "WHIP", players: [
-        { name: "하트", team: "NC", count: "1.07" },
-        { name: "월커슨", team: "롯데", count: "1.18" },
-        { name: "헤이수스", team: "키움", count: "1.17" },
-        { name: "코너", team: "삼성", count: "1.21" },
-        { name: "네일", team: "기아", count: "1.21" }
-    ]}
+    { 
+	category: "WHIP", 
+    players: [
+	        { name: "하트", team: "NC", count: "1.07" },
+	        { name: "월커슨", team: "롯데", count: "1.18" },
+	        { name: "헤이수스", team: "키움", count: "1.17" },
+	        { name: "코너", team: "삼성", count: "1.21" },
+	        { name: "네일", team: "기아", count: "1.21" }
+    	]
+	}
 ];
 
 document.addEventListener('DOMContentLoaded', function() {

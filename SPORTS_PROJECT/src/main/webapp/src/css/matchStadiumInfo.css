@@ -108,7 +108,7 @@ body {
 
 .stadiumDetailsTop {
 	margin-bottom: 20px;
-	text-align: center;
+	text-align: left;
 }
 
 .stadiumDetailsTop>div {
@@ -263,53 +263,106 @@ body {
 	right: 0;
 }
 
-.overlay {
-	position: fixed;
-	top: 0;
-	left: 0;
+/* 컨테이너 하단 */
+.container .container-bot {
+	width: 960px;
+}
+
+/* 컨테이너 하단 하이라이트 클립 */
+.container .container-bot .hightlight-clip {
 	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.5);
-	display: none;
-	justify-content: center;
-	align-items: center;
-	z-index: 10;
+	height: 280px;
+	margin-bottom: 30px;
+	flex-direction: column;
 }
 
-.overlay.active {
-	display: flex;
-}
-
-.zoomed-image {
-	position: relative;
-	width: 50%;
-	height: 50%;
-	overflow: hidden;
-}
-
-.zoomed-image img {
+.hightlight-clip .content-all {
+	text-align: right;
+	margin-right: 20px;
 	position: absolute;
-	width: 200%;
-	height: 200%;
-	object-fit: cover;
+	right: 0;
+	top: 25px;
 }
 
-.zoomed-image img.top.left {
-	top: 0;
-	left: 0;
+.hightlight-clip .text-hover__blue {
+	font-weight: 600;
 }
 
-.zoomed-image img.top.right {
-	top: 0;
-	left: -50%;
+.hightlight-clip .card-thumbnail {
+	width: 180px;
+	height: 180px;
+	margin: 0 15px;
 }
 
-.zoomed-image img.bottom.left {
-	top: -50%;
-	left: 0;
+.hightlight-clip .card-thumbnail .card-thumbnail-img {
+	height: 100%;
 }
 
-.zoomed-image img.bottom.right {
-	top: -50%;
-	left: -50%;
+/* 컨테이너 하단 커뮤니티 */
+/* 메인 바텀 ( */
+.community {
+	flex-direction: column;
+	position: relative;
+}
+
+.community .content-all {
+	text-align: right;
+	margin-right: 20px;
+	position: absolute;
+	right: 0;
+	top: 25px;
+}
+
+.community .text-hover__blue {
+	font-weight: 600;
+}
+
+.community .main-bot {
+	display: flex;
+	justify-content: center;
+	gap: 40px;
+	padding: 0 20px;
+}
+
+.community .main-bot .board {
+	width: 40%;
+}
+
+.post {
+	margin: 5px;
+}
+/* ---- */
+/* ---- */
+.stadiumDetailWrapper {
+	position: relative;
+	width: 100%;
+	height: auto;
+}
+
+.stadiumDetail {
+	width: 100%;
+	height: auto;
+	transition: filter 0.3s;
+}
+
+.section {
+	position: absolute;
+	border: 2px solid red;
+}
+
+#magnify {
+	position: absolute;
+	border: 2px solid black;
+	overflow: hidden;
+	width: 300px; /* 확대 박스 너비 */
+	height: 300px; /* 확대 박스 높이 */
+	display: none;
+	z-index: 1000;
+}
+
+#magnify img {
+	position: absolute;
+	width: auto;
+	height: auto;
+	max-width: none;
 }

@@ -10,6 +10,7 @@
 <link rel="stylesheet"
 	href="${contextPath}/src/css/matchStadiumInfo.css">
 <script src="${contextPath}/src/js/matchStadiumInfo.js" defer></script>
+<script src="${contextPath}/src/js/dashboard.js" defer></script>
 
 <title>Match StadiumInfo</title>
 </head>
@@ -52,47 +53,67 @@
 				<div class="stadiumImageTop">
 					<div>구장 이미지</div>
 				</div>
-				<div class=stadium-imageBox>
-					<div>
-						<div class="stadiumImage">
-							<img src="/SPORTS_PROJECT/public/images/mlb_logo.png" id="image1">
-							<img src="/SPORTS_PROJECT/public/images/mlb_logo.png" id="image1">
-							<img src="/SPORTS_PROJECT/public/images/mlb_logo.png" id="image1">
-							<img src="/SPORTS_PROJECT/public/images/mlb_logo.png" id="image1">
-							<img src="/SPORTS_PROJECT/public/images/mlb_logo.png" id="image1">
+
+				<div class="container-bot">
+					<div class="hightlight-clip card__lblue swiper swiper-highlight">
+
+						<hr class="hr__gray mt-10 mb-16">
+						<!-- 하단 하이라이트 클립 작성 -->
+						<div class="news-content-top d-flex swiper-wrapper">
+							<div class="card-thumbnail swiper-slide">
+								<img class="card-thumbnail-img"
+									src="${contextPath}/public/images/news_example.jpg">
+
+							</div>
+							<div class="card-thumbnail swiper-slide">
+								<img class="card-thumbnail-img"
+									src="${contextPath}/public/images/mlb_logo.png">
+
+							</div>
+							<div class="card-thumbnail swiper-slide">
+								<img class="card-thumbnail-img"
+									src="${contextPath}/public/images/user_img1.jpg">
+
+							</div>
+							<div class="card-thumbnail swiper-slide">
+								<img class="card-thumbnail-img"
+									src="${contextPath}/public/images/user_img1.jpg">
+
+							</div>
+							<div class="card-thumbnail swiper-slide">
+								<img class="card-thumbnail-img"
+									src="${contextPath}/public/images/mlb_logo2.jpg">
+
+							</div>
 						</div>
+						<div class="swiper-pagination"></div>
 					</div>
 				</div>
 			</div>
 		</div>
+
+
 		<div class=cardBackground>
 			<div class="stadium-details card__lblue">
 				<div class="stadiumDetailsTop">
 					<div>구장 상세 이미지</div>
 				</div>
-				
-				<div class="stadium-imageBox2">
-					<div class="image-section top left" data-position="top left">
-						<img src="/SPORTS_PROJECT/public/images/stadiumImage.png" alt="Image">
-					</div>
-					<div class="image-section top right" data-position="top right">
-						<img src="/SPORTS_PROJECT/public/images/stadiumImage.png" alt="Image">
-					</div>
-					<div class="image-section bottom left" data-position="bottom left">
-						<img src="/SPORTS_PROJECT/public/images/stadiumImage.png" alt="Image">
-					</div>
-					<div class="image-section bottom right"  data-position="bottom right">
-						<img src="/SPORTS_PROJECT/public/images/stadiumImage.png" alt="Image">
-					</div>
+				<div class="stadiumDetailWrapper">
+					<img class="stadiumDetail"
+						src="${contextPath}/public/images/stadiumImage.png">
+					<!-- 섹션나누기 -->
+					<div class="section" id="section1"
+						style="left: 5%; top: 20%; width: 30%; height: 30%;"></div>
+					<div class="section" id="section2"
+						style="left: 65%; top: 20%; width: 30%; height: 30%;"></div>
+					<div class="section" id="section3"
+						style="left: 5%; top: 60%; width: 40%; height: 30%;"></div>
+					<div class="section" id="section4"
+						style="left: 55%; top: 60%; width: 40%; height: 30%;"></div>
 				</div>
-				
-				<div class="overlay" id="overlay">
-					<div class="zoomed-image">
-						<img src="/SPORTS_PROJECT/public/images/stadiumImage.png" alt="Zoomed Image" id="zoomedImage">
-					</div>
+				<div id="magnify" class="magnify">
+					<img src="/SPORTS_PROJECT/public/images/stadiumImage.png" alt="Magnified Image">
 				</div>
-				
-				
 				<div class="placeDetails">
 					<div>구장 상세 내부</div>
 					<div class=detailsBox>
@@ -123,9 +144,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="magnify" class="magnify">
-			<img src="/SPORTS_PROJECT/public/images/stadiumImage.png" alt="">
-		</div>
+
 		<div class="comments-section">
 			조회수 30 | 댓글 5 | 좋아요 1 | 신고 0<br>
 			<div class="comment">
@@ -158,6 +177,9 @@
 				<div>댓글입니다 하나 둘 셋 넷 다섯</div>
 				<div>좋아요 3 | 신고</div>
 			</div>
+		</div>
+		<div id="magnify" class="magnify">
+			<img src="/SPORTS_PROJECT/public/images/stadiumImage.png" alt="">
 		</div>
 	</main>
 	<jsp:include page="/WEB-INF/views/layouts/footer.jsp" />
