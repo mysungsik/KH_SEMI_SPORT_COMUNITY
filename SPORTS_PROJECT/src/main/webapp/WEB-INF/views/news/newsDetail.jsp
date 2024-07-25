@@ -68,7 +68,7 @@ ${newsInfo.getNewsContent()}
 			<div class="news-extra-info">
 				<span>조회수 ${newsInfo.getNewsViews()}</span>
 				<span> | </span>
-				<span>댓글</span>
+				<span>댓글 3</span>
 				<span> | </span>
 				<span class="pointer">좋아요 3 ♥</span>
 				<span> | </span>
