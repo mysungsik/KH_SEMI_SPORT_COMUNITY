@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="selectTeamsList">
+		SELECT TEAM_NAME, 
+		(SELECT IMG_ORIGINAL FROM TEAM_IMG WHERE IMG_LEVEL=1) IMG_ORIGINAL, 
+		TEAM_COLOR  FROM TEAMS
+		JOIN TEAM_IMG USING(TEAM_NO)
+		WHERE TEAM_NO = ?
+		AND TEAM_ST = 'Y'
+	</entry>
+
+</properties>

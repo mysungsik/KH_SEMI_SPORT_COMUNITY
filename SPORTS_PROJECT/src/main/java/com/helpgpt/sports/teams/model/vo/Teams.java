@@ -1,5 +1,9 @@
 package com.helpgpt.sports.teams.model.vo;
 
+import java.util.List;
+
+import com.helpgpt.sports.teams.model.dao.TeamImage;
+
 public class Teams {
 	private int teamNo;
 	private int stadiumNo;
@@ -13,8 +17,16 @@ public class Teams {
 	private String videoUrl;
 	private String teamColor;
 	
+	private TeamImage teamImage = new TeamImage();
+	
 	public Teams() {}
 	
+	// 구단 모음용 객체
+	public Teams(String teamName, String imgOriginal, String teamColor) {
+		this.teamName= teamName;
+		this.teamImage.setImgOriginal(imgOriginal);
+		this.teamColor= teamColor;
+	}
 	
 	public Teams(int teamNo, int stadiumNo, String teamName, String teamLeader, String director, String sponsor,
 			String teamRegion, String teamDes, char teamSt, String videoUrl, String teamColor) {
@@ -31,6 +43,7 @@ public class Teams {
 		this.videoUrl = videoUrl;
 		this.teamColor = teamColor;
 	}
+
 
 
 	public int getTeamNo() {
