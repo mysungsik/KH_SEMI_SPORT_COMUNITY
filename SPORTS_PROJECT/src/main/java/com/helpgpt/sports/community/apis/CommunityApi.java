@@ -15,7 +15,8 @@ import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
 import com.helpgpt.sports.community.model.service.CommunityService;
-import com.helpgpt.sports.community.model.vo.Board;
+import com.helpgpt.sports.community.model.vo.Community;
+import com.helpgpt.sports.reply.model.vo.Reply;
 import com.helpgpt.sports.teams.model.vo.Teams;
 
 /**
@@ -41,7 +42,10 @@ public class CommunityApi extends HttpServlet {
 		switch (path) {
 			case "communityBoard": {
 				
-				int type = Integer.parseInt(req.getParameter("type"));
+				int type = -1;
+				if(req.getParameter("type")!=null) {
+					type = Integer.parseInt(req.getParameter("type"));
+				}
 				int teamNo = 1;
 				
                 // 팀 선택이 있는 경우 teamNo 파라미터 수집
@@ -51,12 +55,17 @@ public class CommunityApi extends HttpServlet {
                         teamNo = Integer.parseInt(teamNoParam);
                     }
                 }
-				List<Board> boardList = service.selectBoardList(type, teamNo);
-				List<Teams> teams = service.selectTeams();
+                List<Teams> teams = service.selectTeams();
+				List<Community> boardList = service.selectBoardList(type, teamNo);
 				
+				if (teams.size() > 0) {
+					result.put("teams", teams);
+					result.put("message", "success to get teamsList");
+				} else {
+					result.put("message", "failed to get teamsList");
+				}
 				
 				if (boardList.size() > 0) {
-					result.put("teams", teams);
 					result.put("data", boardList);
 					result.put("message", "success to get BoardList");
 				} else {
@@ -66,6 +75,31 @@ public class CommunityApi extends HttpServlet {
 				new Gson().toJson(result, out);
 				
 			};break;
+			
+			case "communityPosting": {
+				
+			}; break;
+			
+			case "communityDetail": {
+				int boardNo = 0;
+                String boardNoParam = req.getParameter("boardNo");
+                if(boardNoParam != null) {
+                    boardNo = Integer.parseInt(boardNoParam);
+                }
+				
+				List<Reply> replyList = service.selectReplyList(boardNo);
+				
+				
+				if (replyList.size() > 0) {
+					result.put("data", replyList);
+					result.put("message", "success to get BoardList");
+				} else {
+					result.put("message", "failed to get BoardList");
+				}
+				
+				new Gson().toJson(result, out);
+				
+			}; break;
 				
 		default:System.out.println("[ERROR] COMMUNUNITY API");}
 	}

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +18,7 @@
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/layouts/header.jsp" />
+	
 	<input type="hidden" name="sub" value="${requestScope.sub}">
 	<!-- Write Main Content -->
 	<main class="container">
@@ -33,11 +35,12 @@
 				<span class="fs-10">${board.boardCreateDate}</span> 
 			</div>
 		</section>
-		
 		<!-- 게시글 내용 -->
 		<section class="content-area">
 			<div class="content">
-				<img src="${contextPath}/public/images/user_img1.jpg">
+				<c:if test="${!empty image}">
+					<img src="${contextPath}/public/images/community/${image}">
+				</c:if>
 				<pre>
 ${board.boardContent}
 				</pre>
@@ -65,21 +68,21 @@ ${board.boardContent}
 		</section>
 		
 		<section class="input-area">
-			<form>
-				<textarea rows="3" cols="100" style="resize: none" placeholder="댓글을 입력해주세요."></textarea>
+			<form action="insertReply">
+				<textarea rows="3" cols="100" style="resize: none" placeholder="댓글을 입력해주세요." name="relplyContent"></textarea>
 				<button>댓글</button>
 			</form>
 		</section>
 		
-		<section class="reply-area">
-			<div id="community-data">
+		<section class="reply-container">
+			<div id="reply-data">
 			</div>
 		</section>
 		
-		<section class="page-area">
-			<div id="community-pagination"></div>
-		
+		<section class="page">
+			<div id="reply-pagination"></div>
 		</section>
+		
 	</section>
 	
 

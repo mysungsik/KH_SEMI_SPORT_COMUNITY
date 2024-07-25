@@ -9,6 +9,10 @@ $(document).ready(function () {
     $(document).on("change", "#team", function () {
         let teamNo = $(this).val(); // 선택된 팀의 ID 가져오기
 
+
+        $("#community-data").text("");
+        $("#community-pagination").text("");
+
         loadDataAndPaginate(sub_value, teamNo); // 선택된 팀의 ID와 함께 데이터 로드 및 페이지네이션 실행
     });
 
@@ -56,6 +60,7 @@ $(document).ready(function () {
         });
     }
 
+
     // 기존의 switch 문은 필요에 따라 유지할 수 있습니다.
     switch (sub_value) {
         case "0": {
@@ -97,31 +102,32 @@ $(document).ready(function () {
     }
 });
 
-// 일반 유저 페이지네이션 템플릿 함수
 function paginationTemplate(data) {
     let item = "";
 
-		$.each(data, function (index, d) {
-			item +=
-				`     <div class="post" onclick="location.href='${contextPath}/community/communityDetail/${d.boardNo}'">
-						<div class="category">
-							<span class="fs-12 fc__gray">${d.boardCategory}</span>
-						</div>
-						<div class="content">
-							<div class="post-title">
-								<span class="fs-14__b">${d.boardTitle}</span>
-							</div>
-							<div class="post-info">
-								<span>${d.boardAuthor} ${d.boardCreateDate}</span>
-								<span>조회수 ${d.boardViews} | 댓글 ${d.boardComent} | 좋아요 ${d.boardLike} ♡</span>
-							</div>
-						</div>
-					</div>`;
-		});
-
+        // Iterate over each item in data and generate the HTML
+        $.each(data, function (index, d) {
+            item +=
+                `<div class="post" onclick="location.href='${contextPath}/community/communityDetail/${d.boardNo}'">
+                    <div class="category">
+                        <span class="fs-12 fc__gray">[ ${d.boardCategory} ]</span>
+                    </div>
+                    <div class="content">
+                        <div class="post-title">
+                            <span class="fs-14__b">${d.boardTitle}</span>
+                        </div>
+                        <div class="post-info">
+                            <span>${d.boardAuthor} ${d.boardCreateDate}</span>
+                            <span>조회수 ${d.boardViews} | 댓글 ${d.boardComent} | 좋아요 ${d.boardLike} ♡</span>
+                        </div>
+                    </div>
+                </div>`;
+        });
+    
 
     return item;
 }
+
 
 // 페이지네이션 실행 함수
 function paginationActive(id, datas, template) {

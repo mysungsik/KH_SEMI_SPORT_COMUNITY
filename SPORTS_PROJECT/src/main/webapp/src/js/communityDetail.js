@@ -1,59 +1,81 @@
-let communityData = [
-	{ author: "[ 작성자 ]", comments: "야구 룰이 너무 어려움", date: "2024-07-06 22:49:31", like: 3 },
-	{ author: "[ 작성자 ]", comments: "야구 룰이 너무 어려움", date: "2024-07-06 22:49:31", like: 3 },
+
+$(document).ready(function () {
+
+	let boardNo = $("input[name='sub']").eq(0);
+	let request_url = `${contextPath}/api/community/communityDetail`;
 
 
+	$.ajax({
+		type: "GET",
+		url: request_url,
+		dataType: "json",
+		data: {
+			"boardNo": boardNo.val(),
+		},
+		success: function (res) {
+			let isGetData = res.hasOwnProperty("data");
+			if (isGetData) {
+				replyData = res.data;
 
-]
+				if(replyData != undefined){
+					paginationActive("reply", replyData, paginationTemplate);
+				}
+			}
+		},
+		error: function (request, status, error) {
+			console.log(request);
+			console.log(status);
+			console.log(error);
+		}
+	});
 
+
+});
 
 
 
 // 일반 유저 페이지네이션 템플릿 함수
 function paginationTemplate(data) {
+
 	let item = "";
-	
-	$.each(data, function(index, d) {
+
+	$.each(data, function (index, d) {
 		item +=
 			`<div class="reply">
-				<div class="author">
-					<span class="fs-10 fc__gray">${d.author}</span>
-				</div>
-				<div class="comment">
-					<span class="fs-12">${d.comments}</span>
-				</div>
-				<div class="reply-info">
-					<div>
-						<span>좋아요 ${d.like} ♥</span>
-						<span> | </span>
-						<span onclick="updateReply()">수정</span>
-						<span> | </span>
-						<span data-type="reply-delete" onclick="showModal(this)">삭제</span>
-						<span> | </span>
-						<span data-type="reply-report" onclick="showModal(this)">신고</span>
+					<div class="reply-author-info d-flex">
+						<div class="reply-author">
+							<img class="author-profile" src="${contextPath}/public/images/profile/user_img1.jpg"/> 
+							<p class="author-name fs-14__b ml-8">${d.userName}</p>
+						</div>
 					</div>
-					<div><span class="fs-10">${d.date}</span></div>
+					<div class="reply-content">
+						<p class="fs-12">${d.replyContent} </p>
+					</div>
+					<div class="reply-extra-info">
+						<div>
+							<span class="fs-10 fc__gray">좋아요 ${d.like} ♥</span>
+							<span class="fs-10 fc__gray"> | </span>
+							<span class="fs-10 fc__gray" onclick="updateReply()">수정</span>
+							<span class="fs-10 fc__gray"> | </span>
+							<span class="fs-10 fc__gray" data-type="reply-delete" onclick="showModal(this)">삭제</span>
+							<span class="fs-10 fc__gray"> | </span>
+							<span class="fs-10 fc__gray" data-type="reply-report" onclick="showModal(this)">신고</span>
+						</div>           
+						<div><span class="fs-10 fc__gray" class="fs-10">${d.createDate}</span></div>
+					</div>
 				</div>
-			</div>
-			<div class="reply update">
-				<form>
-					<textarea rows="3" cols="100" style="resize: none"">tlqkf</textarea>
-					<button>수정</button>
-					<button class="footer_gray fc__gray">취소</button>
-				</form>
-			</div>
-			`
+				<hr class="hr__gray">`
 	})
 
 	return item;
 }
 
 
-$(document).ready(function() {
+$(document).ready(function () {
 
-	
+
 	// 페이지네이션 실행
-	paginationActive("community", communityData, paginationTemplate);
+	paginationActive("reply", replyData, paginationTemplate);
 });
 
 
@@ -68,7 +90,7 @@ function paginationActive(id, datas, template) {
 
 			pageSize: page_size,
 
-			callback: function(data, pagination) {
+			callback: function (data, pagination) {
 				var html = template(data);
 
 				$(`#${id}-data`).html(html);	// 데이터 페이지네이션
@@ -88,23 +110,23 @@ function paginationActive(id, datas, template) {
 }
 
 // 모달
-function showModal(el){
+function showModal(el) {
 	let modalEl = $('#communityModal');
-	
+
 	let modalType = $(el).data("type");
-	
+
 	console.log(modalType);
-	
+
 	let item = "";
-	switch(modalType){
-		case "board-delete" : case "board-report" : item = "게시글"; break;
-		case "reply-delete" : case "reply-report" : item = "댓글"; break;
+	switch (modalType) {
+		case "board-delete": case "board-report": item = "게시글"; break;
+		case "reply-delete": case "reply-report": item = "댓글"; break;
 	}
-	
-	if(modalType == "board-delete" || modalType == "reply-delete"){
-			modalEl.find(".modal-title").html(`<p class="fs-14 fc__white">${item} 삭제</p>`)
-					
-			modalEl.find(".modal-body").html(` 
+
+	if (modalType == "board-delete" || modalType == "reply-delete") {
+		modalEl.find(".modal-title").html(`<p class="fs-14 fc__white">${item} 삭제</p>`)
+
+		modalEl.find(".modal-body").html(` 
 			
 				<div class="modal-row">정말 삭제하시겠습니까?</div>
 				
@@ -113,10 +135,10 @@ function showModal(el){
 					<button class="btn-medium__gray cancelBtn" data-bs-dismiss="modal"> 취소 </button>
 				</div>
 				`
-			);
-	}else if(modalType == "board-report" || modalType == "reply-report"){
+		);
+	} else if (modalType == "board-report" || modalType == "reply-report") {
 		modalEl.find(".modal-title").html(`<p class="fs-14 fc__white">${item} 신고</p>`)
-		
+
 		modalEl.find(".modal-body").html(` 
 			<form>
 				<div class="modal-row">
@@ -135,11 +157,11 @@ function showModal(el){
 				</div>
 			</form>	
 				`
-			);
+		);
 	}
-	
-		
-		
+
+
+
 	modalEl.modal('show');
 }
 

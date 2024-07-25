@@ -46,7 +46,7 @@
 	margin-right: 10px;
 }
 
-.content>img{
+.content img{
 	height: 200px;
 	width: auto;
 }
@@ -111,78 +111,53 @@ form>button{
 }
 
 /* 댓글 */
-.reply-area{
-	margin-top: 20px;
-	height: 250px;
+.reply-container{
+	width: 900px;
+	margin: 0 auto;
+}
+.reply-container .reply{
+	padding: 20px;
 }
 
+.reply-container .reply-content{
+	margin-top: 10px;
+}
 
-.reply{
-	height: 60px;
+.reply-container .reply-author-info .reply-author{
 	display: flex;
-	border-bottom: 1px sollid black;
-	justify-content: flex-end;
+	align-items: center;
 }
 
-.reply > form{
+.reply-container .reply-author-info .author-name{
 	display: flex;
-	justify-content: flex-end;
-	gap: 10px;
+	align-items: center;
+	margin-top: 5px;
+}
+.reply-container .reply-author-info .author-profile{
+	width: 35px;
+	height: 35px;
+	border-radius: 100px;
 }
 
-.update > button{
-	width: 70px;
+.reply-container .reply-extra-info{
+	margin-top: 10px;
+}
+
+/* 페이지 */
+
+.page{
 	height: 30px;
-	
-	border: none;
-	border-radius: 5px;
-	background: #458BE2;
-	color: white;
-}
-
-.author{
-	flex-basis: 10%;
-	align-content: center;
-	text-align: center;
-	margin-left: 10px;
-}
-
-.comment{
-	flex-basis: 75%;
-	align-content: center;
-}
-
-.reply-info{
-	flex-basis: 15%;
-	text-align: end;
-	align-content: center;
-	margin-right: 10px;
-
-
-}
-
-.reply-info *{
-	cursor: pointer;
-	font-size: 10px;
-}
-
-
-.page-area{
 	margin-top: 30px;
-	margin-bottom: 60px;
-}
-
-.page-area ul{
 	display: flex;
 	justify-content: center;
-	gap: 10px;
 }
 
-.page-area a{
-	cursor: pointer;
+.paginationjs-pages>ul{
+	display: flex;
+	gap: 15px;
 }
 
-.pointer{
+.paginationjs-pages a{
 	cursor: pointer;
 }
 

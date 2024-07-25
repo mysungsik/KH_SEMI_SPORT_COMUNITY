@@ -4,16 +4,20 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
+import javax.mail.Session;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
 import com.helpgpt.sports.community.model.service.CommunityService;
-import com.helpgpt.sports.community.model.vo.Board;
+import com.helpgpt.sports.community.model.vo.Community;
+import com.helpgpt.sports.community.model.vo.CommunityImage;
+import com.helpgpt.sports.login.model.vo.User;
 
 
 @WebServlet(name = "communityController",
@@ -71,14 +75,20 @@ public class communityController extends HttpServlet {
 			case "communityDetail": {
 				dispatcher = req.getRequestDispatcher(defaultURLPath + "communityDetail.jsp");
 				
-				Board board = service.selectBoardDetail(sub);
+				int boardNo = Integer.parseInt(sub);
 				
+				Community board = service.selectBoardDetail(boardNo);
+				String image = service.selectBoardImage(boardNo);
+				
+				req.setAttribute("image", image);
 				req.setAttribute("board", board);
 				req.setAttribute("sub", sub);
 				dispatcher.forward(req, resp);
 			};break;
 			case "communityPosting": {
 				dispatcher = req.getRequestDispatcher(defaultURLPath + "communityPosting.jsp");
+
+				
 				req.setAttribute("sub", sub);
 				dispatcher.forward(req, resp);
 			};break;
@@ -92,4 +102,6 @@ public class communityController extends HttpServlet {
 		}
 		
 	}
+	
+
 }

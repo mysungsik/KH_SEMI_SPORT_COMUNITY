@@ -36,7 +36,6 @@ form{
 /* 게시글 작성 */
 .posting-area{
 	width: 850px;
-	height: 600px;
 	margin-top: 20px;
 	border: 2px solid #ddd; 
 	border-radius: 20px;
@@ -56,15 +55,66 @@ form{
 	outline: none;
 }
 
-.input-img{
+.input-file{
 	flex-basis: 5%;
 	display: flex;
 }
 
-.input-img input{
+.input-file input{
 	display: none;
 }
 
+/* 이미지 영역 */
+.img-box{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 이미지를 감싸는 div */
+.boardImage{
+    width: 230px;
+    height: 230px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+	margin: 10px 30px;
+}
+
+/* 미리보기 영역 */
+.boardImage label{
+    width: 100%;
+    height: 100%;
+
+    border: 1px solid #ccc;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* file 타입 input */
+.inputImage{
+	display: none;
+}
+
+/* 미리보기 이미지 */
+.preview{
+    max-width: 100%;
+    max-height: 100%;
+    /* 지정된 칸 내부에 비율을 
+    변경하지 않고 이미지 배치 */
+}
+
+/* 이미지 삭제 */
+.delete-image{
+    position: absolute;
+    top: 0;
+    right: 7px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* 내용 */
 .input-content{
 	height: 550px;
 	margin: 10px 30px;
