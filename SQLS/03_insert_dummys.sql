@@ -396,6 +396,12 @@ INSERT INTO NEWS_IMG VALUES(
 INSERT INTO TEAM_IMG 
 VALUES(1, '/public/images/teams/kia.png', 'kia-logo.png', 1, 'KIA타이거즈의 로고는 워드마크와 함께 구단명칭을 표현한 것으로 각종 매체에 적용되어 대외적인 커뮤니케이션을 보다 친밀감 있게 연결해 주는 역할을 한다.
 야구장의 홈베이스와 Tiger nose 형태를 결합하여 프레임화한 형태의 로고는 승리를 나타내는 V모티프를 통해 전통 명문구단의 대표성과 위상을 표현하고 다이아몬드의 강인한 속성을 은유적으로 표현하였다.');
+
+
+INSERT INTO TEAM_IMG 
+VALUES(2, '/public/images/teams/hanwha.png', 'hanwha-logo.png', 1, '
+1993년을 끝으로 빙그레 이글스에서 한화 이글스로 변경되면서 기존의 로고를 다듬은 로고를 사용했다. 그러다가 2006년, 한화그룹의 CI 변경과 함께 한화 이글스도 로고 변경 작업에 들어갔고 2007년 KBO 시범경기 직후 변경된 로고를 발표했다.
+타 구단들의 로고 현대화로 인해 현재 사용중인 로고 중 가장 역사가 깊은 로고가 됐다..');
 COMMIT;
 
 -- 2-8) REPLY TABLE (뉴스에 댓글 추가) - REPLY_NO, REPLY_TYPE_NO(4), USER_NO, REPLY_TARGET_NO, REPLY_DT, REPLY_CONTENT, REPLY_ST
@@ -437,3 +443,4 @@ INSERT INTO "LIKE" VALUES(4, 5, 1);
 INSERT INTO "LIKE" VALUES(4, 5, 1);
 
 COMMIT;
+

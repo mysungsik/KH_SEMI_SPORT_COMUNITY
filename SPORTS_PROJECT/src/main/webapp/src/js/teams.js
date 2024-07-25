@@ -18,13 +18,16 @@ const teams_data = [
 // nav
 // http://localhost:8083/ksy/teams/kia
 $(document).ready(function() {
-	showTeams(teams_data);
+	//showTeams(teams_data);
 	
 	let team = $("input[name='team']");
 	
 	if (team.length > 0){
 		let team_value = team.val();
+		let request_url = `${contextPath}/api/teams/${team_value}`
 		
+		
+		/*
 		switch (team_value) {
 			case "kia": {
 				$(".team-each-image").css("background-image", `url(${"https://tigers.co.kr/files/banner/2023/02/08/catchphrase_pc.png"})`);
@@ -35,33 +38,48 @@ $(document).ready(function() {
 				
 			}break;
 			
-		}
+		}*/
+	}else{
+		let request_url= `${contextPath}/api/teams/getTeams`
+		$.ajax({
+			type: "GET",
+			url: request_url,
+			dataType: "json",
+			success: function (res) {
+				let isGetData = res.hasOwnProperty("data");
+				
+				if (isGetData){
+					showTeams(res);
+				}
+			}
+		});
+		
 	}
 });
 
 
-const request_url = `${contextPath}/api/teams`
 
 function showTeams(data){
-	
 	html = "";
-	$.each(data, function(index, d){
-	  	html += 
-	  		`
-			<a href="${contextPath}/teams/${d.team_name}" >
-			    <div class="teams-card br-10 mb-10 mr-20 ${d.team_color}">
+	for( let d of data.data ){
+		html += 
+		`
+			<a href="${contextPath}/teams/${d.teamName}" >
+			    <div class="teams-card br-10 mb-10 mr-20 ${d.teamColor}">
 			    	<div class="team-logo-img">
-			            <img src="${d.team_img}" class="team-logo" alt="구단사진">
+			            <img src="${contextPath}${d.imgOriginal}" class="team-logo" alt="구단사진">
 			    	</div>
 			        <div class="teams-name">
-			            <span class="fs-14 fc__white ml-10">${d.team_name}</span>
+			            <span class="fs-14 fc__white ml-10">${d.teamName}</span>
 			            <img src="${contextPath}/public/icons/right-arrow__white.png" class="mr-10">
 			        </div>
 			    </div>
 			</a>
 		`
-	})
+	}
 	
+
+
 	const parent = $(".al-east-icons").eq(0)
 	parent.html(html)
 }
