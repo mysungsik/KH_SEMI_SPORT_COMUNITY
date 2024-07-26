@@ -117,6 +117,25 @@ public class ReplyApi extends HttpServlet {
 					new Gson().toJson(result, out);
 				}
 			};break;
+			case "updateReply" : {
+				int replyNo = Integer.parseInt(req.getParameter("replyNo"));
+				String replyContent = req.getParameter("replyContent");
+				
+				// XSS 방지 및 개행문자 처리
+				replyContent = Util.XSSHandling(replyContent);
+				replyContent = Util.newLineHandling(replyContent);
+				
+				int updateResult = service.updateReply(replyNo, replyContent);
+				
+				if (updateResult > 0) {
+					result.put("message", "success to update reply");
+					result.put("data", updateResult);
+					new Gson().toJson(result, out);
+				}else {
+					result.put("message", "failed to update reply");
+					new Gson().toJson(result, out);
+				}
+			};break;
 			
 		}
 	

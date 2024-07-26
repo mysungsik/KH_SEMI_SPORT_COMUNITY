@@ -617,6 +617,29 @@ ul{
 	justify-content : space-around;
 }
 
+/* 댓글 수정 모달 */
+#updateReplyModal .modal-dialog{
+	width: 400px;
+}
+
+#updateReplyModal .modal-row{
+	display:flex;
+	justify-content: center;
+	flex-direction: column;
+	gap : 10px;
+	margin-bottom: 10px;
+}
+
+#updateReplyModal .modal-row textarea{
+	resize: none;
+}
+
+#updateReplyModal .modal-btns{
+	display : flex;
+	align-items : center;
+	justify-content : space-around;
+}
+
 
 /* ELEMENTS BOOTSTRAP TOAST (상단 중앙 정렬) */
 .toast-container{
@@ -802,6 +825,9 @@ ul{
     cursor: pointer;
 }
 
+.pointer:hover{
+	cursor: pointer;
+}
 
 /* ELEMENTS - chkbox */
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {

@@ -60,4 +60,18 @@ public class ReplyService {
 		close(conn);
 		return deleteResult;
 	}
+
+	public int updateReply(int replyNo, String replyContent) {
+		Connection conn = getConnection();
+		int updateResult = dao.updateReply(conn, replyNo, replyContent);
+		
+		if (updateResult > 0) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+		
+		close(conn);
+		return updateResult;
+	}
 }

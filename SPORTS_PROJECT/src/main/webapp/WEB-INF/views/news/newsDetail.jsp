@@ -91,6 +91,7 @@ ${newsInfo.getNewsContent()}
 	<!-- Modal -->
 	<jsp:include page="/WEB-INF/views/modals/deleteModal.jsp" />
 	<jsp:include page="/WEB-INF/views/modals/reportModal.jsp" />
+	<jsp:include page="/WEB-INF/views/modals/replyUpdateModal.jsp" />
 
 
 

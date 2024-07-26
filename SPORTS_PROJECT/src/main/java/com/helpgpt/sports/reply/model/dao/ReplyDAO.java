@@ -142,5 +142,27 @@ public class ReplyDAO {
 		
 		return result;
 	}
+
+	public int updateReply(Connection conn, int replyNo, String replyContent) {
+		String sql = prop.getProperty("updateReply");
+		int result = 0;
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, replyContent);
+			pstmt.setInt(2, replyNo);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			System.out.println("[ERROR] Failed to update reply");
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
 	
 }
