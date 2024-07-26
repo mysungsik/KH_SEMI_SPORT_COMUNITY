@@ -611,3 +611,34 @@ INSERT INTO "LIKE" VALUES(4, 5, 1);
 
 COMMIT;
 
+-- 2-10 ) REPORT TABLE
+
+INSERT INTO REPORT
+VALUES(
+    SEQ_REPORT_NO.NEXTVAL,
+    1,  -- USER NO
+    3,  -- REPORT TYPE NO ( 1: 게시글, 2: 댓글, 3: 뉴스)
+    1,  -- TARGET NO
+    1,  --  VIO TYPE NO
+    '신고한다 신고신고! 나는 김승연<br>신고신고 <br> 진짜 신고!',
+    DEFAULT,
+    DEFAULT
+);
+INSERT INTO REPORT VALUES(SEQ_REPORT_NO.NEXTVAL,1, 3, 1, 2,'신고한다 신고신고! 나는 김승연<br>신고신고 <br> 진짜 신고!',DEFAULT,DEFAULT);
+INSERT INTO REPORT VALUES(SEQ_REPORT_NO.NEXTVAL,1, 3, 1, 3,'신고한다 신고신고! 나는 김승연<br>신고신고 <br> 진짜 신고!',DEFAULT,DEFAULT);
+INSERT INTO REPORT VALUES(SEQ_REPORT_NO.NEXTVAL,1, 3, 2, 2,'신고한다 신고신고! 나는 김승연<br>신고신고 <br> 진짜 신고!',DEFAULT,DEFAULT);
+INSERT INTO REPORT VALUES(SEQ_REPORT_NO.NEXTVAL,2, 3, 2, 3,'신고한다 신고신고! 나는 김승연<br>신고신고 <br> 진짜 신고!',DEFAULT,DEFAULT);
+INSERT INTO REPORT VALUES(SEQ_REPORT_NO.NEXTVAL,3, 3, 2, 4,'신고한다 신고신고! 나는 김승연<br>신고신고 <br> 진짜 신고!',DEFAULT,DEFAULT);
+
+INSERT INTO REPORT VALUES(SEQ_REPORT_NO.NEXTVAL,1, 2, 1, 2,'신고한다 신고신고! 나는 김승연<br>신고신고 <br> 진짜 신고!',DEFAULT,DEFAULT);
+INSERT INTO REPORT VALUES(SEQ_REPORT_NO.NEXTVAL,1, 2, 1, 3,'신고한다 신고신고! 나는 김승연<br>신고신고 <br> 진짜 신고!',DEFAULT,DEFAULT);
+INSERT INTO REPORT VALUES(SEQ_REPORT_NO.NEXTVAL,1, 2, 2, 2,'신고한다 신고신고! 나는 김승연<br>신고신고 <br> 진짜 신고!',DEFAULT,DEFAULT);
+INSERT INTO REPORT VALUES(SEQ_REPORT_NO.NEXTVAL,2, 2, 2, 3,'신고한다 신고신고! 나는 김승연<br>신고신고 <br> 진짜 신고!',DEFAULT,DEFAULT);
+INSERT INTO REPORT VALUES(SEQ_REPORT_NO.NEXTVAL,3, 2, 2, 4,'신고한다 신고신고! 나는 김승연<br>신고신고 <br> 진짜 신고!',DEFAULT,DEFAULT);
+
+INSERT INTO REPORT VALUES(SEQ_REPORT_NO.NEXTVAL,1, 1, 1, 2,'신고한다 신고신고! 나는 김승연<br>신고신고 <br> 진짜 신고!',DEFAULT,DEFAULT);
+INSERT INTO REPORT VALUES(SEQ_REPORT_NO.NEXTVAL,1, 1, 1, 3,'신고한다 신고신고! 나는 김승연<br>신고신고 <br> 진짜 신고!',DEFAULT,DEFAULT);
+INSERT INTO REPORT VALUES(SEQ_REPORT_NO.NEXTVAL,1, 1, 2, 2,'신고한다 신고신고! 나는 김승연<br>신고신고 <br> 진짜 신고!',DEFAULT,DEFAULT);
+INSERT INTO REPORT VALUES(SEQ_REPORT_NO.NEXTVAL,2, 1, 2, 3,'신고한다 신고신고! 나는 김승연<br>신고신고 <br> 진짜 신고!',DEFAULT,DEFAULT);
+INSERT INTO REPORT VALUES(SEQ_REPORT_NO.NEXTVAL,3, 1, 2, 4,'신고한다 신고신고! 나는 김승연<br>신고신고 <br> 진짜 신고!',DEFAULT,DEFAULT);
+COMMIT;
