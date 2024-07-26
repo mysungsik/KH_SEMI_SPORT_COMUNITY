@@ -106,6 +106,21 @@ VALUES (SEQ_STADIUM_NO.NEXTVAL, '서울 잠실 야구장', 25000, 66000, '서울
 INSERT INTO STADIUM (STADIUM_NO, STADIUM_NAME, MAX_PEOPLE, WIDTH_FILED, STADIUM_PLACE)
 VALUES (SEQ_STADIUM_NO.NEXTVAL, '수원 kt 위즈 파크', 20000, 54800, '경기도 수원시 장안구 경수대로 893');
 
+INSERT INTO STADIUM (STADIUM_NO, STADIUM_NAME, MAX_PEOPLE, WIDTH_FILED, STADIUM_PLACE)
+VALUES (SEQ_STADIUM_NO.NEXTVAL, '제 6 커피 경기장', 20000, 54800, '경기도 커피시 장안구 경수대로 883');
+
+INSERT INTO STADIUM (STADIUM_NO, STADIUM_NAME, MAX_PEOPLE, WIDTH_FILED, STADIUM_PLACE)
+VALUES (SEQ_STADIUM_NO.NEXTVAL, '제 7 봉봉 경기장', 20000, 54800, '경기도 봉봉시 장안구 경수대로 873');
+
+INSERT INTO STADIUM (STADIUM_NO, STADIUM_NAME, MAX_PEOPLE, WIDTH_FILED, STADIUM_PLACE)
+VALUES (SEQ_STADIUM_NO.NEXTVAL, '제 8 폰 경기장', 20000, 54800, '경기도 폰시 장안구 경수대로 863');
+
+INSERT INTO STADIUM (STADIUM_NO, STADIUM_NAME, MAX_PEOPLE, WIDTH_FILED, STADIUM_PLACE)
+VALUES (SEQ_STADIUM_NO.NEXTVAL, '제 9 디톡스 경기장', 20000, 54800, '경기도 디톡시 장안구 경수대로 853');
+
+INSERT INTO STADIUM (STADIUM_NO, STADIUM_NAME, MAX_PEOPLE, WIDTH_FILED, STADIUM_PLACE)
+VALUES (SEQ_STADIUM_NO.NEXTVAL, '제 10 전담 경기장', 20000, 54800, '경기도 전담시 장안구 경수대로 843');
+
 COMMIT;
 
 --STADIUM_IMG TABLE -------------------------------------------
@@ -142,6 +157,48 @@ VALUES(SEQ_TEAM_NO.NEXTVAL, 3, 'LOTTE', '박준혁', '김태형', '롯데', '부
 롯데그룹이 운영하는 KBO 리그 소속 프로 야구단. 연고지는 부산광역시이며 홈구장은 동래구 사직동에 위치한 사직 야구장이다.
 KBO 리그의 대표적인 인기 구단 중 하나이자 삼성 라이온즈와 함께 한국프로야구 원년부터 연고지 · 모기업 · 구단명 모두 변하지 않고 명맥을 이어온 유이(唯二)한 구단이다. 한국실업야구 롯데 자이언트 시절을 포함한다면 KBO 리그 구단 중 가장 오랜 역사를 자랑한다.', 
 'Y', DEFAULT, 'LOTTE_COLOR');
+
+INSERT INTO TEAMS
+VALUES(SEQ_TEAM_NO.NEXTVAL, 4, 'LG', '최명식', '김동준', '엘지', '서울특별시', '
+엘지그룹이 운영하는 KBO 리그 소속 프로 야구단. 연고지는 서울특별시이며 홈구장은 잠실에 위치한 잠실 야구장이다.
+KBO 리그의 대표적인 인기 구단 중 하나이자 삼성 라이온즈와 함께 한국프로야구 원년부터 연고지 · 모기업 · 구단명 모두 변하지 않고 명맥을 이어온 유이(唯二)한 구단이다. 한국실업야구 롯데 자이언트 시절을 포함한다면 KBO 리그 구단 중 가장 오랜 역사를 자랑한다.', 
+'Y', DEFAULT, 'LG_COLOR');
+
+INSERT INTO TEAMS
+VALUES(SEQ_TEAM_NO.NEXTVAL, 5, 'KT', '최명식', '김동준', '케이티', '수원', '
+KT그룹이 운영하는 KBO 리그 소속 프로 야구단. 연고지는 수원시이며 홈구장은 수원에 위치한 수원 야구장이다.
+KBO 리그의 대표적인 인기 구단 중 하나이자 삼성 라이온즈와 함께 한국프로야구 원년부터 연고지 · 모기업 · 구단명 모두 변하지 않고 명맥을 이어온 유이(唯二)한 구단이다. 한국실업야구 롯데 자이언트 시절을 포함한다면 KBO 리그 구단 중 가장 오랜 역사를 자랑한다.', 
+'Y', DEFAULT, 'KT_COLOR');
+
+INSERT INTO TEAMS
+VALUES(SEQ_TEAM_NO.NEXTVAL, 6, 'COFFEE', '김승연', '김승연', '커피', '커피시', '
+커피그룹이 운영하는 KBO 리그 소속 프로 야구단. 연고지는 커피시이며 홈구장은 커피에 위치한 커피 야구장이다.
+KBO 리그의 대표적인 인기 구단 중 하나이자 삼성 라이온즈와 함께 한국프로야구 원년부터 연고지 · 모기업 · 구단명 모두 변하지 않고 명맥을 이어온 유이(唯二)한 구단이다. 한국실업야구 롯데 자이언트 시절을 포함한다면 KBO 리그 구단 중 가장 오랜 역사를 자랑한다.', 
+'Y', DEFAULT, 'COFFEE_COLOR');
+
+INSERT INTO TEAMS
+VALUES(SEQ_TEAM_NO.NEXTVAL, 7, 'PHONE', '이지혁', '이지혁', '폰', '폰시', '
+폰그룹이 운영하는 KBO 리그 소속 프로 야구단. 연고지는 폰시이며 홈구장은 폰에 위치한 폰 야구장이다.
+KBO 리그의 대표적인 인기 구단 중 하나이자 삼성 라이온즈와 함께 한국프로야구 원년부터 연고지 · 모기업 · 구단명 모두 변하지 않고 명맥을 이어온 유이(唯二)한 구단이다. 한국실업야구 롯데 자이언트 시절을 포함한다면 KBO 리그 구단 중 가장 오랜 역사를 자랑한다.', 
+'Y', DEFAULT, 'PHONE_COLOR');
+
+INSERT INTO TEAMS
+VALUES(SEQ_TEAM_NO.NEXTVAL, 8, 'BONBON', '김동준', '김동준', '봉봉', '봉봉시', '
+봉봉그룹이 운영하는 KBO 리그 소속 프로 야구단. 연고지는 봉봉시이며 홈구장은 봉봉에 위치한 봉봉 야구장이다.
+KBO 리그의 대표적인 인기 구단 중 하나이자 삼성 라이온즈와 함께 한국프로야구 원년부터 연고지 · 모기업 · 구단명 모두 변하지 않고 명맥을 이어온 유이(唯二)한 구단이다. 한국실업야구 롯데 자이언트 시절을 포함한다면 KBO 리그 구단 중 가장 오랜 역사를 자랑한다.', 
+'Y', DEFAULT, 'BONBON_COLOR');
+
+INSERT INTO TEAMS
+VALUES(SEQ_TEAM_NO.NEXTVAL, 9, 'DETOX', '최명식', '최명식', '디톡스', '디톡스시', '
+디톡스그룹이 운영하는 KBO 리그 소속 프로 야구단. 연고지는 디톡스시이며 홈구장은 디톡스에 위치한 디톡스 야구장이다.
+KBO 리그의 대표적인 인기 구단 중 하나이자 삼성 라이온즈와 함께 한국프로야구 원년부터 연고지 · 모기업 · 구단명 모두 변하지 않고 명맥을 이어온 유이(唯二)한 구단이다. 한국실업야구 롯데 자이언트 시절을 포함한다면 KBO 리그 구단 중 가장 오랜 역사를 자랑한다.', 
+'Y', DEFAULT, 'DETOX_COLOR');
+
+INSERT INTO TEAMS
+VALUES(SEQ_TEAM_NO.NEXTVAL, 10, 'TOBACCO', '김동준', '김동준', '전담', '전담시', '
+전담그룹이 운영하는 KBO 리그 소속 프로 야구단. 연고지는 전담시이며 홈구장은 전담에 위치한 전담 야구장이다.
+KBO 리그의 대표적인 인기 구단 중 하나이자 삼성 라이온즈와 함께 한국프로야구 원년부터 연고지 · 모기업 · 구단명 모두 변하지 않고 명맥을 이어온 유이(唯二)한 구단이다. 한국실업야구 롯데 자이언트 시절을 포함한다면 KBO 리그 구단 중 가장 오랜 역사를 자랑한다.', 
+'Y', DEFAULT, 'TOBACCO_COLOR');
 
 COMMIT;
 
