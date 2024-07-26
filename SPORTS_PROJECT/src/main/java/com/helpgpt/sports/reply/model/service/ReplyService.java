@@ -36,7 +36,7 @@ public class ReplyService {
 			returnReply.setReplyTypeNo(targetTypeNo);
 			returnReply.setUserNo(loginUser.getUserNo());
 			returnReply.setUserName(loginUser.getUserName());
-			returnReply.setUserProfileImg(loginUser.getUserProfileImg());
+			returnReply.setUserProfileImg(loginUser.getUserProfileImg() != null ? loginUser.getUserProfileImg() : "");
 
 			commit(conn);
 		}else {

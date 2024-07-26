@@ -97,7 +97,7 @@ function replyPaginationTemplate(data) {
 					<div class="reply-author-info d-flex">
 						<div class="reply-author">
 							<img class="author-profile" 
-								src="${d.userProfileImg != '' ? d.userProfileImg : contextPath + '/public/images/profile/user_img1.jpg'}"/> 
+								src="${d.userProfileImg != '' ? d.userProfileImg : (contextPath + '/public/images/profile/user_img1.jpg') }"/> 
 							<p class="author-name fs-14__b ml-8">${d.userName}</p>
 						</div>
 					</div>
