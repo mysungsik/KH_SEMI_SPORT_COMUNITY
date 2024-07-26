@@ -10,5 +10,25 @@
 		FROM TEAMS 
 		WHERE TEAM_ST = 'Y'
 	</entry>
+	<entry key="getTeamNav">
+		SELECT TEAM_NO, TEAM_NAME, 
+		   (SELECT IMG_ORIGINAL FROM TEAM_IMG 
+		    WHERE TEAM_IMG.TEAM_NO = TEAMS.TEAM_NO 
+		    AND IMG_LEVEL = 1) AS IMG_ORIGINAL, 
+		TEAM_COLOR 
+		FROM TEAMS 
+		WHERE TEAM_ST = 'Y'
+		AND TEAM_NAME=?
+	</entry>
+	
+	<entry key="getTeamMainImg">
+		SELECT TEAM_NO, TEAM_NAME, 
+		   (SELECT IMG_ORIGINAL FROM TEAM_IMG 
+		    WHERE TEAM_IMG.TEAM_NO = TEAMS.TEAM_NO 
+		    AND IMG_LEVEL = 3) AS IMG_ORIGINAL
+		FROM TEAMS 
+		WHERE TEAM_ST = 'Y'
+		AND TEAM_NAME=?
+	</entry>
 
 </properties>

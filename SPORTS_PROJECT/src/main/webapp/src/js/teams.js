@@ -20,26 +20,6 @@ const teams_data = [
 $(document).ready(function() {
 	//showTeams(teams_data);
 	
-	let team = $("input[name='team']");
-	
-	if (team.length > 0){
-		let team_value = team.val();
-		let request_url = `${contextPath}/api/teams/${team_value}`
-		
-		
-		/*
-		switch (team_value) {
-			case "kia": {
-				$(".team-each-image").css("background-image", `url(${"https://tigers.co.kr/files/banner/2023/02/08/catchphrase_pc.png"})`);
-			}break;
-			
-			case "lg": {
-				$(".team-each-image").css("background-image", `url(${"https://www.lgtwins.com/service/download.ncd?actID=BR_RetrieveFile&baRq=IN_DS&baRs=DOWNLOAD&IN_DS.FILE_TYPE=MNP&IN_DS.FILE_ID=6350"})`);
-				
-			}break;
-			
-		}*/
-	}else{
 		let request_url= `${contextPath}/api/teams/getTeams`
 		$.ajax({
 			type: "GET",
@@ -47,27 +27,28 @@ $(document).ready(function() {
 			dataType: "json",
 			success: function (res) {
 				let isGetData = res.hasOwnProperty("data");
-				
 				if (isGetData){
-					showTeams(res);
+					showTeams(res.data);
 				}
 			}
+			
 		});
 		
 	}
-});
 
+);
 
 
 function showTeams(data){
 	html = "";
-	for( let d of data.data ){
+	
+	$.each(data, function(index, d){
 		html += 
 		`
 			<a href="${contextPath}/teams/${d.teamName}" >
 			    <div class="teams-card br-10 mb-10 mr-20 ${d.teamColor}">
 			    	<div class="team-logo-img">
-			            <img src="${contextPath}${d.imgOriginal}" class="team-logo" alt="구단사진">
+			            <img src="${contextPath}/${d.teamImage.imgOriginal}" class="team-logo" alt="구단사진">
 			    	</div>
 			        <div class="teams-name">
 			            <span class="fs-14 fc__white ml-10">${d.teamName}</span>
@@ -76,12 +57,10 @@ function showTeams(data){
 			    </div>
 			</a>
 		`
-	}
+	})
 	
-
-
-	const parent = $(".al-east-icons").eq(0)
-	parent.html(html)
+	const parent = $(".al-east-icons").eq(0);
+	parent.html(html);
 }
 
 

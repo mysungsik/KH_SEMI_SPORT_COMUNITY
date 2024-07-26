@@ -32,7 +32,7 @@ public class TeamsController extends HttpServlet {
 		String reqPath = req.getPathInfo();
 		String team = "";
 		
-		String[] teams={"kia", "lg", "doosan","teamAdd"};
+		String[] teams={"KIA", "LG", "DOOSAN","teamAdd"};
 
 		List<String> teamList = Arrays.asList(teams);
 		
@@ -42,22 +42,27 @@ public class TeamsController extends HttpServlet {
 		}
 		
 		// 경로에 따라 필요한 페이지로 추가 이동
-		if(team.equals("")) {
+		if(team.equals("")) {	// team이 없는 경우
 			dispatcher = req.getRequestDispatcher(defaultURLPath + "teams.jsp");
 			dispatcher.forward(req, resp);
 			
+			return;
+			
 		}else {
-			if(teamList.contains(team)){
+			if(teamList.contains(team)){	// teamList에 team이 포함되어있는 경우
 				req.setAttribute("team", team);
 				if(team.equals("teamAdd")){
 					dispatcher=req.getRequestDispatcher(defaultURLPath + "teamAdd.jsp");
 				}else{
 					dispatcher = req.getRequestDispatcher(defaultURLPath + "teamsEachMain.jsp");
 				}
-
+				
 				dispatcher.forward(req, resp);
+				return;
 			}else {
-				System.out.println("--404 페이지로 이동--");
+				System.out.println("======================================");
+				System.out.println(team);
+				System.out.println("--404 페이지로 이동--123");
 			}
 			
 		}

@@ -26,9 +26,18 @@ public class Teams {
 		this.teamNo = teamNo;
 		this.teamName= teamName;
 		this.teamImage  = new TeamImage();
-		this.teamImage.setImgOriginal(imgOriginal);
 		this.teamImage.setTeamNo(teamNo);
+		this.teamImage.setImgOriginal(imgOriginal);
 		this.teamColor= teamColor;
+	}
+	
+	// 구단 메인페이지 이미지용 객체
+	public Teams(int teamNo, String teamName, String imgOriginal) {
+		this.teamNo = teamNo;
+		this.teamName= teamName;
+		this.teamImage  = new TeamImage();
+		this.teamImage.setTeamNo(teamNo);
+		this.teamImage.setImgOriginal(imgOriginal);
 	}
 	
 	public Teams(int teamNo, int stadiumNo, String teamName, String teamLeader, String director, String sponsor,

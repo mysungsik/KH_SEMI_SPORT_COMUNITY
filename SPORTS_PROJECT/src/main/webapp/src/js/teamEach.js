@@ -1,5 +1,3 @@
-
-
 var swiper2 = new Swiper(".swiper-news", {
     spaceBetween: 24,
     slidesPerView: 3, // 슬라이드 2개씩 보이도록 설정
@@ -54,6 +52,28 @@ const today_schedule = [
 $(document).ready(function() {
 	showTodaySchedule(today_schedule);
 	
+	let request_url=`${contextPath}/api/teams/teamMain`
+	
+	$.ajax({
+		type: "GET",
+		url: request_url,
+		dataType: "json",
+		data : {
+			team
+		},
+		success: function (res) {
+			let isGetData = res.hasOwnProperty("data");
+			if (isGetData){
+				console.log(res.data);
+				showTeamMainImg(res.data);
+			}
+		},
+		error:function(){
+			alert('실패!');
+		}
+		
+	});
+	
 	var swiper = new Swiper(".mySwiper", {
 	    slidesPerView: 1,
 		centeredSlides: true,
@@ -69,6 +89,16 @@ $(document).ready(function() {
 	});
 });
 
+function showTeamMainImg(d){
+
+	if (d.teamImage.imgOriginal == undefined){
+		console.log("aaa")
+		$(".team-each-image").css("background-image", `url("${contextPath}/public/images/profile/user_img1.jpg")`);
+	}else{
+		$(".team-each-image").css("background-image", `url("${contextPath}/${d.teamImage.imgOriginal}")`);
+	
+	}
+}
 
 
 function showTodaySchedule(data){

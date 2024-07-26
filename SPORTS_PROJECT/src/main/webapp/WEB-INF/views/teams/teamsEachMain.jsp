@@ -6,15 +6,16 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="${contextPath}/src/css/teamsEachMain.css">
-	<script src="${contextPath}/src/js/teams.js" defer></script>
-	<script src="${contextPath}/src/js/teamEach.js" defer></script>
+	<link rel="stylesheet" href="${contextPath}/src/css/teamsEachHeader.css">
+	<jsp:include page="/WEB-INF/views/layouts/header-teams-dependencies.jsp"/>
 	<jsp:include page="/WEB-INF/views/layouts/header-dependencies.jsp" />
+	<script src="${contextPath}/src/js/header-teams.js" defer></script>
+	<script src="${contextPath}/src/js/teamEach.js" defer></script>
+	
 	<title>Team Main</title>
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/layouts/header-teams.jsp"/>
-	<input type="hidden" name="team" value="${requestScope.team}">
-	<input type="hidden" name="path" value="${requestScope.path}">
 	<!-- 날짜 슬라이드 시작 -->
 	<div class="team-each-image">
 		<div class="main-header">

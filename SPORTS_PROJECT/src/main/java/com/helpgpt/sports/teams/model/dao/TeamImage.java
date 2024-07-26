@@ -8,6 +8,16 @@ public class TeamImage {
 	private String imgDes; 
 	
 	public TeamImage() {}
+	
+	
+
+	public TeamImage(int teamNo, String imgOriginal) {
+		super();
+		this.teamNo = teamNo;
+		this.imgOriginal = imgOriginal;
+	}
+
+
 
 	public TeamImage(int teamNo, String imgOriginal, String imgRename, int imgLevel, String imgDes) {
 		super();

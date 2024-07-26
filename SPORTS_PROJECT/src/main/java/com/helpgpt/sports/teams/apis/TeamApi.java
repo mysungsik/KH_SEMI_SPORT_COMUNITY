@@ -2,6 +2,7 @@ package com.helpgpt.sports.teams.apis;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,42 +32,86 @@ public class TeamApi extends HttpServlet{
 		// Path 지정
 		String reqPath = req.getPathInfo();
 		String path = "";
+		String team = req.getParameter("team");
 
 		if (reqPath != null) {
-			path = reqPath.split("/")[1];
-		}else {
+			path = getLastPathSegment(reqPath);
 			
+		}else {
+			System.out.println("reqPath가 null입니다.");
 		}
-
-		String teamName = "";
+		
 
 		// 경로에 따라 필요한 기능을 사용
 		Map<String, Object> result = new HashMap<>();
 		
 		switch(path) {
-			case "getTeams":{
-				System.out.println("테스트!!!!!!");
-	
-				// teamName 받아오기
-				teamName = path;
+			case "getTeams":{	
 				List<Teams> teamsList = service.getTeamsList();
-				System.out.println(teamsList);
+				
 				if (!teamsList.isEmpty()) {
 					result.put("data", teamsList);
 					result.put("message", "success to get teamsList");
 				} else {
 					result.put("message", "failed to get teamsList");
 				}
-	
+				
 				new Gson().toJson(result, out);
+			}break;
+			
+			case "teamNav" :{
+				
+				Teams teamNav = service.getTeamNav(team);
+				
+				if(teamNav != null) {
+					result.put("data", teamNav);
+					result.put("message", "success to get teamList");
+				} else {
+					result.put("message", "failed to get teamList");
+				}
+				new Gson().toJson(result, out);
+				
 			}break;
 			
 			default:{
 				result.put("message", "failed to get teamsLists");
 				new Gson().toJson(result, out);
 			}
+			
+			case "teamMain":{
+				
+				Teams teamMainImg = service.getTeamMainImg(team);
+				
+				System.out.println(teamMainImg);
+				
+				if(teamMainImg != null) {
+					result.put("data", teamMainImg);
+					result.put("message", "success to get teamMainImg");
+				} else {
+					result.put("message", "failed to get teamMainImg");
+				}
+				new Gson().toJson(result, out);
+				
+			}break;
 		}
 		
 	}
+	
+	// 마지막 segment만 추출하는 함수
+	public static String getLastPathSegment(String url) {
+		
+        if (url == null || url.isEmpty()) {
+            System.out.println("url이 비어있습니다.");;
+        }
+        
+        // 쿼리 문자열을 제거
+        int queryIndex = url.indexOf("?");
+        if (queryIndex != -1) {
+            url = url.substring(0, queryIndex);
+        }
+        // URL을 "/"로 분리하고 마지막 부분을 반환
+        String[] parts = url.split("/");
+        return parts[parts.length - 1];
+    }
 
 }

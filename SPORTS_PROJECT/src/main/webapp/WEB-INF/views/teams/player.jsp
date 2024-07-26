@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="${contextPath}/src/css/player.css">
-
+<jsp:include page="/WEB-INF/views/layouts/header-teams-dependencies.jsp"/>
 <script src="${contextPath}/src/util/pagination.js" defer></script>
 <script src="${contextPath}/src/js/player.js" defer></script>
 

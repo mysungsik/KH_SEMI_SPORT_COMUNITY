@@ -26,6 +26,36 @@ public class TeamsService {
 		return teamsList;
 		
 	}
+
+	/** 특정 팀 정보(로고, 색깔 이름) 출력 service
+	 * @param team
+	 * @return teamNav
+	 */
+	public Teams getTeamNav(String team) {
+		
+		Connection conn = getConnection();
+		
+		Teams teamNav = dao.getTeamNav(conn, team);
+		
+		close(conn);
+		
+		return teamNav;
+	}
+
+	/** 특정 팀 정보(로고, 색깔 이름) 출력 service
+	 * @param team
+	 * @return teamMain
+	 */
+	public Teams getTeamMainImg(String team) {
+		
+		Connection conn = getConnection();
+		
+		Teams teamMainImg = dao.getTeamMainImg(conn, team);
+		
+		close(conn);
+		
+		return teamMainImg;
+	}
 	
 	
 }
