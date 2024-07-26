@@ -1,45 +1,20 @@
-let reportData = [
-	{no : 1 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕 했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 2 , id : "test_id1", rep_type : "게시글",  vio_type: "허위사실", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 3 , id : "test_id1", rep_type : "뉴스",  vio_type: "허위사실", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 4 , id : "test_id1", rep_type : "댓글",  vio_type: "사행성조장", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 5 , id : "test_id1", rep_type : "댓글",  vio_type: "혐오발언", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 6 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 7 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 8 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 9 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 10 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 11 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 12 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 13 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 14 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 15 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 16 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 17 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 18 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 19 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 20 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 21 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 22 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 23 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 24 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 25 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 26 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 27 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 28 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 29 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 30 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 31 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 32 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 33 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 34 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 35 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 36 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-	{no : 37 , id : "test_id1", rep_type : "댓글",  vio_type: "욕설", rep_content:"심한 인신공격, 나쁜 욕했습니다. 처벌좀여", board_title:"손흥민 월클 맞습니다.", content : "게시글 내용입니다 ... 으로 한줄 작성합니다."},
-]
+let reportData = []
+let userData = [];
 
 $(document).ready(function () {
-	// 페이지네이션 실행
+	// 유저 데이터
+	getUserInfos();
+
+	// 신고 데이터
+	getReportsInfos();
+	
+	// 이미지 변경시 썸네일 생성 이벤트 리스너 연결 함수
+	showThumbnail();
+
+});
+
+// userInfo 얻는 함수
+function getUserInfos(){
 	const request_url = `${contextPath}/api/admin/profile/getAllUsersData`;
 	
 	$.ajax({
@@ -49,7 +24,7 @@ $(document).ready(function () {
 		success: function (res) {
 			let isGetData = res.hasOwnProperty("data")
 			if (isGetData){
-				const userData = res.data;
+				userData = res.data;
 				paginationActive("user", userData, adminTemplate);
 			}
         },
@@ -59,13 +34,30 @@ $(document).ready(function () {
 			console.log(error);
 		}
 	});
-	
-	paginationActive("report", reportData, adminTemplate);
-	
-	// 이미지 변경시 썸네일 생성 이벤트 리스너 연결 함수
-	showThumbnail();
+}
 
-});
+function getReportsInfos(){
+	const request_url = `${contextPath}/api/report/getReportAll`;
+	
+	$.ajax({
+		type: "GET",
+		url: request_url,
+		dataType: "json",
+		success: function (res) {
+			let isGetData = res.hasOwnProperty("data")
+			if (isGetData){
+				reportData = res.data;
+				console.log(res)
+				paginationActive("report", reportData, adminTemplate);
+			}
+        },
+		error : function(request, status, error){
+			console.log(request);
+			console.log(status);
+			console.log(error);
+		}
+	});
+}
 
 
 // 관리자용 페이지네이션 템플릿 함수 (User)
@@ -121,15 +113,18 @@ function adminTemplate(data, id) {
 				`;
 		$.each(data, function(index, d){
 	  	item += 
-	  		`<tr> 
-				<input type="hidden" class="board_title" value='${d.board_title}'> 
-				<input type="hidden" class="content" value='${d.content}'> 
-				<td class="no" >${d.no}</td> 
-				<td class="id" >${d.id}</td> 
-				<td class="rep_type" >${d.rep_type}</td> 
-				<td class="vio_type" >${d.vio_type}</td> 
-				<td class="rep_content" >${d.rep_content}</td> 
-				<td data-num=${d.no}><img class="edit" src="/SPORTS_PROJECT/public/icons/edit.png"></td> 
+	  		`<tr>
+				<input type="hidden" class="reportTypeNo" value='${d.reportTypeNo}'> 
+				<input type="hidden" class="reportTargetNo" value='${d.reportTargetNo}'> 
+				<input type="hidden" class="violationTypeNo" value='${d.violationTypeNo}'> 
+				<input type="hidden" class="reportTargetTitle" value='${d.reportTargetTitle}'> 
+				<input type="hidden" class="reportTargetContent" value='${d.reportTargetContent}'> 
+				<td class="reportNo" >${d.reportNo}</td> 
+				<td class="userId" >${d.userId}</td> 
+				<td class="reportTypeName" >${d.reportTypeName}</td> 
+				<td class="violationTypeName" >${d.violationTypeName}</td> 
+				<td class="reportContent"> <span>${d.reportContent}</span></td> 
+				<td data-reportno=${d.reportNo}><img class="edit" src="/SPORTS_PROJECT/public/icons/edit.png"></td> 
 			</tr>`
 		})
 		item += `</tbody>
@@ -186,13 +181,15 @@ function paginationActive(id, datas, template){
 		} else if (id == "report"){
 			$(".edit").on("click", function(){
 				let data = {
-					no : $(this).parent().parent().find(".no").text(),
-					id : $(this).parent().parent().find(".id").text(),
-					rep_type : $(this).parent().parent().find(".rep_type").text(),
-					vio_type : $(this).parent().parent().find(".vio_type").text(),
-					rep_content : $(this).parent().parent().find(".rep_content").text(),
-					board_title : $(this).parent().parent().find(".board_title").val(),
-					content : $(this).parent().parent().find(".content").val()
+					reportNo : $(this).parent().parent().find(".reportNo").text(),
+					userId : $(this).parent().parent().find(".userId").text(),
+					reportTypeNo : $(this).parent().parent().find(".reportTypeNo").val(),
+					reportTargetNo : $(this).parent().parent().find(".reportTargetNo").val(),
+					reportTypeName : $(this).parent().parent().find(".reportTypeName").text(),
+					violationTypeName : $(this).parent().parent().find(".violationTypeName").text(),
+					reportContent : $(this).parent().parent().find(".reportContent").text(),
+					reportTargetTitle : $(this).parent().parent().find(".reportTargetTitle").val(),
+					reportTargetContent : $(this).parent().parent().find(".reportTargetContent").val()
 				}
 
 				showModal(id, data, $(this))
@@ -260,43 +257,49 @@ function showModal(id, data ,el){
 		);
 	} else if (id == "report"){
 	
-		modalEl.find(".modal-title").html(`<p class="fs-14 fc__white">신고관리 / 신고번호 : <span class="reportNo">${data.no}</span></p>`)
+		modalEl.find(".modal-title").html(`<p class="fs-14 fc__white">신고관리 / 신고번호 : <span class="reportNo">${data.reportNo}</span></p>`)
 		
 		modalEl.find(".modal-body").html(`
 			<div class="modal-row">
 				<div>
-					<label for="user_id"> USER ID </label>
-					<input type="text" id="user_id" name="user_id" value="${data.id}">				
+					<label for="userId"> USER ID </label>
+					<p type="text" id="user_id" name="userId">${data.userId}</p>		
 				</div>
 				<div>
-					<label for="user_email"> 신고 유형 </label>
-					<input type="text" id="user_email" name="user_email" value="${data.rep_type}">								
+					<label for="reportTypeName"> 신고 유형 </label>
+					<p type="text" id="reportTypeName" name="reportTypeName">${data.reportTypeName}</p>						
 				</div>
 			</div>
 			<div  class="modal-row">
 				<div>
-					<label for="user_id"> 위반 유형 </label>
-					<input type="text" id="user_id" name="user_id" value="${data.vio_type}">				
+					<label for="violationTypeName"> 위반 유형 </label>
+					<p type="text" id="violationTypeName" name="violationTypeName">${data.violationTypeName}</p>		
 				</div>
 				<div>
-					<label for="user_email"> 신고 내용 </label>
-					<input type="text" id="user_email" name="user_email" value="${data.rep_content}">								
+					<label for="reportContent"> 신고 내용 </label>
+					<p type="text" id="reportContent" name="reportContent">${data.reportContent}</p>							
 				</div>
 			</div>
-			<div  class="modal-row">
-				<div>
-					<label for="board_title"> 게시글 제목 </label>
-					<input type="text" id="board_title" name="board_title" value="${data.board_title}">				
-				</div>
-			</div>
+			
+			${data.reportTargetTitle == 'undefined' ? "" :`
+				<div  class="modal-row">
+					<div>
+						<label for="reportTargetTitle"> 신고 타겟 제목 </label>
+						<p type="text" id="reportTargetTitle" name="reportTargetTitle"> ${data.reportTargetTitle} </p>				
+					</div>
+				</div>`
+			}
+			
 			<div class="modal-row">
 				<div>
-					<label for="content"> 게시글 내용 </label>
-					<input type="text" id="content" name="content" value="${data.content}">				
+					<label for="reportTargetContent"> 신고 타겟 내용 </label>
+					<p type="text" id="reportTargetContent" class="${data.reportTargetTitle == 'undefined' ? 'reply-content' : ''}" name="reportTargetContent">${data.reportTargetContent}</p>		
 				</div>
 			</div>
-			<a class="move-board fs-10 fc__blue text-hover__blue"> 해당 게시글로 이동 </a> 
 			
+			${data.reportTargetTitle == 'undefined' ? "" : `
+				<a class="move-board fs-10 fc__blue text-hover__blue"> 해당 게시글로 이동 </a> `
+			}
 			
 			<div class="modal-btns">
 				<button class="btn-medium__blue reportAcceptBtn"> 신고 처리 </button>

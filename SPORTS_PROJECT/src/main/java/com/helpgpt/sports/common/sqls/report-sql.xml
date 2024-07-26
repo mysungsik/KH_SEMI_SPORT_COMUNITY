@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	
+	<comment>sql file for report</comment>
+	
+	<entry key="getReportAll">
+		SELECT 
+		    R.*, 
+		    U.USER_NAME, 
+		    U.USER_ID, 
+		    T.REPORT_TYPE, 
+		    V.VIO_TYPE,
+		    CASE 
+		        WHEN R.REPORT_TYPE_NO = 1 THEN C.COMM_TITLE
+		        WHEN R.REPORT_TYPE_NO = 3 THEN N.NEWS_TITLE
+		        ELSE NULL
+		    END AS TARGET_TITLE,
+		    CASE 
+		        WHEN R.REPORT_TYPE_NO = 1 THEN C.COMM_CONTENT
+		        WHEN R.REPORT_TYPE_NO = 2 THEN RP.REPLY_CONTENT
+		        WHEN R.REPORT_TYPE_NO = 3 THEN N.NEWS_CONTENT
+		        ELSE NULL
+		    END AS TARGET_CONTENT
+		FROM 
+		    REPORT R
+		JOIN 
+		    USER_INFO U ON R.USER_NO = U.USER_NO
+		JOIN 
+		    REPORT_TYPE T ON R.REPORT_TYPE_NO = T.REPORT_TYPE_NO
+		JOIN 
+		    REPORT_VIOLATION_TYPE V ON R.VIO_TYPE_NO = V.VIO_TYPE_NO
+		LEFT JOIN 
+		    COMM C ON R.REPORT_TYPE_NO = 1 AND R.TARGET_NO = C.COMM_NO
+		LEFT JOIN 
+		    REPLY RP ON R.REPORT_TYPE_NO = 2 AND R.TARGET_NO = RP.REPLY_NO
+		LEFT JOIN 
+		    NEWS N ON R.REPORT_TYPE_NO = 3 AND R.TARGET_NO = N.NEWS_NO
+		WHERE 
+		    R.REPORT_ST = 'P'
+		ORDER BY 
+		    R.REPORT_NO DESC
+	</entry>
+
+</properties>

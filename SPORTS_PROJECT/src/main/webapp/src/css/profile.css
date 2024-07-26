@@ -371,6 +371,17 @@
 	height: 29px;
 }
 
+.content-main .manage-table .reportContent span{
+	display:inline-block;
+	width : 100%;
+	height : 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;  
+    display: -webkit-box;   
+    word-break: break-word;  
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical
+}
 
 /* 관리자 페이지 모달 */
 
