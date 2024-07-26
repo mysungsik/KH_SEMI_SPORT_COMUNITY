@@ -85,8 +85,7 @@
 
 /* 댓글 입력 */
 .input-area{
-	margin-top: 20px;
-	margin-left: 10px;
+	margin: 20px 10px;
 }
 
 form{
@@ -194,7 +193,7 @@ form>button{
 	border: none;
 	outline: none;
 	resize: none;
-}
+} 
 
 
 

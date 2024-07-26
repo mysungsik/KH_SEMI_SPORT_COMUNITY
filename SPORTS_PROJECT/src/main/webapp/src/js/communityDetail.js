@@ -7,7 +7,7 @@ $(document).ready(function() {
 let replyData = [];
 let likeData = [];
 let reportTypeData = [];
-const boardNo = $("input[name='sub']").eq(0).val();
+let boardNo = $("input[name='sub']").eq(0).val();
 
 
 // 댓글 페이지네이션 템플릿 함수
@@ -50,13 +50,6 @@ function replyPaginationTemplate(data) {
 	return item;
 }
 
-
-$(document).ready(function () {
-
-
-	// 페이지네이션 실행
-	paginationActive("reply", replyData, paginationTemplate);
-});
 
 
 // 페이지네이션 실행 함수
@@ -270,18 +263,18 @@ function updateReply(el){
 	}
 }
 
-// 뉴스 좋아요 추가/삭제 함수
-function modifyNewsLike(){
+// 좋아요 추가/삭제 함수
+function modifyLike(){
 	if (loginUser == ""){
 		toastPop("warn", "로그인 후 이용해주세요");
 		return;
 	}
 	
-	const news_like_btn = $(".news-like").eq(0)
+	const board_like_btn = $(".board-like").eq(0)
 	const request_url = `${contextPath}/api/like/modifyLike`;
 	let like_cnt = parseInt($(".like-cnt").html());
 	
-	if (news_like_btn.hasClass("disabled")){
+	if (board_like_btn.hasClass("disabled")){
 		toastPop("warn", "요청이 너무 빠릅니다!")
 		return;
 	}
@@ -290,13 +283,13 @@ function modifyNewsLike(){
 		type: "POST",
 		url: request_url,
 		data : {
-			typeNo : 5,	// 뉴스
-			targetNo : $("input[name='newsNum']").eq(0).val()
+			typeNo : 1,	// COMM
+			targetNo : boardNo
 		},
 		dataType: "json",
 		success: function (res) {
 			// 좋아요 버튼 disable
-			news_like_btn.addClass("disabled")
+			board_like_btn.addClass("disabled")
 			
 			let isModifyLike = res.hasOwnProperty("data");
 			
@@ -316,63 +309,8 @@ function modifyNewsLike(){
 	});
 	
 	setTimeout(function(){
-		news_like_btn.removeClass("disabled")
+		board_like_btn.removeClass("disabled")
 	}, 1000)
-	
-}
-
-let beforeState = "";	// 이전 상태를 기록하기 위한 값
-function modifyLike(){
-	
-	if (loginUser == ""){
-		toastPop("warn", "로그인 후 이용해주세요");
-		return;
-	}
-	
-	const request_url = `${contextPath}/api/like/modifyLike`;
-	
-	$.ajax({
-		type: "POST",
-		url: request_url,
-		data : {
-			typeNo : 1,	// COMM
-			targetNo : boardNo
-		},
-		dataType: "json",
-		success: function (res) {
-		
-			let isModifyLike = res.hasOwnProperty("data");
-			
-			if(isModifyLike){
-				// 기존 상태에 따라 좋아요 수 변경
-				if (beforeState == ""){
-					if (res.data == "deleteLike"){
-						beforeState = "deleteLike"
-						$(".like-cnt").html(likeData.length -1)			
-					}
-					else if (res.data == "insertLike"){
-						beforeState = "insertLike"
-						$(".like-cnt").html(likeData.length + 1)
-					}
-					
-				} else if(beforeState == "deleteLike"){
-					if (res.data == "insertLike"){
-						beforeState = "insertLike"
-						$(".like-cnt").html(likeData.length +1)
-					}
-					
-				} else if (beforeState == "insertLike"){
-					if (res.data == "deleteLike"){
-						beforeState = "deleteLike"
-						$(".like-cnt").html(likeData.length)
-					}
-				}
-			}
-			else{
-				toastPop("warn", res.message)
-			}
-		}
-	});
 	
 }
 
@@ -386,10 +324,8 @@ function showDeleteModal(el){
 	}
 	
 	let deleteModalEl = $('#deleteModal');
-	let modalType = $(el).data("type");
-	
-	let item = (modalType == "news-delete") ? "게시글" : "댓글";
-	deleteModalEl.find(".modal-title").html(`<p class="fs-14 fc__white">${item} 삭제</p>`)
+
+	deleteModalEl.find(".modal-title").html(`<p class="fs-14 fc__white">댓글 삭제</p>`)
 		
 	deleteModalEl.modal('show');
 	
@@ -408,7 +344,7 @@ function showReportModal(el){
 	let reportModalEl = $('#reportModal');
 	let modalType = $(el).data("type");
 	
-	let item = (modalType == "news-report") ? "게시글" : "댓글";
+	let item = (modalType == "board-report") ? "게시글" : "댓글";
 	reportModalEl.find(".modal-title").html(`<p class="fs-14 fc__white">${item} 신고</p>`)
 
 	reportModalEl.modal('show');
@@ -434,60 +370,38 @@ function showReplyUpdateModal(el){
 }
 
 
+// 모달
+function showModal() {
 
+	if (loginUser == ""){
+		toastPop("warn", "로그인 후 이용해주세요");
+		return;
+	}
+	let modalEl = $('#communityModal');
 
-// // 모달
-// function showModal(el) {
-// 	let modalEl = $('#communityModal');
+		
 
-// 	let modalType = $(el).data("type");
+		modalEl.find(".modal-title").html(`<p class="fs-14 fc__white">게시글 삭제</p>`)
 
-// 	console.log(modalType);
-
-// 	let item = "";
-// 	switch (modalType) {
-// 		case "board-delete": case "board-report": item = "게시글"; break;
-// 		case "reply-delete": case "reply-report": item = "댓글"; break;
-// 	}
-
-// 	if (modalType == "board-delete" || modalType == "reply-delete") {
-// 		modalEl.find(".modal-title").html(`<p class="fs-14 fc__white">${item} 삭제</p>`)
-
-// 		modalEl.find(".modal-body").html(` 
+		modalEl.find(".modal-body").html(` 
 			
-// 				<div class="modal-row">정말 삭제하시겠습니까?</div>
+				<div class="modal-row">정말 삭제하시겠습니까?</div>
 				
-// 				<div class="modal-btns">
-// 					<button class="btn-medium__blue acceptBtn" onclick="location.href='delete?no=${boardNo}'"> 확인 </button>
-// 					<button class="btn-medium__gray cancelBtn" data-bs-dismiss="modal"> 취소 </button>
-// 				</div>
-// 				`
-// 		);
-// 	} else if (modalType == "board-report" || modalType == "reply-report") {
-// 		modalEl.find(".modal-title").html(`<p class="fs-14 fc__white">${item} 신고</p>`)
-
-// 		modalEl.find(".modal-body").html(` 
-// 			<form>
-// 				<div class="modal-row">
-// 					<div class="select-wrapper">
-// 						<select name="team" id="team" style="border: none; outline: none;">
-// 					         <option value="kia">욕설 및 비하발언</option>
-// 					         <option value="dusan">허위사실 유포</option>
-// 					         <option value="la">사행성 ${item}</option>
-// 					    </select>
-// 				    </div>
-// 				    <textarea rows="5" cols="30" placeholder="상세 내용" ></textarea>
-// 				</div>
-// 				<div class="modal-btns">
-// 					<button class="btn-medium__blue acceptBtn"> 확인 </button>
-// 					<button class="btn-medium__gray cancelBtn" data-bs-dismiss="modal"> 취소 </button>
-// 				</div>
-// 			</form>	
-// 				`
-// 		);
-// 	}
+				<div class="modal-btns">
+					<button class="btn-medium__blue acceptBtn" onclick="location.href='delete?no=${boardNo}'"> 확인 </button>
+					<button class="btn-medium__gray cancelBtn" data-bs-dismiss="modal"> 취소 </button>
+				</div>
+				`
+		);
 
 
 
-// 	modalEl.modal('show');
-// }
+	modalEl.modal('show');
+}
+
+function loginCheck(){
+	if (loginUser == ""){
+		toastPop("warn", "로그인 후 이용해주세요");
+		return;
+	}
+}

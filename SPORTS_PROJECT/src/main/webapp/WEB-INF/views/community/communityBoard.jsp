@@ -39,13 +39,13 @@
 				<span class="fs-28__b title"></span>
 				<div class="search-area">
 					<form action="#" class="search">
-						<select name="searchType" style="border: none; outline: none;" class="br-5">
-					    	<option value="author" name="author">작성자</option>
-					    	<option value="title" name="title">제목</option>
-					    	<option value="content" name="content">내용</option>
+						<select name="search-type" style="border: none; outline: none;" class="br-5">
+					    	<option value="USER_NAME" name="author">작성자</option>
+					    	<option value="COMM_TITLE" name="title">제목</option>
+					    	<option value="COMM_CONTENT" name="content">내용</option>
 						</select>
-						<input type="text">
-						<button class="fa-solid fa-magnifying-glass"></button>
+						<input type="text" name="search-input">
+						<button type="button" class="fa-solid fa-magnifying-glass" onclick="searchBoard()"></button>
 					</form>
 					<button type="button" class="write-btn mg-right" onclick="location.href='${contextPath}/community/communityPosting/free'">글쓰기</button>
 				</div>

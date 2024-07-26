@@ -11,6 +11,7 @@ import com.helpgpt.sports.community.controller.communityController;
 import com.helpgpt.sports.community.model.dao.CommunityDAO;
 import com.helpgpt.sports.community.model.vo.Community;
 import com.helpgpt.sports.community.model.vo.CommunityImage;
+import com.helpgpt.sports.login.model.vo.User;
 import com.helpgpt.sports.reply.model.vo.Reply;
 import com.helpgpt.sports.teams.model.vo.Teams;
 
@@ -27,6 +28,7 @@ public class CommunityService {
 		switch(type) {
 		case 1: case 2: boardList =	dao.selectBoardList(conn, type); break;
 		case 3: boardList = dao.selectTeamBoardList(conn, teamNo); break;
+		case 4: boardList = dao.selectPopularBoardList(conn); break;
 		case 0: boardList = dao.selectBoardListAll(conn, type); break;
 		}
 			
@@ -142,8 +144,12 @@ public class CommunityService {
 		
 		Map<String, List<Community>> map = dao.selectMainPage(conn);
 		List<Community> allList = dao.selectMainPageAll(conn);
+		List<Community> popularList = dao.selectPopularBoardList(conn);
+		List<Community> bestReply = dao.selectBestReply(conn);
 		
+		map.put("type4", popularList);
 		map.put("type0", allList);
+		map.put("bestReply", bestReply);
 		
 		close(conn);
 		
@@ -166,6 +172,22 @@ public class CommunityService {
 		close(conn);
 		
 		return result;
+	}
+
+	/** 게시글 검색
+	 * @param category
+	 * @param searchInput
+	 * @return
+	 */
+	public List<Community> searchBoard(String category, String searchInput) {
+		
+		Connection conn = getConnection();
+		
+		List<Community> boardList = boardList = dao.searchBoard(conn, category, searchInput); 
+		
+		close(conn);
+		
+		return boardList;
 	}
 	
 	

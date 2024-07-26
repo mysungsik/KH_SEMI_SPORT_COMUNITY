@@ -13,15 +13,14 @@
 <script src="https://kit.fontawesome.com/e245e5bbb1.js"
 	crossorigin="anonymous"></script>
 
-
-
 <title>COMMUNITY</title>
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/layouts/header.jsp"/>
+	
+${sub}
 	<!-- Write Main Content -->
 	<main class="container">
-
 		<!-- main-top -->
 		<section class="swiper mySwiper main-top">
 			<article class="title mg-left">
@@ -33,13 +32,13 @@
 				</div>
 				<div class="search-area">
 					<form action="#" class="search">
-						<select name="searchType" style="border: none; outline: none;" class="br-5">
-					    	<option value="author" name="author">작성자</option>
-					    	<option value="title" name="title">제목</option>
-					    	<option value="content" name="content">내용</option>
+						<select name="search-type" style="border: none; outline: none;" class="br-5">
+					    	<option value="USER_NAME" name="author">작성자</option>
+					    	<option value="COMM_TITLE" name="title">제목</option>
+					    	<option value="COMM_CONTENT" name="content">내용</option>
 						</select>
-						<input type="text">
-						<button class="fa-solid fa-magnifying-glass"></button>
+						<input type="text" name="search-input">
+						<button type="button" class="fa-solid fa-magnifying-glass" onclick="searchBoard()"></button>
 					</form>
 					<button type="button" class="write-btn mg-right" onclick="location.href='${contextPath}/community/communityPosting/write'">글쓰기</button>
 				</div>
@@ -47,105 +46,180 @@
 			<article class="swiper-wrapper">
 				<div class="popular base__lblue swiper-slide d-flex">
 					<div class="popular-area">
-						<div class="popular-post" onclick="location.href='${contextPath}/community/communityDetail/1'">
+						<div class="popular-post" onclick="location.href='${contextPath}/community/communityDetail/${map.type4[0].boardNo}'">
 							<div class="post-title">
-								<span class="fs-12 fc__gray">[ 타이거즈 ]</span> 
-								<span class="fs-14__b">파이팅 다저스</span>
+								<span class="fs-12 fc__gray">[ ${map.type4[0].boardCategory} ]</span> 
+								<span class="fs-14__b">${map.type4[0].boardTitle}</span>
 							</div>
 							<div class="post-content">
 								<span class="fs-12 fc__gray">
-								 경기력이 정말 화가 납니다..사회 생활을 하며 사람을 화나게 하는 방법은 여러가지가 있습니다. 그 중 첫 번째는 말을 하다 마는 것입니다. 이어서 두 번째는 바로.. 
+									${map.type4[0].boardContent}
 								 </span>
 							</div>
 							<div class="post-info">
-								<span class="fs-10">작성자 2024-06-23</span> 
-								<span class="fs-10">조회수 30 | 댓글 3 | 좋아요 3 ♡</span>
+								<span class="fs-10">${map.type4[0].boardAuthor} ${map.type4[0].boardCreateDate}</span> 
+								<span class="fs-10">조회수 ${map.type4[0].boardViews} | 댓글 ${map.type4[0].boardComent} | 좋아요 ${map.type4[0].boardLike} ♡</span>
 							</div>
 						</div>
 					</div>
 					<div class="popular-area">
-						<div class="popular-post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
+						<div class="popular-post" onclick="location.href='${contextPath}/community/communityDetail/${map.type4[1].boardNo}'">
 							<div class="post-title">
-								<span class="fs-12 fc__gray">[ 다저스 ]</span> 
-								<span class="fs-14__b">한국이 야구 못하는 이유</span>
+								<span class="fs-12 fc__gray">[ ${map.type4[1].boardCategory} ]</span> 
+								<span class="fs-14__b">${map.type4[1].boardTitle}</span>
 							</div>
 							<div class="post-content">
-								<span class="fs-12 fc__gray"> 사회 생활을 하며 사람을 화나게 하는 방법은
-									여러가지가 있습니다. 그 중 첫 번째는 말을 하다 마는 것입니다... 이어서 두 번째는 바로.. </span>
+								<span class="fs-12 fc__gray">
+									${map.type4[1].boardContent}
+								 </span>
 							</div>
 							<div class="post-info">
-								<span class="fs-10">작성자 2024-06-23</span> 
-								<span class="fs-10">조회수 30 | 댓글 3 | 좋아요 3 ♡</span>
+								<span class="fs-10">${map.type4[1].boardAuthor} ${map.type4[1].boardCreateDate}</span> 
+								<span class="fs-10">조회수 ${map.type4[1].boardViews} | 댓글 ${map.type4[1].boardComent} | 좋아요 ${map.type4[1].boardLike} ♡</span>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="popular base__lblue swiper-slide d-flex">
 					<div class="popular-area">
-						<div class="popular-post" onclick="location.href='${contextPath}/community/communityDetail/1'">
+						<div class="popular-post" onclick="location.href='${contextPath}/community/communityDetail/${map.type4[2].boardNo}'">
 							<div class="post-title">
-								<span class="fs-12 fc__gray">[ 타이거즈 ]</span> 
-								<span class="fs-14__b">파이팅 다저스</span>
+								<span class="fs-12 fc__gray">[ ${map.type4[2].boardCategory} ]</span> 
+								<span class="fs-14__b">${map.type4[2].boardTitle}</span>
 							</div>
 							<div class="post-content">
 								<span class="fs-12 fc__gray">
-								 경기력이 정말 화가 납니다..사회 생활을 하며 사람을 화나게 하는 방법은 여러가지가 있습니다. 그 중 첫 번째는 말을 하다 마는 것입니다. 이어서 두 번째는 바로.. 
+									${map.type4[2].boardContent}
 								 </span>
 							</div>
 							<div class="post-info">
-								<span class="fs-10">작성자 2024-06-23</span> 
-								<span class="fs-10">조회수 30 | 댓글 3 | 좋아요 3 ♡</span>
+								<span class="fs-10">${map.type4[2].boardAuthor} ${map.type4[2].boardCreateDate}</span> 
+								<span class="fs-10">조회수 ${map.type4[2].boardViews} | 댓글 ${map.type4[2].boardComent} | 좋아요 ${map.type4[2].boardLike} ♡</span>
 							</div>
 						</div>
 					</div>
 					<div class="popular-area">
-						<div class="popular-post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
+						<div class="popular-post" onclick="location.href='${contextPath}/community/communityDetail/${map.type4[3].boardNo}'">
 							<div class="post-title">
-								<span class="fs-12 fc__gray">[ 다저스 ]</span> 
-								<span class="fs-14__b">한국이 야구 못하는 이유</span>
+								<span class="fs-12 fc__gray">[ ${map.type4[3].boardCategory} ]</span> 
+								<span class="fs-14__b">${map.type4[3].boardTitle}</span>
 							</div>
 							<div class="post-content">
-								<span class="fs-12 fc__gray"> 사회 생활을 하며 사람을 화나게 하는 방법은
-									여러가지가 있습니다. 그 중 첫 번째는 말을 하다 마는 것입니다... 이어서 두 번째는 바로.. </span>
+								<span class="fs-12 fc__gray">
+									${map.type4[3].boardContent}
+								 </span>
 							</div>
 							<div class="post-info">
-								<span class="fs-10">작성자 2024-06-23</span> 
-								<span class="fs-10">조회수 30 | 댓글 3 | 좋아요 3 ♡</span>
+								<span class="fs-10">${map.type4[3].boardAuthor} ${map.type4[3].boardCreateDate}</span> 
+								<span class="fs-10">조회수 ${map.type4[3].boardViews} | 댓글 ${map.type4[3].boardComent} | 좋아요 ${map.type4[3].boardLike} ♡</span>
 							</div>
 						</div>
 					</div>
 				</div>
-								<div class="popular base__lblue swiper-slide d-flex">
+				<div class="popular base__lblue swiper-slide d-flex">
 					<div class="popular-area">
-						<div class="popular-post" onclick="location.href='${contextPath}/community/communityDetail/1'">
+						<div class="popular-post" onclick="location.href='${contextPath}/community/communityDetail/${map.type4[4].boardNo}'">
 							<div class="post-title">
-								<span class="fs-12 fc__gray">[ 타이거즈 ]</span> 
-								<span class="fs-14__b">파이팅 다저스</span>
+								<span class="fs-12 fc__gray">[ ${map.type4[4].boardCategory} ]</span> 
+								<span class="fs-14__b">${map.type4[4].boardTitle}</span>
 							</div>
 							<div class="post-content">
 								<span class="fs-12 fc__gray">
-								 경기력이 정말 화가 납니다..사회 생활을 하며 사람을 화나게 하는 방법은 여러가지가 있습니다. 그 중 첫 번째는 말을 하다 마는 것입니다. 이어서 두 번째는 바로.. 
+									${map.type4[4].boardContent}
 								 </span>
 							</div>
 							<div class="post-info">
-								<span class="fs-10">작성자 2024-06-23</span> 
-								<span class="fs-10">조회수 30 | 댓글 3 | 좋아요 3 ♡</span>
+								<span class="fs-10">${map.type4[4].boardAuthor} ${map.type4[4].boardCreateDate}</span> 
+								<span class="fs-10">조회수 ${map.type4[4].boardViews} | 댓글 ${map.type4[4].boardComent} | 좋아요 ${map.type4[4].boardLike} ♡</span>
 							</div>
 						</div>
 					</div>
 					<div class="popular-area">
-						<div class="popular-post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
+						<div class="popular-post" onclick="location.href='${contextPath}/community/communityDetail/${map.type4[5].boardNo}'">
 							<div class="post-title">
-								<span class="fs-12 fc__gray">[ 다저스 ]</span> 
-								<span class="fs-14__b">한국이 야구 못하는 이유</span>
+								<span class="fs-12 fc__gray">[ ${map.type4[5].boardCategory} ]</span> 
+								<span class="fs-14__b">${map.type4[5].boardTitle}</span>
 							</div>
 							<div class="post-content">
-								<span class="fs-12 fc__gray"> 사회 생활을 하며 사람을 화나게 하는 방법은
-									여러가지가 있습니다. 그 중 첫 번째는 말을 하다 마는 것입니다... 이어서 두 번째는 바로.. </span>
+								<span class="fs-12 fc__gray">
+									${map.type4[5].boardContent}
+								 </span>
 							</div>
 							<div class="post-info">
-								<span class="fs-10">작성자 2024-06-23</span> 
-								<span class="fs-10">조회수 30 | 댓글 3 | 좋아요 3 ♡</span>
+								<span class="fs-10">${map.type4[5].boardAuthor} ${map.type4[5].boardCreateDate}</span> 
+								<span class="fs-10">조회수 ${map.type4[5].boardViews} | 댓글 ${map.type4[5].boardComent} | 좋아요 ${map.type4[5].boardLike} ♡</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="popular base__lblue swiper-slide d-flex">
+					<div class="popular-area">
+						<div class="popular-post" onclick="location.href='${contextPath}/community/communityDetail/${map.type4[6].boardNo}'">
+							<div class="post-title">
+								<span class="fs-12 fc__gray">[ ${map.type4[6].boardCategory} ]</span> 
+								<span class="fs-14__b">${map.type4[6].boardTitle}</span>
+							</div>
+							<div class="post-content">
+								<span class="fs-12 fc__gray">
+									${map.type4[6].boardContent}
+								 </span>
+							</div>
+							<div class="post-info">
+								<span class="fs-10">${map.type4[6].boardAuthor} ${map.type4[6].boardCreateDate}</span> 
+								<span class="fs-10">조회수 ${map.type4[6].boardViews} | 댓글 ${map.type4[6].boardComent} | 좋아요 ${map.type4[6].boardLike} ♡</span>
+							</div>
+						</div>
+					</div>
+					<div class="popular-area">
+						<div class="popular-post" onclick="location.href='${contextPath}/community/communityDetail/${map.type4[7].boardNo}'">
+							<div class="post-title">
+								<span class="fs-12 fc__gray">[ ${map.type4[7].boardCategory} ]</span> 
+								<span class="fs-14__b">${map.type4[7].boardTitle}</span>
+							</div>
+							<div class="post-content">
+								<span class="fs-12 fc__gray">
+									${map.type4[7].boardContent}
+								 </span>
+							</div>
+							<div class="post-info">
+								<span class="fs-10">${map.type4[7].boardAuthor} ${map.type4[7].boardCreateDate}</span> 
+								<span class="fs-10">조회수 ${map.type4[7].boardViews} | 댓글 ${map.type4[7].boardComent} | 좋아요 ${map.type4[7].boardLike} ♡</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="popular base__lblue swiper-slide d-flex">
+					<div class="popular-area">
+						<div class="popular-post" onclick="location.href='${contextPath}/community/communityDetail/${map.type4[8].boardNo}'">
+							<div class="post-title">
+								<span class="fs-12 fc__gray">[ ${map.type4[8].boardCategory} ]</span> 
+								<span class="fs-14__b">${map.type4[8].boardTitle}</span>
+							</div>
+							<div class="post-content">
+								<span class="fs-12 fc__gray">
+									${map.type4[8].boardContent}
+								 </span>
+							</div>
+							<div class="post-info">
+								<span class="fs-10">${map.type4[8].boardAuthor} ${map.type4[8].boardCreateDate}</span> 
+								<span class="fs-10">조회수 ${map.type4[8].boardViews} | 댓글 ${map.type4[8].boardComent} | 좋아요 ${map.type4[8].boardLike} ♡</span>
+							</div>
+						</div>
+					</div>
+					<div class="popular-area">
+						<div class="popular-post" onclick="location.href='${contextPath}/community/communityDetail/${map.type4[9].boardNo}'">
+							<div class="post-title">
+								<span class="fs-12 fc__gray">[ ${map.type4[9].boardCategory} ]</span> 
+								<span class="fs-14__b">${map.type4[9].boardTitle}</span>
+							</div>
+							<div class="post-content">
+								<span class="fs-12 fc__gray">
+									${map.type4[9].boardContent}
+								 </span>
+							</div>
+							<div class="post-info">
+								<span class="fs-10">${map.type4[9].boardAuthor} ${map.type4[9].boardCreateDate}</span> 
+								<span class="fs-10">조회수 ${map.type4[9].boardViews} | 댓글 ${map.type4[9].boardComent} | 좋아요 ${map.type4[9].boardLike} ♡</span>
 							</div>
 						</div>
 					</div>
@@ -169,7 +243,7 @@
 						</div>
 						<div class="post-info">
 							<span class="fs-10">${all.boardAuthor} | ${all.boardCreateDate}</span> 
-							<span class="fs-10">조회수 ${all.boardViews} | 댓글 2 | 좋아요 3 ♡</span>
+							<span class="fs-10">조회수 ${all.boardViews} | 댓글 ${all.boardComent} | 좋아요 ${all.boardLike} ♡</span>
 						</div>
 					</div>
 				</c:forEach>
@@ -182,111 +256,30 @@
 				<div class="best-title">
 					<span class="fs-14__b fc__blue">베스트 댓글</span>
 				</div>
-				<div class="best-post">
-					<div class="rank">
-						<span class="fs-14__b fc__blue">1</span>
-					</div>
-					<div class="best-img">
-						<img src="${contextPath}/public/images/user_img1.jpg">
-					</div>
-					<div class="best-content-area">
-						<div class="best-info">
-							<span class="fs-10 fc__gray">[ 자유 ]</span> <span
-								class="fs-10 fc__gray">한국이 야구 못하는 이유</span>
+				<c:forEach var="bestReply" items="${map.bestReply}" varStatus="i">
+					<div class="best-post">
+						<div class="rank">
+							<span class="fs-14__b fc__blue">${i.count}</span>
 						</div>
-						<div class="best-content">
-							<span class="fs-10">작성자</span> 
-							<span class="fs-10__b">댓글입니다 베스트 댓글 노리는 중입니다동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</span>
+						<div class="best-img">
+							<img src="${contextPath}/public/images/user_img1.jpg">
 						</div>
-					</div>
-					<div class="best-like">
-						<span class="fs-10__b">좋아요 50 ♥</span>
-					</div>
-				</div>
-				<div class="best-post">
-					<div class="rank">
-						<span class="fs-14__b fc__blue">2</span>
-					</div>
-					<div class="best-img">
-						<img src="${contextPath}/public/images/user_img1.jpg">
-					</div>
-					<div class="best-content-area">
-						<div class="best-info">
-							<span class="fs-10 fc__gray">[ 자유 ]</span> <span
-								class="fs-10 fc__gray">한국이 야구 못하는 이유</span>
+						<div class="best-content-area">
+							<div class="best-info">
+								<span class="fs-10 fc__gray">[ ${bestReply.boardCategory} ]</span> 
+								<span class="fs-10 fc__gray">${bestReply.boardTitle}</span>
+							</div>
+							<div class="best-content">
+								<span class="fs-10">${bestReply.boardAuthor}</span> 
+								<span class="fs-10__b">${bestReply.boardContent}</span>
+							</div>
 						</div>
-						<div class="best-content">
-							<span class="fs-10__b">작성자</span> 
-							<span class="fs-10__b">댓글입니다 베스트 댓글 노리는 중입니다동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</span>
+						<div class="best-like">
+							<span class="fs-10__b">좋아요 ${bestReply.boardLike} ♥</span>
 						</div>
 					</div>
-					<div class="best-like">
-						<span class="fs-10__b">좋아요 50 ♥</span>
-					</div>
-				</div>
-				<div class="best-post">
-					<div class="rank">
-						<span class="fs-14__b fc__blue">3</span>
-					</div>
-					<div class="best-img">
-						<img src="${contextPath}/public/images/user_img1.jpg">
-					</div>
-					<div class="best-content-area">
-						<div class="best-info">
-							<span class="fs-10 fc__gray">[ 자유 ]</span> <span
-								class="fs-10 fc__gray">한국이 야구 못하는 이유</span>
-						</div>
-						<div class="best-content">
-							<span class="fs-10">작성자</span> 
-							<span class="fs-10__b">댓글입니다 베스트 댓글 노리는 중입니다동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</span>
-						</div>
-					</div>
-					<div class="best-like">
-						<span class="fs-10__b">좋아요 50 ♥</span>
-					</div>
-				</div>
-				<div class="best-post">
-					<div class="rank">
-						<span class="fs-14__b fc__blue">4</span>
-					</div>
-					<div class="best-img">
-						<img src="${contextPath}/public/images/user_img1.jpg">
-					</div>
-					<div class="best-content-area">
-						<div class="best-info">
-							<span class="fs-10 fc__gray">[ 자유 ]</span> <span
-								class="fs-10 fc__gray">한국이 야구 못하는 이유</span>
-						</div>
-						<div class="best-content">
-							<span class="fs-10">작성자</span>
-							<span class="fs-10__b">댓글입니다 베스트 댓글 노리는 중입니다동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</span>
-						</div>
-					</div>
-					<div class="best-like">
-						<span class="fs-10__b">좋아요 50 ♥</span>
-					</div>
-				</div>
-				<div class="best-post">
-					<div class="rank">
-						<span class="fs-14__b fc__blue">5</span>
-					</div>
-					<div class="best-img">
-						<img src="${contextPath}/public/images/user_img1.jpg">
-					</div>
-					<div class="best-content-area">
-						<div class="best-info">
-							<span class="fs-10 fc__gray">[ 자유 ]</span> <span
-								class="fs-10 fc__gray">한국이 야구 못하는 이유</span>
-						</div>
-						<div class="best-content">
-							<span class="fs-10">작성자</span> 
-							<span class="fs-10__b">댓글입니다 베스트 댓글 노리는 중입니다동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</span>
-						</div>
-					</div>
-					<div class="best-like">
-						<span class="fs-10__b">좋아요 50 ♥</span>
-					</div>
-				</div>
+				</c:forEach>
+				
 			</article>
 		</section>
 
@@ -329,7 +322,7 @@
 						</div>
 						<div class="post-info">
 							<span class="fs-10">${free.boardAuthor} | ${free.boardCreateDate}</span> 
-							<span class="fs-10">조회수 ${free.boardViews} | 댓글 2 | 좋아요 3 ♡</span>
+							<span class="fs-10">조회수 ${free.boardViews} | 댓글 ${free.boardComent} | 좋아요 ${free.boardLike} ♡</span>
 						</div>
 					</div>
 				</c:forEach>
@@ -352,7 +345,7 @@
 						</div>
 						<div class="post-info">
 							<span class="fs-10">${cheer.boardAuthor} | ${cheer.boardCreateDate}</span> 
-							<span class="fs-10">조회수 ${cheer.boardViews} | 댓글 2 | 좋아요 3 ♡</span>
+							<span class="fs-10">조회수 ${cheer.boardViews} | 댓글 ${cheer.boardComent} | 좋아요 ${cheer.boardLike} ♡</span>
 						</div>
 					</div>
 				</c:forEach>

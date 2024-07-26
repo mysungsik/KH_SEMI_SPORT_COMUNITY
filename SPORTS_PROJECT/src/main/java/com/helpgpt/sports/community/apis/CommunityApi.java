@@ -57,7 +57,7 @@ public class CommunityApi extends HttpServlet {
                 }
                 List<Teams> teams = service.selectTeams();
 				List<Community> boardList = service.selectBoardList(type, teamNo);
-				
+
 				if (teams.size() > 0) {
 					result.put("teams", teams);
 					result.put("message", "success to get teamsList");
@@ -76,7 +76,20 @@ public class CommunityApi extends HttpServlet {
 				
 			};break;
 			
-			case "communityPosting": {
+			case "searchBoard": {
+				
+				String category = req.getParameter("category");
+				String searchInput = req.getParameter("searchInput");
+				
+				List<Community> boardList = service.searchBoard(category, searchInput);
+				
+				if (boardList.size() > 0) {
+					result.put("message", "success get searched board info");
+					result.put("data", boardList);
+				}else {
+					result.put("message", "failed get searched board info");
+				}
+				new Gson().toJson(result, out);
 				
 			}; break;
 			

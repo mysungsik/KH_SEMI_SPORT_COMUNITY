@@ -31,3 +31,5 @@ var swiper2 = new Swiper(".swiper-info", {
 	direction: 'vertical'
 	
 });
+
+

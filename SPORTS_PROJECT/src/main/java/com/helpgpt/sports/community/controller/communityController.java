@@ -81,6 +81,7 @@ public class communityController extends HttpServlet {
 				
 				int boardNo = Integer.parseInt(sub);
 				
+				
 				Community board = service.selectBoardDetail(boardNo);
 				String image = service.selectBoardImage(boardNo);
 				

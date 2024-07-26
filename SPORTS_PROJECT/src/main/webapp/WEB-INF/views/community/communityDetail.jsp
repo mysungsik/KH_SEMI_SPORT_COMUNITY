@@ -53,7 +53,7 @@ ${board.boardContent}
 				<span> | </span>
 				<span>댓글 <span class="reply-cnt">3</span></span>
 				<span> | </span>
-				<span class="pointer board-like" onclick="modifyNewsLike()">좋아요 <span class="like-cnt"></span> ♥</span>
+				<span class="pointer board-like" onclick="modifyLike()">좋아요 <span class="like-cnt">0</span> ♥</span>
 				<span> | </span>
 				<span class="pointer" data-type="board-report" onclick="showReportModal(this)">신고</span>
 			</div>
@@ -61,9 +61,9 @@ ${board.boardContent}
 				<button>목록으로</button>
 			</div>
 			<div class="update-area">
-				<span class="pointer" onclick="location.href='${contextPath}/community/communityPosting/update'">수정</span>
+				<span class="pointer" onclick="loginCheck(), location.href='${contextPath}/community/communityPosting/update'">수정</span>
 				<span> | </span>
-				<span class="delete pointer" data-type="board-delete" onclick="showModal(this)">삭제</span>
+				<span class="delete pointer" data-type="board-delete" onclick="showModal()">삭제</span>
 			</div>
 		</section>
 		
@@ -92,6 +92,18 @@ ${board.boardContent}
 	<jsp:include page="/WEB-INF/views/modals/deleteModal.jsp" />
 	<jsp:include page="/WEB-INF/views/modals/reportModal.jsp" />
 	<jsp:include page="/WEB-INF/views/modals/replyUpdateModal.jsp" />
+	<div class="modal" id="communityModal" tabindex="-1" aria-hidden="true">
+		<input type="hidden" name="modalType" value=""/>
+		<div class="modal-dialog">
+		  <div class="modal-content">
+			<div class="modal-header base__blue">
+			  <h1 class="modal-title" id="commonModalLabel"></h1>
+			  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body"></div>
+		  </div>
+		</div>
+	  </div>
 
 	<!-- Be sure to include this TAG -->
 	<jsp:include page="/WEB-INF/views/layouts/footer.jsp" />

@@ -14,6 +14,7 @@ public class Community {
 	private String boardCategory;
 	private int boardComent; 
 	private int boardLike;
+	private String userImage;
 	public int getBoardNo() {
 		return boardNo;
 	}
@@ -86,11 +87,21 @@ public class Community {
 	public void setBoardLike(int boardLike) {
 		this.boardLike = boardLike;
 	}
+	
+	public String getUserImage() {
+		return userImage;
+	}
+	public void setUserImage(String userImage) {
+		this.userImage = userImage;
+	}
 	@Override
 	public String toString() {
-		return "Board [boardNo=" + boardNo + ", boardTitle=" + boardTitle + ", boardContent=" + boardContent
+		return "Community [boardNo=" + boardNo + ", boardTitle=" + boardTitle + ", boardContent=" + boardContent
 				+ ", userNo=" + userNo + ", teamNo=" + teamNo + ", boardAuthor=" + boardAuthor + ", boardCreateDate="
 				+ boardCreateDate + ", boardViews=" + boardViews + ", typeNo=" + typeNo + ", boardCategory="
-				+ boardCategory + ", boardComent=" + boardComent + ", boardLike=" + boardLike + "]";
+				+ boardCategory + ", boardComent=" + boardComent + ", boardLike=" + boardLike + ", userImage="
+				+ userImage + "]";
 	}
+
+	
 }

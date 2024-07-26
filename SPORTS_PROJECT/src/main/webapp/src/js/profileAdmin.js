@@ -477,8 +477,8 @@ function changeImgDefault(){
 
 // 검색 기능 생성
 function searchUser(){
-	let category = $("[name='search_category']").val();	// id, eamil, address
-	let searchInput = $("[name='search_input']").val();
+	let category = $("[name='search-type']").val();	// 작성자, 제목, 내용
+	let searchInput = $("[name='search-input']").val();
 	
 	const request_url = `${contextPath}/api/admin/profile/searchUsersData`;
 	

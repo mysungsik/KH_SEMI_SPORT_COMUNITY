@@ -155,3 +155,50 @@ function paginationActive(id, datas, template) {
         });
     }
 }
+
+// 검색 기능
+function searchBoard(){
+	let category = $("[name='search-type']").val();	// 작성자, 제목, 내용
+	let searchInput = $("[name='search-input']").val();
+	
+	const request_url = `${contextPath}/api/community/searchBoard`;
+
+    $(".switch-category").eq(0).removeClass("base__lblue").addClass("base__blue");
+    $(".switch-title").eq(0).removeClass("fc__gray").addClass("fc__white");
+    $(".title").text("전체");
+
+    $(".switch-category").eq(1).removeClass("base__blue");
+    $(".switch-category").eq(2).removeClass("base__blue");
+    $(".switch-category").eq(3).removeClass("base__blue");
+    $(".switch-category").eq(4).removeClass("base__blue");
+
+    $(".switch-title").eq(1).removeClass("fc__white");
+    $(".switch-title").eq(2).removeClass("fc__white");
+    $(".switch-title").eq(3).removeClass("fc__white");
+    $(".switch-title").eq(4).removeClass("fc__white");
+	
+	$.ajax({
+		type: "GET",
+		url: request_url,
+		data: {
+			category,
+			searchInput,
+		},
+		dataType: "json",
+		success: function (res) {
+			console.log(res)
+			let isGetData = res.hasOwnProperty("data")
+			if (isGetData){
+				const boardData = res.data;
+
+				paginationActive("community", boardData, paginationTemplate);
+			}
+        },
+		error : function(request, status, error){
+			console.log(request);
+			console.log(status);
+			console.log(error);
+		}
+	});
+	
+}

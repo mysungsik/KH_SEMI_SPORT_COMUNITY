@@ -59,6 +59,8 @@ public class CommunityDAO {
 				board.setBoardCreateDate(rs.getString("CREATE_DT"));
 				board.setBoardViews(rs.getInt("COMM_VIEWS"));
 				board.setBoardNo(rs.getInt("COMM_NO"));
+				board.setBoardComent(rs.getInt("REPLY_COUNT"));
+				board.setBoardLike(rs.getInt("LIKE_COUNT"));
 
 				if (type == 3) {
 					board.setBoardCategory(rs.getString("TEAM_NAME"));
@@ -149,6 +151,8 @@ public class CommunityDAO {
 				board.setBoardCreateDate(rs.getString("CREATE_DT"));
 				board.setBoardViews(rs.getInt("COMM_VIEWS"));
 				board.setBoardNo(rs.getInt("COMM_NO"));
+				board.setBoardComent(rs.getInt("REPLY_COUNT"));
+				board.setBoardLike(rs.getInt("LIKE_COUNT"));
 
 				if (rs.getInt("COMM_TYPE") == 3) {
 					board.setBoardCategory(rs.getString("TEAM_NAME"));
@@ -230,6 +234,8 @@ public class CommunityDAO {
 				board.setBoardViews(rs.getInt("COMM_VIEWS"));
 				board.setBoardNo(rs.getInt("COMM_NO"));
 				board.setBoardCategory(rs.getString("TEAM_NAME"));
+				board.setBoardComent(rs.getInt("REPLY_COUNT"));
+				board.setBoardLike(rs.getInt("LIKE_COUNT"));
 
 				boardList.add(board);
 			}
@@ -417,6 +423,8 @@ public class CommunityDAO {
 	                board.setBoardAuthor(rs.getString("USER_NAME"));
 	                board.setBoardCreateDate(rs.getString("CREATE_DT"));
 	                board.setBoardViews(rs.getInt("COMM_VIEWS"));
+					board.setBoardComent(rs.getInt("REPLY_COUNT"));
+					board.setBoardLike(rs.getInt("LIKE_COUNT"));
 	                if (i == 3) {
 	                    board.setBoardCategory(rs.getString("TEAM_NAME"));
 	                } else {
@@ -468,7 +476,9 @@ public class CommunityDAO {
                 board.setBoardAuthor(rs.getString("USER_NAME"));
                 board.setBoardCreateDate(rs.getString("CREATE_DT"));
                 board.setBoardViews(rs.getInt("COMM_VIEWS"));
-                if (rs.getInt("TYPE_NO") == 3) {
+				board.setBoardComent(rs.getInt("REPLY_COUNT"));
+				board.setBoardLike(rs.getInt("LIKE_COUNT"));
+                if (rs.getInt("COMM_TYPE") == 3) {
                     board.setBoardCategory(rs.getString("TEAM_NAME"));
                 } else {
                     board.setBoardCategory(rs.getString("TYPE_NAME"));
@@ -512,6 +522,131 @@ public class CommunityDAO {
 		
 		return result;
 	}
+
+	/** 인기 게시판 조회
+	 * @param conn
+	 * @return
+	 */
+	public List<Community> selectPopularBoardList(Connection conn) {
+		
+		List<Community> boardList = new ArrayList<>();
+		
+		try {
+			String sql = prop.getProperty("selectPopularBoardList");
+			
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			while (rs.next()) {
+				Community board = new Community();
+				board.setBoardTitle(rs.getString("COMM_TITLE"));
+				board.setBoardContent(rs.getString("COMM_CONTENT"));
+				board.setBoardAuthor(rs.getString("USER_NAME"));
+				board.setBoardCreateDate(rs.getString("CREATE_DT"));
+				board.setBoardViews(rs.getInt("COMM_VIEWS"));
+				board.setBoardNo(rs.getInt("COMM_NO"));
+				board.setBoardComent(rs.getInt("REPLY_COUNT"));
+				board.setBoardLike(rs.getInt("LIKE_COUNT"));
+
+				if (rs.getInt("COMM_TYPE") == 3) {
+					board.setBoardCategory(rs.getString("TEAM_NAME"));
+				} else {
+					board.setBoardCategory(rs.getString("TYPE_NAME"));
+				}
+
+				boardList.add(board);
+			}
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			
+		}
+		
+		return boardList;
+	}
+
+	/** 베스트 댓글 조회
+	 * @param conn
+	 * @return
+	 */
+	public List<Community> selectBestReply(Connection conn) {
+		
+		List<Community> bestReply = new ArrayList<>();
+		
+		try {
+			String sql = prop.getProperty("selectBestReply");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				Community board = new Community();
+				
+				board.setBoardCategory(rs.getString("TYPE_NAME"));
+				board.setBoardTitle(rs.getString("COMM_TITLE"));
+				board.setBoardAuthor(rs.getString("USER_NAME"));
+				board.setUserImage(rs.getString("USER_IMG_RENAME"));
+				board.setBoardContent(rs.getString("REPLY_CONTENT"));
+				board.setBoardLike(rs.getInt("REPLY_LIKE_COUNT"));
+				
+				bestReply.add(board);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return bestReply;
+	}
+
+	public List<Community> searchBoard(Connection conn, String category, String searchInput) {
+		
+		List<Community> boardList = new ArrayList<>();
+
+		
+		String sql = prop.getProperty("searchBoard") + "AND " + category + " LIKE '%" + searchInput + "%' ORDER BY C.COMM_NO DESC";
+		
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				Community board = new Community();
+				
+				board.setBoardTitle(rs.getString("COMM_TITLE"));
+				board.setBoardAuthor(rs.getString("USER_NAME"));
+				board.setBoardCreateDate(rs.getString("CREATE_DT"));
+				board.setBoardViews(rs.getInt("COMM_VIEWS"));
+				board.setBoardNo(rs.getInt("COMM_NO"));
+				board.setBoardComent(rs.getInt("REPLY_COUNT"));
+				board.setBoardLike(rs.getInt("LIKE_COUNT"));
+
+				if (rs.getInt("COMM_TYPE") == 3) {
+					board.setBoardCategory(rs.getString("TEAM_NAME"));
+				} else {
+					board.setBoardCategory(rs.getString("TYPE_NAME"));
+				}
+
+				boardList.add(board);
+				
+				
+			}
+		}catch(Exception e) {
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return boardList;
+	}
+
+	
 
 	
 
