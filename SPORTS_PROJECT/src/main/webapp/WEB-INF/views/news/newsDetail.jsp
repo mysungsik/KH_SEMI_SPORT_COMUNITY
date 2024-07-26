@@ -44,7 +44,7 @@
 			<div class="news-update-btns mr-10">
 				<span onclick="location.href='${contextPath}/news/modify/${newsNum}'">수정</span>
 				<span> | </span>
-				<span class="news-delete" data-type="news-delete" onclick="showModal(this)">삭제</span>
+				<span class="news-delete" data-type="news-delete" onclick="showDeleteModal(this)">삭제</span>
 			</div>
 		</section>
 
@@ -68,9 +68,9 @@ ${newsInfo.getNewsContent()}
 			<div class="news-extra-info">
 				<span>댓글 <span class="reply-cnt">3</span></span>
 				<span> | </span>
-				<span class="pointer news-like" onclick="modifyLike()">좋아요 <span class="like-cnt"></span> ♥</span>
+				<span class="pointer news-like" onclick="modifyNewsLike()">좋아요 <span class="like-cnt"></span> ♥</span>
 				<span> | </span>
-				<span class="pointer" data-type="news-report" onclick="showModal(this)">신고</span>
+				<span class="pointer" data-type="news-report" onclick="showReportModal(this)">신고</span>
 			</div>
 		</section>
 		
@@ -90,6 +90,7 @@ ${newsInfo.getNewsContent()}
 	
 	<!-- Modal -->
 	<jsp:include page="/WEB-INF/views/modals/deleteModal.jsp" />
+	<jsp:include page="/WEB-INF/views/modals/reportModal.jsp" />
 
 
 

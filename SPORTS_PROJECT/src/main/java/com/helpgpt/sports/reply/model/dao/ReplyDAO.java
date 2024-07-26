@@ -122,5 +122,25 @@ public class ReplyDAO {
 		
 		return tempResult;
 	}
+
+	public int deleteReply(Connection conn, int replyNo) {
+		String sql = prop.getProperty("deleteReply");
+		int result = 0;
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, replyNo);
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			System.out.println("[ERROR] Failed to delete reply");
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
 	
 }

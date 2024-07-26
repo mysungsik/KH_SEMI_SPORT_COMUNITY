@@ -35,6 +35,12 @@
 		FROM DUAL
 	</entry>
 	
+	<entry key="deleteReply">
+		UPDATE REPLY
+		SET REPLY_ST = 'Y'
+		WHERE REPLY_NO = ?
+	</entry>
+	
 	
 
 </properties>

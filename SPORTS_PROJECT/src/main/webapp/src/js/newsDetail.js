@@ -6,6 +6,7 @@ $(document).ready(function() {
 
 let replyData = [];
 let likeData = [];
+let reportTypeData = [];
 
 // 댓글 데이터 가져오는 함수
 function getReplies(){
@@ -32,6 +33,27 @@ function getReplies(){
 }
 
 // 좋아요 데이터 가져오는 함수
+function getLikes(){
+	const request_url = `${contextPath}/api/like/getLikeAll`;
+	$.ajax({
+		type: "GET",
+		url: request_url,
+		data : {
+			typeNo : 5,
+			targetNo : $("input[name='newsNum']").eq(0).val()
+		},
+		dataType: "json",
+		success: function (res) {
+			
+			let isGetData = res.hasOwnProperty("data");
+			if (isGetData){
+				likeData = res.data
+				$(".like-cnt").html(likeData.length)
+			}
+		}
+	});
+}
+
 function getLikes(){
 	const request_url = `${contextPath}/api/like/getLikeAll`;
 	$.ajax({
@@ -91,10 +113,9 @@ function replyPaginationTemplate(data) {
 			`
 				<hr class="hr__gray">
 				<div class="reply">
-					<input type="hidden" name="replyNo" value="${d.replyNo}">
-					<input type="hidden" name="replyNo" value="${d.userNo}">
-					<input type="hidden" name="replyNo" value="${d.replyTypeNo}">
-					<input type="hidden" name="replyNo" value="${d.replyTargetNo}">
+					<input type="hidden" name="userNo" value="${d.userNo}">
+					<input type="hidden" name="replyTypeNo" value="${d.replyTypeNo}">
+					<input type="hidden" name="replyTargetNo" value="${d.replyTargetNo}">
 					<div class="reply-author-info d-flex">
 						<div class="reply-author">
 							<img class="author-profile" 
@@ -111,9 +132,9 @@ function replyPaginationTemplate(data) {
 							<span class="fs-10 fc__gray"> | </span>
 							<span class="fs-10 fc__gray" onclick="updateReply()">수정</span>
 							<span class="fs-10 fc__gray"> | </span>
-							<span class="fs-10 fc__gray" data-type="reply-delete" onclick="showModal(this)">삭제</span>
+							<span class="fs-10 fc__gray" data-type="reply-delete" data-replyno="${d.replyNo}" onclick="showDeleteModal($(this))">삭제</span>
 							<span class="fs-10 fc__gray"> | </span>
-							<span class="fs-10 fc__gray" data-type="reply-report" onclick="showModal(this)">신고</span>
+							<span class="fs-10 fc__gray" data-type="reply-report" onclick="showReportModal($(this))">신고</span>
 						</div>           
 						<div><span class="fs-10 fc__gray" class="fs-10">${d.replyDt}</span></div>
 					</div>
@@ -123,6 +144,7 @@ function replyPaginationTemplate(data) {
 	return item;
 }
 
+// 댓글 입력 함수
 function insertReply(){
 	let replyContent = $("textarea[name='reply-content']").val() 
 	
@@ -165,7 +187,56 @@ function insertReply(){
 	}
 }
 
-function modifyLike(){
+
+// 댓글 삭제 함수
+function deleteReply(el){
+	
+	let deleteModalEl = $('#deleteModal');
+	var deleteModal = bootstrap.Modal.getInstance(deleteModalEl);
+	
+	let replyNo = parseInt($(el).data("replyno"));
+	if (loginUser == ""){
+		toastPop("warn", "로그인 후 이용해주세요");
+		return;
+	}
+	
+	const request_url = `${contextPath}/api/reply/deleteReply`;
+
+	$.ajax({
+		type: "POST",
+		url: request_url,
+		data : {
+			replyNo
+		},
+		dataType: "json",
+		success: function (res) {
+			let isDeleteReply = res.hasOwnProperty("data");
+			
+			if(isDeleteReply){
+				
+				replyData = replyData.filter(function(item){
+					return item.replyNo != replyNo;
+				})
+				paginationActive("reply", replyData, replyPaginationTemplate)
+			
+				// 댓글 개수 변경
+				$(".reply-cnt").html(replyData.length)
+				
+				// 모달 종료
+				deleteModal.hide();
+			}
+			
+			else{
+				toastPop("warn", res.message)
+				deleteModal.hide();
+			}
+		}
+	});
+	
+}
+
+// 뉴스 좋아요 추가/삭제 함수
+function modifyNewsLike(){
 	if (loginUser == ""){
 		toastPop("warn", "로그인 후 이용해주세요");
 		return;
@@ -228,7 +299,11 @@ function showDeleteModal(el){
 	let item = (modalType == "news-delete") ? "뉴스" : "댓글";
 	deleteModalEl.find(".modal-title").html(`<p class="fs-14 fc__white">${item} 삭제</p>`)
 		
-	modalEl.modal('show');
+	deleteModalEl.modal('show');
+	
+	deleteModalEl.find(".acceptBtn").one("click", function(){
+		deleteReply(el)
+	})
 }
 
 // 신고 모달 생성
@@ -244,7 +319,7 @@ function showReportModal(el){
 	let item = (modalType == "news-report") ? "뉴스" : "댓글";
 	reportModalEl.find(".modal-title").html(`<p class="fs-14 fc__white">${item} 신고</p>`)
 
-	
+	reportModalEl.modal('show');
 }
 
 

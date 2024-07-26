@@ -103,6 +103,21 @@ public class ReplyApi extends HttpServlet {
 					new Gson().toJson(result, out);
 				}
 			};break;
+			case "deleteReply" : {
+				int replyNo = Integer.parseInt(req.getParameter("replyNo"));
+
+				int deleteResult = service.deleteReply(replyNo);
+				
+				if (deleteResult > 0) {
+					result.put("message", "success to delete reply");
+					result.put("data", deleteResult);
+					new Gson().toJson(result, out);
+				}else {
+					result.put("message", "failed to delete reply");
+					new Gson().toJson(result, out);
+				}
+			};break;
+			
 		}
 	
 	}

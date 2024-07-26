@@ -46,4 +46,18 @@ public class ReplyService {
 		close(conn);
 		return returnReply;
 	}
+
+	public int deleteReply(int replyNo) {
+		Connection conn = getConnection();
+		int deleteResult = dao.deleteReply(conn, replyNo);
+		
+		if (deleteResult > 0) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+		
+		close(conn);
+		return deleteResult;
+	}
 }
