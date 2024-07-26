@@ -4,7 +4,6 @@
 <html lang="en">
 
 <head>
-
 <link rel="stylesheet" href="${contextPath}/src/css/matchTeamRanking.css">
 <jsp:include page="/WEB-INF/views/layouts/header-dependencies.jsp" />
 <script src="${contextPath}/src/js/matchTeamRanking.js" defer></script>
@@ -30,7 +29,6 @@
 						<th class="matchWin fs-14__b">승</th>
 						<th class="matchLose fs-14__b">패</th>
 						<th class="winRate fs-14__b" width="50px">승률</th>
-						<th class="consequence fs-14__b" >연 속</th>
 						<th class="battingAverage fs-14__b">타 율</th>
 						<th class="ERA fs-14__b">평균 자책</th>
 						<th class="recentMatch fs-14__b">최근 10 경기</th>

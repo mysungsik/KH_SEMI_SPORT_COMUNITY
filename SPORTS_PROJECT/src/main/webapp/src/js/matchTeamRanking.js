@@ -1,35 +1,36 @@
 $(document).ready(function () {
-    fetchTeamRankings();
+    fetchTeamRankingsForTeamRanking();
 });
 
-function fetchTeamRankings() {
-    let request_url = `${contextPath}/api/match/teamRankings`;
+function fetchTeamRankingsForTeamRanking() {
     $.ajax({
         type: "GET",
-        url: request_url,
+        url: `${contextPath}/api/match/teamRankingsForTeamRanking`,
         dataType: "json",
         success: function (res) {
-            populateTeamRankings(res);
+            populateTeamRankingsForTeamRanking(res);
         },
         error: function (request, status, error) {
-            console.log("Error fetching team rankings:", error);
+            console.log(request);
+            console.log(status);
+            console.log(error);
         }
     });
 }
 
-function populateTeamRankings(rankings) {
-    const table = document.querySelector('.teamRanking tbody');
-    table.innerHTML = ''; // Clear existing rows
+function populateTeamRankingsForTeamRanking(rankings) {
+    const table = document.querySelector('.teamRanking');
+    const tbody = table.querySelector('tbody');
+    
+    tbody.innerHTML = ''; // Clear existing rows
 
     rankings.forEach((team, index) => {
         const tr = document.createElement('tr');
+        
         tr.innerHTML = `
             <td>${index + 1}</td>
             <td>
                 <div class="teamNameTab">
-                    <div>
-                        <img src="${team.teamImg}" alt="" width="40" height="40">
-                    </div>
                     <div>
                         <span>${team.teamName}</span>
                     </div>
@@ -38,12 +39,12 @@ function populateTeamRankings(rankings) {
             <td>${team.matchCount}</td>
             <td>${team.win}</td>
             <td>${team.lose}</td>
-            <td>${team.winRate}</td>
-            <td>${team.consequence}</td>
-            <td>${team.battingAverage}</td>
+            <td>${team.winRate}%</td>
+            <td>${team.battingAvg}</td>
             <td>${team.era}</td>
             <td>${team.recentMatch}</td>
         `;
-        table.appendChild(tr);
+        
+        tbody.appendChild(tr);
     });
 }

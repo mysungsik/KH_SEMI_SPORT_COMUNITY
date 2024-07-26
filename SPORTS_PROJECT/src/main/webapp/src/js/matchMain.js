@@ -1,65 +1,109 @@
 $(document).ready(function () {
-    fetchTeamRankings();
+    fetchTeamRankingsForMain();
     fetchPlayerRankings();
 });
 
-function fetchTeamRankings() {
-    let request_url = `${contextPath}/api/match/teamRankings`;
+function fetchTeamRankingsForMain() {
     $.ajax({
         type: "GET",
-        url: request_url,
+        url: `${contextPath}/api/match/teamRankingsForMain`,
         dataType: "json",
         success: function (res) {
-            populateTeamRankings(res);
+            populateTeamRankingsForMain(res);
         },
         error: function (request, status, error) {
-            console.log("Error fetching team rankings:", error);
+            console.log(request);
+            console.log(status);
+            console.log(error);
         }
+    });
+}
+
+function populateTeamRankingsForMain(rankings) {
+    const table = document.querySelector('.teamRanking');
+    const tbody = table.querySelector('tbody');
+    
+    tbody.innerHTML = ''; // Clear existing rows
+
+    rankings.forEach((team, index) => {
+        const tr = document.createElement('tr');
+        
+        tr.innerHTML = `
+            <td>${index + 1}</td>
+            <td>
+                <div class="teamNameTab">
+                    <div>
+                        <span>${team.teamName}</span>
+                    </div>
+                </div>
+            </td>
+            <td>${team.matchCount}</td>
+            <td>${team.win}</td>
+            <td>${team.lose}</td>
+            <td>${team.gameDifference}</td>
+        `;
+        
+        tbody.appendChild(tr);
     });
 }
 
 function fetchPlayerRankings() {
-    let request_url = `${contextPath}/api/match/playerRankings`;
-    $.ajax({
-        type: "GET",
-        url: request_url,
-        dataType: "json",
-        success: function (res) {
-            populatePlayerRankings(res);
-        },
-        error: function (request, status, error) {
-            console.log("Error fetching player rankings:", error);
-        }
-    });
-}
-
-function populateTeamRankings(rankings) {
-    const table = document.querySelector('.teamRanking tbody');
-    table.innerHTML = ''; // Clear existing rows
-
-    rankings.forEach((team, index) => {
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
-            <td>${index + 1}</td>
-            <td>${team.teamName}</td>
-            <td>${team.matchCount}</td>
-            <td>${team.win}</td>
-            <td>${team.lose}</td>
-            <td>${index === 0 ? '-' : (rankings[0].win - team.win)}</td>
-        `;
-        table.appendChild(tr);
-    });
-}
-
-function populatePlayerRankings(rankings) {
-    rankings.forEach(category => {
-        const boxRanking = document.querySelector(`.box-ranking:contains('${category.category}') .list_ranking`);
-        boxRanking.innerHTML = ''; // Clear existing items
-
-        category.players.forEach(player => {
-            const li = document.createElement('li');
-            li.innerHTML = `<span>${player.name} (${player.team})</span> <span class="count">${player.count}</span>`;
-            boxRanking.appendChild(li);
+    const categories = ["Win", "ERA", "Strikeouts", "Hits", "WHIP"];
+    categories.forEach(category => {
+        $.ajax({
+            type: "GET",
+            url: `${contextPath}/api/match/playerRanking${category}`, 
+            dataType: "json",
+            success: function (res) {
+                populatePlayerRankings(category, res);
+            },
+            error: function (request, status, error) {
+                console.log(request);
+                console.log(status);
+                console.log(error);
+            }
         });
     });
+}
+
+function populatePlayerRankings(category, rankings) {
+    const boxRanking = Array.from(document.querySelectorAll('.box-ranking'))
+        .find(box => box.querySelector('strong.rankingCategory').textContent === translateCategory(category));
+    
+    const ol = boxRanking.querySelector('ol.list_ranking');
+    
+    ol.innerHTML = '';
+
+    rankings.forEach(player => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+            <div class="list_detail">
+                <span>${player.playerName}(${player.teamName})</span> <span class="count">${getPlayerCount(category, player)}</span>
+            </div>
+        `;
+        
+                ol.appendChild(li);
+    });
+}
+
+function translateCategory(category) {
+    switch (category) {
+        case "Win": return "다승";
+        case "ERA": return "평균자책";
+        case "Strikeouts": return "탈삼진";
+        case "Hits": return "안타";
+        case "WHIP": return "WHIP";
+        default: return "";
+    }
+}
+
+function getPlayerCount(category, player) {
+    switch (category) {
+        case "Win": return player.winCount;
+        case "ERA": return player.era;
+        case "Strikeouts": return player.strikeouts;
+        case "Hits": return player.hit;
+        case "WHIP": return player.whip;
+        default: return "";
+    }
 }
