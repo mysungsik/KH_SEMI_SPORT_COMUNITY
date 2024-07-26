@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.helpgpt.sports.common.filerename.MyRenamePolicy;
+import com.helpgpt.sports.common.util.Util;
 import com.helpgpt.sports.community.model.service.CommunityService;
 import com.helpgpt.sports.community.model.vo.Community;
 import com.helpgpt.sports.community.model.vo.CommunityImage;
@@ -19,7 +20,7 @@ import com.helpgpt.sports.login.model.vo.User;
 import com.oreilly.servlet.MultipartRequest;
 
 @WebServlet("/community/communityPosting/insert")
-public class PostingBoardServlet extends HttpServlet {
+public class CommunityInsertServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -40,6 +41,12 @@ public class PostingBoardServlet extends HttpServlet {
         String title = mpReq.getParameter("title");
         String content = mpReq.getParameter("content");
         int boardType = Integer.parseInt(mpReq.getParameter("type"));
+        
+        title = Util.XSSHandling(title);
+        
+		content = Util.XSSHandling(content);
+		content = Util.newLineHandling(content);
+		
         
         int teamNo = 0;
         String teamNoParam = mpReq.getParameter("team");

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +12,8 @@
 <script src="${contextPath}/src/util/pagination.js" defer></script>
 <script src="https://kit.fontawesome.com/e245e5bbb1.js"
 	crossorigin="anonymous"></script>
+
+
 
 <title>COMMUNITY</title>
 </head>
@@ -158,56 +161,18 @@
 						class="see-more fs-10 fc__gray"><a
 						href="${contextPath}/community/communityBoard/all">더보기▶</a></span>
 				</div>
-				<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
-					<div class="post-title">
-						<span class="fs-12 fc__gray">[ 해머스 ]</span>
-						<span class="fs-14__b">게시글입니다 test 1234</span>
+				<c:forEach var="all" items="${map.type0}">
+					<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/${all.boardNo}'">
+						<div class="post-title">
+							<span class="fs-12 fc__gray">[ ${all.boardCategory} ]</span>
+							<span class="fs-14__b">${all.boardTitle}</span>
+						</div>
+						<div class="post-info">
+							<span class="fs-10">${all.boardAuthor} | ${all.boardCreateDate}</span> 
+							<span class="fs-10">조회수 ${all.boardViews} | 댓글 2 | 좋아요 3 ♡</span>
+						</div>
 					</div>
-					<div class="post-info">
-						<span class="fs-10">작성자 2024-07-04</span> 
-						<span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-					</div>
-				</div>
-				<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
-					<div class="post-title">
-						<span class="fs-12 fc__gray">[ 해머스 ]</span>
-						<span class="fs-14__b">게시글입니다 test 1234</span>
-					</div>
-					<div class="post-info">
-						<span class="fs-10">작성자 2024-07-04</span> 
-						<span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-					</div>
-				</div>
-				<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
-					<div class="post-title">
-						<span class="fs-12 fc__gray">[ 해머스 ]</span>
-						<span class="fs-14__b">게시글입니다 test 1234</span>
-					</div>
-					<div class="post-info">
-						<span class="fs-10">작성자 2024-07-04</span> 
-						<span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-					</div>
-				</div>
-				<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
-					<div class="post-title">
-						<span class="fs-12 fc__gray">[ 해머스 ]</span>
-						<span class="fs-14__b">게시글입니다 test 1234</span>
-					</div>
-					<div class="post-info">
-						<span class="fs-10">작성자 2024-07-04</span> 
-						<span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-					</div>
-				</div>
-				<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
-					<div class="post-title">
-						<span class="fs-12 fc__gray">[ 해머스 ]</span>
-						<span class="fs-14__b">게시글입니다 test 1234</span>
-					</div>
-					<div class="post-info">
-						<span class="fs-10">작성자 2024-07-04</span> 
-						<span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-					</div>
-				</div>
+				</c:forEach>
 				
 			</article>
 
@@ -333,18 +298,11 @@
 				</article>
 				<article class="info-content swiper-info">
 					<div class="swiper-wrapper">
-						<a class="swiper-slide fs-12" href="#">
-							<span>안녕히 계세요 여러분~ 저는 행복과 자유를 찾아 떠납니다~~~ 모두 행복하세요~~~~~</span>
-						</a> 
-						<a class="swiper-slide fs-12" href="#" href="#">
-							<span>서버 접습니다.</span>
-						</a> 
-						<a class="swiper-slide fs-12" href="#">
-							<span>집에 가고 싶습니다.</span>
-						</a> 
-						<a class="swiper-slide fs-12" href="#">
-							<span>포켓몬고 시작하세요. 동준님. 선물 하루에 하나씩 줄게~~~~~~~~~~~~~~~~~~ 어때!!!!!!!!!!!</span>
-						</a>
+						<c:forEach var="info" items="${map.type1}">
+							<a class="swiper-slide fs-12" href="${contextPath}/community/communityDetail/${info.boardNo}">
+								<span>${info.boardTitle}</span>
+							</a> 
+						</c:forEach>
 					</div>
 				</article>
 				<article class="suppl">
@@ -362,56 +320,20 @@
 						class="see-more fs-10 fc__gray"><a
 						href="${contextPath}/community/communityBoard/free">더보기▶</a></span>
 				</div>
-				<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
-					<div class="post-title">
-						<span class="fs-12 fc__gray">[ 자유 ]</span>
-						<span class="fs-14__b">게시글입니다 test 1234</span>
+
+				<c:forEach var="free" items="${map.type2}">
+					<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/${free.boardNo}'">
+						<div class="post-title">
+							<span class="fs-12 fc__gray">[ ${free.boardCategory} ]</span>
+							<span class="fs-14__b">${free.boardTitle}</span>
+						</div>
+						<div class="post-info">
+							<span class="fs-10">${free.boardAuthor} | ${free.boardCreateDate}</span> 
+							<span class="fs-10">조회수 ${free.boardViews} | 댓글 2 | 좋아요 3 ♡</span>
+						</div>
 					</div>
-					<div class="post-info">
-						<span class="fs-10">작성자 2024-07-04</span> 
-						<span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-					</div>
-				</div>
-				<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
-					<div class="post-title">
-						<span class="fs-12 fc__gray">[ 자유 ]</span>
-						<span class="fs-14__b">게시글입니다 test 1234</span>
-					</div>
-					<div class="post-info">
-						<span class="fs-10">작성자 2024-07-04</span> 
-						<span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-					</div>
-				</div>
-				<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
-					<div class="post-title">
-						<span class="fs-12 fc__gray">[ 자유 ]</span>
-						<span class="fs-14__b">게시글입니다 test 1234</span>
-					</div>
-					<div class="post-info">
-						<span class="fs-10">작성자 2024-07-04</span> 
-						<span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-					</div>
-				</div>
-				<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
-					<div class="post-title">
-						<span class="fs-12 fc__gray">[ 자유 ]</span>
-						<span class="fs-14__b">게시글입니다 test 1234</span>
-					</div>
-					<div class="post-info">
-						<span class="fs-10">작성자 2024-07-04</span> 
-						<span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-					</div>
-				</div>
-				<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
-					<div class="post-title">
-						<span class="fs-12 fc__gray">[ 자유 ]</span>
-						<span class="fs-14__b">게시글입니다 test 1234</span>
-					</div>
-					<div class="post-info">
-						<span class="fs-10">작성자 2024-07-04</span> 
-						<span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-					</div>
-				</div>
+				</c:forEach>
+
 			</article>
 
 			<!-- 응원 게시판 -->
@@ -421,56 +343,22 @@
 						class="see-more fs-10 fc__gray"><a
 						href="${contextPath}/community/communityBoard/cheer">더보기▶</a></span>
 				</div>
-				<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
-					<div class="post-title">
-						<span class="fs-12 fc__gray">[ 다저스 ]</span>
-						<span class="fs-14__b">게시글입니다 test 1234</span>
+
+				<c:forEach var="cheer" items="${map.type3}">
+					<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/${cheer.boardNo}'">
+						<div class="post-title">
+							<span class="fs-12 fc__gray">[ ${cheer.boardCategory} ]</span>
+							<span class="fs-14__b">${cheer.boardTitle}</span>
+						</div>
+						<div class="post-info">
+							<span class="fs-10">${cheer.boardAuthor} | ${cheer.boardCreateDate}</span> 
+							<span class="fs-10">조회수 ${cheer.boardViews} | 댓글 2 | 좋아요 3 ♡</span>
+						</div>
 					</div>
-					<div class="post-info">
-						<span class="fs-10">작성자 2024-07-04</span> 
-						<span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-					</div>
-				</div>
-				<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
-					<div class="post-title">
-						<span class="fs-12 fc__gray">[ 타이거즈 ]</span>
-						<span class="fs-14__b">게시글입니다 test 1234</span>
-					</div>
-					<div class="post-info">
-						<span class="fs-10">작성자 2024-07-04</span> 
-						<span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-					</div>
-				</div>
-				<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
-					<div class="post-title">
-						<span class="fs-12 fc__gray">[ 해머스 ]</span>
-						<span class="fs-14__b">게시글입니다 test 1234</span>
-					</div>
-					<div class="post-info">
-						<span class="fs-10">작성자 2024-07-04</span> 
-						<span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-					</div>
-				</div>
-				<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
-					<div class="post-title">
-						<span class="fs-12 fc__gray">[ 베어스 ]</span>
-						<span class="fs-14__b">게시글입니다 test 1234</span>
-					</div>
-					<div class="post-info">
-						<span class="fs-10">작성자 2024-07-04</span> 
-						<span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-					</div>
-				</div>
-				<div class="post"  onclick="location.href='${contextPath}/community/communityDetail/1'">
-					<div class="post-title">
-						<span class="fs-12 fc__gray">[ 다저스 ]</span>
-						<span class="fs-14__b">게시글입니다 test 1234</span>
-					</div>
-					<div class="post-info">
-						<span class="fs-10">작성자 2024-07-04</span> 
-						<span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-					</div>
-				</div>
+				</c:forEach>
+
+
+			
 			</article>
 		</section>
 

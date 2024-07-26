@@ -142,6 +142,10 @@ function writeValidate(){
     return true;
 }
 
+function goBack() {
+    window.history.back();
+}
+
 
 
 

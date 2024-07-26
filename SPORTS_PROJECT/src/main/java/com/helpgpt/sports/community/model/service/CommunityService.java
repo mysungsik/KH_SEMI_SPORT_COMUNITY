@@ -5,7 +5,9 @@ import static com.helpgpt.sports.common.util.JDBCTemplate.*;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
+import com.helpgpt.sports.community.controller.communityController;
 import com.helpgpt.sports.community.model.dao.CommunityDAO;
 import com.helpgpt.sports.community.model.vo.Community;
 import com.helpgpt.sports.community.model.vo.CommunityImage;
@@ -130,6 +132,43 @@ public class CommunityService {
 		
 		return result;
 	}
+
+	/** 메인 페이지 정보 조회
+	 * @return
+	 */
+	public Map<String, List<Community>> selectMainPage() {
+		
+		Connection conn = getConnection();
+		
+		Map<String, List<Community>> map = dao.selectMainPage(conn);
+		List<Community> allList = dao.selectMainPageAll(conn);
+		
+		map.put("type0", allList);
+		
+		close(conn);
+		
+		return map;
+	}
+
+	/** 게시글 삭제
+	 * @param boardNo
+	 * @return
+	 */
+	public int deleteBoard(int boardNo) {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.deleteBoard(conn, boardNo);
+		
+		if(result > 0) commit(conn);
+		else rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
+	
+	
 
 
 

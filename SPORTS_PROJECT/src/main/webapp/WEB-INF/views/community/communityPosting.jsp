@@ -53,7 +53,7 @@
 			</section>
 			<section class="btn-area">
 				<button class="base__blue fc__white br-5">저장</button>
-				<button class="br-5">취소</button>
+				<button class="br-5" onclick="goBack()" type="button">취소</button>
 			</section>
 		
 		</form>

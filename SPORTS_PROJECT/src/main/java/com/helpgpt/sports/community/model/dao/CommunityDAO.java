@@ -1,13 +1,15 @@
 package com.helpgpt.sports.community.model.dao;
 
-import static com.helpgpt.sports.common.util.JDBCTemplate.close;
+import static com.helpgpt.sports.common.util.JDBCTemplate.*;
 
 import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 
 import com.helpgpt.sports.community.model.vo.Community;
@@ -283,7 +285,6 @@ public class CommunityDAO {
 		
 		int result = 0;
 		
-		System.out.println(board);
 		
 		try {
 			String sql = prop.getProperty("insertBoard");
@@ -389,5 +390,132 @@ public class CommunityDAO {
 		
 		return image;
 	}
+
+	
+	/** 메인 페이지(공지, 자유, 응원)
+	 * @param conn
+	 * @return
+	 */
+	public Map<String, List<Community>> selectMainPage(Connection conn) {
+	    Map<String, List<Community>> map = new HashMap<>();
+	    pstmt = null;
+	    rs = null;
+	    
+	    try {
+	        for (int i = 1; i < 4; i++) {
+	            List<Community> boardList = new ArrayList<>();
+	            String sql = prop.getProperty("selectMainPage");
+
+	            pstmt = conn.prepareStatement(sql);
+	            pstmt.setInt(1, i);
+	            rs = pstmt.executeQuery();
+
+	            while (rs.next()) {
+	                Community board = new Community();
+	                board.setBoardNo(rs.getInt("COMM_NO"));
+	                board.setBoardTitle(rs.getString("COMM_TITLE"));
+	                board.setBoardAuthor(rs.getString("USER_NAME"));
+	                board.setBoardCreateDate(rs.getString("CREATE_DT"));
+	                board.setBoardViews(rs.getInt("COMM_VIEWS"));
+	                if (i == 3) {
+	                    board.setBoardCategory(rs.getString("TEAM_NAME"));
+	                } else {
+	                    board.setBoardCategory(rs.getString("TYPE_NAME"));
+	                }
+
+	                boardList.add(board);
+	            }
+	            
+	            map.put("type" + i , boardList);
+
+	            try {
+	                close(rs);
+	                close(pstmt);
+	            } catch (Exception e) {
+	                e.printStackTrace();
+	            }
+
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace(); // Print stack trace for debugging
+	    } finally {
+	        // Close resources if they are still open
+	            close(rs);
+	            close(pstmt);
+	    }
+
+	    return map;
+	}
+
+	/** 메인 페이지(전체)
+	 * @param conn
+	 * @return
+	 */
+	public List<Community> selectMainPageAll(Connection conn) {
+		
+		List<Community> allList = new ArrayList<>();
+		
+		try {
+			String sql = prop.getProperty("selectMainPageAll");
+			
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+            while (rs.next()) {
+                Community board = new Community();
+                board.setBoardNo(rs.getInt("COMM_NO"));
+                board.setBoardTitle(rs.getString("COMM_TITLE"));
+                board.setBoardAuthor(rs.getString("USER_NAME"));
+                board.setBoardCreateDate(rs.getString("CREATE_DT"));
+                board.setBoardViews(rs.getInt("COMM_VIEWS"));
+                if (rs.getInt("TYPE_NO") == 3) {
+                    board.setBoardCategory(rs.getString("TEAM_NAME"));
+                } else {
+                    board.setBoardCategory(rs.getString("TYPE_NAME"));
+                }
+
+                allList.add(board);
+            }
+			
+		}catch(Exception e) {
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+			
+		}
+		return allList;
+	}
+
+	/** 게시글 삭제
+	 * @param conn
+	 * @param boardNo
+	 * @return
+	 */
+	public int deleteBoard(Connection conn, int boardNo) {
+		
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("deleteBoard");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, boardNo);
+			
+			result = pstmt.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	
+
+
+
 
 }

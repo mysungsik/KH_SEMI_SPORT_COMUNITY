@@ -10,6 +10,7 @@
 		JOIN USER_INFO U USING(USER_NO)
 		JOIN COMM_TYPE P ON TYPE_NO = COMM_TYPE
 		WHERE COMM_TYPE = ?
+		AND COMM_ST = 'N'
 		ORDER BY COMM_NO DESC
 	</entry>
 	
@@ -20,6 +21,7 @@
 		LEFT JOIN TEAMS T ON T.TEAM_NO = C.TEAM_NO
 		JOIN USER_INFO U USING(USER_NO)
 		JOIN COMM_TYPE P ON TYPE_NO = COMM_TYPE
+		WHERE COMM_ST = 'N'
 		ORDER BY COMM_NO DESC
 	</entry>
 	
@@ -80,5 +82,43 @@
 	<entry key="selectBoardImage">
 		SELECT IMG_RENAME FROM COMM_IMG 
 		WHERE COMM_NO = ?
+	</entry>
+	
+	<!-- 메인 페이지 조회(공지, 자유, 응원) -->
+	<entry key="selectMainPage">
+	<![CDATA[
+		SELECT p.TYPE_NAME, c.COMM_TITLE, c.COMM_CONTENT, u.USER_NAME, c.COMM_VIEWS, c.CREATE_DT, t.TEAM_NAME, c.COMM_NO
+		FROM (
+		    SELECT COMM.*, ROW_NUMBER() OVER (ORDER BY COMM_NO DESC) AS RN
+		    FROM COMM
+		    WHERE COMM_TYPE = ?
+		    AND COMM_ST = 'N'
+		) c
+		JOIN USER_INFO u ON c.USER_NO = u.USER_NO
+		JOIN COMM_TYPE p ON c.COMM_TYPE = p.TYPE_NO
+		LEFT JOIN TEAMS t ON c.TEAM_NO = t.TEAM_NO
+		WHERE c.RN <= 5
+	 ]]>
+	</entry>
+	
+		<!-- 메인 페이지 조회(전체) -->
+	<entry key="selectMainPageAll">
+	<![CDATA[
+		SELECT p.TYPE_NAME, c.COMM_TITLE, c.COMM_CONTENT, u.USER_NAME, c.COMM_VIEWS, c.CREATE_DT, t.TEAM_NAME, c.COMM_NO, p.TYPE_NO
+		FROM (
+		    SELECT COMM.*, ROW_NUMBER() OVER (ORDER BY COMM_NO DESC) AS RN
+		    FROM COMM
+		    WHERE COMM_ST = 'N'
+		) c
+		JOIN USER_INFO u ON c.USER_NO = u.USER_NO
+		JOIN COMM_TYPE p ON c.COMM_TYPE = p.TYPE_NO
+		LEFT JOIN TEAMS t ON c.TEAM_NO = t.TEAM_NO
+		WHERE c.RN <= 5
+	 ]]>
+	</entry>
+	
+	<!-- 게시글 삭제 -->
+	<entry key="deleteBoard">
+		UPDATE COMM SET COMM_ST = 'Y' WHERE COMM_NO = ?
 	</entry>
 </properties>

@@ -64,6 +64,10 @@ public class communityController extends HttpServlet {
 			switch (path) {
 			case "": {
 				dispatcher = req.getRequestDispatcher(defaultURLPath + "community.jsp");
+				
+				Map<String, List<Community>> map = service.selectMainPage();
+				
+				req.setAttribute("map", map);
 				dispatcher.forward(req, resp);
 			}break;
 			case "communityBoard": {
