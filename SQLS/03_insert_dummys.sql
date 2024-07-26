@@ -127,6 +127,37 @@ VALUES(SEQ_PLAYER_NO.NEXTVAL, 2,  1, '양현종', 54, 19880301, 2007, 183, 91, '
 , 2018 아시안게임 국가대표', 'Y');
 
 INSERT INTO PLAYER
+VALUES(SEQ_PLAYER_NO.NEXTVAL, 2,  1, '이지혁', 54, 19880301, 2007, 183, 91, '학강초,광주동성중,광주동성고,KIA,텍사스', 50000,
+'2007 KIA타이거즈, 2021 텍사스 레인저스, 2022 KIA 타이거즈, 2010 아시안게임 국가대표 ,2017 WBC 국가대표 , 2014/2017 최동원상 수상
+, 2017 KBO리그 정규시즌 다승왕(20승), 2017 KBO리그 정규시즌 MVP, 2017 KBO 한국시리즈 MVP, 2017 KBO 골든글러브 수상
+, 2018 아시안게임 국가대표', 'Y');
+
+INSERT INTO PLAYER
+VALUES(SEQ_PLAYER_NO.NEXTVAL, 2,  2, '최명식', 54, 19880301, 2007, 183, 91, '학강초,광주동성중,광주동성고,KIA,텍사스', 50000,
+'2007 KIA타이거즈, 2021 텍사스 레인저스, 2022 KIA 타이거즈, 2010 아시안게임 국가대표 ,2017 WBC 국가대표 , 2014/2017 최동원상 수상
+, 2017 KBO리그 정규시즌 다승왕(20승), 2017 KBO리그 정규시즌 MVP, 2017 KBO 한국시리즈 MVP, 2017 KBO 골든글러브 수상
+, 2018 아시안게임 국가대표', 'Y');
+
+INSERT INTO PLAYER
+VALUES(SEQ_PLAYER_NO.NEXTVAL, 2,  2, '김동준', 54, 19880301, 2007, 183, 91, '학강초,광주동성중,광주동성고,KIA,텍사스', 50000,
+'2007 KIA타이거즈, 2021 텍사스 레인저스, 2022 KIA 타이거즈, 2010 아시안게임 국가대표 ,2017 WBC 국가대표 , 2014/2017 최동원상 수상
+, 2017 KBO리그 정규시즌 다승왕(20승), 2017 KBO리그 정규시즌 MVP, 2017 KBO 한국시리즈 MVP, 2017 KBO 골든글러브 수상
+, 2018 아시안게임 국가대표', 'Y');
+
+INSERT INTO PLAYER
+VALUES(SEQ_PLAYER_NO.NEXTVAL, 2,  3, '롯동준', 54, 19880301, 2007, 183, 91, '학강초,광주동성중,광주동성고,KIA,텍사스', 50000,
+'2007 KIA타이거즈, 2021 텍사스 레인저스, 2022 KIA 타이거즈, 2010 아시안게임 국가대표 ,2017 WBC 국가대표 , 2014/2017 최동원상 수상
+, 2017 KBO리그 정규시즌 다승왕(20승), 2017 KBO리그 정규시즌 MVP, 2017 KBO 한국시리즈 MVP, 2017 KBO 골든글러브 수상
+, 2018 아시안게임 국가대표', 'Y');
+
+INSERT INTO PLAYER
+VALUES(SEQ_PLAYER_NO.NEXTVAL, 2,  3, '롯승연', 54, 19880301, 2007, 183, 91, '학강초,광주동성중,광주동성고,KIA,텍사스', 50000,
+'2007 KIA타이거즈, 2021 텍사스 레인저스, 2022 KIA 타이거즈, 2010 아시안게임 국가대표 ,2017 WBC 국가대표 , 2014/2017 최동원상 수상
+, 2017 KBO리그 정규시즌 다승왕(20승), 2017 KBO리그 정규시즌 MVP, 2017 KBO 한국시리즈 MVP, 2017 KBO 골든글러브 수상
+, 2018 아시안게임 국가대표', 'Y');
+
+
+INSERT INTO PLAYER
 VALUES(SEQ_PLAYER_NO.NEXTVAL, 4, 1, '김승연', 34, 19831216, 2002, 180, 106,
 '진북초,전주동중,전주고,삼성,경찰,삼성' , 100000, 
 '2002 삼성라이온스, 2017 KIA타이거즈, 2016 KBO 골든글러브 수상, 2017 WBC 국가대표, 2017 KBO리그 정규시즌 출루율 1위, 2017 KBO 골든글러브 수상','Y');
@@ -152,13 +183,14 @@ VALUES(SEQ_PLAYER_NO.NEXTVAL, 4, 3, '김승연', 34, 19831216, 2002, 180, 106,
 
 COMMIT;
 -- 2-4) MATCH ----------------------------------------
+-- (MATCH_NO / TEAM_NO / STADIUM_NO / PLAYER_NO)
 INSERT INTO MATCH
 VALUES(
 SEQ_MATCH_NO.NEXTVAL, 1, 1, 1, 9, DEFAULT, 'H'
 );
 INSERT INTO MATCH
 VALUES(
-SEQ_MATCH_NO.CURRVAL, 2, 1, 1, 8, DEFAULT, 'A'
+SEQ_MATCH_NO.CURRVAL, 2, 1, 3, 8, DEFAULT, 'A'
 );
 INSERT INTO MATCH
 VALUES(
@@ -166,15 +198,33 @@ SEQ_MATCH_NO.NEXTVAL, 1, 2, 1, 7, DEFAULT, 'H'
 );
 INSERT INTO MATCH
 VALUES(
-SEQ_MATCH_NO.CURRVAL, 3, 2, 3, 6, DEFAULT, 'A'
+SEQ_MATCH_NO.CURRVAL, 2, 2, 4, 6, DEFAULT, 'A'
 );
 INSERT INTO MATCH
 VALUES(
-SEQ_MATCH_NO.NEXTVAL, 2, 3, 1, 7, DEFAULT, 'H'
+SEQ_MATCH_NO.NEXTVAL, 2, 3, 3, 7, DEFAULT, 'H'
 );
 INSERT INTO MATCH
 VALUES(
-SEQ_MATCH_NO.CURRVAL, 3, 3, 3, 6, DEFAULT, 'A'
+SEQ_MATCH_NO.CURRVAL, 3, 3, 5, 6, DEFAULT, 'A'
+);
+
+INSERT INTO MATCH
+VALUES(
+SEQ_MATCH_NO.NEXTVAL, 3, 3, 6, 7, DEFAULT, 'H'
+);
+INSERT INTO MATCH
+VALUES(
+SEQ_MATCH_NO.CURRVAL, 2, 3, 4, 6, DEFAULT, 'A'
+);
+
+INSERT INTO MATCH
+VALUES(
+SEQ_MATCH_NO.NEXTVAL, 1, 3, 2, 7, DEFAULT, 'H'
+);
+INSERT INTO MATCH
+VALUES(
+SEQ_MATCH_NO.CURRVAL, 2, 3, 3, 6, DEFAULT, 'A'
 );
 
 COMMIT;
