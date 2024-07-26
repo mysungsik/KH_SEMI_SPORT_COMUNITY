@@ -71,6 +71,9 @@ COMMIT;
 
 -- 2. ESSEENTIAL =========================================================
 -- 2-1) STADIUM ----------------------------------------
+
+DROP SEQUENCE SEQ_STADIUM_NO;
+CREATE SEQUENCE SEQ_STADIUM_NO;
 INSERT INTO STADIUM 
 VALUES(
     SEQ_STADIUM_NO.NEXTVAL,
@@ -97,8 +100,31 @@ VALUES(
     '50301',
     '부산광역시 동래구 사직로 45'
     );
+INSERT INTO STADIUM (STADIUM_NO, STADIUM_NAME, MAX_PEOPLE, WIDTH_FILED, STADIUM_PLACE)
+VALUES (SEQ_STADIUM_NO.NEXTVAL, '서울 잠실 야구장', 25000, 66000, '서울특별시 송파구 올림픽로 25');
+
+INSERT INTO STADIUM (STADIUM_NO, STADIUM_NAME, MAX_PEOPLE, WIDTH_FILED, STADIUM_PLACE)
+VALUES (SEQ_STADIUM_NO.NEXTVAL, '수원 kt 위즈 파크', 20000, 54800, '경기도 수원시 장안구 경수대로 893');
 
 COMMIT;
+
+--STADIUM_IMG TABLE -------------------------------------------
+INSERT INTO STADIUM_IMG (STADIUM_NO, IMG_ORIGINAL, IMG_RENAME, IMG_LEVEL)
+VALUES (1, 'stadium1_original.jpg', 'stadium1_rename.jpg', 1);
+
+INSERT INTO STADIUM_IMG (STADIUM_NO, IMG_ORIGINAL, IMG_RENAME, IMG_LEVEL)
+VALUES (2, 'stadium2_original.jpg', 'stadium2_rename.jpg', 1);
+
+INSERT INTO STADIUM_IMG (STADIUM_NO, IMG_ORIGINAL, IMG_RENAME, IMG_LEVEL)
+VALUES (3, 'stadium3_original.jpg', 'stadium3_rename.jpg', 1);
+
+INSERT INTO STADIUM_IMG (STADIUM_NO, IMG_ORIGINAL, IMG_RENAME, IMG_LEVEL)
+VALUES (4, 'stadium4_original.jpg', 'stadium4_rename.jpg', 1);
+
+INSERT INTO STADIUM_IMG (STADIUM_NO, IMG_ORIGINAL, IMG_RENAME, IMG_LEVEL)
+VALUES (5, 'stadium5_original.jpg', 'stadium5_rename.jpg', 1);
+
+
 
 -- 2-2) TEAMS TABLE ----------------------------------------
 INSERT INTO TEAMS
@@ -227,6 +253,8 @@ VALUES(
 SEQ_MATCH_NO.CURRVAL, 2, 3, 3, 6, DEFAULT, 'A'
 );
 
+
+
 COMMIT;
 
 --2.4.2) MATCH_SCORE TABLE-------------------------------
@@ -246,6 +274,35 @@ SEQ_MATCH_SCORE_NO.NEXTVAL, 2, 1, 5, 2, 8, 4, 2, 3);
 DELETE FROM MATCH_SCORE WHERE MATCH_NO=3;
 INSERT INTO MATCH_SCORE VALUES (
 SEQ_MATCH_SCORE_NO.NEXTVAL, 3, 3, 14, 1, 9, 1, 3, 5);
+
+
+
+--PITCHER_RECORD
+INSERT INTO PITCHER_RECORD VALUES(
+1, 1, '양현종', 5, 120, 10, 0, 5, 2, 0, 0, 0, 1.3
+);
+
+INSERT INTO PITCHER_RECORD VALUES (
+2, 2, '김승연', 6, 70, 5, 0, 4, 1, 0, 0, 0, 0.8
+);
+
+INSERT INTO PITCHER_RECORD VALUES(
+3, 3, '이범호', 4, 50, 7, 0 ,2, 3, 0, 0, 0, 1.1
+);
+
+-- HITTER_RECORD
+
+INSERT INTO HITTER_RECORD VALUES (
+1, 1, '양현종' , 5, 3, 0, 2, 1, 0, 0.372
+);
+
+INSERT INTO HITTER_RECORD VALUES (
+2, 2, '김승연', 7, 3, 1, 3, 2, 1, 0.375
+);
+
+INSERT INTO HITTER_RECORD VALUES (
+3, 3, '이범호', 6, 2, 0, 2, 1, 1, 0.373
+);
 
 
 -- 2-5) USER TABLE ----------------------------------------
@@ -455,11 +512,7 @@ VALUES(2, '/public/images/teams/hanwha.png', 'hanwha-logo.png', 1, '
 타 구단들의 로고 현대화로 인해 현재 사용중인 로고 중 가장 역사가 깊은 로고가 됐다..');
 COMMIT;
 
-INSERT INTO TEAM_IMG 
-VALUES(2, '/public/images/teams/hanwha.png', 'hanwha-logo.png', 1, '
-1993년을 끝으로 빙그레 이글스에서 한화 이글스로 변경되면서 기존의 로고를 다듬은 로고를 사용했다. 그러다가 2006년, 한화그룹의 CI 변경과 함께 한화 이글스도 로고 변경 작업에 들어갔고 2007년 KBO 시범경기 직후 변경된 로고를 발표했다.
-타 구단들의 로고 현대화로 인해 현재 사용중인 로고 중 가장 역사가 깊은 로고가 됐다..');
-COMMIT
+
 
 -- 2-8) REPLY TABLE (뉴스에 댓글 추가) - REPLY_NO, REPLY_TYPE_NO(4), USER_NO, REPLY_TARGET_NO, REPLY_DT, REPLY_CONTENT, REPLY_ST
 INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 4, 1, 1, DEFAULT, '안녕 내이름은 안녕안녕! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
