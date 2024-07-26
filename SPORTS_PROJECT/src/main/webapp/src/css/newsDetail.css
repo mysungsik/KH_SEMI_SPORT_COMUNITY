@@ -67,6 +67,9 @@
 	width: 200px;
 }
 
+.news-extra-info .pointer:hover{
+	cursor: pointer;
+}
 
 /* 뉴스 댓글 입력 */
 .reply-input-container{

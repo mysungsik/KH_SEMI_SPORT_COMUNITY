@@ -44,7 +44,7 @@
 			<div class="news-update-btns mr-10">
 				<span onclick="location.href='${contextPath}/news/modify/${newsNum}'">수정</span>
 				<span> | </span>
-				<span class="delete" data-type="delete" onclick="showModal(this)">삭제</span>
+				<span class="news-delete" data-type="news-delete" onclick="showModal(this)">삭제</span>
 			</div>
 		</section>
 
@@ -68,9 +68,9 @@ ${newsInfo.getNewsContent()}
 			<div class="news-extra-info">
 				<span>댓글 <span class="reply-cnt">3</span></span>
 				<span> | </span>
-				<span class="pointer" onclick="modifyLike()">좋아요 <span class="like-cnt"></span> ♥</span>
+				<span class="pointer news-like" onclick="modifyLike()">좋아요 <span class="like-cnt"></span> ♥</span>
 				<span> | </span>
-				<span class="pointer" data-type="board-report" onclick="showModal(this)">신고</span>
+				<span class="pointer" data-type="news-report" onclick="showModal(this)">신고</span>
 			</div>
 		</section>
 		
@@ -88,19 +88,9 @@ ${newsInfo.getNewsContent()}
 	<!-- Be sure to include this TAG -->
 	<jsp:include page="/WEB-INF/views/layouts/footer.jsp" />
 	
-		<!-- Modal -->
-	<div class="modal" id="communityModal" tabindex="-1" aria-hidden="true">
-      <input type="hidden" name="modalType" value=""/>
-	  <div class="modal-dialog">
-	    <div class="modal-content">
-	      <div class="modal-header base__blue">
-	        <h1 class="modal-title" id="commonModalLabel"></h1>
-	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-	      </div>
-	      <div class="modal-body"></div>
-	    </div>
-	  </div>
-	</div>
+	<!-- Modal -->
+	<jsp:include page="/WEB-INF/views/modals/deleteModal.jsp" />
+
 
 
 </body>

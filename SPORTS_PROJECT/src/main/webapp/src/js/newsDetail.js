@@ -165,15 +165,20 @@ function insertReply(){
 	}
 }
 
-let beforeState = "";	// 이전 상태를 기록하기 위한 값
 function modifyLike(){
-	
 	if (loginUser == ""){
 		toastPop("warn", "로그인 후 이용해주세요");
 		return;
 	}
 	
+	const news_like_btn = $(".news-like").eq(0)
 	const request_url = `${contextPath}/api/like/modifyLike`;
+	let like_cnt = parseInt($(".like-cnt").html());
+	
+	if (news_like_btn.hasClass("disabled")){
+		toastPop("warn", "요청이 너무 빠릅니다!")
+		return;
+	}
 	
 	$.ajax({
 		type: "POST",
@@ -184,32 +189,18 @@ function modifyLike(){
 		},
 		dataType: "json",
 		success: function (res) {
-		
+			// 좋아요 버튼 disable
+			news_like_btn.addClass("disabled")
+			
 			let isModifyLike = res.hasOwnProperty("data");
 			
 			if(isModifyLike){
-				// 기존 상태에 따라 좋아요 수 변경
-				if (beforeState == ""){
-					if (res.data == "deleteLike"){
-						beforeState = "deleteLike"
-						$(".like-cnt").html(likeData.length -1)			
-					}
-					else if (res.data == "insertLike"){
-						beforeState = "insertLike"
-						$(".like-cnt").html(likeData.length + 1)
-					}
+				if (res.data == "deleteLike"){
+					$(".like-cnt").html(like_cnt -1)
 					
-				} else if(beforeState == "deleteLike"){
-					if (res.data == "insertLike"){
-						beforeState = "insertLike"
-						$(".like-cnt").html(likeData.length +1)
-					}
-					
-				} else if (beforeState == "insertLike"){
-					if (res.data == "deleteLike"){
-						beforeState = "deleteLike"
-						$(".like-cnt").html(likeData.length)
-					}
+				} else if(res.data == "insertLike"){
+					$(".like-cnt").html(like_cnt + 1)
+					toastPop("info", "좋아요!")
 				}
 			}
 			else{
@@ -218,60 +209,42 @@ function modifyLike(){
 		}
 	});
 	
+	setTimeout(function(){
+		news_like_btn.removeClass("disabled")
+	}, 1000)
+	
 }
 
-// 모달 함수
-function showModal(el){
-	let modalEl = $('#communityModal');
+// Delete 모달 생성
+function showDeleteModal(el){
+	if (loginUser == ""){
+		toastPop("warn", "로그인 후 이용해주세요");
+		return;
+	}
 	
+	let deleteModalEl = $('#deleteModal');
 	let modalType = $(el).data("type");
 	
-	console.log(modalType);
-	
-	let item = "";
-	switch(modalType){
-		case "board-delete" : case "board-report" : item = "게시글"; break;
-		case "reply-delete" : case "reply-report" : item = "댓글"; break;
-	}
-	
-	if(modalType == "board-delete" || modalType == "reply-delete"){
-			modalEl.find(".modal-title").html(`<p class="fs-14 fc__white">${item} 삭제</p>`)
-					
-			modalEl.find(".modal-body").html(` 
-			
-				<div class="modal-row">정말 삭제하시겠습니까?</div>
-				
-				<div class="modal-btns">
-					<button class="btn-medium__blue acceptBtn"> 확인 </button>
-					<button class="btn-medium__gray cancelBtn" data-bs-dismiss="modal"> 취소 </button>
-				</div>
-				`
-			);
-	}else if(modalType == "board-report" || modalType == "reply-report"){
-		modalEl.find(".modal-title").html(`<p class="fs-14 fc__white">${item} 신고</p>`)
-		
-		modalEl.find(".modal-body").html(` 
-			<form>
-				<div class="modal-row">
-					<div class="select-wrapper">
-						<select name="team" id="team" style="border: none; outline: none;">
-					         <option value="kia">욕설 및 비하발언</option>
-					         <option value="dusan">허위사실 유포</option>
-					         <option value="la">사행성 ${item}</option>
-					    </select>
-				    </div>
-				    <textarea rows="5" cols="30" placeholder="상세 내용" ></textarea>
-				</div>
-				<div class="modal-btns">
-					<button class="btn-medium__blue acceptBtn"> 확인 </button>
-					<button class="btn-medium__gray cancelBtn" data-bs-dismiss="modal"> 취소 </button>
-				</div>
-			</form>	
-				`
-		);
-	}
+	let item = (modalType == "news-delete") ? "뉴스" : "댓글";
+	deleteModalEl.find(".modal-title").html(`<p class="fs-14 fc__white">${item} 삭제</p>`)
 		
 	modalEl.modal('show');
+}
+
+// 신고 모달 생성
+function showReportModal(el){
+	if (loginUser == ""){
+		toastPop("warn", "로그인 후 이용해주세요");
+		return;
+	}
+	
+	let reportModalEl = $('#reportModal');
+	let modalType = $(el).data("type");
+	
+	let item = (modalType == "news-report") ? "뉴스" : "댓글";
+	reportModalEl.find(".modal-title").html(`<p class="fs-14 fc__white">${item} 신고</p>`)
+
+	
 }
 
 
