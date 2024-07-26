@@ -34,7 +34,7 @@ public class TeamsDAO {
 	}
 
 	
-	/** 팀 정보(이름, 색깔, 로고) 출력 dao
+	/** 모든 팀 정보 출력
 	 * @param conn
 	 * @param teamNo
 	 * @return teamsList
@@ -43,23 +43,34 @@ public class TeamsDAO {
 		List<Teams> teamsList = new ArrayList<>();
 		
 		try {
-			String sql = prop.getProperty("getTeamsList");
+			String sql = prop.getProperty("getTeamsAll");
 			stmt = conn.createStatement();
 			rs= stmt.executeQuery(sql);
 			
 			while(rs.next()) {
 				int teamNo = rs.getInt("TEAM_NO");
+				int stadiumNo = rs.getInt("STADIUM_NO");
 				String teamName = rs.getString("TEAM_NAME");
-				String imgOriginal = rs.getString("IMG_ORIGINAL");
+				String teamLeader = rs.getString("TEAM_LEADER");
+				String director = rs.getString("DIRECTOR");
+				String sponsor = rs.getString("SPONSOR");
+				String teamRegion = rs.getString("TEAM_REGION");
+				String teamDes = rs.getString("TEAM_DES");
+				char teamSt = rs.getString("TEAM_ST").charAt(0);
+				String videoUrl = rs.getString("VIDEO_URL");
 				String teamColor = rs.getString("TEAM_COLOR");
+				String imgOriginal = rs.getString("IMG_ORIGINAL");
+				String imgRename = rs.getString("IMG_RENAME");
+				int imgLevel = rs.getInt("IMG_LEVEL");
+				String imgDes = rs.getString("IMG_DES");
 				
 				if (imgOriginal == null) {
 					continue;
 				}
 				
-				Teams teams = new Teams(teamNo, teamName, imgOriginal, teamColor);
+				//Teams teams = new Teams(teamNo, teamName, imgOriginal, teamColor);
 				
-				teamsList.add(teams);
+				//teamsList.add(teams);
 			}
 			
 		} catch (Exception e) {
@@ -94,7 +105,7 @@ public class TeamsDAO {
 				String imgOriginal = rs.getString("IMG_ORIGINAL");
 				String teamColor = rs.getString("TEAM_COLOR");
 				
-				teamNav = new Teams(teamNo, teamName, imgOriginal, teamColor);
+				//teamNav = new Teams(teamNo, teamName, imgOriginal, teamColor);
 			}
 		} catch (Exception e) {
 			System.out.println("[ERROR] FAILED to get teamNavinfo(name, color, logo)");
@@ -131,7 +142,7 @@ public class TeamsDAO {
 				String teamName = rs.getString("TEAM_NAME");
 				String imgOriginal = rs.getString("IMG_ORIGINAL");
 				
-				teamMainImg = new Teams(teamNo, teamName, imgOriginal);
+				//teamMainImg = new Teams(teamNo, teamName, imgOriginal);
 			}
 			
 		} catch (Exception e) {

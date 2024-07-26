@@ -14,14 +14,14 @@ public class Teams {
 	private String teamColor;
 	private String imgOriginal;
 	private String imgRename;
-	private String imgLevel;
+	private int imgLevel;
 	private String imgDes;
 	
 	public Teams() {}
 
 	public Teams(int teamNo, int stadiumNo, String teamName, String teamLeader, String director, String sponsor,
 			String teamRegion, String teamDes, char teamSt, String videoUrl, String teamColor, String imgOriginal,
-			String imgRename, String imgLevel, String imgDes) {
+			String imgRename, int imgLevel, String imgDes) {
 		super();
 		this.teamNo = teamNo;
 		this.stadiumNo = stadiumNo;
@@ -144,11 +144,11 @@ public class Teams {
 		this.imgRename = imgRename;
 	}
 
-	public String getImgLevel() {
+	public int getImgLevel() {
 		return imgLevel;
 	}
 
-	public void setImgLevel(String imgLevel) {
+	public void setImgLevel(int imgLevel) {
 		this.imgLevel = imgLevel;
 	}
 
