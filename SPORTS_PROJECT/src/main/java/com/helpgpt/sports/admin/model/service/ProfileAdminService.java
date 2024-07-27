@@ -94,4 +94,19 @@ public class ProfileAdminService {
 		return userWarnResult;
 	}
 
+	public int cancelReport(int reportNo) {
+		Connection conn = getConnection();
+		int reportResult = dao.cancelReport(conn, reportNo);
+		
+		if (reportResult > 0 ) {	// 최종적인 값인 "유저 경고 결과"를 기준으로 commit, rollback 설정
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+		
+		close(conn);
+		
+		return reportResult;
+	}
+
 }

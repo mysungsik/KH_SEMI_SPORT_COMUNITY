@@ -414,7 +414,7 @@ function deleteUser(el){
 
 }
 
-// 신고 처리 기능
+// [관리자] 신고 처리 기능
 function reportAccept(d){
 	let modalEl = $('#adminModal');
 	let adminModal = bootstrap.Modal.getInstance(modalEl);
@@ -457,18 +457,46 @@ function reportAccept(d){
 	
 	adminModal.hide();
 }
-// 신고 취소 기능
+
+// [관리자] 신고 취소 기능
 function reportCancel(d){
+	let modalEl = $('#adminModal');
+	let adminModal = bootstrap.Modal.getInstance(modalEl);
 	
-	data.reportNo
-	data.userId
-	data.reportTypeNo
-	data.reportTargetNo
-	data.reportTypeName
-	data.violationTypeName 
-	data.reportContent
-	data.reportTargetTitle 
-	data.reportTargetContent
+	const request_url = `${contextPath}/api/admin/profile/cancelReport`
+	
+	$.ajax({
+		type: "POST",
+		url: request_url,
+		data : {
+			reportNo : d.reportNo
+		},
+		dataType: "json",
+		async : false,
+		success: function (res) {
+			let isReportAcceted = res.hasOwnProperty("data")
+			
+			if (isReportAcceted){
+				// 받아들여지면 페이지네이션 재생성
+				reportData = reportData.filter(function(item){
+					return item.reportNo != d.reportNo
+				});
+				paginationActive("report", reportData, adminTemplate);
+				// 메시지 생성
+				toastPop("info", res.message)
+			} else{
+				toastPop("warn", res.message)
+			}
+		},
+		error : function(request, status, error){
+			toastPop("warn", "신고 취소 처리에 실패하였습니다.")
+			console.log(request);
+			console.log(status);
+			console.log(error);
+		}
+	});
+	
+	adminModal.hide();
 }
 
 

@@ -176,6 +176,21 @@ public class ProfileAdminApi extends HttpServlet {
 						new Gson().toJson(result, out);
 					}
 				};break;
+				// 신고 취소 기능
+				case "cancelReport": {
+					int reportNo = Integer.parseInt(req.getParameter("reportNo"));
+					
+					int reportResult = service.cancelReport(reportNo);
+					
+					if (reportResult > 0) {
+						result.put("data", reportResult);
+						result.put("message", "신고취소가 정상적으로 처리되었습니다.");
+						new Gson().toJson(result, out);
+					}else {
+						result.put("message", "신고취소에 실패하였습니다.");
+						new Gson().toJson(result, out);
+					}
+				};break;
 				default : {
 					System.out.println("잘못된 URL");
 				};

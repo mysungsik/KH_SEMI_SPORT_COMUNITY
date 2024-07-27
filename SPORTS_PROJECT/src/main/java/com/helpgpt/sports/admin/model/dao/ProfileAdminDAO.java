@@ -323,4 +323,24 @@ public class ProfileAdminDAO {
 		return;
 		
 	}
+
+	public int cancelReport(Connection conn, int reportNo) {
+		String sql = p.getProperty("cancelReport");
+		int result = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, reportNo);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("[ERROR] Failed to cancel Report");
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
 }
