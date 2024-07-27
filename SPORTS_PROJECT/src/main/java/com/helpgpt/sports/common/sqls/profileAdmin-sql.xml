@@ -35,7 +35,7 @@
 	
 	<entry key="updateUserInfoWithFailCnt">
 		UPDATE USER_INFO
-		SET USER_AUTHORITY = ?, USER_ST = ?, FAIL_CNT = 0
+		SET USER_AUTHORITY = ?, USER_ST = ?, FAIL_CNT = 0, WARN_CNT = 0
 		WHERE USER_NO = ?
 	</entry>
 	
@@ -44,5 +44,32 @@
 		SET USER_AUTHORITY = ?, USER_ST = ?
 		WHERE USER_NO = ?
 	</entry>
+
+	<entry key="acceptReport">
+		UPDATE REPORT
+		SET REPORT_ST = 'A'
+		WHERE REPORT_NO = ?
+	</entry>
+	
+	<entry key="updateUserWarn">
+		UPDATE USER_INFO
+		SET WARN_CNT = WARN_CNT + 1
+		WHERE USER_NO = ?
+	</entry>
+	
+	<entry key="setUserLock">
+		UPDATE USER_INFO
+		SET USER_ST = 'L'
+		WHERE USER_NO = ?
+	</entry>
+	
+	<entry key="selectUserWarnCnt">
+		SELECT WARN_CNT
+		FROM USER_INFO
+		WHERE USER_NO = ?
+	</entry>
+	
+	
+
 
 </properties>

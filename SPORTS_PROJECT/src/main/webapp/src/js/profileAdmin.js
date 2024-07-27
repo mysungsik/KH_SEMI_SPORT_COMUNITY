@@ -261,7 +261,7 @@ function showModal(id, data ,el){
 		modalEl.find(".modal-body").html(`
 			<div class="modal-row">
 				<div>
-					<label for="userId"> USER ID </label>
+					<label for="userId"> 신고자 ID </label>
 					<p type="text" id="user_id" name="userId">${data.userId}</p>		
 				</div>
 				<div>
@@ -317,6 +317,14 @@ function showModal(id, data ,el){
 	// deleteBtn 에 삭제 이벤트 추가
 	modalEl.find(".deleteBtn").on("click", function() {
 		deleteUser(el);
+	});
+	
+	// reportAcceptBtn 에 신고 처리 이벤트 추가
+	modalEl.find(".reportAcceptBtn").on("click", function() {
+		reportAccept(data);
+	});
+	modalEl.find(".reportCancelBtn").on("click", function() {
+		reportCancel(data);
 	});
 	
 	modalEl.modal('show');
@@ -405,6 +413,64 @@ function deleteUser(el){
 	adminModal.hide();
 
 }
+
+// 신고 처리 기능
+function reportAccept(d){
+	let modalEl = $('#adminModal');
+	let adminModal = bootstrap.Modal.getInstance(modalEl);
+	
+	const request_url = `${contextPath}/api/admin/profile/acceptReport`
+	
+	$.ajax({
+		type: "POST",
+		url: request_url,
+		data : {
+			reportNo : d.reportNo,
+			reportTypeNo: d.reportTypeNo,
+			reportTargetNo : d.reportTargetNo
+		},
+		dataType: "json",
+		async : false,
+		success: function (res) {
+			let isReportAcceted = res.hasOwnProperty("data")
+			
+			if (isReportAcceted){
+				// 받아들여지면 페이지네이션 재생성
+				reportData = reportData.filter(function(item){
+					return item.reportNo != d.reportNo
+				});
+				paginationActive("report", reportData, adminTemplate);
+				
+				// 메시지 생성
+				toastPop("info", res.message)
+			} else{
+				toastPop("warn", res.message)
+			}
+		},
+		error : function(request, status, error){
+			toastPop("warn", "신고 처리에 실패하였습니다.")
+			console.log(request);
+			console.log(status);
+			console.log(error);
+		}
+	});
+	
+	adminModal.hide();
+}
+// 신고 취소 기능
+function reportCancel(d){
+	
+	data.reportNo
+	data.userId
+	data.reportTypeNo
+	data.reportTargetNo
+	data.reportTypeName
+	data.violationTypeName 
+	data.reportContent
+	data.reportTargetTitle 
+	data.reportTargetContent
+}
+
 
 // 이미지 변경 모달
 function changeImgModal(){

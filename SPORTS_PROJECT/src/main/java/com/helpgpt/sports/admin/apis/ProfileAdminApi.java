@@ -114,6 +114,7 @@ public class ProfileAdminApi extends HttpServlet {
 		// 권한 있다면
 		if (adminAuthority.equals("A")) {
 			switch (path) {
+				// 유저 정보변경 기능
 				case "updateUserInfo": {
 					int userNo = Integer.parseInt(req.getParameter("userNo"));
 					String userAuthority =  req.getParameter("userAuthority");
@@ -137,6 +138,8 @@ public class ProfileAdminApi extends HttpServlet {
 					
 					new Gson().toJson(result, out);
 				};break;
+				
+				// 유저 삭제 처리 기능
 				case "deleteUser": {
 					
 					int userNo = Integer.parseInt(req.getParameter("userNo"));
@@ -152,6 +155,24 @@ public class ProfileAdminApi extends HttpServlet {
 						new Gson().toJson(result, out);
 					}else {
 						result.put("message", "삭제에 실패하였습니다.");
+						new Gson().toJson(result, out);
+					}
+				};break;
+				
+				// 신고 수락 기능
+				case "acceptReport": {
+					int reportNo = Integer.parseInt(req.getParameter("reportNo"));
+					int reportTypeNo = Integer.parseInt(req.getParameter("reportTypeNo"));
+					int reportTargetNo = Integer.parseInt(req.getParameter("reportTargetNo"));
+					
+					int reportResult = service.acceptReport(reportNo, reportTypeNo, reportTargetNo);
+					
+					if (reportResult > 0) {
+						result.put("data", reportResult);
+						result.put("message", "신고가 정상적으로 처리되었습니다.");
+						new Gson().toJson(result, out);
+					}else {
+						result.put("message", "신고 처리에 실패하였습니다.");
 						new Gson().toJson(result, out);
 					}
 				};break;

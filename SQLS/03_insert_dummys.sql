@@ -364,7 +364,7 @@ INSERT INTO HITTER_RECORD VALUES (
 
 -- 2-5) USER TABLE ----------------------------------------
 INSERT INTO USER_INFO VALUES (SEQ_USER_NO.NEXTVAL, null,'sportsAdmin','KQZ3dpm+3daZEkqDpEvtnk6AMuxOJ22ZNR1WmZoxVVq+5YWwAZ+SflpCH26gc3X2nVzfL1zre30F+jsMxgowaw==',
-    'audtlr93@naver.com','최명식','01033334444',null,'19910320','김장시, 배추동','M','KO',null,null,'A','G',to_date('2024/07/24','YYYY/MM/DD'),null,0);
+    'audtlr93@naver.com','최명식','01033334444',null,'19910320','김장시, 배추동','M','KO',null,null,'A','G',to_date('2024/07/24','YYYY/MM/DD'),null,0,0);
 INSERT INTO USER_POLICY 
 VALUES(SEQ_USER_NO.CURRVAL, DEFAULT, DEFAULT, DEFAULT);
 INSERT INTO USER_SESSION 
@@ -373,7 +373,7 @@ INSERT INTO USER_MAIL_CHECK
 VALUES(SEQ_USER_NO.CURRVAL, NULL);
 
 INSERT INTO USER_INFO VALUES (SEQ_USER_NO.NEXTVAL, null,'sportsAdmin2','KQZ3dpm+3daZEkqDpEvtnk6AMuxOJ22ZNR1WmZoxVVq+5YWwAZ+SflpCH26gc3X2nVzfL1zre30F+jsMxgowaw==',
-    '1010tmddus@naver.com','김승연','01013334444',null,'19910320','김장시, 배추동','M','KO',null,null,'A','G',to_date('2024/07/24','YYYY/MM/DD'),null,0);
+    '1010tmddus@naver.com','김승연','01013334444',null,'19910320','김장시, 배추동','M','KO',null,null,'A','G',to_date('2024/07/24','YYYY/MM/DD'),null,0,0);
 INSERT INTO USER_POLICY 
 VALUES(SEQ_USER_NO.CURRVAL, DEFAULT, DEFAULT, DEFAULT);
 INSERT INTO USER_SESSION 
@@ -382,7 +382,7 @@ INSERT INTO USER_MAIL_CHECK
 VALUES(SEQ_USER_NO.CURRVAL, NULL);
 
 INSERT INTO USER_INFO VALUES (SEQ_USER_NO.NEXTVAL, null,'sportsAdmin3','KQZ3dpm+3daZEkqDpEvtnk6AMuxOJ22ZNR1WmZoxVVq+5YWwAZ+SflpCH26gc3X2nVzfL1zre30F+jsMxgowaw==',
-    'dongjun_k@naver.com','김동준','01023334444',null,'19910320','김장시, 배추동','M','KO',null,null,'A','G',to_date('2024/07/24','YYYY/MM/DD'),null,0);
+    'dongjun_k@naver.com','김동준','01023334444',null,'19910320','김장시, 배추동','M','KO',null,null,'A','G',to_date('2024/07/24','YYYY/MM/DD'),null,0,0);
 INSERT INTO USER_POLICY 
 VALUES(SEQ_USER_NO.CURRVAL, DEFAULT, DEFAULT, DEFAULT);
 INSERT INTO USER_SESSION 
@@ -391,7 +391,7 @@ INSERT INTO USER_MAIL_CHECK
 VALUES(SEQ_USER_NO.CURRVAL, NULL);
 
 INSERT INTO USER_INFO VALUES (SEQ_USER_NO.NEXTVAL, null,'sportsAdmin4','KQZ3dpm+3daZEkqDpEvtnk6AMuxOJ22ZNR1WmZoxVVq+5YWwAZ+SflpCH26gc3X2nVzfL1zre30F+jsMxgowaw==',
-    'mlmb7801@naver.com','이지혁','01043334444',null,'19910320','김장시, 배추동','M','KO',null,null,'A','G',to_date('2024/07/24','YYYY/MM/DD'),null,0);
+    'mlmb7801@naver.com','이지혁','01043334444',null,'19910320','김장시, 배추동','M','KO',null,null,'A','G',to_date('2024/07/24','YYYY/MM/DD'),null,0,0);
 INSERT INTO USER_POLICY 
 VALUES(SEQ_USER_NO.CURRVAL, DEFAULT, DEFAULT, DEFAULT);
 INSERT INTO USER_SESSION 

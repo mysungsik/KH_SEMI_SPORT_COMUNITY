@@ -1,6 +1,7 @@
 package com.helpgpt.sports.admin.model.dao;
 
 import java.io.FileInputStream;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,9 +12,12 @@ import java.util.Properties;
 import static com.helpgpt.sports.common.util.JDBCTemplate.*;
 import com.helpgpt.sports.login.model.vo.User;
 
+import oracle.jdbc.OracleTypes;
+
 public class ProfileAdminDAO {
 	Properties p;
 	PreparedStatement pstmt;
+	CallableStatement cstmt;
 	ResultSet rs;
 	
 	public ProfileAdminDAO() {
@@ -191,5 +195,132 @@ public class ProfileAdminDAO {
 		}
 		
 		return userList;
+	}
+
+	public int acceptReport(Connection conn, int reportNo) {
+		String sql = p.getProperty("acceptReport");
+		int result = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, reportNo);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("[ERROR] Failed to Accept Report");
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	public int searchAuthor(Connection conn, int reportTypeNo, int reportTargetNo) {
+		int authorNo = 0;
+		String reportType ="";
+		String targetColunm = "";
+		
+		switch (reportTypeNo) {
+			case 1: {
+				reportType = "COMM";
+				targetColunm = "COMM_NO";
+			}break;
+			case 2:{ 
+				reportType = "REPLY";
+				targetColunm = "REPLY_NO";
+			}break;
+			case 3:{ 
+				reportType = "NEWS";
+				targetColunm = "NEWS_NO";
+			}break;
+		}
+		
+		String sql = String.format("SELECT USER_NO"
+				+ " FROM %s"
+				+ " WHERE %s = ?" , reportType, targetColunm);
+		 
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, reportTargetNo);
+			rs = pstmt.executeQuery();
+			
+			while (rs.next()) {
+				authorNo = rs.getInt("USER_NO");
+			}
+		} catch (Exception e) {
+			System.out.println("[ERROR] Failed to Searching Reported Author ");
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+			close(rs);
+		}
+		
+		return authorNo;
+	}
+
+	public int updateUserWarn(Connection conn, int authorNo) {
+		String sql = p.getProperty("updateUserWarn");
+		int result = 0;
+		
+		try {
+			pstmt = conn.prepareCall(sql);		// Returning 구문 사용하여 결과값 받기
+			pstmt.setInt(1, authorNo);
+       
+			result = pstmt.executeUpdate();    
+            
+		} catch (Exception e) {
+			System.out.println("[ERROR] Failed to update User Warn");
+			e.printStackTrace();
+		} finally {
+			close(cstmt);
+		}
+		
+		return result;
+	}
+	
+	public int selectUserWarnCnt(Connection conn, int authorNo) {
+		int warnCnt = 0;
+		
+		try {
+			String sql = p.getProperty("selectUserWarnCnt");
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, authorNo);
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				warnCnt = rs.getInt("WARN_CNT");
+			}
+		} catch (Exception e) {
+			System.out.println("[ERROR] Failed to selectUserWarnCnt ");
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+			close(rs);
+		}
+		
+		return warnCnt;
+	}
+
+	public void setUserLock(Connection conn, int authorNo) {
+		String sql = p.getProperty("setUserLock");
+		int result = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, authorNo);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("[ERROR] Failed to User Lock");
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return;
+		
 	}
 }

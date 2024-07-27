@@ -14,6 +14,32 @@ SET USER_IMG_ORIGIN = ? ,
     USER_IMG_RENAME = ?
 WHERE USER_NO = ?;
 
+COMMIT;
+
+-- [신고처리] -------------------------
+-- 1. 신고처리 수락
+UPDATE REPORT
+SET REPORT_ST = 'A'
+WHERE REPORT_NO = 1;
+
+-- 2. 게시글 번호를 통해 글의 작성자번호 확인
+SELECT USER_NO
+FROM NEWS
+WHERE NEWS_NO = 5;
+
+SELECT * FROM COMM;
+SELECT * FROM REPLY;
+
+-- 3. 글의 작성자에게 경고 부여후 경고 수 반환
+UPDATE USER_INFO
+SET WARN_CNT = WARN_CNT + 1
+WHERE USER_NO = 1;
+
+COMMIT;
+-- 5. 경고 5회 적립시 LOCK 처리
+UPDATE USER_INFO
+SET USER_ST = 'L'
+WHERE USER_NO = 1;
 
 COMMIT;
 
