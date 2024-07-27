@@ -47,10 +47,11 @@ public class TeamApi extends HttpServlet{
 		
 		switch(path) {
 			case "getTeams":{	
-				List<Teams> teamsList = service.getTeamsList();
+				List<Teams> teamsList = service.getTeamsAll();
 				
 				if (!teamsList.isEmpty()) {
 					result.put("data", teamsList);
+					
 					result.put("message", "success to get teamsList");
 				} else {
 					result.put("message", "failed to get teamsList");
@@ -73,11 +74,6 @@ public class TeamApi extends HttpServlet{
 				
 			}break;
 			
-			default:{
-				result.put("message", "failed to get teamsLists");
-				new Gson().toJson(result, out);
-			}
-			
 			case "teamMain":{
 				
 				Teams teamMainImg = service.getTeamMainImg(team);
@@ -93,6 +89,13 @@ public class TeamApi extends HttpServlet{
 				new Gson().toJson(result, out);
 				
 			}break;
+			
+			default:{
+				result.put("message", "failed to get teamsLists");
+				new Gson().toJson(result, out);
+			}
+			
+		
 		}
 		
 	}

@@ -1,4 +1,5 @@
 package com.helpgpt.sports.teams.model.dao;
+
 import static com.helpgpt.sports.common.util.JDBCTemplate.*;
 
 import java.io.FileInputStream;
@@ -10,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import com.helpgpt.sports.profile.model.dao.ProfileDAO;
 import com.helpgpt.sports.teams.model.vo.Teams;
 public class TeamsDAO {
 	
@@ -39,14 +39,13 @@ public class TeamsDAO {
 	 * @param teamNo
 	 * @return teamsList
 	 */
-	public List<Teams> getTeamsList(Connection conn) {
+	public List<Teams> getTeamsAll(Connection conn) {
 		List<Teams> teamsList = new ArrayList<>();
 		
 		try {
 			String sql = prop.getProperty("getTeamsAll");
 			stmt = conn.createStatement();
 			rs= stmt.executeQuery(sql);
-			
 			while(rs.next()) {
 				int teamNo = rs.getInt("TEAM_NO");
 				int stadiumNo = rs.getInt("STADIUM_NO");
@@ -56,25 +55,20 @@ public class TeamsDAO {
 				String sponsor = rs.getString("SPONSOR");
 				String teamRegion = rs.getString("TEAM_REGION");
 				String teamDes = rs.getString("TEAM_DES");
-				char teamSt = rs.getString("TEAM_ST").charAt(0);
+				char teamStatus = rs.getString("TEAM_ST").charAt(0);
 				String videoUrl = rs.getString("VIDEO_URL");
 				String teamColor = rs.getString("TEAM_COLOR");
-				String imgOriginal = rs.getString("IMG_ORIGINAL");
-				String imgRename = rs.getString("IMG_RENAME");
-				int imgLevel = rs.getInt("IMG_LEVEL");
-				String imgDes = rs.getString("IMG_DES");
+				String imgOriginal1 = rs.getString("IMG_ORIGINAL1");
+				String imgOriginal2 = rs.getString("IMG_ORIGINAL1");
+				String imgOriginal3 = rs.getString("IMG_ORIGINAL1");
+				String imgOriginal4 = rs.getString("IMG_ORIGINAL1");
 				
-				if (imgOriginal == null) {
-					continue;
-				}
-				
-				//Teams teams = new Teams(teamNo, teamName, imgOriginal, teamColor);
-				
-				//teamsList.add(teams);
+				Teams team = new Teams(teamNo, stadiumNo, teamName, teamLeader, director, sponsor, teamRegion, teamDes, teamStatus, videoUrl, teamColor, imgOriginal1, imgOriginal2, imgOriginal3, imgOriginal4);
+				teamsList.add(team);
 			}
 			
 		} catch (Exception e) {
-			System.out.println("[ERROR] FAILED to get team info(name, color, logo)");
+			System.out.println("[ERROR] FAILED to get teamInfo");
 			e.printStackTrace();
 		}finally {
 			close(stmt);

@@ -33,22 +33,35 @@ $(document).ready(function() {
 			}
 			
 		});
-		
 	}
 
 );
 
+function showTeamImg(d){
+	for(let i of d){
+		if(i.imgOriginal1 == undefined){
+			console.log("aaa");
+			`${i.imgOriginal1} = "/public/images/profile/user_img1.jpg"`;
+		}
+		
+	}
+}
 
 function showTeams(data){
 	html = "";
 	
 	$.each(data, function(index, d){
+		
+		let imgSrc = d.imgOriginal1 == undefined 
+            ? `${contextPath}/public/images/profile/user_img1.jpg` 
+            : `${contextPath}/${d.imgOriginal1}`;
+		
 		html += 
 		`
 			<a href="${contextPath}/teams/${d.teamName}" >
 			    <div class="teams-card br-10 mb-10 mr-20 ${d.teamColor}">
 			    	<div class="team-logo-img">
-			            <img src="${contextPath}/${d.teamImage.imgOriginal}" class="team-logo" alt="구단사진">
+			            	<img src= ${imgSrc} class="team-logo" alt="구단사진">
 			    	</div>
 			        <div class="teams-name">
 			            <span class="fs-14 fc__white ml-10">${d.teamName}</span>

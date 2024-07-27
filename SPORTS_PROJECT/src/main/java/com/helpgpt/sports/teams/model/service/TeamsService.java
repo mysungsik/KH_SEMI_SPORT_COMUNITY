@@ -15,11 +15,11 @@ public class TeamsService {
 	 * @param teamName
 	 * @return teamsList
 	 */
-	public List<Teams> getTeamsList() {
+	public List<Teams> getTeamsAll() {
 		
 		Connection conn = getConnection();
 		
-		List<Teams> teamsList = dao.getTeamsList(conn);
+		List<Teams> teamsList = dao.getTeamsAll(conn);
 		
 		close(conn);
 		
