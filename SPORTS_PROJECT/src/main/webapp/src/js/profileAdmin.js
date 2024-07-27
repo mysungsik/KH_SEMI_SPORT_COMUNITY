@@ -47,7 +47,6 @@ function getReportsInfos(){
 			let isGetData = res.hasOwnProperty("data")
 			if (isGetData){
 				reportData = res.data;
-				console.log(res)
 				paginationActive("report", reportData, adminTemplate);
 			}
         },
@@ -491,7 +490,6 @@ function searchUser(){
 		},
 		dataType: "json",
 		success: function (res) {
-			console.log(res)
 			let isGetData = res.hasOwnProperty("data")
 			if (isGetData){
 				const userData = res.data;
