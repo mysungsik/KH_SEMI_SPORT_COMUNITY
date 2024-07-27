@@ -41,5 +41,22 @@
 		ORDER BY 
 		    R.REPORT_NO DESC
 	</entry>
+	
+	<entry key="insertReport">
+		INSERT INTO REPORT
+		VALUES(
+		    SEQ_REPORT_NO.NEXTVAL,
+		    ?,
+		    ?,
+		    ?,
+		    ?,
+		    ?,
+		    DEFAULT,
+		    DEFAULT
+		)
+	</entry>
+	
+
+	
 
 </properties>

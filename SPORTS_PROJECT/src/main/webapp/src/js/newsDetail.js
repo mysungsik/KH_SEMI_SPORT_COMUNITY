@@ -328,21 +328,6 @@ function showDeleteModal(el){
 	})
 }
 
-// Report 모달 생성
-function showReportModal(el){
-	if (loginUser == ""){
-		toastPop("warn", "로그인 후 이용해주세요");
-		return;
-	}
-	
-	let reportModalEl = $('#reportModal');
-	let modalType = $(el).data("type");
-	
-	let item = (modalType == "news-report") ? "뉴스" : "댓글";
-	reportModalEl.find(".modal-title").html(`<p class="fs-14 fc__white">${item} 신고</p>`)
-
-	reportModalEl.modal('show');
-}
 
 // ReplyUpdate 모달 생성
 function showReplyUpdateModal(el){
@@ -363,6 +348,94 @@ function showReplyUpdateModal(el){
 	})
 }
 
+// Report 모달 생성
+function showReportModal(el){
+	if (loginUser == ""){
+		toastPop("warn", "로그인 후 이용해주세요");
+		return;
+	}
+	
+	let reportModalEl = $('#reportModal');
+	let modalType = $(el).data("type");
+	
+	// reportTypeNo -> 3: 뉴스 신고, 2: 댓글 신고
+	let reportTypeNo = (modalType == "news-report") ? 3 : 2;
+	
+	// 리포트 타겟 번호
+	let reportTargetNo = 0;
+	
+	
+	// 타겟이 뉴스라면 뉴스번호
+	if (reportTypeNo == 3){
+		reportTargetNo = $("input[name='newsNum']").eq(0).val()
+	}
+	// 타겟이 댓글이라면 각 댓글번호
+	else if (reportTypeNo == 2){
+		reportTargetNo = parseInt($(el).data("replyno"));
+	}
+	
+	let item = (modalType == "news-report") ? "뉴스" : "댓글";
+	reportModalEl.find(".modal-title").html(`<p class="fs-14 fc__white">${item} 신고</p>`)
 
+	reportModalEl.modal('show');
+	
+	reportModalEl.find(".acceptBtn").one("click", function(){
+		insertReport(reportTypeNo, reportTargetNo)
+	})
+}
 
+// 댓글 수정 함수
+function insertReport(reportTypeNo, reportTargetNo){
+	
+	let reportModalEl = $('#reportModal');
+	let reportModalModal = bootstrap.Modal.getInstance(reportModalEl);
+	let reportContent = reportModalEl.find("textarea[name='report-content']").val();
+	let reportVioType = reportModalEl.find("select[name='reportVioType']").val();
+	
+	if (loginUser == ""){
+		toastPop("warn", "로그인 후 이용해주세요");
+		return;
+	}
+	
+	// 요청
+	const request_url = `${contextPath}/api/report/insertReport`;
+	
+	if (reportContent.trim() != ""){
+		$.ajax({
+			type: "POST",
+			url: request_url,
+			data : {
+				reportTypeNo,
+				reportTargetNo,
+				reportVioType,
+				reportContent
+				
+			},
+			dataType: "json",
+			success: function (res) {
+				let isInsertReport = res.hasOwnProperty("data");
+				
+				if(isInsertReport){
+					// 모달 종료, textarea 비우기, 토스트 생성
+					reportModalModal.hide();
+					reportModalEl.find("textarea[name='report-content']").val("");
+					toastPop("info", res.message)
+				}
+				
+				else{
+					reportModalModal.hide();
+					reportModalEl.find("textarea[name='report-content']").val()
+					toastPop("warn", res.message)
+				}
+			}
+		});
+	} else{
+		toastPop("warn", "댓글을 입력해주세요")
+	}
+}
+
+function deleteEventListener(el){
+	let acceptBtn = $(el).parent().find(".acceptBtn")
+	acceptBtn.off("click");
+}
 

@@ -14,7 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
+import com.helpgpt.sports.common.util.Util;
 import com.helpgpt.sports.login.model.vo.User;
+import com.helpgpt.sports.reply.model.vo.Reply;
 import com.helpgpt.sports.report.model.service.ReportService;
 import com.helpgpt.sports.report.model.vo.Report;
 
@@ -100,7 +102,27 @@ public class ReportApi extends HttpServlet {
 
 		// 경로에 따라 필요한 기능을 사용
 		switch (path) {
-			case "insertReply" : {
+			case "insertReport" : {
+				int targetTypeNo = Integer.parseInt(req.getParameter("reportTypeNo"));		// 신고 타입 (1 : 게시글 / 2: 댓글 / 3 :뉴스)
+				int reportTargetNo = Integer.parseInt(req.getParameter("reportTargetNo"));	// 신고된 타겟 PK
+				int reportVioType = Integer.parseInt(req.getParameter("reportVioType"));	// 위반 유형 번호 ( 1 ~ 10 ) 
+				String reportContent = req.getParameter("reportContent");					// 신고 내용
+				
+				// XSS 방지 및 개행문자 처리
+				reportContent = Util.XSSHandling(reportContent);
+				reportContent = Util.newLineHandling(reportContent);
+				
+				int reportResult = service.insertReport(loginUser, targetTypeNo, reportTargetNo, reportVioType, reportContent);
+				
+				if (reportResult > 0) {
+					result.put("message", "신고해주셔서 감사합니다! 위반사항 확인후 처리하겠습니다.");
+					result.put("data", reportResult);
+					new Gson().toJson(result, out);
+				}else {
+					result.put("message", "there is no reply");
+					new Gson().toJson(result, out);
+					
+				}
 			};break;
 		}
 	}

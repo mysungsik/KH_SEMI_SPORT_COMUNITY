@@ -77,5 +77,28 @@ public class ReportDAO {
 		
 		return null;
 	}
-
+	public int insertReport(Connection conn, int userNo, int targetTypeNo, int reportTargetNo, int reportVioType, String reportContent) {
+		String sql = prop.getProperty("insertReport");
+		int result = 0;
+	
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, userNo);
+			pstmt.setInt(2, targetTypeNo);
+			pstmt.setInt(3, reportTargetNo);
+			pstmt.setInt(4, reportVioType);
+			pstmt.setString(5, reportContent);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("[ERROR] Failed to insert report");
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
 }

@@ -11,13 +11,13 @@ import com.helpgpt.sports.reply.model.vo.Reply;
 
 public class ReplyService {
 	ReplyDAO dao = new ReplyDAO();
-	
+
 	public List<Reply> getReplyAllByOneTarget(int targetTypeNo, int targetNo) {
 		Connection conn = getConnection();
 		List<Reply> replyList = dao.getReplies(conn, targetTypeNo, targetNo);
-	
+
 		close(conn);
-		
+
 		return replyList;
 	}
 
@@ -25,9 +25,9 @@ public class ReplyService {
 		Connection conn = getConnection();
 		int insertResult = dao.insertReply(conn, targetTypeNo, loginUser.getUserNo(), targetNo, replyContent);
 		Reply returnReply = null;
-		
+
 		if (insertResult > 0) {
-			
+
 			// USER 에게 돌려주고 데이터를 바로 확인하기 위한 임시 데이터
 			returnReply = dao.getReturnReply(conn);
 			returnReply.setReplyContent(replyContent);
@@ -39,10 +39,10 @@ public class ReplyService {
 			returnReply.setUserProfileImg(loginUser.getUserProfileImg() != null ? loginUser.getUserProfileImg() : "");
 
 			commit(conn);
-		}else {
+		} else {
 			rollback(conn);
 		}
-		
+
 		close(conn);
 		return returnReply;
 	}
@@ -50,13 +50,13 @@ public class ReplyService {
 	public int deleteReply(int replyNo) {
 		Connection conn = getConnection();
 		int deleteResult = dao.deleteReply(conn, replyNo);
-		
+
 		if (deleteResult > 0) {
 			commit(conn);
-		}else {
+		} else {
 			rollback(conn);
 		}
-		
+
 		close(conn);
 		return deleteResult;
 	}
@@ -64,13 +64,13 @@ public class ReplyService {
 	public int updateReply(int replyNo, String replyContent) {
 		Connection conn = getConnection();
 		int updateResult = dao.updateReply(conn, replyNo, replyContent);
-		
+
 		if (updateResult > 0) {
 			commit(conn);
-		}else {
+		} else {
 			rollback(conn);
 		}
-		
+
 		close(conn);
 		return updateResult;
 	}

@@ -101,6 +101,7 @@ public class ReplyApi extends HttpServlet {
 				}else {
 					result.put("message", "there is no reply");
 					new Gson().toJson(result, out);
+					
 				}
 			};break;
 			case "deleteReply" : {

@@ -177,7 +177,7 @@ JOIN TEAMS T USING(TEAM_NO)
 WHERE TO_CHAR(MATCH_DT, 'YY.MM.DD') = TO_CHAR(SYSDATE, 'YY.MM.DD')
 ; 
 
-----------------------------------------------------------------------
+-- [좋아요] ----------------------------------------------------------------------
 SELECT SEQ_REPLY_NO.CURRVAL, SYSTIMESTAMP FROM DUAL;
 SELECT * FROM REPLY;
 
@@ -198,7 +198,8 @@ AND LIKE_TARGET_NO = 1;
 
 COMMIT;
 
--- 신고 모든 내용 출력 (타겟에 대한 정보를 포함하는)
+-- [신고] ----------------------------------------------------------------------
+-- 신고 모든 내용 출력 (타겟에 대한 제목, 내용을 포함하는)
 SELECT 
     R.*, 
     U.USER_NAME, 
@@ -236,6 +237,11 @@ ORDER BY
     R.REPORT_NO DESC;
 
 
+SELECT * FROM REPORT 
+ORDER BY REPORT_NO DESC;
+
+
+-- [???] ----------------------------------------------------------------------
 
 
 
