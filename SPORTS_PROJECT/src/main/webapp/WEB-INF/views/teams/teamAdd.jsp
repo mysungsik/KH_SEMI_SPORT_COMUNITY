@@ -14,7 +14,7 @@
 <body>
 	<jsp:include page="/WEB-INF/views/layouts/header.jsp" />
 	<div class="container">
-		<form action="#" method="post" enctype="multipart/form-data">
+		<form action="insert" method="post" enctype="multipart/form-data" > 
 			<!-- Step 1  -->
 			<div class="step active" id="step1">
 				<h1>구단 추가</h1>
@@ -48,7 +48,7 @@
 						<input type="text" name="teamName" placeholder="구단명" required>
 						<input type="text" name="teamLeader" placeholder="단장" required>
 						<input type="text" name="director" placeholder="감독명 " required>
-						<input type="text" name="pCompany" placeholder="모기업" required>
+						<input type="text" name="sponsor" placeholder="모기업" required>
 						<input type="text" name="teamRegion" placeholder="광역 연고권 | 연고지"
 							required>
 						<textarea type="text" name="teamDes" placeholder="구단 설명(500자 이내)"></textarea>
@@ -56,7 +56,7 @@
 				</div>
 				<hr>
 				<div class="btn-area">
-					<button type="button" onclick="nextStep()">다음</button>
+					<button type="button" id="goNextBtn1">다음</button>
 				</div>
 			</div>
 
@@ -236,7 +236,7 @@
 					<hr>
 					<div class="btn-area">
 						<button type="button" onclick="prevStep()">이전</button>
-						<button type="button" onclick="nextStep()">다음</button>
+						<button type="button" onclick="nextStep()" id="goNextBtn2">다음</button>
 					</div>
 				</div>
 			</div>
@@ -275,7 +275,7 @@
 				<hr>
 				<div class="btn-area">
 					<button type="button" onclick="prevStep()">이전</button>
-					<button type="submit" id="addTeamBtn">완료</button>
+					<button type="submit" id="addTeamBtn" >완료</button>
 				</div>
 			</div>
 

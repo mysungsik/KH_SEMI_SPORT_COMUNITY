@@ -32,7 +32,8 @@ public class TeamsController extends HttpServlet {
 		String reqPath = req.getPathInfo();
 		String team = "";
 		
-		String[] teams={"KIA", "LG", "DOOSAN","teamAdd"};
+		String[] teams={"KIA", "HANWHA", "LG", "LOTTE", "KT", "COFFEE", "PHONE", 
+				"BONBON", "DETOX", "TOBACCO","teamAdd"};
 
 		List<String> teamList = Arrays.asList(teams);
 		
@@ -62,7 +63,7 @@ public class TeamsController extends HttpServlet {
 			}else {
 				System.out.println("======================================");
 				System.out.println(team);
-				System.out.println("--404 페이지로 이동--123");
+				System.out.println("--404 페이지로 이동--");
 			}
 			
 		}

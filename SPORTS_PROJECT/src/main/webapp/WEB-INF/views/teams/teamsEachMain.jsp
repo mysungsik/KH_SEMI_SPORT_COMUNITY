@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="${contextPath}/src/css/teamsEachHeader.css">
 	<jsp:include page="/WEB-INF/views/layouts/header-teams-dependencies.jsp"/>
 	<jsp:include page="/WEB-INF/views/layouts/header-dependencies.jsp" />
-	<script src="${contextPath}/src/js/header-teams.js" defer></script>
+	<%-- <script src="${contextPath}/src/js/header-teams.js" defer></script> --%>
 	<script src="${contextPath}/src/js/teamEach.js" defer></script>
 	
 	<title>Team Main</title>

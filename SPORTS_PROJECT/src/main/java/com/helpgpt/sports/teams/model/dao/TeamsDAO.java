@@ -20,15 +20,15 @@ public class TeamsDAO {
 	Statement stmt;
 
 	public TeamsDAO() {
+		String defaultpath = "/com/helpgpt/sports/common/sqls/";
+		String filepath = TeamsDAO.class.getResource(defaultpath + "teams-sql.xml").getPath();
 		try {
 			prop = new Properties();
-			String defaultpath = "/com/helpgpt/sports/common/sqls/";
-			String filepath = TeamsDAO.class.getResource(defaultpath + "teams-sql.xml").getPath();
 			FileInputStream fis = new FileInputStream(filepath);
 			prop.loadFromXML(fis);
 			
 		} catch (Exception e) {
-			System.err.println("[ERROR] Load to sql");
+			System.err.println("[ERROR]Failed to Load teams-sql file");
 			e.printStackTrace();
 		}
 	}
@@ -59,9 +59,9 @@ public class TeamsDAO {
 				String videoUrl = rs.getString("VIDEO_URL");
 				String teamColor = rs.getString("TEAM_COLOR");
 				String imgOriginal1 = rs.getString("IMG_ORIGINAL1");
-				String imgOriginal2 = rs.getString("IMG_ORIGINAL1");
-				String imgOriginal3 = rs.getString("IMG_ORIGINAL1");
-				String imgOriginal4 = rs.getString("IMG_ORIGINAL1");
+				String imgOriginal2 = rs.getString("IMG_ORIGINAL2");
+				String imgOriginal3 = rs.getString("IMG_ORIGINAL3");
+				String imgOriginal4 = rs.getString("IMG_ORIGINAL4");
 				
 				Teams team = new Teams(teamNo, stadiumNo, teamName, teamLeader, director, sponsor, teamRegion, teamDes, teamStatus, videoUrl, teamColor, imgOriginal1, imgOriginal2, imgOriginal3, imgOriginal4);
 				teamsList.add(team);
@@ -71,83 +71,126 @@ public class TeamsDAO {
 			System.out.println("[ERROR] FAILED to get teamInfo");
 			e.printStackTrace();
 		}finally {
-			close(stmt);
 			close(rs);
+			close(stmt);
 		}
 		
 		return teamsList;
 	}
 
 
-	/** 특정 팀 정보(로고, 색깔, 이름) 출력 DAO (Nav용)
+	/** 특정 팀 nav 출력
 	 * @param conn
-	 * @param team 
+	 * @param team
 	 * @return teamNav
 	 */
 	public Teams getTeamNav(Connection conn, String team) {
+		
 		Teams teamNav = null;
+		
 		try {
 			String sql = prop.getProperty("getTeamNav");
 			
 			pstmt = conn.prepareStatement(sql);
+			
 			pstmt.setString(1, team);
-			rs= pstmt.executeQuery();
+			
+			rs=pstmt.executeQuery();
 			
 			if(rs.next()) {
-				int teamNo = rs.getInt("TEAM_NO");
-				String teamName = rs.getString("TEAM_NAME");
-				String imgOriginal = rs.getString("IMG_ORIGINAL");
-				String teamColor = rs.getString("TEAM_COLOR");
 				
-				//teamNav = new Teams(teamNo, teamName, imgOriginal, teamColor);
+				teamNav = new Teams();
+				
+				teamNav.setTeamNo(rs.getInt("TEAM_NO"));
+				teamNav.setTeamName(rs.getString("TEAM_NAME"));
+				teamNav.setTeamStatus(rs.getString("TEAM_ST").charAt(0));
+				teamNav.setTeamColor(rs.getString("TEAM_COLOR"));
+				String imgOriginal1 = rs.getString("IMG_ORIGINAL1");
+				if(imgOriginal1 == null ) {
+					imgOriginal1="/public/images/profile/user_img1.jpg";
+				}
+
+				teamNav.setImgOriginal1(imgOriginal1);
+				
 			}
+			
 		} catch (Exception e) {
-			System.out.println("[ERROR] FAILED to get teamNavinfo(name, color, logo)");
+			System.out.println("[ERROR] FAILED to get TeamNav");
 			e.printStackTrace();
 		}finally {
-			close(pstmt);
 			close(rs);
+			close(pstmt);
 		}
 		
 		return teamNav;
 	}
 
 
-	/** 특정 팀 (teamMain 페이지정보) 출력 DAO (teamMain 페이지 용)
+	
+	/** 특정 팀 정보 출력
 	 * @param conn
-	 * @param teamMain
-	 * @return teamMain
+	 * @param team
+	 * @return oneTeam
 	 */
-	public Teams getTeamMainImg(Connection conn, String team) {
-		Teams teamMainImg = null;
-		System.out.println("==========================");
-		System.out.println(team);
-		System.out.println("==========================");
+	public Teams getOneTeam(Connection conn, String team) {
+		Teams oneTeam = null;
 		try {
-			String sql = prop.getProperty("getTeamMainImg");
-			
+			String sql = prop.getProperty("getOneTeam");
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, team);
 			rs= pstmt.executeQuery();
 			
 			if(rs.next()) {
-				System.out.println("aaaaaaa");
 				int teamNo = rs.getInt("TEAM_NO");
+				int stadiumNo = rs.getInt("STADIUM_NO");
 				String teamName = rs.getString("TEAM_NAME");
-				String imgOriginal = rs.getString("IMG_ORIGINAL");
+				String teamLeader = rs.getString("TEAM_LEADER");
+				String director = rs.getString("DIRECTOR");
+				String sponsor = rs.getString("SPONSOR");
+				String teamRegion = rs.getString("TEAM_REGION");
+				String teamDes = rs.getString("TEAM_DES");
+				char teamStatus = rs.getString("TEAM_ST").charAt(0);
+				String videoUrl = rs.getString("VIDEO_URL");
+				String teamColor = rs.getString("TEAM_COLOR");
+				String imgOriginal1 = rs.getString("IMG_ORIGINAL1");
+				String imgDes1 = rs.getString("IMG_DES1");
+				String imgOriginal2 = rs.getString("IMG_ORIGINAL2");
+				String imgDes2 = rs.getString("IMG_DES2");
+				String imgOriginal3 = rs.getString("IMG_ORIGINAL3");
+				String imgOriginal4 = rs.getString("IMG_ORIGINAL4");
+
+				if(imgOriginal1 == null ) {
+					imgOriginal1="/public/images/profile/user_img1.jpg";
+				} 
 				
-				//teamMainImg = new Teams(teamNo, teamName, imgOriginal);
+				if(imgOriginal2 == null ) {
+					imgOriginal2="/public/images/profile/user_img1.jpg";
+				} 
+				
+				if(imgOriginal3 == null ) {
+					imgOriginal3="/public/images/profile/user_img1.jpg";
+				} 
+				
+				if(imgOriginal4 == null ) {
+					imgOriginal4="/public/images/profile/user_img1.jpg";
+				} 
+				
+				
+				oneTeam = new Teams(teamNo, stadiumNo, teamName, teamLeader, director, sponsor, teamRegion, teamDes, teamStatus, videoUrl, teamColor, imgOriginal1, imgDes1, imgOriginal2, imgDes2, imgOriginal3, imgOriginal4);
+				
 			}
 			
 		} catch (Exception e) {
-			System.out.println("[ERROR] FAILED to get teamMainImg");
+			System.out.println("[ERROR] FAILED to get OneTeamInfo");
 			e.printStackTrace();
+			
 		}finally {
-			close(pstmt);
 			close(rs);
+			close(pstmt);
 		}
-		
-		return teamMainImg;
+		return oneTeam;
 	}
+
+
 
 }

@@ -1,92 +1,102 @@
-const team_info = [
-	{team_name: "kia", video: "https://www.youtube.com/watch?v=ZEPS5Bm3iqc&t=1108s", team_contents: "현대자동차그룹의 계열사인 기아가 운영하는 KBO 리그의 프로 야구단으로 연고지는 광주광역시, 홈구장은 광주광역시 북구 임동에 위치한 광주 기아 챔피언스 필드.", team_logo: "", logo_des : "",team_ci:"", ci_des: "" , team_color:"kia_color"}
-]
+//더미 데이터--------------------
 
-$(document).ready(function() {
-	showPageCover(team_info);
-	showPageCoverBottom(team_info);
-	showTeamInfo(team_info);
+$(document).ready(function(){
+	
+	let request_url=`${contextPath}/api/teams/getOneTeam`
+	
+	$.ajax({
+		type: "GET",
+		url: request_url,
+		dataType: "json",
+		data : {
+			team
+		},
+		success: function (res) {
+			let isGetData = res.hasOwnProperty("data");
+			if (isGetData){
+				showPageCover(res.data);
+				showPageCoverBottom(res.data);
+				showTeamInfo(res.data);
+			}
+		},
+		error:function(){
+			alert('실패!');
+		}
+		
+	});
+	
 });
 
 
-function showPageCover(data){
-	html = "";
+
+function showPageCover(d){
 	
-	$.each(data, function(index, d){
-		html =
+	let html = 
 		`
 		<div class="fc__white fs-28__b">구단 소개</div>
 			
 		<div class="fc__white">
 			<i class="fa-solid fa-house"></i>
-			 > ${d.team_name} > 구단 소개
+			 > ${d.teamName} > 구단 소개
 		</div>
-		`
-	})
+		`;
 	
 	const parent = $(".pagecover-img").eq(0)
 	parent.html(html)
 }
 
 
-function showTeamInfo(data){
-	html = "";
-	$.each(data, function(index, d){
-	  	html = 
+function showTeamInfo(d){
+	let html = 
 	  		`
 			<div class="container team-video mt-20 mb-20">
-				<iframe src="${d.video}" title="description"></iframe>
+				<iframe src="${d.videoUrl}" title="description"></iframe>
 			</div>
 			<hr>
 			<div class="container team-story mt-20 mb-20 d-flex">
 				<p class="fs-28__b mb-10">OUR STORY</p>
-				<p class="fs-14">${d.team_contents}</p>
+				<p class="fs-14">${d.teamDes}</p>
 			</div>
 			<hr>
 			<div class="container team-ci mt-20 mb-20 d-flex">
-				<p class="fs-28__b mb-10">${d.team_name} CI</p>
+				<p class="fs-28__b mb-10">${d.teamName} CI</p>
 				<div class="team-ci-content d-flex">
 					<div>
-						<p class="fs-14">${d.ci_des}</p>
+						<p class="fs-14">${d.imgDes2}</p>
 					</div>
 					<div class="team-ci-content-img">
-						<img alt="" src="${d.team_ci}">
+						<img alt="" src="${d.imgOriginal2}">
 					</div>
 				</div>
 			</div>
 			<hr>
 			<div class="container teams-logo mt-20 d-flex">
-				<p class="fs-28__b mb-10">${d.team_name} LOGO</p>
+				<p class="fs-28__b mb-10">${d.teamName} LOGO</p>
 				<div class="team-logo-content d-flex">
 					<div>
-						<p class="fs-14">${d.logo_des}</p>
+						<p class="fs-14">${d.imgDes1}</p>
 					</div>
 					<div class="team-logo-content-img">
-						<img alt="" src="${d.team_logo}">
+						<img alt="" src="${d.imgOriginal1}">
 					</div>
 				</div>
 		</div>
-		`
-	})
-	
+		`;
 	const parent = $("main").eq(0)
 	parent.html(html)
 	
 }
 
-function showPageCoverBottom(data){
-	html = "";
+function showPageCoverBottom(d){
 	
-	$.each(data, function(index, d){
-		html =
+		let html =
 		`
-			<div class="pagecover-bottom ${d.team_color}">
+			<div class="pagecover-bottom ${d.teamColor}">
 				<div class="pagecover-bottom-inner d-flex">
-					<div class="fc__white fs-20 team-name">${d.team_name}</div>
+					<div class="fc__white fs-20 team-name">${d.teamName}</div>
 				</div>
 			</div>
-		`
-	})
+		`;
 	
 	const sibling = $(".pagecover-img").eq(0)
 	sibling.after(html)

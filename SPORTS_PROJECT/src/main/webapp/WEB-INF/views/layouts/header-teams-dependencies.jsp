@@ -3,4 +3,5 @@
 
 <script>
 	let team = "${requestScope.team}"
+	let page = "${requestScope.page}"
 </script>

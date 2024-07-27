@@ -42,12 +42,12 @@ public class TeamEachController extends HttpServlet{
 		// 2. team이 있고 페이지 있을 때 -> /team/kia/info -> teamInfo.jsp (setAttribute에 team 넣기)
 
 
-		String[] teams={"kia", "lg", "doosan"};
+		String[] teams={"KIA", "HANWHA", "LG", "LOTTE", "KT", "COFFEE", "PHONE", 
+				"BONBON", "DETOX", "TOBACCO"};
 		List<String> teamList = Arrays.asList(teams);
 
 
 		if(teamList.contains(team)){
-
 			req.setAttribute("team", team);
 			switch(page) {
 			case "" :{
@@ -59,13 +59,6 @@ public class TeamEachController extends HttpServlet{
 				dispatcher.forward(req, resp);
 			};break;
 			
-			// 선수 추가 페이지 만들어야되는데 이거 안 잡힘 
-			// => syso로 찍어본 결과, 모든 구단 내 페이지가 두 번씩 찍히고 두번째 찍혔을 때는 page 값이 null 이 됨.,,,^-ㅠ
-			case "players/playerAdd":{
-				dispatcher = req.getRequestDispatcher(defaultURLPath + "playerAdd.jsp");
-				dispatcher.forward(req, resp);
-			};break;
-
 			case "players" :{
 				dispatcher = req.getRequestDispatcher(defaultURLPath + "teamPlayers.jsp");
 				dispatcher.forward(req, resp);
@@ -95,7 +88,7 @@ public class TeamEachController extends HttpServlet{
 			};break;
 
 			default:
-				System.out.println("-- 404 페이지로 이동!! -- ");
+				System.out.println("-- 404 페이지로 이동!!1234 -- ");
 			}
 		}
 

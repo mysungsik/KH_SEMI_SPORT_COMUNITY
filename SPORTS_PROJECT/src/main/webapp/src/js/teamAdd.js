@@ -48,19 +48,6 @@ function secondStep(){
 }
 
 
-function populateConfirmation() {
-    document.getElementById('confirmTeamName').innerText = document.querySelector('input[name="teamName"]').value;
-    document.getElementById('confirmTeamLeader').innerText = document.querySelector('input[name="teamLeader"]').value;
-    document.getElementById('confirmDirector').innerText = document.querySelector('input[name="director"]').value;
-    document.getElementById('confirmPCompany').innerText = document.querySelector('input[name="pCompany"]').value;
-    document.getElementById('confirmTeamRegion').innerText = document.querySelector('input[name="teamRegion"]').value;
-    document.getElementById('confirmTeamDes').innerText = document.querySelector('textarea[name="teamDes"]').value;
-    document.getElementById('confirmLogoDesc').innerText = document.querySelector('textarea[name="logo-desc"]').value;
-    document.getElementById('confirmEmblemDesc').innerText = document.querySelector('textarea[name="emblem-desc"]').value;
-    document.getElementById('confirmMainPageImageDesc').innerText = document.querySelector('textarea[name="main-page-image-desc"]').value;
-    document.getElementById('confirmHeaderImageDesc').innerText = document.querySelector('textarea[name="header-image-desc"]').value;
-}
-
 // 이미지 미리보기 표시
 document.querySelectorAll('.inputImage').forEach(input => {
     input.addEventListener('change', function() {
@@ -91,3 +78,53 @@ document.querySelectorAll('.image-btn button').forEach(button => {
 });
 
 
+// 첫번째 다음으로 버튼 이벤트 추가
+document.getElementById("goNextBtn1").addEventListener("click", function(){
+	const teamName = document.getElementsByName("teamName")[0];
+	const teamLeader = document.getElementsByName("teamLeader")[0];
+	const director = document.getElementsByName("director")[0];
+	const sponsor = document.getElementsByName("sponsor")[0];
+	const teamRegion = document.getElementsByName("teamRegion")[0];
+	
+	if(teamName.value.trim().length == 0){
+		toastPop("warn","구단명을 입력해주세요.");
+		teamName.focus();
+		teamName.value="";
+		return false;
+	}
+	
+	if(teamLeader.value.trim().length == 0){
+		toastPop("warn","단장을 입력해주세요.");
+		teamLeader.focus();
+		teamLeader.value="";
+		return false;
+	}
+	
+	if(director.value.trim().length == 0){
+		toastPop("warn","감독을 입력해주세요.");
+		director.focus();
+		director.value="";
+		return false;
+	}
+	
+	if(sponsor.value.trim().length == 0){
+		toastPop("warn","모기업을 입력해주세요.");
+		sponsor.focus();
+		sponsor.value="";
+		return false;
+	}
+	
+	if(teamRegion.value.trim().length == 0){
+		toastPop("warn","광역 연고권|연고지를 입력해주세요.");
+		teamRegion.focus();
+		teamRegion.value="";
+		return false;
+	}
+	
+	nextStep();
+	
+})
+
+// 두번째 다음으로 버튼 이벤트 추가
+document.getElementById("goNextBtn2").addEventListener("click", function(){
+})

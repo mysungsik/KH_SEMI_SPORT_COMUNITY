@@ -60,35 +60,30 @@ public class TeamApi extends HttpServlet{
 				new Gson().toJson(result, out);
 			}break;
 			
-			case "teamNav" :{
-				
+			case "getTeamNav":{
 				Teams teamNav = service.getTeamNav(team);
-				
-				if(teamNav != null) {
+				if (teamNav != null) {
 					result.put("data", teamNav);
-					result.put("message", "success to get teamList");
+					result.put("message", "success to get teamNav");
 				} else {
-					result.put("message", "failed to get teamList");
+					result.put("message", "failed to get teamNav");
 				}
 				new Gson().toJson(result, out);
 				
 			}break;
 			
-			case "teamMain":{
-				
-				Teams teamMainImg = service.getTeamMainImg(team);
-				
-				System.out.println(teamMainImg);
-				
-				if(teamMainImg != null) {
-					result.put("data", teamMainImg);
-					result.put("message", "success to get teamMainImg");
+			
+			case "getOneTeam" :{
+				Teams oneTeam = service.getOneTeam(team);
+				if (oneTeam != null) {
+					result.put("data", oneTeam);
+					result.put("message", "success to get oneTeam");
 				} else {
-					result.put("message", "failed to get teamMainImg");
+					result.put("message", "failed to get oneTeam");
 				}
 				new Gson().toJson(result, out);
-				
 			}break;
+			
 			
 			default:{
 				result.put("message", "failed to get teamsLists");

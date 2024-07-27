@@ -37,16 +37,6 @@ $(document).ready(function() {
 
 );
 
-function showTeamImg(d){
-	for(let i of d){
-		if(i.imgOriginal1 == undefined){
-			console.log("aaa");
-			`${i.imgOriginal1} = "/public/images/profile/user_img1.jpg"`;
-		}
-		
-	}
-}
-
 function showTeams(data){
 	html = "";
 	

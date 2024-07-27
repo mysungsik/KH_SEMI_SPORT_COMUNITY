@@ -11,8 +11,7 @@ import com.helpgpt.sports.teams.model.vo.Teams;
 public class TeamsService {
 	TeamsDAO dao = new TeamsDAO();
 
-	/** 팀 정보(이름, 색깔, 로고) 출력 service
-	 * @param teamName
+	/** 모튼 팀 정보 출력 service
 	 * @return teamsList
 	 */
 	public List<Teams> getTeamsAll() {
@@ -27,7 +26,7 @@ public class TeamsService {
 		
 	}
 
-	/** 특정 팀 정보(로고, 색깔 이름) 출력 service
+	/** 특정 팀 nav 출력
 	 * @param team
 	 * @return teamNav
 	 */
@@ -38,24 +37,27 @@ public class TeamsService {
 		Teams teamNav = dao.getTeamNav(conn, team);
 		
 		close(conn);
-		
 		return teamNav;
 	}
-
-	/** 특정 팀 정보(로고, 색깔 이름) 출력 service
+	
+	
+	
+	/** 특정 팀 출력
 	 * @param team
-	 * @return teamMain
+	 * @return oneTeam
 	 */
-	public Teams getTeamMainImg(String team) {
-		
+	public Teams getOneTeam(String team) {
 		Connection conn = getConnection();
 		
-		Teams teamMainImg = dao.getTeamMainImg(conn, team);
+		Teams oneTeam = dao.getOneTeam(conn, team);
 		
 		close(conn);
+
 		
-		return teamMainImg;
+		return oneTeam;
 	}
+
+
 	
 	
 }

@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core_1_1" %>
 
 
-<!-- <script src="${contextPath}/src/js/header-teams.js" defer></script>-->
+<script src="${contextPath}/src/js/header-teams.js" defer></script>
 
 <!-- 토스트 -->
 <div class="toast-container position-fixed bottom-0 end-0 p-3">

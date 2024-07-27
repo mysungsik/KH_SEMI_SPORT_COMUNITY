@@ -13,13 +13,16 @@ public class Teams {
     private String videoUrl;
     private String teamColor;
     private String imgOriginal1;
+    private String imgDescription1;
     private String imgOriginal2;
-    private String imgOriginal3;
+    private String imgDescription2;
+
+	private String imgOriginal3;
     private String imgOriginal4;
 
-	
-	public Teams() {}
+    public Teams() {}
 
+    
 
 	public Teams(int teamNo, int stadiumNo, String teamName, String teamLeader, String director, String sponsor,
 			String teamRegion, String teamDescription, char teamStatus, String videoUrl, String teamColor,
@@ -43,6 +46,41 @@ public class Teams {
 	}
 
 
+    public Teams(int teamNo, String teamName, char teamStatus, String teamColor, String imgOriginal1) {
+		super();
+		this.teamNo = teamNo;
+		this.teamName = teamName;
+		this.teamStatus = teamStatus;
+		this.teamColor = teamColor;
+		this.imgOriginal1 = imgOriginal1;
+	}
+
+
+
+	public Teams(int teamNo, int stadiumNo, String teamName, String teamLeader, String director, String sponsor,
+			String teamRegion, String teamDescription, char teamStatus, String videoUrl, String teamColor,
+			String imgOriginal1, String imgDescription1, String imgOriginal2, String imgDescription2,
+			String imgOriginal3, String imgOriginal4) {
+		super();
+		this.teamNo = teamNo;
+		this.stadiumNo = stadiumNo;
+		this.teamName = teamName;
+		this.teamLeader = teamLeader;
+		this.director = director;
+		this.sponsor = sponsor;
+		this.teamRegion = teamRegion;
+		this.teamDescription = teamDescription;
+		this.teamStatus = teamStatus;
+		this.videoUrl = videoUrl;
+		this.teamColor = teamColor;
+		this.imgOriginal1 = imgOriginal1;
+		this.imgDescription1 = imgDescription1;
+		this.imgOriginal2 = imgOriginal2;
+		this.imgDescription2 = imgDescription2;
+		this.imgOriginal3 = imgOriginal3;
+		this.imgOriginal4 = imgOriginal4;
+	}
+	
 	public int getTeamNo() {
 		return teamNo;
 	}
@@ -193,6 +231,23 @@ public class Teams {
 	}
 
 	
+	public String getImgDescription1() {
+		return imgDescription1;
+	}
 
+
+	public void setImgDescription1(String imgDescription1) {
+		this.imgDescription1 = imgDescription1;
+	}
+
+
+	public String getImgDescription2() {
+		return imgDescription2;
+	}
+
+
+	public void setImgDescription2(String imgDescription2) {
+		this.imgDescription2 = imgDescription2;
+	}
 	
 }

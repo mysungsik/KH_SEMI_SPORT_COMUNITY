@@ -4,7 +4,7 @@ $(document).ready(function() {
 });
 
 function getHeader(){
-	let request_url= `${contextPath}/api/teams/teamNav`	
+	let request_url= `${contextPath}/api/teams/getTeamNav`	
 	
 	$.ajax({
 		type: "GET",
@@ -13,11 +13,10 @@ function getHeader(){
 		data : {
 			team
 		},
-		success: function (res) {
+		success: function(res) {
 			let isGetData = res.hasOwnProperty("data");
 			if (isGetData){
-				showTeamNav(res.data);
-				console.log(res.data);
+				showOneTeam(res.data);
 			}
 		},
 		error:function(){
@@ -29,8 +28,8 @@ function getHeader(){
 }
 
 
-function showTeamNav(d){
-
+function showOneTeam(d){
+	
   	let html = 
 	`
 		<li>
@@ -40,7 +39,7 @@ function showTeamNav(d){
 			<a class="fs-20__b ${d.teamColor}" href="${contextPath}/team/${d.teamName}/players">PLAYERS</a>
 		</li>
 		<li>
-			<a href="${contextPath}/team/${d.teamName}"><img class="team-logo" src="${contextPath}/${d.teamImage.imgOriginal}"></a>
+			<a href="${contextPath}/team/${d.teamName}"><img class="team-logo" src= "${contextPath}${d.imgOriginal1}" ></a>
 		</li>
 		<li>
 			<a class="fs-20__b ${d.teamColor}" href="${contextPath}/team/${d.teamName}/schedule">SCHEDULE</a>

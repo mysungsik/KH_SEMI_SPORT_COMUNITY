@@ -52,7 +52,7 @@ const today_schedule = [
 $(document).ready(function() {
 	showTodaySchedule(today_schedule);
 	
-	let request_url=`${contextPath}/api/teams/teamMain`
+	let request_url=`${contextPath}/api/teams/getOneTeam`
 	
 	$.ajax({
 		type: "GET",
@@ -64,7 +64,6 @@ $(document).ready(function() {
 		success: function (res) {
 			let isGetData = res.hasOwnProperty("data");
 			if (isGetData){
-				console.log(res.data);
 				showTeamMainImg(res.data);
 			}
 		},
@@ -91,13 +90,8 @@ $(document).ready(function() {
 
 function showTeamMainImg(d){
 
-	if (d.teamImage.imgOriginal == undefined){
-		console.log("aaa")
-		$(".team-each-image").css("background-image", `url("${contextPath}/public/images/profile/user_img1.jpg")`);
-	}else{
-		$(".team-each-image").css("background-image", `url("${contextPath}/${d.teamImage.imgOriginal}")`);
+	$(".team-each-image").css("background-image", `url("${contextPath}${d.imgOriginal3}")`);
 	
-	}
 }
 
 
