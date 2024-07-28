@@ -11,6 +11,7 @@ import java.util.Properties;
 
 import static com.helpgpt.sports.common.util.JDBCTemplate.*;
 import com.helpgpt.sports.login.model.vo.User;
+import com.helpgpt.sports.report.model.vo.Report;
 
 import oracle.jdbc.OracleTypes;
 
@@ -265,7 +266,7 @@ public class ProfileAdminDAO {
 		int result = 0;
 		
 		try {
-			pstmt = conn.prepareCall(sql);		// Returning 구문 사용하여 결과값 받기
+			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, authorNo);
        
 			result = pstmt.executeUpdate();    
@@ -342,5 +343,65 @@ public class ProfileAdminDAO {
 		}
 		
 		return result;
+	}
+
+	public List<Report> searchReportsData(Connection conn, String category, String serachInput) {
+		List<Report> reportList = new ArrayList<>();
+		
+		String sql = "";
+		
+		try {
+			// 기본 SQL 생성
+			String sqlBefore = p.getProperty("searchReportBefore");
+			
+			// 카테고리에 따라 SQL 추가하여 검색 기능 생성
+			if (category.equals("TARGET_CONTENT")) {
+				sql = sqlBefore + String.format("AND ("
+					+ " (R.REPORT_TYPE_NO = 1 AND C.COMM_CONTENT LIKE '%%%s%%') OR"
+					+ "	(R.REPORT_TYPE_NO = 2 AND RP.REPLY_CONTENT LIKE '%%%s%%') OR"
+					+ "	(R.REPORT_TYPE_NO = 3 AND N.NEWS_CONTENT LIKE '%%%s%%')"
+					+ "	)"
+					+ "	ORDER BY "
+					+ "	R.REPORT_NO DESC", serachInput, serachInput, serachInput);
+			} else {
+				sql = sqlBefore + String.format("AND %s  LIKE '%%%s%%'"
+					+ " ORDER BY "
+					+ " R.REPORT_NO DESC",category, serachInput);
+			}
+			
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			while (rs.next()) {
+				int reportNo = rs.getInt("REPORT_NO");
+				int userNo = rs.getInt("USER_NO");
+				String userName = rs.getString("USER_NAME");
+				String userId = rs.getString("USER_ID");
+				int reportTypeNo = rs.getInt("REPORT_TYPE_NO");
+				String reportTypeName = rs.getString("REPORT_TYPE");
+				int reportTargetNo = rs.getInt("TARGET_NO");
+				String reportTargetTitle  = rs.getString("TARGET_TITLE");
+				String reportTargetContent = rs.getString("TARGET_CONTENT") != null ? rs.getString("TARGET_CONTENT") : "";
+				int violationTypeNo = rs.getInt("VIO_TYPE_NO");
+				String violationTypeName = rs.getString("VIO_TYPE");
+				String reportContent = rs.getString("REPORT_CONTENT");
+				String reportDt = rs.getDate("REPORT_DT").toString();
+				String reportStatus = rs.getString("REPORT_ST");
+				
+				Report report = new Report(reportNo, userNo, userName, userId, 
+						reportTypeNo, reportTypeName, reportTargetNo, reportTargetTitle, reportTargetContent, violationTypeNo, 
+						violationTypeName, reportContent, reportDt, reportStatus);
+				
+				reportList.add(report);
+			}
+		} catch (Exception e) {
+			System.out.println("[ERROR] Failed to Searching Reported Author ");
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+			close(rs);
+		}
+		
+		return reportList;
 	}
 }

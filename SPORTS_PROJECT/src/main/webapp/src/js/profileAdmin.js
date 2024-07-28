@@ -573,9 +573,6 @@ function searchUser(){
 	let category = $("[name='search_category']").val();	// id, eamil, address
 	let searchInput = $("[name='search_input']").val();
 	
-	console.log(category)
-	console.log(searchInput)
-	
 	const request_url = `${contextPath}/api/admin/profile/searchUsersData`;
 	
 	$.ajax({
@@ -601,3 +598,32 @@ function searchUser(){
 	});
 }
 
+// 신고 검색 기능 생성
+function searchReport(){
+	let category = $("[name='search_category']").val();
+	let searchInput = $("[name='search_input']").val();
+	
+	const request_url = `${contextPath}/api/admin/profile/searchReportsData`;
+	
+	$.ajax({
+		type: "GET",
+		url: request_url,
+		data: {
+			category,
+			searchInput
+		},
+		dataType: "json",
+		success: function (res) {
+			let isGetData = res.hasOwnProperty("data")
+			if (isGetData){
+				userData = res.data;
+				paginationActive("report", userData, adminTemplate);
+			}
+        },
+		error : function(request, status, error){
+			console.log(request);
+			console.log(status);
+			console.log(error);
+		}
+	});
+}

@@ -22,26 +22,25 @@
             
             <!-- 메인컨텐츠 -->
             <div class="profile-content">
-            	<!-- 컨텐츠 > 헤더 -->
-              <p class="content-title fs-28__b"> 유저 관리</p>
-              <hr class="hr__gray mt-20">
-              <div class="content-header d-flex">
-                <div class="search-area">
-                  <select class="search-category" name="search_category">
-                    <option value="USER_ID" selected> 아이디 </option>
-                    <option value="USER_EMAIL" > 이메일 </option>
-                    <option value="USER_ADDRESS" > 주소 </option>
-                  </select>
-                  <input type="text" name="search_input">
-                  <button class="search" onclick="searchUser()"> 검색 </button>
-                </div>
-              </div>
-              <!-- 컨텐츠 > 메인 -->
-              <div class="content-main">
-                  <div id="user-data" class="content-elements"></div>
-              </div>
-              <div id="user-pagination"></div>
-              <!-- 컨텐츠 메인 종료 -->
+            	<!-- 컨텐츠 헤더 -->
+              	<p class="content-title fs-28__b"> 유저 관리</p>
+              	<hr class="hr__gray mt-20">
+              	<div class="content-header d-flex">
+	                <div class="search-area">
+                  		<select class="search-category" name="search_category">
+	                    	<option value="USER_ID" selected> 아이디 </option>
+	                    	<option value="USER_EMAIL" > 이메일 </option>
+	                    	<option value="USER_ADDRESS" > 주소 </option>
+                  		</select>
+	                  <input type="text" name="search_input">
+	                  <button class="search" onclick="searchUser()">검색</button>
+	                </div>
+              	</div>
+              	<!-- 컨텐츠 메인 -->
+              	<div class="content-main">
+                  	<div id="user-data" class="content-elements"></div>
+              	</div>
+              	<div id="user-pagination"></div>
             </div>
         </section>
     </main>

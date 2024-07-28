@@ -18,6 +18,7 @@ import javax.servlet.http.HttpSession;
 import com.google.gson.Gson;
 import com.helpgpt.sports.admin.model.service.ProfileAdminService;
 import com.helpgpt.sports.login.model.vo.User;
+import com.helpgpt.sports.report.model.vo.Report;
 
 /**
  * Servlet implementation class ProfileAdminApi
@@ -73,6 +74,21 @@ public class ProfileAdminApi extends HttpServlet {
 						new Gson().toJson(result, out);
 					}else {
 						result.put("message", "failed get searched user info");
+						new Gson().toJson(result, out);
+					}
+				};break;
+				case "searchReportsData": {
+					String category = req.getParameter("category");
+					String serachInput = req.getParameter("searchInput");
+					
+					List<Report> reportList = service.searchReportsData(category, serachInput);
+					
+					if (reportList.size() > 0) {
+						result.put("message", "success search report");
+						result.put("data", reportList);
+						new Gson().toJson(result, out);
+					}else {
+						result.put("message", "failed to search report");
 						new Gson().toJson(result, out);
 					}
 				};break;

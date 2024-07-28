@@ -26,17 +26,16 @@
                 <p class="content-title fs-28__b"> 신고 관리</p>
                 <hr class="hr__gray mt-20">
                 <div class="content-header d-flex">
-                 	<form action="#" class="search-area">
-						<select class="search-category" name="category">
-							<option value="" selected> 카테고리</option>
-							<option value="" > 신고 유형 </option>
-							<option value="" > 위반 유형 </option>
-							<option value="" > 신고 내용 </option>
-							<option value="" > 게시글 제목 </option>
+                 	<div class="search-area">
+						<select class="search-category" name="search_category">
+							<option value="REPORT_TYPE" selected> 신고 유형 </option>
+							<option value="VIO_TYPE" > 위반 유형 </option>
+							<option value="REPORT_CONTENT" > 신고 내용 </option>
+							<option value="TARGET_CONTENT" > 게시글 내용 </option>
 						</select>
-						<input type="text">
-						<button class="search fa-solid fa-magnifying-glass"></button>
-					</form>
+						<input type="text" name="search_input">
+						<button class="search" onclick="searchReport()">검색</button>
+					</div>
                 </div>
                 
                 <!-- 컨텐츠 > 메인 -->

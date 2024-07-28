@@ -3,6 +3,7 @@ package com.helpgpt.sports.admin.model.service;
 import com.helpgpt.sports.admin.model.dao.ProfileAdminDAO;
 import com.helpgpt.sports.login.model.dao.UserDAO;
 import com.helpgpt.sports.login.model.vo.User;
+import com.helpgpt.sports.report.model.vo.Report;
 import com.helpgpt.sports.sign.model.dao.SignDAO;
 
 import static com.helpgpt.sports.common.util.JDBCTemplate.*;
@@ -107,6 +108,15 @@ public class ProfileAdminService {
 		close(conn);
 		
 		return reportResult;
+	}
+
+	public List<Report> searchReportsData(String category, String serachInput) {
+		Connection conn = getConnection();
+		List<Report> reportList = dao.searchReportsData(conn, category, serachInput);
+	
+		close(conn);
+		
+		return reportList;
 	}
 
 }
