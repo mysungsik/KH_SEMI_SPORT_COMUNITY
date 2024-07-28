@@ -189,6 +189,42 @@ public class CommunityService {
 		
 		return boardList;
 	}
+
+	/** 게시글 수정
+	 * @param board
+	 * @return
+	 */
+	public int updateBoard(Community board) {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.updateBoard(conn, board);
+		
+		if(result > 0) commit(conn);
+		else rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
+
+	/** 게시글 이미지 수정
+	 * @param image
+	 * @return
+	 */
+	public int updateImage(CommunityImage image) {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.updateImage(conn, image);
+		
+		if(result > 0) commit(conn);
+		else rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
 	
 	
 

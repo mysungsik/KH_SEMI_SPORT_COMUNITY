@@ -1,7 +1,6 @@
 package com.helpgpt.sports.community.controller;
 
 import java.io.IOException;
-import java.sql.Connection;
 import java.util.Enumeration;
 
 import javax.servlet.ServletException;
@@ -16,15 +15,14 @@ import com.helpgpt.sports.common.util.Util;
 import com.helpgpt.sports.community.model.service.CommunityService;
 import com.helpgpt.sports.community.model.vo.Community;
 import com.helpgpt.sports.community.model.vo.CommunityImage;
-import com.helpgpt.sports.login.model.vo.User;
 import com.oreilly.servlet.MultipartRequest;
 
-@WebServlet("/community/communityPosting/insert")
-public class CommunityInsertServlet extends HttpServlet {
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        
+@WebServlet("/community/communityPosting/saveUpdate")
+public class CommunityUpdateServlet extends HttpServlet {
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
         CommunityService service = new CommunityService();
         
         HttpSession session = req.getSession();
@@ -40,6 +38,7 @@ public class CommunityInsertServlet extends HttpServlet {
         // 나머지 텍스트 형식의 데이터 처리
         String title = mpReq.getParameter("title");
         String content = mpReq.getParameter("content");
+        int boardNo = Integer.parseInt(req.getParameter("no"));
         
         title = Util.XSSHandling(title);
         
@@ -47,29 +46,17 @@ public class CommunityInsertServlet extends HttpServlet {
 		content = Util.newLineHandling(content);
 		
         
-        int teamNo = 0;
-        String teamNoParam = mpReq.getParameter("team");
-        if(teamNoParam != null) {
-        	teamNo = Integer.parseInt(teamNoParam);
-        }
-        
-        // 현재 로그인한 사용자 정보 가져오기
-        User loginUser = (User) session.getAttribute("loginUser");
-        int userNo = loginUser.getUserNo();
         
         // Community 객체 생성 및 데이터 설정
         Community board = new Community();
-        board.setUserNo(userNo);
-        board.setTeamNo(teamNo);
+        board.setBoardNo(boardNo);
         board.setBoardTitle(title);
         board.setBoardContent(content);
         
         // CommunityService를 이용하여 데이터베이스에 게시글 등록
         
-        int result = service.insertBoard(board);
+        int result = service.updateBoard(board);
         
-        // 최신 페이지 번호 조회
-        int boardNo = service.selectCurrentNo();
         
         // 파일 정보 처리
         Enumeration<String> fileNames = mpReq.getFileNames();
@@ -80,10 +67,10 @@ public class CommunityInsertServlet extends HttpServlet {
         	String original = mpReq.getOriginalFileName(name);
         	
         	if (rename != null) {
-        		image.setBoardNo(boardNo);
         		image.setImageOriginal(original);
         		image.setImageRename(rename);
-        		result = service.insertImage(image);
+        		image.setBoardNo(boardNo);
+        		result = service.updateImage(image);
         	}
         	
         }
@@ -93,11 +80,10 @@ public class CommunityInsertServlet extends HttpServlet {
         if (result > 0) {
             path = req.getContextPath() + "/community/communityDetail/" + boardNo;
         } else {
-            path = req.getContextPath() + "/community/communityPosting/write";
+            path = req.getContextPath() + "/community/communityPosting/posting?no=" + boardNo;
         }
         
         resp.sendRedirect(path);
     }
-
 
 }

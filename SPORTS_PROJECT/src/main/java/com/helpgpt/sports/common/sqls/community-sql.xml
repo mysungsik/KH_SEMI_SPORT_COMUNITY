@@ -259,8 +259,9 @@
 		    LEFT JOIN "LIKE" L ON R.REPLY_NO = L.LIKE_TARGET_NO
 		        AND L.LIKE_TYPE_NO = 2 
 		    JOIN COMM_TYPE P ON C.COMM_TYPE = P.TYPE_NO
-		    WHERE C.COMM_ST = 'N'
-		    AND R.REPLY_TYPE_NO = 1 
+		    WHERE C.COMM_ST = 'N'           -- 게시글 상태가 'N'인 것
+		      AND R.REPLY_ST = 'N'          -- 댓글 상태가 'N'인 것 (가정: 댓글 상태가 저장된 컬럼이 R.REPLY_ST일 경우)
+		      AND R.REPLY_TYPE_NO = 1 
 		    GROUP BY 
 		        P.TYPE_NAME,
 		        C.COMM_TITLE,
@@ -273,6 +274,8 @@
 		    REPLY_LIKE_COUNT DESC,   
 		    REPLY_NO DESC            
 		FETCH FIRST 5 ROWS ONLY
+
+
 	</entry>
 	
 	<!-- 게시글 검색 -->
@@ -300,6 +303,23 @@
 		JOIN USER_INFO U USING(USER_NO)
 		JOIN COMM_TYPE P ON P.TYPE_NO = C.COMM_TYPE
 		WHERE C.COMM_ST = 'N'
+	</entry>
+	
+	<!-- 게시글 내용 수정 -->
+	<entry key="updateBoard">
+		UPDATE COMM
+		   SET COMM_TITLE = ?,
+		      COMM_CONTENT = ?,
+		      UPDATE_DT = SYSDATE
+		 WHERE COMM_NO = ?
+	</entry>
+	
+		<!-- 게시글 이미지 수정 -->
+	<entry key="updateImage">
+		UPDATE COMM_IMG
+		   SET IMG_RENAME = ?,
+		      IMG_ORIGINAL = ?
+		 WHERE COMM_NO = ?
 	</entry>
 	
 	

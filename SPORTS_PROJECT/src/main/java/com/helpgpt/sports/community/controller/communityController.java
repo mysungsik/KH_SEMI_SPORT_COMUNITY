@@ -85,6 +85,7 @@ public class communityController extends HttpServlet {
 				Community board = service.selectBoardDetail(boardNo);
 				String image = service.selectBoardImage(boardNo);
 				
+				
 				req.setAttribute("image", image);
 				req.setAttribute("board", board);
 				req.setAttribute("sub", sub);
@@ -92,8 +93,20 @@ public class communityController extends HttpServlet {
 			};break;
 			case "communityPosting": {
 				dispatcher = req.getRequestDispatcher(defaultURLPath + "communityPosting.jsp");
-
 				
+				if(sub.equals("update")) {
+					
+					int boardNo = Integer.parseInt(req.getParameter("no"));
+					
+					Community board = service.selectBoardDetail(boardNo);
+					String image = service.selectBoardImage(boardNo);
+				
+					req.setAttribute("boardNo", boardNo);
+					req.setAttribute("image", image);
+					req.setAttribute("board", board);
+				}
+				
+
 				req.setAttribute("sub", sub);
 				dispatcher.forward(req, resp);
 			};break;

@@ -2,12 +2,16 @@
 // 드롭박스
 $(document).ready(function () {
 	let sub = $("input[name='sub']");
-	let sub_value = sub.val()
+	let sub_value = sub.val();
+
+    let no = $("input[name='no']");
+	let no_value = no.val();
 
 	if (sub_value == "update") {
 		$(".posting-type").html("게시글 수정")
 		$(".category").html("");
 		$(".team").html("");
+        $("#boardForm").attr("action", "saveUpdate?no=" + encodeURIComponent(no_value));
 	}
 
 });
@@ -126,14 +130,12 @@ function writeValidate(){
     const boardContent = document.querySelector("[name='content']");
 
     if(boardTitle.value.trim().length == 0){
-        alert("제목을 입력해주세요.");
         boardTitle.focus();
         boardTitle.value = "";
         return false;
     }
 
     if(boardContent.value.trim().length == 0){
-        alert("내용을 입력해주세요.");
         boardContent.focus();
         boardContent.value = "";
         return false;

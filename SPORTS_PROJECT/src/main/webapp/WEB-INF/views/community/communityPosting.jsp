@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,9 +18,12 @@
 <body>
 	<jsp:include page="/WEB-INF/views/layouts/header.jsp" />
 	<input type="hidden" name="sub" value="${requestScope.sub}">
+	<input type="hidden" name="no" value="${requestScope.boardNo}">
+	
 	<!-- Write Main Content -->
 	<main>
-		<form action="insert" enctype="multipart/form-data" method="post" onsubmit="writeValidate()">
+
+		<form action="insert" enctype="multipart/form-data" method="post" onsubmit="writeValidate()" id="boardForm">
 			<section class="title-area">
 				<div class="title">
 					<span class="fs-28__b posting-type">게시글 작성</span>
@@ -35,12 +39,12 @@
 			</section>
 			<section class="posting-area">
 				<div class="input-title">
-					<input type="text" placeholder="제목" name="title" class="fs-20">
+					<input type="text" placeholder="제목" name="title" class="fs-20" value="${board.boardTitle}">
 				</div>
 				<div class="img-box">
 					<div class="boardImage">
 						<label for="img">
-							<img class="preview">
+								<img class="preview" src="${contextPath}/public/images/community/${image}">
 						</label>
 						<input type="file" class="inputImage" id="img" accept="image/*" name="img">
 						<span class="delete-image">&times;</span>
@@ -48,11 +52,11 @@
 					</div>
 				</div>
 				<div class="input-content">
-					<textarea rows="30" cols="95" name="content" style="resize: none; outline: none; border: none;" placeholder="내용을 입력하세요."></textarea>
+					<textarea rows="30" cols="95" name="content" style="resize: none; outline: none; border: none;" placeholder="내용을 입력하세요.">${board.boardContent}</textarea>
 				</div>
 			</section>
 			<section class="btn-area">
-				<button class="base__blue fc__white br-5">저장</button>
+				<button class="base__blue fc__white br-5 saveBtn">저장</button>
 				<button class="br-5" onclick="goBack()" type="button">취소</button>
 			</section>
 		

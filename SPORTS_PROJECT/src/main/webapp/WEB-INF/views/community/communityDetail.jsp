@@ -18,7 +18,7 @@
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/layouts/header.jsp" />
-	
+
 	<input type="hidden" name="sub" value="${requestScope.sub}">
 	<!-- Write Main Content -->
 	<main class="container">
@@ -51,7 +51,7 @@ ${board.boardContent}
 			<div class="info">
 				<span>조회수 ${board.boardViews}</span>
 				<span> | </span>
-				<span>댓글 <span class="reply-cnt">3</span></span>
+				<span>댓글 <span class="reply-cnt">0</span></span>
 				<span> | </span>
 				<span class="pointer board-like" onclick="modifyLike()">좋아요 <span class="like-cnt">0</span> ♥</span>
 				<span> | </span>
@@ -61,7 +61,7 @@ ${board.boardContent}
 				<button>목록으로</button>
 			</div>
 			<div class="update-area">
-				<span class="pointer" onclick="loginCheck(), location.href='${contextPath}/community/communityPosting/update'">수정</span>
+				<span class="pointer" onclick="loginCheck(), location.href='${contextPath}/community/communityPosting/update?no=${requestScope.sub}'">수정</span>
 				<span> | </span>
 				<span class="delete pointer" data-type="board-delete" onclick="showModal()">삭제</span>
 			</div>

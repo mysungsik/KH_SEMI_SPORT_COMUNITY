@@ -646,6 +646,60 @@ public class CommunityDAO {
 		return boardList;
 	}
 
+	/** 게시글 수정
+	 * @param conn
+	 * @param board
+	 * @return
+	 */
+	public int updateBoard(Connection conn, Community board) {
+		
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("updateBoard");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, board.getBoardTitle());
+			pstmt.setString(2, board.getBoardContent());
+			pstmt.setInt(3, board.getBoardNo());
+			
+			result = pstmt.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	/** 게시글 이미지 수정
+	 * @param conn
+	 * @param image
+	 * @return
+	 */
+	public int updateImage(Connection conn, CommunityImage image) {
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("updateImage");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, image.getImageRename());
+			pstmt.setString(2, image.getImageOriginal());
+			pstmt.setInt(3, image.getBoardNo());
+			
+			result = pstmt.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
 	
 
 	
