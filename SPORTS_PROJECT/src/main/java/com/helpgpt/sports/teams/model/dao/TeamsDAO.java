@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -189,6 +190,62 @@ public class TeamsDAO {
 			close(pstmt);
 		}
 		return oneTeam;
+	}
+
+
+	/** 팀 추가 DAO
+	 * @param addTeamInfo
+	 * @param conn
+	 * @return result
+	 */
+	public int addTeam(Teams addTeamInfo, Connection conn) {
+		String sql = prop.getProperty("addTeam");
+		int result = 0;
+
+		String teamName = addTeamInfo.getTeamName();
+		String teamLeader = addTeamInfo.getTeamLeader();
+		String director = addTeamInfo.getDirector();
+		String sponsor = addTeamInfo.getSponsor();
+		String teamRegion = addTeamInfo.getTeamRegion();
+		String teamDes = addTeamInfo.getTeamDescription();
+		String videoUrl = addTeamInfo.getVideoUrl();
+		String teamColor = addTeamInfo.getTeamColor();
+		
+		String imgOriginal1 = addTeamInfo.getImgOriginal1();
+		String imgDescription1 = addTeamInfo.getImgDescription1();
+		String imgOriginal2 = addTeamInfo.getImgOriginal2();
+		String imgDescription2 = addTeamInfo.getImgDescription2();
+		
+		String imgOriginal3 = addTeamInfo.getImgOriginal3();
+		String imgOriginal4 = addTeamInfo.getImgOriginal4();
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, teamName);
+			pstmt.setString(2, teamLeader);
+			pstmt.setString(3, director);
+			pstmt.setString(4, sponsor);
+			pstmt.setString(5, teamRegion);
+			pstmt.setString(6, teamDes);
+			pstmt.setString(7, videoUrl);
+			pstmt.setString(8, teamColor);
+			
+			pstmt.setString(9, imgOriginal1);
+			pstmt.setString(10, imgDescription1);
+			pstmt.setString(11, imgOriginal2);
+			pstmt.setString(12, imgDescription2);
+			pstmt.setString(13, imgOriginal3);
+			pstmt.setString(14, imgOriginal4);
+			
+			result = pstmt.executeUpdate();
+		}catch(SQLException e) {
+			System.out.println("[Error] Failed to add Team");
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		return result;
 	}
 
 

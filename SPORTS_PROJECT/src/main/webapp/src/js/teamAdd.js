@@ -62,6 +62,14 @@ document.querySelectorAll('.inputImage').forEach(input => {
     });
 });
 
+// 이미지 삭제 X버튼 활성화
+document.getElementsByClassName("delete-image")[0].addEventListener("click", function(){
+	const imgPreview = this.closest('.image-area').querySelector('.preview');
+    imgPreview.setAttribute('src', '');
+    this.closest('.image-area').querySelector('.inputImage').value = '';
+
+})
+
 // 이미지 등록, 삭제 버튼
 // .closest => 가까운 상위조상요소 반환
 document.querySelectorAll('.image-btn button').forEach(button => {
@@ -78,8 +86,11 @@ document.querySelectorAll('.image-btn button').forEach(button => {
 });
 
 
+
+
 // 첫번째 다음으로 버튼 이벤트 추가
 document.getElementById("goNextBtn1").addEventListener("click", function(){
+	console.log("들어가져요?");
 	const teamName = document.getElementsByName("teamName")[0];
 	const teamLeader = document.getElementsByName("teamLeader")[0];
 	const director = document.getElementsByName("director")[0];
@@ -125,6 +136,74 @@ document.getElementById("goNextBtn1").addEventListener("click", function(){
 	
 })
 
-// 두번째 다음으로 버튼 이벤트 추가
-document.getElementById("goNextBtn2").addEventListener("click", function(){
-})
+
+
+function teamAdd(){
+	let teamAddForm = document.teamAddForm
+	
+	if(teamAddForm != undefined){
+		teamAddForm.addEventListener("submit", function(e){
+			
+			let inputTeamName =  teamAddForm.teamName.value;
+			let inputTeamLeader =  teamAddForm.teamLeader.value;
+			let inputDirector =  teamAddForm.director.value;
+			let inputSponsor =  teamAddForm.sponsor.value;
+			let inputTeamRegion =  teamAddForm.teamRegion.value;
+			let inputVideoUrl =  teamAddForm.videoUrl.value;
+			let inputTeamColor =  teamAddForm.teamColor.value;
+			let inputTeamDes =  teamAddForm.teamDes.value;
+			let inputTeamLogo = document.getElementById("logo");
+			let inputLogoDes= teamAddForm.logo-desc.value;
+			let inputTeamEmblem = document.getElementById("emblem");
+			let inputEmblemDes= teamAddForm.emblem-desc.value;
+			let inputTeamMainPageImg = document.getElementById("main-page-image");
+			let inputTeamHeaderImg = document.getElementById("header-image");
+			
+			let request_url = `${contextPath}/api/teams/addTeam`
+			
+			$.ajax({
+				type:"POST",
+				url : request_url,
+				data:{
+					inputTeamName,
+					inputTeamLeader,
+					inputDirector,
+					inputSponsor,
+					inputTeamRegion,
+					inputVideoUrl,
+					inputTeamColor,
+					inputTeamDes,
+					inputTeamLogo,
+					inputLogoDes,
+					inputTeamEmblem,
+					inputEmblemDes,
+					inputTeamMainPageImg,
+					inputTeamHeaderImg
+				},
+				dataType:"json",
+				success: function(res){
+					let isAddedTeam = res.hasOwnProperty("data")
+					
+					if(isAddedTeam){
+						window.location.href=`${contextPath}/teams`
+						console.log("잘 들어가니?? 제발")
+					}else{
+						toastPop("warn", "구단 추가에 실패하였습니다.")
+					}
+				},
+				error: function(request, status, error){
+					console.log(request)
+					console.log(status)
+					console.log(error)
+					
+				}
+		
+			});
+			
+		})
+	}
+}
+
+
+
+

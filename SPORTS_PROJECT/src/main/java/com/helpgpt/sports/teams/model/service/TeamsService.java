@@ -57,6 +57,22 @@ public class TeamsService {
 		return oneTeam;
 	}
 
+	/** 팀 추가 service
+	 * @param addTeamInfo
+	 * @return result
+	 */
+	public int addTeam(Teams addTeamInfo) {
+		Connection conn = getConnection();
+		
+		int result = dao.addTeam(addTeamInfo, conn);
+		
+		if(result > 0)	commit(conn);
+		else 			rollback(conn);
+		
+		close(conn);
+		return result;
+	}
+
 
 	
 	

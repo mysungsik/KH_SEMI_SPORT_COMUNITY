@@ -62,4 +62,9 @@
 		    T.TEAM_ST = 'Y'
 		AND TEAM_NAME  = ?
 	</entry>
+
+	<entry key="addTeam">
+		INSERT INTO TEAMS
+		VALUES(SEQ_TEAM_NO.NEXTVAL, SEQ_STADIUM_NO.NEXTVAL, ?, ?, ?, ?, ?, ?, 'Y', ?, ?, ?, ?, ?, ?, ?, ?)
+	</entry>
 </properties>

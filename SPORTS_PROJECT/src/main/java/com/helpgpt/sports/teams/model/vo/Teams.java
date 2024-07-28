@@ -22,8 +22,37 @@ public class Teams {
 
     public Teams() {}
 
-    
+	public Teams(int teamNo, String teamName, char teamStatus, String teamColor, String imgOriginal1) {
+		super();
+		this.teamNo = teamNo;
+		this.teamName = teamName;
+		this.teamStatus = teamStatus;
+		this.teamColor = teamColor;
+		this.imgOriginal1 = imgOriginal1;
+	}
 
+    // 구단 추가용 객체
+	public Teams(String teamName, String teamLeader, String director, String sponsor, String teamRegion,
+			String teamDescription, String videoUrl, String teamColor, String imgOriginal1, String imgDescription1,
+			String imgOriginal2, String imgDescription2, String imgOriginal3, String imgOriginal4) {
+		super();
+		this.teamName = teamName;
+		this.teamLeader = teamLeader;
+		this.director = director;
+		this.sponsor = sponsor;
+		this.teamRegion = teamRegion;
+		this.teamDescription = teamDescription;
+		this.videoUrl = videoUrl;
+		this.teamColor = teamColor;
+		this.imgOriginal1 = imgOriginal1;
+		this.imgDescription1 = imgDescription1;
+		this.imgOriginal2 = imgOriginal2;
+		this.imgDescription2 = imgDescription2;
+		this.imgOriginal3 = imgOriginal3;
+		this.imgOriginal4 = imgOriginal4;
+	}
+
+	
 	public Teams(int teamNo, int stadiumNo, String teamName, String teamLeader, String director, String sponsor,
 			String teamRegion, String teamDescription, char teamStatus, String videoUrl, String teamColor,
 			String imgOriginal1, String imgOriginal2, String imgOriginal3, String imgOriginal4) {
@@ -45,18 +74,7 @@ public class Teams {
 		this.imgOriginal4 = imgOriginal4;
 	}
 
-
-    public Teams(int teamNo, String teamName, char teamStatus, String teamColor, String imgOriginal1) {
-		super();
-		this.teamNo = teamNo;
-		this.teamName = teamName;
-		this.teamStatus = teamStatus;
-		this.teamColor = teamColor;
-		this.imgOriginal1 = imgOriginal1;
-	}
-
-
-
+	// 전체
 	public Teams(int teamNo, int stadiumNo, String teamName, String teamLeader, String director, String sponsor,
 			String teamRegion, String teamDescription, char teamStatus, String videoUrl, String teamColor,
 			String imgOriginal1, String imgDescription1, String imgOriginal2, String imgDescription2,
@@ -80,7 +98,7 @@ public class Teams {
 		this.imgOriginal3 = imgOriginal3;
 		this.imgOriginal4 = imgOriginal4;
 	}
-	
+
 	public int getTeamNo() {
 		return teamNo;
 	}

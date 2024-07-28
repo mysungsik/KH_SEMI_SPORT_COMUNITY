@@ -84,6 +84,38 @@ public class TeamApi extends HttpServlet{
 				new Gson().toJson(result, out);
 			}break;
 			
+			case "addTeam":{
+				String inputTeamName = req.getParameter("inputTeamName");
+				String inputTeamLeader = req.getParameter("inputTeamLeader");
+				String inputDirector = req.getParameter("inputDirector");
+				String inputSponsor = req.getParameter("inputSponsor");
+				String inputTeamRegion = req.getParameter("inputTeamRegion");
+				String inputTeamDes = req.getParameter("inputTeamDes");
+				String inputVideoUrl = req.getParameter("inputVideoUrl");
+				String inputTeamColor = req.getParameter("inputTeamColor");
+				String inputTeamLogo = req.getParameter("inputTeamLogo");
+				String inputLogoDes = req.getParameter("inputLogoDes");
+				String inputTeamEmblem = req.getParameter("inputTeamEmblem");
+				String inputEmblemDes = req.getParameter("inputEmblemDes");
+				String inputTeamMainPageImg = req.getParameter("inputTeamMainPageImg");
+				String inputTeamHeaderImg = req.getParameter("inputTeamHeaderImg");
+				
+				Teams addTeamInfo = new Teams(inputTeamName, inputTeamLeader, inputDirector, inputSponsor, inputTeamRegion, inputTeamDes, inputVideoUrl, inputTeamColor, inputTeamLogo, inputLogoDes, inputTeamEmblem, inputEmblemDes, inputTeamMainPageImg, inputTeamHeaderImg);
+				
+				int addTeamResult = service.addTeam(addTeamInfo);
+				
+				if(addTeamResult>0) {
+					result.put("message", "구단 추가에 성공했습니다.");
+					result.put("data", "Add Team Success");
+					
+					new Gson().toJson(result, out);
+				}else {
+					result.put("message", "구단 추가에 실패하였습니다.");
+					new Gson().toJson(result, out);
+				}
+				
+				
+			}break;
 			
 			default:{
 				result.put("message", "failed to get teamsLists");

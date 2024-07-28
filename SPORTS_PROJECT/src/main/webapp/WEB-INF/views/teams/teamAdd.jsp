@@ -14,7 +14,7 @@
 <body>
 	<jsp:include page="/WEB-INF/views/layouts/header.jsp" />
 	<div class="container">
-		<form action="insert" method="post" enctype="multipart/form-data" > 
+		<form action="insert" method="post" enctype="multipart/form-data" name="teamAddForm"> 
 			<!-- Step 1  -->
 			<div class="step active" id="step1">
 				<h1>구단 추가</h1>
@@ -49,8 +49,9 @@
 						<input type="text" name="teamLeader" placeholder="단장" required>
 						<input type="text" name="director" placeholder="감독명 " required>
 						<input type="text" name="sponsor" placeholder="모기업" required>
-						<input type="text" name="teamRegion" placeholder="광역 연고권 | 연고지"
-							required>
+						<input type="text" name="teamRegion" placeholder="광역 연고권 | 연고지" required>
+						<input type="text" name="videoUrl" placeholder="구단 영상 URL">
+						<input type="text" name="teamColor" placeholder="구단 색깔">
 						<textarea type="text" name="teamDes" placeholder="구단 설명(500자 이내)"></textarea>
 					</div>
 				</div>
@@ -173,7 +174,7 @@
 								<div class="image-area">
 								
 									<div class="left-image-area">
-										<label for="emblem"> 
+										<label for="main-page-image"> 
 											<img class="preview">
 										</label> 
 										<input type="file" class="inputImage" id="main-page-image" accept="image/*" name="main-page-image"> 
@@ -207,7 +208,7 @@
 								<div class="image-area">
 								
 									<div class="left-image-area">
-										<label for="emblem"> 
+										<label for="header-image"> 
 											<img class="preview">
 										</label> 
 										<input type="file" class="inputImage" id="header-image" accept="image/*" name="header-image"> 
@@ -236,7 +237,7 @@
 					<hr>
 					<div class="btn-area">
 						<button type="button" onclick="prevStep()">이전</button>
-						<button type="button" onclick="nextStep()" id="goNextBtn2">다음</button>
+						<button type="button" id="goNextBtn2" onclick="nextStep()">다음</button>
 					</div>
 				</div>
 			</div>
@@ -275,7 +276,7 @@
 				<hr>
 				<div class="btn-area">
 					<button type="button" onclick="prevStep()">이전</button>
-					<button type="submit" id="addTeamBtn" >완료</button>
+					<button type="button" onclick="teamAdd()" >완료</button>
 				</div>
 			</div>
 
