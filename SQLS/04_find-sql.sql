@@ -80,12 +80,16 @@ JOIN USER_SESSION S ON (U.USER_NO = S.USER_NO)
 WHERE S.SESSION_UUID = '4267a216-6e30-47e7-8856-74dd130acf37';
 
 
--- 4. 뉴스 출력
-SELECT N.*, U.USER_NAME, T.TEAM_NAME 
+-- 4. 뉴스 출력 (WITH THUMBNAIL IMG)
+SELECT N.*, U.USER_NAME, T.TEAM_NAME, (SELECT 
+                                        NI.IMG_RENAME FROM NEWS_IMG NI
+                                        WHERE N.NEWS_NO = NI.NEWS_NO
+                                        AND NI.IMG_LEVEL = 1) AS NEWS_IMG
 FROM NEWS N
 JOIN USER_INFO U ON N.USER_NO = U.USER_NO
-JOIN TEAMS T ON N.TEAM_NO = T.TEAM_NO
-WHERE N.NEWS_NO = 1;
+JOIN TEAMS T ON N.TEAM_NO = T.TEAM_NO;
+
+SELECT * FROM NEWS_IMG;
 
 -- 모든 팀 정보 출력하기
 SELECT 

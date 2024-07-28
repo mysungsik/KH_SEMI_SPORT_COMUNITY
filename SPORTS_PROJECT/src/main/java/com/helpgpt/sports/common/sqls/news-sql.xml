@@ -3,12 +3,24 @@
 <properties>
 	<comment>profiefor admn</comment>
 	
+	<entry key="getNewsAll">
+		SELECT N.*, U.USER_NAME, T.TEAM_NAME, (SELECT 
+		                                        NI.IMG_RENAME FROM NEWS_IMG NI
+		                                        WHERE N.NEWS_NO = NI.NEWS_NO
+		                                        AND NI.IMG_LEVEL = 1) AS NEWS_IMG
+		FROM NEWS N
+		JOIN USER_INFO U ON N.USER_NO = U.USER_NO
+		JOIN TEAMS T ON N.TEAM_NO = T.TEAM_NO
+		WHERE NEWS_ST = 'N'
+	</entry>
+	
 	<entry key="getNewsOne">
 		SELECT N.*, U.USER_NAME, T.TEAM_NAME 
 		FROM NEWS N
 		JOIN USER_INFO U ON N.USER_NO = U.USER_NO
 		JOIN TEAMS T ON N.TEAM_NO = T.TEAM_NO
 		WHERE N.NEWS_NO = ?
+		AND NEWS_ST = 'N'
 	</entry>
 	
 	<entry key="getNewsImgs">

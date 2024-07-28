@@ -1,24 +1,35 @@
-const newsData = [
-	{newsNum:1},
-	{newsNum:2},
-	{newsNum:3},
-	{newsNum:4},
-	{newsNum:5},
-	{newsNum:6},
-	{newsNum:7},
-	{newsNum:8},
-	{newsNum:9},
-	{newsNum:10},
-	{newsNum:11},
-	{newsNum:12},
-	{newsNum:13},
-	{newsNum:14}
-]
+let newsData = []
 
 $(document).ready(function () {
-	paginationActive("news-list", newsData, newsTemplate);
+	getNewsListAll();
 });
 
+// 뉴스 리스트 가져오는 함수
+function getNewsListAll(){
+	let request_url = `${contextPath}/api/news/getNewsAll`
+	$.ajax({
+		type: "GET",
+		url: request_url,
+		dataType: "json",
+		success: function (res) {
+			
+			let isGetList = res.hasOwnProperty("data")
+			if (isGetList){
+				newsData = res.data
+				paginationActive("news-list", newsData, newsListTemplate);
+			}
+			else{
+				toastPop("warn", res.message)
+			}
+		},
+		error : function(request, status, error){
+			toastPop("warn", "변경에 실패하였습니다")
+			console.log(request);
+			console.log(status);
+			console.log(error);
+		}
+	});
+}
 // 페이지네이션 실행 함수
 function paginationActive(id, datas, template){
 	
@@ -48,30 +59,27 @@ function paginationActive(id, datas, template){
 	}
 }
 
-// 관리자용 페이지네이션 템플릿 함수 (User)
-function newsTemplate(data) {
+// 뉴스 리스트 페이지네이션 템플릿 함수 (User)
+function newsListTemplate(data) {
 	let item = ""
 	
 	$.each(data, function(index, d){
 	  	item += 
 	  		`
-		 	<div class="news-card" onclick="location.href='${contextPath}/news/detail/${d.newsNum}'">
-                <img class="news-card-img" src="${contextPath}/public/images/news_example.jpg">
+		 	<div class="news-card box-shadow" onclick="location.href='${contextPath}/news/detail/${d.newsNo}'">
+                <img class="news-card-img" src="${contextPath}${d.newsImgList[0].imgRename}">
                 <div class="news-card-infos">
                     <p class="news-card-title fs-14__b">
-                        플라이강원 2대 주주 세븐브릿지PE, 투자금 전액 날렸다... “개인 고객들 피해” 날렸다... “개인 고객들 피해”
+                        ${d.newsTitle}
                     </p>
                     <div class="news-card-content fc__gray">
-                        <p> 국내 저비용항공사(LCC) 플라이강원에 투자한 사모펀드(PEF) 운용사와 벤처캐피털(VC)이 
-                        투자금을 전액 손실 처리하게 됐다. 플라이강원의 회생계획안에 따라 기존 주주의 주식을 모두 무상 소각해야 하기 때문이다. 
-                         주식을 모두 무상 소각해야 하기 때문이다.
-                          주식을 모두 무상 소각해야 하기 때문이다.</p>
+                        <p> ${d.newsContent} </p>
                     </div>
                     
                     <div class="news-card-footer d-flex">
                         <p> ♡ <span>9999</span></p>
-                        <p> 스포츠 서울 </p>
-                        <p> 기아 타이거즈</p>
+                        <p> ${d.newsPublisher} </p>
+                        <p> ${d.teamName}</p>
                     </div>
                 </div>
             </div>

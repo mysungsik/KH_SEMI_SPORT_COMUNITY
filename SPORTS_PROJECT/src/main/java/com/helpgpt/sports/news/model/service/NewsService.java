@@ -4,6 +4,7 @@ import static com.helpgpt.sports.common.util.JDBCTemplate.close;
 import static com.helpgpt.sports.common.util.JDBCTemplate.getConnection;
 
 import java.sql.Connection;
+import java.util.List;
 
 import com.helpgpt.sports.like.model.dao.LikeDAO;
 import com.helpgpt.sports.news.model.dao.NewsDAO;
@@ -28,5 +29,16 @@ public class NewsService {
 		close(conn);
 		
 		return newsInfo;
+	}
+
+	public List<News> getNewsAll() {
+		Connection conn = getConnection();
+		
+		// 뉴스 가져오기 (썸네일 자동 추가)
+		List<News> newsList = dao.getNewsAll(conn);
+		
+		close(conn);
+		
+		return newsList;
 	}
 }

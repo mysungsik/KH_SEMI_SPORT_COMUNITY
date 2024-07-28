@@ -53,7 +53,7 @@
 			<div class="news-content">
 				<c:if test="${newsInfo.getNewsImg().size() > 0}">
 					<c:forEach items="${newsInfo.getNewsImg()}" var="img">
-						<img src="${img.getImgRename()}">
+						<img src="${contextPath}${img.getImgRename()}">
 					</c:forEach>
 				</c:if>
 		

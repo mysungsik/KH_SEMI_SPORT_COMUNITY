@@ -38,6 +38,26 @@ public class News {
 		this.updateDt = updateDt;
 	}
 	
+	// 썸네일을 가져오는 뉴스
+	public News(int newsNo, int userNo, String userName, int teamNo, String teamName, String newsTitle, String newsPublisher, String newsContent,
+			String createDt, int newsViews, String newsStatus, String updateDt, String newsImg) {
+		this.newsNo = newsNo;
+		this.userNo = userNo;
+		this.userName = userName;
+		this.teamNo = teamNo;
+		this.teamName = teamName;
+		this.newsTitle = newsTitle;
+		this.newsPublisher = newsPublisher;
+		this.newsContent = newsContent;
+		this.createDt = createDt;
+		this.newsViews = newsViews;
+		this.newsStatus = newsStatus;
+		this.updateDt = updateDt;
+		
+		NewsImg img = new NewsImg(newsNo, newsImg, null, 1);
+		addNewsImg(img);
+	}
+	
 	public int getNewsNo() {
 		return newsNo;
 	}
