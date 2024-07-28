@@ -568,10 +568,13 @@ function changeImgDefault(){
 	profileThumbnail.prop("src", `${contextPath}/public/images/profile/user_img1.jpg`)
 }
 
-// 검색 기능 생성
+// 유저 검색 기능 생성
 function searchUser(){
-	let category = $("[name='search-type']").val();	// 작성자, 제목, 내용
-	let searchInput = $("[name='search-input']").val();
+	let category = $("[name='search_category']").val();	// id, eamil, address
+	let searchInput = $("[name='search_input']").val();
+	
+	console.log(category)
+	console.log(searchInput)
 	
 	const request_url = `${contextPath}/api/admin/profile/searchUsersData`;
 	
@@ -586,7 +589,7 @@ function searchUser(){
 		success: function (res) {
 			let isGetData = res.hasOwnProperty("data")
 			if (isGetData){
-				const userData = res.data;
+				userData = res.data;
 				paginationActive("user", userData, adminTemplate);
 			}
         },
@@ -596,10 +599,5 @@ function searchUser(){
 			console.log(error);
 		}
 	});
-	
 }
-
-
-
-
 

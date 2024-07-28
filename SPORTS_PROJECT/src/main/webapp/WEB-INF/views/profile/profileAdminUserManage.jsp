@@ -33,7 +33,7 @@
                     <option value="USER_ADDRESS" > 주소 </option>
                   </select>
                   <input type="text" name="search_input">
-                  <button class="search fa-solid fa-magnifying-glass" onclick="searchUser()"></button>
+                  <button class="search" onclick="searchUser()"> 검색 </button>
                 </div>
               </div>
               <!-- 컨텐츠 > 메인 -->
