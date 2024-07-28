@@ -187,9 +187,16 @@
 	padding: 0 20px;
 }
 
+.profile-info .info-header-container{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
 .profile-info .info-header{
 	margin: 10px 0 ;
 }
+
 
 .profile-info .info-contents{
 	flex-direction: column;

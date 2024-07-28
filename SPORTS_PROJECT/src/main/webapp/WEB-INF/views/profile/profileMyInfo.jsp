@@ -30,7 +30,10 @@
             
                 <!-- 컨텐츠 > 메인 -->
                 <div class="profile-info">
-                	<p class="info-header fs-20__b"> 로그인 정보 </p>
+                	<div class="info-header-container">
+	                	<p class="info-header fs-20__b"> 로그인 정보 </p>	 
+	                	<p class="fc__gray fs-12__b text-hover__black" data-type="pw" onclick="showModal(this)"> 비밀번호 변경<span> > </span></p>          	
+                	</div>
                 	<div class="info-contents card__lblue">
                 		<div>
                 			<p class="fc__blue fs-12__b"> E-mail </p>

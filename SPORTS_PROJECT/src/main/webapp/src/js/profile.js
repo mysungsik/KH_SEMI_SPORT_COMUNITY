@@ -403,7 +403,7 @@ function showModal(el){
 				infoModal.find(".modal-title").html("비밀번호 변경")
 				infoModal.find(".modal-body").html(`
 					<p> 변경할 비밀번호를 입력해주세요 </p>
-					<input type="text" name="profile_${modalType}" value="${data}">`
+					<input type="text" name="profile_${modalType}">`
 				);
 			} break;
 			
@@ -534,6 +534,18 @@ function modalConfirm(){
 		let value = $(`input[name='profile_${modalType}']`).val().trim();
 		
 		switch(modalType){
+			// 비밀번호 정보 수정
+			case "pw" : {
+				if (pwValidate(value)){
+					let data = {
+						"type" : "USER_PW",
+						"inputPw" : value
+					}
+					updateUserPw(data, modalType)
+					infoModal.hide();
+				}
+			};break;
+			
 			// 이메일 정보 수정
 			case "email" : {
 				if (emailValidate(value)){
@@ -650,6 +662,34 @@ function updateUserInfo(userData, modalType){
 		type: "POST",
 		url: request_url,
 		data: userData,	// {type, data}
+		dataType: "json",
+		success: function (res) {
+			let isUpdated = res.hasOwnProperty("data")
+			
+			if (isUpdated){
+				$(`p[data-type="${modalType}"]`).html(userData.data);
+				toastPop("info", "정상적으로 변경되었습니다.")
+			} else{
+				toastPop("warn", "변경에 실패하였습니다")
+			}
+			
+		},
+		error : function(request, status, error){
+			toastPop("warn", "변경에 실패하였습니다")
+			console.log(request);
+			console.log(status);
+			console.log(error);
+		}
+	});
+}
+
+//  유저 패스워드 업데이트 함수
+function updateUserPw(userData, modalType){
+	let request_url = `${contextPath}/api/user/updatePw`
+	$.ajax({
+		type: "POST",
+		url: request_url,
+		data: userData,	// {type, inputPw}
 		dataType: "json",
 		success: function (res) {
 			let isUpdated = res.hasOwnProperty("data")

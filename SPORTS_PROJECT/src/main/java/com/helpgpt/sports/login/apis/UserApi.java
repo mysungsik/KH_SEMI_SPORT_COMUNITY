@@ -149,6 +149,32 @@ public class UserApi extends HttpServlet {
 					new Gson().toJson(result, out);
 				}
 			};break;
+			case "updatePw" : {
+				HttpSession session = req.getSession(false);
+				
+				String inputType = req.getParameter("type");
+				String inputPw = req.getParameter("inputPw");
+				int updateResult = 0;
+				
+				Map<String, Object> result = new HashMap<>();
+				
+				if (session != null) {
+					loginUser = (User)session.getAttribute("loginUser");
+					int userNo = loginUser.getUserNo();
+					
+					updateResult = service.updateUserInfo(userNo, inputType, inputPw);
+				
+					if(updateResult > 0) {
+						updateLoginUserInfo(loginUser, inputType, inputPw);
+						result.put("data", "update Success");
+						result.put("message", "성공적으로 비밀번호가 업데이트되었습니다.");
+					}else {
+						result.put("message", "비밀번호 업데이트에 실패하였습니다.");
+					}
+					
+					new Gson().toJson(result, out);
+				}
+			};break;
 			case "passwordCheck" : {
 				HttpSession session = req.getSession(false);
 				
