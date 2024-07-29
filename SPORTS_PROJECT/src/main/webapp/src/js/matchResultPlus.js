@@ -277,7 +277,7 @@ function generateRandomBatterData(count, players) {
 
 function submitForm() {
     const matchData = {
-        date: $("#matchDate").val(),
+        matchDate: $("#matchDate").val(),
         winTeam: $("#winTeamSelect").val(),
         loseTeam: $("#loseTeamSelect").val(),
         matchPlace: $("#matchPlaceSelect").val(),
@@ -306,7 +306,7 @@ function submitForm() {
         data: JSON.stringify(matchData),
         success: function () {
             toastPop("success", "경기 결과가 성공적으로 등록되었습니다.");
-            window.location.href = `${contextPath}/match/matchResultDetail`;
+            window.location.href = `${contextPath}/match/matchResult`;
         },
         error: function () {
             toastPop("error", "경기 결과 등록에 실패했습니다.");

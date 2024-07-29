@@ -3,11 +3,13 @@ package com.helpgpt.sports.match.model.service;
 import static com.helpgpt.sports.common.util.JDBCTemplate.*;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 
 import com.helpgpt.sports.match.model.dao.MatchDAO;
 import com.helpgpt.sports.match.model.vo.PlayerRanking;
 import com.helpgpt.sports.match.model.vo.TeamRanking;
+import com.helpgpt.sports.match.model.vo.HitterRecord;
 import com.helpgpt.sports.match.model.vo.MatchResult;
 
 public class MatchService {
@@ -85,13 +87,20 @@ public class MatchService {
 
     public boolean saveMatchResult(MatchResult matchResult) {
         Connection conn = getConnection();
-        boolean isSuccess = dao.saveMatchResult(conn, matchResult);
-        if (isSuccess) {
-            commit(conn);
-        } else {
+        boolean isSuccess = false;
+        try {
+            isSuccess = dao.saveMatchResult(conn, matchResult);
+            if (isSuccess) {
+                commit(conn);
+            } else {
+                rollback(conn);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
             rollback(conn);
+        } finally {
+            close(conn);
         }
-        close(conn);
         return isSuccess;
     }
 }

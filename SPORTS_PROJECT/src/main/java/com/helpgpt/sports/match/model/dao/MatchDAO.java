@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -11,7 +12,9 @@ import java.util.Properties;
 import static com.helpgpt.sports.common.util.JDBCTemplate.*;
 import com.helpgpt.sports.match.model.vo.PlayerRanking;
 import com.helpgpt.sports.match.model.vo.TeamRanking;
+import com.helpgpt.sports.match.model.vo.HitterRecord;
 import com.helpgpt.sports.match.model.vo.MatchResult;
+import com.helpgpt.sports.match.model.vo.PitcherRecord;
 
 public class MatchDAO {
     private Properties prop = new Properties();
@@ -224,40 +227,84 @@ public class MatchDAO {
         return teams;
     }
 
-    public boolean saveMatchResult(Connection conn, MatchResult matchResult) {
-        boolean isSuccess = false;
+    public boolean saveMatchResult(Connection conn, MatchResult matchResult) throws SQLException {
         String sql = prop.getProperty("saveMatchResult");
-        
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, matchResult.getDate());
-            pstmt.setString(2, matchResult.getWinTeam());
-            pstmt.setString(3, matchResult.getLoseTeam());
-            pstmt.setString(4, matchResult.getMatchPlace());
+            pstmt.setString(1, matchResult.getWinTeam());
+            pstmt.setString(2, matchResult.getLoseTeam());
+            pstmt.setString(3, matchResult.getMatchPlace());
+            pstmt.setString(4, matchResult.getWinPitcher());
             pstmt.setInt(5, matchResult.getWinnerScore());
-            pstmt.setInt(6, matchResult.getLoserScore());
-            pstmt.setString(7, matchResult.getWinPitcher());
+            pstmt.setString(6, matchResult.getMatchDate());
+            pstmt.setString(7, matchResult.getMatchPlace());
             pstmt.setString(8, matchResult.getLosePitcher());
-            pstmt.setInt(9, matchResult.getHitsWinner());
-            pstmt.setInt(10, matchResult.getHrWinner());
-            pstmt.setInt(11, matchResult.getSoWinner());
-            pstmt.setInt(12, matchResult.getSbWinner());
-            pstmt.setInt(13, matchResult.getDpWinner());
-            pstmt.setInt(14, matchResult.getErWinner());
-            pstmt.setInt(15, matchResult.getHitsLoser());
-            pstmt.setInt(16, matchResult.getHrLoser());
-            pstmt.setInt(17, matchResult.getSoLoser());
-            pstmt.setInt(18, matchResult.getSbLoser());
-            pstmt.setInt(19, matchResult.getDpLoser());
-            pstmt.setInt(20, matchResult.getErLoser());
-            
-            int result = pstmt.executeUpdate();
-            if (result > 0) {
-                isSuccess = true;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+            pstmt.setInt(9, matchResult.getLoserScore());
+            pstmt.setString(10, matchResult.getMatchDate());
+            pstmt.setInt(11, matchResult.getHitsWinner());
+            pstmt.setInt(12, matchResult.getHrWinner());
+            pstmt.setInt(13, matchResult.getSoWinner());
+            pstmt.setInt(14, matchResult.getSbWinner());
+            pstmt.setInt(15, matchResult.getDpWinner());
+            pstmt.setInt(16, matchResult.getErWinner());
+            pstmt.setInt(17, matchResult.getHitsLoser());
+            pstmt.setInt(18, matchResult.getHrLoser());
+            pstmt.setInt(19, matchResult.getSoLoser());
+            pstmt.setInt(20, matchResult.getSbLoser());
+            pstmt.setInt(21, matchResult.getDpLoser());
+            pstmt.setInt(22, matchResult.getErLoser());
+            pstmt.executeUpdate();
         }
-        
-        return isSuccess;
+
+        savePitcherRecords(conn, matchResult.getWinPitcherRecords(), matchResult.getWinTeam(), "saveWinPitcherRecord");
+        savePitcherRecords(conn, matchResult.getLosePitcherRecords(), matchResult.getLoseTeam(), "saveLosePitcherRecord");
+        saveHitterRecords(conn, matchResult.getWinHitterRecords(), matchResult.getWinTeam(), "saveWinHitterRecord");
+        saveHitterRecords(conn, matchResult.getLoseHitterRecords(), matchResult.getLoseTeam(), "saveLoseHitterRecord");
+
+        return true;
     }
+
+    private void savePitcherRecords(Connection conn, List<PitcherRecord> pitcherRecords, String teamName, String sqlKey) throws SQLException {
+        String sql = prop.getProperty(sqlKey);
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            for (PitcherRecord record : pitcherRecords) {
+                pstmt.setString(1, record.getPlayerName());
+                pstmt.setString(2, teamName);
+                pstmt.setInt(3, record.getInning());
+                pstmt.setInt(4, record.getPitchCount());
+                pstmt.setInt(5, record.getHitted());
+                pstmt.setInt(6, record.getHomeruned());
+                pstmt.setInt(7, record.getStrikeOuted());
+                pstmt.setInt(8, record.getDeadBall());
+                pstmt.setInt(9, record.getLossScore());
+                pstmt.setInt(10, record.getSelfLose());
+                pstmt.setDouble(11, record.getEra());
+                pstmt.setDouble(12, record.getWhip());
+                pstmt.addBatch();
+            }
+            pstmt.executeUpdate();
+        }
+    }
+
+    private void saveHitterRecords(Connection conn, List<HitterRecord> hitterRecords, String teamName, String sqlKey) throws SQLException {
+        String sql = prop.getProperty(sqlKey);
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            for (HitterRecord record : hitterRecords) {
+                pstmt.setString(1, record.getPlayerName());
+                pstmt.setString(2, teamName);
+                pstmt.setInt(3, record.getAtBat());
+                pstmt.setInt(4, record.getHit());
+                pstmt.setInt(5, record.getDoubleHit());
+                pstmt.setInt(6, record.getTripleHit());
+                pstmt.setInt(7, record.getHomeRun());
+                pstmt.setInt(8, record.getRun());
+                pstmt.setInt(9, record.getRbi());
+                pstmt.setInt(10, record.getStrikeOut());
+                pstmt.setInt(11, record.getWalk());
+                pstmt.setDouble(12, record.getAvg());
+                pstmt.addBatch();
+            }
+            pstmt.executeUpdate();
+        }
+    }
+
 }

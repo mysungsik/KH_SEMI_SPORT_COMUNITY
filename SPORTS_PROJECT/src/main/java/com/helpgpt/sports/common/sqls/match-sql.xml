@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
-    <comment>Match 관련 SQL 쿼리 모음</comment>
+	<comment>Match 관련 SQL 쿼리 모음</comment>
 
-    <!-- 팀 순위 (메인페이지) -->
-    <!-- matchMain에서 사용할 팀 순위를 가져오는 쿼리 -->
-    <entry key="getTeamRankingsForMain"><![CDATA[
+	<!-- 팀 순위 (메인페이지) -->
+	<!-- matchMain에서 사용할 팀 순위를 가져오는 쿼리 -->
+	<entry key="getTeamRankingsForMain"><![CDATA[
         SELECT T.TEAM_NAME, COUNT(M.MATCH_NO) AS MATCH_COUNT, 
                SUM(CASE WHEN M.SCORE > O.SCORE THEN 1 ELSE 0 END) AS WIN, 
                SUM(CASE WHEN M.SCORE < O.SCORE THEN 1 ELSE 0 END) AS LOSE,
@@ -17,8 +17,8 @@
         ORDER BY WIN DESC
     ]]></entry>
 
-    <!-- matchTeamRanking에서 사용할 팀 순위를 가져오는 쿼리 -->
-    <entry key="getTeamRankingsForTeamRanking"><![CDATA[
+	<!-- matchTeamRanking에서 사용할 팀 순위를 가져오는 쿼리 -->
+	<entry key="getTeamRankingsForTeamRanking"><![CDATA[
         SELECT T.TEAM_NAME, 
                COUNT(M.MATCH_NO) AS MATCH_COUNT, 
                SUM(CASE WHEN M.SCORE > O.SCORE THEN 1 ELSE 0 END) AS WIN, 
@@ -46,8 +46,8 @@
         ORDER BY WIN DESC
     ]]></entry>
 
-    <!-- 선수 순위를 가져오는 쿼리 (승리 기준) -->
-    <entry key="getPlayerRankingWin"><![CDATA[
+	<!-- 선수 순위를 가져오는 쿼리 (승리 기준) -->
+	<entry key="getPlayerRankingWin"><![CDATA[
         SELECT TEAM_NAME, PLAYER_NAME, WIN_COUNT
         FROM (
             SELECT T.TEAM_NAME, P.PLAYER_NAME,
@@ -63,8 +63,8 @@
         WHERE ROWNUM <= 5
     ]]></entry>
 
-    <!-- 선수 순위를 가져오는 쿼리 (ERA 기준) -->
-    <entry key="getPlayerRankingERA"><![CDATA[
+	<!-- 선수 순위를 가져오는 쿼리 (ERA 기준) -->
+	<entry key="getPlayerRankingERA"><![CDATA[
         SELECT P.PLAYER_NAME, T.TEAM_NAME, PIT.ERA
         FROM PITCHER_RECORD PIT
         JOIN PLAYER P ON PIT.PLAYER_NO = P.PLAYER_NO
@@ -73,8 +73,8 @@
         FETCH FIRST 5 ROWS ONLY
     ]]></entry>
 
-    <!-- 선수 순위 가져오는 쿼리 (탈삼진) -->
-    <entry key="getPlayerRankingStrikeouts"><![CDATA[
+	<!-- 선수 순위 가져오는 쿼리 (탈삼진) -->
+	<entry key="getPlayerRankingStrikeouts"><![CDATA[
         SELECT P.PLAYER_NAME, T.TEAM_NAME, P.SKTOUTED AS STRIKEOUTS
         FROM PITCHER_RECORD P
         JOIN PLAYER PL ON P.PLAYER_NO = PL.PLAYER_NO
@@ -83,8 +83,8 @@
         FETCH FIRST 5 ROWS ONLY
     ]]></entry>
 
-    <!-- 선수 순위를 가져오는 쿼리 (안타) -->
-    <entry key="getPlayerRankingHits"><![CDATA[
+	<!-- 선수 순위를 가져오는 쿼리 (안타) -->
+	<entry key="getPlayerRankingHits"><![CDATA[
         SELECT P.PLAYER_NAME, T.TEAM_NAME, H.HIT
         FROM HITTER_RECORD H
         JOIN PLAYER P ON H.PLAYER_NO = P.PLAYER_NO
@@ -93,8 +93,8 @@
         FETCH FIRST 5 ROWS ONLY
     ]]></entry>
 
-    <!-- 선수 순위를 가져오는 쿼리 (WHIP) -->
-    <entry key="getPlayerRankingWHIP"><![CDATA[
+	<!-- 선수 순위를 가져오는 쿼리 (WHIP) -->
+	<entry key="getPlayerRankingWHIP"><![CDATA[
         SELECT P.PLAYER_NAME, T.TEAM_NAME, P.WHIP
         FROM PITCHER_RECORD P
         JOIN PLAYER PL ON P.PLAYER_NO = PL.PLAYER_NO
@@ -103,29 +103,101 @@
         FETCH FIRST 5 ROWS ONLY
     ]]></entry>
 
-    <!-- 특정 팀의 선수 이름을 가져오는 쿼리 -->
-    <entry key="getPlayersByTeam"><![CDATA[
+	<!-- 특정 팀의 선수 이름을 가져오는 쿼리 -->
+	<entry key="getPlayersByTeam"><![CDATA[
         SELECT PLAYER_NAME
         FROM PLAYER
         WHERE TEAM_NO = (SELECT TEAM_NO FROM TEAMS WHERE TEAM_NAME = ?)
     ]]></entry>
 
-    <!-- 특정 팀의 경기장 이름을 가져오는 쿼리 -->
-    <entry key="getStadiumsByTeam"><![CDATA[
+	<!-- 특정 팀의 경기장 이름을 가져오는 쿼리 -->
+	<entry key="getStadiumsByTeam"><![CDATA[
         SELECT STADIUM_NAME
         FROM STADIUM
         WHERE STADIUM_NO = (SELECT STADIUM_NO FROM TEAMS WHERE TEAM_NAME = ?)
     ]]></entry>
 
-    <!-- 경기 결과를 저장하는 쿼리 -->
-    <entry key="saveMatchResult"><![CDATA[
-        INSERT INTO MATCH_RESULT (DATE, WIN_TEAM, LOSE_TEAM, MATCH_PLACE, WINNER_SCORE, LOSER_SCORE, WIN_PITCHER, LOSE_PITCHER, 
-        HITS_WINNER, HR_WINNER, SO_WINNER, SB_WINNER, DP_WINNER, ER_WINNER, HITS_LOSER, HR_LOSER, SO_LOSER, SB_LOSER, DP_LOSER, ER_LOSER) 
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    ]]></entry>
+	<entry key="saveMatchResult"><![CDATA[
+        DECLARE
+        match_no NUMBER
+        win_team_no NUMBER
+        lose_team_no NUMBER
+    BEGIN
+        -- MATCH 테이블에 경기 정보 저장
+        SELECT SEQ_MATCH_NO.NEXTVAL INTO match_no FROM DUAL
+        SELECT TEAM_NO INTO win_team_no FROM TEAMS WHERE TEAM_NAME = ?
+        SELECT TEAM_NO INTO lose_team_no FROM TEAMS WHERE TEAM_NAME = ?
+        
+        -- 승리팀 경기 정보 저장
+        INSERT INTO MATCH (MATCH_NO, TEAM_NO, STADIUM_NO, PLAYER_NO, SCORE, MATCH_DT, GROUND)
+        VALUES (match_no, win_team_no, (SELECT STADIUM_NO FROM STADIUM WHERE STADIUM_NAME = ?), 
+                (SELECT PLAYER_NO FROM PLAYER WHERE PLAYER_NAME = ? AND TEAM_NO = win_team_no), ?, TO_DATE(?, 'YYYY-MM-DD'), 'H')
+        
+        -- 패배팀 경기 정보 저장
+        INSERT INTO MATCH (MATCH_NO, TEAM_NO, STADIUM_NO, PLAYER_NO, SCORE, MATCH_DT, GROUND)
+        VALUES (match_no, lose_team_no, (SELECT STADIUM_NO FROM STADIUM WHERE STADIUM_NAME = ?), 
+                (SELECT PLAYER_NO FROM PLAYER WHERE PLAYER_NAME = ? AND TEAM_NO = lose_team_no), ?, TO_DATE(?, 'YYYY-MM-DD'), 'A')
+        
+        -- MATCH_SCORE 테이블에 승리팀 스코어 저장
+        INSERT INTO MATCH_SCORE (SCORE_NO, MATCH_NO, TEAM_NO, HIT, HOMERUN, STKOUT, STOLEBASE, DOUBLEPLAY, ERROR_SCORE)
+        VALUES (SEQ_MATCH_SCORE_NO.NEXTVAL, match_no, win_team_no, ?, ?, ?, ?, ?, ?)
+        
+        -- MATCH_SCORE 테이블에 패배팀 스코어 저장
+        INSERT INTO MATCH_SCORE (SCORE_NO, MATCH_NO, TEAM_NO, HIT, HOMERUN, STKOUT, STOLEBASE, DOUBLEPLAY, ERROR_SCORE)
+        VALUES (SEQ_MATCH_SCORE_NO.NEXTVAL, match_no, lose_team_no, ?, ?, ?, ?, ?, ?)
+    END
+]]></entry>
 
-    <!-- 팀 이름을 가져오는 쿼리 -->
-    <entry key="getTeams"><![CDATA[
+	<!-- 승리팀 투수 기록 저장 -->
+	<entry key="saveWinPitcherRecord"><![CDATA[
+    INSERT INTO PITCHER_RECORD (SCORE_NO, PLAYER_NO, PLAYER_NAME, INNING, PITCH_COUNT, HITTED, HOMERUNED, SKTOUTED, DEADBALL, LOSS_SCORE, SELF_LOSE, ERA, WHIP)
+    VALUES (SEQ_MATCH_SCORE_NO.CURRVAL, (SELECT PLAYER_NO FROM PLAYER WHERE PLAYER_NAME = ? AND TEAM_NO = ?), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+]]></entry>
+
+	<!-- 패배팀 투수 기록 저장 -->
+	<entry key="saveLosePitcherRecord"><![CDATA[
+    INSERT INTO PITCHER_RECORD (SCORE_NO, PLAYER_NO, PLAYER_NAME, INNING, PITCH_COUNT, HITTED, HOMERUNED, SKTOUTED, DEADBALL, LOSS_SCORE, SELF_LOSE, ERA, WHIP)
+    VALUES (SEQ_MATCH_SCORE_NO.CURRVAL, (SELECT PLAYER_NO FROM PLAYER WHERE PLAYER_NAME = ? AND TEAM_NO = ?), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+]]></entry>
+
+	<!-- 승리팀 타자 기록 저장 -->
+	<entry key="saveWinHitterRecord"><![CDATA[
+    INSERT INTO HITTER_RECORD (SCORE_NO, PLAYER_NO, PLAYER_NAME, HIT_COUNT, HIT, HOMERUN, RBI, STKOUT, DEADBALL, BAT_AVG)
+    VALUES (SEQ_MATCH_SCORE_NO.CURRVAL, (SELECT PLAYER_NO FROM PLAYER WHERE PLAYER_NAME = ? AND TEAM_NO = ?), ?, ?, ?, ?, ?, ?, ?, ?);
+]]></entry>
+
+	<!-- 패배팀 타자 기록 저장 -->
+	<entry key="saveLoseHitterRecord"><![CDATA[
+    INSERT INTO HITTER_RECORD (SCORE_NO, PLAYER_NO, PLAYER_NAME, HIT_COUNT, HIT, HOMERUN, RBI, STKOUT, DEADBALL, BAT_AVG)
+    VALUES (SEQ_MATCH_SCORE_NO.CURRVAL, (SELECT PLAYER_NO FROM PLAYER WHERE PLAYER_NAME = ? AND TEAM_NO = ?), ?, ?, ?, ?, ?, ?, ?, ?);
+]]></entry>
+	<!-- 팀 이름 목록을 가져오는 쿼리 -->
+	<entry key="getTeams"><![CDATA[
         SELECT TEAM_NAME FROM TEAMS
     ]]></entry>
+
+	<entry key="getMatchScheduleByDate"><![CDATA[
+        SELECT M.MATCH_DT AS MATCH_TIME,
+               S.STADIUM_NAME,
+               T1.TEAM_NAME AS TEAM1,
+               TI1.IMG_RENAME AS TEAM_IMG1,
+               MS1.SCORE AS SCORE1,
+               DECODE(MS1.SCORE, 0, '예정', '종료') AS STATUS,
+               MS2.SCORE AS SCORE2,
+               TI2.IMG_RENAME AS TEAM_IMG2,
+               T2.TEAM_NAME AS TEAM2,
+               'KBO' AS LEAGUE,
+               '/SPORTS_PROJECT/match/matchResult' AS DETAIL,
+               TO_CHAR(M.MATCH_DT, 'DY') AS DAY_OF_WEEK
+        FROM MATCH M
+        JOIN STADIUM S ON M.STADIUM_NO = S.STADIUM_NO
+        JOIN TEAMS T1 ON M.TEAM_NO = T1.TEAM_NO
+        JOIN TEAM_IMG TI1 ON T1.TEAM_NO = TI1.TEAM_NO AND TI1.IMG_LEVEL = 1
+        JOIN MATCH_SCORE MS1 ON M.MATCH_NO = MS1.MATCH_NO AND MS1.TEAM_NO = T1.TEAM_NO
+        JOIN MATCH_SCORE MS2 ON M.MATCH_NO = MS2.MATCH_NO AND MS2.TEAM_NO != T1.TEAM_NO
+        JOIN TEAMS T2 ON MS2.TEAM_NO = T2.TEAM_NO
+        JOIN TEAM_IMG TI2 ON T2.TEAM_NO = TI2.TEAM_NO AND TI2.IMG_LEVEL = 1
+        WHERE TO_CHAR(M.MATCH_DT, 'DY') = ?
+    ]]></entry>
+
 </properties>

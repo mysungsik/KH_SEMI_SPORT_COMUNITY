@@ -26,7 +26,6 @@ public class MatchApi extends HttpServlet {
         String path = req.getPathInfo().substring(1);
 
         switch (path) {
-        // matchMain 페이지
             case "teamRankingsForMain":
                 List<TeamRanking> teamRankingsForMain = matchService.getTeamRankingsForMain();
                 gson.toJson(teamRankingsForMain, out);
@@ -51,14 +50,10 @@ public class MatchApi extends HttpServlet {
                 List<PlayerRanking> playerRankingWHIP = matchService.getPlayerRankingWHIP();
                 gson.toJson(playerRankingWHIP, out);
                 break;
-                
-            // matchTeamRanking 페이지
             case "teamRankingsForTeamRanking":
                 List<TeamRanking> teamRankingsForTeamRanking = matchService.getTeamRankingsForTeamRanking();
                 gson.toJson(teamRankingsForTeamRanking, out);
                 break;
-            
-            // 특정 팀의 선수와 경기장 정보를 가져오는 요청
             case "getPlayersByTeam":
                 String teamName = req.getParameter("teamName");
                 List<String> players = matchService.getPlayersByTeam(teamName);
