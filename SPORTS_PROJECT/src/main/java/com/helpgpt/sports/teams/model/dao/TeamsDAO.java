@@ -79,54 +79,6 @@ public class TeamsDAO {
 		return teamsList;
 	}
 
-
-	/** 특정 팀 nav 출력
-	 * @param conn
-	 * @param team
-	 * @return teamNav
-	 */
-	public Teams getTeamNav(Connection conn, String team) {
-		
-		Teams teamNav = null;
-		
-		try {
-			String sql = prop.getProperty("getTeamNav");
-			
-			pstmt = conn.prepareStatement(sql);
-			
-			pstmt.setString(1, team);
-			
-			rs=pstmt.executeQuery();
-			
-			if(rs.next()) {
-				
-				teamNav = new Teams();
-				
-				teamNav.setTeamNo(rs.getInt("TEAM_NO"));
-				teamNav.setTeamName(rs.getString("TEAM_NAME"));
-				teamNav.setTeamStatus(rs.getString("TEAM_ST").charAt(0));
-				teamNav.setTeamColor(rs.getString("TEAM_COLOR"));
-				String imgOriginal1 = rs.getString("IMG_ORIGINAL1");
-				if(imgOriginal1 == null ) {
-					imgOriginal1="/public/images/profile/user_img1.jpg";
-				}
-
-				teamNav.setImgOriginal1(imgOriginal1);
-				
-			}
-			
-		} catch (Exception e) {
-			System.out.println("[ERROR] FAILED to get TeamNav");
-			e.printStackTrace();
-		}finally {
-			close(rs);
-			close(pstmt);
-		}
-		
-		return teamNav;
-	}
-
-
 	
 	/** 특정 팀 정보 출력
 	 * @param conn
@@ -134,7 +86,6 @@ public class TeamsDAO {
 	 * @return oneTeam
 	 */
 	public Teams getOneTeam(Connection conn, String team) {
-		System.out.println(team);
 		Teams oneTeam = null;
 		try {
 			String sql = prop.getProperty("getOneTeam");

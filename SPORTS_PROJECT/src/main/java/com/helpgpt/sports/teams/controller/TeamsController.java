@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.helpgpt.sports.teams.model.service.TeamsService;
 import com.helpgpt.sports.teams.model.vo.Teams;
 
 
@@ -46,15 +47,28 @@ public class TeamsController extends HttpServlet {
 		if(team.equals("")) {	// team이 없는 경우
 			dispatcher = req.getRequestDispatcher(defaultURLPath + "teams.jsp");
 			dispatcher.forward(req, resp);
-			
 			return;
-			
 		}else {
 			if(teamList.contains(team)){	// teamList에 team이 포함되어있는 경우
 				req.setAttribute("team", team);
+				
 				if(team.equals("teamAdd")){
 					dispatcher=req.getRequestDispatcher(defaultURLPath + "teamAdd.jsp");
 				}else{
+					TeamsService service = new TeamsService();
+					Teams oneTeam = null;
+					try {
+						// Team
+						oneTeam = service.getOneTeam(team);
+						
+					}catch(Exception e) {
+						e.printStackTrace();
+					}
+					
+					if(oneTeam!= null ) {
+						req.setAttribute("oneTeam", oneTeam);
+					}
+					
 					dispatcher = req.getRequestDispatcher(defaultURLPath + "teamsEachMain.jsp");
 				}
 				
@@ -62,7 +76,6 @@ public class TeamsController extends HttpServlet {
 				return;
 			}else {
 				System.out.println("======================================");
-				System.out.println(team);
 				System.out.println("--404 페이지로 이동--");
 			}
 			

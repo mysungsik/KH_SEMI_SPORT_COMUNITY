@@ -5,10 +5,14 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<jsp:include page="/WEB-INF/views/layouts/header-teams-dependencies.jsp"/>
+	
+	<link rel="stylesheet" href="${contextPath}/src/css/teamsEachHeader.css">
+    <jsp:include page="/WEB-INF/views/layouts/header-teams-dependencies.jsp"/>
+    <jsp:include page="/WEB-INF/views/layouts/header-dependencies.jsp"/>
+
+	
 	<link rel="stylesheet" href="${contextPath}/src/css/teamSchedule.css">
 	<title>schedule</title>
-	<script src="https://kit.fontawesome.com/cb5f1fee4d.js" crossorigin="anonymous"></script>
 
 	<!-- jQuery -->
 	<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.14/index.global.min.js'></script>

@@ -28,21 +28,6 @@
 		    T.TEAM_ST = 'Y'
 	</entry>
 	
-	<entry key="getTeamNav">
-		SELECT 
-		    T.TEAM_NO, 
-		    T.TEAM_NAME, 
-		    T.TEAM_ST, 
-		    T.TEAM_COLOR, 
-		    TI1.IMG_ORIGINAL AS IMG_ORIGINAL1
-		FROM 
-		    TEAMS T
-		LEFT JOIN TEAM_IMG TI1 ON T.TEAM_NO = TI1.TEAM_NO AND TI1.IMG_LEVEL = 1
-		WHERE 
-		    T.TEAM_ST = 'Y'
-		AND TEAM_NAME  = ?
-	</entry>
-	
 	<entry key="getOneTeam">
 		SELECT
 		    T.*,
@@ -65,6 +50,6 @@
 
 	<entry key="addTeam">
 		INSERT INTO TEAMS
-		VALUES(SEQ_TEAM_NO.NEXTVAL, SEQ_STADIUM_NO.NEXTVAL, ?, ?, ?, ?, ?, ?, 'Y', ?, ?, ?, ?, ?, ?, ?, ?)
+		VALUES(SEQ_TEAM_NO.NEXTVAL, SEQ_STADIUM_NO.NEXTVAL, ?, ?, ?, ?, ?, ?, 'Y', DEFAULT, ?);
 	</entry>
 </properties>

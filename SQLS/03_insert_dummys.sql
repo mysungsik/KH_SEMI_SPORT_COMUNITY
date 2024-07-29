@@ -563,7 +563,7 @@ VALUES(1, '/public/images/teams/kia.png', 'kia-logo.png', 1, 'KIA타이거즈의
 야구장의 홈베이스와 Tiger nose 형태를 결합하여 프레임화한 형태의 로고는 승리를 나타내는 V모티프를 통해 전통 명문구단의 대표성과 위상을 표현하고 다이아몬드의 강인한 속성을 은유적으로 표현하였다.');
 
 INSERT INTO TEAM_IMG 
-VALUES(1, '/public/images/teams/kiCi.png', 'kia-ci.png', 2, 'KIA타이거즈의 CI는 워드마크와 함께 구단명칭을 표현한 것으로 각종 매체에 적용되어 대외적인 커뮤니케이션을 보다 친밀감 있게 연결해 주는 역할을 한다.
+VALUES(1, '/public/images/teams/kiaCi.png', 'kia-ci.png', 2, 'KIA타이거즈의 CI는 워드마크와 함께 구단명칭을 표현한 것으로 각종 매체에 적용되어 대외적인 커뮤니케이션을 보다 친밀감 있게 연결해 주는 역할을 한다.
 야구장의 홈베이스와 Tiger nose 형태를 결합하여 프레임화한 형태의 로고는 승리를 나타내는 V모티프를 통해 전통 명문구단의 대표성과 위상을 표현하고 다이아몬드의 강인한 속성을 은유적으로 표현하였다.');
 
 INSERT INTO TEAM_IMG 

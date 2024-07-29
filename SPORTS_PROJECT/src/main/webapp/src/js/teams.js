@@ -29,6 +29,7 @@ $(document).ready(function() {
 				let isGetData = res.hasOwnProperty("data");
 				if (isGetData){
 					showTeams(res.data);
+					
 				}
 			}
 			
@@ -51,7 +52,7 @@ function showTeams(data){
 			<a href="${contextPath}/teams/${d.teamName}" >
 			    <div class="teams-card br-10 mb-10 mr-20 ${d.teamColor}">
 			    	<div class="team-logo-img">
-			            	<img src= ${imgSrc} class="team-logo" alt="구단사진">
+			            	<img src="${imgSrc}" class="team-logo" alt="구단사진">
 			    	</div>
 			        <div class="teams-name">
 			            <span class="fs-14 fc__white ml-10">${d.teamName}</span>

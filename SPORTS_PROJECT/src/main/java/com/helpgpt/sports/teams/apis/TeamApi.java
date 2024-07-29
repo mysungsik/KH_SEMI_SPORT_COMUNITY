@@ -32,16 +32,17 @@ public class TeamApi extends HttpServlet{
 		// Path 지정
 		String reqPath = req.getPathInfo();
 		String path = "";
-		String team = req.getParameter("team");
 
+		String team = req.getParameter("team");
+		System.out.println(team);
+		
 		if (reqPath != null) {
-			path = getLastPathSegment(reqPath);
-			
+			path = reqPath.split("/")[1];
 		}else {
 			System.out.println("reqPath가 null입니다.");
 		}
-		
-
+		req.setAttribute("team", team);
+		System.out.println(team);
 		// 경로에 따라 필요한 기능을 사용
 		Map<String, Object> result = new HashMap<>();
 		
@@ -60,30 +61,57 @@ public class TeamApi extends HttpServlet{
 				new Gson().toJson(result, out);
 			}break;
 			
-			case "getTeamNav":{
-				Teams teamNav = service.getTeamNav(team);
-				if (teamNav != null) {
-					result.put("data", teamNav);
-					result.put("message", "success to get teamNav");
-				} else {
-					result.put("message", "failed to get teamNav");
-				}
-				new Gson().toJson(result, out);
-				
-			}break;
-			
-			
 			case "getOneTeam" :{
-				Teams oneTeam = service.getOneTeam(team);
-				if (oneTeam != null) {
-					result.put("data", oneTeam);
-					result.put("message", "success to get oneTeam");
-				} else {
-					result.put("message", "failed to get oneTeam");
+				
+				if(team!= "") {
+					System.out.println(team);
+					Teams oneTeam = service.getOneTeam(team);
+					System.out.println(oneTeam);
+					
+					if (oneTeam != null) {
+						result.put("data", oneTeam);
+						result.put("message", "success to get oneTeam");
+					} else {
+						result.put("message", "failed to get oneTeam");
+					}
 				}
 				new Gson().toJson(result, out);
 			}break;
 			
+			default:{
+				result.put("message", "failed to get teamsLists");
+				new Gson().toJson(result, out);
+			}
+			
+		
+		}
+		
+	}
+	
+	
+	private static final long serialVersionUID = 1L;
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		PrintWriter out = resp.getWriter();
+		User loginUser = null;
+
+		// Path 지정
+		String reqPath = req.getPathInfo();
+		String path = "";
+
+		if (reqPath != null) {
+			path = reqPath.split("/")[1];
+			
+		}else {
+			System.out.println("reqPath가 null입니다.");
+		}
+		
+		// 경로에 따라 필요한 기능을 사용
+		Map<String, Object> result = new HashMap<>();
+		
+		// 경로에 따라 필요한 기능 사용
+		switch(path) {
 			case "addTeam":{
 				String inputTeamName = req.getParameter("inputTeamName");
 				String inputTeamLeader = req.getParameter("inputTeamLeader");
@@ -102,7 +130,10 @@ public class TeamApi extends HttpServlet{
 				
 				Teams addTeamInfo = new Teams(inputTeamName, inputTeamLeader, inputDirector, inputSponsor, inputTeamRegion, inputTeamDes, inputVideoUrl, inputTeamColor, inputTeamLogo, inputLogoDes, inputTeamEmblem, inputEmblemDes, inputTeamMainPageImg, inputTeamHeaderImg);
 				
+				System.out.println("api까지는 잘 옴");
+				
 				int addTeamResult = service.addTeam(addTeamInfo);
+				
 				
 				if(addTeamResult>0) {
 					result.put("message", "구단 추가에 성공했습니다.");
@@ -121,27 +152,11 @@ public class TeamApi extends HttpServlet{
 				result.put("message", "failed to get teamsLists");
 				new Gson().toJson(result, out);
 			}
-			
-		
 		}
 		
-	}
-	
-	// 마지막 segment만 추출하는 함수
-	public static String getLastPathSegment(String url) {
 		
-        if (url == null || url.isEmpty()) {
-            System.out.println("url이 비어있습니다.");;
-        }
-        
-        // 쿼리 문자열을 제거
-        int queryIndex = url.indexOf("?");
-        if (queryIndex != -1) {
-            url = url.substring(0, queryIndex);
-        }
-        // URL을 "/"로 분리하고 마지막 부분을 반환
-        String[] parts = url.split("/");
-        return parts[parts.length - 1];
-    }
+		
+		
+	}
 
 }

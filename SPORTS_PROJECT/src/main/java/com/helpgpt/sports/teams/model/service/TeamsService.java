@@ -25,21 +25,6 @@ public class TeamsService {
 		return teamsList;
 		
 	}
-
-	/** 특정 팀 nav 출력
-	 * @param team
-	 * @return teamNav
-	 */
-	public Teams getTeamNav(String team) {
-		
-		Connection conn = getConnection();
-		
-		Teams teamNav = dao.getTeamNav(conn, team);
-		
-		close(conn);
-		return teamNav;
-	}
-	
 	
 	
 	/** 특정 팀 출력
@@ -52,7 +37,6 @@ public class TeamsService {
 		Teams oneTeam = dao.getOneTeam(conn, team);
 		
 		close(conn);
-
 		
 		return oneTeam;
 	}

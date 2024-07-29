@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.helpgpt.sports.teams.model.service.TeamsService;
+import com.helpgpt.sports.teams.model.vo.Teams;
+
 @WebServlet(name="teamEachController",
 urlPatterns = {
 		"/team/*"
@@ -27,6 +30,8 @@ public class TeamEachController extends HttpServlet{
 		String team="";
 		String page="";
 
+
+		
 		if(reqPath != null) {
 			if(reqPath.split("/").length == 3) {	// 페이지 비어있지 않을 때
 				team = reqPath.split("/")[1];
@@ -47,8 +52,24 @@ public class TeamEachController extends HttpServlet{
 		List<String> teamList = Arrays.asList(teams);
 
 
+		Teams oneTeam = null;
+				
+		
 		if(teamList.contains(team)){
 			req.setAttribute("team", team);
+			
+			TeamsService service = new TeamsService();
+			try {
+				 oneTeam = service.getOneTeam(team);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+			
+			if(oneTeam!= null ) {
+				req.setAttribute("oneTeam", oneTeam);
+			}
+			System.out.println(oneTeam);
+			System.out.println(page);
 			switch(page) {
 			case "" :{
 				dispatcher = req.getRequestDispatcher(defaultURLPath + "teamsEachMain.jsp");

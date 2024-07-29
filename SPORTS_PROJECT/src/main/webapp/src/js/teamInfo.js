@@ -1,5 +1,4 @@
 //더미 데이터--------------------
-
 $(document).ready(function(){
 	
 	let request_url=`${contextPath}/api/teams/getOneTeam`
@@ -8,12 +7,12 @@ $(document).ready(function(){
 		type: "GET",
 		url: request_url,
 		dataType: "json",
-		data : {
-			team
-		},
+		data:{team},
 		success: function (res) {
 			let isGetData = res.hasOwnProperty("data");
+			console.log(res.data)
 			if (isGetData){
+				changePageCover(res.data);
 				showPageCover(res.data);
 				showPageCoverBottom(res.data);
 				showTeamInfo(res.data);
@@ -28,16 +27,23 @@ $(document).ready(function(){
 });
 
 
+function changePageCover(d){
+		console.log(d.imgOriginal4)
+	if(d.imgOriginal4 != undefined){
+		$(".pagecover-img").css("background-image", `url("${contextPath}${d.imgOriginal4}")`);
+		$(".pagecover-img").css("background-color", 0);
+	}
+}
 
 function showPageCover(d){
 	
 	let html = 
 		`
-		<div class="fc__white fs-28__b">구단 소개</div>
+		<div class="fc__white fs-28__b team_intro">구단 소개</div>
 			
-		<div class="fc__white">
+		<div class="fc__white team_intro">
 			<i class="fa-solid fa-house"></i>
-			 > ${d.teamName} > 구단 소개
+			 > ${team} > 구단 소개
 		</div>
 		`;
 	

@@ -14,7 +14,7 @@
 <body>
 	<jsp:include page="/WEB-INF/views/layouts/header.jsp" />
 	<div class="container">
-		<form action="insert" method="post" enctype="multipart/form-data" name="teamAddForm"> 
+		<form action="${contextPath}/api/teams/addTeam" method="post" enctype="multipart/form-data" name="teamAddForm"> 
 			<!-- Step 1  -->
 			<div class="step active" id="step1">
 				<h1>구단 추가</h1>
