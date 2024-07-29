@@ -8,6 +8,7 @@ public class Reply {
 	private int replyTypeNo;
 	private String replyTypeName;
 	private int replyTargetNo;
+	private String replyTargetTitle;
 	private String replyDt;
 	private String replyContent;
 	private String replyStatus;
@@ -20,6 +21,22 @@ public class Reply {
 		this.userName = userName;
 		this.userProfileImg = userProfileImg;
 		this.replyTypeNo = replyTypeNo;
+		this.replyTypeName = replyTypeName;
+		this.replyTargetNo = replyTargetNo;
+		this.replyDt = replyDt;
+		this.replyContent = replyContent;
+		this.replyStatus = replyStatus;
+	}
+	
+	// 타겟의 타이틀 포함
+	public Reply(int replyNo, int userNo, String userName, String userProfileImg, int replyTypeNo, String replyTargetTitle,String replyTypeName, int replyTargetNo,
+			String replyDt, String replyContent, String replyStatus) {
+		this.replyNo = replyNo;
+		this.userNo = userNo;
+		this.userName = userName;
+		this.userProfileImg = userProfileImg;
+		this.replyTypeNo = replyTypeNo;
+		this.replyTargetTitle = replyTargetTitle;
 		this.replyTypeName = replyTypeName;
 		this.replyTargetNo = replyTargetNo;
 		this.replyDt = replyDt;
@@ -88,6 +105,13 @@ public class Reply {
 	public void setReplyStatus(String replyStatus) {
 		this.replyStatus = replyStatus;
 	}
+	public String getReplyTargetTitle() {
+		return replyTargetTitle;
+	}
+	public void setReplyTargetTitle(String replyTargetTitle) {
+		this.replyTargetTitle = replyTargetTitle;
+	}
+	
 	
 	
 }

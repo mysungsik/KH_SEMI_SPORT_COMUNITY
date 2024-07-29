@@ -402,12 +402,46 @@ AND (   -- 검색 시작
 ORDER BY 
     R.REPORT_NO DESC;
 
+-- [프로필 - 컨텐츠] -----------------------------------------
+-- [내 댓글]각 유저의 댓글 (각 타겟의 title 포함)
+SELECT 
+    R.*, 
+    U.USER_NAME, 
+    T.REPLY_TYPE, 
+    U.USER_IMG_RENAME,
+    CASE 
+        WHEN R.REPLY_TYPE_NO = 1 THEN C.COMM_TITLE
+        WHEN R.REPLY_TYPE_NO = 4 THEN N.NEWS_TITLE
+        ELSE NULL
+    END AS TARGET_TITLE
+FROM 
+    REPLY R
+JOIN 
+    USER_INFO U ON R.USER_NO = U.USER_NO
+JOIN 
+    REPLY_TYPE T ON R.REPLY_TYPE_NO = T.REPLY_TYPE_NO
+LEFT JOIN 
+    COMM C ON R.REPLY_TYPE_NO = 1 AND R.REPLY_TARGET_NO = C.COMM_NO
+LEFT JOIN 
+    NEWS N ON R.REPLY_TYPE_NO = 4 AND R.REPLY_TARGET_NO = N.NEWS_NO
+WHERE 
+    R.USER_NO = 2
+    AND R.REPLY_ST = 'N'
+ORDER BY 
+    R.REPLY_DT DESC;
 
+-- [내 게시글]각 유저의 게시글
+SELECT C.COMM_NO, T.TYPE_NAME, C.COMM_TITLE FROM COMM C
+JOIN COMM_TYPE T ON C.COMM_TYPE = T.TYPE_NO
+WHERE C.USER_NO = 1
+ORDER BY C.COMM_NO DESC;
 
-
-SELECT * FROM REPORT 
-ORDER BY REPORT_NO DESC;
-
+-- [내 스크랩 뉴스]각 유저의 좋아요 뉴스
+SELECT N.NEWS_NO, N.NEWS_TITLE, N.NEWS_CONTENT, T.TEAM_NAME FROM "LIKE" L
+JOIN NEWS N ON N.NEWS_NO = L.LIKE_TARGET_NO
+JOIN TEAMS T ON N.TEAM_NO = T.TEAM_NO
+WHERE LIKE_TYPE_NO = 5
+AND L.USER_NO = 1;
 
 -- [???] ----------------------------------------------------------------------
 

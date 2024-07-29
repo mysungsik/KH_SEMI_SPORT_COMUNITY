@@ -15,6 +15,15 @@ public class Community {
 	private int boardComent; 
 	private int boardLike;
 	private String userImage;
+	
+	public Community() {}
+	public Community(int boardNo, String boardTitle, String boardCategory) {
+		this.boardNo = boardNo;
+		this.boardTitle = boardTitle;
+		this.boardCategory = boardCategory;
+	}
+
+
 	public int getBoardNo() {
 		return boardNo;
 	}

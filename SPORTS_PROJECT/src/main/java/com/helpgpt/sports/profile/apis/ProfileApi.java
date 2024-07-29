@@ -17,10 +17,13 @@ import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
 import com.helpgpt.sports.common.filerename.MyRenamePolicy;
+import com.helpgpt.sports.community.model.vo.Community;
 import com.helpgpt.sports.login.model.service.UserService;
 import com.helpgpt.sports.login.model.vo.User;
+import com.helpgpt.sports.news.model.vo.News;
 import com.helpgpt.sports.profile.model.vo.LoginHistory;
 import com.helpgpt.sports.profile.service.ProfileService;
+import com.helpgpt.sports.reply.model.vo.Reply;
 import com.oreilly.servlet.MultipartRequest;
 
 /**
@@ -63,6 +66,66 @@ public class ProfileApi extends HttpServlet {
 						result.put("message", "failed to login histories");
 					}
 				
+					new Gson().toJson(result, out);
+				}
+			};break;
+			case "getMycomments" : {
+				HttpSession session = req.getSession(false);
+				
+				Map<String, Object> result = new HashMap<>();
+				
+				if (session != null) {
+					loginUser = (User)session.getAttribute("loginUser");
+					int userNo = loginUser.getUserNo();
+					
+					List<Reply> replyList = service.getMycomments(userNo);
+					
+					if (replyList.size() > 0) {
+						result.put("message", "success get all reply");
+						result.put("data", replyList);
+					}else {
+						result.put("message", "there is no reply");
+					}
+					new Gson().toJson(result, out);
+				}
+			};break;
+			case "getMyCommunity" : {
+				HttpSession session = req.getSession(false);
+				
+				Map<String, Object> result = new HashMap<>();
+				
+				if (session != null) {
+					loginUser = (User)session.getAttribute("loginUser");
+					int userNo = loginUser.getUserNo();
+					
+					List<Community> commList = service.getMyCommunity(userNo);
+					
+					if (commList.size() > 0) {
+						result.put("message", "게시글을 성공적으로 가져왔습니다");
+						result.put("data", commList);
+					}else {
+						result.put("message", "작성한 게시글이 없습니다.");
+					}
+					new Gson().toJson(result, out);
+				}
+			};break;
+			case "getMyNewsLiked" : {
+				HttpSession session = req.getSession(false);
+				
+				Map<String, Object> result = new HashMap<>();
+				
+				if (session != null) {
+					loginUser = (User)session.getAttribute("loginUser");
+					int userNo = loginUser.getUserNo();
+					
+					List<News> newsList = service.getMyNewsLiked(userNo);
+					
+					if (newsList.size() > 0) {
+						result.put("message", "뉴스 리스트를 성공적으로 가져왔습니다");
+						result.put("data", newsList);
+					}else {
+						result.put("message", "좋아요한 뉴스 리스트가 없습니다.");
+					}
 					new Gson().toJson(result, out);
 				}
 			};break;

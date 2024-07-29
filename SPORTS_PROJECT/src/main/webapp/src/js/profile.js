@@ -1,95 +1,7 @@
 // 더미데이터 START ---------------------------------
-let commentsData = [
-	{category : "[ 커뮤니티 - 구호 ]", title : "커뮤니티 글1", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
-	{category : "[ 커뮤니티 - 지호 ]", title : "커뮤니티 글 이렇게 쓰는게 맞나요", content : "댓글임둥!!"},
-	{category : "[ 커뮤니티 - 공지 ]", title : "커뮤니티 글 이렇게 쓰는게 맞나요", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
-	{category : "[ 커뮤니티 - 공지 ]", title : "커뮤니티 글 이렇게 쓰는게 맞나요", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
-	{category : "[ 커뮤니티 - 공지 ]", title : "커뮤니티 글 이렇게 쓰는게 맞나요", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
-	{category : "[ 커뮤니티 - 공지 ]", title : "커뮤니티 글 이렇게 쓰는게 맞나요", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
-	{category : "[ 커뮤니티 - 기호 ]", title : "커뮤니티 글 이렇게 쓰는게 맞나요", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
-	{category : "[ 커뮤니티 - 공지 ]", title : "커뮤니티 글 테스트30", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
-	{category : "[ 커뮤니티 - 공지 ]", title : "커뮤니티 글 이렇게 쓰는게 맞나요", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
-	{category : "[ 커뮤니티 - 공지 ]", title : "커뮤니티 글 이렇게 쓰는게 맞나요", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
-	{category : "[ 커뮤니티 - 야호 ]", title : "커뮤니티 글 이렇게 쓰는게 맞나요", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
-	{category : "[ 커뮤니티 - 공지 ]", title : "커뮤니티 글 이렇게 쓰는게 맞나요", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
-	{category : "[ 커뮤니티 - 공지 ]", title : "커뮤니티 글 테스트입니다 60", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
-	{category : "[ 커뮤니티 - 제호 ]", title : "커뮤니티 글 이렇게 쓰는게 맞나요", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
-	{category : "[ 커뮤니티 - 공지 ]", title : "커뮤니티 글 이렇게 쓰는게 맞나요", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
-	{category : "[ 커뮤니티 - 공지 ]", title : "커뮤니티 글 이렇게 쓰는게 맞나요", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
-	{category : "[ 커뮤니티 - 공지 ]", title : "커뮤니티 글 테스트입니다 120", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
-	{category : "[ 커뮤니티 - 공지 ]", title : "커뮤니티 글 이렇게 쓰는게 맞나요", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
-	{category : "[ 커뮤니티 - 공지 ]", title : "커뮤니티 글 이렇게 쓰는게 맞나요", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
-	{category : "[ 커뮤니티 - 공지 ]", title : "커뮤니티 글 이렇게 쓰는게 맞나요", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
-	{category : "[ 커뮤니티 - 공지 ]", title : "커뮤니티 글 테스트입니다 120", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
-	{category : "[ 커뮤니티 - 공지 ]", title : "커뮤니티 글 이렇게 쓰는게 맞나요", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
-	{category : "[ 커뮤니티 - 공지 ]", title : "커뮤니티 글 이렇게 쓰는게 맞나요", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
-	{category : "[ 커뮤니티 - 공지 ]", title : "커뮤니티 글 이렇게 쓰는게 맞나요", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
-			
-]
-
-let contentsData = [
-	{category : "[ 공지사항 ]", title : "", content : "커뮤니티 공지사항입니다 확인해주세요 "},
-	{category : "[ 자유게시판 ]", title : "", content : "안녕 나의 게시물입니다. 반갑습니다."},
-	{category : "[ 응원 - 기아 ]", title : "", content : "기아 응원합니다!"},
-	{category : "[ 응원 - 다저스 ]", title : "", content : "다저스 응원합니다!"},
-	{category : "[ 자유게시판 ]", title : "", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
-	{category : "[ 응원 - 한화 ]", title : "", content : "한화 응원합니다!!"},
-	{category : "[ 공지사항 ]", title : "", content : "커뮤니티 공지사항입니다 확인해주세요 "},
-	{category : "[ 자유게시판 ]", title : "", content : "안녕 나의 게시물입니다. 반갑습니다."},
-	{category : "[ 응원 - 기아 ]", title : "", content : "기아 응원합니다!"},
-	{category : "[ 응원 - 다저스 ]", title : "", content : "다저스 응원합니다!"},
-	{category : "[ 자유게시판 ]", title : "", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
-	{category : "[ 응원 - 한화 ]", title : "", content : "한화 응원합니다!!"},
-	{category : "[ 공지사항 ]", title : "", content : "커뮤니티 공지사항입니다 확인해주세요 "},
-	{category : "[ 자유게시판 ]", title : "", content : "안녕 나의 게시물입니다. 반갑습니다."},
-	{category : "[ 응원 - 기아 ]", title : "", content : "기아 응원합니다!"},
-	{category : "[ 응원 - 다저스 ]", title : "", content : "다저스 응원합니다!"},
-	{category : "[ 자유게시판 ]", title : "", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
-	{category : "[ 응원 - 한화 ]", title : "", content : "한화 응원합니다!!"},
-	{category : "[ 공지사항 ]", title : "", content : "커뮤니티 공지사항입니다 확인해주세요 "},
-	{category : "[ 자유게시판 ]", title : "", content : "안녕 나의 게시물입니다. 반갑습니다."},
-	{category : "[ 응원 - 기아 ]", title : "", content : "기아 응원합니다!"},
-	{category : "[ 응원 - 다저스 ]", title : "", content : "다저스 응원합니다!"},
-	{category : "[ 자유게시판 ]", title : "", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
-	{category : "[ 응원 - 한화 ]", title : "", content : "한화 응원합니다!!"},
-	{category : "[ 공지사항 ]", title : "", content : "커뮤니티 공지사항입니다 확인해주세요 "},
-	{category : "[ 자유게시판 ]", title : "", content : "안녕 나의 게시물입니다. 반갑습니다."},
-	{category : "[ 응원 - 기아 ]", title : "", content : "기아 응원합니다!"},
-	{category : "[ 응원 - 다저스 ]", title : "", content : "다저스 응원합니다!"},
-	{category : "[ 자유게시판 ]", title : "", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
-	{category : "[ 응원 - 한화 ]", title : "", content : "한화 응원합니다!!"},
-	{category : "[ 공지사항 ]", title : "", content : "커뮤니티 공지사항입니다 확인해주세요 "},
-	{category : "[ 자유게시판 ]", title : "", content : "안녕 나의 게시물입니다. 반갑습니다."},
-	{category : "[ 응원 - 기아 ]", title : "", content : "기아 응원합니다!"},
-	{category : "[ 응원 - 다저스 ]", title : "", content : "다저스 응원합니다!"},
-	{category : "[ 자유게시판 ]", title : "", content : "커뮤니티 그렇게 쓰는거 맞슴둥!"},
-	{category : "[ 응원 - 한화 ]", title : "", content : "한화 응원합니다!!"},
-
-]
-
-let scrabData = [
-	{category : "[ 뉴스 종류1 ]", title : "", content : " ‘9실점 악몽’ 준 키움과 2달 만에 재회하여 무진장 털려버렸다. 감독 뉴스 길이가 아무리 길어도 Eclipsis 로 없앨 수 있지! "},
-	{category : "[ 뉴스 종류1 ]", title : "", content : " ‘9실점 악몽’ 준 키움과 2달 만에 재회하여 무진장 털려버렸다. 감독 뉴스 길이가 아무리 길어도 Eclipsis 로 없앨 수 있지!"},
-	{category : "[ 뉴스 종류1 ]", title : "", content : " ‘9실점 악몽’ 준 키움과 2달 만에 재회하여 무진장 털려버렸다. 감독 뉴스 길이가 아무리 길어도 Eclipsis 로 없앨 수 있지!"},
-	{category : "[ 뉴스 종류1 ]", title : "", content : " ‘9실점 악몽’ 준 키움과 2달 만에 재회하여 무진장 털려버렸다. 감독 뉴스 길이가 아무리 길어도 Eclipsis 로 없앨 수 있지!"},
-	{category : "[ 뉴스 종류1 ]", title : "", content : " ‘9실점 악몽’ 준 키움과 2달 만에 재회하여 무진장 털려버렸다. 감독 뉴스 길이가 아무리 길어도 Eclipsis 로 없앨 수 있지!"},
-	{category : "[ 뉴스 종류1 ]", title : "", content : " ‘9실점 악몽’ 준 키움과 2달 만에 재회하여 무진장 털려버렸다. 감독 뉴스 길이가 아무리 길어도 Eclipsis 로 없앨 수 있지!"},
-	{category : "[ 뉴스 종류1 ]", title : "", content : " ‘9실점 악몽’ 준 키움과 2달 만에 재회하여 무진장 털려버렸다. 감독 뉴스 길이가 아무리 길어도 Eclipsis 로 없앨 수 있지!"},
-	{category : "[ 뉴스 종류1 ]", title : "", content : " ‘9실점 악몽’ 준 키움과 2달 만에 재회하여 무진장 털려버렸다. 감독 뉴스 길이가 아무리 길어도 Eclipsis 로 없앨 수 있지!"},
-	{category : "[ 뉴스 종류1 ]", title : "", content : " ‘9실점 악몽’ 준 키움과 2달 만에 재회하여 무진장 털려버렸다. 감독 뉴스 길이가 아무리 길어도 Eclipsis 로 없앨 수 있지!"},
-	{category : "[ 뉴스 종류1 ]", title : "", content : " ‘9실점 악몽’ 준 키움과 2달 만에 재회하여 무진장 털려버렸다. 감독 뉴스 길이가 아무리 길어도 Eclipsis 로 없앨 수 있지!"},
-	{category : "[ 뉴스 종류1 ]", title : "", content : " ‘9실점 악몽’ 준 키움과 2달 만에 재회하여 무진장 털려버렸다. 감독 뉴스 길이가 아무리 길어도 Eclipsis 로 없앨 수 있지!"},
-	{category : "[ 뉴스 종류1 ]", title : "", content : " ‘9실점 악몽’ 준 키움과 2달 만에 재회하여 무진장 털려버렸다. 감독 뉴스 길이가 아무리 길어도 Eclipsis 로 없앨 수 있지!"},
-	{category : "[ 뉴스 종류1 ]", title : "", content : " ‘9실점 악몽’ 준 키움과 2달 만에 재회하여 무진장 털려버렸다. 감독 뉴스 길이가 아무리 길어도 Eclipsis 로 없앨 수 있지!"},
-	{category : "[ 뉴스 종류1 ]", title : "", content : " ‘9실점 악몽’ 준 키움과 2달 만에 재회하여 무진장 털려버렸다. 감독 뉴스 길이가 아무리 길어도 Eclipsis 로 없앨 수 있지!"},
-	{category : "[ 뉴스 종류1 ]", title : "", content : " ‘9실점 악몽’ 준 키움과 2달 만에 재회하여 무진장 털려버렸다. 감독 뉴스 길이가 아무리 길어도 Eclipsis 로 없앨 수 있지!"},
-	{category : "[ 뉴스 종류1 ]", title : "", content : " ‘9실점 악몽’ 준 키움과 2달 만에 재회하여 무진장 털려버렸다. 감독 뉴스 길이가 아무리 길어도 Eclipsis 로 없앨 수 있지!"},
-	{category : "[ 뉴스 종류1 ]", title : "", content : " ‘9실점 악몽’ 준 키움과 2달 만에 재회하여 무진장 털려버렸다. 감독 뉴스 길이가 아무리 길어도 Eclipsis 로 없앨 수 있지!"},
-	{category : "[ 뉴스 종류1 ]", title : "", content : " ‘9실점 악몽’ 준 키움과 2달 만에 재회하여 무진장 털려버렸다. 감독 뉴스 길이가 아무리 길어도 Eclipsis 로 없앨 수 있지!"},
-	{category : "[ 뉴스 종류1 ]", title : "", content : " ‘9실점 악몽’ 준 키움과 2달 만에 재회하여 무진장 털려버렸다. 감독 뉴스 길이가 아무리 길어도 Eclipsis 로 없앨 수 있지!"},
-	{category : "[ 뉴스 종류1 ]", title : "", content : " ‘9실점 악몽’ 준 키움과 2달 만에 재회하여 무진장 털려버렸다. 감독 뉴스 길이가 아무리 길어도 Eclipsis 로 없앨 수 있지!"},
-	{category : "[ 뉴스 종류1 ]", title : "", content : " ‘9실점 악몽’ 준 키움과 2달 만에 재회하여 무진장 털려버렸다. 감독 뉴스 길이가 아무리 길어도 Eclipsis 로 없앨 수 있지!"},
-]
+let commentsData = [];
+let communityData = [];
+let newsLikedData = [];
 
 
 	
@@ -97,14 +9,87 @@ let scrabData = [
 
 $(document).ready(function () {
 	
-	// 페이지네이션 실행
-	paginationActive("comments", commentsData, paginationTemplate);	// 내 댓글  관리 페이지네이션
-	paginationActive("board", contentsData, paginationTemplate);	// 내 작성글 관리 페이지네이션
-	paginationActive("scrab", scrabData, paginationTemplate);		// 내 스크랩 관리 페이지네이션
+	// Get Reply
+	getMycomments();
+	
+	// Get Community
+	getMyCommunity();
+	
+	// Get NewsLiked
+	getMyNewsLiked();
 
 	// 이미지 변경시 썸네일 생성 이벤트 리스너 연결 함수
 	showThumbnail();
 });
+
+// 내 댓글 가져오는 함수
+function getMycomments(){
+	let request_url = `${contextPath}/api/profile/getMycomments`
+	$.ajax({
+		type: "GET",
+		url: request_url,
+		dataType: "json",
+		async: false,
+		success: function (res) {
+			let isGetData = res.hasOwnProperty("data");
+			
+			if(isGetData){
+				commentsData = res.data
+				paginationActive("comments", commentsData, paginationTemplate);
+			}
+			else{
+				toastPop("warn", "댓글 가져오는데 실패하였습니다.");
+			}
+
+		}
+	});
+}
+
+// 내 게시글 가져오는 함수
+function getMyCommunity(){
+	let request_url = `${contextPath}/api/profile/getMyCommunity`
+	$.ajax({
+		type: "GET",
+		url: request_url,
+		dataType: "json",
+		async: false,
+		success: function (res) {
+			let isGetData = res.hasOwnProperty("data");
+			
+			if(isGetData){
+				communityData = res.data
+				paginationActive("board", communityData, paginationTemplate);
+			}
+			else{
+				toastPop("warn", "게시글을 가져오는데 실패하였습니다.");
+			}
+
+		}
+	});
+}
+
+// 내 좋아요한 뉴스 가져오는 함수
+function getMyNewsLiked(){
+	let request_url = `${contextPath}/api/profile/getMyNewsLiked`
+	$.ajax({
+		type: "GET",
+		url: request_url,
+		dataType: "json",
+		async: false,
+		success: function (res) {
+			let isGetData = res.hasOwnProperty("data");
+			
+			if(isGetData){
+				newsLikedData = res.data
+				paginationActive("scrab", newsLikedData, paginationTemplate);
+			}
+			else{
+				toastPop("warn", "게시글을 가져오는데 실패하였습니다.");
+			}
+
+		}
+	});
+}
 
 // 체크박스 전체선택 함수
 function allChecks(){
@@ -129,14 +114,14 @@ function paginationTemplate(data, id) {
 		  	item += 
 		  		`<div class="item checkbox__blue small-square base__lblue">
 		            <div class="element-text">
-		                <input type="checkbox" id="post-check" name="post-check">
+		                <input type="checkbox" id="post-check" name="post-check" value=${d.replyNo}>
 		                <div>
-		                    <p class="fc__gray"> <span>${d.category}</span> ${d.title}</p>
-		                    <input type="text" class="item-text base__lblue" value="${d.content}" disabled/> 
+		                    <p class="fc__gray"> <span>${d.replyTypeName}</span> - ${d.replyTargetTitle}</p>
+		                    <p type="text" class="item-text base__lblue">${d.replyContent}</p> 
 		                </div>
 		            </div>
 		            <div class="element-edit">
-		                <img class="edit" src="/SPORTS_PROJECT/public/icons/edit.png">
+		                <img class="edit" data-replyno=${d.replyNo} src="/SPORTS_PROJECT/public/icons/edit.png">
 		            </div>
 		        </div>`
 		})
@@ -145,14 +130,14 @@ function paginationTemplate(data, id) {
 		  	item += 
 		  		`<div class="item checkbox__blue small-square base__lblue">
 		            <div class="element-text">
-		                <input type="checkbox" id="post-check" name="post-check">
+		                <input type="checkbox" id="post-check" name="post-check" value=${d.boardNo}>
 		                <div>
-		                    <p class="fc__gray"> <span>${d.category}</span> ${d.title}</p>
-		                    <p class="item-text"> ${d.content} </p>
+		                    <p class="fc__gray"> <span>${d.boardCategory}</span> </p>
+		                    <p class="item-text"> ${d.boardTitle} </p>
 		                </div>
 		            </div>
 		            <div class="element-edit">
-		                <img class="edit" src="/SPORTS_PROJECT/public/icons/edit.png">
+		                <img class="edit" src="/SPORTS_PROJECT/public/icons/edit.png" onclick="location.href='${contextPath}/community/communityDetail/${d.boardNo}'">
 		            </div>
 		        </div>`
 		})
@@ -163,12 +148,12 @@ function paginationTemplate(data, id) {
 		            <div class="element-text">
 		                <input type="checkbox" id="post-check" name="post-check">
 		                <div>
-		                    <p class="fc__gray"> <span>${d.category}</span> ${d.title}</p>
-		                    <p class="item-text"> ${d.content} </p>
+		                    <p class="fc__gray"> <span>${d.teamName}</span> - ${d.newsTitle}</p>
+		                    <p class="item-text"> ${d.newsContent} </p>
 		                </div>
 		            </div>
 		            <div class="element-edit">
-		                <img class="delete" src="/SPORTS_PROJECT/public/icons/edit.png">
+		                <img class="delete" src="/SPORTS_PROJECT/public/icons/edit.png" onclick="location.href='${contextPath}/news/detail/${d.newsNo}'">
 		            </div>
 		        </div>`
 		})
@@ -216,9 +201,7 @@ function paginationActive(id, datas, template){
 	// TODO : [컨텐츠] 조건에 맞는 edit 수행
 	if (id == "comments"){
 		$(".edit").on("click", function(){
-			let comment = $(this).parent().parent().find(".item-text")
-			comment.addClass("active");
-			comment.prop("disabled", false);
+			console.log($(this).data("replyno"))
 
 			/* TODO :
 				0. 댓글 수정은 textArea 로 하는게 좋아보인다.
@@ -226,14 +209,6 @@ function paginationActive(id, datas, template){
 				2. 수정 완료 누르면 DB에 저장되고, 다시 disabled 되도록
 				3. 수정 중간에 다른 수정 칸 못누르도록, 팝업창 띄우기
 			*/
-		})
-	} else if (id == "board"){
-		$(".edit").on("click", function(){
-			console.log("게시글 상세로 이동")
-		})
-	} else if (id == "scrab"){
-		$(".delete").on("click", function(){
-			console.log("페이지 스크랩 삭제")
 		})
 	}
 }

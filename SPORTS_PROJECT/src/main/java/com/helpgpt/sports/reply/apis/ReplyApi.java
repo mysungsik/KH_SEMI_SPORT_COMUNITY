@@ -47,11 +47,10 @@ public class ReplyApi extends HttpServlet {
 				if (replyList.size() > 0) {
 					result.put("message", "success get all reply");
 					result.put("data", replyList);
-					new Gson().toJson(result, out);
 				}else {
 					result.put("message", "there is no reply");
-					new Gson().toJson(result, out);
 				}
+				new Gson().toJson(result, out);
 			};break;
 		}
 	}

@@ -60,6 +60,14 @@ public class News {
 		addNewsImg(img);
 	}
 	
+	// 프로필용 뉴스
+	public News(int newsNo, String newsTitle, String newsContent, String teamName) {
+		this.newsNo = newsNo;
+		this.newsTitle = newsTitle;
+		this.newsContent = newsContent;
+		this.teamName = teamName;
+	}
+	
 	public int getNewsNo() {
 		return newsNo;
 	}
