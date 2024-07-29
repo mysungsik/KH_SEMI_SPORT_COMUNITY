@@ -19,6 +19,7 @@ public class News {
 	private int newsViews;
 	private String newsStatus;
 	private String updateDt;
+	private int newsLikes;
 	private List<NewsImg> newsImgList = new ArrayList<NewsImg>();
 	
 	public News() {}
@@ -40,7 +41,7 @@ public class News {
 	
 	// 썸네일을 가져오는 뉴스
 	public News(int newsNo, int userNo, String userName, int teamNo, String teamName, String newsTitle, String newsPublisher, String newsContent,
-			String createDt, int newsViews, String newsStatus, String updateDt, String newsImg) {
+			String createDt, int newsViews, String newsStatus, String updateDt, String newsImg, int newsLikes) {
 		this.newsNo = newsNo;
 		this.userNo = userNo;
 		this.userName = userName;
@@ -53,6 +54,7 @@ public class News {
 		this.newsViews = newsViews;
 		this.newsStatus = newsStatus;
 		this.updateDt = updateDt;
+		this.newsLikes = newsLikes;
 		
 		NewsImg img = new NewsImg(newsNo, newsImg, null, 1);
 		addNewsImg(img);
@@ -132,6 +134,12 @@ public class News {
 		this.teamName = teamName;
 	}
 	
+	public int getNewsLikes() {
+		return newsLikes;
+	}
+	public void setNewsLikes(int newsLikes) {
+		this.newsLikes = newsLikes;
+	}
 	// 뉴스 이미지 추가
 	public void addNewsImg(NewsImg img) {
 		this.newsImgList.add(img);

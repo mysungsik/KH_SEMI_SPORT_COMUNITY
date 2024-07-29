@@ -59,7 +59,8 @@ function setPopularNews(data){
 		                </div>
 		                
 		                <div class="news-card-footer d-flex">
-		                    <p> ♡ <span>9999</span></p>
+		                	<p> 조회수 <span>${d.newsViews}</span></p>
+		                    <p> ♥ <span>${d.newsLikes}</span></p>
 		                    <p> ${d.newsPublisher} </p>
 		                    <p> ${d.teamName}</p>
 		                </div>

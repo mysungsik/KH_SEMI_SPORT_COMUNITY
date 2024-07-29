@@ -138,11 +138,11 @@ public class NewsDAO {
 				String newsStatus = rs.getString("NEWS_ST");
 				String updateDt = rs.getTimestamp("UPDATE_DT") != null ? rs.getTimestamp("UPDATE_DT").toString() : "";
 				String newsImg = rs.getString("NEWS_IMG") != null ? rs.getString("NEWS_IMG") : "";
-				
+				int newsLikes = rs.getInt("NEWS_LIKES");
 				News newsInfo = new News(newsNo, userNo, userName, teamNo, teamName, newsTitle, 
 						newsPublisher, newsContent, 
 						createDt, newsViews, 
-						newsStatus, updateDt, newsImg);
+						newsStatus, updateDt, newsImg, newsLikes);
 				
 				newsList.add(newsInfo);
 			}
@@ -382,11 +382,12 @@ public class NewsDAO {
 				String newsStatus = rs.getString("NEWS_ST");
 				String updateDt = rs.getTimestamp("UPDATE_DT") != null ? rs.getTimestamp("UPDATE_DT").toString() : "";
 				String newsImg = rs.getString("NEWS_IMG") != null ? rs.getString("NEWS_IMG") : "";
+				int newsLikes = rs.getInt("NEWS_LIKES");
 				
 				News newsInfo = new News(newsNo, userNo, userName, teamNo, teamName, newsTitle, 
 						newsPublisher, newsContent, 
 						createDt, newsViews, 
-						newsStatus, updateDt, newsImg);
+						newsStatus, updateDt, newsImg, newsLikes);
 				
 				newsList.add(newsInfo);
 			}

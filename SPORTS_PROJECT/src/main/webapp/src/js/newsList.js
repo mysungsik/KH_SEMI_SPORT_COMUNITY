@@ -26,6 +26,7 @@ $(document).ready(function () {
 function getTeamNameAll() {
     let request_url = `${contextPath}/api/news/getAllTeams`;
     let teamCategoryEl = $(".search-term-team").eq(0)
+    let newsListSearchTeamNo = $(".newsListSearchTeamNo").eq(0).val();
 
     $.ajax({
         type: "GET",
@@ -38,7 +39,11 @@ function getTeamNameAll() {
 				let teams = res.data;
 				
 				$.each(teams, function(index, d){
-					teamCategoryEl.append(`<option value="${d.teamNo}">${d.teamName}</option>`)
+					if (newsListSearchTeamNo == d.teamNo){
+						teamCategoryEl.append(`<option value="${d.teamNo}" selected>${d.teamName}</option>`)
+					}else{
+						teamCategoryEl.append(`<option value="${d.teamNo}">${d.teamName}</option>`)
+					}
 				})
 			} else{
 				toastPop("warn", "팀 데이터를 불러오는데 실패하였습니다")
@@ -77,7 +82,7 @@ function getNewsListAll(newsListSearchTerm, newsListSearchTeamNo, el){
 				paginationActive("news-list", newsData, newsListTemplate);
 			}
 			else{
-				toastPop("warn", res.message)
+				toastPop("warn", "해당하는 구단의 뉴스가 존재하지 않습니다.")
 			}
 		},
 		error : function(request, status, error){
@@ -138,7 +143,7 @@ function newsListTemplate(data) {
                     
                     <div class="news-card-footer d-flex">
                     	<p> 조회수 <span> ${d.newsViews} </span> </p>
-                        <p> ♡ <span>9999</span></p>
+                        <p> ♡ <span>${d.newsLikes}</span></p>
                         <p> ${d.newsPublisher} </p>
                         <p> ${d.teamName}</p>
                     </div>
