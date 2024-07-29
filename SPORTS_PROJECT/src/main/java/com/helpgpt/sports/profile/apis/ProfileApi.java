@@ -2,6 +2,7 @@ package com.helpgpt.sports.profile.apis;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,6 +24,7 @@ import com.helpgpt.sports.login.model.vo.User;
 import com.helpgpt.sports.news.model.vo.News;
 import com.helpgpt.sports.profile.model.vo.LoginHistory;
 import com.helpgpt.sports.profile.service.ProfileService;
+import com.helpgpt.sports.reply.model.service.ReplyService;
 import com.helpgpt.sports.reply.model.vo.Reply;
 import com.oreilly.servlet.MultipartRequest;
 
@@ -33,6 +35,7 @@ import com.oreilly.servlet.MultipartRequest;
 public class ProfileApi extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ProfileService service = new ProfileService();
+	private ReplyService replyService = new ReplyService();
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		PrintWriter out = res.getWriter();
@@ -138,6 +141,7 @@ public class ProfileApi extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		String contextPath = req.getContextPath();
+		PrintWriter out = res.getWriter();
 		User loginUser = null;
 
 		// Path 지정
@@ -197,6 +201,30 @@ public class ProfileApi extends HttpServlet {
 					if (changeResult > 0) {
 						loginUser.setUserProfileImg(defaultFilePath);
 					}
+				}
+			};break;
+			case "deleteMyReplyMany" : {
+				String replyNoStr = req.getParameter("replyNos");
+				List<Integer> parsedReplyNo = new ArrayList<>();
+				
+				if (replyNoStr != null && !replyNoStr.isEmpty()) {
+		            String[] replyNoArray = replyNoStr.split(",");
+		            for (String replyNo : replyNoArray) {
+		                parsedReplyNo.add(Integer.parseInt(replyNo.trim()));
+		            }
+		        }
+				
+				int deleteResult = replyService.deleteMyReplyMany(parsedReplyNo);
+				
+		        Map<String, Object> result = new HashMap<>();
+				
+				if (deleteResult > 0) {
+					result.put("message", "success to delete many reply");
+					result.put("data", deleteResult);
+					new Gson().toJson(result, out);
+				}else {
+					result.put("message", "failed to delete many reply");
+					new Gson().toJson(result, out);
 				}
 			};break;
 			default: {

@@ -114,14 +114,14 @@ function paginationTemplate(data, id) {
 		  	item += 
 		  		`<div class="item checkbox__blue small-square base__lblue">
 		            <div class="element-text">
-		                <input type="checkbox" id="post-check" name="post-check" value=${d.replyNo}>
+		                <input type="checkbox" class="replyCheck" id="post-check" name="post-check" value=${d.replyNo}>
 		                <div>
 		                    <p class="fc__gray"> <span>${d.replyTypeName}</span> - ${d.replyTargetTitle}</p>
 		                    <p type="text" class="item-text base__lblue">${d.replyContent}</p> 
 		                </div>
 		            </div>
 		            <div class="element-edit">
-		                <img class="edit" data-replyno=${d.replyNo} src="/SPORTS_PROJECT/public/icons/edit.png">
+		                <img class="edit" src="/SPORTS_PROJECT/public/icons/edit.png"  data-type="reply-update" data-replyno="${d.replyNo}" onclick="showReplyUpdateModal($(this))">
 		            </div>
 		        </div>`
 		})
@@ -195,20 +195,6 @@ function paginationActive(id, datas, template){
 					textDecoration : "underline"
 				})
 			}
-		})
-	}
-	
-	// TODO : [컨텐츠] 조건에 맞는 edit 수행
-	if (id == "comments"){
-		$(".edit").on("click", function(){
-			console.log($(this).data("replyno"))
-
-			/* TODO :
-				0. 댓글 수정은 textArea 로 하는게 좋아보인다.
-				1. 엔터 누르면 수정하시겠습니까? 팝업창 나오도록
-				2. 수정 완료 누르면 DB에 저장되고, 다시 disabled 되도록
-				3. 수정 중간에 다른 수정 칸 못누르도록, 팝업창 띄우기
-			*/
 		})
 	}
 }
@@ -781,4 +767,105 @@ function showThumbnail(){
 function changeImgDefault(){
 	const profileThumbnail = $(".profileThumbnail");
 	profileThumbnail.prop("src", `${contextPath}/public/images/profile/user_img1.jpg`)
+}
+
+
+// 댓글 수정(ReplyUpdate) 모달 생성
+function showReplyUpdateModal(el){
+	if (loginUser == ""){
+		toastPop("warn", "로그인 후 이용해주세요");
+		return;
+	}
+	
+	let reportModalEl = $('#updateReplyModal');
+	
+	let item = "댓글";
+	reportModalEl.find(".modal-title").html(`<p class="fs-14 fc__white">${item} 수정</p>`)
+
+	reportModalEl.modal('show');
+	
+	reportModalEl.find(".acceptBtn").one("click", function(){
+		updateReply(el)
+	})
+}
+
+// 댓글 수정 함수
+function updateReply(el){
+	
+	let updateReplyEl = $('#updateReplyModal');
+	let updateReplyModal = bootstrap.Modal.getInstance(updateReplyEl);
+	let replyContent = updateReplyEl.find("textarea[name='update-reply-content']").val();
+	let replyNo = parseInt($(el).data("replyno"));
+	
+	if (loginUser == ""){
+		toastPop("warn", "로그인 후 이용해주세요");
+		return;
+	}
+	
+	// 요청
+	const request_url = `${contextPath}/api/reply/updateReply`;
+	
+	if (replyContent.trim() != ""){
+		$.ajax({
+			type: "POST",
+			url: request_url,
+			data : {
+				replyNo,
+				replyContent
+			},
+			dataType: "json",
+			success: function (res) {
+				let isInsertReply = res.hasOwnProperty("data");
+				
+				if(isInsertReply){
+					// 댓글 데이터 찾아서 변경, 페이지네이션 재실행
+					getMycomments();
+					// 모달 종료
+					updateReplyModal.hide();
+				}
+				
+				else{
+					toastPop("warn", res.message)
+				}
+			}
+		});
+	} else{
+		toastPop("warn", "댓글을 입력해주세요")
+	}
+}
+
+// 댓글 삭제 함수
+function deleteReply(){
+	let checkboxes = $(".replyCheck:checked")
+	
+	const deleteRepyTarget = [];
+	
+	for (let checkbox of checkboxes){
+		deleteRepyTarget.push(checkbox.value)
+	}
+	
+	console.log(deleteRepyTarget)
+	
+	let request_url = `${contextPath}/api/profile/deleteMyReplyMany`
+	$.ajax({
+		type: "POST",
+		url: request_url,
+		dataType: "json",
+		data:{
+			replyNos : deleteRepyTarget.join(',')
+		},
+		async: false,
+		success: function (res) {
+			let isGetData = res.hasOwnProperty("data");
+			
+			if(isGetData){
+				getMycomments()
+				toastPop("info", "성공적으로 삭제하였습니다.");
+			}
+			else{
+				toastPop("warn", "댓글 가져오는데 실패하였습니다.");
+			}
+
+		}
+	});
 }

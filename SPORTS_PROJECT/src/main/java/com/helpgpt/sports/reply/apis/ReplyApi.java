@@ -136,7 +136,6 @@ public class ReplyApi extends HttpServlet {
 					new Gson().toJson(result, out);
 				}
 			};break;
-			
 		}
 	
 	}
