@@ -308,6 +308,44 @@ function modifyNewsLike(){
 	
 }
 
+// 뉴스 삭제 함수
+function deleteNews(el){
+	
+	let deleteModalEl = $('#deleteModal');
+	var deleteModal = bootstrap.Modal.getInstance(deleteModalEl);
+	
+	let newsNum = $("input[name='newsNum']").eq(0).val();
+	if (loginUser == ""){
+		toastPop("warn", "로그인 후 이용해주세요");
+		return;
+	}
+	
+	const request_url = `${contextPath}/api/news/deleteNews`;
+	
+	console.log(request_url)
+
+	$.ajax({
+		type: "POST",
+		url: request_url,
+		data : {
+			newsNum
+		},
+		dataType: "json",
+		success: function (res) {
+			let isDeleteNews = res.hasOwnProperty("data");
+			
+			if(isDeleteNews){
+				location.href = `${contextPath}/news/list`;
+			}
+			else{
+				toastPop("warn", res.message)
+				deleteModal.hide();
+			}
+		}
+	});
+}
+
+
 // Delete 모달 생성
 function showDeleteModal(el){
 	if (loginUser == ""){
@@ -323,9 +361,16 @@ function showDeleteModal(el){
 		
 	deleteModalEl.modal('show');
 	
-	deleteModalEl.find(".acceptBtn").one("click", function(){
-		deleteReply(el)
-	})
+	// 댓글 삭제라면	
+	if (modalType == "reply-delete"){
+		deleteModalEl.find(".acceptBtn").one("click", function(){
+			deleteReply(el)
+		})
+	} else if (modalType == "news-delete"){
+		deleteModalEl.find(".acceptBtn").one("click", function(){
+			deleteNews(el)
+		})
+	}
 }
 
 

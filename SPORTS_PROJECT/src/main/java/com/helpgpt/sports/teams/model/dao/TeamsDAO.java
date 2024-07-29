@@ -134,6 +134,7 @@ public class TeamsDAO {
 	 * @return oneTeam
 	 */
 	public Teams getOneTeam(Connection conn, String team) {
+		System.out.println(team);
 		Teams oneTeam = null;
 		try {
 			String sql = prop.getProperty("getOneTeam");

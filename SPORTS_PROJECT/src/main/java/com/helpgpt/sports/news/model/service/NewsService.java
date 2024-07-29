@@ -169,4 +169,18 @@ public class NewsService {
 		}
 
 	}
+
+	public int deleteNews(int newsNum) {
+		Connection conn = getConnection();
+		
+		int deleteResult = dao.deleteNews(conn, newsNum);
+	
+		if (deleteResult > 0) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+		
+		return deleteResult;
+	}
 }

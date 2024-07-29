@@ -82,4 +82,10 @@
 		)
 	</entry>
 	
+	<entry key="deleteNews">
+		UPDATE NEWS
+		SET NEWS_ST = 'Y'
+		WHERE NEWS_NO = ?
+	</entry>
+	
 </properties>

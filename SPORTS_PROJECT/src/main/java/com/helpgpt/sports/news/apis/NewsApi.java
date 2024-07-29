@@ -198,10 +198,27 @@ public class NewsApi extends HttpServlet {
 				        if (modifyResult > 0) {
 				            redirectPath = req.getContextPath() + "/news/detail/" + newsNum;
 				        } else {
-				        	redirectPath = req.getContextPath() + "/news";
+				        	redirectPath = req.getContextPath() + "/news/list";
 				        }
 				        
 				        res.sendRedirect(redirectPath);
+					};break;
+					
+					// 뉴스 삭제
+					case "deleteNews" : {
+						int newsNum = Integer.parseInt(req.getParameter("newsNum"));
+						
+				        // 뉴스 삭제
+				        int deleteResult = service.deleteNews(newsNum);
+				     
+				        if (deleteResult > 0 ) {
+				        	result.put("data", deleteResult);
+					        result.put("message", "성공적으로 삭제하였습니다");
+				        } else {
+				        	result.put("message", "삭제에 실패하였습니다.");
+				        }
+				        
+				        new Gson().toJson(result, out);
 					};break;
 					
 					default: {

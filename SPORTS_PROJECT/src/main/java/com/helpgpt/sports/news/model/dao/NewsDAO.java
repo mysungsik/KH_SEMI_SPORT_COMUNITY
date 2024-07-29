@@ -286,7 +286,28 @@ public class NewsDAO {
 			result = pstmt.executeUpdate();
 			
 		}catch(Exception e) {
-			System.out.println("[ERROR] Failed to modify news img");
+			System.out.println("[ERROR] Failed to insert news img");
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	public int deleteNews(Connection conn, int newsNum) {
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("deleteNews");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, newsNum);
+			
+			result = pstmt.executeUpdate();
+			
+		}catch(Exception e) {
+			System.out.println("[ERROR] Failed to delete news");
 			e.printStackTrace();
 		}finally {
 			close(pstmt);
