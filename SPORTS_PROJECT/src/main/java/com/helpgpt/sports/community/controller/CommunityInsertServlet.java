@@ -40,6 +40,7 @@ public class CommunityInsertServlet extends HttpServlet {
         // 나머지 텍스트 형식의 데이터 처리
         String title = mpReq.getParameter("title");
         String content = mpReq.getParameter("content");
+        int type = Integer.parseInt(mpReq.getParameter("type"));
         
         title = Util.XSSHandling(title);
         
@@ -60,6 +61,7 @@ public class CommunityInsertServlet extends HttpServlet {
         // Community 객체 생성 및 데이터 설정
         Community board = new Community();
         board.setUserNo(userNo);
+        board.setTypeNo(type);
         board.setTeamNo(teamNo);
         board.setBoardTitle(title);
         board.setBoardContent(content);
