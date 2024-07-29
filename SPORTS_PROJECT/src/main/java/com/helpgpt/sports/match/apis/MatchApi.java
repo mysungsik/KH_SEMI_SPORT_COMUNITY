@@ -13,6 +13,7 @@ import com.google.gson.Gson;
 import com.helpgpt.sports.match.model.service.MatchService;
 import com.helpgpt.sports.match.model.vo.PlayerRanking;
 import com.helpgpt.sports.match.model.vo.TeamRanking;
+import com.helpgpt.sports.match.model.vo.MatchResult;
 
 @WebServlet("/api/match/*")
 public class MatchApi extends HttpServlet {
@@ -49,20 +50,48 @@ public class MatchApi extends HttpServlet {
             case "playerRankingWHIP":
                 List<PlayerRanking> playerRankingWHIP = matchService.getPlayerRankingWHIP();
                 gson.toJson(playerRankingWHIP, out);
-                break;   
+                break;
                 
-                
-                
-                // 이제 matchteamRanking 페이지
+            // matchTeamRanking 페이지
             case "teamRankingsForTeamRanking":
-            	List<TeamRanking> teamRankingsForTeamRanking = matchService.getTeamRankingsForTeamRanking();
-            	gson.toJson(teamRankingsForTeamRanking, out);
-            	break;
+                List<TeamRanking> teamRankingsForTeamRanking = matchService.getTeamRankingsForTeamRanking();
+                gson.toJson(teamRankingsForTeamRanking, out);
+                break;
             
+            // 특정 팀의 선수와 경기장 정보를 가져오는 요청
+            case "getPlayersByTeam":
+                String teamName = req.getParameter("teamName");
+                List<String> players = matchService.getPlayersByTeam(teamName);
+                gson.toJson(players, out);
+                break;
+            case "getStadiumsByTeam":
+                teamName = req.getParameter("teamName");
+                List<String> stadiums = matchService.getStadiumsByTeam(teamName);
+                gson.toJson(stadiums, out);
+                break;
+            case "getTeams":
+                List<String> teams = matchService.getTeams();
+                gson.toJson(teams, out);
+                break;
             default:
                 res.setStatus(HttpServletResponse.SC_NOT_FOUND);
                 gson.toJson("Invalid API path", out);
                 break;
+        }
+    }
+
+    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        PrintWriter out = res.getWriter();
+        MatchResult matchResult = gson.fromJson(req.getReader(), MatchResult.class);
+
+        boolean isSuccess = matchService.saveMatchResult(matchResult);
+
+        if (isSuccess) {
+            res.setStatus(HttpServletResponse.SC_OK);
+            gson.toJson("Match result saved successfully", out);
+        } else {
+            res.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            gson.toJson("Failed to save match result", out);
         }
     }
 }

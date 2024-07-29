@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
-	<comment>Match 관련 SQL 쿼리 모음</comment>
+    <comment>Match 관련 SQL 쿼리 모음</comment>
 
-	<!-- 팀 순위 (메인페이지) -->
-	<!-- matchMain에서 사용할 팀 순위를 가져오는 쿼리 -->
-	<entry key="getTeamRankingsForMain"><![CDATA[
+    <!-- 팀 순위 (메인페이지) -->
+    <!-- matchMain에서 사용할 팀 순위를 가져오는 쿼리 -->
+    <entry key="getTeamRankingsForMain"><![CDATA[
         SELECT T.TEAM_NAME, COUNT(M.MATCH_NO) AS MATCH_COUNT, 
                SUM(CASE WHEN M.SCORE > O.SCORE THEN 1 ELSE 0 END) AS WIN, 
                SUM(CASE WHEN M.SCORE < O.SCORE THEN 1 ELSE 0 END) AS LOSE,
@@ -17,8 +17,8 @@
         ORDER BY WIN DESC
     ]]></entry>
 
-	<!-- matchTeamRanking에서 사용할 팀 순위를 가져오는 쿼리 -->
-	<entry key="getTeamRankingsForTeamRanking"><![CDATA[
+    <!-- matchTeamRanking에서 사용할 팀 순위를 가져오는 쿼리 -->
+    <entry key="getTeamRankingsForTeamRanking"><![CDATA[
         SELECT T.TEAM_NAME, 
                COUNT(M.MATCH_NO) AS MATCH_COUNT, 
                SUM(CASE WHEN M.SCORE > O.SCORE THEN 1 ELSE 0 END) AS WIN, 
@@ -46,48 +46,45 @@
         ORDER BY WIN DESC
     ]]></entry>
 
-	<!-- 선수 순위를 가져오는 쿼리 (승리 기준) -->
-	<entry key="getPlayerRankingWin"><![CDATA[
-    SELECT TEAM_NAME, PLAYER_NAME, WIN_COUNT
-    FROM (
-        SELECT T.TEAM_NAME, P.PLAYER_NAME,
-               COUNT(CASE WHEN M.SCORE > O.SCORE THEN 1 END) AS WIN_COUNT
-        FROM MATCH M
-        JOIN TEAMS T ON M.TEAM_NO = T.TEAM_NO
-        JOIN PLAYER P ON M.PLAYER_NO = P.PLAYER_NO
-        JOIN MATCH O ON M.MATCH_NO = O.MATCH_NO AND M.TEAM_NO != O.TEAM_NO
-        WHERE P.POSITION_NO = '2' -- 선수의 포지션이 투수일 경우
-        GROUP BY T.TEAM_NAME, P.PLAYER_NAME
-        ORDER BY WIN_COUNT DESC
-    ) 
-    WHERE ROWNUM <= 5
-]]></entry>
-	<!-- 선수 순위를 가져오는 쿼리 (era) 기준 -->
-
-	<entry key="getPlayerRankingERA">
-		SELECT P.PLAYER_NAME, T.TEAM_NAME, PIT.ERA
-		FROM
-		PITCHER_RECORD PIT
-		JOIN PLAYER P ON PIT.PLAYER_NO = P.PLAYER_NO
-		JOIN
-		TEAMS T ON P.TEAM_NO = T.TEAM_NO
-		ORDER BY PIT.ERA ASC
-		FETCH FIRST 5 ROWS
-		ONLY
-	</entry>
-
-	<!-- 선수 순위 가져오는 쿼리 (탈삼진) -->
-	<entry key="getPlayerRankingStrikeouts"><![CDATA[
-        SELECT P.PLAYER_NAME, T.TEAM_NAME, P.SKTOUTED AS STRIKEOUTS
-		FROM PITCHER_RECORD P
-		JOIN PLAYER PL ON P.PLAYER_NO = PL.PLAYER_NO
-		JOIN TEAMS T ON PL.TEAM_NO = T.TEAM_NO
-		ORDER BY P.SKTOUTED DESC
-		FETCH FIRST 5 ROWS ONLY
+    <!-- 선수 순위를 가져오는 쿼리 (승리 기준) -->
+    <entry key="getPlayerRankingWin"><![CDATA[
+        SELECT TEAM_NAME, PLAYER_NAME, WIN_COUNT
+        FROM (
+            SELECT T.TEAM_NAME, P.PLAYER_NAME,
+                   COUNT(CASE WHEN M.SCORE > O.SCORE THEN 1 END) AS WIN_COUNT
+            FROM MATCH M
+            JOIN TEAMS T ON M.TEAM_NO = T.TEAM_NO
+            JOIN PLAYER P ON M.PLAYER_NO = P.PLAYER_NO
+            JOIN MATCH O ON M.MATCH_NO = O.MATCH_NO AND M.TEAM_NO != O.TEAM_NO
+            WHERE P.POSITION_NO = '2' 
+            GROUP BY T.TEAM_NAME, P.PLAYER_NAME
+            ORDER BY WIN_COUNT DESC
+        ) 
+        WHERE ROWNUM <= 5
     ]]></entry>
 
+    <!-- 선수 순위를 가져오는 쿼리 (ERA 기준) -->
+    <entry key="getPlayerRankingERA"><![CDATA[
+        SELECT P.PLAYER_NAME, T.TEAM_NAME, PIT.ERA
+        FROM PITCHER_RECORD PIT
+        JOIN PLAYER P ON PIT.PLAYER_NO = P.PLAYER_NO
+        JOIN TEAMS T ON P.TEAM_NO = T.TEAM_NO
+        ORDER BY PIT.ERA ASC
+        FETCH FIRST 5 ROWS ONLY
+    ]]></entry>
 
-	<entry key="getPlayerRankingHits"><![CDATA[
+    <!-- 선수 순위 가져오는 쿼리 (탈삼진) -->
+    <entry key="getPlayerRankingStrikeouts"><![CDATA[
+        SELECT P.PLAYER_NAME, T.TEAM_NAME, P.SKTOUTED AS STRIKEOUTS
+        FROM PITCHER_RECORD P
+        JOIN PLAYER PL ON P.PLAYER_NO = PL.PLAYER_NO
+        JOIN TEAMS T ON PL.TEAM_NO = T.TEAM_NO
+        ORDER BY P.SKTOUTED DESC
+        FETCH FIRST 5 ROWS ONLY
+    ]]></entry>
+
+    <!-- 선수 순위를 가져오는 쿼리 (안타) -->
+    <entry key="getPlayerRankingHits"><![CDATA[
         SELECT P.PLAYER_NAME, T.TEAM_NAME, H.HIT
         FROM HITTER_RECORD H
         JOIN PLAYER P ON H.PLAYER_NO = P.PLAYER_NO
@@ -96,7 +93,8 @@
         FETCH FIRST 5 ROWS ONLY
     ]]></entry>
 
-	<entry key="getPlayerRankingWHIP"><![CDATA[
+    <!-- 선수 순위를 가져오는 쿼리 (WHIP) -->
+    <entry key="getPlayerRankingWHIP"><![CDATA[
         SELECT P.PLAYER_NAME, T.TEAM_NAME, P.WHIP
         FROM PITCHER_RECORD P
         JOIN PLAYER PL ON P.PLAYER_NO = PL.PLAYER_NO
@@ -105,11 +103,29 @@
         FETCH FIRST 5 ROWS ONLY
     ]]></entry>
 
+    <!-- 특정 팀의 선수 이름을 가져오는 쿼리 -->
+    <entry key="getPlayersByTeam"><![CDATA[
+        SELECT PLAYER_NAME
+        FROM PLAYER
+        WHERE TEAM_NO = (SELECT TEAM_NO FROM TEAMS WHERE TEAM_NAME = ?)
+    ]]></entry>
 
+    <!-- 특정 팀의 경기장 이름을 가져오는 쿼리 -->
+    <entry key="getStadiumsByTeam"><![CDATA[
+        SELECT STADIUM_NAME
+        FROM STADIUM
+        WHERE STADIUM_NO = (SELECT STADIUM_NO FROM TEAMS WHERE TEAM_NAME = ?)
+    ]]></entry>
 
+    <!-- 경기 결과를 저장하는 쿼리 -->
+    <entry key="saveMatchResult"><![CDATA[
+        INSERT INTO MATCH_RESULT (DATE, WIN_TEAM, LOSE_TEAM, MATCH_PLACE, WINNER_SCORE, LOSER_SCORE, WIN_PITCHER, LOSE_PITCHER, 
+        HITS_WINNER, HR_WINNER, SO_WINNER, SB_WINNER, DP_WINNER, ER_WINNER, HITS_LOSER, HR_LOSER, SO_LOSER, SB_LOSER, DP_LOSER, ER_LOSER) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ]]></entry>
 
-
-
+    <!-- 팀 이름을 가져오는 쿼리 -->
+    <entry key="getTeams"><![CDATA[
+        SELECT TEAM_NAME FROM TEAMS
+    ]]></entry>
 </properties>
-
-
