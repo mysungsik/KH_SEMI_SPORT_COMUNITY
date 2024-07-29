@@ -30,7 +30,6 @@ public class NewsController extends HttpServlet {
 	NewsService service = new NewsService();
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		HttpSession session = req.getSession();
 		String contextPath = req.getContextPath();
 		String reqPath = req.getPathInfo();
 		String path = "";

@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="${contextPath}/src/css/newsModify.css">
 <script src="${contextPath}/src/js/newsModify.js" defer></script>
 
-<title>COMMUNITY</title>
+<title>NEWS - MODIFY</title>
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/layouts/header.jsp" />
@@ -53,13 +53,10 @@
 				<button class="base__blue fc__white br-5 saveBtn">저장</button>
 				<button class="br-5" onclick="goBack()" type="button">취소</button>
 			</section>
-		
 		</form>
 	</main>
 	
 	<!-- Be sure to include this TAG -->
 	<jsp:include page="/WEB-INF/views/layouts/footer.jsp" />
-
-
 </body>
 </html>

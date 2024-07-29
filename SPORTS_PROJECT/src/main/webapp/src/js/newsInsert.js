@@ -74,9 +74,36 @@ function showThumbnail(){
 }
 
 
-// 게시글 작성 유효성 검사
+// 뉴스 작성 유효성 검사
 function writeValidate(){
-  	return true;
+    let newsTitle = $("input[name='title']").eq(0);
+    let newsPublisher = $("input[name='publisher']").eq(0);
+    let newsThumbnail = $("input[name='newsThumbnail']").eq(0);
+    let newsContent = $("textarea[name='content']").eq(0);
+    
+    console.log(newsContent.val());
+
+    if(newsTitle.val().trim() == ''){
+        toastPop("warn", "제목을 입력해주세요");
+        newsTitle.focus();
+        return false;
+    } 
+    if(newsPublisher.val().trim() == ''){
+        toastPop("warn", "뉴스 발행사를 입력해주세요");
+        newsPublisher.focus();
+        return false;
+	}
+    if(newsThumbnail.trim() == ''){
+        toastPop("warn", "뉴스 이미지를 추가해주세요");
+        return false;
+	}
+    if(newsContent.val() == ""){
+        toastPop("warn", "뉴스 내용을 입력해주세요");
+        newsContent.focus();
+        return false;
+	}
+	
+	return false;
 }
 
 function goBack() {
