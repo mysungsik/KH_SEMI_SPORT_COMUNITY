@@ -73,6 +73,10 @@ public class NewsController extends HttpServlet {
 				req.setAttribute("newsInfo", newsInfo);
 				dispatcher.forward(req, res);
 			};break;
+			case "insert": {
+				dispatcher = req.getRequestDispatcher(defaultURLPath + "newsInsert.jsp");
+				dispatcher.forward(req, res);
+			};break;
 			case "modify": {
 				dispatcher = req.getRequestDispatcher(defaultURLPath + "newsModify.jsp");
 				News newsInfo = service.getNewsOne(newsNum);

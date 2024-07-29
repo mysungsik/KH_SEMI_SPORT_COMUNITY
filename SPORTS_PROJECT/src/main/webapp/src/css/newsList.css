@@ -10,7 +10,13 @@
 	width: 100%;
 }
 
-.news-list .search-term{
+.news-list .news-list-header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.news-list .news-list-header .search-term{
 	display: flex;
 	gap : 30px;
 		

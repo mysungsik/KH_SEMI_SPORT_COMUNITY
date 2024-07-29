@@ -1,0 +1,128 @@
+*{
+	box-sizing: border-box;
+	/* border: 1px solid black; */
+}
+
+form{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+/* 제목 */
+.title-area{
+	margin-top: 40px;
+	width: 100%;
+	height: 50px;
+	display: flex;
+	gap: 10px;
+	
+	border-bottom: 1px solid black;
+}
+
+.title{
+	align-content: center;
+}
+
+.category{
+	align-content: center;
+}
+
+.team{
+	align-content: center;
+}
+
+/* 게시글 작성 */
+.posting-area{
+	width: 850px;
+	margin-top: 20px;
+	border: 2px solid #ddd; 
+	border-radius: 20px;
+}
+
+.posting-area .input-title,
+.posting-area .input-publisher,
+.posting-area .input-newsThumbnail{
+	height: 50px;
+	margin: 5px 30px;
+	border-bottom: 2px solid #ddd;
+	display: flex;
+	align-items: center;
+}
+
+.posting-area input[name='title'],
+.posting-area input[name='publisher']{
+	flex-basis: 95%;
+	border: none;
+	outline: none;
+}
+
+.input-file{
+	flex-basis: 5%;
+	display: flex;
+}
+
+.input-file input{
+	display: none;
+}
+
+/* 이미지 영역 */
+.img-box{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 이미지를 감싸는 div */
+.newsThumbnail-container.onImg{
+    width: 500px;
+    height: 230px;
+    display: inline-block;
+    position: relative;
+	margin: 10px 30px;
+}
+
+/* 미리보기 영역 */
+.boardImage label{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 미리보기 이미지 */
+.preview{
+    width: 100%;
+    height: 100%;
+    object-fit : cover;
+}
+
+/* 이미지 삭제 */
+.delete-image{
+    position: absolute;
+    top: 0;
+    right: 7px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* 내용 */
+.input-content{
+	height: 550px;
+	margin: 10px 30px;
+}
+
+.btn-area{
+	margin: 30px 0 50px;
+	display: flex;
+	gap: 10px;
+}
+
+button {
+	width: 70px;
+	height: 30px;
+	
+	border: none;
+}
+

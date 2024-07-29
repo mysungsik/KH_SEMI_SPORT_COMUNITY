@@ -12,6 +12,7 @@
 		JOIN USER_INFO U ON N.USER_NO = U.USER_NO
 		JOIN TEAMS T ON N.TEAM_NO = T.TEAM_NO
 		WHERE NEWS_ST = 'N'
+		ORDER BY NEWS_NO DESC
 	</entry>
 	
 	<entry key="getNewsOne">
@@ -48,6 +49,37 @@
 		    IMG_ORIGINAL = ?
 		WHERE NEWS_NO = ?
 		AND IMG_LEVEL = ?
+	</entry>
+	
+	<entry key="insertNews">
+		INSERT INTO NEWS VALUES(
+		    SEQ_NEWS_NO.NEXTVAL,
+		    ?, 
+		    ?, 
+		    ?, 
+		    ?,
+		    ?,
+		    DEFAULT,
+		    DEFAULT,
+		    DEFAULT,
+		    NULL
+		)
+	</entry>
+	
+	<entry key="getLastNewsNum">
+		SELECT 
+			SEQ_NEWS_NO.CURRVAL AS NEWS_NO
+		FROM DUAL
+	</entry>
+	
+	<entry key="insertNewsImg">
+		INSERT INTO NEWS_IMG
+		VALUES(
+		    SEQ_NEWS_NO.CURRVAL,
+		    ?, 
+		    ?,
+		    ?
+		)
 	</entry>
 	
 </properties>

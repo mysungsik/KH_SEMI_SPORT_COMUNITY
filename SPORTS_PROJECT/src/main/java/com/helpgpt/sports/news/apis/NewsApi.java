@@ -108,6 +108,53 @@ public class NewsApi extends HttpServlet {
 				
 				// 경로에 따라 필요한 기능을 사용
 				switch (path) {
+					// 뉴스 추가
+					case "insertNews" : {
+				        // MultipartRequest를 사용하여 파일 업로드 처리
+				        int maxSize = 1024 * 1024 * 100; // 최대 업로드 용량 (100MB)
+				        String root = session.getServletContext().getRealPath("/"); // 서버의 실제 경로
+				        String folderPath = "/public/images/news/"; // 파일 저장 폴더 경로
+				        String filePath = root + folderPath; // 파일 저장 절대 경로
+				        String encoding = "UTF-8"; // 문자 인코딩
+				        MultipartRequest mpReq = new MultipartRequest(req, filePath, maxSize, encoding, new MyRenamePolicy());
+				        
+				        // 나머지 텍스트 형식의 데이터 처리
+				        int teamNo = Integer.parseInt(mpReq.getParameter("team-category"));
+				        String newsTitle = mpReq.getParameter("title");
+				        String newsPublisher = mpReq.getParameter("publisher");
+				        String newsContent = mpReq.getParameter("content");
+				        
+				        // XSS 및 개행문자 처리
+				        newsTitle = Util.XSSHandling(newsTitle);
+				        
+				        newsContent = Util.XSSHandling(newsContent);
+				        newsContent = Util.newLineHandling(newsContent);
+						
+				        // 현재 로그인한 사용자 정보 가져오기
+				        int userNo = loginUser.getUserNo();
+				        
+				        // News 객체 생성 및 데이터 설정
+				        News news = new News();
+				        news.setUserNo(userNo);
+				        news.setTeamNo(teamNo);
+				        news.setNewsTitle(newsTitle);
+				        news.setNewsPublisher(newsPublisher);
+				        news.setNewsContent(newsContent);
+				        
+				        // 뉴스 추가 후, 생성된 newsNo 반환
+				        int insertResult = service.insertNews(news, mpReq, folderPath);	
+
+				        // 등록 결과에 따른 리다이렉트 처리
+				        String redirectPath = "";
+				        
+				        if (insertResult > 0) {
+				            redirectPath = req.getContextPath() + "/news/detail/" + insertResult;
+				        } else {
+				        	redirectPath = req.getContextPath() + "/news";
+				        }
+				        
+				        res.sendRedirect(redirectPath);
+					};break;
 					// 뉴스 수정
 					case "modifyNews" : {
 				        // MultipartRequest를 사용하여 파일 업로드 처리
@@ -143,30 +190,12 @@ public class NewsApi extends HttpServlet {
 				        news.setNewsPublisher(newsPublisher);
 				        news.setNewsContent(newsContent);
 				        
-				        // DB 에 저장
-				        int modifyResult = service.modifyNews(news);
-				        int modifyImgResult = 0;
-				        
-				        // 파일 정보 처리
-				        Enumeration<String> fileNames = mpReq.getFileNames();
-				        NewsImg image = new NewsImg();
-				        if (fileNames.hasMoreElements()) {
-				        	String name = fileNames.nextElement();
-				        	String rename = mpReq.getFilesystemName(name);
-				        	String original = mpReq.getOriginalFileName(name);
-				        	
-				        	if (rename != null) {
-				        		image.setNewsNo(newsNum);
-				        		image.setImgOriginal(original);
-				        		image.setImgRename(folderPath+rename);
-				        		image.setImgLevel(1); 	// 썸네일만 변경하므로 레벨1 고정
-				        		modifyImgResult = service.modifyNewsImg(image);
-				        	}
-				        }
+				        // 뉴스 추가 후, 변경된 뉴스의 no 반환
+				        int modifyResult = service.modifyNews(news, mpReq, folderPath);
 				        
 				        // 등록 결과에 따른 리다이렉트 처리
 				        String redirectPath = "";
-				        if (modifyResult > 0 && modifyImgResult > 0) {
+				        if (modifyResult > 0) {
 				            redirectPath = req.getContextPath() + "/news/detail/" + newsNum;
 				        } else {
 				        	redirectPath = req.getContextPath() + "/news";

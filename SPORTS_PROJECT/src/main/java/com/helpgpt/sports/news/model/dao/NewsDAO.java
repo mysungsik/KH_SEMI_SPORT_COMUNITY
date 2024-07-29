@@ -223,4 +223,75 @@ public class NewsDAO {
 		
 		return result;
 	}
+
+	public int insertNews(Connection conn, News news) {
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("insertNews");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, news.getUserNo());
+			pstmt.setInt(2, news.getTeamNo());
+			pstmt.setString(3, news.getNewsTitle());
+			pstmt.setString(4, news.getNewsPublisher());
+			pstmt.setString(5, news.getNewsContent());
+			
+			result = pstmt.executeUpdate();
+			
+		}catch(Exception e) {
+			System.out.println("[ERROR] Failed to insert news");
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	public int getLastNewsNum(Connection conn) {
+		int lastNewsNum = 0;
+
+		try {
+			String sql = prop.getProperty("getLastNewsNum");
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				lastNewsNum = rs.getInt("NEWS_NO");
+			}
+
+		} catch (Exception e) {
+			System.out.println("[ERROR] Failed to get Last news Num");
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+
+		return lastNewsNum;
+	}
+
+	public int insertNewsImg(Connection conn, NewsImg image) {
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("insertNewsImg");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, image.getImgRename());
+			pstmt.setString(2, image.getImgOriginal());
+			pstmt.setInt(3, image.getImgLevel());
+			
+			result = pstmt.executeUpdate();
+			
+		}catch(Exception e) {
+			System.out.println("[ERROR] Failed to modify news img");
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
 }
