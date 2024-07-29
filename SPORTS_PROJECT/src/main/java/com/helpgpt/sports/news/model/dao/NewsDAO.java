@@ -13,6 +13,7 @@ import java.util.Properties;
 import com.helpgpt.sports.news.model.vo.News;
 import com.helpgpt.sports.news.model.vo.NewsImg;
 import com.helpgpt.sports.profile.model.vo.LoginHistory;
+import com.helpgpt.sports.teams.model.vo.Teams;
 
 public class NewsDAO {
 	Properties prop;
@@ -141,5 +142,61 @@ public class NewsDAO {
 		}
 		
 		return newsList;
+	}
+
+	public List<Teams> getAllTeams(Connection conn) {
+
+		List<Teams> teams = new ArrayList<>();
+
+		try {
+			String sql = prop.getProperty("selectTeams");
+
+			pstmt = conn.prepareStatement(sql);
+
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				Teams team = new Teams();
+
+				team.setTeamNo(rs.getInt(1));
+				team.setTeamName(rs.getString(2));
+
+				teams.add(team);
+			}
+
+		} catch (Exception e) {
+			System.out.println("[ERROR] Failed to get Teams All");
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+
+		return teams;
+	}
+
+	public int modifyNews(Connection conn, News news) {
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("modifyNews");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, news.getNewsTitle());
+			pstmt.setInt(2, news.getTeamNo());
+			pstmt.setString(3, news.getNewsPublisher());
+			pstmt.setString(4, news.getNewsContent());
+			pstmt.setInt(5, news.getNewsNo());
+			
+			result = pstmt.executeUpdate();
+			
+		}catch(Exception e) {
+			System.out.println("[ERROR] Failed to modify news");
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
 	}
 }

@@ -1,147 +1,115 @@
-let communityData = [
-	{ author: "[ 작성자 ]", comments: "야구 룰이 너무 어려움", date: "2024-07-06 22:49:31", like: 3 },
-	{ author: "[ 작성자 ]", comments: "야구 룰이 너무 어려움", date: "2024-07-06 22:49:31", like: 3 },
-
-
-
-]
-
-
-
-
-// 일반 유저 페이지네이션 템플릿 함수
-function paginationTemplate(data) {
-	let item = "";
+// 드롭박스
+$(document).ready(function () {
+	// 이미지 썸네일 이벤트 리스너 연결 함수
+	showThumbnail();
 	
-	$.each(data, function(index, d) {
-		item +=
-			`<div class="reply">
-				<div class="author">
-					<span class="fs-10 fc__gray">${d.author}</span>
-				</div>
-				<div class="comment">
-					<span class="fs-12">${d.comments}</span>
-				</div>
-				<div class="reply-info">
-					<div>
-						<span>좋아요 ${d.like} ♥</span>
-						<span> | </span>
-						<span onclick="updateReply()">수정</span>
-						<span> | </span>
-						<span data-type="reply-delete" onclick="showModal(this)">삭제</span>
-						<span> | </span>
-						<span data-type="reply-report" onclick="showModal(this)">신고</span>
-					</div>
-					<div><span class="fs-10">${d.date}</span></div>
-				</div>
-			</div>
-			<div class="reply update">
-				<form>
-					<textarea rows="3" cols="100" style="resize: none"">tlqkf</textarea>
-					<button>수정</button>
-					<button class="footer_gray fc__gray">취소</button>
-				</form>
-			</div>
-			`
-	})
-
-	return item;
-}
-
-
-$(document).ready(function() {
-
+	// 카테고리선택시 팀 데이터 가져오는 함수
+	getTeamNameAll();
 	
-	// 페이지네이션 실행
-	paginationActive("community", communityData, paginationTemplate);
+	const newsNum = $("input[name='newsNum']").val()
 });
 
+// 팀 이름 가져오는 함수
+function getTeamNameAll() {
+    let request_url = `${contextPath}/api/news/getAllTeams`;
+    let teamCategoryEl = $(".team-category").eq(0)
 
-// 페이지네이션 실행 함수
-function paginationActive(id, datas, template) {
-	let page_size = 5;
-
-	if ($(`#${id}-pagination`).length > 0) {
-
-		$(`#${id}-pagination`).pagination({
-			dataSource: datas,
-
-			pageSize: page_size,
-
-			callback: function(data, pagination) {
-				var html = template(data);
-
-				$(`#${id}-data`).html(html);	// 데이터 페이지네이션
-
-				var currentPage = pagination.pageNumber;	// 현재 페이지 번호
-
-				// 페이지네이션 변경
-				var pagingEl = $(`.paginationjs-page[data-num='${currentPage}'] a`);
-				pagingEl.css({
-					fontSize: "14px",
-					textDecoration: "underline",
-					color: "#458BE2"
+    $.ajax({
+        type: "GET",
+        url: request_url,
+        dataType: "json",
+        success: function (res) {
+			let isGetData = res.hasOwnProperty("data")
+			if (isGetData){
+				let teams = res.data;
+				
+				$.each(teams, function(index, d){
+					teamCategoryEl.append(`<option value="${d.teamNo}">${d.teamName}</option>`)
 				})
+			} else{
+				toastPop("warn", "팀 데이터를 불러오는데 실패하였습니다")
+			}
+        },
+        error: function (request, status, error) {
+            console.log(request);
+            console.log(status);
+            console.log(error);
+        }
+    });
+}
+
+// 이미지 썸네일 이벤트 리스너 연결 함수
+function showThumbnail(){
+	const preview = $(".preview").eq(0);
+	const thumbnailContainter = $(".newsThumbnail-container").eq(0);
+	const inputThumbnail = $(".newsThumbnail").eq(0);
+	const deleteImage = $(".delete-image").eq(0);
+	
+	inputThumbnail.on("change", function(){
+	
+		// 파일 선택시
+		if(this.files[0] != undefined){
+			const reader = new FileReader(); 
+			thumbnailContainter.addClass("onImg")
+			
+			reader.readAsDataURL(this.files[0]);
+			reader.onload = function(e){ // reader가 파일을 다 읽어온 경우
+				preview.prop("src", e.target.result)
+			}
+	
+		// 파일이 선택되지 않았을 때 (취소)
+		}else{ 
+			preview.removeAttr("src");
+			thumbnailContainter.removeClass("onImg")
+		}
+	    // 미리보기 삭제 버튼(x)이 클릭되었을 때
+		deleteImage.on("click", function(){
+			// 미리보기가 존재하는 경우에만 x 버튼 동작
+			if(preview.prop("src") != ""){
+				preview.removeAttr("src");
+				thumbnailContainter.removeClass("onImg")
+				inputThumbnail.val("");
 			}
 		})
-	}
+	})
 }
 
-// 모달
-function showModal(el){
-	let modalEl = $('#communityModal');
-	
-	let modalType = $(el).data("type");
-	
-	console.log(modalType);
-	
-	let item = "";
-	switch(modalType){
-		case "board-delete" : case "board-report" : item = "게시글"; break;
-		case "reply-delete" : case "reply-report" : item = "댓글"; break;
-	}
-	
-	if(modalType == "board-delete" || modalType == "reply-delete"){
-			modalEl.find(".modal-title").html(`<p class="fs-14 fc__white">${item} 삭제</p>`)
-					
-			modalEl.find(".modal-body").html(` 
-			
-				<div class="modal-row">정말 삭제하시겠습니까?</div>
-				
-				<div class="modal-btns">
-					<button class="btn-medium__blue acceptBtn"> 확인 </button>
-					<button class="btn-medium__gray cancelBtn" data-bs-dismiss="modal"> 취소 </button>
-				</div>
-				`
-			);
-	}else if(modalType == "board-report" || modalType == "reply-report"){
-		modalEl.find(".modal-title").html(`<p class="fs-14 fc__white">${item} 신고</p>`)
-		
-		modalEl.find(".modal-body").html(` 
-			<form>
-				<div class="modal-row">
-					<div class="select-wrapper">
-						<select name="team" id="team" style="border: none; outline: none;">
-					         <option value="kia">욕설 및 비하발언</option>
-					         <option value="dusan">허위사실 유포</option>
-					         <option value="la">사행성 ${item}</option>
-					    </select>
-				    </div>
-				    <textarea rows="5" cols="30" placeholder="상세 내용" ></textarea>
-				</div>
-				<div class="modal-btns">
-					<button class="btn-medium__blue acceptBtn"> 확인 </button>
-					<button class="btn-medium__gray cancelBtn" data-bs-dismiss="modal"> 취소 </button>
-				</div>
-			</form>	
-				`
-			);
-	}
-	
-		
-		
-	modalEl.modal('show');
+
+// 게시글 작성 유효성 검사
+function writeValidate(){
+  	return true;
 }
+
+function goBack() {
+    window.history.back();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

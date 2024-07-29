@@ -1,114 +1,128 @@
 *{
 	box-sizing: border-box;
-	/* border: 1px solid black;  */
+	/* border: 1px solid black; */
 }
 
-.container{
-	justify-content: center;
-	width: 1024px;
-	margin-top: 60px;
-}
-
-/* 뉴스*/
-.news-info-container{
-	height: 60px;
-	width: 1024px;
-	display: flex;
-	justify-content : space-between;
-	
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
-}
-.news-info-container .news-info{
+form{
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	gap:5px;
+	align-items: center;
 }
 
-.news-info-container .news-info .news-title-info{
-	margin-top: 10px;
-}
 
-.news-info-container .news-update-btns{
-	align-content: end;
-	margin-bottom: 5px;
-	margin-right: 5px;
-}
-
-.news-info-container .news-update-btns span:hover{
-	cursor: pointer;
-}
-/* 뉴스 제목 */
-
-/* 뉴스 내용 */
-.news-content-container{
-	margin-left: 10px;
-}
-
-.news-content-container .news-content{
-	margin-top: 20px;
-	margin-bottom: 50px;
-	margin-right: 10px;
-}
-
-.news-content-container .news-content > img{
-	height: 200px;
-}
-
-/* 뉴스 기타 정보 (좋아요, 댓글 등) */
-.news-extra-info-container{
+/* 제목 */
+.title-area{
+	margin-top: 40px;
+	width: 100%;
+	height: 50px;
+	display: flex;
+	gap: 10px;
+	
 	border-bottom: 1px solid black;
 }
 
-.news-extra-info-container .news-extra-info{
-	align-self: center;
-	font-size: 10px;
-	width: 200px;
+.title{
+	align-content: center;
 }
 
+.category{
+	align-content: center;
+}
 
-/* 뉴스 댓글 입력 */
-.reply-input-container{
+.team{
+	align-content: center;
+}
+
+/* 게시글 작성 */
+.posting-area{
+	width: 850px;
 	margin-top: 20px;
-	margin-left: 10px;
-	margin-bottom: 30px;
+	border: 2px solid #ddd; 
+	border-radius: 20px;
+}
+
+.posting-area .input-title,
+.posting-area .input-publisher,
+.posting-area .input-newsThumbnail{
+	height: 50px;
+	margin: 5px 30px;
+	border-bottom: 2px solid #ddd;
 	display: flex;
-	justify-content: center;
 	align-items: center;
+}
+
+.posting-area input[name='title'],
+.posting-area input[name='publisher']{
+	flex-basis: 95%;
+	border: none;
+	outline: none;
+}
+
+.input-file{
+	flex-basis: 5%;
+	display: flex;
+}
+
+.input-file input{
+	display: none;
+}
+
+/* 이미지 영역 */
+.img-box{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 이미지를 감싸는 div */
+.newsThumbnail-container.onImg{
+    width: 500px;
+    height: 230px;
+    display: inline-block;
+    position: relative;
+	margin: 10px 30px;
+}
+
+/* 미리보기 영역 */
+.boardImage label{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 미리보기 이미지 */
+.preview{
+    width: 100%;
+    height: 100%;
+    object-fit : cover;
+}
+
+/* 이미지 삭제 */
+.delete-image{
+    position: absolute;
+    top: 0;
+    right: 7px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* 내용 */
+.input-content{
+	height: 550px;
+	margin: 10px 30px;
+}
+
+.btn-area{
+	margin: 30px 0 50px;
+	display: flex;
 	gap: 10px;
 }
 
-/*뉴스 댓글 출력*/
-
-.reply-container{
-	width: 900px;
-	margin: 0 auto;
-}
-.reply-container .reply{
-	padding: 20px;
+button {
+	width: 70px;
+	height: 30px;
+	
+	border: none;
 }
 
-.reply-container .reply-content{
-	margin-top: 10px;
-}
-
-.reply-container .reply-author-info .reply-author{
-	display: flex;
-	align-items: center;
-}
-
-.reply-container .reply-author-info .author-name{
-	display: flex;
-	align-items: center;
-	margin-top: 5px;
-}
-.reply-container .reply-author-info .author-profile{
-	width: 35px;
-	height: 35px;
-	border-radius: 100px;
-}
-
-.reply-container .reply-extra-info{
-	margin-top: 10px;
-}

@@ -28,4 +28,18 @@
 		WHERE NEWS_NO = ?
 	</entry>
 	
+	<entry key="selectTeams">
+		SELECT TEAM_NO, TEAM_NAME FROM TEAMS
+	</entry>
+	
+	<entry key="modifyNews">
+		UPDATE NEWS
+		SET NEWS_TITLE = ?,
+			TEAM_NO = ?,
+		    NEWS_PUBLISHER = ?,
+		    NEWS_CONTENT = ?,
+		    UPDATE_DT = DEFAULT
+		WHERE NEWS_NO = ?
+	</entry>
+	
 </properties>

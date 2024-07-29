@@ -36,7 +36,7 @@ public class NewsController extends HttpServlet {
 		if(reqPath != null) {
 			path = reqPath.split("/")[1];
 			
-			if (path.equals("detail")) {
+			if (path.equals("detail") || path.equals("modify")) {
 				try {
 					newsNum = Integer.parseInt(reqPath.split("/")[2]);
 				} catch (Exception e) {
@@ -45,7 +45,7 @@ public class NewsController extends HttpServlet {
 					res.sendRedirect(contextPath + "/news");
 					return;
 				}
-			}
+			} 
 		}
 		
 		switch (path) {
@@ -74,6 +74,8 @@ public class NewsController extends HttpServlet {
 			};break;
 			case "modify": {
 				dispatcher = req.getRequestDispatcher(defaultURLPath + "newsModify.jsp");
+				News newsInfo = service.getNewsOne(newsNum);
+				req.setAttribute("newsInfo", newsInfo);
 				req.setAttribute("newsNum", newsNum);
 				dispatcher.forward(req, res);
 			};break;

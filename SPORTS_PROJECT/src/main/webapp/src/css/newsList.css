@@ -64,9 +64,7 @@
 
 .news-card .news-card-infos .news-card-footer{
 	margin-top : 10px;
-	margin-right : 20px;
-	gap:20px;
-	justify-content: flex-end;
+	gap:10px;
 }
 
 /* 페이지네이션 스타일링*/

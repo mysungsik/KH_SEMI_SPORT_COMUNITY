@@ -43,4 +43,12 @@ WHERE USER_NO = 1;
 
 COMMIT;
 
+-- 6. 뉴스 업데이트
+UPDATE NEWS
+SET NEWS_TITLE = '수정된 한화 이글스 기아에게 충격 패배 입니다!!',
+    NEWS_PUBLISHER = '수정된 KBS',
+    NEWS_CONTENT = '수정된 한화 이글스 기아에게 충격 패배 <br> 그럼에도 불구하고 정신 못차려 <br> 회식 장소에서 ...',
+    UPDATE_DT = DEFAULT
+WHERE NEWS_NO = 3;
 
+COMMIT;
