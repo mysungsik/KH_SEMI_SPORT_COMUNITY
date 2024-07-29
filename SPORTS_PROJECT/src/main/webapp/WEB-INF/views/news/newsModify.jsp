@@ -21,7 +21,7 @@
 			<input type="hidden" name="newsNum" value="${newsNum}">
 			<section class="title-area">
 				<div class="title">
-					<span class="fs-28__b">뉴스 작성</span>
+					<span class="fs-28__b">뉴스 수정</span>
 				</div>
 				<div class="category">
 					<select name="team-category" class="team-category">

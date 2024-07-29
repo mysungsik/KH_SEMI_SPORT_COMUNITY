@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.helpgpt.sports.common.util.Util;
 import com.helpgpt.sports.news.model.service.NewsService;
 import com.helpgpt.sports.news.model.vo.News;
 
@@ -75,6 +76,7 @@ public class NewsController extends HttpServlet {
 			case "modify": {
 				dispatcher = req.getRequestDispatcher(defaultURLPath + "newsModify.jsp");
 				News newsInfo = service.getNewsOne(newsNum);
+				newsInfo.setNewsContent(Util.reveseNewLineHandling(newsInfo.getNewsContent()));
 				req.setAttribute("newsInfo", newsInfo);
 				req.setAttribute("newsNum", newsNum);
 				dispatcher.forward(req, res);

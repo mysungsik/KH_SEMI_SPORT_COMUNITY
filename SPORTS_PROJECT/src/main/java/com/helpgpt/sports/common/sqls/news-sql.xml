@@ -42,4 +42,12 @@
 		WHERE NEWS_NO = ?
 	</entry>
 	
+	<entry key="modifyNewsImg">
+		UPDATE NEWS_IMG
+		SET IMG_RENAME = ?,
+		    IMG_ORIGINAL = ?
+		WHERE NEWS_NO = ?
+		AND IMG_LEVEL = ?
+	</entry>
+	
 </properties>

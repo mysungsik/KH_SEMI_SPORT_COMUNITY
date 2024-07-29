@@ -23,6 +23,7 @@ import com.helpgpt.sports.community.model.vo.CommunityImage;
 import com.helpgpt.sports.login.model.vo.User;
 import com.helpgpt.sports.news.model.service.NewsService;
 import com.helpgpt.sports.news.model.vo.News;
+import com.helpgpt.sports.news.model.vo.NewsImg;
 import com.helpgpt.sports.profile.service.ProfileService;
 import com.helpgpt.sports.teams.model.vo.Teams;
 import com.oreilly.servlet.MultipartRequest;
@@ -144,27 +145,28 @@ public class NewsApi extends HttpServlet {
 				        
 				        // DB 에 저장
 				        int modifyResult = service.modifyNews(news);
+				        int modifyImgResult = 0;
 				        
-//				        // 파일 정보 처리
-//				        Enumeration<String> fileNames = mpReq.getFileNames();
-//				        CommunityImage image = new CommunityImage(); // CommunityImage 객체 초기화
-//				        if (fileNames.hasMoreElements()) {
-//				        	String name = fileNames.nextElement();
-//				        	String rename = mpReq.getFilesystemName(name);
-//				        	String original = mpReq.getOriginalFileName(name);
-//				        	
-//				        	if (rename != null) {
-//				        		image.setBoardNo(boardNo);
-//				        		image.setImageOriginal(original);
-//				        		image.setImageRename(rename);
-//				        		result = service.insertImage(image);
-//				        	}
-//				        	
-//				        }
+				        // 파일 정보 처리
+				        Enumeration<String> fileNames = mpReq.getFileNames();
+				        NewsImg image = new NewsImg();
+				        if (fileNames.hasMoreElements()) {
+				        	String name = fileNames.nextElement();
+				        	String rename = mpReq.getFilesystemName(name);
+				        	String original = mpReq.getOriginalFileName(name);
+				        	
+				        	if (rename != null) {
+				        		image.setNewsNo(newsNum);
+				        		image.setImgOriginal(original);
+				        		image.setImgRename(folderPath+rename);
+				        		image.setImgLevel(1); 	// 썸네일만 변경하므로 레벨1 고정
+				        		modifyImgResult = service.modifyNewsImg(image);
+				        	}
+				        }
 				        
 				        // 등록 결과에 따른 리다이렉트 처리
 				        String redirectPath = "";
-				        if (modifyResult > 0) {
+				        if (modifyResult > 0 && modifyImgResult > 0) {
 				            redirectPath = req.getContextPath() + "/news/detail/" + newsNum;
 				        } else {
 				        	redirectPath = req.getContextPath() + "/news";

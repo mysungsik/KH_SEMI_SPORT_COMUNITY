@@ -199,4 +199,28 @@ public class NewsDAO {
 		
 		return result;
 	}
+
+	public int modifyNewsImg(Connection conn, NewsImg image) {
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("modifyNewsImg");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, image.getImgRename());
+			pstmt.setString(2, image.getImgOriginal());
+			pstmt.setInt(3, image.getNewsNo());
+			pstmt.setInt(4, image.getImgLevel());
+			
+			result = pstmt.executeUpdate();
+			
+		}catch(Exception e) {
+			System.out.println("[ERROR] Failed to modify news img");
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
 }

@@ -7,10 +7,12 @@ import static com.helpgpt.sports.common.util.JDBCTemplate.rollback;
 
 import java.sql.Connection;
 import java.util.List;
+import java.util.Map;
 
 import com.helpgpt.sports.like.model.dao.LikeDAO;
 import com.helpgpt.sports.news.model.dao.NewsDAO;
 import com.helpgpt.sports.news.model.vo.News;
+import com.helpgpt.sports.news.model.vo.NewsImg;
 import com.helpgpt.sports.reply.model.dao.ReplyDAO;
 import com.helpgpt.sports.teams.model.vo.Teams;
 
@@ -59,6 +61,19 @@ public class NewsService {
 		Connection conn = getConnection();
 		
 		int result = dao.modifyNews(conn, news);
+		
+		if(result > 0) commit(conn);
+		else rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
+
+	public int modifyNewsImg(NewsImg image) {
+		Connection conn = getConnection();
+		
+		int result = dao.modifyNewsImg(conn, image);
 		
 		if(result > 0) commit(conn);
 		else rollback(conn);
