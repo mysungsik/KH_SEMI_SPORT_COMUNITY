@@ -78,6 +78,20 @@ public class NewsApi extends HttpServlet {
 				}
 				new Gson().toJson(result, out);
 			};break;
+			case "getNewsListForMain" : {
+
+				String getType = req.getParameter("getType");	// popular, recent
+				List<News> newsList = service.getNewsListForMain(getType);
+				
+				if (newsList.size() > 0) {
+					result.put("data", newsList);
+					result.put("message", "뉴스 리스트를 가져오는데 성공하였습니다");
+				}else {
+					result.put("message", "뉴스 리스트를 가져오는데 실패하였습니다");
+				}
+				new Gson().toJson(result, out);
+			};break;
+			
 			default: {
 				System.out.println("[ERROR] WRONG NEWS API");
 			}

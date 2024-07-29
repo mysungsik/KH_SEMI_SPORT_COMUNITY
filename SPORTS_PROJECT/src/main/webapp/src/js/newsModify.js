@@ -5,8 +5,6 @@ $(document).ready(function () {
 	
 	// 카테고리선택시 팀 데이터 가져오는 함수
 	getTeamNameAll();
-	
-	const newsNum = $("input[name='newsNum']").val()
 });
 
 // 팀 이름 가져오는 함수

@@ -102,7 +102,21 @@ FROM NEWS N
 JOIN USER_INFO U ON N.USER_NO = U.USER_NO
 JOIN TEAMS T ON N.TEAM_NO = T.TEAM_NO
 WHERE NEWS_ST = 'N'
-ORDER BY N.NEWS_VIEWS;
+ORDER BY N.NEWS_VIEWS DESC;
+
+-- 4. 뉴스 검색 후 개수 제한 (NEWS_NO)
+SELECT * FROM (
+    SELECT N.*, U.USER_NAME, T.TEAM_NAME, (SELECT 
+                                            NI.IMG_RENAME FROM NEWS_IMG NI
+                                            WHERE N.NEWS_NO = NI.NEWS_NO
+                                            AND NI.IMG_LEVEL = 1) AS NEWS_IMG
+    FROM NEWS N
+    JOIN USER_INFO U ON N.USER_NO = U.USER_NO
+    JOIN TEAMS T ON N.TEAM_NO = T.TEAM_NO
+    WHERE NEWS_ST = 'N'
+    ORDER BY N.NEWS_VIEWS DESC
+)
+WHERE ROWNUM <= 5;
 
 -- 모든 팀 정보 출력하기
 SELECT 

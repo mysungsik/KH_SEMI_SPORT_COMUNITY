@@ -2,19 +2,6 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 	<comment>profiefor admn</comment>
-	
-	<entry key="getNewsAll">
-		SELECT N.*, U.USER_NAME, T.TEAM_NAME, (SELECT 
-		                                        NI.IMG_RENAME FROM NEWS_IMG NI
-		                                        WHERE N.NEWS_NO = NI.NEWS_NO
-		                                        AND NI.IMG_LEVEL = 1) AS NEWS_IMG
-		FROM NEWS N
-		JOIN USER_INFO U ON N.USER_NO = U.USER_NO
-		JOIN TEAMS T ON N.TEAM_NO = T.TEAM_NO
-		WHERE NEWS_ST = 'N'
-		ORDER BY NEWS_NO DESC
-	</entry>
-	
 	<entry key="getNewsOne">
 		SELECT N.*, U.USER_NAME, T.TEAM_NAME 
 		FROM NEWS N
@@ -103,6 +90,36 @@
 		UPDATE NEWS
 		SET NEWS_VIEWS = NEWS_VIEWS + 1
 		WHERE NEWS_NO = ?
+	</entry>
+	
+	<entry key="getNewsPopular5">
+		SELECT * FROM (
+    	SELECT N.*, U.USER_NAME, T.TEAM_NAME, (SELECT 
+                                            NI.IMG_RENAME FROM NEWS_IMG NI
+                                            WHERE N.NEWS_NO = NI.NEWS_NO
+                                            AND NI.IMG_LEVEL = 1) AS NEWS_IMG
+		    FROM NEWS N
+		    JOIN USER_INFO U ON N.USER_NO = U.USER_NO
+		    JOIN TEAMS T ON N.TEAM_NO = T.TEAM_NO
+		    WHERE NEWS_ST = 'N'
+		    ORDER BY N.NEWS_VIEWS DESC
+		)
+		WHERE ROWNUM &lt;= 5
+	</entry>
+	
+	<entry key="getNewsRecent7">
+		SELECT * FROM (
+    	SELECT N.*, U.USER_NAME, T.TEAM_NAME, (SELECT 
+                                            NI.IMG_RENAME FROM NEWS_IMG NI
+                                            WHERE N.NEWS_NO = NI.NEWS_NO
+                                            AND NI.IMG_LEVEL = 1) AS NEWS_IMG
+		    FROM NEWS N
+		    JOIN USER_INFO U ON N.USER_NO = U.USER_NO
+		    JOIN TEAMS T ON N.TEAM_NO = T.TEAM_NO
+		    WHERE NEWS_ST = 'N'
+		    ORDER BY N.NEWS_NO DESC
+		)
+		WHERE ROWNUM &lt;= 7
 	</entry>
 	
 </properties>

@@ -350,4 +350,55 @@ public class NewsDAO {
 		
 		return result;
 	}
+
+	public List<News> getNewsListForMain(Connection conn, String getType) {
+		List<News> newsList = new ArrayList<>();
+		
+		try {
+			
+			String sql = "";
+			
+			if (getType.equals("popular")) {
+				sql = prop.getProperty("getNewsPopular5");
+				
+			}else if (getType.equals("recent")){
+				sql = prop.getProperty("getNewsRecent7");
+			}
+			
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			while (rs.next()) {
+				int newsNo = rs.getInt("NEWS_NO");
+				int userNo = rs.getInt("USER_NO");
+				String userName = rs.getString("USER_NAME");
+				int teamNo = rs.getInt("TEAM_NO");
+				String teamName = rs.getString("TEAM_NAME");
+				String newsTitle = rs.getString("NEWS_TITLE");
+				String newsPublisher = rs.getString("NEWS_PUBLISHER");
+				String newsContent = rs.getString("NEWS_CONTENT");
+				String createDt = rs.getTimestamp("CREATE_DT").toString();
+				int newsViews = rs.getInt("NEWS_VIEWS");
+				String newsStatus = rs.getString("NEWS_ST");
+				String updateDt = rs.getTimestamp("UPDATE_DT") != null ? rs.getTimestamp("UPDATE_DT").toString() : "";
+				String newsImg = rs.getString("NEWS_IMG") != null ? rs.getString("NEWS_IMG") : "";
+				
+				News newsInfo = new News(newsNo, userNo, userName, teamNo, teamName, newsTitle, 
+						newsPublisher, newsContent, 
+						createDt, newsViews, 
+						newsStatus, updateDt, newsImg);
+				
+				newsList.add(newsInfo);
+			}
+			
+		} catch (Exception e) {
+			System.out.println("[ERROR] Failed to get news for main");
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+			close(rs);
+		}
+		
+		return newsList;
+	}
 }

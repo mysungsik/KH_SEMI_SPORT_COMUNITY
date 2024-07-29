@@ -198,4 +198,15 @@ public class NewsService {
 		
 		return;
 	}
+
+	public List<News> getNewsListForMain(String getType) {
+		Connection conn = getConnection();
+		
+		// 뉴스 가져오기 (썸네일 자동 추가)
+		List<News> newsList = dao.getNewsListForMain(conn, getType);
+		
+		close(conn);
+		
+		return newsList;
+	}
 }

@@ -125,7 +125,9 @@ function newsListTemplate(data) {
 	  	item += 
 	  		`
 		 	<div class="news-card box-shadow" onclick="location.href='${contextPath}/news/detail/${d.newsNo}'">
-                <img class="news-card-img" src="${contextPath}${d.newsImgList[0].imgRename}">
+                <div class="news-img-container">
+	                <img class="news-card-img" src="${contextPath}${d.newsImgList[0].imgRename}">
+                </div>
                 <div class="news-card-infos">
                     <p class="news-card-title fs-14__b">
                         ${d.newsTitle}
