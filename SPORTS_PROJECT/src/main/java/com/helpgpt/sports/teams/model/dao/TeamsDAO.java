@@ -177,13 +177,12 @@ public class TeamsDAO {
 					imgOriginal4="/public/images/profile/user_img1.jpg";
 				} 
 				
-				
 				oneTeam = new Teams(teamNo, stadiumNo, teamName, teamLeader, director, sponsor, teamRegion, teamDes, teamStatus, videoUrl, teamColor, imgOriginal1, imgDes1, imgOriginal2, imgDes2, imgOriginal3, imgOriginal4);
 				
 			}
 			
 		} catch (Exception e) {
-			System.out.println("[ERROR] FAILED to get OneTeamInfo");
+			System.out.println("[ERROR] FAILED to get OneTeamInfo in DAO");
 			e.printStackTrace();
 			
 		}finally {

@@ -1,11 +1,11 @@
 
 /* Header ------------------------------------------------------------------------- */
-eachTeamHeader {
+teamHeader {
     height: 220px;
     position: relative;
 }
 
-eachTeamHeader .header-top{
+teamHeader .header-top{
     height: 80px;
     max-width: 1024px;
     margin: 0 auto;
@@ -14,16 +14,16 @@ eachTeamHeader .header-top{
     justify-content: space-between;
 }
 
-eachTeamHeader .header-top .header-top-logo{
+teamHeader .header-top .header-top-logo{
     height: 100%;
 }
 
-eachTeamHeader .header-top .logo{
+teamHeader .header-top .logo{
     width: 100px;
     height: 80px;
 }
 
-eachTeamHeader .header-top .header-top-user{
+teamHeader .header-top .header-top-user{
     display: flex;
     align-items: center;
     height: 50px;
@@ -67,13 +67,13 @@ eachTeamHeader .header-top .header-top-user{
 }
 /* 헤더 드롭다운 END ---------*/
 
-eachTeamHeader .header-top-user .user-image{
+teamHeader .header-top-user .user-image{
     width: 40px;
     height: 40px;
     border-radius: 20px;
 }
 
-eachTeamHeader .header-top-user .user-name{
+teamHeader .header-top-user .user-name{
     height: 100%;
     display: flex;
     align-items: center;
@@ -82,33 +82,35 @@ eachTeamHeader .header-top-user .user-name{
 
 }
 
-eachTeamHeader .header-top-user .user-name p{
+teamHeader .header-top-user .user-name p{
     padding: 5px;
 }
 
-eachTeamHeader .header-bot{
+teamHeader .header-bot{
     height: 140px;
     background-color: white;
+    margin-bottom: 30px;
 }
 
-eachTeamHeader .header-bot .header-nav{
+teamHeader .header-bot .header-nav{
     height: 140px;
     max-width: 1024px;
     margin: 0 auto;
+    
 }
 
-eachTeamHeader .header-bot .header-nav .d-flex{
+teamHeader .header-bot .header-nav .team-nav{
     margin-left: 100px;
     height: 140px;
     justify-content: space-between;
     
 }
 
-eachTeamHeader .header-bot .header-nav .d-flex:first-child{
+teamHeader .header-bot .header-nav .team-nav:first-child{
 	margin-left: 0;
 }
 
-eachTeamHeader .header-bot .header-nav .d-flex a{
+teamHeader .header-bot .header-nav .team-nav a{
     /* margin: 20px; */
     text-decoration: none;
     height: 140px;
@@ -117,19 +119,16 @@ eachTeamHeader .header-bot .header-nav .d-flex a{
     align-items:center;
 }
 
-eachTeamHeader .header-bot .header-nav .d-flex a:hover{
+teamHeader .header-bot .header-nav .team-nav a:hover{
 	text-decoration:underline;
 	text-underline-offset: 3px;
 	text-decoration-thickness : 1.5px;
 }
 
-eachTeamHeader .header-bot .header-nav .d-flex img{
+teamHeader .header-bot .header-nav .team-nav img{
 	height: 140px;
 }
 
-eachTeamHeader .header-bot{
-	margin-bottom: 30px;
-}
 
 /* hover ㅇㅅㅇ */
 .hover__red:hover{
@@ -138,3 +137,4 @@ eachTeamHeader .header-bot{
 .hover__blue:hover{
 	color: blue;
 }
+
