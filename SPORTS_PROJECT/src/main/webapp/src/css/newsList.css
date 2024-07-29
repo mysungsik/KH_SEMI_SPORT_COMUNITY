@@ -14,12 +14,28 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	margin-bottom: 30px;
+	padding: 15px;
+	background-color: rgb(248 248 248);
+	border-radius: 15px;
 }
 
 .news-list .news-list-header .search-term{
 	display: flex;
 	gap : 30px;
-		
+	align-items: center;
+	
+}
+
+
+.news-list .news-list-header .search-term p:hover {
+	cursor: pointer;
+}
+
+.news-list .news-list-header .search-term .active{
+	color: #3158e6 !important;
+	font-size: 16px !important;
+	font-weight: bold;
 }
 
 .news-list .news-card{

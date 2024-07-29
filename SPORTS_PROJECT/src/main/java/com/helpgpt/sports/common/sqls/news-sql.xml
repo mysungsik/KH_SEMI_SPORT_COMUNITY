@@ -88,4 +88,21 @@
 		WHERE NEWS_NO = ?
 	</entry>
 	
+	<entry key="getFilteredNewsBase">
+		SELECT N.*, U.USER_NAME, T.TEAM_NAME, (SELECT 
+		                                        NI.IMG_RENAME FROM NEWS_IMG NI
+		                                        WHERE N.NEWS_NO = NI.NEWS_NO
+		                                        AND NI.IMG_LEVEL = 1) AS NEWS_IMG
+		FROM NEWS N
+		JOIN USER_INFO U ON N.USER_NO = U.USER_NO
+		JOIN TEAMS T ON N.TEAM_NO = T.TEAM_NO
+		WHERE NEWS_ST = 'N'
+	</entry>
+	
+	<entry key="updateNewsView">
+		UPDATE NEWS
+		SET NEWS_VIEWS = NEWS_VIEWS + 1
+		WHERE NEWS_NO = ?
+	</entry>
+	
 </properties>

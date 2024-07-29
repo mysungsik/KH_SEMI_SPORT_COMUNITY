@@ -102,12 +102,26 @@ public class NewsDAO {
 		return newsInfo;
 	}
 
-	public List<News> getNewsAll(Connection conn) {
+	public List<News> getFilteredNews(Connection conn, String searchTerm, int searchTeamNo) {
 		List<News> newsList = new ArrayList<>();
 		
 		try {
-			String sql = prop.getProperty("getNewsAll");
-			pstmt = conn.prepareStatement(sql);
+			String sqlBase = prop.getProperty("getFilteredNewsBase");
+			String sql = "";
+			if (searchTerm.equals("popular")) {
+				sql = sqlBase + "ORDER BY N.NEWS_VIEWS DESC";
+				pstmt = conn.prepareStatement(sql);
+				
+			}else if (searchTerm.equals("recent")){
+				sql = sqlBase + "ORDER BY N.NEWS_NO DESC";
+				pstmt = conn.prepareStatement(sql);
+				
+			} else if (searchTerm.equals("team")) {
+				sql = sqlBase + "AND N.TEAM_NO = ? ORDER BY NEWS_NO DESC";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, searchTeamNo);
+			}
+			
 			rs = pstmt.executeQuery();
 			
 			while (rs.next()) {
@@ -308,6 +322,27 @@ public class NewsDAO {
 			
 		}catch(Exception e) {
 			System.out.println("[ERROR] Failed to delete news");
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	public int updateNewsView(Connection conn, int newsNum) {
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("updateNewsView");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, newsNum);
+			
+			result = pstmt.executeUpdate();
+			
+		}catch(Exception e) {
+			System.out.println("[ERROR] Failed to update news view");
 			e.printStackTrace();
 		}finally {
 			close(pstmt);

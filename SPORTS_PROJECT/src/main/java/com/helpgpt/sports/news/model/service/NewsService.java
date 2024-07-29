@@ -38,17 +38,6 @@ public class NewsService {
 		return newsInfo;
 	}
 
-	public List<News> getNewsAll() {
-		Connection conn = getConnection();
-		
-		// 뉴스 가져오기 (썸네일 자동 추가)
-		List<News> newsList = dao.getNewsAll(conn);
-		
-		close(conn);
-		
-		return newsList;
-	}
-
 	public List<Teams> getAllTeams() {
 		Connection conn = getConnection();
 		
@@ -182,5 +171,31 @@ public class NewsService {
 		}
 		
 		return deleteResult;
+	}
+
+	public List<News> getFilteredNews(String searchTerm, int teamNo) {
+		Connection conn = getConnection();
+		
+		// 뉴스 가져오기 (썸네일 자동 추가)
+		List<News> newsList = dao.getFilteredNews(conn, searchTerm, teamNo);
+		
+		close(conn);
+		
+		return newsList;
+	}
+
+	// 조회수 갱신
+	public void updateNewsView(int newsNum) {
+		Connection conn = getConnection();
+		
+		int updateResult = dao.updateNewsView(conn, newsNum);
+	
+		if (updateResult > 0) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+		
+		return;
 	}
 }

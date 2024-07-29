@@ -1,16 +1,74 @@
 let newsData = []
 
 $(document).ready(function () {
-	getNewsListAll();
+	// 팀이름 가져오는 함수
+	getTeamNameAll();
+	
+	// 뉴스 데이터 가져오는 함수
+	let newsListSearchTerm = $(".newsListSearchTerm").eq(0).val();
+	let newsListSearchTeamNo = $(".newsListSearchTeamNo").eq(0).val();
+	let el;
+	
+	if (newsListSearchTerm == "recent"){
+		el = $(".termRecent").eq(0);
+	}
+	else if (newsListSearchTerm == "popular"){
+		el = $(".termPopular").eq(0);
+	}
+	else if (newsListSearchTerm == "team"){
+		el = $(".termTeam").eq(0);
+	}
+
+	getNewsListAll(newsListSearchTerm, newsListSearchTeamNo, el);
 });
 
+// 팀 이름 가져오는 함수
+function getTeamNameAll() {
+    let request_url = `${contextPath}/api/news/getAllTeams`;
+    let teamCategoryEl = $(".search-term-team").eq(0)
+
+    $.ajax({
+        type: "GET",
+        url: request_url,
+        dataType: "json",
+        async : false,
+        success: function (res) {
+			let isGetData = res.hasOwnProperty("data")
+			if (isGetData){
+				let teams = res.data;
+				
+				$.each(teams, function(index, d){
+					teamCategoryEl.append(`<option value="${d.teamNo}">${d.teamName}</option>`)
+				})
+			} else{
+				toastPop("warn", "팀 데이터를 불러오는데 실패하였습니다")
+			}
+        },
+        error: function (request, status, error) {
+            console.log(request);
+            console.log(status);
+            console.log(error);
+        }
+    });
+}
+
 // 뉴스 리스트 가져오는 함수
-function getNewsListAll(){
-	let request_url = `${contextPath}/api/news/getNewsAll`
+function getNewsListAll(newsListSearchTerm, newsListSearchTeamNo, el){
+	let request_url = `${contextPath}/api/news/getFilteredNews`
+	
+	let terms = $(".term")
+	terms.removeClass("active");
+	
+	$(el).addClass("active");
 	$.ajax({
 		type: "GET",
 		url: request_url,
 		dataType: "json",
+		async : false,
+		data : {
+			searchTerm : newsListSearchTerm,
+			teamNo : newsListSearchTeamNo
+		},
 		success: function (res) {
 			
 			let isGetList = res.hasOwnProperty("data")
@@ -77,6 +135,7 @@ function newsListTemplate(data) {
                     </div>
                     
                     <div class="news-card-footer d-flex">
+                    	<p> 조회수 <span> ${d.newsViews} </span> </p>
                         <p> ♡ <span>9999</span></p>
                         <p> ${d.newsPublisher} </p>
                         <p> ${d.teamName}</p>
@@ -87,5 +146,11 @@ function newsListTemplate(data) {
 		})
 
     return item;
+}
+
+// 뉴스 필터
+function newsFilter(searchTerm, el){
+	let teamNo = $(".search-term-team").val()
+	location.href=`${contextPath}/news/list?searchTerm=${searchTerm}&teamNo=${teamNo}`
 }
 	

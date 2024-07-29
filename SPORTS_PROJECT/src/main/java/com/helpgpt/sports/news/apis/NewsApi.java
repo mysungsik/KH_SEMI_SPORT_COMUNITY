@@ -52,17 +52,6 @@ public class NewsApi extends HttpServlet {
 
 		// 경로에 따라 필요한 기능을 사용
 		switch (path) {
-			case "getNewsAll" : {
-				List<News> newsList = service.getNewsAll();
-				
-				if (newsList.size() > 0) {
-					result.put("data", newsList);
-					result.put("message", "뉴스 리스트를 가져오는데 성공하였습니다");
-				}else {
-					result.put("message", "뉴스 리스트를 가져오는데 실패하였습니다");
-				}
-				new Gson().toJson(result, out);
-			};break;
 			case "getAllTeams" : {
 				List<Teams> teams = service.getAllTeams();
 				
@@ -73,6 +62,20 @@ public class NewsApi extends HttpServlet {
 					result.put("message", "failed to get teamsList");
 				}
 				
+				new Gson().toJson(result, out);
+			};break;
+			case "getFilteredNews" : {
+				HttpSession session = req.getSession();
+				String searchTerm = req.getParameter("searchTerm");
+				int teamNo = Integer.parseInt(req.getParameter("teamNo"));
+				List<News> newsList = service.getFilteredNews(searchTerm, teamNo);
+				
+				if (newsList.size() > 0) {
+					result.put("data", newsList);
+					result.put("message", "뉴스 리스트를 가져오는데 성공하였습니다");
+				}else {
+					result.put("message", "뉴스 리스트를 가져오는데 실패하였습니다");
+				}
 				new Gson().toJson(result, out);
 			};break;
 			default: {

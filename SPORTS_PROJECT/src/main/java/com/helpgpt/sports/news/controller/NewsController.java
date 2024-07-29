@@ -2,6 +2,7 @@ package com.helpgpt.sports.news.controller;
 
 import java.io.IOException;
 
+import javax.mail.Session;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -29,6 +30,7 @@ public class NewsController extends HttpServlet {
 	NewsService service = new NewsService();
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		HttpSession session = req.getSession();
 		String contextPath = req.getContextPath();
 		String reqPath = req.getPathInfo();
 		String path = "";
@@ -59,7 +61,7 @@ public class NewsController extends HttpServlet {
 				dispatcher.forward(req, res);
 			};break;
 			case "list": {
-				dispatcher = req.getRequestDispatcher(defaultURLPath + "newsList.jsp");
+				dispatcher = req.getRequestDispatcher(defaultURLPath + "newsList.jsp");		
 				dispatcher.forward(req, res);
 			};break;
 			case "vods": {
@@ -68,7 +70,10 @@ public class NewsController extends HttpServlet {
 			};break;
 			case "detail": {
 				dispatcher = req.getRequestDispatcher(defaultURLPath + "newsDetail.jsp");
+				
 				News newsInfo = service.getNewsOne(newsNum);
+				service.updateNewsView(newsNum);
+				
 				req.setAttribute("newsNum", newsNum);
 				req.setAttribute("newsInfo", newsInfo);
 				dispatcher.forward(req, res);

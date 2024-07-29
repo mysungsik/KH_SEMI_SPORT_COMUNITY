@@ -15,30 +15,29 @@
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/layouts/header.jsp"/>
+	
+	<input type="hidden" class="newsListSearchTerm" value="${param.searchTerm}">
+	<input type="hidden" class="newsListSearchTeamNo" value="${param.teamNo}">
 	<!-- Write Main Content -->
 	<main class="container">
 		<div class="new-list-container">
 			<div class="news-list" id="news-list-pagination">
 				<div class="news-list-header">
 					<div class="search-term">
-						<p class="fs-20__b" data-type="recent"> 최신순 </p>
-						<p class="fs-20__b" data-type="recent">  인기순 </p>
-						<p class="fs-20__b"> 구단별 </p>
-						<select  class="fs-20__b">
-							<option class="fs-14__b"> 다저스 </option>
-							<option class="fs-14__b"> 기아 </option>
-							<option class="fs-14__b"> 롯데 </option>
-							<option class="fs-14__b"> 한화  </option>
-						</select>
+						<p class="fs-14 term termRecent active" onclick="newsFilter('recent', this)"> 최신순 </p>
+						<p class="fs-14 term termPopular" onclick="newsFilter('popular', this)"> 인기순 </p>
+						<div class="d-flex">
+							<p class="fs-14 term termTeam" onclick="newsFilter('team', this)"> 구단별 </p>
+							<select class="search-term-team fs-14__b ml-10">
+							</select>
+						</div>
 					</div>
 			        <c:if test="${loginUser.getUserAuthority() == 'A'}"> 
 		     		<div>
 						<button onclick="location.href='${contextPath}/news/insert'"> 뉴스 등록 </button>
 					</div>
 			        </c:if>
-			
 				</div>
-				<p class="fs-20__b mb-10 fc__blue">  뉴스 </p>
 				<div id="news-list-data"></div>
 			</div>
 			<div id="news-list-pagination"></div>

@@ -22,7 +22,7 @@
 			<div class="news-main-popular">
 				<div class="news-main-header d-flex">
 					<p class="fs-20__b mb-10 fc__blue"> 인기 뉴스 </p>
-					<a class="text-hover__blue" href="${contextPath}/news/list"> 전체 뉴스 > </a>
+					<a class="text-hover__blue" href="${contextPath}/news/list?searchTerm=recent&teamNo=1"> 전체 뉴스 > </a>
 				</div>
 			 	<div class="news-card">
                     <img class="news-card-img" src="${contextPath}/public/images/news_example.jpg">
