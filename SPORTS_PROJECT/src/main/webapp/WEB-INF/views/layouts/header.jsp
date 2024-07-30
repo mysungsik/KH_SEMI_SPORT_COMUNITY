@@ -84,7 +84,7 @@
 	              <a class="fs-14 fc__white text-hover__white" href="${contextPath}/dashboard">HOME</a>
 	         	</li>
 	         	<li>
-	              <a class="fs-14 fc__white text-hover__white" href="${contextPath}/match">TODAY</a>
+	              <a class="fs-14 fc__white text-hover__white" href="${contextPath}/match">MATCH</a>
 	         	</li>
 	         	<li>
 	              <a class="fs-14 fc__white text-hover__white" href="${contextPath}/news">NEWS</a>

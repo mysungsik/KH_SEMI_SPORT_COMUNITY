@@ -253,19 +253,19 @@ function showModal(el){
 			// [ 정보 제공 동의 수정 ] 
 			case "emailAgree" : {
 				infoModal.find(".modal-title").html("이메일 정보 제공에 동의하시겠습니까?")
-				infoModal.find(".modal-body").html("모달 내용임둥")
+				infoModal.find(".modal-body").html("회원 정보가 정지될 경우 이메일이 발송됩니다.")
 				
 			} break;
 	
 			case "phoneAgree" : {
 				infoModal.find(".modal-title").html("번호 정보 제공에 동의하시겠습니까?")
-				infoModal.find(".modal-body").html("모달 내용임둥")
+				infoModal.find(".modal-body").html("회원 정보가 정지될 경우 메시지가 발송됩니다.")
 				
 			} break;
 			
 			case "addressAgree" : {
 				infoModal.find(".modal-title").html("주소 정보 제공에 동의하시겠습니까?")
-				infoModal.find(".modal-body").html("모달 내용임둥")
+				infoModal.find(".modal-body").html("선물을 받을수도 있습니다.")
 				
 			} break;
 			
