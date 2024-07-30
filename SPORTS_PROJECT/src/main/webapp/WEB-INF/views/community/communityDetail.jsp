@@ -57,9 +57,6 @@ ${board.boardContent}
 				<span> | </span>
 				<span class="pointer" data-type="board-report" onclick="showReportModal(this)">신고</span>
 			</div>
-			<div class="btn-area">
-				<button>목록으로</button>
-			</div>
 			<div class="update-area">
 				<span class="pointer" onclick="loginCheck(), location.href='${contextPath}/community/communityPosting/update?no=${requestScope.sub}'">수정</span>
 				<span> | </span>
