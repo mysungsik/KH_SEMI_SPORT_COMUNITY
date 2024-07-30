@@ -106,8 +106,6 @@ function replyPaginationTemplate(data) {
 					</div>
 					<div class="reply-extra-info">
 						<div>
-							<span class="fs-10 fc__gray pointer">좋아요 0:todo ♥</span>
-							<span class="fs-10 fc__gray"> | </span>
 							<span class="fs-10 fc__gray pointer" data-type="reply-update" data-replyno="${d.replyNo}" onclick="showReplyUpdateModal($(this))">수정</span>
 							<span class="fs-10 fc__gray"> | </span>
 							<span class="fs-10 fc__gray pointer" data-type="reply-delete" data-replyno="${d.replyNo}" onclick="showDeleteModal($(this))">삭제</span>
