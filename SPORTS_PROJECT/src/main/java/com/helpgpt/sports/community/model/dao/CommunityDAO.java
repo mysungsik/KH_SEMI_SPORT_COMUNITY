@@ -700,6 +700,27 @@ public class CommunityDAO {
 		return result;
 	}
 
+	public int updateBoardView(Connection conn, int boardNo) {
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("updateBoardView");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, boardNo);
+			
+			result = pstmt.executeUpdate();
+			
+		}catch(Exception e) {
+			System.out.println("[ERROR] Failed to update board view");
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
 	
 
 	

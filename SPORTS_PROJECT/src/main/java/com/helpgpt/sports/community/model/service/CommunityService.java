@@ -183,7 +183,7 @@ public class CommunityService {
 		
 		Connection conn = getConnection();
 		
-		List<Community> boardList = boardList = dao.searchBoard(conn, category, searchInput); 
+		List<Community> boardList = dao.searchBoard(conn, category, searchInput); 
 		
 		close(conn);
 		
@@ -224,6 +224,24 @@ public class CommunityService {
 		close(conn);
 		
 		return result;
+	}
+
+	/** 조회수
+	 * @param boardNo
+	 */
+	public void updateBoardView(int boardNo) {
+		Connection conn = getConnection();
+		
+		int updateResult = dao.updateBoardView(conn, boardNo);
+	
+		if (updateResult > 0) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+		
+		return;
+		
 	}
 
 	public int deleteBoardMany(List<Integer> parsedCommNo) {

@@ -1,3 +1,5 @@
+let isInitialLoad = true; 
+
 $(document).ready(function () {
     let sub = $("input[name='sub']");
     let sub_value = sub.val();
@@ -15,6 +17,7 @@ $(document).ready(function () {
 
         loadDataAndPaginate(sub_value, teamNo); // 선택된 팀의 ID와 함께 데이터 로드 및 페이지네이션 실행
     });
+
 
     // 함수화된 AJAX 요청 및 페이지네이션 실행 함수
     function loadDataAndPaginate(sub_value, teamNo) {
@@ -34,6 +37,8 @@ $(document).ready(function () {
                 if (isGetData) {
                     communityData = res.data;
                     paginationActive("community", communityData, paginationTemplate);
+                }else{
+                    $("#community-data").text("게시글이 존재하지 않습니다.");
                 }
 
                 // Handle teams data for select options
@@ -48,9 +53,9 @@ $(document).ready(function () {
                     $("#team").append(`<option value="${team.teamNo}">${team.teamName}</option>`);
                 });
 
-				if (teamNo) {
-					$("#team").val(teamNo);
-				}
+                if (teamNo) {
+                    $("#team").val(teamNo);
+                }
             },
             error: function (request, status, error) {
                 console.log(request);
@@ -100,15 +105,76 @@ $(document).ready(function () {
             break;
         }
     }
+
+    // 검색 버튼 클릭 시 검색 수행
+    $("#search-btn").on("click", function () {
+        searchBoard();
+    });
+
+    // 검색 기능
+function searchBoard() {
+    let category = $("[name='search-type']").val();	// 작성자, 제목, 내용
+    let searchInput = $("[name='search-input']").val();
+
+    if (searchInput.trim().length == 0) {
+        alert("검색어를 입력해주세요");
+        return
+    }
+
+    const request_url = `${contextPath}/api/community/searchBoard`;
+
+    $(".title").text("검색 결과");
+
+    for (let i = 0; i < 5; i++) {
+        $(".switch-category").eq(i).removeClass("base__blue");
+        $(".switch-title").eq(i).removeClass("fc__white");
+    }
+
+    // 이전 데이터 제거
+    $("#community-data").html("");
+    $("#community-pagination").html("");
+
+    // 상태 플래그를 설정하여 검색 중임을 표시
+    isInitialLoad = false;
+
+
+    $.ajax({
+        type: "GET",
+        url: request_url,
+        data: {
+            category,
+            searchInput
+        },
+        dataType: "json",
+        success: function (res) {
+            console.log(res)
+            let isGetData = res.hasOwnProperty("data")
+            if (isGetData) {
+                const boardData = res.data;
+
+                paginationActive("community", boardData, paginationTemplate);
+            } else {
+                $("#community-data").html("검색 결과가 없습니다.");
+            }
+
+        },
+        error: function (request, status, error) {
+            console.log(request);
+            console.log(status);
+            console.log(error);
+        }
+    });
+
+}
 });
 
 function paginationTemplate(data) {
     let item = "";
 
-        // Iterate over each item in data and generate the HTML
-        $.each(data, function (index, d) {
-            item +=
-                `<div class="post" onclick="location.href='${contextPath}/community/communityDetail/${d.boardNo}'">
+    // Iterate over each item in data and generate the HTML
+    $.each(data, function (index, d) {
+        item +=
+            `<div class="post" onclick="location.href='${contextPath}/community/communityDetail/${d.boardNo}'">
                     <div class="category">
                         <span class="fs-12 fc__gray">[ ${d.boardCategory} ]</span>
                     </div>
@@ -122,8 +188,8 @@ function paginationTemplate(data) {
                         </div>
                     </div>
                 </div>`;
-        });
-    
+    });
+
 
     return item;
 }
@@ -156,49 +222,4 @@ function paginationActive(id, datas, template) {
     }
 }
 
-// 검색 기능
-function searchBoard(){
-	let category = $("[name='search-type']").val();	// 작성자, 제목, 내용
-	let searchInput = $("[name='search-input']").val();
-	
-	const request_url = `${contextPath}/api/community/searchBoard`;
 
-    $(".switch-category").eq(0).removeClass("base__lblue").addClass("base__blue");
-    $(".switch-title").eq(0).removeClass("fc__gray").addClass("fc__white");
-    $(".title").text("전체");
-
-    $(".switch-category").eq(1).removeClass("base__blue");
-    $(".switch-category").eq(2).removeClass("base__blue");
-    $(".switch-category").eq(3).removeClass("base__blue");
-    $(".switch-category").eq(4).removeClass("base__blue");
-
-    $(".switch-title").eq(1).removeClass("fc__white");
-    $(".switch-title").eq(2).removeClass("fc__white");
-    $(".switch-title").eq(3).removeClass("fc__white");
-    $(".switch-title").eq(4).removeClass("fc__white");
-	
-	$.ajax({
-		type: "GET",
-		url: request_url,
-		data: {
-			category,
-			searchInput,
-		},
-		dataType: "json",
-		success: function (res) {
-			console.log(res)
-			let isGetData = res.hasOwnProperty("data")
-			if (isGetData){
-				const boardData = res.data;
-
-				paginationActive("community", boardData, paginationTemplate);
-			}
-        },
-		error : function(request, status, error){
-			console.log(request);
-			console.log(status);
-			console.log(error);
-		}
-	});
-	
-}

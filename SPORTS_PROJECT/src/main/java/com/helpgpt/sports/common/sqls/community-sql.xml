@@ -322,6 +322,12 @@
 		 WHERE COMM_NO = ?
 	</entry>
 	
+	<entry key="updateBoardView">
+		UPDATE COMM
+		SET COMM_VIEWS = COMM_VIEWS + 1
+		WHERE COMM_NO = ?
+	</entry>
+	
 	
 	
 </properties>

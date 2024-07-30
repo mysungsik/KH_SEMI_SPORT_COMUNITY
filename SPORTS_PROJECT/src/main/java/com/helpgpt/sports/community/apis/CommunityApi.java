@@ -112,6 +112,8 @@ public class CommunityApi extends HttpServlet {
 				
 				new Gson().toJson(result, out);
 				
+				
+				
 			}; break;
 				
 		default:System.out.println("[ERROR] COMMUNUNITY API");}

@@ -84,6 +84,7 @@ public class communityController extends HttpServlet {
 				
 				Community board = service.selectBoardDetail(boardNo);
 				String image = service.selectBoardImage(boardNo);
+				service.updateBoardView(boardNo);
 				
 				
 				req.setAttribute("image", image);

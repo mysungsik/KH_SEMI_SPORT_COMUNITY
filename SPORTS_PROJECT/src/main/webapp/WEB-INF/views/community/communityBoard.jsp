@@ -45,7 +45,7 @@
 					    	<option value="COMM_CONTENT" name="content">내용</option>
 						</select>
 						<input type="text" name="search-input">
-						<button type="button" class="fa-solid fa-magnifying-glass" onclick="searchBoard()"></button>
+						<button type="button" class="fa-solid fa-magnifying-glass" id="search-btn"></button>
 					</form>
 					<button type="button" class="write-btn mg-right" onclick="location.href='${contextPath}/community/communityPosting/free'">글쓰기</button>
 				</div>
