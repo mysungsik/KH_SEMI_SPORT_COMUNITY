@@ -32,7 +32,7 @@ $(document).ready(function () {
                 "type": typeNumber.val(),
                 "teamNo": teamNo // 선택된 팀의 ID를 데이터로 추가
             },
-            async : false,
+            async : true,
             success: function (res) {
                 let isGetData = res.hasOwnProperty("data");
                 if (isGetData) {

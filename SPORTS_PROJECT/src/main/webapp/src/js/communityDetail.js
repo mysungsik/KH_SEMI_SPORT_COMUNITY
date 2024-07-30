@@ -336,7 +336,7 @@ function showDeleteModal(el) {
 	})
 }
 
-// ReplyUpdate 모달 생성
+// ReplyUpdate 모달 
 function showReplyUpdateModal(el) {
 	if (loginUser == "") {
 		toastPop("warn", "로그인 후 이용해주세요");

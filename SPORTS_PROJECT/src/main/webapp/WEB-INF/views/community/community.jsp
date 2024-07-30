@@ -25,14 +25,16 @@ ${sub}
 		<section class="swiper mySwiper main-top">
 			<article class="title mg-left">
 				<div class="title-area">
-					<span class="fs-28__b">주간 인기글</span> 
+					<span class="fs-28__b">인기글</span> 
 					<span class="see-more fs-10 fc__gray">
 						<a href="${contextPath}/community/communityBoard/popular">더보기▶</a>
 					</span>
 				</div>
-				<div class="search-area">
-					<button type="button" class="write-btn mg-right" onclick="location.href='${contextPath}/community/communityPosting/write'">글쓰기</button>
-				</div>
+				<c:if test="${!empty loginUserNo}">
+					<div class="search-area">
+						<button type="button" class="write-btn mg-right" onclick="location.href='${contextPath}/community/communityPosting/write'">글쓰기</button>
+					</div>
+				</c:if>
 			</article>
 			<article class="swiper-wrapper">
 				<div class="popular base__lblue swiper-slide d-flex">

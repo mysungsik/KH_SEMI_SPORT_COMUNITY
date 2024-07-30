@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,7 +48,9 @@
 						<input type="text" name="search-input">
 						<button type="button" class="fa-solid fa-magnifying-glass" id="search-btn"></button>
 					</form>
-					<button type="button" class="write-btn mg-right" onclick="location.href='${contextPath}/community/communityPosting/free'">글쓰기</button>
+					<c:if test="${!empty loginUserNo}">
+						<button type="button" class="write-btn mg-right" onclick="location.href='${contextPath}/community/communityPosting/free'">글쓰기</button>
+					</c:if>
 				</div>
 			</div>
 			<div id="community-data"></div>
