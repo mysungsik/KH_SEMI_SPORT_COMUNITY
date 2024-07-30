@@ -30,8 +30,6 @@ public class TeamEachController extends HttpServlet{
 		String team="";
 		String page="";
 
-
-		
 		if(reqPath != null) {
 			if(reqPath.split("/").length == 3) {	// 페이지 비어있지 않을 때
 				team = reqPath.split("/")[1];
@@ -50,11 +48,8 @@ public class TeamEachController extends HttpServlet{
 		String[] teams={"KIA", "HANWHA", "LG", "LOTTE", "KT", "COFFEE", "PHONE", 
 				"BONBON", "DETOX", "TOBACCO"};
 		List<String> teamList = Arrays.asList(teams);
-
-
 		Teams oneTeam = null;
 				
-		
 		if(teamList.contains(team)){
 			req.setAttribute("team", team);
 			
@@ -68,45 +63,47 @@ public class TeamEachController extends HttpServlet{
 			if(oneTeam!= null ) {
 				req.setAttribute("oneTeam", oneTeam);
 			}
-			System.out.println(oneTeam);
-			System.out.println(page);
+			//System.out.println(oneTeam);
+			//System.out.println(page);
+			
 			switch(page) {
-			case "" :{
-				dispatcher = req.getRequestDispatcher(defaultURLPath + "teamsEachMain.jsp");
-				dispatcher.forward(req, resp);
-			};break;
-			case "info" :{
-				dispatcher = req.getRequestDispatcher(defaultURLPath + "teamInfo.jsp");
-				dispatcher.forward(req, resp);
-			};break;
-			
-			case "players" :{
-				dispatcher = req.getRequestDispatcher(defaultURLPath + "teamPlayers.jsp");
-				dispatcher.forward(req, resp);
-			};break;
-
-			case "schedule" :{
-				dispatcher = req.getRequestDispatcher(defaultURLPath + "teamSchedule.jsp");
-				dispatcher.forward(req, resp);
-			};break;
-
-			case "content" :{
-				dispatcher = req.getRequestDispatcher(defaultURLPath + "teamContent.jsp");
-				dispatcher.forward(req, resp);
-			};break;
-			
-			case "player":{
-				String playerNo = req.getParameter("playerNo");
-				//DB에서 값 조회
-				dispatcher = req.getRequestDispatcher(defaultURLPath + "player.jsp");
-				dispatcher.forward(req, resp);
-			};break;
-
-			// css 확인하려고 case 추가함(임시)
-			case "playerAdd":{
-				dispatcher = req.getRequestDispatcher(defaultURLPath + "playerAdd.jsp");
-				dispatcher.forward(req, resp);
-			};break;
+				case "" :{
+					dispatcher = req.getRequestDispatcher(defaultURLPath + "teamsEachMain.jsp");
+					dispatcher.forward(req, resp);
+				};break;
+				
+				case "info" :{
+					dispatcher = req.getRequestDispatcher(defaultURLPath + "teamInfo.jsp");
+					dispatcher.forward(req, resp);
+				};break;
+				
+				case "players" :{
+					dispatcher = req.getRequestDispatcher(defaultURLPath + "teamPlayers.jsp");
+					dispatcher.forward(req, resp);
+				};break;
+	
+				case "schedule" :{
+					dispatcher = req.getRequestDispatcher(defaultURLPath + "teamSchedule.jsp");
+					dispatcher.forward(req, resp);
+				};break;
+	
+				case "content" :{
+					dispatcher = req.getRequestDispatcher(defaultURLPath + "teamContent.jsp");
+					dispatcher.forward(req, resp);
+				};break;
+				
+				case "player":{
+					String playerNo = req.getParameter("playerNo");
+					//DB에서 값 조회
+					dispatcher = req.getRequestDispatcher(defaultURLPath + "player.jsp");
+					dispatcher.forward(req, resp);
+				};break;
+	
+				// css 확인하려고 case 추가함(임시)
+				case "playerAdd":{
+					dispatcher = req.getRequestDispatcher(defaultURLPath + "playerAdd.jsp");
+					dispatcher.forward(req, resp);
+				};break;
 
 			default:
 				System.out.println("-- 404 페이지로 이동!!1234 -- ");

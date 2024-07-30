@@ -29,7 +29,6 @@ $(document).ready(function() {
 				let isGetData = res.hasOwnProperty("data");
 				if (isGetData){
 					showTeams(res.data);
-					
 				}
 			}
 			

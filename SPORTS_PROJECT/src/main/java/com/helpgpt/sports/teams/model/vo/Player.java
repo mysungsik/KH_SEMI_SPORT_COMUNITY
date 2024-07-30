@@ -21,6 +21,23 @@ public class Player {
 	private char playerSt;
 	
 	public Player() {}
+	
+	
+	// 찝찝한 곳
+	public Player(int playerNo, int positionNo, String positionName, int teamNo, String playerName,
+			int playerUniformNo, String imgOriginal, String imgOriginal2 ) {
+		super();
+		this.playerNo = playerNo;
+		this.positionNo = positionNo;
+		this.positionName = positionName;
+		this.teamNo = teamNo;
+		this.playerName = playerName;
+		this.playerUniformNo = playerUniformNo;
+		this.imgOriginal = imgOriginal;
+		this.imgOriginal = imgOriginal2;
+	}
+
+
 
 	public Player(int playerNo, String imgOriginal, String imgRename, int imgLevel, int positionNo, String positionName,
 			int teamNo, String playerName, int playerUniformNo, char playerBD, char joinYear, int height, int weight,

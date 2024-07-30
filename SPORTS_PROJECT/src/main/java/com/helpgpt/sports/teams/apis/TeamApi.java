@@ -28,13 +28,12 @@ public class TeamApi extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		PrintWriter out = resp.getWriter();
-
 		// Path 지정
 		String reqPath = req.getPathInfo();
 		String path = "";
 
 		String team = req.getParameter("team");
-		System.out.println(team);
+		//System.out.println(team);
 		
 		if (reqPath != null) {
 			path = reqPath.split("/")[1];
@@ -42,7 +41,7 @@ public class TeamApi extends HttpServlet{
 			System.out.println("reqPath가 null입니다.");
 		}
 		req.setAttribute("team", team);
-		System.out.println(team);
+		//System.out.println(team);
 		// 경로에 따라 필요한 기능을 사용
 		Map<String, Object> result = new HashMap<>();
 		
@@ -153,9 +152,6 @@ public class TeamApi extends HttpServlet{
 				new Gson().toJson(result, out);
 			}
 		}
-		
-		
-		
 		
 	}
 

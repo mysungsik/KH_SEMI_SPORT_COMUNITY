@@ -57,6 +57,7 @@ public class TeamsController extends HttpServlet {
 				}else{
 					TeamsService service = new TeamsService();
 					Teams oneTeam = null;
+					
 					try {
 						// Team
 						oneTeam = service.getOneTeam(team);

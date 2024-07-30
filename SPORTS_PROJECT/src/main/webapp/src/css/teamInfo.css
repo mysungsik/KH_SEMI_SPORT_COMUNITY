@@ -110,10 +110,16 @@ section{
 
 .team-ci-content-img{
 	width:60%;
+	
 }
+
 
 .team-ci-content p{
 	line-height:2;
+}
+
+.team-ci-content-img img{
+	max-width: 500px;
 }
 /* team-ci 끝 */
 
@@ -140,8 +146,13 @@ section{
 	width:60%;
 }
 
+
 .team-logo-content p{
 	line-height:2;
+}
+
+.team-logo-content-img img{
+	max-width: 500px;
 }
 /* team-logo 끝 */
 
