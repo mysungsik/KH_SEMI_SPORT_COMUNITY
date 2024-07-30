@@ -18,6 +18,7 @@ import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
 import com.helpgpt.sports.common.filerename.MyRenamePolicy;
+import com.helpgpt.sports.community.model.service.CommunityService;
 import com.helpgpt.sports.community.model.vo.Community;
 import com.helpgpt.sports.login.model.service.UserService;
 import com.helpgpt.sports.login.model.vo.User;
@@ -36,6 +37,7 @@ public class ProfileApi extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ProfileService service = new ProfileService();
 	private ReplyService replyService = new ReplyService();
+	private CommunityService commService = new CommunityService();
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		PrintWriter out = res.getWriter();
@@ -224,6 +226,30 @@ public class ProfileApi extends HttpServlet {
 					new Gson().toJson(result, out);
 				}else {
 					result.put("message", "failed to delete many reply");
+					new Gson().toJson(result, out);
+				}
+			};break;
+			case "deleteMyCommMany" : {
+				String commNoStr = req.getParameter("commNos");
+				List<Integer> parsedCommNo = new ArrayList<>();
+				
+				if (commNoStr != null && !commNoStr.isEmpty()) {
+		            String[] commNoArray = commNoStr.split(",");
+		            for (String commNo : commNoArray) {
+		            	parsedCommNo.add(Integer.parseInt(commNo.trim()));
+		            }
+		        }
+				
+				int deleteResult = commService.deleteBoardMany(parsedCommNo);
+				
+		        Map<String, Object> result = new HashMap<>();
+				
+				if (deleteResult > 0) {
+					result.put("message", "success to delete many board");
+					result.put("data", deleteResult);
+					new Gson().toJson(result, out);
+				}else {
+					result.put("message", "failed to delete many board");
 					new Gson().toJson(result, out);
 				}
 			};break;

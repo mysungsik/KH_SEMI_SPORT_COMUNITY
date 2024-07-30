@@ -30,7 +30,7 @@
                         <input type="checkbox" id="check-all" name="check-all">
                         <label for="check-all" class="fs-12">전체 선택</label>
                     </div>
-                    <div onclick="deleteReply()">
+                    <div onclick="deleteMyReplyMany()">
                         <img src="${contextPath}/public/icons/bin.png">
                         <span> 선택 삭제 </span>
                     </div>

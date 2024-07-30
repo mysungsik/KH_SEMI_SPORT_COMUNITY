@@ -225,12 +225,33 @@ public class CommunityService {
 		
 		return result;
 	}
-	
-	
 
-
-
-
+	public int deleteBoardMany(List<Integer> parsedCommNo) {
+		
+		Connection conn = getConnection();
+		int result = 0;
+		
+		for (int commNo : parsedCommNo) {
+			int deleteResult = dao.deleteBoard(conn, commNo);
+			
+			if (deleteResult > 0 ) {
+				result = deleteResult;
+			}else {
+				result = 0;
+				break;
+			}
+		}
+		
+		if (result > 0) {
+			commit(conn);
+		} else {
+			rollback(conn);
+		}
+		
+		close(conn);
+		
+		return result;
+	}
 
 
 }

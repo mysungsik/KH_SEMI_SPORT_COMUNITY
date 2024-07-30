@@ -130,7 +130,7 @@ function paginationTemplate(data, id) {
 		  	item += 
 		  		`<div class="item checkbox__blue small-square base__lblue">
 		            <div class="element-text">
-		                <input type="checkbox" id="post-check" name="post-check" value=${d.boardNo}>
+		                <input type="checkbox" class="commCheck" id="post-check" name="post-check" value=${d.boardNo}>
 		                <div>
 		                    <p class="fc__gray"> <span>${d.boardCategory}</span> </p>
 		                    <p class="item-text"> ${d.boardTitle} </p>
@@ -835,7 +835,7 @@ function updateReply(el){
 }
 
 // 댓글 삭제 함수
-function deleteReply(){
+function deleteMyReplyMany(){
 	let checkboxes = $(".replyCheck:checked")
 	
 	const deleteRepyTarget = [];
@@ -843,8 +843,6 @@ function deleteReply(){
 	for (let checkbox of checkboxes){
 		deleteRepyTarget.push(checkbox.value)
 	}
-	
-	console.log(deleteRepyTarget)
 	
 	let request_url = `${contextPath}/api/profile/deleteMyReplyMany`
 	$.ajax({
@@ -864,6 +862,40 @@ function deleteReply(){
 			}
 			else{
 				toastPop("warn", "댓글 가져오는데 실패하였습니다.");
+			}
+
+		}
+	});
+}
+
+// 게시글 삭제 함수
+function deleteMyCommMany(){
+	let checkboxes = $(".commCheck:checked")
+	
+	const deleteTarget = [];
+	
+	for (let checkbox of checkboxes){
+		deleteTarget.push(checkbox.value)
+	}
+	
+	let request_url = `${contextPath}/api/profile/deleteMyCommMany`
+	$.ajax({
+		type: "POST",
+		url: request_url,
+		dataType: "json",
+		data:{
+			commNos : deleteTarget.join(',')
+		},
+		async: false,
+		success: function (res) {
+			let isGetData = res.hasOwnProperty("data");
+			
+			if(isGetData){
+				getMyCommunity()
+				toastPop("info", "성공적으로 삭제하였습니다.");
+			}
+			else{
+				toastPop("warn", "게시글을 가져오는데 실패하였습니다.");
 			}
 
 		}
