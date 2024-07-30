@@ -52,4 +52,30 @@ public class LikeService {
 		
 		return result;
 	}
+	
+	public int disLikeMyNewsMany(int targetTypeNo, List<Integer> targetNos, int userNo) {
+		Connection conn = getConnection();
+		int result = 0;
+		
+		for (int targetNo : targetNos) {
+			int deleteResult = dao.deleteLike(conn, targetTypeNo, targetNo, userNo);
+			
+			if (deleteResult > 0 ) {
+				result = deleteResult;
+			}else {
+				result = 0;
+				break;
+			}
+		}
+		
+		if (result > 0) {
+			commit(conn);
+		} else {
+			rollback(conn);
+		}
+		
+		close(conn);
+		
+		return result;
+	}
 }

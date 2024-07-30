@@ -20,6 +20,7 @@ import com.google.gson.Gson;
 import com.helpgpt.sports.common.filerename.MyRenamePolicy;
 import com.helpgpt.sports.community.model.service.CommunityService;
 import com.helpgpt.sports.community.model.vo.Community;
+import com.helpgpt.sports.like.model.service.LikeService;
 import com.helpgpt.sports.login.model.service.UserService;
 import com.helpgpt.sports.login.model.vo.User;
 import com.helpgpt.sports.news.model.vo.News;
@@ -38,6 +39,7 @@ public class ProfileApi extends HttpServlet {
 	private ProfileService service = new ProfileService();
 	private ReplyService replyService = new ReplyService();
 	private CommunityService commService = new CommunityService();
+	private LikeService likeService = new LikeService();
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		PrintWriter out = res.getWriter();
@@ -243,6 +245,39 @@ public class ProfileApi extends HttpServlet {
 				int deleteResult = commService.deleteBoardMany(parsedCommNo);
 				
 		        Map<String, Object> result = new HashMap<>();
+				
+				if (deleteResult > 0) {
+					result.put("message", "success to delete many board");
+					result.put("data", deleteResult);
+					new Gson().toJson(result, out);
+				}else {
+					result.put("message", "failed to delete many board");
+					new Gson().toJson(result, out);
+				}
+			};break;
+			case "disLikeMyNewsMany" : {
+				HttpSession session = req.getSession(false);
+				Map<String, Object> result = new HashMap<>();
+				
+				// 유저번호
+				int userNo = 0;
+				if (session != null) {
+					loginUser = (User)session.getAttribute("loginUser");
+					userNo = loginUser.getUserNo();
+				}
+				
+				// 데이터 가져와서 파싱
+				String newsNoStr = req.getParameter("newsNos");
+				List<Integer> parsedNewsNo = new ArrayList<>();
+				
+				if (newsNoStr != null && !newsNoStr.isEmpty()) {
+		            String[] newsNoArray = newsNoStr.split(",");
+		            for (String newsNo : newsNoArray) {
+		            	parsedNewsNo.add(Integer.parseInt(newsNo.trim()));
+		            }
+		        }
+			
+				int deleteResult = likeService.disLikeMyNewsMany(5, parsedNewsNo, userNo);	// 뉴스 : 5
 				
 				if (deleteResult > 0) {
 					result.put("message", "success to delete many board");

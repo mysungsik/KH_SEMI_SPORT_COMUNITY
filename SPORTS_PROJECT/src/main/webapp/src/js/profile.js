@@ -146,7 +146,7 @@ function paginationTemplate(data, id) {
 		  	item += 
 		  		`<div class="item checkbox__blue small-square base__lblue">
 		            <div class="element-text">
-		                <input type="checkbox" id="post-check" name="post-check">
+		                <input type="checkbox" class="newsCheck" id="post-check" name="post-check"  value=${d.newsNo}>
 		                <div>
 		                    <p class="fc__gray"> <span>${d.teamName}</span> - ${d.newsTitle}</p>
 		                    <p class="item-text"> ${d.newsContent} </p>
@@ -892,6 +892,40 @@ function deleteMyCommMany(){
 			
 			if(isGetData){
 				getMyCommunity()
+				toastPop("info", "성공적으로 삭제하였습니다.");
+			}
+			else{
+				toastPop("warn", "게시글을 가져오는데 실패하였습니다.");
+			}
+
+		}
+	});
+}
+
+// 뉴스 좋아요 제거 함수
+function disLikeMyNewsMany(){
+	let checkboxes = $(".newsCheck:checked")
+	
+	const deleteTarget = [];
+	
+	for (let checkbox of checkboxes){
+		deleteTarget.push(checkbox.value)
+	}
+	
+	let request_url = `${contextPath}/api/profile/disLikeMyNewsMany`
+	$.ajax({
+		type: "POST",
+		url: request_url,
+		dataType: "json",
+		data:{
+			newsNos : deleteTarget.join(',')
+		},
+		async: false,
+		success: function (res) {
+			let isGetData = res.hasOwnProperty("data");
+			
+			if(isGetData){
+				getMyNewsLiked()
 				toastPop("info", "성공적으로 삭제하였습니다.");
 			}
 			else{
