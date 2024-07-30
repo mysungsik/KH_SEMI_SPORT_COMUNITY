@@ -599,6 +599,16 @@ INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 4, 4, 2, DEFAULT, '안녕 내이�
 INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 4, 2, 3, DEFAULT, '안녕 내이름은 지혁지혁!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
 INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 4, 3, 3, DEFAULT, '안녕 내이름은 이지혁!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
 INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 4, 4, 3, DEFAULT, '안녕 내이름은 김동준 안녕난녕!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
+
+INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 1, 1, 400, DEFAULT, '안녕 내이름은 지혁지혁!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
+INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 1, 2, 400, DEFAULT, '안녕 내이름은 지혁지혁!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
+INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 1, 3, 400, DEFAULT, '안녕 내이름은 지혁지혁!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
+INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 1, 4, 400, DEFAULT, '안녕 내이름은 지혁지혁!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
+
+INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 1, 1, 100, DEFAULT, '안녕 내이름은 지혁지혁!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
+INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 1, 2, 100, DEFAULT, '안녕 내이름은 지혁지혁!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
+INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 1, 3, 100, DEFAULT, '안녕 내이름은 지혁지혁!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
+INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 1, 4, 100, DEFAULT, '안녕 내이름은 지혁지혁!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
 COMMIT;
 
 -- 2-9) LIKE TABLE (뉴스에 좋아요 추가) - USER, LIKE_TYPE_NO (5), LIKE_TARGET_NO
