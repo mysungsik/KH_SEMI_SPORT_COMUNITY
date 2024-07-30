@@ -340,7 +340,7 @@ function deleteNews(el){
 			let isDeleteNews = res.hasOwnProperty("data");
 			
 			if(isDeleteNews){
-				location.href = `${contextPath}/news/list`;
+				location.href = `${contextPath}/news`;
 			}
 			else{
 				toastPop("warn", res.message)

@@ -43,7 +43,7 @@ public class ServletListener implements ServletContextListener {
         // 서비스 생성, 현재 시간
         UserService service = new UserService();
         
-        // 쓰레드에서 실행할 Method 를 생성 (1 : 람다식 , 2 : 익명 클래스 생성 => 두 코드는 동일)
+        // 쓰레드에서 실행할 Method 를 생성
         Runnable task = () -> {
         	service.deleteUserInfo();
         };
