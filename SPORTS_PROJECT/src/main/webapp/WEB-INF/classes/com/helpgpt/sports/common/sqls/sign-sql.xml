@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>sql file for signup</comment>
+	
+	<entry key="user-signup">
+		INSERT INTO USER_INFO 
+		VALUES(
+		    SEQ_USER_NO.nextval,
+		    NULL,
+		    ?,
+		    ?, 
+		    ?,
+		    ?, 
+		    ?, 
+		    NULL, 
+		    ?,
+		    ?,
+		    ?,
+		    ?,
+		    NULL,
+		    NULL,
+		    DEFAULT,
+		    DEFAULT,
+		    DEFAULT,
+		    NULL,
+		    0,
+		    0
+		)
+	</entry>
+	
+	<entry key="emailDupCheck">
+		SELECT COUNT(*) FROM USER_INFO
+		WHERE USER_EMAIL = ?
+	</entry>
+	
+	<entry key="idDupCheck">
+		SELECT COUNT(*) FROM USER_INFO
+		WHERE USER_ID = ?
+	</entry>
+	
+	<entry key="create-user-policy">
+		INSERT INTO USER_POLICY 
+		VALUES(SEQ_USER_NO.CURRVAL, 
+				DEFAULT, 
+				DEFAULT,
+				DEFAULT
+			)
+	</entry>
+	
+	<entry key="create_user_session">
+		INSERT INTO USER_SESSION 
+		VALUES(
+		   SEQ_USER_NO.currval,
+		   NULL
+		)
+	</entry>
+	
+	<entry key="create_mail_check">
+		INSERT INTO USER_MAIL_CHECK 
+		VALUES(
+		   SEQ_USER_NO.currval,
+		   NULL
+		)
+	</entry>
+	
+	
+	<entry key="userResign">
+		UPDATE USER_INFO
+		SET DELETE_DT = SYSDATE
+		WHERE USER_NO = ?
+	</entry>
+	
+	<entry key="cancelUserResign">
+		UPDATE USER_INFO
+		SET DELETE_DT = NULL
+		WHERE USER_NO = ?
+		AND DELETE_DT IS NOT NULL
+	</entry>
+</properties>

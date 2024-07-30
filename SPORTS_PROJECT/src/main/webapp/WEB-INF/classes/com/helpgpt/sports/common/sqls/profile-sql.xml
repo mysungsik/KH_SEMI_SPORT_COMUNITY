@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>profiefor admn</comment>
+	
+	<entry key="selectUserHistories">
+		SELECT * FROM USER_HISTORY
+		WHERE USER_NO = ?
+		ORDER BY LOGIN_DT DESC
+	</entry>
+	
+	<entry key="changeUserProfileImg">
+		UPDATE USER_INFO
+		SET USER_IMG_ORIGIN = ? ,
+		    USER_IMG_RENAME = ?
+		WHERE USER_NO = ?
+	</entry>
+
+	<entry key="resetUserProfileImg">
+		UPDATE USER_INFO
+		SET USER_IMG_RENAME = ?
+		WHERE USER_NO = ?
+	</entry>
+
+	<entry key="getMycomments">
+		SELECT 
+		    R.*, 
+		    U.USER_NAME, 
+		    T.REPLY_TYPE, 
+		    U.USER_IMG_RENAME,
+		    CASE 
+		        WHEN R.REPLY_TYPE_NO = 1 THEN C.COMM_TITLE
+		        WHEN R.REPLY_TYPE_NO = 4 THEN N.NEWS_TITLE
+		        ELSE NULL
+		    END AS TARGET_TITLE
+		FROM 
+		    REPLY R
+		JOIN 
+		    USER_INFO U ON R.USER_NO = U.USER_NO
+		JOIN 
+		    REPLY_TYPE T ON R.REPLY_TYPE_NO = T.REPLY_TYPE_NO
+		LEFT JOIN 
+		    COMM C ON R.REPLY_TYPE_NO = 1 AND R.REPLY_TARGET_NO = C.COMM_NO
+		LEFT JOIN 
+		    NEWS N ON R.REPLY_TYPE_NO = 4 AND R.REPLY_TARGET_NO = N.NEWS_NO
+		WHERE 
+		    R.USER_NO = ?
+		    AND R.REPLY_ST = 'N'
+		ORDER BY 
+		    R.REPLY_DT DESC
+	</entry>
+	
+	<entry key="getMyCommunity">
+		SELECT C.COMM_NO, T.TYPE_NAME, C.COMM_TITLE FROM COMM C
+		JOIN COMM_TYPE T ON C.COMM_TYPE = T.TYPE_NO
+		WHERE C.USER_NO = ?
+		AND C.COMM_ST = 'N'
+		ORDER BY C.COMM_NO DESC
+	</entry>
+	
+	<entry key="getMyNewsLiked">
+		SELECT N.NEWS_NO, N.NEWS_TITLE, N.NEWS_CONTENT, T.TEAM_NAME FROM "LIKE" L
+		JOIN NEWS N ON N.NEWS_NO = L.LIKE_TARGET_NO
+		JOIN TEAMS T ON N.TEAM_NO = T.TEAM_NO
+		WHERE LIKE_TYPE_NO = 5
+		AND L.USER_NO = ?
+		AND N.NEWS_ST ='N'
+		ORDER BY NEWS_NO DESC
+	</entry>
+	
+	
+
+	
+	
+</properties>
