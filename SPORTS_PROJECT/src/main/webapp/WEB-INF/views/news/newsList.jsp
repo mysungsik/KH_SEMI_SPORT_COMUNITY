@@ -34,7 +34,7 @@
 					</div>
 			        <c:if test="${loginUser.getUserAuthority() == 'A'}"> 
 		     		<div>
-						<button onclick="location.href='${contextPath}/news/insert'"> 뉴스 등록 </button>
+						<button class="btn-small__gray" onclick="location.href='${contextPath}/news/insert'"> 뉴스 등록 </button>
 					</div>
 			        </c:if>
 				</div>
