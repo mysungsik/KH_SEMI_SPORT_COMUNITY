@@ -103,6 +103,7 @@ public class CommunityDAO {
 
 			if (rs.next()) {
 				board = new Community();
+				board.setUserNo(rs.getInt("USER_NO"));
 				board.setBoardContent(rs.getString("COMM_CONTENT"));
 				board.setBoardTitle(rs.getString("COMM_TITLE"));
 				board.setBoardAuthor(rs.getString("USER_NAME"));

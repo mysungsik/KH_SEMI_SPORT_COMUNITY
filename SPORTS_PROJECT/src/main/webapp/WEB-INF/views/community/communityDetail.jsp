@@ -57,11 +57,13 @@ ${board.boardContent}
 				<span> | </span>
 				<span class="pointer" data-type="board-report" onclick="showReportModal(this)">신고</span>
 			</div>
-			<div class="update-area">
-				<span class="pointer" onclick="loginCheck(), location.href='${contextPath}/community/communityPosting/update?no=${requestScope.sub}'">수정</span>
-				<span> | </span>
-				<span class="delete pointer" data-type="board-delete" onclick="showModal()">삭제</span>
-			</div>
+			<c:if test="${loginUserNo == board.userNo}">
+				<div class="update-area">
+					<span class="pointer" onclick="loginCheck(), location.href='${contextPath}/community/communityPosting/update?no=${requestScope.sub}'">수정</span>
+					<span> | </span>
+					<span class="delete pointer" data-type="board-delete" onclick="showModal()">삭제</span>
+				</div>
+			</c:if>
 		</section>
 		
 		<section class="input-area">
