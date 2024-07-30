@@ -264,6 +264,71 @@ VALUES(SEQ_PLAYER_NO.NEXTVAL, 4, 3, '김승연', 34,  '1983/12/16', 2002, 180, 1
 '진북초,전주동중,전주고,삼성,경찰,삼성' , 100000, 
 '2002 삼성라이온스, 2017 KIA타이거즈, 2016 KBO 골든글러브 수상, 2017 WBC 국가대표, 2017 KBO리그 정규시즌 출루율 1위, 2017 KBO 골든글러브 수상','Y');
 
+INSERT INTO PLAYER
+VALUES(SEQ_PLAYER_NO.NEXTVAL, 2,  1, '팔현종', 54, '1988/03/01', 2007, 183, 91, '학강초,광주동성중,광주동성고,KIA,텍사스', 50000,
+'2007 KIA타이거즈, 2021 텍사스 레인저스, 2022 KIA 타이거즈, 2010 아시안게임 국가대표 ,2017 WBC 국가대표 , 2014/2017 최동원상 수상
+, 2017 KBO리그 정규시즌 다승왕(20승), 2017 KBO리그 정규시즌 MVP, 2017 KBO 한국시리즈 MVP, 2017 KBO 골든글러브 수상
+, 2018 아시안게임 국가대표', 'Y');
+
+
+INSERT INTO PLAYER
+VALUES(SEQ_PLAYER_NO.NEXTVAL, 2,  1, '구현종', 54, '1988/03/01', 2007, 183, 91, '학강초,광주동성중,광주동성고,KIA,텍사스', 50000,
+'2007 KIA타이거즈, 2021 텍사스 레인저스, 2022 KIA 타이거즈, 2010 아시안게임 국가대표 ,2017 WBC 국가대표 , 2014/2017 최동원상 수상
+, 2017 KBO리그 정규시즌 다승왕(20승), 2017 KBO리그 정규시즌 MVP, 2017 KBO 한국시리즈 MVP, 2017 KBO 골든글러브 수상
+, 2018 아시안게임 국가대표', 'Y');
+
+INSERT INTO PLAYER
+VALUES(SEQ_PLAYER_NO.NEXTVAL, 2,  1, '십현종', 54, '1988/03/01', 2007, 183, 91, '학강초,광주동성중,광주동성고,KIA,텍사스', 50000,
+'2007 KIA타이거즈, 2021 텍사스 레인저스, 2022 KIA 타이거즈, 2010 아시안게임 국가대표 ,2017 WBC 국가대표 , 2014/2017 최동원상 수상
+, 2017 KBO리그 정규시즌 다승왕(20승), 2017 KBO리그 정규시즌 MVP, 2017 KBO 한국시리즈 MVP, 2017 KBO 골든글러브 수상
+, 2018 아시안게임 국가대표', 'Y');
+
+
+INSERT INTO PLAYER
+VALUES(SEQ_PLAYER_NO.NEXTVAL, 2,  1, '십일현종', 54, '1988/03/01', 2007, 183, 91, '학강초,광주동성중,광주동성고,KIA,텍사스', 50000,
+'2007 KIA타이거즈, 2021 텍사스 레인저스, 2022 KIA 타이거즈, 2010 아시안게임 국가대표 ,2017 WBC 국가대표 , 2014/2017 최동원상 수상
+, 2017 KBO리그 정규시즌 다승왕(20승), 2017 KBO리그 정규시즌 MVP, 2017 KBO 한국시리즈 MVP, 2017 KBO 골든글러브 수상
+, 2018 아시안게임 국가대표', 'Y');
+
+INSERT INTO PLAYER
+VALUES(SEQ_PLAYER_NO.NEXTVAL, 2,  1, '십이현종', 54, '1988/03/01', 2007, 183, 91, '학강초,광주동성중,광주동성고,KIA,텍사스', 50000,
+'2007 KIA타이거즈, 2021 텍사스 레인저스, 2022 KIA 타이거즈, 2010 아시안게임 국가대표 ,2017 WBC 국가대표 , 2014/2017 최동원상 수상
+, 2017 KBO리그 정규시즌 다승왕(20승), 2017 KBO리그 
+
+INSERT INTO PLAYER
+VALUES(SEQ_PLAYER_NO.NEXTVAL, 2,  1, '김현종', 54, '1988/03/01', 2007, 183, 91, '학강초,광주동성중,광주동성고,KIA,텍사스', 50000,
+'2007 KIA타이거즈, 2021 텍사스 레인저스, 2022 KIA 타이거즈, 2010 아시안게임 국가대표 ,2017 WBC 국가대표 , 2014/2017 최동원상 수상
+, 2017 KBO리그 정규시즌 다승왕(20승), 2017 KBO리그 정규시즌 MVP, 2017 KBO 한국시리즈 MVP, 2017 KBO 골든글러브 수상
+, 2018 아시안게임 국가대표', 'Y');정규시즌 MVP, 2017 KBO 한국시리즈 MVP, 2017 KBO 골든글러브 수상
+, 2018 아시안게임 국가대표', 'Y');
+
+INSERT INTO PLAYER
+VALUES(SEQ_PLAYER_NO.NEXTVAL, 2,  1, '이현종', 54, '1988/03/01', 2007, 183, 91, '학강초,광주동성중,광주동성고,KIA,텍사스', 50000,
+'2007 KIA타이거즈, 2021 텍사스 레인저스, 2022 KIA 타이거즈, 2010 아시안게임 국가대표 ,2017 WBC 국가대표 , 2014/2017 최동원상 수상
+, 2017 KBO리그 정규시즌 다승왕(20승), 2017 KBO리그 정규시즌 MVP, 2017 KBO 한국시리즈 MVP, 2017 KBO 골든글러브 수상
+, 2018 아시안게임 국가대표', 'Y');정규시즌 MVP, 2017 KBO 한국시리즈 MVP, 2017 KBO 골든글러브 수상
+, 2018 아시안게임 국가대표', 'Y');
+
+INSERT INTO PLAYER
+VALUES(SEQ_PLAYER_NO.NEXTVAL, 2,  1, '삼현종', 54, '1988/03/01', 2007, 183, 91, '학강초,광주동성중,광주동성고,KIA,텍사스', 50000,
+'2007 KIA타이거즈, 2021 텍사스 레인저스, 2022 KIA 타이거즈, 2010 아시안게임 국가대표 ,2017 WBC 국가대표 , 2014/2017 최동원상 수상
+, 2017 KBO리그 정규시즌 다승왕(20승), 2017 KBO리그 정규시즌 MVP, 2017 KBO 한국시리즈 MVP, 2017 KBO 골든글러브 수상
+, 2018 아시안게임 국가대표', 'Y');정규시즌 MVP, 2017 KBO 한국시리즈 MVP, 2017 KBO 골든글러브 수상
+, 2018 아시안게임 국가대표', 'Y');
+
+INSERT INTO PLAYER
+VALUES(SEQ_PLAYER_NO.NEXTVAL, 2,  1, '고현종', 54, '1988/03/01', 2007, 183, 91, '학강초,광주동성중,광주동성고,KIA,텍사스', 50000,
+'2007 KIA타이거즈, 2021 텍사스 레인저스, 2022 KIA 타이거즈, 2010 아시안게임 국가대표 ,2017 WBC 국가대표 , 2014/2017 최동원상 수상
+, 2017 KBO리그 정규시즌 다승왕(20승), 2017 KBO리그 정규시즌 MVP, 2017 KBO 한국시리즈 MVP, 2017 KBO 골든글러브 수상
+, 2018 아시안게임 국가대표', 'Y');정규시즌 MVP, 2017 KBO 한국시리즈 MVP, 2017 KBO 골든글러브 수상
+, 2018 아시안게임 국가대표', 'Y');
+
+INSERT INTO PLAYER
+VALUES(SEQ_PLAYER_NO.NEXTVAL, 2,  1, '고현정', 54, '1988/03/01', 2007, 183, 91, '학강초,광주동성중,광주동성고,KIA,텍사스', 50000,
+'2007 KIA타이거즈, 2021 텍사스 레인저스, 2022 KIA 타이거즈, 2010 아시안게임 국가대표 ,2017 WBC 국가대표 , 2014/2017 최동원상 수상
+, 2017 KBO리그 정규시즌 다승왕(20승), 2017 KBO리그 정규시즌 MVP, 2017 KBO 한국시리즈 MVP, 2017 KBO 골든글러브 수상
+, 2018 아시안게임 국가대표', 'Y');정규시즌 MVP, 2017 KBO 한국시리즈 MVP, 2017 KBO 골든글러브 수상
+, 2018 아시안게임 국가대표', 'Y');
 COMMIT;
 -- 2-4) MATCH ----------------------------------------
 -- (MATCH_NO / TEAM_NO / STADIUM_NO / PLAYER_NO)
@@ -599,16 +664,6 @@ INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 4, 4, 2, DEFAULT, '안녕 내이�
 INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 4, 2, 3, DEFAULT, '안녕 내이름은 지혁지혁!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
 INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 4, 3, 3, DEFAULT, '안녕 내이름은 이지혁!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
 INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 4, 4, 3, DEFAULT, '안녕 내이름은 김동준 안녕난녕!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
-
-INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 1, 1, 400, DEFAULT, '안녕 내이름은 지혁지혁!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
-INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 1, 2, 400, DEFAULT, '안녕 내이름은 지혁지혁!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
-INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 1, 3, 400, DEFAULT, '안녕 내이름은 지혁지혁!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
-INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 1, 4, 400, DEFAULT, '안녕 내이름은 지혁지혁!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
-
-INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 1, 1, 100, DEFAULT, '안녕 내이름은 지혁지혁!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
-INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 1, 2, 100, DEFAULT, '안녕 내이름은 지혁지혁!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
-INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 1, 3, 100, DEFAULT, '안녕 내이름은 지혁지혁!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
-INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, 1, 4, 100, DEFAULT, '안녕 내이름은 지혁지혁!! 누구일까요<br>안녕하세요 봉주르 <br>하위', DEFAULT);
 COMMIT;
 
 -- 2-9) LIKE TABLE (뉴스에 좋아요 추가) - USER, LIKE_TYPE_NO (5), LIKE_TARGET_NO
