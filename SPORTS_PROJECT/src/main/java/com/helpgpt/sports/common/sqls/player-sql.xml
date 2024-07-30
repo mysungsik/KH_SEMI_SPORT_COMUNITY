@@ -34,6 +34,19 @@
 			    T.TEAM_ST = 'Y'
 			AND T.TEAM_NAME  = ?
 			AND PLAYER_ST = 'Y'
-            AND P.POSITION_NO=?
+            AND P.POSITION_NO= ?
+	</entry>
+	
+	<entry key="getPlayerInfo">
+		SELECT 
+        P.*, pp.position_name, PI2.IMG_ORIGINAL AS PLAYER_POSE_IMG
+        FROM 
+            PLAYER P
+        LEFT JOIN PLAYER_IMG PI2 ON P.PLAYER_NO = PI2.PLAYER_NO AND PI2.IMG_LEVEL = 2
+        LEFT JOIN TEAMS T ON P.TEAM_NO = T.TEAM_NO
+        LEFT JOIN PLAYER_POSITION PP ON P.POSITION_NO = PP.POSITION_NO 
+        WHERE 
+          PLAYER_ST = 'Y'
+        AND P.PLAYER_NO=?
 	</entry>
 </properties>

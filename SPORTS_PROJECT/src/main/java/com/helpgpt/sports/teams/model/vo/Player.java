@@ -11,8 +11,8 @@ public class Player {
 	private int teamNo;
 	private String playerName;
 	private int playerUniformNo;
-	private char playerBD;
-	private char joinYear;
+	private String playerBD;
+	private String joinYear;
 	private int height;
 	private int weight;
 	private String school;
@@ -20,7 +20,6 @@ public class Player {
 	private String career;
 	private char playerSt;
 	
-	public Player() {}
 	
 	
 	// 찝찝한 곳
@@ -40,7 +39,7 @@ public class Player {
 
 
 	public Player(int playerNo, String imgOriginal, String imgRename, int imgLevel, int positionNo, String positionName,
-			int teamNo, String playerName, int playerUniformNo, char playerBD, char joinYear, int height, int weight,
+			int teamNo, String playerName, int playerUniformNo, String playerBD, String joinYear, int height, int weight,
 			String school, int salary, String career, char playerSt) {
 		super();
 		this.playerNo = playerNo;
@@ -61,6 +60,27 @@ public class Player {
 		this.career = career;
 		this.playerSt = playerSt;
 	}
+
+	public Player(int playerNo, int positionNo, String postionName, int teamNo, String playerName, int playerUniformNo, String playerBD,
+			String joinYear, int height, int weight, String school, int salary, String career, char playerState,
+			String positionName, String playerPoseImg) {
+		this.playerNo = playerNo;
+		this.positionNo=positionNo;
+		this.positionName=positionName;
+		this.teamNo=teamNo;
+		this.playerName=playerName;
+		this.playerUniformNo=playerUniformNo;
+		this.playerBD = playerBD;
+		this.joinYear = joinYear;
+		this.height = height;
+		this.weight = weight;
+		this.school = school;
+		this.salary = salary;
+		this.career = career;
+		this.playerSt = playerState;
+	}
+	
+
 
 	public int getPlayerNo() {
 		return playerNo;
@@ -134,19 +154,19 @@ public class Player {
 		this.playerUniformNo = playerUniformNo;
 	}
 
-	public char getPlayerBD() {
+	public String getPlayerBD() {
 		return playerBD;
 	}
 
-	public void setPlayerBD(char playerBD) {
+	public void setPlayerBD(String playerBD) {
 		this.playerBD = playerBD;
 	}
 
-	public char getJoinYear() {
+	public String getJoinYear() {
 		return joinYear;
 	}
 
-	public void setJoinYear(char joinYear) {
+	public void setJoinYear(String joinYear) {
 		this.joinYear = joinYear;
 	}
 

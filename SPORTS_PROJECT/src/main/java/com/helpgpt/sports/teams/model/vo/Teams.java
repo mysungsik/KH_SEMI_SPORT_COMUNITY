@@ -16,7 +16,6 @@ public class Teams {
     private String imgDescription1;
     private String imgOriginal2;
     private String imgDescription2;
-
 	private String imgOriginal3;
     private String imgOriginal4;
 

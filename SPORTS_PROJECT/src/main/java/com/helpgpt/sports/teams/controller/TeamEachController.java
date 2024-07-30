@@ -79,6 +79,13 @@ public class TeamEachController extends HttpServlet{
 				
 				case "players" :{
 					dispatcher = req.getRequestDispatcher(defaultURLPath + "teamPlayers.jsp");
+					String positionNoParam = req.getParameter("type");
+					int positionNo = 0;
+					if(positionNoParam != null) {
+						positionNo = Integer.parseInt(positionNoParam);
+					}
+					
+					req.setAttribute("type", positionNo);
 					dispatcher.forward(req, resp);
 				};break;
 	
@@ -93,10 +100,19 @@ public class TeamEachController extends HttpServlet{
 				};break;
 				
 				case "player":{
-					String playerNo = req.getParameter("playerNo");
 					//DB에서 값 조회
 					dispatcher = req.getRequestDispatcher(defaultURLPath + "player.jsp");
+					
+					String playerNoParam = req.getParameter("playerNo");
+					int playerNo = 0;
+					
+					if(playerNoParam != null) {
+						playerNo = Integer.parseInt(playerNoParam);
+					}
+					
+					req.setAttribute("playerNo", playerNo);
 					dispatcher.forward(req, resp);
+					
 				};break;
 	
 				// css 확인하려고 case 추가함(임시)

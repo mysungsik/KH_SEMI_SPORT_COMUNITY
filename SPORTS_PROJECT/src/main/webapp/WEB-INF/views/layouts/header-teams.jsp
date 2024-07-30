@@ -85,7 +85,7 @@
 					<a class="fs-20__b  team-name" href="${contextPath}/team/${team}/info">${team}</a>
 				</li>
 				<li>
-					<a class="fs-20__b " href="${contextPath}/team/${team}/players">PLAYERS</a>
+					<a class="fs-20__b " href="${contextPath}/team/${team}/players?type=0">PLAYERS</a>
 				</li>
 				<li>
                     <a href="${contextPath}/team/${team}"><img class="team-logo" src="${contextPath}${oneTeam.imgOriginal1}"></a>

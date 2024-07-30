@@ -445,6 +445,43 @@ display: -webkit-box;
     margin: 10px 0; 
 }
 
+.former-content .reply-container .reply-author-info .reply-author{
+	display: flex;
+	align-items: center;
+}
+
+.reply-container .reply-author-info .author-name{
+	display: flex;
+	align-items: center;
+	margin-top: 5px;
+}
+
+
+
+.reply-container .reply-author-info .author-profile{
+	width: 35px;
+	height: 35px;
+	border-radius: 100px;
+}
+
+.reply-container .reply-extra-info{
+	margin-top: 10px;
+}
+
+/* 페이지네이션 스타일링*/
+.paginationjs-pages{
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+}
+.paginationjs-pages ul {
+	display: flex;
+	gap: 10px;
+}
+
+.paginationjs-pages a:hover{
+	cursor: pointer;
+}
 .player-comment-content .former-comment span{
 	display: inline-block;
  	border-radius:10px;
@@ -545,9 +582,5 @@ form>button{
 	color: white;
 }
 
-.page-area #paginationjs-pages{
-	width:0;
-	height:0;
-}
 
 

@@ -3,14 +3,16 @@ const team_player = [
 ]
 
 $(document).ready(function() {
-	
+	let type = $("input[name='type']").val();
 	let request_url=`${contextPath}/api/player/getPlayer`
+
 	
 	$.ajax({
 		type: "GET",
 		url: request_url,
 		dataType: "json",
-		data:{team},
+		data:{team,
+			"type": type},
 		success: function (res) {
 			let isGetData = res.hasOwnProperty("data");
 			if (isGetData){
@@ -43,7 +45,7 @@ function showTeamPlayers(data){
 			<td>
 				<div class="card-thumbnail">
 					<div class="card-thumbnail-img">
-						<a href="${contextPath}/team/${d.teamName}/player">
+						<a href="player?playerNo=${d.playerNo}">
 							<img src="${imgSrc}">
 						</a>
 					</div>
@@ -52,7 +54,7 @@ function showTeamPlayers(data){
 							<p class="fs-12 fc__white">${d.positionName}</p>
 						</div>
 						<div class="card-thumbnail-content fs-20">
-							<a href="${contextPath}/team/${d.teamName}/player" class="fs-20 fc__white">${d.playerUniformNo} ${d.playerName}</a>
+							<a href="player?playerNo=${d.playerNo}r" class="fs-20 fc__white">${d.playerUniformNo} ${d.playerName}</a>
 						</div>
 					</div>
 				</div>	
@@ -83,9 +85,9 @@ function showPageCoverBottom(d){
 			<div class="pagecover-bottom ${d.teamColor}">
 				<div class="pagecover-bottom-inner d-flex fc__white">
 					<ul>
-						<li><a href="players?type=1" onclick="goPosition()">코칭스태프</a></li>
+						<li><a href="players?type=1">코칭스태프</a></li>
 						|
-						<li><a href="players?type=2" onclick="goPosition()">투수</a></li>
+						<li><a href="players?type=2">투수</a></li>
 						|
 						<li><a href="players?type=3">포수</a></li>
 						|
@@ -102,7 +104,7 @@ function showPageCoverBottom(d){
 	sibling.after(html)
 }
 
-function goPosition(){
+/* function goPosition(){
 	let request_url =`${contextPath}/api/player/getPlayerPosition`
 	$.ajax({
 		type: "GET",
@@ -121,7 +123,7 @@ function goPosition(){
 		}
 		
 });
-}
+} */
 
 function showBtnArea(d){
 	let html = 

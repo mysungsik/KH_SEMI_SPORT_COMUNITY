@@ -5,18 +5,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<link rel="stylesheet" href="${contextPath}/src/css/teamsEachHeader.css">
 <link rel="stylesheet" href="${contextPath}/src/css/player.css">
+
 <jsp:include page="/WEB-INF/views/layouts/header-teams-dependencies.jsp"/>
+<jsp:include page="/WEB-INF/views/layouts/header-dependencies.jsp"/>
+
 <script src="${contextPath}/src/util/pagination.js" defer></script>
 <script src="${contextPath}/src/js/player.js" defer></script>
 
 <title>Player</title>
-<script src="https://kit.fontawesome.com/cb5f1fee4d.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/layouts/header-teams.jsp" />
+	
+	<input type="hidden" value="${playerNo}" name="playerNo">
+	
 	<!-- 페이지 커버 -->
 	<div class="pagecover">
 		<div class="pagecover-img">
@@ -30,15 +35,6 @@
 		<div class="pagecover-bottom">
 			<div class="pagecover-bottom-inner d-flex fc__white">
 				<ul>
-					<li>코칭스태프</li> 
-					<li><span>|</span></li>
-					<li>투수</li> 
-					<li><span>|</span></li>
-					<li>포수</li> 
-					<li><span>|</span></li>
-					<li>내야수</li> 
-					<li><span>|</span></li>
-					<li>외야수</li>
 				</ul>
 			</div>
 		</div>
@@ -477,25 +473,35 @@
 			<div class="player-comment-content">
 				<div class="title">응원댓글</div>
 				<div class="former-comment">
-					<section class="reply-area">
+					<!-- <section class="reply-area">
 						<div id="player-data">
 						</div>
 					</section>
-					<div id="player-pagination"></div>
+					<div id="player-pagination"></div> -->
+					
+					<section class="reply-container">
+						<div id="reply-data"></div>
+					</section>
+					
+					
 				</div>
 				
-				<section class="input-area">
-					<form>
-						<textarea style="resize: none" placeholder="댓글을 입력해주세요."></textarea>
-						<button>댓글</button>
+				<section class="reply-input-container">
+					<form action="insertReply">
+						<textarea style="resize: none" placeholder="댓글을 입력해주세요."  name="reply-content"></textarea>
+						<button  onclick="insertReply()" type="button">댓글</button>
 					</form>
 				</section>
 				
-				
+				<section class="reply-container">
+					
+					<div id="reply-pagination"></div>
+				</section>
 			</div>
 		</div>
 	</main>
 	</div>
-
+	  	
+	
 </body>
 </html>

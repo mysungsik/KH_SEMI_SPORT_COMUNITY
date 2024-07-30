@@ -17,10 +17,12 @@
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/layouts/header-teams.jsp"/>
+	
+	<input type="hidden" value="${type}" name="type">
 	<!-- 페이지 커버 -->
 	<div class="pagecover">
 		<div class="pagecover-img">
-			<div class="fc__white fs-28__b">선수 소개</div>
+			<div class="fc__white"><a href="players?type=0" class="fs-28__b">선수 소개</a></div>
 			
 			<div class="fc__white">
 				<i class="fa-solid fa-house"></i>

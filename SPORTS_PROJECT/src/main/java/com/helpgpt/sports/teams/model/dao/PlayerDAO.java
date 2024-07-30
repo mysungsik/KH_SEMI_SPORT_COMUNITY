@@ -63,6 +63,7 @@ public class PlayerDAO {
 				Player player = new Player(playerNo, positionNo, positionName, teamNo, playerName, playerUniformNo, headShot, teamHeaderImg);
 				playerList.add(player);
 			}
+			System.out.println(playerList);
 			
 		} catch (Exception e) {
 			System.out.println("[ERROR] FAILED to get PlayerInfo");
@@ -82,15 +83,15 @@ public class PlayerDAO {
 	 * @param positionNo
 	 * @return
 	 */
-	public List<Player> getPlayerPosition(Connection conn, String team, int positionNo) {
-List<Player> playerList = new ArrayList<>();
+	public List<Player> getPlayerPosition(Connection conn, String team, int type) {
+		List<Player> playerList = new ArrayList<>();
 		
 		try {
-			String sql = prop.getProperty("getPlayers");
+			String sql = prop.getProperty("getPositionPlayers");
 			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, team);
-			pstmt.setInt(2, positionNo);
+			pstmt.setInt(2, type);
 			
 			rs = pstmt.executeQuery();
 			
@@ -103,7 +104,55 @@ List<Player> playerList = new ArrayList<>();
 				String headShot= rs.getString("HEADSHOT");
 				String teamHeaderImg = rs.getString("TEAM_HEADER_IMG");
 				
-				Player player = new Player(playerNo, positionNo, positionName, teamNo, playerName, playerUniformNo, headShot, teamHeaderImg);
+				Player player = new Player(playerNo, type, positionName, teamNo, playerName, playerUniformNo, headShot, teamHeaderImg);
+				playerList.add(player);
+			}
+			
+		} catch (Exception e) {
+			System.out.println("[ERROR] FAILED to get PlayerInfo");
+
+			e.printStackTrace();
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return playerList;
+	}
+
+	/** 플레이어 정보 가져오는 DAO
+	 * @param conn
+	 * @param playerNo
+	 * @return
+	 */
+	public List<Player> getPlayerInfo(Connection conn, int playerNo) {
+		List<Player> playerList = new ArrayList<>();
+		
+		try {
+			String sql = prop.getProperty("getPlayerInfo");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, playerNo);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				int positionNo = rs.getInt("POSITION_NO");
+				int teamNo = rs.getInt("TEAM_NO");
+				String playerName = rs.getString("PLAYER_NAME");
+				int playerUniformNo = rs.getInt("PLAYER_UNIFORM_NO");
+				String playerBd= rs.getString("PLAYER_BD");
+				String joinYear= rs.getString("JOIN_YEAR");
+				int height = rs.getInt("HEIGHT");
+				int weight = rs.getInt("WEIGHT");
+				String school= rs.getString("SCHOOL");
+				int salary = rs.getInt("SALARY");
+				String career= rs.getString("CAREER");
+				char playerState = rs.getString("PLAYER_ST").charAt(0);
+				String positionName= rs.getString("POSITION_NAME");
+				String playerPoseImg = rs.getString("PLAYER_POSE_IMG");
+
+				Player player = new Player(playerNo, positionNo, positionName, teamNo, playerName, playerUniformNo, playerBd, joinYear, height, weight, school, salary, career, playerState, positionName, playerPoseImg);
 				playerList.add(player);
 			}
 			

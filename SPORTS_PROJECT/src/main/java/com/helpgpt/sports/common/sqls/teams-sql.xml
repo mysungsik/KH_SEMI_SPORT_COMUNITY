@@ -50,7 +50,7 @@
 
 	<entry key="addTeam">
 		INSERT INTO TEAMS
-		VALUES(SEQ_TEAM_NO.NEXTVAL, SEQ_STADIUM_NO.NEXTVAL, ?, ?, ?, ?, ?, ?, 'Y', DEFAULT, ?);
+		VALUES(SEQ_TEAM_NO.NEXTVAL, SEQ_STADIUM_NO.NEXTVAL, ?, ?, ?, ?, ?, ?, 'Y', DEFAULT, ?)
 	</entry>
 	
 
