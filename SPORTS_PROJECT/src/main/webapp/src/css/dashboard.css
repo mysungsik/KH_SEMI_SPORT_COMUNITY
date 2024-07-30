@@ -192,7 +192,23 @@
     width: 100%;
     height: 50%;
     padding: 0 10px;
+    overflow-y : scroll;
 }
+
+.news-content-bottom::-webkit-scrollbar {
+    width: 7px;
+}
+.news-content-bottom::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0);
+}
+.news-content-bottom::-webkit-scrollbar-thumb { 
+    background-color: #458BE2; 
+    border-radius: 20px;
+}
+.news-content-bottom::-webkit-scrollbar-button {
+    display: none;
+}
+
 .main-news-content .news-content-bottom:hover{
     cursor: pointer;
 }

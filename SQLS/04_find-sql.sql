@@ -546,3 +546,32 @@ WHERE ROWNUM <= 5;
 		FROM TEAMS 
 		WHERE TEAM_ST = 'Y'
 		AND TEAM_NAME='KIA';
+
+
+SELECT * FROM (
+    SELECT 
+        P.TYPE_NAME, 
+        C.COMM_TITLE, 
+        U.USER_NAME, 
+        C.CREATE_DT, 
+        C.COMM_VIEWS, 
+        T.TEAM_NAME, 
+        C.COMM_NO,
+        (SELECT COUNT(*) 
+            FROM REPLY R
+            WHERE R.REPLY_TARGET_NO = C.COMM_NO
+            AND R.REPLY_TYPE_NO = 1
+            AND R.REPLY_ST = 'N') AS REPLY_COUNT,
+        (SELECT COUNT(*) 
+            FROM "LIKE" L 
+            WHERE L.LIKE_TARGET_NO = C.COMM_NO
+            AND L.LIKE_TYPE_NO = 1) AS LIKE_COUNT
+    FROM COMM C
+    LEFT JOIN TEAMS T ON T.TEAM_NO = C.TEAM_NO
+    JOIN USER_INFO U USING(USER_NO)
+    JOIN COMM_TYPE P ON P.TYPE_NO = C.COMM_TYPE
+    WHERE C.COMM_TYPE = 2
+    AND C.COMM_ST = 'N'
+    ORDER BY C.COMM_NO DESC
+
+) WHERE ROWNUM <= 7;

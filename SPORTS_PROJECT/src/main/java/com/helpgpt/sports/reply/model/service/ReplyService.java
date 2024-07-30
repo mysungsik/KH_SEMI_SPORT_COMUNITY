@@ -78,7 +78,6 @@ public class ReplyService {
 	public int deleteMyReplyMany(List<Integer> parsedReplyNo) {
 		Connection conn = getConnection();
 		int result = 0;
-		
 		for (int replyNo : parsedReplyNo) {
 			int deleteResult = dao.deleteReply(conn, replyNo);
 			

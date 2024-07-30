@@ -33,85 +33,8 @@
                         <p class="content-header fs-14__b fc__white"> MAIN NEWS</p>
                         <div class="main-news-content card__lblue mt-10 swiper swiper-news">
                             <!-- 좌중단 메인 뉴스 작성 -->
-                            <div class="news-content-top d-flex swiper-wrapper">
-                                <div class="card-thumbnail swiper-slide">
-                                    <img class="card-thumbnail-img" src="${contextPath}/public/images/news_example.jpg">
-                                    <div class="card-thumbnail-infos">
-                                        <div class="card-thumbnail-title">
-                                            '9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
-                                        </div>
-                                        <div class="card-thumbnail-content">
-                                            <p> ♡ <span>9999</span></p>
-                                            <p> KBO 리그</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-thumbnail swiper-slide">
-                                    <img class="card-thumbnail-img" src="${contextPath}/public/images/news_example.jpg">
-                                    <div class="card-thumbnail-infos">
-                                        <div class="card-thumbnail-title">
-                                            '9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
-                                        </div>
-                                        <div class="card-thumbnail-content">
-                                            <p> ♡ <span>9999</span></p>
-                                            <p> KBO 리그</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-thumbnail swiper-slide">
-                                    <img class="card-thumbnail-img" src="${contextPath}/public/images/news_example.jpg">
-                                    <div class="card-thumbnail-infos">
-                                        <div class="card-thumbnail-title">
-                                            '9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
-                                        </div>
-                                        <div class="card-thumbnail-content">
-                                            <p> ♡ <span>9999</span></p>
-                                            <p> KBO 리그</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-thumbnail swiper-slide">
-                                    <img class="card-thumbnail-img" src="${contextPath}/public/images/news_example.jpg">
-                                    <div class="card-thumbnail-infos">
-                                        <div class="card-thumbnail-title">
-                                            '9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
-                                        </div>
-                                        <div class="card-thumbnail-content">
-                                            <p> ♡ <span>9999</span></p>
-                                            <p> KBO 리그</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-thumbnail swiper-slide">
-                                    <img class="card-thumbnail-img" src="${contextPath}/public/images/news_example.jpg">
-                                    <div class="card-thumbnail-infos">
-                                        <div class="card-thumbnail-title">
-                                            '9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
-                                        </div>
-                                        <div class="card-thumbnail-content">
-                                            <p> ♡ <span>9999</span></p>
-                                            <p> KBO 리그</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="news-content-bottom">
-                                <div class="new-headline d-flex">
-                                    <p>‘주간 ERA 11.57’ 5월 MVP 곽빈 1군 말소당해버렸다 이승엽 감독 ”에이스니까, 더 해야지 안그러냐 </p><span>[IS 잠실]</span>
-                                </div>
-                                <div class="new-headline d-flex">
-                                    <p>‘주간 ERA 11.57’ 5월 MVP 곽빈 1군 말소당해버렸다 이승엽 감독 ”에이스니까, 더 해야지 안그러냐 </p><span>[IS 잠실]</span>
-                                </div>
-                                <div class="new-headline d-flex">
-                                    <p>‘주간 ERA 11.57’ 5월 MVP 곽빈 1군 말소당해버렸다 이승엽 감독 ”에이스니까, 더 해야지 안그러냐 </p><span>[IS 잠실]</span>
-                                </div>
-                                <div class="new-headline d-flex">
-                                    <p>‘주간 ERA 11.57’ 5월 MVP 곽빈 1군 말소당해버렸다 이승엽 감독 ”에이스니까, 더 해야지 안그러냐 </p><span>[IS 잠실]</span>
-                                </div>
-                                <div class="new-headline d-flex">
-                                    <p>‘주간 ERA 11.57’ 5월 MVP 곽빈 1군 말소당해버렸다 이승엽 감독 ”에이스니까, 더 해야지 안그러냐 </p><span>[IS 잠실]</span>
-                                </div>
-                            </div>
+                            <div class="news-content-top d-flex swiper-wrapper"></div>
+                            <div class="news-content-bottom"></div>
                         </div>
                     </div>
                 </div>
@@ -169,172 +92,22 @@
                 </div>
             </div>
             <div class="container-bot">
-                <div class="hightlight-clip card__lblue swiper swiper-highlight">
-                    <p class="content-header fs-20__b fc__blue"> HIGHTLIGHT CLIP</p>
-                    <p class="content-all fc__blue fs-10 text-hover__blue"> See All Clips</p>
-                    <hr class="hr__gray mt-10 mb-16">
-                    <!-- 하단 하이라이트 클립 작성 -->
-                    <div class="news-content-top d-flex swiper-wrapper">
-                        <div class="card-thumbnail swiper-slide">
-                            <img class="card-thumbnail-img" src="${contextPath}/public/images/news_example.jpg">
-                            <div class="card-thumbnail-infos">
-                                <div class="card-thumbnail-title">
-                                    '9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
-                                </div>
-                                <div class="card-thumbnail-content">
-                                    <p> 일반영상</p>
-                                    <p> ▷ <span> 9995 </span></p>
-                                    <p> 2024.06.18</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-thumbnail swiper-slide">
-                            <img class="card-thumbnail-img" src="${contextPath}/public/images/news_example.jpg">
-                            <div class="card-thumbnail-infos">
-                                <div class="card-thumbnail-title">
-                                    '9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
-                                </div>
-                                <div class="card-thumbnail-content">
-                                    <p> 일반영상</p>
-                                    <p> ▷ <span> 9995 </span></p>
-                                    <p> 2024.06.18</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-thumbnail swiper-slide">
-                            <img class="card-thumbnail-img" src="${contextPath}/public/images/news_example.jpg">
-                            <div class="card-thumbnail-infos">
-                                <div class="card-thumbnail-title">
-                                    '9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
-                                </div>
-                                <div class="card-thumbnail-content">
-                                    <p> 일반영상</p>
-                                    <p> ▷ <span> 9995 </span></p>
-                                    <p> 2024.06.18</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-thumbnail swiper-slide">
-                            <img class="card-thumbnail-img" src="${contextPath}/public/images/news_example.jpg">
-                            <div class="card-thumbnail-infos">
-                                <div class="card-thumbnail-title">
-                                    '9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
-                                </div>
-                                <div class="card-thumbnail-content">
-                                    <p> 일반영상</p>
-                                    <p> ▷ <span> 9995 </span></p>
-                                    <p> 2024.06.18</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-thumbnail swiper-slide">
-                            <img class="card-thumbnail-img" src="${contextPath}/public/images/news_example.jpg">
-                            <div class="card-thumbnail-infos">
-                                <div class="card-thumbnail-title">
-                                    '9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
-                                </div>
-                                <div class="card-thumbnail-content">
-                                    <p> 일반영상</p>
-                                    <p> ▷ <span> 9995 </span></p>
-                                    <p> 2024.06.18</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="swiper-pagination"></div>
-                </div>
+				<!-- 하단 커뮤니티 -->
                 <div class="community card__lblue">
                     <p class="content-header fs-20__b fc__blue"> COMMUNITY </p>
-                    <p class="content-all fc__blue fs-10 text-hover__blue"> See All Posts</p>
+                    <p class="content-all fc__blue fs-10 text-hover__blue" onclick="location.href='${contextPath}/community'"> See All Posts</p>
                     <hr class="hr__gray mb-16">
                     <!-- 하단 커뮤티니 작성 -->
                     <div class="main-bot">
                         <!-- 자유 게시판 -->
                         <div class="board mg-left">
                             <p class="title fs-20__b fc__blue">자유 게시판<p>
-                            <div class="post">
-                                <div class="post-title">
-                                    <span class="fs-14__b">게시글입니다 test 1234</span>
-                                </div>
-                                <div class="post-info">
-                                    <span class="fs-10">작성자 2024-06-23</span>
-                                    <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-                                </div>
-                            </div>
-                            <div class="post">
-                                <div class="post-title">
-                                    <span class="fs-14__b">게시글입니다 test 1234</span>
-                                </div>
-                                <div class="post-info">
-                                    <span class="fs-10">작성자 2024-06-23</span>
-                                    <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-                                </div>
-                            </div>
-                            <div class="post">
-                                <div class="post-title">
-                                    <span class="fs-14__b">게시글입니다 test 1234</span>
-                                </div>
-                                <div class="post-info">
-                                    <span class="fs-10">작성자 2024-06-23</span>
-                                    <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-                                </div>
-                            </div>
-                            <div class="post">
-                                <div class="post-title">
-                                    <span class="fs-14__b">게시글입니다 test 1234</span>
-                                </div>
-                                <div class="post-info">
-                                    <span class="fs-10">작성자 2024-06-23</span>
-                                    <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-                                </div>
-                            </div>
-                            
+                            <div class="board-free-container"></div>
                         </div>
-        
                         <!-- 응원 게시판 -->
                         <div class="board mg-right">
                             <p class="title fs-20__b fc__blue">응원 게시판<p>
-                            <div class="post">
-                                <div class="post-title">
-                                    <span class="fs-12 fc__gray">[ 다저스 ]</span>
-                                    <span class="fs-14__b">게시글입니다 test 1234</span>
-                                </div>
-                                <div class="post-info">
-                                    <span class="fs-10">작성자 2024-06-23</span>
-                                    <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-                                </div>
-                            </div>
-                            <div class="post">
-                                <div class="post-title">
-                                    <span class="fs-12 fc__gray">[ 해머스 ]</span>
-                                    <span class="fs-14__b">게시글입니다 test 1234</span>
-                                </div>
-                                <div class="post-info">
-                                    <span class="fs-10">작성자 2024-06-23</span>
-                                    <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-                                </div>
-                            </div>
-                            <div class="post">
-                                <div class="post-title">
-                                    <span class="fs-12 fc__gray">[ 다저스 ]</span>
-                                    <span class="fs-14__b">게시글입니다 test 1234</span>
-                                </div>
-                                <div class="post-info">
-                                    <span class="fs-10">작성자 2024-06-23</span>
-                                    <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-                                </div>
-                            </div>
-                            <div class="post">
-                                <div class="post-title">
-                                    <span class="fs-12 fc__gray">[ 해머스 ]</span>
-                                    <span class="fs-14__b">게시글입니다 test 1234</span>
-                                </div>
-                                <div class="post-info">
-                                    <span class="fs-10">작성자 2024-06-23</span>
-                                    <span class="fs-10">조회수 30 | 댓글 2 | 좋아요 3 ♡</span>
-                                </div>
-                            </div>
+                            <div class="board-cheer-container"></div>
                         </div>
                     </div>
                 </div>
