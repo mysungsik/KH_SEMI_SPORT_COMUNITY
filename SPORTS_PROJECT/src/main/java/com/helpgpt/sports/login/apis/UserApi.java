@@ -71,6 +71,7 @@ public class UserApi extends HttpServlet {
 						HttpSession session = req.getSession();
 						session.setMaxInactiveInterval(3600);
 						session.setAttribute("loginUser", loginUser);
+						session.setAttribute("loginUserNo", loginUser.getUserNo());
 						
 						// 로그인 성공 && 로그인상태유지를 체크한경우 (365일간 저장)
 						if (stayLogin.equals("true")) {
@@ -92,7 +93,6 @@ public class UserApi extends HttpServlet {
 					}
 					// 로그인시 비정상 상태이면(Lock 되어있는 경우)
 					else {
-						System.out.println("ㅁㅁㅁㅁ");
 						result.put("message", "계정이 잠겨있습니다. 관리자에게 문의해주십시오.");
 						new Gson().toJson(result, out);
 					}

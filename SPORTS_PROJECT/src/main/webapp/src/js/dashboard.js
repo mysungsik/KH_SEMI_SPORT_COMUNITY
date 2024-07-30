@@ -267,7 +267,7 @@ function setRecentNews(data){
 	let html = "";
 	$.each(data, function (index, d){
 		html += `
-		      	<div class="new-headline d-flex" onclick="location.href='${contextPath}/news/detail/${d.newsNo}'">
+		      	<div class="new-headline d-flex pointer" onclick="location.href='${contextPath}/news/detail/${d.newsNo}'">
                     <p>${d.newsTitle}</p><span>${d.newsPublisher}</span>
                 </div>
 				`
@@ -308,7 +308,7 @@ function setCommFree(data){
 	let html = "";
 	$.each(data, function (index, d){
 		html += `
-		      	<div class="post" onclick="location.href='${contextPath}/community/communityDetail/${d.boardNo}'">
+		      	<div class="post pointer" onclick="location.href='${contextPath}/community/communityDetail/${d.boardNo}'">
                     <div class="post-title">
                         <span class="fs-14__b">${d.boardTitle}</span>
                     </div>
@@ -352,7 +352,7 @@ function setCommCheer(data){
 	let html = "";
 	$.each(data, function (index, d){
 		html += `
-		      	<div class="post" onclick="location.href='${contextPath}/community/communityDetail/${d.boardNo}'">
+		      	<div class="post pointer" onclick="location.href='${contextPath}/community/communityDetail/${d.boardNo}'">
 	                <div class="post-title">
 	                    <span class="fs-12 fc__gray">[ ${d.boardCategory} ]</span>
 	                    <span class="fs-14__b">${d.boardTitle}</span>

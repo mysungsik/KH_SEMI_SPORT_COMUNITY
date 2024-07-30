@@ -41,11 +41,14 @@
 					
 				</div> 
 			</div>
-			<div class="news-update-btns mr-10">
+			
+           	<c:if test="${loginUser.getUserAuthority() == 'A' }">
+				<div class="news-update-btns mr-10">
 				<span onclick="location.href='${contextPath}/news/modify/${newsNum}'">수정</span>
 				<span> | </span>
 				<span class="news-delete" data-type="news-delete" onclick="showDeleteModal(this)">삭제</span>
 			</div>
+			</c:if>
 		</section>
 
 		<!-- 뉴스 내용 -->

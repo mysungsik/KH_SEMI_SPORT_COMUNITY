@@ -87,6 +87,8 @@ function replyPaginationTemplate(data) {
 	let item = "";
 	
 	$.each(data, function(index, d) {
+		console.log(loginUserNo)
+		console.log(d.userNo)
 		item +=
 			`
 				<hr class="hr__gray">
@@ -106,10 +108,15 @@ function replyPaginationTemplate(data) {
 					</div>
 					<div class="reply-extra-info">
 						<div>
-							<span class="fs-10 fc__gray pointer" data-type="reply-update" data-replyno="${d.replyNo}" onclick="showReplyUpdateModal($(this))">수정</span>
-							<span class="fs-10 fc__gray"> | </span>
-							<span class="fs-10 fc__gray pointer" data-type="reply-delete" data-replyno="${d.replyNo}" onclick="showDeleteModal($(this))">삭제</span>
-							<span class="fs-10 fc__gray"> | </span>
+							${d.userNo == loginUserNo ? `
+								<span class="fs-10 fc__gray pointer" data-type="reply-update" data-replyno="${d.replyNo}" onclick="showReplyUpdateModal($(this))">수정</span>
+								<span class="fs-10 fc__gray"> | </span>
+								<span class="fs-10 fc__gray pointer" data-type="reply-delete" data-replyno="${d.replyNo}" onclick="showDeleteModal($(this))">삭제</span>
+								<span class="fs-10 fc__gray"> | </span>`
+								:
+								""
+							}
+							
 							<span class="fs-10 fc__gray pointer" data-type="reply-report" data-replyno="${d.replyNo}" onclick="showReportModal($(this))">신고</span>
 						</div>           
 						<div><span class="fs-10 fc__gray" class="fs-10">${d.replyDt}</span></div>

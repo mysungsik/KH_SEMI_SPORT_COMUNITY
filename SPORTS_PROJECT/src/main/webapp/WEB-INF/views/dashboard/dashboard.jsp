@@ -75,6 +75,146 @@
                                 <li class="d-flex">
                                     <div class="score-board-infos">
                                         <img class="score-board-logo" src="${contextPath}/public/images/teams/FL.png">
+                                        <span class="score-board-team fs-14"> 구미 베어스 </span>
+                                    </div>
+                                    <div class="score-board-symbols d-flex">
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__red"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                    </div>
+                                </li>
+                                <li class="d-flex">
+                                    <div class="score-board-infos">
+                                        <img class="score-board-logo" src="${contextPath}/public/images/teams/FL.png">
+                                        <span class="score-board-team fs-14"> 두산 베어스 </span>
+                                    </div>
+                                    <div class="score-board-symbols d-flex">
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__red"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                    </div>
+                                </li>
+                                <li class="d-flex">
+                                    <div class="score-board-infos">
+                                        <img class="score-board-logo" src="${contextPath}/public/images/teams/FL.png">
+                                        <span class="score-board-team fs-14"> 롯데 블루존 </span>
+                                    </div>
+                                    <div class="score-board-symbols d-flex">
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__red"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                    </div>
+                                </li>
+                                <li class="d-flex">
+                                    <div class="score-board-infos">
+                                        <img class="score-board-logo" src="${contextPath}/public/images/teams/FL.png">
+                                        <span class="score-board-team fs-14"> 테스트1 </span>
+                                    </div>
+                                    <div class="score-board-symbols d-flex">
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__red"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                    </div>
+                                </li>
+                                <li class="d-flex">
+                                    <div class="score-board-infos">
+                                        <img class="score-board-logo" src="${contextPath}/public/images/teams/FL.png">
+                                        <span class="score-board-team fs-14"> 테스트2 </span>
+                                    </div>
+                                    <div class="score-board-symbols d-flex">
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__red"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                    </div>
+                                </li>
+                                <li class="d-flex">
+                                    <div class="score-board-infos">
+                                        <img class="score-board-logo" src="${contextPath}/public/images/teams/FL.png">
+                                        <span class="score-board-team fs-14"> 테스트3 </span>
+                                    </div>
+                                    <div class="score-board-symbols d-flex">
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__red"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                    </div>
+                                </li>
+                                <li class="d-flex">
+                                    <div class="score-board-infos">
+                                        <img class="score-board-logo" src="${contextPath}/public/images/teams/FL.png">
+                                        <span class="score-board-team fs-14"> 테스트4 </span>
+                                    </div>
+                                    <div class="score-board-symbols d-flex">
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__red"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                    </div>
+                                </li>
+                                <li class="d-flex">
+                                    <div class="score-board-infos">
+                                        <img class="score-board-logo" src="${contextPath}/public/images/teams/FL.png">
+                                        <span class="score-board-team fs-14"> 테스트5 </span>
+                                    </div>
+                                    <div class="score-board-symbols d-flex">
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__red"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                    </div>
+                                </li>
+                                <li class="d-flex">
+                                    <div class="score-board-infos">
+                                        <img class="score-board-logo" src="${contextPath}/public/images/teams/FL.png">
+                                        <span class="score-board-team fs-14"> 테스트6 </span>
+                                    </div>
+                                    <div class="score-board-symbols d-flex">
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__red"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                    </div>
+                                </li>
+                                <li class="d-flex">
+                                    <div class="score-board-infos">
+                                        <img class="score-board-logo" src="${contextPath}/public/images/teams/FL.png">
+                                        <span class="score-board-team fs-14"> 테스트7 </span>
+                                    </div>
+                                    <div class="score-board-symbols d-flex">
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__red"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                    </div>
+                                </li>
+                                <li class="d-flex">
+                                    <div class="score-board-infos">
+                                        <img class="score-board-logo" src="${contextPath}/public/images/teams/FL.png">
                                         <span class="score-board-team fs-14"> 제이 블루즌 </span>
                                     </div>
                                     <div class="score-board-symbols d-flex">
@@ -86,6 +226,63 @@
                                         <div class="score-board-symbol score__gray"></div>
                                     </div>
                                 </li>
+                                <li class="d-flex">
+                                    <div class="score-board-infos">
+                                        <img class="score-board-logo" src="${contextPath}/public/images/teams/FL.png">
+                                        <span class="score-board-team fs-14"> 블루 타이거즈 </span>
+                                    </div>
+                                    <div class="score-board-symbols d-flex">
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__red"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                    </div>
+                                </li>
+                                <li class="d-flex">
+                                    <div class="score-board-infos">
+                                        <img class="score-board-logo" src="${contextPath}/public/images/teams/FL.png">
+                                        <span class="score-board-team fs-14"> 드림웍스 </span>
+                                    </div>
+                                    <div class="score-board-symbols d-flex">
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__red"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                    </div>
+                                </li>
+                                <li class="d-flex">
+                                    <div class="score-board-infos">
+                                        <img class="score-board-logo" src="${contextPath}/public/images/teams/FL.png">
+                                        <span class="score-board-team fs-14"> 기아 타이거즈 </span>
+                                    </div>
+                                    <div class="score-board-symbols d-flex">
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__red"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                    </div>
+                                </li>
+                                <li class="d-flex">
+                                    <div class="score-board-infos">
+                                        <img class="score-board-logo" src="${contextPath}/public/images/teams/FL.png">
+                                        <span class="score-board-team fs-14"> LOTTE </span>
+                                    </div>
+                                    <div class="score-board-symbols d-flex">
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__red"></div>
+                                        <div class="score-board-symbol score__green"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                        <div class="score-board-symbol score__gray"></div>
+                                    </div>
+                                </li>
+                                
                             </ul>
                         </div>
                     </div>
