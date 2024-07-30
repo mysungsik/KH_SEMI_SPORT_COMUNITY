@@ -49,85 +49,85 @@
 					<div class="main-news-content mt-10 swiper swiper-news">
 						<div class="news-content-top d-flex swiper-wrapper">
 							<div class="card-thumbnail swiper-slide">
-								<img class="card-thumbnail-img"
-									src="${contextPath}/public/images/news_example.jpg">
-								<div class="card-thumbnail-infos">
-									<div class="card-thumbnail-title">
-										<p>'9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ
-											ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</p>
-									</div>
-									<div class="card-thumbnail-content">
-										<p>
-											♡ <span>9999</span>
-										</p>
-										<p>KBO 리그</p>
-									</div>
-								</div>
+						<img class="card-thumbnail-img"
+							src="${contextPath}/public/images/news_example.jpg">
+						<div class="card-thumbnail-infos">
+							<div class="card-thumbnail-title">
+								<p>'9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ
+									ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</p>
 							</div>
-							<div class="card-thumbnail swiper-slide">
-								<img class="card-thumbnail-img"
-									src="${contextPath}/public/images/news_example.jpg">
-								<div class="card-thumbnail-infos">
-									<div class="card-thumbnail-title">
-										<p>'9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ
-											ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</p>
-									</div>
-									<div class="card-thumbnail-content">
-										<p>
-											♡ <span>9999</span>
-										</p>
-										<p>KBO 리그</p>
-									</div>
-								</div>
+							<div class="card-thumbnail-content">
+								<p>
+									♡ <span>9999</span>
+								</p>
+								<p>KBO 리그</p>
 							</div>
-							<div class="card-thumbnail swiper-slide">
-								<img class="card-thumbnail-img"
-									src="${contextPath}/public/images/news_example.jpg">
-								<div class="card-thumbnail-infos">
-									<div class="card-thumbnail-title">
-										<p>'9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ
-											ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</p>
-									</div>
-									<div class="card-thumbnail-content">
-										<p>
-											♡ <span>9999</span>
-										</p>
-										<p>KBO 리그</p>
-									</div>
-								</div>
+						</div>
+					</div>
+					<div class="card-thumbnail swiper-slide">
+						<img class="card-thumbnail-img"
+							src="${contextPath}/public/images/news_example.jpg">
+						<div class="card-thumbnail-infos">
+							<div class="card-thumbnail-title">
+								<p>'9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ
+									ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</p>
 							</div>
-							<div class="card-thumbnail swiper-slide">
-								<img class="card-thumbnail-img"
-									src="${contextPath}/public/images/news_example.jpg">
-								<div class="card-thumbnail-infos">
-									<div class="card-thumbnail-title">
-										<p>'9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ
-											ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</p>
-									</div>
-									<div class="card-thumbnail-content">
-										<p>
-											♡ <span>9999</span>
-										</p>
-										<p>KBO 리그</p>
-									</div>
-								</div>
+							<div class="card-thumbnail-content">
+								<p>
+									♡ <span>9999</span>
+								</p>
+								<p>KBO 리그</p>
 							</div>
-							<div class="card-thumbnail swiper-slide">
-								<img class="card-thumbnail-img"
-									src="${contextPath}/public/images/news_example.jpg">
-								<div class="card-thumbnail-infos">
-									<div class="card-thumbnail-title">
-										<p>'9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ
-											ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</p>
-									</div>
-									<div class="card-thumbnail-content">
-										<p>
-											♡ <span>9999</span>
-										</p>
-										<p>KBO 리그</p>
-									</div>
-								</div>
+						</div>
+					</div>
+					<div class="card-thumbnail swiper-slide">
+						<img class="card-thumbnail-img"
+							src="${contextPath}/public/images/news_example.jpg">
+						<div class="card-thumbnail-infos">
+							<div class="card-thumbnail-title">
+								<p>'9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ
+									ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</p>
 							</div>
+							<div class="card-thumbnail-content">
+								<p>
+									♡ <span>9999</span>
+								</p>
+								<p>KBO 리그</p>
+							</div>
+						</div>
+					</div>
+					<div class="card-thumbnail swiper-slide">
+						<img class="card-thumbnail-img"
+							src="${contextPath}/public/images/news_example.jpg">
+						<div class="card-thumbnail-infos">
+							<div class="card-thumbnail-title">
+								<p>'9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ
+									ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</p>
+							</div>
+							<div class="card-thumbnail-content">
+								<p>
+									♡ <span>9999</span>
+								</p>
+								<p>KBO 리그</p>
+							</div>
+						</div>
+					</div>
+					<div class="card-thumbnail swiper-slide">
+						<img class="card-thumbnail-img"
+							src="${contextPath}/public/images/news_example.jpg">
+						<div class="card-thumbnail-infos">
+							<div class="card-thumbnail-title">
+								<p>'9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ
+									ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</p>
+							</div>
+							<div class="card-thumbnail-content">
+								<p>
+									♡ <span>9999</span>
+								</p>
+								<p>KBO 리그</p>
+							</div>
+						</div>
+					</div>
 						</div>
 						<div class="swiper-pagination"></div>
 					</div>
@@ -176,54 +176,64 @@
 				</div>
 				<hr>
 				<div class="post">
-					<div class="post-title">
-						<span class="fs-12 fc__gray">[ 다저스 ]</span> <span class="fs-14__b">게시글입니다
-							test 1234</span>
-					</div>
-					<div class="post-info">
-						<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
-							30 | 댓글 2 | 좋아요 3 ♡</span>
-					</div>
+					<a href="${contextPath }/community/communityDetail/291">
+						<div class="post-title">
+							<span class="fs-12 fc__gray">[ 다저스 ]</span> <span class="fs-14__b">게시글입니다
+								test 1234</span>
+						</div>
+						<div class="post-info">
+							<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
+								30 | 댓글 2 | 좋아요 3 ♡</span>
+						</div>
+					</a>
 				</div>
 				<div class="post">
-					<div class="post-title">
-						<span class="fs-12 fc__gray">[ 해머스 ]</span> <span class="fs-14__b">게시글입니다
-							test 1234</span>
-					</div>
-					<div class="post-info">
-						<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
-							30 | 댓글 2 | 좋아요 3 ♡</span>
-					</div>
+					<a href="${contextPath }/community/communityDetail/291">
+						<div class="post-title">
+							<span class="fs-12 fc__gray">[ 다저스 ]</span> <span class="fs-14__b">게시글입니다
+								test 1234</span>
+						</div>
+						<div class="post-info">
+							<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
+								30 | 댓글 2 | 좋아요 3 ♡</span>
+						</div>
+					</a>
 				</div>
 				<div class="post">
-					<div class="post-title">
-						<span class="fs-12 fc__gray">[ 다저스 ]</span> <span class="fs-14__b">게시글입니다
-							test 1234</span>
-					</div>
-					<div class="post-info">
-						<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
-							30 | 댓글 2 | 좋아요 3 ♡</span>
-					</div>
+					<a href="${contextPath }/community/communityDetail/291">
+						<div class="post-title">
+							<span class="fs-12 fc__gray">[ 다저스 ]</span> <span class="fs-14__b">게시글입니다
+								test 1234</span>
+						</div>
+						<div class="post-info">
+							<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
+								30 | 댓글 2 | 좋아요 3 ♡</span>
+						</div>
+					</a>
 				</div>
 				<div class="post">
-					<div class="post-title">
-						<span class="fs-12 fc__gray">[ 해머스 ]</span> <span class="fs-14__b">게시글입니다
-							test 1234</span>
-					</div>
-					<div class="post-info">
-						<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
-							30 | 댓글 2 | 좋아요 3 ♡</span>
-					</div>
+					<a href="${contextPath }/community/communityDetail/291">
+						<div class="post-title">
+							<span class="fs-12 fc__gray">[ 다저스 ]</span> <span class="fs-14__b">게시글입니다
+								test 1234</span>
+						</div>
+						<div class="post-info">
+							<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
+								30 | 댓글 2 | 좋아요 3 ♡</span>
+						</div>
+					</a>
 				</div>
 				<div class="post">
-					<div class="post-title">
-						<span class="fs-12 fc__gray">[ 다저스 ]</span> <span class="fs-14__b">게시글입니다
-							test 1234</span>
-					</div>
-					<div class="post-info">
-						<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
-							30 | 댓글 2 | 좋아요 3 ♡</span>
-					</div>
+					<a href="${contextPath }/community/communityDetail/291">
+						<div class="post-title">
+							<span class="fs-12 fc__gray">[ 다저스 ]</span> <span class="fs-14__b">게시글입니다
+								test 1234</span>
+						</div>
+						<div class="post-info">
+							<span class="fs-10">작성자 2024-06-23</span> <span class="fs-10">조회수
+								30 | 댓글 2 | 좋아요 3 ♡</span>
+						</div>
+					</a>
 				</div>
 			</article>
 

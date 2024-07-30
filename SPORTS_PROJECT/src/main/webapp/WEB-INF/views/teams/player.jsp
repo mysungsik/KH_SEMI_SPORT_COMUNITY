@@ -64,85 +64,85 @@
 			<div class="main-news-content mt-10 swiper swiper-news">
 				<div class="news-content-top d-flex swiper-wrapper">
 					<div class="card-thumbnail swiper-slide">
-						<img class="card-thumbnail-img"
-							src="${contextPath}/public/images/news_example.jpg">
-						<div class="card-thumbnail-infos">
-							<div class="card-thumbnail-title">
-								<p>'9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ
-									ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</p>
+								<a href="${contextPath }/news/detail/1">
+									<img class="card-thumbnail-img" src="${contextPath }/public/images/profile/202407207110760_63885.jpg"/>
+									<div class="card-thumbnail-infos">
+										<div class="card-thumbnail-title">
+											<p>한화 이글스 기아에게 충격 패배</p>
+										</div>
+										<div class="card-thumbnail-content">
+											<p>
+												♡ <span>5</span>
+											</p>
+											<p>KBO 리그</p>
+										</div>
+									</div>
+								</a>
 							</div>
-							<div class="card-thumbnail-content">
-								<p>
-									♡ <span>9999</span>
-								</p>
-								<p>KBO 리그</p>
+							<div class="card-thumbnail swiper-slide">
+								<a href="${contextPath }/news/detail/2">
+									<img class="card-thumbnail-img" src="${contextPath }/public/images/profile/house.jpeg"/>
+									<div class="card-thumbnail-infos">
+										<div class="card-thumbnail-title">
+											<p>빰 빠라밤밤밤밤 축33333하 !</p>
+										</div>
+										<div class="card-thumbnail-content">
+											<p>
+												♡ <span>3</span>
+											</p>
+											<p>KBO 리그</p>
+										</div>
+									</div>
+								</a>
 							</div>
-						</div>
-					</div>
-					<div class="card-thumbnail swiper-slide">
-						<img class="card-thumbnail-img"
-							src="${contextPath}/public/images/news_example.jpg">
-						<div class="card-thumbnail-infos">
-							<div class="card-thumbnail-title">
-								<p>'9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ
-									ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</p>
+							<div class="card-thumbnail swiper-slide">
+								<a href="${contextPath }/news/detail/3">
+									<img class="card-thumbnail-img" src="${contextPath }/public/images/profile/202407205000776_12975.jpg"/>
+									<div class="card-thumbnail-infos">
+										<div class="card-thumbnail-title">
+											<p>빰 빠라밤밤밤밤 축2222하 !</p>
+										</div>
+										<div class="card-thumbnail-content">
+											<p>
+												♡ <span>3</span>
+											</p>
+											<p>KBO 리그</p>
+										</div>
+									</div>
+								</a>
 							</div>
-							<div class="card-thumbnail-content">
-								<p>
-									♡ <span>9999</span>
-								</p>
-								<p>KBO 리그</p>
+							<div class="card-thumbnail swiper-slide">
+								<a href="${contextPath }/news/detail/4">
+									<img class="card-thumbnail-img" src="${contextPath }/public/images/profile/9d43577286a94ca918d47c8e7df4bdc5.jpg"/>
+									<div class="card-thumbnail-infos">
+										<div class="card-thumbnail-title">
+											<p> 롯데 타이거즈 기아에게 충격 패배</p>
+										</div>
+										<div class="card-thumbnail-content">
+											<p>
+												♡ <span>2</span>
+											</p>
+											<p>KBO 리그</p>
+										</div>
+									</div>
+								</a>
 							</div>
-						</div>
-					</div>
-					<div class="card-thumbnail swiper-slide">
-						<img class="card-thumbnail-img"
-							src="${contextPath}/public/images/news_example.jpg">
-						<div class="card-thumbnail-infos">
-							<div class="card-thumbnail-title">
-								<p>'9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ
-									ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</p>
+							<div class="card-thumbnail swiper-slide">
+								<a href="${contextPath }/news/detail/5">
+									<img class="card-thumbnail-img" src="${contextPath }/public/images/profile/user_img1.jpg"/>
+									<div class="card-thumbnail-infos">
+										<div class="card-thumbnail-title">
+											<p> 빰 빠라밤밤밤밤 축하 !</p>
+										</div>
+										<div class="card-thumbnail-content">
+											<p>
+												♡ <span>2</span>
+											</p>
+											<p>KBO 리그</p>
+										</div>
+									</div>
+								</a>
 							</div>
-							<div class="card-thumbnail-content">
-								<p>
-									♡ <span>9999</span>
-								</p>
-								<p>KBO 리그</p>
-							</div>
-						</div>
-					</div>
-					<div class="card-thumbnail swiper-slide">
-						<img class="card-thumbnail-img"
-							src="${contextPath}/public/images/news_example.jpg">
-						<div class="card-thumbnail-infos">
-							<div class="card-thumbnail-title">
-								<p>'9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ
-									ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</p>
-							</div>
-							<div class="card-thumbnail-content">
-								<p>
-									♡ <span>9999</span>
-								</p>
-								<p>KBO 리그</p>
-							</div>
-						</div>
-					</div>
-					<div class="card-thumbnail swiper-slide">
-						<img class="card-thumbnail-img"
-							src="${contextPath}/public/images/news_example.jpg">
-						<div class="card-thumbnail-infos">
-							<div class="card-thumbnail-title">
-								<p>'9실점 악몽' 준 키움과 2달 만에 ㅁㅁㅁㅁㅁㅁaaaaaaaㅁ
-									ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</p>
-							</div>
-							<div class="card-thumbnail-content">
-								<p>
-									♡ <span>9999</span>
-								</p>
-								<p>KBO 리그</p>
-							</div>
-						</div>
-					</div>
 				</div>
 				<div class="swiper-pagination"></div>
 			</div>
