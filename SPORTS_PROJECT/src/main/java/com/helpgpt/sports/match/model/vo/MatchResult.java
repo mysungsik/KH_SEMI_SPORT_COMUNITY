@@ -23,6 +23,7 @@ public class MatchResult {
     private int sbLoser;
     private int dpLoser;
     private int erLoser;
+    
     private List<PitcherRecord> winPitcherRecords;
     private List<PitcherRecord> losePitcherRecords;
     private List<HitterRecord> winHitterRecords;
@@ -221,4 +222,31 @@ public class MatchResult {
     public void setLoseHitterRecords(List<HitterRecord> loseHitterRecords) {
         this.loseHitterRecords = loseHitterRecords;
     }
+
+	@Override
+	public String toString() {
+		return "MatchResult [matchDate=" + matchDate + ", winTeam=" + winTeam + ", loseTeam=" + loseTeam
+				+ ", matchPlace=" + matchPlace + ", winnerScore=" + winnerScore + ", loserScore=" + loserScore
+				+ ", winPitcher=" + winPitcher + ", losePitcher=" + losePitcher + ", hitsWinner=" + hitsWinner
+				+ ", hrWinner=" + hrWinner + ", soWinner=" + soWinner + ", sbWinner=" + sbWinner + ", dpWinner="
+				+ dpWinner + ", erWinner=" + erWinner + ", hitsLoser=" + hitsLoser + ", hrLoser=" + hrLoser
+				+ ", soLoser=" + soLoser + ", sbLoser=" + sbLoser + ", dpLoser=" + dpLoser + ", erLoser=" + erLoser
+				+ ", winPitcherRecords=" + winPitcherRecords + ", losePitcherRecords=" + losePitcherRecords
+				+ ", winHitterRecords=" + winHitterRecords + ", loseHitterRecords=" + loseHitterRecords
+				+ ", getMatchDate()=" + getMatchDate() + ", getWinTeam()=" + getWinTeam() + ", getLoseTeam()="
+				+ getLoseTeam() + ", getMatchPlace()=" + getMatchPlace() + ", getWinnerScore()=" + getWinnerScore()
+				+ ", getLoserScore()=" + getLoserScore() + ", getWinPitcher()=" + getWinPitcher()
+				+ ", getLosePitcher()=" + getLosePitcher() + ", getHitsWinner()=" + getHitsWinner() + ", getHrWinner()="
+				+ getHrWinner() + ", getSoWinner()=" + getSoWinner() + ", getSbWinner()=" + getSbWinner()
+				+ ", getDpWinner()=" + getDpWinner() + ", getErWinner()=" + getErWinner() + ", getHitsLoser()="
+				+ getHitsLoser() + ", getHrLoser()=" + getHrLoser() + ", getSoLoser()=" + getSoLoser()
+				+ ", getSbLoser()=" + getSbLoser() + ", getDpLoser()=" + getDpLoser() + ", getErLoser()=" + getErLoser()
+				+ ", getWinPitcherRecords()=" + getWinPitcherRecords() + ", getLosePitcherRecords()="
+				+ getLosePitcherRecords() + ", getWinHitterRecords()=" + getWinHitterRecords()
+				+ ", getLoseHitterRecords()=" + getLoseHitterRecords() + ", getClass()=" + getClass() + ", hashCode()="
+				+ hashCode() + ", toString()=" + super.toString() + "]";
+	}
+    
+    
 }
+

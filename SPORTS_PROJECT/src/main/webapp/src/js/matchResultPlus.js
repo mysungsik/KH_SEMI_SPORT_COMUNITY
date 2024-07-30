@@ -1,3 +1,7 @@
+let winBatters = [];
+let loseBatters = [];
+let winPitchers = [];
+let losePitchers = [];
 $(document).ready(function () {
     loadTeams(); // 페이지 로드 시 팀 목록을 불러옵니다.
     updatePitcherTable('statsTableWin', []);
@@ -68,11 +72,13 @@ function updateBatterTable(tableId, data) {
 }
 
 function loadTeams() {
+	console.log("aa")
     $.ajax({
         url: `${contextPath}/api/match/getTeams`,
         method: "GET",
+        dataType : "json",
         success: function (data) {
-            data = JSON.parse(data);
+			console.log(data)
             const winTeamSelect = $("#winTeamSelect");
             const loseTeamSelect = $("#loseTeamSelect");
             winTeamSelect.empty();
@@ -80,14 +86,16 @@ function loadTeams() {
             winTeamSelect.append('<option value="">----선택하세요----</option>');
             loseTeamSelect.append('<option value="">----선택하세요----</option>');
             data.forEach(team => {
-                winTeamSelect.append(`<option value="${team}">${team}</option>`);
-                loseTeamSelect.append(`<option value="${team}">${team}</option>`);
+                winTeamSelect.append(`<option value="${team.teamNo}">${team.teamName}</option>`);
+                loseTeamSelect.append(`<option value="${team.teamNo}">${team.teamName}</option>`);
             });
         },
         error: function () {
+			console.log("nnnnn")
             toastPop("error", "팀 목록을 불러오는데 실패했습니다.");
         }
     });
+   
 }
 
 function loadTeamData(teamType) {
@@ -209,7 +217,7 @@ function calculateResults() {
         method: "GET",
         success: function (data) {
             data = JSON.parse(data);
-            const winBatters = generateRandomBatterData(winBatterCount, data);
+            winBatters = generateRandomBatterData(winBatterCount, data);
             updateBatterTable('statsTableWinHit', winBatters);
         },
         error: function () {
@@ -222,7 +230,7 @@ function calculateResults() {
         method: "GET",
         success: function (data) {
             data = JSON.parse(data);
-            const loseBatters = generateRandomBatterData(loseBatterCount, data);
+            loseBatters = generateRandomBatterData(loseBatterCount, data);
             updateBatterTable('statsTableLoseHit', loseBatters);
         },
         error: function () {
@@ -232,38 +240,38 @@ function calculateResults() {
 }
 
 function generateRandomPitcherData(count, players) {
-    let data = [];
+	let pitcherData = [];
     for (let i = 0; i < count; i++) {
         let player = players[getRandomInt(0, players.length - 1)];
-        data.push({
-            name: player,
+        pitcherData.push({
+            playerName: player,
             inning: getRandomInt(5, 9),
             pitchCount: getRandomInt(70, 120),
             hitted: getRandomInt(0, 10),
-            hittedHomeRun: getRandomInt(0, 2),
-            strikeOut: getRandomInt(3, 10),
+            homeruned: getRandomInt(0, 2),
+            strikeOuted: getRandomInt(3, 10),
             deadBall: getRandomInt(0, 4),
-            error: getRandomInt(0, 3),
-            earnedRun: getRandomInt(0, 5),
+            lossScore: getRandomInt(0, 3),
+            selfLose: getRandomInt(0, 5),
             era: (getRandomInt(0, 5) / getRandomInt(5, 9)).toFixed(2),
             whip: ((getRandomInt(0, 10) + getRandomInt(0, 4)) / getRandomInt(5, 9)).toFixed(2)
         });
     }
-    return data;
+    return pitcherData;
 }
 
 function generateRandomBatterData(count, players) {
-    let data = [];
+	let batterData = [];
     for (let i = 0; i < count; i++) {
         let player = players[getRandomInt(0, players.length - 1)];
         let atBat = getRandomInt(3, 5);
         let hit = getRandomInt(0, atBat);
-        data.push({
-            name: player,
+        batterData.push({
+            playerName: player,
             atBat: atBat,
             hit: hit,
-            double: getRandomInt(0, hit),
-            triple: getRandomInt(0, hit),
+            doubleHit: getRandomInt(0, hit),
+            tripleHit: getRandomInt(0, hit),
             homeRun: getRandomInt(0, 2),
             run: getRandomInt(0, 3),
             rbi: getRandomInt(0, hit),
@@ -272,14 +280,16 @@ function generateRandomBatterData(count, players) {
             avg: (hit / atBat).toFixed(3)
         });
     }
-    return data;
+    return batterData;
 }
 
 function submitForm() {
     const matchData = {
         matchDate: $("#matchDate").val(),
-        winTeam: $("#winTeamSelect").val(),
-        loseTeam: $("#loseTeamSelect").val(),
+        winTeamNo: $("#winTeamSelect").val(),
+		winTeamName:  $("#winTeamSelect option:selected").text(),
+        loseTeamNo: $("#loseTeamSelect").val(),
+        loseTeamName: $("#loseTeamSelect option:selected").text(),
         matchPlace: $("#matchPlaceSelect").val(),
         winnerScore: $("#winnerScore").val(),
         loserScore: $("#loserScore").val(),
@@ -296,7 +306,13 @@ function submitForm() {
         soLoser: $("#soLoser").val(),
         sbLoser: $("#sbLoser").val(),
         dpLoser: $("#dpLoser").val(),
-        erLoser: $("#erLoser").val()
+        erLoser: $("#erLoser").val(),
+		winHitterRecords : winBatters,
+		loseHitterRecords : loseBatters,
+		winPitcherRecords : winPitchers,
+		losePitcherRecords : losePitchers 
+        
+        
     };
 
     $.ajax({

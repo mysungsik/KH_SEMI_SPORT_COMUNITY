@@ -9,7 +9,9 @@ import java.util.List;
 import com.helpgpt.sports.match.model.dao.MatchDAO;
 import com.helpgpt.sports.match.model.vo.PlayerRanking;
 import com.helpgpt.sports.match.model.vo.TeamRanking;
+import com.helpgpt.sports.teams.model.vo.Teams;
 import com.helpgpt.sports.match.model.vo.HitterRecord;
+import com.helpgpt.sports.match.model.vo.Match;
 import com.helpgpt.sports.match.model.vo.MatchResult;
 
 public class MatchService {
@@ -78,29 +80,29 @@ public class MatchService {
         return stadiums;
     }
 
-    public List<String> getTeams() {
+    public List<Teams> getTeams() {
         Connection conn = getConnection();
-        List<String> teams = dao.getTeams(conn);
+        List<Teams> teams = dao.getTeams(conn);
         close(conn);
         return teams;
     }
 
-    public boolean saveMatchResult(MatchResult matchResult) {
-        Connection conn = getConnection();
-        boolean isSuccess = false;
-        try {
-            isSuccess = dao.saveMatchResult(conn, matchResult);
-            if (isSuccess) {
-                commit(conn);
-            } else {
-                rollback(conn);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            rollback(conn);
-        } finally {
-            close(conn);
-        }
-        return isSuccess;
+//    public List<MatchResult> saveMatchResult() {
+//        Connection conn = getConnection();
+//        List<MatchResult> results = dao.saveMatchResult(conn);
+//        close(conn);
+//        return matchResult;
+//     
+//        
+//        
+//        int saveMatchRresult = dao.saveMatchResult();
+//        
+//       
+        
+        
     }
-}
+//}
+ 
+        
+        
+        
