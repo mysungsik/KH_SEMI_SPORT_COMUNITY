@@ -297,7 +297,9 @@ function showModal(id, data ,el){
 			</div>
 			
 			${data.reportTargetTitle == 'undefined' ? "" : `
-				<a class="move-board fs-10 fc__blue text-hover__blue"> 해당 게시글로 이동 </a> `
+				<a class="move-board fs-10 fc__blue text-hover__blue" href="${data.reportTypeNo == 1 ? contextPath + '/community/communityDetail/' + data.reportTargetNo
+					: contextPath + '/news/detail/' + data.reportTargetNo
+				}"> 해당 게시글로 이동 </a> `
 			}
 			
 			<div class="modal-btns">
